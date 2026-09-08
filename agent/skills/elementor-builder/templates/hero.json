@@ -2,17 +2,8 @@
     "content": [
         {
             "id": "hero_section",
-            "elType": "container",
+            "elType": "section",
             "settings": {
-                "container_type": "grid",
-                "grid_columns_grid": {
-                    "unit": "fr",
-                    "size": "1"
-                },
-                "grid_rows_grid": {
-                    "unit": "fr",
-                    "size": "auto"
-                },
                 "background_background": "classic",
                 "background_color": "#2F4A33",
                 "padding": {
@@ -26,116 +17,115 @@
             },
             "elements": [
                 {
-                    "id": "hero_eyebrow",
-                    "elType": "widget",
-                    "widgetType": "text-editor",
+                    "id": "hero_column",
+                    "elType": "column",
                     "settings": {
-                        "editor": "<p>Село Гагарино · Тамбовская область · осн. 1702<\/p>",
-                        "align": "center",
-                        "text_color": "#B8963E",
-                        "typography_typography": "custom",
-                        "typography_font_size": {
-                            "unit": "px",
-                            "size": 12
-                        },
-                        "typography_letter_spacing": {
-                            "unit": "px",
-                            "size": 3
-                        },
-                        "typography_text_transform": "uppercase",
-                        "typography_font_weight": "600"
+                        "_column_size": 100
                     },
-                    "elements": []
-                },
-                {
-                    "id": "hero_title",
-                    "elType": "widget",
-                    "widgetType": "heading",
-                    "settings": {
-                        "title": "Проект возрождения агроусадьбы «Барышня-крестьянка»",
-                        "header_size": "h1",
-                        "align": "center",
-                        "title_color": "#F5EFE3",
-                        "typography_typography": "custom",
-                        "typography_font_family": "Playfair Display",
-                        "typography_font_size": {
-                            "unit": "px",
-                            "size": 72
+                    "elements": [
+                        {
+                            "id": "hero_eyebrow",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "<p>Село Гагарино · Тамбовская область · осн. 1702<\/p>",
+                                "align": "center",
+                                "text_color": "#B8963E",
+                                "typography_typography": "custom",
+                                "typography_font_size": {
+                                    "unit": "px",
+                                    "size": 12
+                                },
+                                "typography_letter_spacing": {
+                                    "unit": "px",
+                                    "size": 3
+                                },
+                                "typography_text_transform": "uppercase",
+                                "typography_font_weight": "600"
+                            },
+                            "elements": []
                         },
-                        "typography_font_weight": "700",
-                        "typography_line_height": {
-                            "unit": "em",
-                            "size": 1.08
+                        {
+                            "id": "hero_title",
+                            "elType": "widget",
+                            "widgetType": "heading",
+                            "settings": {
+                                "title": "Проект возрождения агроусадьбы «Барышня-крестьянка»",
+                                "header_size": "h1",
+                                "align": "center",
+                                "title_color": "#F5EFE3",
+                                "typography_typography": "custom",
+                                "typography_font_family": "Playfair Display",
+                                "typography_font_size": {
+                                    "unit": "px",
+                                    "size": 72
+                                },
+                                "typography_font_weight": "700",
+                                "typography_line_height": {
+                                    "unit": "em",
+                                    "size": 1.08
+                                },
+                                "typography_letter_spacing": {
+                                    "unit": "px",
+                                    "size": -2
+                                }
+                            },
+                            "elements": []
                         },
-                        "typography_letter_spacing": {
-                            "unit": "px",
-                            "size": -2
+                        {
+                            "id": "hero_divider",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "<p>✦<\/p>"
+                            },
+                            "elements": []
+                        },
+                        {
+                            "id": "hero_subtitle",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "<p>Историческое пространство, где наследие прошлого становится основой будущего<\/p>",
+                                "align": "center",
+                                "text_color": "#F5EFE3",
+                                "typography_typography": "custom",
+                                "typography_font_size": {
+                                    "unit": "px",
+                                    "size": 24
+                                },
+                                "typography_font_style": "italic"
+                            },
+                            "elements": []
+                        },
+                        {
+                            "id": "hero_desc",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "<p>Ищем партнёров, разделяющих наши ценности, для совместного создания устойчивого семейного поместья и культурно-исторического центра.<\/p>",
+                                "align": "center",
+                                "text_color": "#F5EFE3",
+                                "typography_typography": "custom",
+                                "typography_font_size": {
+                                    "unit": "px",
+                                    "size": 18
+                                },
+                                "typography_line_height": {
+                                    "unit": "em",
+                                    "size": 1.75
+                                }
+                            },
+                            "elements": []
                         }
-                    },
-                    "elements": []
-                },
-                {
-                    "id": "hero_divider",
-                    "elType": "widget",
-                    "widgetType": "text-editor",
-                    "settings": {
-                        "editor": "<p>✦<\/p>"
-                    },
-                    "elements": []
-                },
-                {
-                    "id": "hero_subtitle",
-                    "elType": "widget",
-                    "widgetType": "text-editor",
-                    "settings": {
-                        "editor": "<p>Историческое пространство, где наследие прошлого становится основой будущего<\/p>",
-                        "align": "center",
-                        "text_color": "#F5EFE3",
-                        "typography_typography": "custom",
-                        "typography_font_size": {
-                            "unit": "px",
-                            "size": 24
-                        },
-                        "typography_font_style": "italic"
-                    },
-                    "elements": []
-                },
-                {
-                    "id": "hero_desc",
-                    "elType": "widget",
-                    "widgetType": "text-editor",
-                    "settings": {
-                        "editor": "<p>Ищем партнёров, разделяющих наши ценности, для совместного создания устойчивого семейного поместья и культурно-исторического центра.<\/p>",
-                        "align": "center",
-                        "text_color": "#F5EFE3",
-                        "typography_typography": "custom",
-                        "typography_font_size": {
-                            "unit": "px",
-                            "size": 18
-                        },
-                        "typography_line_height": {
-                            "unit": "em",
-                            "size": 1.75
-                        }
-                    },
-                    "elements": []
+                    ]
                 }
-            ],
-            "isInner": false
+            ]
         },
         {
-            "id": "hero_buttons_row",
-            "elType": "container",
+            "id": "hero_buttons_section",
+            "elType": "section",
             "settings": {
-                "container_type": "grid",
-                "grid_columns_grid": {
-                    "unit": "fr",
-                    "size": "2"
-                },
-                "grid_rows_grid": {
-                    "unit": "fr",
-                    "size": "1"
-                },
                 "background_background": "classic",
                 "background_color": "#2F4A33",
                 "padding": {
@@ -157,61 +147,80 @@
             },
             "elements": [
                 {
-                    "id": "btn_primary",
-                    "elType": "widget",
-                    "widgetType": "button",
+                    "id": "btn_primary_col",
+                    "elType": "column",
                     "settings": {
-                        "text": "Узнать подробнее",
-                        "link": {
-                            "url": "#contacts"
-                        },
-                        "align": "center",
-                        "background_color": "#B8963E",
-                        "button_text_color": "#2B2620",
-                        "typography_typography": "custom",
-                        "typography_font_family": "Playfair Display",
-                        "typography_font_size": {
-                            "unit": "px",
-                            "size": 16
-                        },
-                        "typography_font_weight": "600"
+                        "_column_size": 50,
+                        "_inline_size": 50
                     },
-                    "elements": []
+                    "elements": [
+                        {
+                            "id": "btn_primary",
+                            "elType": "widget",
+                            "widgetType": "button",
+                            "settings": {
+                                "text": "Узнать подробнее",
+                                "link": {
+                                    "url": "#contacts"
+                                },
+                                "align": "center",
+                                "background_color": "#B8963E",
+                                "button_text_color": "#2B2620",
+                                "typography_typography": "custom",
+                                "typography_font_family": "Playfair Display",
+                                "typography_font_size": {
+                                    "unit": "px",
+                                    "size": 16
+                                },
+                                "typography_font_weight": "600"
+                            },
+                            "elements": []
+                        }
+                    ]
                 },
                 {
-                    "id": "btn_secondary",
-                    "elType": "widget",
-                    "widgetType": "button",
+                    "id": "btn_secondary_col",
+                    "elType": "column",
                     "settings": {
-                        "text": "Связаться с нами",
-                        "link": {
-                            "url": "#contacts"
-                        },
-                        "align": "center",
-                        "background_color": "transparent",
-                        "button_text_color": "#F5EFE3",
-                        "border_border": "solid",
-                        "border_width": {
-                            "unit": "px",
-                            "top": "1",
-                            "right": "1",
-                            "bottom": "1",
-                            "left": "1",
-                            "isLinked": true
-                        },
-                        "border_color": "rgba(245,239,227,0.4)",
-                        "typography_typography": "custom",
-                        "typography_font_family": "Playfair Display",
-                        "typography_font_size": {
-                            "unit": "px",
-                            "size": 16
-                        },
-                        "typography_font_weight": "500"
+                        "_column_size": 50,
+                        "_inline_size": 50
                     },
-                    "elements": []
+                    "elements": [
+                        {
+                            "id": "btn_secondary",
+                            "elType": "widget",
+                            "widgetType": "button",
+                            "settings": {
+                                "text": "Связаться с нами",
+                                "link": {
+                                    "url": "#contacts"
+                                },
+                                "align": "center",
+                                "background_color": "transparent",
+                                "button_text_color": "#F5EFE3",
+                                "border_border": "solid",
+                                "border_width": {
+                                    "unit": "px",
+                                    "top": "1",
+                                    "right": "1",
+                                    "bottom": "1",
+                                    "left": "1",
+                                    "isLinked": true
+                                },
+                                "border_color": "rgba(245,239,227,0.4)",
+                                "typography_typography": "custom",
+                                "typography_font_family": "Playfair Display",
+                                "typography_font_size": {
+                                    "unit": "px",
+                                    "size": 16
+                                },
+                                "typography_font_weight": "500"
+                            },
+                            "elements": []
+                        }
+                    ]
                 }
-            ],
-            "isInner": false
+            ]
         }
     ],
     "version": "4.1.3",

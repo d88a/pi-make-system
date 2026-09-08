@@ -13,8 +13,9 @@
  *   4. Link check         — link-check.js on dist/*.html
  *   5. HTML validity      — duplicate IDs, basic malformed checks
  *   6. A11Y               — a11y-check.js (SKIP if --skip-a11y)
- *   7. Designer review    — ADVISORY (SKIP if --skip-designer or no screenshots)
- *   8. FINAL GATE         — aggregate PASS/FAIL
+ *   7. Visual regression  — screenshot-diff.js --compare (SKIP if no baseline)
+ *   8. Designer review    — ADVISORY (SKIP if --skip-designer or no screenshots)
+ *   9. FINAL GATE         — aggregate PASS/FAIL
  *
  * Usage:
  *   node quality-gate.js <project-dir>
@@ -462,7 +463,62 @@ function stageA11y(projectDir, skipA11y) {
   };
 }
 
-// ── Stage 7: Designer review ────────────────────────────────────────────────
+// ── Stage 7: Visual regression ─────────────────────────────────────────────
+
+/**
+ * Run screenshot-diff.js --compare against an existing baseline.
+ * SKIP if no baseline manifest exists (user must run --baseline first).
+ */
+function stageVisual(projectDir, skipVisual) {
+  if (skipVisual) {
+    return { name: 'Visual', status: 'SKIP', details: 'Skipped via --skip-visual', violations: [] };
+  }
+
+  const manifest = path.join(projectDir, 'screenshots', 'baseline', 'manifest.json');
+  if (!fs.existsSync(manifest)) {
+    return { name: 'Visual', status: 'SKIP', details: 'No baseline — run screenshot-diff.js --baseline first', violations: [] };
+  }
+
+  const htmlFiles = findHtmlFiles(projectDir);
+  if (htmlFiles.length === 0) {
+    return { name: 'Visual', status: 'SKIP', details: 'No HTML files found', violations: [] };
+  }
+
+  const result = runScript('screenshot-diff.js', ['--compare', ...htmlFiles]);
+  if (result.code === -1) {
+    return { name: 'Visual', status: 'ERROR', details: 'screenshot-diff.js not found', violations: [] };
+  }
+
+  // screenshot-diff.js exit 0 = all pages within threshold, 1 = regression found.
+  if (result.code === 0) {
+    const changed = parseDiffSummary(result.stdout);
+    return { name: 'Visual', status: 'PASS', details: changed, violations: [] };
+  }
+
+  const changed = parseDiffSummary(result.stdout);
+  return {
+    name: 'Visual',
+    status: 'FAIL',
+    details: changed,
+    violations: [{ file: 'screenshots', line: 0, selector: '', problem: changed }],
+  };
+}
+
+/**
+ * Extract the human summary line from screenshot-diff.js output.
+ */
+function parseDiffSummary(stdout) {
+  const lines = stdout.split('\n').filter(Boolean);
+  // Look for a line like "RESULT: PASS" or "RESULT: FAIL (N page(s) changed)".
+  for (const line of lines) {
+    const m = line.match(/RESULT:\s*(.+)/i);
+    if (m) return m[1].trim();
+  }
+  // Fallback: last non-empty line.
+  return lines.length > 0 ? lines[lines.length - 1] : 'unknown';
+}
+
+// ── Stage 8: Designer review ────────────────────────────────────────────────
 
 function stageDesigner(projectDir, skipDesigner) {
   if (skipDesigner) {
@@ -542,7 +598,7 @@ function parseViolationsFromOutput(output) {
  * @returns {Promise<{ project: string, stages: StageResult[], final: 'PASS'|'FAIL' }>}
  */
 async function runQualityGate(projectDir, options = {}) {
-  const { skipDesigner = false, skipA11y = false } = options;
+  const { skipDesigner = false, skipA11y = false, skipVisual = false } = options;
 
   const stages = [];
 
@@ -564,10 +620,13 @@ async function runQualityGate(projectDir, options = {}) {
   // 6. A11Y
   stages.push(stageA11y(projectDir, skipA11y));
 
-  // 7. Designer
+  // 7. Visual regression
+  stages.push(stageVisual(projectDir, skipVisual));
+
+  // 8. Designer
   stages.push(stageDesigner(projectDir, skipDesigner));
 
-  // 8. Final gate
+  // 9. Final gate
   const blockingStages = stages.filter((s) => s.status === 'FAIL');
   const final = blockingStages.length > 0 ? 'FAIL' : 'PASS';
 
@@ -663,6 +722,7 @@ Arguments:
   <project-dir>       Path to the project directory (required).
   --skip-designer     Skip the designer review stage.
   --skip-a11y         Skip the a11y accessibility check.
+  --skip-visual       Skip the visual regression check.
   --json              Output report as JSON instead of text.
   --output <file>     Write report to a file.
   --help, -h          Show this help.
@@ -670,6 +730,7 @@ Arguments:
 Example:
   node quality-gate.js projects/maksplit
   node quality-gate.js projects/maksplit --skip-a11y --skip-designer
+  node quality-gate.js projects/maksplit --skip-visual
   node quality-gate.js projects/maksplit --json --output report.json`);
 }
 
@@ -685,6 +746,7 @@ if (require.main === module) {
     const projectDir = path.resolve(args[0]);
     const skipDesigner = args.includes('--skip-designer');
     const skipA11y = args.includes('--skip-a11y');
+    const skipVisual = args.includes('--skip-visual');
     const jsonMode = args.includes('--json');
 
     const outputIdx = args.indexOf('--output');
@@ -695,7 +757,7 @@ if (require.main === module) {
       process.exit(1);
     }
 
-    const { project, stages, final } = await runQualityGate(projectDir, { skipDesigner, skipA11y });
+    const { project, stages, final } = await runQualityGate(projectDir, { skipDesigner, skipA11y, skipVisual });
 
     if (jsonMode) {
       const report = buildJsonReport(stages, final, project);
@@ -718,4 +780,4 @@ if (require.main === module) {
   })();
 }
 
-module.exports = { runQualityGate, findHtmlFiles, findScreenshots, stageBuild, stageProjectModel, stageTokens, stageLinks, stageHtml, stageA11y, stageDesigner };
+module.exports = { runQualityGate, findHtmlFiles, findScreenshots, stageBuild, stageProjectModel, stageTokens, stageLinks, stageHtml, stageA11y, stageVisual, stageDesigner };
