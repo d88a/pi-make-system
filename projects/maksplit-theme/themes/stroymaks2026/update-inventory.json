@@ -1,0 +1,779 @@
+{
+  "meta": {
+    "created": "2026-07-26",
+    "project": "maksplit.ru",
+    "theme": "stroymaks2026",
+    "current_version": "v6-concrete-steel",
+    "target_version": "v8-dusty-slate",
+    "stage": "1-analysis",
+    "total_files_analyzed": 26,
+    "files_to_update": 5,
+    "files_to_rebuild": 21,
+    "total_files_affected": 26
+  },
+
+  "token_changes": {
+    "old_root": {
+      "primary": "#3B5F8A (Steel Blue)",
+      "primary_hover": "#2E4A6E",
+      "primary_active": "#1E3550",
+      "bg_page": "#F5F5F4 (warm stone)",
+      "bg_alt": "#E7E5E4",
+      "text_primary": "#1C1917",
+      "text_secondary": "#57534E",
+      "text_muted": "#57534E",
+      "border": "#D6D3D1",
+      "border_hover": "#57534E",
+      "radius": "4px/6px/12px/16px (sharp, multi-step)",
+      "fonts": "Space Grotesk (display) + Inter (body) + JetBrains Mono (mono)",
+      "gradients": "gradient-primary (#3B5F8A→#2E4A6E), gradient-steel (#78716C→#57534E→#44403C)",
+      "shadow_brand": "rgba(59,95,138,0.35)",
+      "design_language": "Industrial, sharp corners, border-2, steel beam divider, concrete texture, monospace numbers"
+    },
+    "new_root": {
+      "primary": "#32598f (Dusty Blue)",
+      "primary_hover": "#274a7c",
+      "bg_page": "#F8FAFC (cool slate)",
+      "bg_alt": "#F1F5F9",
+      "text_primary": "#0F172A",
+      "text_secondary": "#475569",
+      "text_muted": "#475569",
+      "border": "#E2E8F0",
+      "border_hover": "#CBD5E1",
+      "radius": "16px (uniform, soft, single var --radius)",
+      "fonts": "Playfair Display (display) + Source Serif 4 (body)",
+      "gradients": "gradient-subtle: linear-gradient(180deg, #F8FAFC, #F1F5F9)",
+      "shadow_brand": "rgba(50,89,143,0.35)",
+      "shadow_card": "0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03)",
+      "shadow_card_hover": "0 8px 24px -8px rgba(50,89,143,0.15)",
+      "design_language": "Friendly, editorial, asymmetric, rounded-2xl, hover-lift, border (not border-2), soft shadows, no steel divider"
+    },
+    "removed_tokens": [
+      "--color-primary-active",
+      "--color-text-inverse",
+      "--color-bg-inset",
+      "--color-warning",
+      "--color-border-accent-hover",
+      "--color-border-subtle",
+      "--gradient-primary",
+      "--gradient-steel",
+      "--product-white",
+      "--product-color",
+      "--transition-spring",
+      "--font-mono",
+      "--radius-sm",
+      "--radius-md",
+      "--radius-lg",
+      "--radius-xl",
+      "--shadow-elevated"
+    ],
+    "added_tokens": [
+      "--color-text-on-primary: #FFFFFF",
+      "--gradient-subtle",
+      "--radius: 16px (single var)"
+    ]
+  },
+
+  "files_to_update": [
+    {
+      "file": "functions.php",
+      "status": "update",
+      "priority": "P0-foundation",
+      "lines_estimate": "~80 edits across file",
+      "changes": [
+        {
+          "location": "lines 1-9 (docblock)",
+          "change": "Description: Concrete Steel → Dusty Slate, Steel Blue #3B5F8A → Dusty Blue #32598f, Space Grotesk+Inter → Playfair Display+Source Serif 4"
+        },
+        {
+          "location": "lines 70-78 (Google Fonts enqueue)",
+          "old": "wp_enqueue_style('stroymaks2026-fonts', 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap', [], null);",
+          "new": "wp_enqueue_style('stroymaks2026-fonts', 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600;8..60,700&display=swap', [], null);"
+        },
+        {
+          "location": "lines 88-95 (Tailwind CDN inline config)",
+          "old": "fontFamily:{display:['Space Grotesk','sans-serif'],body:['Inter','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','sans-serif'],mono:['JetBrains Mono','ui-monospace','monospace']}",
+          "new": "fontFamily:{display:[\"'Playfair Display'\",\"'Georgia'\",\"serif\"],body:[\"'Source Serif 4'\",\"'Georgia'\",\"serif\"]}"
+        },
+        {
+          "location": "lines 115-175 (:root CSS custom properties in stroymaks2026_root_css())",
+          "change": "Replace all 24 CSS vars with v8 18 vars. See token_changes above for exact mapping. Remove --color-bg-inset, --color-warning, --color-border-accent-hover, --color-border-subtle, --gradient-primary, --gradient-steel, --product-white, --product-color, --transition-spring, --font-mono, --radius-sm/md/lg/xl, --shadow-elevated. Add --color-text-on-primary, --gradient-subtle, --radius (single 16px). Change all color values per token_changes.new_root."
+        },
+        {
+          "location": "lines 178-183 (body base styles)",
+          "old": "body { font-family: var(--font-body); background: var(--color-bg-page); color: var(--color-text-primary); -webkit-font-smoothing: antialiased; }",
+          "new": "body { font-family: var(--font-body); background: var(--color-bg-page); color: var(--color-text-secondary); line-height: 1.7; -webkit-font-smoothing: antialiased; }"
+        },
+        {
+          "location": "lines 189-194 (.steel-divider)",
+          "change": "REMOVE .steel-divider rule entirely"
+        },
+        {
+          "location": "lines 207-217 (WC enquiry button — stroymaks2026_enquiry_button)",
+          "old": "rounded-md bg-[var(--color-primary)] px-6 py-4",
+          "new": "rounded-2xl bg-[var(--color-primary)] px-6 py-3.5"
+        },
+        {
+          "location": "lines 222-233 (WC loop enquiry button — stroymaks2026_loop_enquiry_button)",
+          "old": "rounded-md bg-[var(--color-primary)] px-4 py-2",
+          "new": "rounded-2xl border border-[var(--color-border)] px-4 py-2 text-[var(--color-text-secondary)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+        },
+        {
+          "location": "lines 260-264 (Customizer phone default)",
+          "old": "'+7 (35147) 1-23-45'",
+          "new": "'+7 982 341 69 70'"
+        },
+        {
+          "location": "lines 270-274 (Customizer email default)",
+          "old": "'info@maksplit.ru'",
+          "new": "'maksimdyd@gmail.com'"
+        },
+        {
+          "location": "lines 280-283 (Customizer address default)",
+          "old": "'г. Юрюзань, Челябинская обл., ул. Строителей, 15'",
+          "new": "'г. Юрюзань, Челябинская область, Катав-Ивановский район, ул. Тимирязева, 15а'"
+        },
+        {
+          "location": "lines 288-290 (Customizer hours defaults)",
+          "change": "Keep as-is, but note: v8 doesn't show hours in footer, only in contacts page"
+        },
+        {
+          "location": "lines 373-380 (Nav Walker — desktop font classes)",
+          "old": "font-body text-sm font-medium text-[var(--color-text-secondary)]",
+          "new": "text-sm font-medium text-[var(--color-text-secondary)] (style='font-family: var(--font-body);')"
+        },
+        {
+          "location": "lines 420-427 (Mobile Nav Walker — mobile font classes)",
+          "old": "rounded-md px-3 py-2.5 font-body text-sm",
+          "new": "rounded-2xl px-4 py-3 text-sm (style='font-family: var(--font-body);')"
+        }
+      ]
+    },
+    {
+      "file": "tailwind/tailwind.config.js",
+      "status": "update",
+      "priority": "P0-foundation",
+      "lines_estimate": "~15 edits",
+      "changes": [
+        {
+          "location": "colors.primary",
+          "old": "#3B5F8A",
+          "new": "#32598f"
+        },
+        {
+          "location": "colors.primary-hover",
+          "old": "#2E4A6E",
+          "new": "#274a7c"
+        },
+        {
+          "location": "colors.primary-active",
+          "change": "REMOVE"
+        },
+        {
+          "location": "fontFamily.display",
+          "old": "['Space Grotesk', 'sans-serif']",
+          "new": "[\"'Playfair Display'\", \"'Georgia'\", \"serif\"]"
+        },
+        {
+          "location": "fontFamily.body",
+          "old": "['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']",
+          "new": "[\"'Source Serif 4'\", \"'Georgia'\", \"serif\"]"
+        },
+        {
+          "location": "fontFamily.mono",
+          "change": "REMOVE"
+        },
+        {
+          "location": "borderRadius",
+          "old": "{ sm: '4px', md: '6px', lg: '12px', xl: '16px' }",
+          "new": "{ DEFAULT: '16px' }"
+        },
+        {
+          "location": "transitionTimingFunction",
+          "change": "Keep smooth + spring, remove spring if unused"
+        }
+      ]
+    },
+    {
+      "file": "tailwind/input.css",
+      "status": "update",
+      "priority": "P0-foundation",
+      "lines_estimate": "~50 edits across file",
+      "changes": [
+        {
+          "location": "@layer base — body font",
+          "old": "font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;",
+          "new": "font-family: 'Source Serif 4', 'Georgia', serif;"
+        },
+        {
+          "location": "@layer base — headings",
+          "old": "font-family: 'Space Grotesk', sans-serif;",
+          "new": "font-family: 'Playfair Display', 'Georgia', serif;"
+        },
+        {
+          "location": "@layer base — code/pre",
+          "change": "REMOVE (no mono font in v8)"
+        },
+        {
+          "location": "@layer components — WC product grid li.product",
+          "old": "rounded-lg border-2 border-[var(--color-border)]",
+          "new": "rounded-2xl border border-[var(--color-border)] (border-radius: var(--radius);)"
+        },
+        {
+          "location": "@layer components — WC product grid li.product:hover",
+          "old": "border-[var(--color-border-accent-hover)]; box-shadow: var(--shadow-card-hover); transform: translateY(-2px);",
+          "new": "border-[var(--color-border-hover)]; box-shadow: var(--shadow-card-hover); transform: translateY(-2px);"
+        },
+        {
+          "location": "@layer components — WC tabs ul.tabs",
+          "old": "border-b-2 border-[var(--color-border)]",
+          "new": "border-b border-[var(--color-border)]"
+        },
+        {
+          "location": "@layer components — WC tabs li",
+          "old": "border-bottom: 2px solid transparent; margin-bottom: -2px;",
+          "new": "border-bottom: 2px solid transparent; margin-bottom: -1px;"
+        },
+        {
+          "location": "@layer components — WC breadcrumb, pagination, result count, ordering select",
+          "change": "All border-2 → border, rounded-md → rounded-2xl, color references stay through CSS vars (auto-updated)"
+        },
+        {
+          "location": "@layer components — .stroymaks-enquiry-btn",
+          "old": "rounded-md bg-[var(--color-primary)]",
+          "new": "rounded-2xl border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+        },
+        {
+          "location": "@layer components — CF7 forms input/textarea/select",
+          "old": "border-2 rounded-md",
+          "new": "border rounded-2xl (border-radius: var(--radius);)"
+        },
+        {
+          "location": "@layer components — CF7 forms .wpcf7-submit",
+          "old": "rounded-md bg-[var(--color-primary)]",
+          "new": "rounded-2xl bg-[var(--color-primary)]"
+        },
+        {
+          "location": "@layer components — CF7 on accent bg (bg-[var(--color-primary)])",
+          "change": "This section is for OLD lead-form (accent bg). v8 lead-form is on white bg. Keep for potential future use, but v8 lead-form uses different styling."
+        },
+        {
+          "location": "@layer components — .steel-divider",
+          "change": "REMOVE (no steel beam in v8)"
+        }
+      ]
+    },
+    {
+      "file": "style.css",
+      "status": "update",
+      "priority": "P0-foundation",
+      "lines_estimate": "~5 edits",
+      "changes": [
+        {
+          "location": "Description",
+          "old": "Concrete Steel дизайн-система, Steel Blue #3B5F8A акцент.",
+          "new": "Dusty Slate дизайн-система, Dusty Blue #32598f акцент. Playfair Display + Source Serif 4."
+        },
+        {
+          "location": "Tags",
+          "old": "concrete-steel, industrial, one-column",
+          "new": "dusty-slate, friendly, editorial, one-column"
+        },
+        {
+          "location": "Version",
+          "old": "1.0.0",
+          "new": "2.0.0"
+        }
+      ]
+    },
+    {
+      "file": "assets/js/main.js",
+      "status": "update",
+      "priority": "P1-front-page",
+      "lines_estimate": "~10 edits",
+      "changes": [
+        {
+          "location": "docblock",
+          "old": "Concrete Steel design system. Steel Blue #3B5F8A accent.",
+          "new": "Dusty Slate design system. Dusty Blue #32598f accent."
+        },
+        {
+          "location": "initScrollReveal — transition timing",
+          "change": "v6 uses 500ms, v8 uses 600ms. Update CSS transition durations in reveal styles."
+        },
+        {
+          "location": "initScrollReveal — rootMargin",
+          "old": "'0px 0px -50px 0px'",
+          "new": "'0px 0px -50px 0px' (keep same)"
+        },
+        {
+          "location": "Add mobile menu close-on-link-click handler",
+          "change": "v8 header has mobile menu close-on-link in inline script. Add to main.js for consistency."
+        }
+      ]
+    }
+  ],
+
+  "files_to_rebuild_from_v8": [
+    {
+      "file": "header.php",
+      "source": "home-v8.html <header> (lines ~110-170)",
+      "priority": "P0-foundation",
+      "key_changes": [
+        "border-b-2 → border-b",
+        "Logo SVG: 3-bar concrete icon → rounded square with plus icon",
+        "rounded-md → rounded-2xl everywhere",
+        "font-display/font-body → inline style='font-family: var(--font-display/body);'",
+        "Mobile menu: rounded-md → rounded-2xl, adds close icon toggle, adds 'Рассчитать стоимость' CTA in mobile",
+        "Nav links: 5 items (Главная, Каталог, О компании, Доставка, Контакты, Калькулятор)",
+        "Phone: removed from desktop nav (v8 doesn't show phone in header)",
+        "CTA button: sm:inline-flex (hidden on mobile in v8, shown in mobile menu instead)"
+      ]
+    },
+    {
+      "file": "footer.php",
+      "source": "home-v8.html <footer> (lines ~700-780)",
+      "priority": "P0-foundation",
+      "key_changes": [
+        "3-col → 4-col grid (brand + nav + catalog + contacts)",
+        "No steel-divider",
+        "No WC product categories — static 5 categories (Брусчатка, Плитка, Бордюры, Памятники, Эко-парковка)",
+        "Real contacts: Тимирязева 15а, +7 982 341 69 70, maksimdyd@gmail.com",
+        "Adds 'Принимаем заказы' badge with green dot",
+        "No legal links (privacy/terms) — removed in v8",
+        "Copyright: 2024–2026 (not 2015–2026)",
+        "No 'Сделано в Юрюзани' tagline",
+        "border-t-2 → border-t"
+      ]
+    },
+    {
+      "file": "front-page.php",
+      "source": "home-v8.html (entire file, 755 lines)",
+      "priority": "P1-front-page",
+      "key_changes": [
+        "Sections order: hero → features → categories → popular products → texture/stats → lead CTA",
+        "New section: Texture/Stats section (кевларобетон в цифрах) with dark overlay on image",
+        "Lead form: accent bg → white bg with border, 5 fields (name, phone, email, product type, comment)",
+        "Popular products: 6 static products (v6 used WC loop)",
+        "Categories: 4 static categories with images (v6 used WC terms)",
+        "Features: 4 icon-only cards (v6 used mixed number+icon)",
+        "Hero: asymmetric 60/40 with trust indicators (v6 had 3/5+2/5 with stats cards)",
+        "All sections use rounded-2xl, border (not border-2), hover-lift class"
+      ]
+    },
+    {
+      "file": "template-parts/hero.php",
+      "source": "home-v8.html <section id='home'> hero section",
+      "priority": "P1-front-page",
+      "key_changes": [
+        "Layout: min-h-[600px] lg:min-h-[70vh] flex items-center",
+        "Asymmetric: text 3/5 + image 2/5 (v6 had 3/5+2/5 but with stats cards)",
+        "No stats cards in right column (v6 had stats cards)",
+        "Adds trust indicators: 'Кевларобетон — прочность В45', 'Доставка по всей России'",
+        "Badge: rounded-2xl bg-primary-subtle pill",
+        "Title: multi-line with <span class='text-primary'> for accent word",
+        "CTA: Рассчитать стоимость + Смотреть каталог (v6 had Каталог as secondary)",
+        "Image: rounded-2xl with ring-1 inset, shadow-brand, object-cover",
+        "No stats bar at bottom (v6 had 3-column stats bar)",
+        "Grid pattern (not concrete texture)"
+      ]
+    },
+    {
+      "file": "template-parts/features.php",
+      "source": "home-v8.html <section id='about'> features section",
+      "priority": "P1-front-page",
+      "key_changes": [
+        "4 icon-only cards (v6 had 4 mixed number+icon cards)",
+        "Each card: icon circle in primary-subtle bg → title → description",
+        "No number cards (01, 04)",
+        "No accent-bar animation",
+        "hover-lift class (translateY(-2px) + shadow on hover)",
+        "Cards: rounded-2xl border (not border-2)",
+        "Icons: different SVG set (shield, grid, sun, truck)"
+      ]
+    },
+    {
+      "file": "template-parts/category-grid.php",
+      "source": "home-v8.html <section id='catalog'> categories section",
+      "priority": "P1-front-page",
+      "key_changes": [
+        "4 static categories with images (v6 used WC get_terms())",
+        "Each card: aspect-[4/3] image → title + count",
+        "No icon circles (v6 had icon circles)",
+        "Images: object-cover with hover:scale-105",
+        "Памятники: gradient placeholder instead of image",
+        "rounded-2xl overflow-hidden (v6 had rounded-lg with icon)"
+      ]
+    },
+    {
+      "file": "template-parts/lead-form.php",
+      "source": "home-v8.html <section id='cta'> lead form section",
+      "priority": "P1-front-page",
+      "key_changes": [
+        "Layout: text 2/5 + form 3/5 (v6 was centered on accent bg)",
+        "Background: bg-page (white) not accent bg",
+        "Form: 5 fields (name, phone, email, product type select, comment)",
+        "Form style: rounded-2xl border bg-surface (v6 was accent bg with glass)",
+        "Adds checkmark list (3 benefits)",
+        "Submit: rounded-2xl bg-primary (v6 was white on accent bg)",
+        "Success message: emerald bg (v6 was white/glass)",
+        "No volume field (v6 had m²)",
+        "Product type select: 5 options (Брусчатка, Плитка, Бордюры, Памятники, Другое)"
+      ]
+    },
+    {
+      "file": "template-parts/product-card.php",
+      "source": "catalog.html product cards + home-v8.html popular products",
+      "priority": "P1-front-page",
+      "key_changes": [
+        "rounded-md → rounded-2xl",
+        "border-2 → border",
+        "font-display → inline style (font-family: var(--font-display))",
+        "font-body → inline style (font-family: var(--font-body))",
+        "Price color: text-primary → text-primary (v8 uses #32598f for price)",
+        "CTA button: bg-primary → border + text hover (secondary style)",
+        "Photo container: bg-page → bg-alt",
+        "No category badge inline (v8 product cards don't show category badge)",
+        "hover-lift class"
+      ]
+    },
+    {
+      "file": "page-about.php",
+      "source": "about.html (678 lines)",
+      "priority": "P2-page-templates",
+      "key_changes": [
+        "Complete restructure to v8 about.html layout",
+        "ГОСТ-таблица: 6 rows (прочность, морозостойкость, водопоглощение, истираемость, плотность, класс бетона)",
+        "Sections: hero → GOST table → production → timeline → advantages → lead CTA",
+        "v6 had: hero → stats → timeline → advantages → process → lead CTA",
+        "New: GOST table with checkmarks, production process with images",
+        "Timeline: simplified (v6 had 5 events, v8 has 4)",
+        "All section backgrounds: alternating bg-page/bg-alt",
+        "rounded-2xl, border (not border-2)"
+      ]
+    },
+    {
+      "file": "page-contacts.php",
+      "source": "contacts.html (516 lines)",
+      "priority": "P2-page-templates",
+      "key_changes": [
+        "v6 had: info grid (4 cards) + map + lead form",
+        "v8 has: hero + info cards (3 cards: address, phone, email) + Google Maps iframe + requisites + lead form",
+        "Adds requisites section (ИП, ИНН, ОГРН)",
+        "Map: Google Maps (not Yandex)",
+        "Real address: Тимирязева 15а",
+        "Real phone: +7 982 341 69 70",
+        "Real email: maksimdyd@gmail.com"
+      ]
+    },
+    {
+      "file": "page-delivery.php",
+      "source": "delivery.html (442 lines)",
+      "priority": "P2-page-templates",
+      "key_changes": [
+        "v6 had: options + payment + coverage + FAQ",
+        "v8 has: hero + 3 TK cards (КИТ, ЛУЧ, СДЭК) + payment + coverage map + lead CTA",
+        "3 TK cards with logos/names",
+        "Payment: наличный/безналичный расчёт",
+        "Coverage: вся Россия",
+        "No FAQ accordion (v6 had FAQ)"
+      ]
+    },
+    {
+      "file": "page-calculator.php",
+      "source": "calculator.html (700 lines, 6 categories, dynamic fields)",
+      "priority": "P2-page-templates",
+      "key_changes": [
+        "v6 had: simple form (name, phone, volume, comment) + sidebar",
+        "v8 has: 6 product categories as tabs, each with dynamic fields",
+        "JS PRODUCTS array: inline data for 6 categories with real prices",
+        "Dynamic fields: area (m²), thickness, color, edge processing",
+        "Total calculation: area × price per m²",
+        "Lead form: name + phone + email + comment",
+        "JS logic: ~200 lines of calculator logic",
+        "Decision: keep JS inline in page-calculator.php OR move to assets/js/main.js",
+        "Risk: real WC products vs static JS array — should use WC for dynamic but keep static fallback"
+      ]
+    },
+    {
+      "file": "woocommerce/single-product.php",
+      "source": "product.html (782 lines, universal ?slug=)",
+      "priority": "P3-woocommerce",
+      "key_changes": [
+        "Currently uses template-parts/product-detail.php (complex custom layout)",
+        "v8 product.html has: gallery (object-contain) + info (title, price, color swatches, characteristics, CTA, related)",
+        "Color swatches: v8 uses color circles with names (Серый, Коричневый, etc.)",
+        "Characteristics: v8 shows as bullet list, not table",
+        "Related products: v8 shows 4 cards in grid",
+        "CTA: Рассчитать стоимость + Позвонить (same as v6)",
+        "rounded-2xl, border (not border-2)"
+      ]
+    },
+    {
+      "file": "woocommerce/archive-product.php",
+      "source": "catalog.html (763 lines, 22 products, 4 filter tabs)",
+      "priority": "P3-woocommerce",
+      "key_changes": [
+        "v6 filter: category pills from WC terms",
+        "v8 filter: 4 static tabs (Все, Брусчатка, Плитка, Бордюры/водостоки, Памятники)",
+        "v8 has 22 static products, v6 uses WC loop",
+        "Keep WC loop but style cards as v8",
+        "Grid: 1→2→3→4 columns (v6), v8: 1→2→3→4",
+        "rounded-2xl, border (not border-2)",
+        "Product count: 22 products (v8 static), v6 dynamic from WC"
+      ]
+    },
+    {
+      "file": "woocommerce/content-product.php",
+      "source": "catalog.html product cards",
+      "priority": "P3-woocommerce",
+      "key_changes": [
+        "Currently wraps template-parts/product-card.php",
+        "Keep structure but product-card.php will be updated to v8 style",
+        "data-category attribute for JS filtering (keep)"
+      ]
+    },
+    {
+      "file": "template-parts/product-detail.php",
+      "source": "product.html single product layout",
+      "priority": "P3-woocommerce",
+      "key_changes": [
+        "Gallery: rounded-lg border-2 → rounded-2xl border",
+        "Thumbnails: rounded-lg → rounded-2xl",
+        "Title: font-display text-5xl (keep, but font changes)",
+        "Color swatches: rounded-lg → rounded-2xl, border-2 → border",
+        "Characteristics table: rounded-lg border-2 → rounded-2xl border",
+        "CTA buttons: rounded-md → rounded-2xl",
+        "Category badge: rounded-sm → rounded-2xl"
+      ]
+    },
+    {
+      "file": "woocommerce/loop/add-to-cart.php",
+      "source": "catalog.html product card CTA",
+      "priority": "P3-woocommerce",
+      "key_changes": [
+        "Calls stroymaks2026_loop_enquiry_button()",
+        "Button style updated in functions.php (see files_to_update)"
+      ]
+    },
+    {
+      "file": "woocommerce/single-product/price.php",
+      "source": "product.html price display",
+      "priority": "P3-woocommerce",
+      "key_changes": [
+        "v8 uses text-primary (#32598f) for price, not text-primary (#0F172A)",
+        "font-mono → font-body (no monospace in v8)",
+        "rounded-2xl container"
+      ]
+    },
+    {
+      "file": "woocommerce/single-product/title.php",
+      "source": "product.html product title",
+      "priority": "P3-woocommerce",
+      "key_changes": [
+        "font-display (Playfair Display) for title",
+        "text-5xl font-bold tracking-tight"
+      ]
+    },
+    {
+      "file": "woocommerce/single-product/product-image.php",
+      "source": "product.html gallery",
+      "priority": "P3-woocommerce",
+      "key_changes": [
+        "object-contain (ТРЕБОВАНИЕ владельца)",
+        "rounded-2xl border",
+        "aspect-square container"
+      ]
+    },
+    {
+      "file": "woocommerce/single-product/add-to-cart/variable.php",
+      "source": "product.html color swatches",
+      "priority": "P3-woocommerce",
+      "key_changes": [
+        "Color swatches: rounded-2xl border, hover:border-primary",
+        "No add-to-cart button (catalog mode)",
+        "Price display: dynamic update on swatch click"
+      ]
+    }
+  ],
+
+  "execution_order": {
+    "wave_0_analysis": "THIS STAGE — complete",
+    "wave_1_foundation": {
+      "label": "P0-foundation",
+      "files": [
+        "functions.php",
+        "tailwind/tailwind.config.js",
+        "tailwind/input.css",
+        "style.css",
+        "header.php",
+        "footer.php"
+      ],
+      "description": "Token system, fonts, colors, nav, footer. After this wave, site loads with v8 design system but old page layouts.",
+      "estimated_edits": "~200 lines across 6 files"
+    },
+    "wave_2_front_page": {
+      "label": "P1-front-page+template-parts",
+      "files": [
+        "front-page.php",
+        "template-parts/hero.php",
+        "template-parts/features.php",
+        "template-parts/category-grid.php",
+        "template-parts/lead-form.php",
+        "template-parts/product-card.php",
+        "assets/js/main.js"
+      ],
+      "description": "Homepage + all shared components. After this wave, homepage matches home-v8.html.",
+      "estimated_edits": "~400 lines across 7 files"
+    },
+    "wave_3_page_templates": {
+      "label": "P2-page-templates",
+      "files": [
+        "page-about.php",
+        "page-contacts.php",
+        "page-delivery.php",
+        "page-calculator.php"
+      ],
+      "description": "4 static page templates. After this wave, all info pages match v8.",
+      "estimated_edits": "~600 lines across 4 files"
+    },
+    "wave_4_woocommerce": {
+      "label": "P3-woocommerce",
+      "files": [
+        "woocommerce/single-product.php",
+        "woocommerce/archive-product.php",
+        "woocommerce/content-product.php",
+        "woocommerce/loop/add-to-cart.php",
+        "template-parts/product-detail.php",
+        "woocommerce/single-product/price.php",
+        "woocommerce/single-product/title.php",
+        "woocommerce/single-product/product-image.php",
+        "woocommerce/single-product/add-to-cart/variable.php"
+      ],
+      "description": "WooCommerce overrides + product templates. After this wave, catalog and product pages match v8.",
+      "estimated_edits": "~300 lines across 9 files"
+    },
+    "wave_5_tailwind_rebuild": {
+      "label": "P4-tailwind-rebuild",
+      "files": [
+        "assets/css/tailwind.css"
+      ],
+      "description": "Rebuild Tailwind CSS from updated config + input.css. Verify build succeeds.",
+      "estimated_edits": "0 (build command)"
+    }
+  },
+
+  "risks": [
+    {
+      "id": "R1",
+      "severity": "high",
+      "description": "WC product loop vs static product.html",
+      "detail": "v8 catalog.html has 22 static hardcoded products. In WP, products come from WC DB. The archive-product.php must use WC loop (dynamic) but style cards identically to v8 static cards. Product data (images, prices, descriptions) must be in WC DB.",
+      "mitigation": "Keep WC loop in archive-product.php. Update template-parts/product-card.php to v8 visual style. WC products must be populated in WP admin before wave_4."
+    },
+    {
+      "id": "R2",
+      "severity": "high",
+      "description": "Calculator JS — 6 categories with inline PRODUCTS array",
+      "detail": "v8 calculator.html has ~200 lines of JS with a hardcoded PRODUCTS array (6 categories, real prices). In WP, this could be (a) inline JS in page-calculator.php, (b) moved to assets/js/main.js with wp_localize_script() for dynamic prices, or (c) kept as static array.",
+      "mitigation": "Recommendation: keep inline JS in page-calculator.php for simplicity. If WC products exist, load prices via wp_localize_script(). Fallback: static PRODUCTS array."
+    },
+    {
+      "id": "R3",
+      "severity": "medium",
+      "description": "Template-parts must be updated atomically",
+      "detail": "front-page.php uses 4 template-parts (hero, features, category-grid, lead-form). If one is updated and others not, page will look broken. All 4 must be updated in same wave.",
+      "mitigation": "Wave 2 (P1-front-page) updates all 4 template-parts + front-page.php + product-card.php together."
+    },
+    {
+      "id": "R4",
+      "severity": "medium",
+      "description": "Category grid: static vs WC terms",
+      "detail": "v6 category-grid.php uses WC get_terms() for dynamic categories. v8 home-v8.html has 4 static categories with hardcoded images. Decision: keep dynamic (WC terms) but add fallback images.",
+      "mitigation": "Keep WC get_terms() in category-grid.php. Add Customizer fields for category images. Fallback: v8 static images if no WC terms configured."
+    },
+    {
+      "id": "R5",
+      "severity": "medium",
+      "description": "Footer: static categories vs WC terms",
+      "detail": "v6 footer.php uses WC get_terms() for footer catalog links. v8 footer has 5 static links (Брусчатка, Плитка, Бордюры, Памятники, Эко-парковка). Decision: use static v8 links (real categories).",
+      "mitigation": "Hardcode 5 category links in footer.php matching v8. These are the real product categories."
+    },
+    {
+      "id": "R6",
+      "severity": "low",
+      "description": "No JetBrains Mono in v8",
+      "detail": "v6 uses JetBrains Mono for prices, stats numbers, tabular-nums. v8 has no monospace font. Prices and numbers use font-body (Source Serif 4).",
+      "mitigation": "Remove all font-mono references. Replace with font-body or font-display as appropriate per v8."
+    },
+    {
+      "id": "R7",
+      "severity": "low",
+      "description": "Steel beam divider removed",
+      "detail": "v6 uses .steel-divider (3px gradient bar) as brand signature. v8 has no divider. Removing it changes visual identity.",
+      "mitigation": "Remove .steel-divider from functions.php, tailwind/input.css, and all PHP templates. Replace with simple border-t where needed."
+    },
+    {
+      "id": "R8",
+      "severity": "low",
+      "description": "border-2 → border everywhere",
+      "detail": "v6 uses border-2 (2px) consistently. v8 uses border (1px). This is a global change affecting 50+ class strings across all files.",
+      "mitigation": "Systematic find-and-replace: border-2 → border in all .php files. Verify no unintended changes."
+    },
+    {
+      "id": "R9",
+      "severity": "low",
+      "description": "rounded-md → rounded-2xl everywhere",
+      "detail": "v6 uses rounded-md (6px), rounded-lg (12px). v8 uses rounded-2xl (16px) consistently. Global find-and-replace needed.",
+      "mitigation": "Systematic find-and-replace: rounded-md → rounded-2xl, rounded-lg → rounded-2xl in all .php files. Verify no unintended changes."
+    }
+  ],
+
+  "real_data_d134": {
+    "categories": [
+      "Брусчатка тротуарная (9 видов)",
+      "Тротуарная плитка (7 видов)",
+      "Бордюры и водостоки (3 вида)",
+      "Памятники из бетона (3 вида)",
+      "Эко-парковка (1 вид)"
+    ],
+    "total_products": 22,
+    "gost_stats": {
+      "Прочность на сжатие": "600 кг/см² (класс В45)",
+      "Морозостойкость": "F700 (в 3,5× выше нормы F200)",
+      "Водопоглощение": "0,5% (в 10× ниже нормы 5%)",
+      "Истираемость": "0,4 г/см²",
+      "Плотность": "2 400 кг/м³",
+      "Класс бетона": "В45"
+    },
+    "contacts": {
+      "address": "г. Юрюзань, Челябинская область, Катав-Ивановский район, ул. Тимирязева, 15а",
+      "phone": "+7 982 341 69 70",
+      "email": "maksimdyd@gmail.com",
+      "hours": "Пн-Пт: 8:00–18:00, Сб: 9:00–15:00"
+    },
+    "delivery": [
+      {"name": "КИТ", "description": "Транспортная компания КИТ"},
+      {"name": "ЛУЧ", "description": "Транспортная компания ЛУЧ"},
+      {"name": "СДЭК", "description": "Курьерская служба СДЭК"}
+    ],
+    "pricing": "от 850 ₽/м²"
+  },
+
+  "class_migration_map": {
+    "global_replacements": [
+      {"find": "border-2", "replace": "border", "note": "Everywhere except where explicitly needed"},
+      {"find": "rounded-md", "replace": "rounded-2xl", "note": "Buttons, cards, form inputs"},
+      {"find": "rounded-lg", "replace": "rounded-2xl", "note": "Cards, containers"},
+      {"find": "rounded-sm", "replace": "rounded-2xl", "note": "Badges, pills"},
+      {"find": "font-mono", "replace": "font-body", "note": "No monospace in v8"},
+      {"find": "tabular-nums", "replace": "", "note": "Remove — no monospace numbers"},
+      {"find": "font-display", "replace": "style='font-family: var(--font-display);'", "note": "v8 uses inline style for fonts, not Tailwind classes"},
+      {"find": "font-body", "replace": "style='font-family: var(--font-body);'", "note": "v8 uses inline style for fonts"},
+      {"find": "border-[var(--color-border-accent-hover)]", "replace": "border-[var(--color-border-hover)]", "note": "Token removed"},
+      {"find": "border-[var(--color-border-subtle)]", "replace": "border-[var(--color-border)]", "note": "Token removed"},
+      {"find": "shadow-[var(--shadow-elevated)]", "replace": "shadow-[var(--shadow-card-hover)]", "note": "Token removed"},
+      {"find": "steel-divider", "replace": "border-t border-[var(--color-border)]", "note": "Steel beam removed, use simple border"}
+    ]
+  }
+}

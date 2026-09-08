@@ -1,0 +1,84 @@
+[
+  {
+    "id": "hero_main",
+    "elType": "container",
+    "settings": {
+      "container_type": "grid",
+      "grid_columns_grid": {"unit": "fr", "size": "1"},
+      "grid_rows_grid": {"unit": "fr", "size": "1"},
+      "grid_rows_grid_mobile": {"unit": "fr", "size": "1"},
+      "background_background": "classic",
+      "background_color": "#2F4A33",
+      "padding": {"unit": "px", "top": "150", "right": "40", "bottom": "150", "left": "40", "isLinked": false}
+    },
+    "elements": [
+      {
+        "id": "hero_title",
+        "elType": "widget",
+        "settings": {
+          "title": {
+            "$$type": "html-v3",
+            "value": {
+              "content": {
+                "$$type": "string",
+                "value": "<h1 style=\"color:#F5EFE3; font-size:48px; text-align:center; margin-bottom:20px;\">Проект возрождения усадьбы «Барышня-крестьянка»</h1>"
+              },
+              "children": []
+            }
+          },
+          "link": {"$$type": "link", "value": {"isTargetBlank": null}}
+        },
+        "elements": [],
+        "widgetType": "e-heading",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_subtitle",
+        "elType": "widget",
+        "settings": {
+          "editor": "<p style=\"text-align:center; color:#F5EFE3; font-style:italic; font-size:24px; margin-bottom:20px;\">Возвращение жизни в родовое гнездо на тамбовской земле.</p>"
+        },
+        "elements": [],
+        "widgetType": "text-editor",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_desc",
+        "elType": "widget",
+        "settings": {
+          "editor": "<p style=\"text-align:center; color:#F5EFE3; max-width:700px; margin:20px auto;\">Ищем партнёров, разделяющих наши ценности, для совместного создания устойчивого семейного поместья и культурно-исторического центра.</p>"
+        },
+        "elements": [],
+        "widgetType": "text-editor",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_btn",
+        "elType": "widget",
+        "settings": {
+          "text": {"$$type": "string", "value": "Узнать подробнее"},
+          "link": {"$$type": "link", "value": {"url": "#contacts", "isTargetBlank": null}},
+          "align": "center",
+          "background_color": "#B8963E",
+          "button_text_color": "#2B2620"
+        },
+        "elements": [],
+        "widgetType": "e-button",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      }
+    ],
+    "isInner": false
+  }
+]

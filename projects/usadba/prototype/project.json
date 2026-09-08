@@ -1,0 +1,39 @@
+{
+  "name": "Усадьба «Барышня-крестьянка»",
+  "created": "2026-08-20",
+  "status": {
+    "style": "done",
+    "components": "done",
+    "review": "pending",
+    "pages": { "index": "done" }
+  },
+  "pages": ["index"],
+  "components": ["header", "hero", "about", "history", "heritage-grid", "mission", "partners", "visit", "contacts-form", "footer"],
+  "brand": {
+    "colors": ["#2F4A33", "#B0603F", "#B8963E", "#F5EFE3", "#FAF6EC", "#2B2620"],
+    "fonts": ["Playfair Display", "Open Sans"]
+  },
+  "mood": "premium / heritage",
+  "layout_pattern": "Full-Bleed Product Showcase (hero full-image → content → gallery → content → cta → footer)",
+  "palette_pattern": "custom из ТЗ (структурный аналог: Earth Architecture / Warm Editorial Cream)",
+  "decisions": [
+    "D-004: Кастомная дворянская тема — зелёный/терракота/золото/бежевый, Playfair Display + Open Sans (оверрайд Inter)",
+    "Острые/малые радиусы карточек вместо rounded-2xl — историческая эстетика, обосновано темой",
+    "Золото ≤5% площади: только разделители, рамки, hover, декор",
+    "Signature: золотые divider'ы (линия-ромб-линия) + винтажные двойные рамы с tilt-эффектом",
+    "Paper texture через SVG feTurbulence (opacity 0.035), без тяжёлых картинок",
+    "Форма action=send.php — заготовка под WP-бэкенд",
+    "Яндекс.Карта — placeholder-блок, реальный iframe при WP-сборке"
+  ],
+  "rejected": [
+    "Стандартные темы design-system (modern-clean/warm-minimal/bold-tech) — ТЗ задаёт кастомную палитру",
+    "Gradient buttons, heavy shadows, rounded-2xl карточки — не соответствуют heritage-стилю"
+  ],
+  "todo": [
+    "Реальные фото от заказчика (заменить placehold.co)",
+    "Реальный логотип/герб вместо SVG-плейсхолдера",
+    "Яндекс.Метрика счётчик",
+    "Яндекс.Карта iframe",
+    "Бэкенд формы (send.php / WPForms)"
+  ]
+}

@@ -1,0 +1,202 @@
+{
+    "content": [
+        {
+            "id": "m1",
+            "elType": "section",
+            "settings": {
+                "background_background": "classic",
+                "background_color": "#2F4A33",
+                "padding": {
+                    "unit": "px",
+                    "top": "112",
+                    "right": "16",
+                    "bottom": "0",
+                    "left": "16",
+                    "isLinked": false
+                },
+                "gap": "no"
+            },
+            "elements": [
+                {
+                    "id": "m1c",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 100
+                    },
+                    "elements": [
+                        {
+                            "id": "mt",
+                            "elType": "widget",
+                            "widgetType": "heading",
+                            "settings": {
+                                "title": "Наша миссия",
+                                "header_size": "h2",
+                                "align": "center",
+                                "title_color": "#F5EFE3",
+                                "typography_typography": "custom",
+                                "typography_font_family": "Playfair Display",
+                                "typography_font_size": {
+                                    "unit": "px",
+                                    "size": 48
+                                },
+                                "typography_font_weight": "700"
+                            },
+                            "elements": []
+                        },
+                        {
+                            "id": "md",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "<p style=\"text-align:center; color:#B8963E; margin-top:32px;\">✧<\/p>"
+                            },
+                            "elements": []
+                        },
+                        {
+                            "id": "mtx",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "<p style=\"text-align:center; max-width:768px; margin:32px auto 0; font-size:24px; font-style:italic; line-height:1.6; color:#F5EFE3;\">Мы создаём не просто восстановленный объект наследия — мы формируем живую территорию, где история, сельское хозяйство и современное развитие объединяются.<\/p>"
+                            },
+                            "elements": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "m2",
+            "elType": "section",
+            "settings": {
+                "background_background": "classic",
+                "background_color": "#2F4A33",
+                "padding": {
+                    "unit": "px",
+                    "top": "56",
+                    "right": "16",
+                    "bottom": "112",
+                    "left": "16",
+                    "isLinked": false
+                },
+                "gap": "no",
+                "column_gap": {
+                    "unit": "px",
+                    "size": "16"
+                }
+            },
+            "elements": [
+                {
+                    "id": "st1",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 25
+                    },
+                    "elements": [
+                        {
+                            "id": "st1n",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "<p style=\"font-family:Playfair Display,Georgia,serif; font-size:30px; font-weight:700; color:#B8963E; text-align:center;\">1702<\/p>"
+                            },
+                            "elements": []
+                        },
+                        {
+                            "id": "st1l",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "<p style=\"font-size:14px; color:#F5EFE3; text-align:center; margin-top:8px;\">Год основания<\/p>"
+                            },
+                            "elements": []
+                        }
+                    ]
+                },
+                {
+                    "id": "st2",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 25
+                    },
+                    "elements": [
+                        {
+                            "id": "st2n",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "<p style=\"font-family:Playfair Display,Georgia,serif; font-size:30px; font-weight:700; color:#B8963E; text-align:center;\">20 га<\/p>"
+                            },
+                            "elements": []
+                        },
+                        {
+                            "id": "st2l",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "<p style=\"font-size:14px; color:#F5EFE3; text-align:center; margin-top:8px;\">Исторический парк<\/p>"
+                            },
+                            "elements": []
+                        }
+                    ]
+                },
+                {
+                    "id": "st3",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 25
+                    },
+                    "elements": [
+                        {
+                            "id": "st3n",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "<p style=\"font-family:Playfair Display,Georgia,serif; font-size:30px; font-weight:700; color:#B8963E; text-align:center;\">2027<\/p>"
+                            },
+                            "elements": []
+                        },
+                        {
+                            "id": "st3l",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "<p style=\"font-size:14px; color:#F5EFE3; text-align:center; margin-top:8px;\">Старт работ<\/p>"
+                            },
+                            "elements": []
+                        }
+                    ]
+                },
+                {
+                    "id": "st4",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 25
+                    },
+                    "elements": [
+                        {
+                            "id": "st4n",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "<p style=\"font-family:Playfair Display,Georgia,serif; font-size:30px; font-weight:700; color:#B8963E; text-align:center;\">300+<\/p>"
+                            },
+                            "elements": []
+                        },
+                        {
+                            "id": "st4l",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "<p style=\"font-size:14px; color:#F5EFE3; text-align:center; margin-top:8px;\">Лет истории<\/p>"
+                            },
+                            "elements": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "title": "Mission",
+    "type": "section"
+}

@@ -1,0 +1,69 @@
+[
+  {
+    "id": "hero_section",
+    "elType": "container",
+    "settings": {
+      "container_type": "grid",
+      "grid_columns_grid": {"unit": "fr", "size": "1"},
+      "grid_rows_grid": {"unit": "fr", "size": "3"},
+      "background_background": "classic",
+      "background_color": "#2F4A33"
+    },
+    "elements": [
+      {
+        "id": "hero_divider",
+        "elType": "widget",
+        "settings": {
+          "editor": "<p>✦</p>"
+        },
+        "elements": [],
+        "widgetType": "text-editor",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_buttons",
+        "elType": "container",
+        "settings": {
+          "container_type": "flex",
+          "flex_direction": "row",
+          "justify_content": "center"
+        },
+        "elements": [
+          {
+            "id": "btn_primary",
+            "elType": "widget",
+            "settings": {
+              "text": "Узнать подробнее",
+              "link": {"url": "#contacts", "is_external": "", "nofollow": ""}
+            },
+            "elements": [],
+            "widgetType": "button",
+            "styles": [],
+            "interactions": [],
+            "editor_settings": [],
+            "version": "0.0"
+          },
+          {
+            "id": "btn_secondary",
+            "elType": "widget",
+            "settings": {
+              "text": "Связаться с нами",
+              "link": {"url": "#contacts", "is_external": "", "nofollow": ""}
+            },
+            "elements": [],
+            "widgetType": "button",
+            "styles": [],
+            "interactions": [],
+            "editor_settings": [],
+            "version": "0.0"
+          }
+        ],
+        "isInner": true
+      }
+    ],
+    "isInner": false
+  }
+]

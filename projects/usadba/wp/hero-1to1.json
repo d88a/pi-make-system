@@ -1,0 +1,31 @@
+[
+  {
+    "id": "hero_section",
+    "elType": "container",
+    "settings": {
+      "container_type": "grid",
+      "grid_columns_grid": {"unit": "fr", "size": "1"},
+      "grid_rows_grid": {"unit": "fr", "size": "1"},
+      "background_background": "classic",
+      "background_color": "#2F4A33",
+      "padding": {"unit": "px", "top": "120", "right": "20", "bottom": "120", "left": "20", "isLinked": false},
+      "min_height": {"unit": "px", "size": "720"}
+    },
+    "elements": [
+      {
+        "id": "hero_frame",
+        "elType": "widget",
+        "settings": {
+          "editor": "<div style=\"max-width:800px; margin:0 auto; text-align:center; border:1px solid rgba(184,150,62,0.4); padding:48px 40px; position:relative;\"><div style=\"position:absolute; inset:8px; border:1px solid rgba(184,150,62,0.2); pointer-events:none;\"></div><p style=\"font-size:12px; letter-spacing:0.22em; text-transform:uppercase; font-weight:600; color:#B8963E; margin-bottom:20px;\">Село Гагарино · Тамбовская область · осн. 1702</p><h1 style=\"font-family:'Playfair Display',Georgia,serif; font-size:56px; font-weight:700; line-height:1.08; color:#F5EFE3; margin-bottom:32px;\">Проект возрождения усадьбы «Барышня-крестьянка»</h1><div style=\"display:flex; align-items:center; justify-content:center; gap:14px; margin-bottom:32px; opacity:0.5;\"><div style=\"height:1px; width:72px; background:linear-gradient(90deg,transparent,#B8963E);\"></div><svg style=\"width:20px; height:20px; color:#B8963E;\" viewBox=\"0 0 20 20\"><path d=\"M10 1 L11.5 8.5 L19 10 L11.5 11.5 L10 19 L8.5 11.5 L1 10 L8.5 8.5 Z\" fill=\"currentColor\"/></svg><div style=\"height:1px; width:72px; background:linear-gradient(90deg,#B8963E,transparent);\"></div></div><p style=\"font-family:'Playfair Display',Georgia,serif; font-size:24px; font-style:italic; color:#F5EFE3; margin-bottom:16px;\">Возвращение жизни в родовое гнездо на тамбовской земле.</p><p style=\"font-size:18px; line-height:1.7; color:#F5EFE3; max-width:640px; margin:0 auto 40px;\">Ищем партнёров, разделяющих наши ценности, для совместного создания устойчивого семейного поместья и культурно-исторического центра.</p><div style=\"display:flex; flex-wrap:wrap; justify-content:center; gap:16px;\"><a href=\"#contacts\" style=\"display:inline-block; background:#B8963E; color:#2B2620; padding:14px 28px; font-size:16px; font-weight:600; text-decoration:none;\">Узнать подробнее</a><a href=\"#contacts\" style=\"display:inline-block; border:1px solid rgba(245,239,227,0.4); color:#F5EFE3; padding:14px 28px; font-size:16px; font-weight:500; text-decoration:none;\">Связаться с нами</a></div></div>"
+        },
+        "elements": [],
+        "widgetType": "text-editor",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      }
+    ],
+    "isInner": false
+  }
+]

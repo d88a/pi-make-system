@@ -1,0 +1,136 @@
+{
+    "content": [
+        {
+            "id": "p1",
+            "elType": "section",
+            "settings": {
+                "background_background": "classic",
+                "background_color": "#FAF6EC",
+                "padding": {
+                    "unit": "px",
+                    "top": "112",
+                    "right": "16",
+                    "bottom": "0",
+                    "left": "16",
+                    "isLinked": false
+                },
+                "gap": "no"
+            },
+            "elements": [
+                {
+                    "id": "p1c",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 100
+                    },
+                    "elements": [
+                        {
+                            "id": "p1e",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "<p style=\"font-size:12px; letter-spacing:0.22em; text-transform:uppercase; font-weight:600; color:#B0603F; text-align:center;\">Партнёрство<\/p>"
+                            },
+                            "elements": []
+                        },
+                        {
+                            "id": "p1t",
+                            "elType": "widget",
+                            "widgetType": "heading",
+                            "settings": {
+                                "title": "Кого мы ищем?",
+                                "header_size": "h2",
+                                "align": "center",
+                                "title_color": "#2F4A33",
+                                "typography_typography": "custom",
+                                "typography_font_family": "Playfair Display",
+                                "typography_font_size": {
+                                    "unit": "px",
+                                    "size": 48
+                                },
+                                "typography_font_weight": "700"
+                            },
+                            "elements": []
+                        },
+                        {
+                            "id": "p1tx",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "<p style=\"text-align:center; max-width:768px; margin:32px auto 0; font-size:18px; line-height:1.7; color:#2B2620;\">Мы открыты к партнёрству с инвесторами, предпринимателями и компаниями, заинтересованными в создании долгосрочного проекта на основе исторического наследия.<\/p>"
+                            },
+                            "elements": []
+                        },
+                        {
+                            "id": "p1o",
+                            "elType": "widget",
+                            "widgetType": "heading",
+                            "settings": {
+                                "title": "Что мы предлагаем:",
+                                "header_size": "h2",
+                                "align": "center",
+                                "title_color": "#2F4A33",
+                                "typography_typography": "custom",
+                                "typography_font_family": "Playfair Display",
+                                "typography_font_size": {
+                                    "unit": "px",
+                                    "size": 30
+                                },
+                                "typography_font_weight": "700"
+                            },
+                            "elements": []
+                        },
+                        {
+                            "id": "p1l",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "<div style=\"max-width:600px; margin:24px auto 0;\"><div style=\"display:flex; align-items:flex-start; gap:16px; margin-bottom:16px;\"><span style=\"display:inline-block; width:8px; height:8px; background:#B8963E; transform:rotate(45deg); margin-top:10px; flex-shrink:0;\"><\/span><span style=\"font-size:18px; line-height:1.6; color:#2B2620;\">Участие в уникальном историко-культурном проекте.<\/span><\/div><div style=\"display:flex; align-items:flex-start; gap:16px; margin-bottom:16px;\"><span style=\"display:inline-block; width:8px; height:8px; background:#B8963E; transform:rotate(45deg); margin-top:10px; flex-shrink:0;\"><\/span><span style=\"font-size:18px; line-height:1.6; color:#2B2620;\">Формирование команды единомышленников.<\/span><\/div><div style=\"display:flex; align-items:flex-start; gap:16px; margin-bottom:16px;\"><span style=\"display:inline-block; width:8px; height:8px; background:#B8963E; transform:rotate(45deg); margin-top:10px; flex-shrink:0;\"><\/span><span style=\"font-size:18px; line-height:1.6; color:#2B2620;\">Создание устойчивого агро-туристического кластера с долгосрочной перспективой.<\/span><\/div><\/div>"
+                            },
+                            "elements": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "p2",
+            "elType": "section",
+            "settings": {
+                "background_background": "classic",
+                "background_color": "#FAF6EC",
+                "padding": {
+                    "unit": "px",
+                    "top": "48",
+                    "right": "16",
+                    "bottom": "112",
+                    "left": "16",
+                    "isLinked": false
+                },
+                "gap": "no"
+            },
+            "elements": [
+                {
+                    "id": "p2c",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 100
+                    },
+                    "elements": [
+                        {
+                            "id": "p2n",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "<div style=\"background:#2F4A33; border-top:4px solid #B8963E; padding:32px; max-width:600px; margin:0 auto;\"><p style=\"font-size:18px; font-style:italic; line-height:1.6; color:#F5EFE3; margin-bottom:24px;\">Все условия сотрудничества, включая финансовые модели, доли участия и конкретные сроки, обсуждаются строго индивидуально на личной встрече.<\/p><div style=\"border-top:1px solid rgba(184,150,62,0.3); padding-top:24px;\"><p style=\"font-size:16px; line-height:1.6; color:#F5EFE3;\">Мы создаём закрытый клуб единомышленников, где каждое решение принимается осознанно и с учётом взаимных интересов.<\/p><\/div><\/div>"
+                            },
+                            "elements": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "title": "Partners",
+    "type": "section"
+}

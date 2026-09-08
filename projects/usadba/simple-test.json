@@ -1,0 +1,16 @@
+{
+    "content": [
+        {
+            "id": "test",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+                "title": "Проверка импорта",
+                "header_size": "h2"
+            },
+            "elements": []
+        }
+    ],
+    "title": "Simple Test",
+    "type": "section"
+}

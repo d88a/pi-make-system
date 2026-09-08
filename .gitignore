@@ -48,3 +48,15 @@ tmp/
 # Build artifacts
 dist/
 .next/
+
+# Office docs
+*.docx
+*.xlsx
+*.pptx
+*.wbm
+
+# Backups
+backups/
+
+# WordPress plugins (third-party)
+plugins/

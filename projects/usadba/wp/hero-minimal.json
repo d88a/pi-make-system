@@ -1,0 +1,107 @@
+[
+  {
+    "id": "hero_main",
+    "elType": "container",
+    "settings": {
+      "container_type": "grid",
+      "grid_columns_grid": {"unit": "fr", "size": "1"},
+      "grid_rows_grid": {"unit": "fr", "size": "4"},
+      "grid_rows_grid_mobile": {"unit": "fr", "size": "4"}
+    },
+    "elements": [
+      {
+        "id": "hero_title",
+        "elType": "widget",
+        "settings": {
+          "title": {
+            "$$type": "html-v3",
+            "value": {
+              "content": {
+                "$$type": "string",
+                "value": "Проект возрождения усадьбы «Барышня-крестьянка»"
+              },
+              "children": []
+            }
+          },
+          "link": {"$$type": "link", "value": {"isTargetBlank": null}}
+        },
+        "elements": [],
+        "widgetType": "e-heading",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_subtitle",
+        "elType": "widget",
+        "settings": {
+          "title": {
+            "$$type": "html-v3",
+            "value": {
+              "content": {
+                "$$type": "string",
+                "value": "Возвращение жизни в родовое гнездо на тамбовской земле."
+              },
+              "children": []
+            }
+          },
+          "link": {"$$type": "link", "value": {"isTargetBlank": null}}
+        },
+        "elements": [],
+        "widgetType": "e-heading",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_desc",
+        "elType": "widget",
+        "settings": {
+          "title": {
+            "$$type": "html-v3",
+            "value": {
+              "content": {
+                "$$type": "string",
+                "value": "Ищем партнёров, разделяющих наши ценности, для совместного создания устойчивого семейного поместья и культурно-исторического центра."
+              },
+              "children": []
+            }
+          },
+          "link": {"$$type": "link", "value": {"isTargetBlank": null}}
+        },
+        "elements": [],
+        "widgetType": "e-heading",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_btn",
+        "elType": "widget",
+        "settings": {
+          "title": {
+            "$$type": "html-v3",
+            "value": {
+              "content": {
+                "$$type": "string",
+                "value": "Узнать подробнее"
+              },
+              "children": []
+            }
+          },
+          "link": {"$$type": "link", "value": {"isTargetBlank": null}}
+        },
+        "elements": [],
+        "widgetType": "e-heading",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      }
+    ],
+    "isInner": false
+  }
+]

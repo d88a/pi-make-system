@@ -1,0 +1,172 @@
+/* ===== HERO — ОВЕРЛЕЙ И РАМКА ===== */
+.elementor-element-hero_section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(24,36,26,0.88), rgba(24,36,26,0.55), rgba(24,36,26,0.35));
+  pointer-events: none;
+}
+.elementor-element-hero_section {
+  position: relative;
+}
+.elementor-element-hero_section .e-con-inner,
+.elementor-element-hero_section .elementor-container {
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(184,150,62,0.4);
+  padding: 48px 40px;
+  max-width: 896px;
+  margin: 0 auto;
+  width: 100%;
+}
+.elementor-element-hero_section .e-con-inner::before,
+.elementor-element-hero_section .elementor-container::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(184,150,62,0.15);
+  pointer-events: none;
+}
+
+/* ===== HERO — DIVIDER ✧ ===== */
+.elementor-element-hero_divider .elementor-text-editor p {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: #B8963E !important;
+  font-size: 24px !important;
+  margin: 32px 0 !important;
+}
+.elementor-element-hero_divider .elementor-text-editor p::before,
+.elementor-element-hero_divider .elementor-text-editor p::after {
+  content: "";
+  height: 1px;
+  width: 72px;
+  flex-shrink: 0;
+}
+.elementor-element-hero_divider .elementor-text-editor p::before {
+  background: linear-gradient(90deg, transparent, #B8963E);
+}
+.elementor-element-hero_divider .elementor-text-editor p::after {
+  background: linear-gradient(90deg, #B8963E, transparent);
+}
+
+/* ===== HERO — КНОПКИ ===== */
+.elementor-element-btn_primary .elementor-button:hover {
+  background: #C9A227 !important;
+}
+.elementor-element-btn_secondary .elementor-button:hover {
+  border-color: #B8963E !important;
+  color: #B8963E !important;
+}
+
+/* ===== HERO — ОТСТУПЫ (ТОЧНЫЕ КАК В ПРОТОТИПЕ) ===== */
+.elementor-element-hero_eyebrow p {
+  margin: 0 0 20px !important;
+}
+.elementor-element-hero_subtitle p {
+  margin: 0 !important;
+}
+.elementor-element-hero_desc p {
+  margin: 16px auto 0 !important;
+}
+.elementor-element-hero_buttons {
+  margin-top: 40px !important;
+}
+
+/* ===== КАРТОЧКИ — ОДИНАКОВАЯ ВЫСОТА ===== */
+div[data-id="heritage_cards"] .elementor-column,
+div[data-id="e2"] .elementor-column {
+  display: flex !important;
+  flex-direction: column !important;
+}
+div[data-id="heritage_cards"] .elementor-widget-wrap,
+div[data-id="e2"] .elementor-widget-wrap {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+div[data-id="heritage_cards"] .elementor-widget-image img {
+  height: 220px !important;
+  object-fit: cover !important;
+  width: 100% !important;
+}
+
+/* ===== АДАПТИВ: ПАРТНЁРЫ (логотипы) ===== */
+@media (max-width: 1024px) {
+  .elementor-text-editor div[style*="grid-template-columns: repeat(5"] {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+@media (max-width: 767px) {
+  .elementor-text-editor div[style*="grid-template-columns: repeat(5"] {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 12px;
+  }
+  .elementor-text-editor div[style*="grid-template-columns: repeat(5"] > div {
+    flex: 0 0 calc(33.33% - 8px) !important;
+    min-height: 72px !important;
+    padding: 12px !important;
+  }
+  .elementor-text-editor div[style*="grid-template-columns: repeat(5"] > div span {
+    font-size: 10px !important;
+    letter-spacing: 0.05em !important;
+  }
+}
+
+/* ===== АДАПТИВ: ПОРТРЕТЫ (история) ===== */
+@media (max-width: 1024px) {
+  .elementor-text-editor div[style*="display: flex; justify-content: center; gap: 24px; margin-top: 48px"] {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 16px !important;
+  }
+  .elementor-text-editor div[style*="display: flex; justify-content: center; gap: 24px"] > div {
+    transform: none !important;
+    margin-top: 0 !important;
+  }
+  .elementor-text-editor div[style*="display: flex; justify-content: center; gap: 24px"] > div img {
+    width: 160px !important;
+    height: 200px !important;
+  }
+}
+@media (max-width: 767px) {
+  .elementor-text-editor div[style*="display: flex; justify-content: center; gap: 24px"] > div img {
+    width: 140px !important;
+    height: 175px !important;
+  }
+}
+
+/* ===== АДАПТИВ: КАРТОЧКИ HERITAGE + ECONOMICS ===== */
+@media (max-width: 1024px) {
+  div[data-id="heritage_cards"] .elementor-column,
+  div[data-id="e2"] .elementor-column {
+    width: 50% !important;
+  }
+}
+@media (max-width: 767px) {
+  div[data-id="heritage_cards"] .elementor-column,
+  div[data-id="e2"] .elementor-column {
+    width: 100% !important;
+  }
+}
+
+/* ===== HERO — АДАПТИВ ===== */
+@media (max-width: 768px) {
+  .elementor-element-hero_section .e-con-inner,
+  .elementor-element-hero_section .elementor-container {
+    padding: 32px 24px !important;
+  }
+  [data-interaction-id="hero_title"] {
+    font-size: 36px !important;
+  }
+  .elementor-element-hero_subtitle p {
+    font-size: 20px !important;
+  }
+  .elementor-element-hero_desc p {
+    font-size: 16px !important;
+  }
+}

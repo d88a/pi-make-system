@@ -1,0 +1,465 @@
+[
+  {
+    "id": "hero1",
+    "elType": "section",
+    "settings": {
+      "layout": "full_width",
+      "stretch_section": "section-stretched",
+      "background_background": "classic",
+      "background_color": "#2F4A33",
+      "padding": {"unit": "px", "top": "180", "right": "0", "bottom": "180", "left": "0"}
+    },
+    "elements": [{
+      "id": "hcol1",
+      "elType": "column",
+      "settings": {"_column_size": 100, "content_position": "center"},
+      "elements": [
+        {
+          "id": "hw1",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "Село Гагарино · Тамбовская область · осн. 1702",
+            "header_size": "p",
+            "align": "center",
+            "title_color": "#B8963E",
+            "typography_typography": "custom",
+            "typography_font_family": "Open Sans",
+            "typography_font_size": {"unit": "px", "size": 14},
+            "typography_letter_spacing": {"unit": "px", "size": 3}
+          }
+        },
+        {
+          "id": "hw2",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "Проект возрождения усадьбы «Барышня-крестьянка»",
+            "header_size": "h1",
+            "align": "center",
+            "title_color": "#F5EFE3",
+            "typography_typography": "custom",
+            "typography_font_family": "Playfair Display",
+            "typography_font_size": {"unit": "px", "size": 56},
+            "typography_font_weight": "700",
+            "typography_line_height": {"unit": "em", "size": 1.1}
+          }
+        },
+        {
+          "id": "hw3",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "Возвращение жизни в родовое гнездо на тамбовской земле.",
+            "header_size": "h2",
+            "align": "center",
+            "title_color": "#F5EFE3",
+            "typography_typography": "custom",
+            "typography_font_family": "Playfair Display",
+            "typography_font_size": {"unit": "px", "size": 24},
+            "typography_font_style": "italic",
+            "typography_font_weight": "400"
+          }
+        },
+        {
+          "id": "hw4",
+          "elType": "widget",
+          "widgetType": "text-editor",
+          "settings": {
+            "editor": "<p style=\"text-align:center;color:#F5EFE3;max-width:700px;margin:20px auto;font-size:16px;line-height:1.6;\">Ищем партнёров, разделяющих наши ценности, для совместного создания устойчивого семейного поместья и культурно-исторического центра.</p>"
+          }
+        },
+        {
+          "id": "hw5",
+          "elType": "widget",
+          "widgetType": "button",
+          "settings": {
+            "text": "Узнать подробнее",
+            "link": {"url": "#contacts"},
+            "align": "center",
+            "background_color": "#B8963E",
+            "button_text_color": "#2B2620",
+            "typography_font_size": {"unit": "px", "size": 16},
+            "typography_font_weight": "600",
+            "button_padding": {"unit": "px", "top": "16", "right": "32", "bottom": "16", "left": "32"}
+          }
+        }
+      ]
+    }]
+  },
+  {
+    "id": "about1",
+    "elType": "section",
+    "settings": {
+      "layout": "boxed",
+      "background_background": "classic",
+      "background_color": "#FAF6EC",
+      "padding": {"unit": "px", "top": "100", "right": "20", "bottom": "100", "left": "20"},
+      "content_width": {"unit": "px", "size": 900}
+    },
+    "elements": [{
+      "id": "acol1",
+      "elType": "column",
+      "settings": {"_column_size": 100},
+      "elements": [
+        {
+          "id": "aw1",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "Дорогие друзья!",
+            "header_size": "h2",
+            "align": "center",
+            "title_color": "#2F4A33",
+            "typography_typography": "custom",
+            "typography_font_family": "Playfair Display",
+            "typography_font_size": {"unit": "px", "size": 42},
+            "typography_font_weight": "700"
+          }
+        },
+        {
+          "id": "aw2",
+          "elType": "widget",
+          "widgetType": "text-editor",
+          "settings": {
+            "editor": "<p style=\"text-align:center;line-height:1.7;color:#2B2620;max-width:800px;margin:0 auto;\">Мы рады приветствовать вас на официальной странице проекта возрождения усадьбы «Барышня-крестьянка». Проект реализуется силами Благотворительного фонда содействия учебным заведениям и патриотического воспитания подрастающего поколения, при поддержке Администрации Тамбовской области, Совета Федерации ФС РФ и ветеранов Вооружённых Сил России.</p>"
+          }
+        },
+        {
+          "id": "aw3",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": {
+            "html": "<div style=\"display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin-top:60px;\"><div style=\"background:#fff;padding:20px 30px;text-align:center;border:1px solid #E3D9C6;min-width:150px;\"><span style=\"font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#6B6156;\">Минкультуры РФ</span></div><div style=\"background:#fff;padding:20px 30px;text-align:center;border:1px solid #E3D9C6;min-width:150px;\"><span style=\"font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#6B6156;\">Минсельхоз РФ</span></div><div style=\"background:#fff;padding:20px 30px;text-align:center;border:1px solid #E3D9C6;min-width:150px;\"><span style=\"font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#6B6156;\">РГО</span></div><div style=\"background:#fff;padding:20px 30px;text-align:center;border:1px solid #E3D9C6;min-width:150px;\"><span style=\"font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#6B6156;\">Адм. Тамбовской обл.</span></div><div style=\"background:#fff;padding:20px 30px;text-align:center;border:1px solid #E3D9C6;min-width:150px;\"><span style=\"font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#6B6156;\">Совет Федерации ФС РФ</span></div></div>"
+          }
+        }
+      ]
+    }]
+  },
+  {
+    "id": "history1",
+    "elType": "section",
+    "settings": {
+      "layout": "boxed",
+      "background_background": "classic",
+      "background_color": "#F5EFE3",
+      "padding": {"unit": "px", "top": "100", "right": "20", "bottom": "100", "left": "20"},
+      "content_width": {"unit": "px", "size": 1000}
+    },
+    "elements": [{
+      "id": "hicol1",
+      "elType": "column",
+      "settings": {"_column_size": 100},
+      "elements": [
+        {
+          "id": "hiw1",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "Почему это место особенное?",
+            "header_size": "h2",
+            "align": "center",
+            "title_color": "#2F4A33",
+            "typography_typography": "custom",
+            "typography_font_family": "Playfair Display",
+            "typography_font_size": {"unit": "px", "size": 42},
+            "typography_font_weight": "700"
+          }
+        },
+        {
+          "id": "hiw2",
+          "elType": "widget",
+          "widgetType": "text-editor",
+          "settings": {
+            "editor": "<p style=\"line-height:1.7;color:#2B2620;max-width:800px;margin:0 auto;\">Название проекта не случайно. Именно здесь, в старинном селе Гагарино Тамбовской области (основанном в мае 1702 года князем Матвеем Гагариным), жила Дарья Пашкова — дочь бригадного генерала Алексея Александровича Пашкова, ставшая впоследствии бабушкой легендарного генерала М.Д. Скобелева.</p><p style=\"line-height:1.7;color:#2B2620;max-width:800px;margin:20px auto 0;\">Это имение хранит память о великих людях: здесь работал художник Валентин Серов, бывал великий князь Н.Н. Романов, а ученица Полины Виардо писала здесь музыку на стихи Пушкина.</p>"
+          }
+        }
+      ]
+    }]
+  },
+  {
+    "id": "heritage1",
+    "elType": "section",
+    "settings": {
+      "layout": "boxed",
+      "background_background": "classic",
+      "background_color": "#FAF6EC",
+      "padding": {"unit": "px", "top": "100", "right": "20", "bottom": "100", "left": "20"},
+      "content_width": {"unit": "px", "size": 1100}
+    },
+    "elements": [
+      {
+        "id": "hercol1",
+        "elType": "column",
+        "settings": {"_column_size": 100},
+        "elements": [
+          {
+            "id": "herw1",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "Наше наследие сегодня",
+              "header_size": "h2",
+              "align": "center",
+              "title_color": "#2F4A33",
+              "typography_typography": "custom",
+              "typography_font_family": "Playfair Display",
+              "typography_font_size": {"unit": "px", "size": 42},
+              "typography_font_weight": "700"
+            }
+          }
+        ]
+      },
+      {
+        "id": "hercol2",
+        "elType": "column",
+        "settings": {"_column_size": 33},
+        "elements": [{
+          "id": "herw2",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": {
+            "html": "<div style=\"background:#fff;border:1px solid #E3D9C6;height:100%;\"><div style=\"background:#3A5A40;height:200px;display:flex;align-items:center;justify-content:center;\"><span style=\"color:#F5EFE3;font-size:48px;\">🌳</span></div><div style=\"padding:30px;\"><p style=\"color:#B8963E;font-size:12px;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;\">Исторический парк</p><h3 style=\"font-family:'Playfair Display',serif;color:#2F4A33;font-size:22px;margin-bottom:12px;\">20 гектаров</h3><p style=\"color:#2B2620;line-height:1.6;\">Старейший регулярный парк Тамбовской губернии, заложенный Петром Пашковым в 1760-х годах.</p></div></div>"
+          }
+        }]
+      },
+      {
+        "id": "hercol3",
+        "elType": "column",
+        "settings": {"_column_size": 33},
+        "elements": [{
+          "id": "herw3",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": {
+            "html": "<div style=\"background:#fff;border:1px solid #E3D9C6;height:100%;\"><div style=\"background:#B0603F;height:200px;display:flex;align-items:center;justify-content:center;\"><span style=\"color:#F5EFE3;font-size:48px;\">🏛️</span></div><div style=\"padding:30px;\"><p style=\"color:#B8963E;font-size:12px;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;\">Архитектура</p><h3 style=\"font-family:'Playfair Display',serif;color:#2F4A33;font-size:22px;margin-bottom:12px;\">Дом и Храм</h3><p style=\"color:#2B2620;line-height:1.6;\">Сохранившийся дом управляющего имением (1880 г.) и храм-памятник (1833 г.) в честь победы русского оружия в войне 1812 года.</p></div></div>"
+          }
+        }]
+      },
+      {
+        "id": "hercol4",
+        "elType": "column",
+        "settings": {"_column_size": 33},
+        "elements": [{
+          "id": "herw4",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": {
+            "html": "<div style=\"background:#fff;border:1px solid #E3D9C6;height:100%;\"><div style=\"background:#2F4A33;height:200px;display:flex;align-items:center;justify-content:center;\"><span style=\"color:#F5EFE3;font-size:48px;\">👥</span></div><div style=\"padding:30px;\"><p style=\"color:#B8963E;font-size:12px;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;\">Соседи по истории</p><h3 style=\"font-family:'Playfair Display',serif;color:#2F4A33;font-size:22px;margin-bottom:12px;\">Великие имена</h3><p style=\"color:#2B2620;line-height:1.6;\">В разные годы здесь жили и творили адъютант Кутузова Пасий Кайсаров, академик Вернадский, Сергей Рахманинов и Наталья Гончарова.</p></div></div>"
+          }
+        }]
+      }
+    ]
+  },
+  {
+    "id": "mission1",
+    "elType": "section",
+    "settings": {
+      "layout": "full_width",
+      "stretch_section": "section-stretched",
+      "background_background": "classic",
+      "background_color": "#2F4A33",
+      "padding": {"unit": "px", "top": "100", "right": "20", "bottom": "100", "left": "20"}
+    },
+    "elements": [{
+      "id": "miscol1",
+      "elType": "column",
+      "settings": {"_column_size": 100},
+      "elements": [
+        {
+          "id": "misw1",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "Наша миссия",
+            "header_size": "h2",
+            "align": "center",
+            "title_color": "#F5EFE3",
+            "typography_typography": "custom",
+            "typography_font_family": "Playfair Display",
+            "typography_font_size": {"unit": "px", "size": 42},
+            "typography_font_weight": "700"
+          }
+        },
+        {
+          "id": "misw2",
+          "elType": "widget",
+          "widgetType": "text-editor",
+          "settings": {
+            "editor": "<p style=\"text-align:center;color:#F5EFE3;font-size:20px;font-style:italic;line-height:1.7;max-width:800px;margin:0 auto;\">Мы не просто восстанавливаем стены — мы возвращаем жизнь на эту землю. Наша цель — создать не музейный объект, а живое пространство, где история продолжается: с семьёй, фермерским хозяйством, культурными событиями и туризмом.</p>"
+          }
+        },
+        {
+          "id": "misw3",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": {
+            "html": "<div style=\"display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:900px;margin:60px auto 0;\"><div style=\"border:1px solid rgba(184,150,62,0.3);padding:20px;text-align:center;\"><p style=\"font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#B8963E;\">1702</p><p style=\"color:#F5EFE3;font-size:14px;\">Год основания</p></div><div style=\"border:1px solid rgba(184,150,62,0.3);padding:20px;text-align:center;\"><p style=\"font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#B8963E;\">20 га</p><p style=\"color:#F5EFE3;font-size:14px;\">Исторический парк</p></div><div style=\"border:1px solid rgba(184,150,62,0.3);padding:20px;text-align:center;\"><p style=\"font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#B8963E;\">2027</p><p style=\"color:#F5EFE3;font-size:14px;\">Старт работ</p></div><div style=\"border:1px solid rgba(184,150,62,0.3);padding:20px;text-align:center;\"><p style=\"font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#B8963E;\">300+</p><p style=\"color:#F5EFE3;font-size:14px;\">Лет истории</p></div></div>"
+          }
+        }
+      ]
+    }]
+  },
+  {
+    "id": "partners1",
+    "elType": "section",
+    "settings": {
+      "layout": "boxed",
+      "background_background": "classic",
+      "background_color": "#FAF6EC",
+      "padding": {"unit": "px", "top": "100", "right": "20", "bottom": "100", "left": "20"},
+      "content_width": {"unit": "px", "size": 1000}
+    },
+    "elements": [{
+      "id": "parcol1",
+      "elType": "column",
+      "settings": {"_column_size": 100},
+      "elements": [
+        {
+          "id": "parw1",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "Кого мы ищем?",
+            "header_size": "h2",
+            "align": "center",
+            "title_color": "#2F4A33",
+            "typography_typography": "custom",
+            "typography_font_family": "Playfair Display",
+            "typography_font_size": {"unit": "px", "size": 42},
+            "typography_font_weight": "700"
+          }
+        },
+        {
+          "id": "parw2",
+          "elType": "widget",
+          "widgetType": "text-editor",
+          "settings": {
+            "editor": "<p style=\"line-height:1.7;color:#2B2620;\">Мы приглашаем к сотрудничеству партнёров, разделяющих наши ценности и готовых стать частью этой истории. Нам важны не просто инвестиции, а люди, которым действительно дорого отечественное наследие и будущее этой земли.</p><h3 style=\"font-family:'Playfair Display',serif;color:#2F4A33;font-size:24px;margin-top:30px;\">Что мы предлагаем:</h3><ul style=\"list-style:none;padding:0;margin-top:15px;\"><li style=\"padding:8px 0;padding-left:25px;position:relative;color:#2B2620;\"><span style=\"position:absolute;left:0;color:#B8963E;\">◆</span> Участие в уникальном историко-культурном проекте.</li><li style=\"padding:8px 0;padding-left:25px;position:relative;color:#2B2620;\"><span style=\"position:absolute;left:0;color:#B8963E;\">◆</span> Формирование команды единомышленников.</li><li style=\"padding:8px 0;padding-left:25px;position:relative;color:#2B2620;\"><span style=\"position:absolute;left:0;color:#B8963E;\">◆</span> Создание устойчивого агро-туристического кластера с долгосрочной перспективой.</li></ul>"
+          }
+        },
+        {
+          "id": "parw3",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": {
+            "html": "<div style=\"border-top:4px solid #B8963E;background:#2F4A33;padding:40px;margin-top:40px;\"><p style=\"color:#B8963E;font-size:12px;text-transform:uppercase;letter-spacing:2px;margin-bottom:15px;\">Важно знать</p><p style=\"color:#F5EFE3;font-family:'Playfair Display',serif;font-style:italic;line-height:1.7;\">Все условия сотрудничества, включая финансовые модели, доли участия и конкретные сроки, обсуждаются строго индивидуально на личной встрече.</p><div style=\"border-top:1px solid rgba(184,150,62,0.3);margin-top:20px;padding-top:20px;\"><p style=\"color:#F5EFE3;line-height:1.6;\">Мы создаём закрытый клуб единомышленников, где каждое решение принимается осознанно и с учётом взаимных интересов.</p></div></div>"
+          }
+        }
+      ]
+    }]
+  },
+  {
+    "id": "visit1",
+    "elType": "section",
+    "settings": {
+      "layout": "boxed",
+      "background_background": "classic",
+      "background_color": "#F5EFE3",
+      "padding": {"unit": "px", "top": "100", "right": "20", "bottom": "100", "left": "20"},
+      "content_width": {"unit": "px", "size": 900}
+    },
+    "elements": [{
+      "id": "viscol1",
+      "elType": "column",
+      "settings": {"_column_size": 100},
+      "elements": [
+        {
+          "id": "visw1",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "Как познакомиться с проектом?",
+            "header_size": "h2",
+            "align": "center",
+            "title_color": "#2F4A33",
+            "typography_typography": "custom",
+            "typography_font_family": "Playfair Display",
+            "typography_font_size": {"unit": "px", "size": 42},
+            "typography_font_weight": "700"
+          }
+        },
+        {
+          "id": "visw2",
+          "elType": "widget",
+          "widgetType": "text-editor",
+          "settings": {
+            "editor": "<p style=\"text-align:center;line-height:1.7;color:#2B2620;\">Мы приглашаем вас лично посетить усадьбу, увидеть её уникальную атмосферу и подробно ознакомиться с ожидаемыми и планируемыми финансовыми результатами. Это позволит вам принять взвешенное и осознанное решение.</p><p style=\"text-align:center;line-height:1.7;color:#2B2620;margin-top:15px;\">Мы формируем команду и готовимся к запуску. Наша цель — приступить к активной фазе работ в 2027 году.</p>"
+          }
+        },
+        {
+          "id": "visw3",
+          "elType": "widget",
+          "widgetType": "button",
+          "settings": {
+            "text": "Записаться на экскурсию / встречу",
+            "link": {"url": "#contacts"},
+            "align": "center",
+            "background_color": "#B0603F",
+            "button_text_color": "#F5EFE3",
+            "typography_font_size": {"unit": "px", "size": 16},
+            "typography_font_weight": "600",
+            "button_padding": {"unit": "px", "top": "16", "right": "32", "bottom": "16", "left": "32"}
+          }
+        }
+      ]
+    }]
+  },
+  {
+    "id": "contacts1",
+    "elType": "section",
+    "settings": {
+      "layout": "full_width",
+      "stretch_section": "section-stretched",
+      "background_background": "classic",
+      "background_color": "#2F4A33",
+      "padding": {"unit": "px", "top": "100", "right": "20", "bottom": "100", "left": "20"}
+    },
+    "elements": [{
+      "id": "concol1",
+      "elType": "column",
+      "settings": {"_column_size": 100},
+      "elements": [
+        {
+          "id": "conw1",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "Свяжитесь с нами",
+            "header_size": "h2",
+            "align": "center",
+            "title_color": "#F5EFE3",
+            "typography_typography": "custom",
+            "typography_font_family": "Playfair Display",
+            "typography_font_size": {"unit": "px", "size": 42},
+            "typography_font_weight": "700"
+          }
+        },
+        {
+          "id": "conw2",
+          "elType": "widget",
+          "widgetType": "text-editor",
+          "settings": {
+            "editor": "<p style=\"text-align:center;color:#F5EFE3;line-height:1.7;max-width:700px;margin:0 auto;\">Если вы чувствуете в себе силы и готовы стать частью этого большого дела, напишите или позвоните нам. Мы будем рады обсудить все детали в формате личной встречи.</p>"
+          }
+        },
+        {
+          "id": "conw3",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": {
+            "html": "<div style=\"max-width:500px;margin:40px auto 0;border-left:3px solid #B8963E;padding-left:25px;\"><p style=\"font-family:'Playfair Display',serif;font-size:24px;color:#F5EFE3;font-weight:600;\">Олег Викторович Островский</p><div style=\"margin-top:20px;\"><a href=\"tel:+79039049090\" style=\"display:flex;align-items:center;gap:12px;color:#F5EFE3;text-decoration:none;font-size:18px;margin-bottom:10px;\"><span style=\"color:#B8963E;\">📞</span> +7 903 904 90 90</a><a href=\"mailto:zed900@mail.ru\" style=\"display:flex;align-items:center;gap:12px;color:#F5EFE3;text-decoration:none;font-size:18px;\"><span style=\"color:#B8963E;\">📧</span> zed900@mail.ru</a></div></div>"
+          }
+        },
+        {
+          "id": "conw4",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": {
+            "html": "<form action=\"send.php\" method=\"post\" style=\"max-width:500px;margin:50px auto 0;border:1px solid rgba(184,150,62,0.4);background:#F5EFE3;padding:40px;\"><div style=\"margin-bottom:15px;\"><label style=\"display:block;margin-bottom:8px;font-size:14px;font-weight:500;color:#2B2620;\">Имя</label><input type=\"text\" name=\"name\" required placeholder=\"Как к вам обращаться\" style=\"width:100%;padding:12px 16px;border:1px solid #E3D9C6;background:#fff;font-size:16px;color:#2B2620;box-sizing:border-box;\"></div><div style=\"margin-bottom:20px;\"><label style=\"display:block;margin-bottom:8px;font-size:14px;font-weight:500;color:#2B2620;\">Телефон / Email</label><input type=\"text\" name=\"contact\" required placeholder=\"+7 ___ ___ __ __ или email\" style=\"width:100%;padding:12px 16px;border:1px solid #E3D9C6;background:#fff;font-size:16px;color:#2B2620;box-sizing:border-box;\"></div><button type=\"submit\" style=\"width:100%;padding:14px;background:#B0603F;color:#F5EFE3;font-size:16px;font-weight:600;border:none;cursor:pointer;\">Отправить заявку</button></form>"
+          }
+        }
+      ]
+    }]
+  }
+]

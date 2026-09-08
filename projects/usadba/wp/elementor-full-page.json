@@ -1,0 +1,166 @@
+[
+  {
+    "id": "hero_container",
+    "elType": "container",
+    "settings": {
+      "container_type": "grid",
+      "grid_columns_grid": {"unit": "fr", "size": "1"},
+      "grid_rows_grid": {"unit": "fr", "size": "1"},
+      "background_background": "classic",
+      "background_color": "#2F4A33",
+      "padding": {"unit": "px", "top": "150", "right": "40", "bottom": "150", "left": "40"}
+    },
+    "elements": [
+      {
+        "id": "hero_title",
+        "elType": "widget",
+        "widgetType": "e-heading",
+        "settings": {
+          "title": {
+            "$$type": "html-v3",
+            "value": {
+              "content": {
+                "$$type": "string",
+                "value": "<h1>Проект возрождения усадьбы «Барышня-крестьянка»</h1>"
+              },
+              "children": []
+            }
+          },
+          "link": {"$$type": "link", "value": {"isTargetBlank": null}},
+          "align": "center",
+          "title_color": "#F5EFE3"
+        },
+        "elements": [],
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_subtitle",
+        "elType": "widget",
+        "widgetType": "text-editor",
+        "settings": {
+          "editor": "<p style=\"text-align: center; color: #F5EFE3; font-style: italic; font-size: 24px;\">Возвращение жизни в родовое гнездо на тамбовской земле.</p>"
+        },
+        "elements": [],
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_description",
+        "elType": "widget",
+        "widgetType": "text-editor",
+        "settings": {
+          "editor": "<p style=\"text-align: center; color: #F5EFE3; max-width: 700px; margin: 20px auto;\">Ищем партнёров, разделяющих наши ценности, для совместного создания устойчивого семейного поместья и культурно-исторического центра.</p>"
+        },
+        "elements": [],
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_button",
+        "elType": "widget",
+        "widgetType": "e-button",
+        "settings": {
+          "text": {"$$type": "string", "value": "Узнать подробнее"},
+          "link": {"$$type": "link", "value": {"url": "#contacts", "isTargetBlank": null}},
+          "align": "center",
+          "background_color": "#B8963E",
+          "button_text_color": "#2B2620"
+        },
+        "elements": [],
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      }
+    ],
+    "isInner": false
+  },
+  {
+    "id": "mission_container",
+    "elType": "container",
+    "settings": {
+      "container_type": "grid",
+      "grid_columns_grid": {"unit": "fr", "size": "1"},
+      "grid_rows_grid": {"unit": "fr", "size": "1"},
+      "background_background": "classic",
+      "background_color": "#F5EFE3",
+      "padding": {"unit": "px", "top": "100", "right": "40", "bottom": "100", "left": "40"}
+    },
+    "elements": [
+      {
+        "id": "mission_eyebrow",
+        "elType": "widget",
+        "widgetType": "text-editor",
+        "settings": {
+          "editor": "<p style=\"text-align: center; color: #B8963E; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;\">МИССИЯ</p>"
+        },
+        "elements": [],
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "mission_title",
+        "elType": "widget",
+        "widgetType": "e-heading",
+        "settings": {
+          "title": {
+            "$$type": "html-v3",
+            "value": {
+              "content": {
+                "$$type": "string",
+                "value": "<h2>Возродить усадьбу.<br>Вернуть смысл дворянскому слову.</h2>"
+              },
+              "children": []
+            }
+          },
+          "link": {"$$type": "link", "value": {"isTargetBlank": null}},
+          "align": "center",
+          "title_color": "#2F4A33"
+        },
+        "elements": [],
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "mission_text",
+        "elType": "widget",
+        "widgetType": "text-editor",
+        "settings": {
+          "editor": "<p style=\"text-align: center; color: #2B2620; max-width: 800px; margin: 30px auto; line-height: 1.8;\">Усадьба в селе Гагарино — это не просто архитектурный памятник. Это место, где оживает история, где природа встречается с культурой, где семьи создают своё будущее, опираясь на ценности прошлого.</p>"
+        },
+        "elements": [],
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "mission_image",
+        "elType": "widget",
+        "widgetType": "image",
+        "settings": {
+          "image": {"url": "", "id": ""},
+          "image_size": "large",
+          "align": "center"
+        },
+        "elements": [],
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      }
+    ],
+    "isInner": false
+  }
+]

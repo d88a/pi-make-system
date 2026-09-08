@@ -1,0 +1,132 @@
+[
+  {
+    "id": "hero_section",
+    "elType": "container",
+    "settings": {
+      "container_type": "grid",
+      "grid_columns_grid": {"unit": "fr", "size": "1"},
+      "grid_rows_grid": {"unit": "fr", "size": "6"},
+      "background_background": "classic",
+      "background_color": "#2F4A33",
+      "padding": {"unit": "px", "top": "128", "right": "16", "bottom": "128", "left": "16", "isLinked": false}
+    },
+    "elements": [
+      {
+        "id": "hero_eyebrow",
+        "elType": "widget",
+        "settings": {
+          "editor": "<p>Село Гагарино · Тамбовская область · осн. 1702</p>"
+        },
+        "elements": [],
+        "widgetType": "text-editor",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_title",
+        "elType": "widget",
+        "settings": {
+          "title": {
+            "$$type": "html-v3",
+            "value": {
+              "content": {
+                "$$type": "string",
+                "value": "Проект возрождения усадьбы «Барышня-крестьянка»"
+              },
+              "children": []
+            }
+          },
+          "link": {"$$type": "link", "value": {"isTargetBlank": null}}
+        },
+        "elements": [],
+        "widgetType": "e-heading",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_divider",
+        "elType": "widget",
+        "settings": {
+          "editor": "<p>✦</p>"
+        },
+        "elements": [],
+        "widgetType": "text-editor",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_subtitle",
+        "elType": "widget",
+        "settings": {
+          "editor": "<p>Возвращение жизни в родовое гнездо на тамбовской земле.</p>"
+        },
+        "elements": [],
+        "widgetType": "text-editor",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_desc",
+        "elType": "widget",
+        "settings": {
+          "editor": "<p>Ищем партнёров, разделяющих наши ценности, для совместного создания устойчивого семейного поместья и культурно-исторического центра.</p>"
+        },
+        "elements": [],
+        "widgetType": "text-editor",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_buttons",
+        "elType": "container",
+        "settings": {
+          "container_type": "flex",
+          "flex_direction": "row",
+          "justify_content": "center"
+        },
+        "elements": [
+          {
+            "id": "btn_primary",
+            "elType": "widget",
+            "settings": {
+              "text": "Узнать подробнее",
+              "link": {"url": "#contacts", "is_external": "", "nofollow": ""}
+            },
+            "elements": [],
+            "widgetType": "button",
+            "styles": [],
+            "interactions": [],
+            "editor_settings": [],
+            "version": "0.0"
+          },
+          {
+            "id": "btn_secondary",
+            "elType": "widget",
+            "settings": {
+              "text": "Связаться с нами",
+              "link": {"url": "#contacts", "is_external": "", "nofollow": ""}
+            },
+            "elements": [],
+            "widgetType": "button",
+            "styles": [],
+            "interactions": [],
+            "editor_settings": [],
+            "version": "0.0"
+          }
+        ],
+        "isInner": true
+      }
+    ],
+    "isInner": false
+  }
+]

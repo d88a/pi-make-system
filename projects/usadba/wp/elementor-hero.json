@@ -1,0 +1,82 @@
+[
+  {
+    "id": "hero_container",
+    "elType": "container",
+    "settings": {
+      "container_type": "grid",
+      "grid_columns_grid": {"unit": "fr", "size": "1"},
+      "grid_rows_grid": {"unit": "fr", "size": "1"},
+      "background_background": "classic",
+      "background_color": "#2F4A33",
+      "padding": {"unit": "px", "top": "150", "right": "40", "bottom": "150", "left": "40"}
+    },
+    "elements": [
+      {
+        "id": "hero_title",
+        "elType": "widget",
+        "widgetType": "e-heading",
+        "settings": {
+          "title": {
+            "$$type": "html-v3",
+            "value": {
+              "content": {
+                "$$type": "string",
+                "value": "<h1>Проект возрождения усадьбы «Барышня-крестьянка»</h1>"
+              },
+              "children": []
+            }
+          },
+          "link": {"$$type": "link", "value": {"isTargetBlank": null}}
+        },
+        "elements": [],
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_subtitle",
+        "elType": "widget",
+        "widgetType": "text-editor",
+        "settings": {
+          "editor": "<p style=\"font-style: italic;\">Возвращение жизни в родовое гнездо на тамбовской земле.</p>"
+        },
+        "elements": [],
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_description",
+        "elType": "widget",
+        "widgetType": "text-editor",
+        "settings": {
+          "editor": "<p>Ищем партнёров, разделяющих наши ценности, для совместного создания устойчивого семейного поместья и культурно-исторического центра.</p>"
+        },
+        "elements": [],
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_button",
+        "elType": "widget",
+        "widgetType": "e-button",
+        "settings": {
+          "text": {"$$type": "string", "value": "Узнать подробнее"},
+          "link": {"$$type": "link", "value": {"url": "#contacts", "isTargetBlank": null}},
+          "background_color": "#B8963E",
+          "button_text_color": "#2B2620"
+        },
+        "elements": [],
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      }
+    ],
+    "isInner": false
+  }
+]

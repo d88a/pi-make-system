@@ -1,0 +1,13 @@
+{
+    "name": "stroymaks2026",
+    "version": "1.0.0",
+    "private": true,
+    "description": "StroyMaks 2026 — WordPress theme with Tailwind CSS (Concrete Steel design)",
+    "scripts": {
+        "build": "npx tailwindcss -i ./tailwind/input.css -o ./assets/css/tailwind.css --minify",
+        "watch": "npx tailwindcss -i ./tailwind/input.css -o ./assets/css/tailwind.css --watch"
+    },
+    "devDependencies": {
+        "tailwindcss": "^3.4.0"
+    }
+}

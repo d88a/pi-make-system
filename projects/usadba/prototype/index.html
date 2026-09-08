@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Проект возрождения агроусадьбы Барышня-крестьянка | Инвестиции в историю</title>
+  <meta name="description" content="Ищем партнёров для возрождения усадьбы в селе Гагарино. Уникальный проект с поддержкой государства. Приглашаем на личную встречу.">
+  <meta name="keywords" content="усадьба, барышня крестьянка, инвестиции, возрождение, Тамбовская область, история">
+  <!-- Yandex.Metrika counter: вставить код счётчика -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Playfair Display"', 'Georgia', 'serif'],
+            body: ['"Playfair Display"', 'Georgia', 'serif'],
+          },
+          colors: {
+            pine:  { DEFAULT: 'var(--color-primary)', deep: 'var(--color-primary-deep)' },
+            terra: 'var(--color-secondary)',
+            gold:  { DEFAULT: 'var(--color-accent)', soft: 'var(--color-accent-soft)' },
+            ivory: 'var(--color-bg-page)',
+            cream: 'var(--color-bg-alt)',
+            surface: 'var(--color-surface)',
+            ink:   'var(--color-text-primary)',
+            soft:  'var(--color-text-muted)',
+            line:  'var(--color-border)',
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --color-primary: #2F4A33;
+      --color-primary-deep: #263D2A;
+      --color-secondary: #B0603F;
+      --color-accent: #B8963E;
+      --color-accent-soft: #C9A227;
+      --color-bg-page: #FAF6EC;
+      --color-bg-alt: #F5EFE3;
+      --color-surface: #FFFFFF;
+      --color-text-primary: #2B2620;
+      --color-text-muted: #6B6156;
+      --color-text-inverse: #F5EFE3;
+      --color-border: #E3D9C6;
+      --color-overlay: rgba(24, 36, 26, 1);
+      --shadow-brand: 0 10px 30px -10px rgba(47, 74, 51, 0.25);
+      --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Playfair Display', Georgia, serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); }
+
+    /* Subtle antique paper texture (SVG noise, very light) */
+    .paper-texture {
+      position: relative;
+    }
+    .paper-texture::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* Vintage double-border frame for hero */
+    .vintage-frame-hero {
+      position: relative;
+      display: inline-block;
+      border: 1px solid rgba(184, 150, 62, 0.4);
+      padding: 3rem 2.5rem;
+      text-align: left;
+    }
+    .vintage-frame-hero::before {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border: 1px solid rgba(184, 150, 62, 0.2);
+      pointer-events: none;
+    }
+    /* ::after removed — was overlapping header */
+
+    /* Gold ornamental divider: line — diamond — line */
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+    .divider-line {
+      height: 1px;
+      width: 72px;
+      background: linear-gradient(90deg, transparent, var(--color-accent));
+    }
+    .divider-line:last-child {
+      background: linear-gradient(90deg, var(--color-accent), transparent);
+    }
+    .divider-star { flex-shrink: 0; }
+
+    /* Vintage double frame for portraits */
+    .vintage-frame {
+      background: var(--color-surface);
+      border: 1px solid var(--color-accent);
+      padding: 10px;
+      box-shadow: var(--shadow-brand);
+      transition: transform 400ms var(--transition-smooth), box-shadow 400ms var(--transition-smooth);
+    }
+    .vintage-frame-inner {
+      border: 1px solid rgba(184, 150, 62, 0.5);
+      padding: 4px;
+    }
+    .frame-tilt-left  { transform: rotate(-1.6deg); }
+    .frame-tilt-right { transform: rotate(1.4deg); }
+    .frame-tilt-left:hover, .frame-tilt-right:hover {
+      transform: rotate(0deg) translateY(-6px);
+      box-shadow: 0 18px 40px -12px rgba(47, 74, 51, 0.35);
+    }
+
+    /* Scroll reveal + stagger */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .stagger > .reveal:nth-child(1) { transition-delay: 0ms; }
+    .stagger > .reveal:nth-child(2) { transition-delay: 100ms; }
+    .stagger > .reveal:nth-child(3) { transition-delay: 200ms; }
+    .stagger > .reveal:nth-child(4) { transition-delay: 300ms; }
+    .stagger > .reveal:nth-child(5) { transition-delay: 400ms; }
+
+    /* Hero darkening overlay for readability */
+    .hero-overlay {
+      background: linear-gradient(
+        to top,
+        color-mix(in srgb, var(--color-overlay) 88%, transparent),
+        color-mix(in srgb, var(--color-overlay) 55%, transparent),
+        color-mix(in srgb, var(--color-overlay) 35%, transparent)
+      );
+    }
+
+    /* Divider aligned left (contacts section) */
+    .divider-left { justify-content: flex-start; }
+    .divider-left .divider-line:first-child {
+      background: linear-gradient(90deg, var(--color-accent), transparent);
+    }
+
+    /* Flat variant of vintage frame (no tilt) */
+    .frame-flat { transform: none; }
+    .frame-flat:hover { transform: translateY(-4px); }
+
+    /* Eyebrow small caps label */
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* Header: transparent over hero, solid ivory after scroll (Figma pattern) */
+    #site-header {
+      background: transparent;
+      border-bottom: 1px solid transparent;
+    }
+    #site-header.header-scrolled {
+      background: color-mix(in srgb, var(--color-bg-page) 97%, transparent);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
+      box-shadow: 0 2px 12px rgba(43, 38, 32, 0.07);
+    }
+    #site-header .nav-link {
+      color: color-mix(in srgb, var(--color-text-inverse) 85%, transparent);
+    }
+    #site-header .nav-link:hover { color: var(--color-accent); }
+    #site-header.header-scrolled .nav-link { color: var(--color-text-primary); }
+    #site-header.header-scrolled .nav-link:hover { color: var(--color-accent); }
+    #site-header #menu-btn { color: var(--color-text-inverse); }
+    #site-header.header-scrolled #menu-btn { color: var(--color-primary); }
+
+    /* Logo text switches: cream over hero, pine after scroll */
+    .logo-text {
+      fill: var(--color-text-inverse);
+      transition: fill 300ms var(--transition-smooth);
+    }
+    #site-header.header-scrolled .logo-text { fill: var(--color-primary); }
+
+    /* Header CTA: outline cream -> outline pine, hover fills gold */
+    .header-cta {
+      border: 1px solid color-mix(in srgb, var(--color-text-inverse) 60%, transparent);
+      color: var(--color-text-inverse);
+    }
+    #site-header.header-scrolled .header-cta {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+    .header-cta:hover {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      color: var(--color-text-primary);
+    }
+  </style>
+</head>
+<body class="font-body antialiased bg-ivory text-ink">
+
+  <!-- ============ Блок 1. Хедер (fixed, transparent → solid при скролле) ============ -->
+  <header id="site-header" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
+    <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between md:h-20">
+        <!-- Logo: единый SVG (корона + усадьба + текст), без отдельного span -->
+        <a href="#hero" class="flex-shrink-0" aria-label="Барышня-Крестьянка — на главную">
+          <svg width="180" height="44" viewBox="0 0 180 44" fill="none" aria-hidden="true">
+            <!-- Crown -->
+            <path d="M18 8 L22 2 L26 8 L30 4 L28 10 L10 10 L8 4 Z" fill="var(--color-accent)"/>
+            <!-- Manor silhouette -->
+            <rect x="10" y="10" width="26" height="16" stroke="var(--color-accent)" stroke-width="1.2"/>
+            <rect x="16" y="18" width="7" height="8" fill="var(--color-accent)" opacity="0.4"/>
+            <line x1="23" y1="10" x2="23" y2="26" stroke="var(--color-accent)" stroke-width="0.8"/>
+            <!-- Columns -->
+            <line x1="14" y1="10" x2="14" y2="26" stroke="var(--color-accent)" stroke-width="1"/>
+            <line x1="32" y1="10" x2="32" y2="26" stroke="var(--color-accent)" stroke-width="1"/>
+            <!-- Text -->
+            <text x="43" y="17" font-family="'Playfair Display', serif" font-size="13" font-weight="700" letter-spacing="0.5" class="logo-text">Барышня</text>
+            <text x="43" y="32" font-family="'Playfair Display', serif" font-size="11" font-style="italic" letter-spacing="1" fill="var(--color-accent)">Крестьянка</text>
+          </svg>
+        </a>
+
+        <!-- Desktop nav -->
+        <nav class="hidden items-center gap-8 lg:flex" aria-label="Основная навигация">
+          <a href="#about" class="nav-link text-base sm:text-sm font-medium transition-colors duration-150">О проекте</a>
+          <a href="#history" class="nav-link text-base sm:text-sm font-medium transition-colors duration-150">История</a>
+          <a href="#heritage" class="nav-link text-base sm:text-sm font-medium transition-colors duration-150">Наследие</a>
+          <a href="#mission" class="nav-link text-base sm:text-sm font-medium transition-colors duration-150">Миссия</a>
+          <a href="#visit" class="nav-link text-base sm:text-sm font-medium transition-colors duration-150">Визит</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a href="#contacts" class="header-cta hidden px-5 py-2.5 text-base sm:text-sm font-semibold transition-colors duration-150 sm:inline-block">
+            Связаться с нами
+          </a>
+          <!-- Mobile menu button -->
+          <button id="menu-btn" class="inline-flex items-center justify-center p-2 lg:hidden" aria-label="Открыть меню" aria-expanded="false">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden border-t border-gold/20 bg-pine-deep lg:hidden">
+      <nav class="container mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4" aria-label="Мобильная навигация">
+        <a href="#about" class="mobile-link px-3 py-2.5 text-base text-cream/90 hover:bg-white/5">О проекте</a>
+        <a href="#history" class="mobile-link px-3 py-2.5 text-base text-cream/90 hover:bg-white/5">История</a>
+        <a href="#heritage" class="mobile-link px-3 py-2.5 text-base text-cream/90 hover:bg-white/5">Наследие</a>
+        <a href="#mission" class="mobile-link px-3 py-2.5 text-base text-cream/90 hover:bg-white/5">Миссия</a>
+        <a href="#visit" class="mobile-link px-3 py-2.5 text-base text-cream/90 hover:bg-white/5">Визит</a>
+        <a href="#contacts" class="mobile-link mt-2 bg-gold px-3 py-2.5 text-center text-base font-semibold text-ink">Связаться с нами</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ Блок 2. Первый экран (Hero) ============ -->
+    <section id="hero" class="relative overflow-hidden bg-pine">
+      <div class="hero-overlay absolute inset-0" aria-hidden="true"></div>
+
+      <div class="relative z-10 flex min-h-[600px] items-center justify-center md:min-h-[720px]">
+        <div class="container mx-auto max-w-7xl px-4 py-32 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-4xl text-center">
+            <div class="vintage-frame-hero text-center">
+            <p class="eyebrow text-gold">Село Гагарино · Тамбовская область · осн. 1702</p>
+            <h1 class="mt-5 font-display text-4xl font-bold leading-[1.08] tracking-tight text-cream sm:text-5xl md:text-6xl lg:text-7xl">
+              Проект возрождения агроусадьбы «Барышня-крестьянка»
+            </h1>
+            <div class="mx-auto my-8 flex max-w-md items-center gap-4 opacity-50">
+              <div class="flex-1 h-px bg-gradient-to-r from-transparent via-gold to-transparent"></div>
+              <svg class="h-5 w-5 text-gold" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1 L11.5 8.5 L19 10 L11.5 11.5 L10 19 L8.5 11.5 L1 10 L8.5 8.5 Z" fill="currentColor"/></svg>
+              <div class="flex-1 h-px bg-gradient-to-r from-transparent via-gold to-transparent"></div>
+            </div>
+            <p class="font-display text-xl italic text-cream md:text-2xl">
+              Историческое пространство, где наследие прошлого становится основой будущего
+            </p>
+            <p class="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-cream md:text-lg">
+              Ищем партнёров, разделяющих наши ценности, для совместного создания устойчивого семейного поместья и культурно-исторического центра.
+            </p>
+            <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+              <a href="#contacts" class="bg-gold px-7 py-3.5 text-base font-semibold text-ink transition-colors duration-150 hover:bg-gold-soft">
+                Узнать подробнее
+              </a>
+              <a href="#contacts" class="border border-cream/40 px-7 py-3.5 text-base font-medium text-cream transition-colors duration-150 hover:border-gold hover:text-gold">
+                Связаться с нами
+              </a>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Блок 3. О проекте ============ -->
+    <section id="about" class="paper-texture bg-ivory py-24 md:py-28">
+      <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+          <div class="divider reveal" aria-hidden="true">
+            <span class="divider-line"></span>
+            <svg class="divider-star" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1 L11.5 8.5 L19 10 L11.5 11.5 L10 19 L8.5 11.5 L1 10 L8.5 8.5 Z" fill="var(--color-accent)"/></svg>
+            <span class="divider-line"></span>
+          </div>
+          <h2 class="reveal mt-8 font-display text-3xl font-bold tracking-tight text-pine sm:text-4xl md:text-5xl">Дорогие друзья!</h2>
+          <p class="reveal mt-8 text-base leading-[1.7] text-ink md:text-lg">
+            Мы рады приветствовать вас на официальной странице проекта возрождения усадьбы «Барышня-крестьянка». Проект реализуется силами Благотворительного фонда содействия учебным заведениям и патриотического воспитания подрастающего поколения, при поддержке Администрации Тамбовской области, Совета Федерации ФС РФ и ветеранов Вооружённых Сил России.
+          </p>
+        </div>
+
+        <!-- Partner logos (grayscale placeholders) -->
+        <div class="stagger mt-16 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          <div class="reveal flex h-24 items-center justify-center border border-line bg-cream px-4 text-center">
+            <span class="text-sm sm:text-xs font-semibold uppercase tracking-wider text-soft grayscale">Министерство культуры РФ</span>
+          </div>
+          <div class="reveal flex h-24 items-center justify-center border border-line bg-cream px-4 text-center">
+            <span class="text-sm sm:text-xs font-semibold uppercase tracking-wider text-soft grayscale">Министерство сельского хозяйства РФ</span>
+          </div>
+          <div class="reveal flex h-24 items-center justify-center border border-line bg-cream px-4 text-center">
+            <span class="text-sm sm:text-xs font-semibold uppercase tracking-wider text-soft grayscale">Русское географическое общество</span>
+          </div>
+          <div class="reveal flex h-24 items-center justify-center border border-line bg-cream px-4 text-center">
+            <span class="text-sm sm:text-xs font-semibold uppercase tracking-wider text-soft grayscale">Администрация Тамбовской области</span>
+          </div>
+          <div class="reveal col-span-2 flex h-24 items-center justify-center border border-line bg-cream px-4 text-center sm:col-span-1">
+            <span class="text-sm sm:text-xs font-semibold uppercase tracking-wider text-soft grayscale">Совет Федерации ФС РФ</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Блок 4. Историческая ценность ============ -->
+    <section id="history" class="paper-texture bg-cream py-24 md:py-32">
+      <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-5 lg:gap-16">
+          <!-- Text: 3/5 -->
+          <div class="lg:col-span-3">
+            <p class="eyebrow reveal text-terra">Историческая ценность</p>
+            <h2 class="reveal mt-4 font-display text-3xl font-bold tracking-tight text-pine sm:text-4xl md:text-5xl">Почему это место особенное?</h2>
+            <p class="reveal mt-8 text-base leading-[1.7] text-ink md:text-lg">
+              Название проекта не случайно. Именно здесь, в старинном селе Гагарино Тамбовской области (основанном в мае 1702 года князем Матвеем Гагариным), жила Дарья Пашкова — дочь бригадного генерала Алексея Александровича Пашкова, ставшая впоследствии бабушкой легендарного генерала М.Д. Скобелева.
+            </p>
+            <p class="reveal mt-6 text-base leading-[1.7] text-ink md:text-lg">
+              Это имение хранит память о великих людях: здесь работал художник Валентин Серов, бывал великий князь Н.Н. Романов, а ученица Полины Виардо писала здесь музыку на стихи Пушкина.
+            </p>
+
+            <!-- Timeline: key dates from the project brief -->
+            <div class="reveal mt-10 border-l-2 border-gold pl-6">
+              <div class="space-y-5">
+                <div class="flex items-start gap-4">
+                  <span class="min-w-[64px] font-display text-lg font-bold text-gold">1702</span>
+                  <span class="text-base leading-relaxed text-ink">Основание села Гагарино князем Матвеем Гагариным</span>
+                </div>
+                <div class="flex items-start gap-4">
+                  <span class="min-w-[64px] font-display text-lg font-bold text-gold">1760-е</span>
+                  <span class="text-base leading-relaxed text-ink">Закладка регулярного парка Петром Пашковым</span>
+                </div>
+                <div class="flex items-start gap-4">
+                  <span class="min-w-[64px] font-display text-lg font-bold text-gold">1833</span>
+                  <span class="text-base leading-relaxed text-ink">Строительство храма в честь победы 1812 года</span>
+                </div>
+                <div class="flex items-start gap-4">
+                  <span class="min-w-[64px] font-display text-lg font-bold text-gold">1880</span>
+                  <span class="text-base leading-relaxed text-ink">Возведение дома управляющего имением</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vintage portrait collage: 2/5 -->
+          <div class="lg:col-span-2">
+            <div class="stagger relative mx-auto flex max-w-md overflow-hidden items-start justify-center gap-4 pt-6">
+              <figure class="vintage-frame frame-tilt-left reveal w-1/2">
+                <div class="vintage-frame-inner">
+                  <img src="https://placehold.co/360x460/B0603F/F5EFE3?text=Дарья+Пашкова" alt="Портрет Дарьи Пашковой" class="h-auto w-full object-cover" width="360" height="460" loading="lazy">
+                </div>
+                <figcaption class="px-1 pb-1 pt-3 text-center font-display text-sm sm:text-xs italic text-soft">Дарья Пашкова</figcaption>
+              </figure>
+              <figure class="vintage-frame frame-tilt-right reveal mt-12 w-1/2">
+                <div class="vintage-frame-inner">
+                  <img src="https://placehold.co/360x460/2F4A33/F5EFE3?text=М.Д.+Скобелев" alt="Портрет генерала М.Д. Скобелева" class="h-auto w-full object-cover" width="360" height="460" loading="lazy">
+                </div>
+                <figcaption class="px-1 pb-1 pt-3 text-center font-display text-sm sm:text-xs italic text-soft">Генерал М.Д. Скобелев</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Блок 5. Наше наследие сегодня ============ -->
+    <section id="heritage" class="paper-texture bg-ivory py-24 md:py-28">
+      <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+          <div class="divider reveal" aria-hidden="true">
+            <span class="divider-line"></span>
+            <svg class="divider-star" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1 L11.5 8.5 L19 10 L11.5 11.5 L10 19 L8.5 11.5 L1 10 L8.5 8.5 Z" fill="var(--color-accent)"/></svg>
+            <span class="divider-line"></span>
+          </div>
+          <h2 class="reveal mt-8 font-display text-3xl font-bold tracking-tight text-pine sm:text-4xl md:text-5xl">Наше наследие сегодня</h2>
+        </div>
+
+        <div class="stagger mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+          <!-- Card 1: Исторический парк -->
+          <article class="reveal group overflow-hidden bg-surface transition-all duration-300 hover:shadow-lg">
+            <div class="relative h-48 overflow-hidden bg-cream">
+              <img src="https://placehold.co/640x420/3A5A40/F5EFE3?text=Исторический+парк" alt="Исторический регулярный парк усадьбы" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" width="640" height="420" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-pine/60 to-transparent"></div>
+              <div class="absolute top-4 left-4 bg-ivory p-2.5">
+                <svg viewBox="0 0 40 40" fill="none" class="h-10 w-10"><path d="M5 35 C5 20 35 20 35 5" stroke="var(--color-primary)" stroke-width="1.5"/><path d="M10 35 C10 22 30 22 30 10" stroke="var(--color-primary)" stroke-width="1" opacity="0.5"/><circle cx="20" cy="15" r="4" fill="var(--color-accent)" opacity="0.6"/><path d="M5 35 h30" stroke="var(--color-accent)" stroke-width="1.5"/></svg>
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-xs tracking-[0.2em] uppercase text-gold mb-1">Исторический парк</p>
+              <h3 class="font-display text-xl font-bold text-pine mb-3">20 гектаров</h3>
+              <p class="text-sm leading-relaxed text-ink">Старейший регулярный парк Тамбовской губернии, заложенный Петром Пашковым в 1760-х годах.</p>
+            </div>
+          </article>
+
+          <!-- Card 2: Архитектура -->
+          <article class="reveal group overflow-hidden bg-surface transition-all duration-300 hover:shadow-lg">
+            <div class="relative h-48 overflow-hidden bg-cream">
+              <img src="https://placehold.co/640x420/B0603F/F5EFE3?text=Храм-памятник+1833+г." alt="Храм-памятник 1833 года и дом управляющего" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" width="640" height="420" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-pine/60 to-transparent"></div>
+              <div class="absolute top-4 left-4 bg-ivory p-2.5">
+                <svg viewBox="0 0 40 40" fill="none" class="h-10 w-10"><rect x="5" y="18" width="30" height="17" stroke="var(--color-primary)" stroke-width="1.5"/><path d="M20 5 L35 18 H5 Z" stroke="var(--color-primary)" stroke-width="1.5" fill="none"/><rect x="15" y="24" width="10" height="11" fill="var(--color-accent)" opacity="0.4"/><line x1="20" y1="18" x2="20" y2="35" stroke="var(--color-primary)" stroke-width="0.8"/></svg>
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-xs tracking-[0.2em] uppercase text-gold mb-1">Архитектура</p>
+              <h3 class="font-display text-xl font-bold text-pine mb-3">Дом и Храм</h3>
+              <p class="text-sm leading-relaxed text-ink">Сохранившийся дом управляющего имением (1880 г.) и храм-памятник (1833 г.) в честь победы русского оружия в войне 1812 года.</p>
+            </div>
+          </article>
+
+          <!-- Card 3: Соседи по истории -->
+          <article class="reveal group overflow-hidden bg-surface transition-all duration-300 hover:shadow-lg">
+            <div class="relative h-48 overflow-hidden bg-cream">
+              <img src="https://placehold.co/640x420/2F4A33/F5EFE3?text=Соседи+по+истории" alt="Исторические окрестности усадьбы" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" width="640" height="420" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-pine/60 to-transparent"></div>
+              <div class="absolute top-4 left-4 bg-ivory p-2.5">
+                <svg viewBox="0 0 40 40" fill="none" class="h-10 w-10"><circle cx="12" cy="15" r="5" stroke="var(--color-primary)" stroke-width="1.5"/><circle cx="28" cy="15" r="5" stroke="var(--color-primary)" stroke-width="1.5"/><path d="M5 35 C5 28 19 25 20 22 C21 25 35 28 35 35" stroke="var(--color-accent)" stroke-width="1.5"/><path d="M20 22 V15" stroke="var(--color-primary)" stroke-width="1"/></svg>
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-xs tracking-[0.2em] uppercase text-gold mb-1">Соседи по истории</p>
+              <h3 class="font-display text-xl font-bold text-pine mb-3">Великие имена</h3>
+              <p class="text-sm leading-relaxed text-ink">В разные годы здесь жили и творили адъютант Кутузова Пасий Кайсаров, академик Вернадский, Сергей Рахманинов и Наталья Гончарова.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Блок 6. Наша миссия (full-bleed фото-фон + статистика) ============ -->
+    <section id="mission" class="relative overflow-hidden py-24 md:py-32">
+      <img src="https://placehold.co/1920x900/3A5A40/F5EFE3" alt="Панорама усадьбы и исторического парка" class="absolute inset-0 h-full w-full object-cover object-center" width="1920" height="900" loading="lazy">
+      <div class="absolute inset-0" style="background: color-mix(in srgb, var(--color-overlay) 80%, transparent);" aria-hidden="true"></div>
+      <div class="relative z-10 container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+          <h2 class="reveal mt-4 font-display text-3xl font-bold tracking-tight text-cream sm:text-4xl md:text-5xl">Наша миссия</h2>
+          <div class="divider reveal mt-8" aria-hidden="true">
+            <span class="divider-line"></span>
+            <svg class="divider-star" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1 L11.5 8.5 L19 10 L11.5 11.5 L10 19 L8.5 11.5 L1 10 L8.5 8.5 Z" fill="var(--color-accent)"/></svg>
+            <span class="divider-line"></span>
+          </div>
+          <p class="reveal mt-8 font-display text-xl italic leading-relaxed text-cream md:text-2xl">
+            Мы создаём не просто восстановленный объект наследия — мы формируем живую территорию, где история, сельское хозяйство и современное развитие объединяются.
+          </p>
+        </div>
+
+        <!-- Statistics (all numbers are from the project brief) -->
+        <div class="stagger mx-auto mt-14 grid max-w-4xl grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+          <div class="reveal border border-gold/30 bg-pine/40 px-4 py-6 text-center backdrop-blur-sm">
+            <p class="font-display text-3xl font-bold text-gold">1702</p>
+            <p class="mt-2 text-sm text-cream">Год основания</p>
+          </div>
+          <div class="reveal border border-gold/30 bg-pine/40 px-4 py-6 text-center backdrop-blur-sm">
+            <p class="font-display text-3xl font-bold text-gold">20 га</p>
+            <p class="mt-2 text-sm text-cream">Исторический парк</p>
+          </div>
+          <div class="reveal border border-gold/30 bg-pine/40 px-4 py-6 text-center backdrop-blur-sm">
+            <p class="font-display text-3xl font-bold text-gold">2027</p>
+            <p class="mt-2 text-sm text-cream">Старт работ</p>
+          </div>
+          <div class="reveal border border-gold/30 bg-pine/40 px-4 py-6 text-center backdrop-blur-sm">
+            <p class="font-display text-3xl font-bold text-gold">300+</p>
+            <p class="mt-2 text-sm text-cream">Лет истории</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Блок 6. Экономическая концепция ============ -->
+    <section id="economics" class="paper-texture bg-ivory py-24 md:py-28">
+      <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="eyebrow reveal text-terra">Экономика</p>
+          <h2 class="reveal mt-4 font-display text-3xl font-bold tracking-tight text-pine sm:text-4xl md:text-5xl">Экономическая концепция усадьбы</h2>
+          <p class="reveal mt-4 font-display text-xl italic text-ink md:text-2xl">Возрождение традиционного сельского хозяйства как основы устойчивого развития территории</p>
+          <p class="reveal mt-8 text-base leading-[1.7] text-ink md:text-lg">
+            Усадьба «Барышня-крестьянка» создаётся как современная аграрная территория, где историческое наследие соединяется с эффективными сельскохозяйственными практиками.
+          </p>
+          <p class="reveal mt-4 text-base leading-[1.7] text-ink md:text-lg">
+            Основой проекта станет развитие собственного производства, фермерского хозяйства, переработки продукции и агротуристического направления.
+          </p>
+          <p class="reveal mt-4 text-base leading-[1.7] text-ink md:text-lg">
+            Цель проекта — создать самодостаточную территорию, где земля становится источником сохранения традиций, создания рабочих мест и формирования долгосрочной ценности.
+          </p>
+        </div>
+
+        <!-- 4 cards -->
+        <div class="stagger mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <article class="reveal group overflow-hidden bg-surface transition-all duration-300 hover:shadow-lg">
+            <div class="border-t-4 border-gold p-6">
+              <p class="text-xs tracking-[0.2em] uppercase text-gold mb-1">Сельское хозяйство</p>
+              <h3 class="font-display text-xl font-bold text-pine mb-3">Возрождение сельского хозяйства</h3>
+              <p class="text-sm leading-relaxed text-ink">Развитие собственного хозяйства на исторической земле: выращивание сельскохозяйственной продукции; восстановление традиционных методов земледелия; создание локального производства.</p>
+            </div>
+          </article>
+          <article class="reveal group overflow-hidden bg-surface transition-all duration-300 hover:shadow-lg">
+            <div class="border-t-4 border-gold p-6">
+              <p class="text-xs tracking-[0.2em] uppercase text-gold mb-1">Производство</p>
+              <h3 class="font-display text-xl font-bold text-pine mb-3">Фермерская продукция и переработка</h3>
+              <p class="text-sm leading-relaxed text-ink">Создание полного цикла: выращивание; переработка; хранение; реализация натуральной продукции. Формирование собственного бренда продуктов усадьбы.</p>
+            </div>
+          </article>
+          <article class="reveal group overflow-hidden bg-surface transition-all duration-300 hover:shadow-lg">
+            <div class="border-t-4 border-gold p-6">
+              <p class="text-xs tracking-[0.2em] uppercase text-gold mb-1">Туризм</p>
+              <h3 class="font-display text-xl font-bold text-pine mb-3">Агротуризм и семейный отдых</h3>
+              <p class="text-sm leading-relaxed text-ink">Объединение сельского хозяйства и туризма: экскурсии; знакомство с фермерским укладом; гастрономические программы; семейные мероприятия.</p>
+            </div>
+          </article>
+          <article class="reveal group overflow-hidden bg-surface transition-all duration-300 hover:shadow-lg">
+            <div class="border-t-4 border-gold p-6">
+              <p class="text-xs tracking-[0.2em] uppercase text-gold mb-1">Актив</p>
+              <h3 class="font-display text-xl font-bold text-pine mb-3">Земля как долгосрочный актив</h3>
+              <p class="text-sm leading-relaxed text-ink">Развитие территории, которая объединяет: историческую ценность; сельскохозяйственный потенциал; туристическую привлекательность; устойчивую экономическую модель.</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Final green block -->
+        <div class="reveal mt-16 border-t-4 border-gold bg-pine px-8 py-10 text-center">
+          <p class="font-display text-xl italic leading-relaxed text-cream md:text-2xl">
+            Мы создаём не просто восстановленную усадьбу, а живую сельскую территорию, где земля, история и современные технологии работают вместе для будущих поколений.
+          </p>
+          <div class="mt-8">
+            <a href="#contacts" class="inline-block bg-gold px-7 py-3.5 text-base font-semibold text-ink transition-colors duration-150 hover:bg-gold-soft">
+              Стать партнёром проекта
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Блок 7. Кого мы ищем ============ -->
+    <section id="partners" class="paper-texture bg-ivory py-24 md:py-28">
+      <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 gap-12 lg:grid-cols-5 lg:gap-16">
+          <!-- Left: text 3/5 -->
+          <div class="lg:col-span-3">
+            <p class="eyebrow reveal text-terra">Партнёрство</p>
+            <h2 class="reveal mt-4 font-display text-3xl font-bold tracking-tight text-pine sm:text-4xl md:text-5xl">Кого мы ищем?</h2>
+            <p class="reveal mt-8 text-base leading-[1.7] text-ink md:text-lg">
+              Мы открыты к партнёрству с инвесторами, предпринимателями и компаниями, заинтересованными в создании долгосрочного проекта на основе исторического наследия.
+            </p>
+
+            <h3 class="reveal mt-10 font-display text-2xl font-semibold text-pine">Что мы предлагаем:</h3>
+            <ul class="reveal mt-6 space-y-4">
+              <li class="flex items-start gap-4">
+                <span class="mt-2 h-2 w-2 flex-shrink-0 rotate-45 bg-gold" aria-hidden="true"></span>
+                <span class="text-base leading-relaxed text-ink md:text-lg">Участие в уникальном историко-культурном проекте.</span>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="mt-2 h-2 w-2 flex-shrink-0 rotate-45 bg-gold" aria-hidden="true"></span>
+                <span class="text-base leading-relaxed text-ink md:text-lg">Формирование команды единомышленников.</span>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="mt-2 h-2 w-2 flex-shrink-0 rotate-45 bg-gold" aria-hidden="true"></span>
+                <span class="text-base leading-relaxed text-ink md:text-lg">Создание устойчивого агро-туристического кластера с долгосрочной перспективой.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right: note in dark card with gold top border (Figma Investors) 2/5 -->
+          <div class="lg:col-span-2">
+            <div class="reveal mt-4 border-t-4 border-gold bg-pine px-6 py-8 md:px-8 md:py-10 lg:mt-16">
+              <p class="font-display text-base italic leading-relaxed text-cream md:text-lg">
+                Все условия сотрудничества, включая финансовые модели, доли участия и конкретные сроки, обсуждаются строго индивидуально на личной встрече.
+              </p>
+              <div class="mt-6 border-t border-gold/30 pt-6">
+                <p class="text-base leading-relaxed text-cream">
+                  Мы создаём закрытый клуб единомышленников, где каждое решение принимается осознанно и с учётом взаимных интересов.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Блок 8. Как познакомиться с проектом ============ -->
+    <section id="visit" class="paper-texture bg-cream py-24 md:py-28">
+      <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="eyebrow reveal text-terra">Приглашение</p>
+          <h2 class="reveal mt-4 font-display text-3xl font-bold tracking-tight text-pine sm:text-4xl md:text-5xl">Как познакомиться с проектом?</h2>
+          <p class="reveal mt-8 text-base leading-[1.7] text-ink md:text-lg">
+            Мы приглашаем вас лично посетить усадьбу, увидеть её уникальную атмосферу и подробно ознакомиться с ожидаемыми и планируемыми финансовыми результатами. Это позволит вам принять взвешенное и осознанное решение.
+          </p>
+          <p class="reveal mt-6 text-base leading-[1.7] text-ink md:text-lg">
+            Мы формируем команду и готовимся к запуску. Наша цель — приступить к активной фазе работ в 2027 году.
+          </p>
+        </div>
+
+        <!-- Yandex Maps iframe (real embed) -->
+        <div class="reveal mt-14 overflow-hidden border border-gold/30 bg-surface">
+          <iframe
+            src="https://yandex.ru/map-widget/v1/?text=Тамбовская%20область%2C%20Пичаевский%20район%2C%20с.%20Гагарино%201-е&z=14&l=map"
+            title="Карта: Тамбовская область, Пичаевский район, с. Гагарино 1-е"
+            class="h-72 w-full md:h-96"
+            allowfullscreen
+            loading="lazy"></iframe>
+        </div>
+        <p class="reveal mt-3 text-center text-sm text-soft">Тамбовская область, Пичаевский район, с. Гагарино 1-е</p>
+
+        <div class="reveal mt-12 text-center">
+          <a href="#contacts" class="inline-block bg-terra px-8 py-4 text-base font-semibold text-cream transition-colors duration-150 hover:bg-[color-mix(in_srgb,var(--color-secondary)_85%,black)]">
+            Записаться на экскурсию / встречу
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Блок 9. Контакты (футер) ============ -->
+    <section id="contacts" class="bg-pine py-24 md:py-28">
+      <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
+          <!-- Contacts -->
+          <div>
+            <div class="divider divider-left reveal" aria-hidden="true">
+              <span class="divider-line"></span>
+              <svg class="divider-star" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1 L11.5 8.5 L19 10 L11.5 11.5 L10 19 L8.5 11.5 L1 10 L8.5 8.5 Z" fill="var(--color-accent)"/></svg>
+            </div>
+            <h2 class="reveal mt-6 font-display text-3xl font-bold tracking-tight text-cream sm:text-4xl md:text-5xl">Свяжитесь с нами</h2>
+            <p class="reveal mt-6 max-w-lg text-base leading-[1.7] text-cream md:text-lg">
+              Если вы чувствуете в себе силы и готовы стать частью этого большого дела, напишите или позвоните нам. Мы будем рады обсудить все детали в формате личной встречи.
+            </p>
+
+            <div class="reveal mt-10 border-l-2 border-gold pl-6">
+              <p class="font-display text-xl font-semibold text-cream md:text-2xl">Олег Викторович Островский</p>
+              <div class="mt-5 space-y-4">
+                <a href="tel:+79039049090" class="group flex items-center gap-4">
+                  <span class="flex h-12 w-12 flex-shrink-0 items-center justify-center border border-gold/40 transition-colors duration-150 group-hover:bg-gold">
+                    <svg class="h-5 w-5 text-gold transition-colors duration-150 group-hover:text-pine" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/>
+                    </svg>
+                  </span>
+                  <span class="text-lg text-cream transition-colors duration-150 group-hover:text-gold">+7 903 904 90 90</span>
+                </a>
+                <a href="mailto:zed900@mail.ru" class="group flex items-center gap-4">
+                  <span class="flex h-12 w-12 flex-shrink-0 items-center justify-center border border-gold/40 transition-colors duration-150 group-hover:bg-gold">
+                    <svg class="h-5 w-5 text-gold transition-colors duration-150 group-hover:text-pine" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
+                    </svg>
+                  </span>
+                  <span class="text-lg text-cream transition-colors duration-150 group-hover:text-gold">zed900@mail.ru</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Social placeholders -->
+            <div class="reveal mt-10 flex items-center gap-4">
+              <a href="#" class="flex h-11 w-11 items-center justify-center border border-cream/25 text-cream/70 transition-colors duration-150 hover:border-gold hover:text-gold" aria-label="ВКонтакте">
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.162 18.994c.609 0 .858-.406.851-.915-.031-1.917.714-2.949 2.059-1.604 1.488 1.488 1.796 2.519 3.603 2.519h3.2c.808 0 1.126-.26 1.126-.668 0-.863-1.421-2.386-2.625-3.504-1.686-1.565-1.765-1.602-.313-3.486 1.801-2.339 4.157-5.336 2.073-5.336h-3.981c-.772 0-.828.435-1.103 1.083-.995 2.347-2.886 5.387-3.604 4.911-.751-.5-.607-2.406-.543-4.046.022-.699.022-1.24-.915-1.24h-2.896c-.435 0-.699.26-.699.566 0 .63.956.775 1.023 2.453l.062 2.974c-.674.391-1.826-1.376-2.714-3.394-.29-.667-.356-1.082-1.13-1.082H2.109c-.47 0-.75.26-.75.625 0 .652.783 2.756 2.414 5.142 2.174 3.108 4.796 4.51 7.389 4.51z"/></svg>
+              </a>
+              <a href="#" class="flex h-11 w-11 items-center justify-center border border-cream/25 text-cream/70 transition-colors duration-150 hover:border-gold hover:text-gold" aria-label="Telegram">
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+              </a>
+              <a href="#" class="flex h-11 w-11 items-center justify-center border border-cream/25 text-cream/70 transition-colors duration-150 hover:border-gold hover:text-gold" aria-label="YouTube">
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Form -->
+          <div class="reveal">
+            <form action="send.php" method="post" class="border border-gold/40 bg-cream p-8 md:p-10">
+              <div class="space-y-4">
+                <div>
+                  <label for="name" class="mb-2 block text-base sm:text-sm font-medium text-ink">Имя</label>
+                  <input type="text" id="name" name="name" required placeholder="Как к вам обращаться"
+                    class="w-full border border-line bg-surface px-4 py-3 text-base text-ink placeholder:text-soft/70 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/40">
+                </div>
+                <div>
+                  <label for="contact" class="mb-2 block text-base sm:text-sm font-medium text-ink">Телефон / Email</label>
+                  <input type="text" id="contact" name="contact" required placeholder="+7 ___ ___ __ __ или email"
+                    class="w-full border border-line bg-surface px-4 py-3 text-base text-ink placeholder:text-soft/70 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/40">
+                </div>
+                <button type="submit" class="w-full bg-terra px-6 py-3.5 text-base font-semibold text-cream transition-colors duration-150 hover:bg-[color-mix(in_srgb,var(--color-secondary)_85%,black)]">
+                  Отправить заявку
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ Футер ============ -->
+  <footer class="border-t border-white/10 bg-pine-deep py-10">
+    <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
+        <p class="font-display text-base sm:text-sm text-cream/70">Усадьба «Барышня-крестьянка» · с. Гагарино, Тамбовская область</p>
+        <p class="text-base sm:text-sm text-cream/50">© 2026 Проект возрождения агроусадьбы. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal with stagger
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); }),
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Header: transparent at top, solid ivory after 40px scroll (Figma pattern)
+    const siteHeader = document.getElementById('site-header');
+    const handleHeaderScroll = () => {
+      siteHeader.classList.toggle('header-scrolled', window.scrollY > 40);
+    };
+    handleHeaderScroll();
+    window.addEventListener('scroll', handleHeaderScroll, { passive: true });
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      menuBtn.setAttribute('aria-expanded', String(!isOpen));
+    });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Smooth scroll for anchor buttons (fallback + offset for sticky header)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const headerOffset = 80;
+          const top = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

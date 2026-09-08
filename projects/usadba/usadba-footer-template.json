@@ -1,0 +1,52 @@
+{
+    "content": [
+        {
+            "id": "footer_section",
+            "elType": "section",
+            "settings": {
+                "background_background": "classic",
+                "background_color": "#263D2A",
+                "padding": {
+                    "unit": "px",
+                    "top": "40",
+                    "right": "16",
+                    "bottom": "40",
+                    "left": "16",
+                    "isLinked": false
+                },
+                "gap": "no"
+            },
+            "elements": [
+                {
+                    "id": "footer_col",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 100
+                    },
+                    "elements": [
+                        {
+                            "id": "footer_line1",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "<p style=\"text-align:center; font-family:Playfair Display,Georgia,serif; font-size:14px; color:rgba(245,239,227,0.7); margin:0;\">Усадьба «Барышня-крестьянка» · с. Гагарино, Тамбовская область<\/p>"
+                            },
+                            "elements": []
+                        },
+                        {
+                            "id": "footer_line2",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "<p style=\"text-align:center; font-size:14px; color:rgba(245,239,227,0.5); margin:0;\">© 2026 Проект возрождения агроусадьбы. Все права защищены.<\/p>"
+                            },
+                            "elements": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "title": "Footer",
+    "type": "section"
+}

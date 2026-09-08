@@ -1,0 +1,98 @@
+{
+    "content": [
+        {
+            "id": "hs",
+            "elType": "section",
+            "settings": {
+                "background_background": "classic",
+                "background_color": "#F5EFE3",
+                "padding": {
+                    "unit": "px",
+                    "top": "112",
+                    "right": "16",
+                    "bottom": "112",
+                    "left": "16",
+                    "isLinked": false
+                },
+                "gap": "no"
+            },
+            "elements": [
+                {
+                    "id": "hs_col",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 100
+                    },
+                    "elements": [
+                        {
+                            "id": "hs1",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "<p style=\"font-size:12px; letter-spacing:0.22em; text-transform:uppercase; font-weight:600; color:#B0603F; text-align:center;\">Историческая ценность<\/p>"
+                            },
+                            "elements": []
+                        },
+                        {
+                            "id": "hs2",
+                            "elType": "widget",
+                            "widgetType": "heading",
+                            "settings": {
+                                "title": "Почему это место особенное?",
+                                "header_size": "h2",
+                                "align": "center",
+                                "title_color": "#2F4A33",
+                                "typography_typography": "custom",
+                                "typography_font_family": "Playfair Display",
+                                "typography_font_size": {
+                                    "unit": "px",
+                                    "size": 48
+                                },
+                                "typography_font_weight": "700"
+                            },
+                            "elements": []
+                        },
+                        {
+                            "id": "hs3",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "<p style=\"text-align:center; max-width:768px; margin:32px auto 0; font-size:18px; line-height:1.7; color:#2B2620;\">Название проекта не случайно. Именно здесь, в старинном селе Гагарино Тамбовской области (основанном в мае 1702 года князем Матвеем Гагариным), жила Дарья Пашкова — дочь бригадного генерала Алексея Александровича Пашкова, ставшая впоследствии бабушкой легендарного генерала М.Д. Скобелева.<\/p>"
+                            },
+                            "elements": []
+                        },
+                        {
+                            "id": "hs4",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "<p style=\"text-align:center; max-width:768px; margin:24px auto 0; font-size:18px; line-height:1.7; color:#2B2620;\">Это имение хранит память о великих людях: здесь работал художник Валентин Серов, бывал великий князь Н.Н. Романов, а ученица Полины Виардо писала здесь музыку на стихи Пушкина.<\/p>"
+                            },
+                            "elements": []
+                        },
+                        {
+                            "id": "hs5",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "<div style=\"max-width:500px; margin:40px auto 0; border-left:2px solid #B8963E; padding-left:24px;\"><div style=\"margin-bottom:20px;\"><span style=\"font-family:Playfair Display,Georgia,serif; font-size:18px; font-weight:700; color:#B8963E; display:inline-block; min-width:64px;\">1702<\/span> <span style=\"font-size:16px; color:#2B2620;\">Основание села Гагарино князем Матвеем Гагариным<\/span><\/div><div style=\"margin-bottom:20px;\"><span style=\"font-family:Playfair Display,Georgia,serif; font-size:18px; font-weight:700; color:#B8963E; display:inline-block; min-width:64px;\">1760-е<\/span> <span style=\"font-size:16px; color:#2B2620;\">Закладка регулярного парка Петром Пашковым<\/span><\/div><div style=\"margin-bottom:20px;\"><span style=\"font-family:Playfair Display,Georgia,serif; font-size:18px; font-weight:700; color:#B8963E; display:inline-block; min-width:64px;\">1833<\/span> <span style=\"font-size:16px; color:#2B2620;\">Строительство храма в честь победы 1812 года<\/span><\/div><div style=\"margin-bottom:20px;\"><span style=\"font-family:Playfair Display,Georgia,serif; font-size:18px; font-weight:700; color:#B8963E; display:inline-block; min-width:64px;\">1880<\/span> <span style=\"font-size:16px; color:#2B2620;\">Возведение дома управляющего имением<\/span><\/div><\/div>"
+                            },
+                            "elements": []
+                        },
+                        {
+                            "id": "hs6",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "<div style=\"display:flex; justify-content:center; gap:24px; margin-top:48px; max-width:600px; margin-left:auto; margin-right:auto;\"><div style=\"background:#fff; border:1px solid #B8963E; padding:10px; transform:rotate(-1.6deg);\"><div style=\"border:1px solid rgba(184,150,62,0.5); padding:4px;\"><img src=\"https:\/\/placehold.co\/360x460\/B0603F\/F5EFE3?text=Дарья+Пашкова\" style=\"width:180px; height:230px; object-fit:cover;\" alt=\"\"><\/div><p style=\"text-align:center; font-style:italic; font-size:12px; color:#6B6156; margin-top:8px;\">Дарья Пашкова<\/p><\/div><div style=\"background:#fff; border:1px solid #B8963E; padding:10px; transform:rotate(1.4deg); margin-top:40px;\"><div style=\"border:1px solid rgba(184,150,62,0.5); padding:4px;\"><img src=\"https:\/\/placehold.co\/360x460\/2F4A33\/F5EFE3?text=М.Д.+Скобелев\" style=\"width:180px; height:230px; object-fit:cover;\" alt=\"\"><\/div><p style=\"text-align:center; font-style:italic; font-size:12px; color:#6B6156; margin-top:8px;\">Генерал М.Д. Скобелев<\/p><\/div><\/div>"
+                            },
+                            "elements": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "title": "history",
+    "type": "section"
+}

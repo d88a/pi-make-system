@@ -1,0 +1,347 @@
+{
+  "system_colors": [
+    {
+      "_id": "text",
+      "title": "Text",
+      "color": "#1f2937"
+    },
+    {
+      "_id": "primary",
+      "title": "Primary",
+      "color": "#6b7280"
+    },
+    {
+      "_id": "secondary",
+      "title": "Secondary",
+      "color": "#ffffff"
+    },
+    {
+      "_id": "accent",
+      "title": "Accent",
+      "color": "#3b82f6"
+    }
+  ],
+  "custom_colors": [
+    {
+      "_id": "2f8d05a",
+      "title": "Transparent",
+      "color": "#ffffff00"
+    },
+    {
+      "_id": "1561c2d",
+      "title": "White",
+      "color": "#ffffff"
+    },
+    {
+      "_id": "f349c67",
+      "title": "Dark Background",
+      "color": "#111827"
+    },
+    {
+      "_id": "772d8e5",
+      "title": "Accent",
+      "color": "#9ca3af"
+    },
+    {
+      "_id": "2b112ea",
+      "title": "Light Background",
+      "color": "#dbeafe"
+    },
+    {
+      "_id": "58dca20",
+      "title": "Border",
+      "color": "#e5e7eb"
+    },
+    {
+      "_id": "aa8f555",
+      "title": "Light Background 2",
+      "color": "#f9fafb"
+    },
+    {
+      "_id": "f6b16e8",
+      "title": "Light Background 3",
+      "color": "#eff6ff"
+    },
+    {
+      "_id": "f26b03f",
+      "title": "Dark Surface",
+      "color": "#1e40af"
+    },
+    {
+      "_id": "6fa573d",
+      "title": "Dark Surface 2",
+      "color": "#4b5563"
+    },
+    {
+      "_id": "10da387",
+      "title": "Text",
+      "color": "#1f2937"
+    },
+    {
+      "_id": "c0ea049",
+      "title": "Primary",
+      "color": "#6b7280"
+    },
+    {
+      "_id": "b1e9795",
+      "title": "Accent",
+      "color": "#3b82f6"
+    }
+  ],
+  "system_typography": [
+    {
+      "_id": "primary",
+      "title": "Primary",
+      "typography_typography": "custom",
+      "typography_font_family": "Inter",
+      "typography_font_weight": "700",
+      "typography_font_size": {
+        "unit": "px",
+        "size": 48,
+        "sizes": []
+      }
+    },
+    {
+      "_id": "secondary",
+      "title": "Secondary",
+      "typography_typography": "custom",
+      "typography_font_family": "Inter",
+      "typography_font_weight": "600",
+      "typography_font_size": {
+        "unit": "px",
+        "size": 32,
+        "sizes": []
+      }
+    },
+    {
+      "_id": "text",
+      "title": "Text",
+      "typography_typography": "custom",
+      "typography_font_family": "Inter",
+      "typography_font_weight": "400",
+      "typography_font_size": {
+        "unit": "px",
+        "size": 16,
+        "sizes": []
+      }
+    },
+    {
+      "_id": "accent",
+      "title": "Accent",
+      "typography_typography": "custom",
+      "typography_font_family": "Inter",
+      "typography_font_weight": "500",
+      "typography_font_size": {
+        "unit": "px",
+        "size": 16,
+        "sizes": []
+      }
+    }
+  ],
+  "custom_typography": [
+    {
+      "_id": "291dcb9",
+      "title": "Text",
+      "typography_typography": "custom",
+      "typography_font_family": "Inter",
+      "typography_font_weight": "800",
+      "typography_font_size": {
+        "unit": "px",
+        "size": "20",
+        "sizes": []
+      }
+    },
+    {
+      "_id": "18e14e5",
+      "title": "Button Text",
+      "typography_typography": "custom",
+      "typography_font_family": "Inter",
+      "typography_font_weight": "500",
+      "typography_font_size": {
+        "unit": "px",
+        "size": "14",
+        "sizes": []
+      }
+    },
+    {
+      "_id": "f96b4c1",
+      "title": "Button Text 2",
+      "typography_typography": "custom",
+      "typography_font_family": "Inter",
+      "typography_font_weight": "600",
+      "typography_font_size": {
+        "unit": "px",
+        "size": "14",
+        "sizes": []
+      }
+    },
+    {
+      "_id": "31582bc",
+      "title": "Text 2",
+      "typography_typography": "custom",
+      "typography_font_family": "Inter",
+      "typography_font_weight": "600",
+      "typography_font_size": {
+        "unit": "px",
+        "size": "13",
+        "sizes": []
+      }
+    },
+    {
+      "_id": "93610a5",
+      "title": "Hero Heading",
+      "typography_typography": "custom",
+      "typography_font_family": "Inter",
+      "typography_font_weight": "800",
+      "typography_font_size": {
+        "unit": "px",
+        "size": "56",
+        "sizes": []
+      }
+    },
+    {
+      "_id": "532505c",
+      "title": "Body Text",
+      "typography_typography": "custom",
+      "typography_font_family": "Inter",
+      "typography_font_weight": "400",
+      "typography_font_size": {
+        "unit": "px",
+        "size": "19",
+        "sizes": []
+      }
+    },
+    {
+      "_id": "ebf6391",
+      "title": "Section Title",
+      "typography_typography": "custom",
+      "typography_font_family": "Inter",
+      "typography_font_weight": "800",
+      "typography_font_size": {
+        "unit": "px",
+        "size": "36",
+        "sizes": []
+      }
+    },
+    {
+      "_id": "d05724c",
+      "title": "Card Title",
+      "typography_typography": "custom",
+      "typography_font_family": "Inter",
+      "typography_font_weight": "700",
+      "typography_font_size": {
+        "unit": "px",
+        "size": "20",
+        "sizes": []
+      }
+    },
+    {
+      "_id": "a9b1eab",
+      "title": "Text 3",
+      "typography_typography": "custom",
+      "typography_font_family": "Inter",
+      "typography_font_weight": "400",
+      "typography_font_size": {
+        "unit": "px",
+        "size": "14",
+        "sizes": []
+      }
+    },
+    {
+      "_id": "98421f3",
+      "title": "Text 4",
+      "typography_typography": "custom",
+      "typography_font_family": "Inter",
+      "typography_font_weight": "800",
+      "typography_font_size": {
+        "unit": "px",
+        "size": "44",
+        "sizes": []
+      }
+    },
+    {
+      "_id": "eb88743",
+      "title": "Button Text 3",
+      "typography_typography": "custom",
+      "typography_font_family": "Inter",
+      "typography_font_weight": "600",
+      "typography_font_size": {
+        "unit": "px",
+        "size": "15",
+        "sizes": []
+      }
+    },
+    {
+      "_id": "d7418f3",
+      "title": "Card Title 2",
+      "typography_typography": "custom",
+      "typography_font_family": "Inter",
+      "typography_font_weight": "700",
+      "typography_font_size": {
+        "unit": "px",
+        "size": "18",
+        "sizes": []
+      }
+    },
+    {
+      "_id": "a913a8c",
+      "title": "Body Text 2",
+      "typography_typography": "custom",
+      "typography_font_family": "Inter",
+      "typography_font_weight": "400",
+      "typography_font_size": {
+        "unit": "px",
+        "size": "15",
+        "sizes": []
+      }
+    },
+    {
+      "_id": "fb8648e",
+      "title": "Body Text 3",
+      "typography_typography": "custom",
+      "typography_font_family": "Inter",
+      "typography_font_weight": "500",
+      "typography_font_size": {
+        "unit": "px",
+        "size": "24",
+        "sizes": []
+      }
+    },
+    {
+      "_id": "fc70a0f",
+      "title": "Text 5",
+      "typography_typography": "custom",
+      "typography_font_family": "Inter",
+      "typography_font_weight": "700",
+      "typography_font_size": {
+        "unit": "px",
+        "size": "15",
+        "sizes": []
+      }
+    },
+    {
+      "_id": "ad25525",
+      "title": "Text 6",
+      "typography_typography": "custom",
+      "typography_font_family": "Inter",
+      "typography_font_weight": "400",
+      "typography_font_size": {
+        "unit": "px",
+        "size": "13",
+        "sizes": []
+      }
+    },
+    {
+      "_id": "4d26a0c",
+      "title": "Inter",
+      "typography_typography": "custom",
+      "typography_font_family": "Inter",
+      "typography_font_weight": "700",
+      "typography_font_size": {
+        "unit": "px",
+        "size": 48,
+        "sizes": []
+      }
+    }
+  ]
+}

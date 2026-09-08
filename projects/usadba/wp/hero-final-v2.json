@@ -1,0 +1,116 @@
+[
+  {
+    "id": "hero_section",
+    "elType": "container",
+    "settings": {
+      "container_type": "grid",
+      "grid_columns_grid": {"unit": "fr", "size": "1"},
+      "grid_rows_grid": {"unit": "fr", "size": "6"},
+      "background_background": "classic",
+      "background_color": "#2F4A33",
+      "padding": {"unit": "px", "top": "120", "right": "20", "bottom": "120", "left": "20", "isLinked": false}
+    },
+    "elements": [
+      {
+        "id": "hero_eyebrow",
+        "elType": "widget",
+        "settings": {
+          "editor": "<p>Село Гагарино · Тамбовская область · осн. 1702</p>",
+          "align": "center",
+          "text_color": "#B8963E"
+        },
+        "elements": [],
+        "widgetType": "text-editor",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_title",
+        "elType": "widget",
+        "settings": {
+          "title": {
+            "$$type": "html-v3",
+            "value": {
+              "content": {
+                "$$type": "string",
+                "value": "Проект возрождения усадьбы «Барышня-крестьянка»"
+              },
+              "children": []
+            }
+          },
+          "link": {"$$type": "link", "value": {"isTargetBlank": null}},
+          "title_color": "#F5EFE3"
+        },
+        "elements": [],
+        "widgetType": "e-heading",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_divider",
+        "elType": "widget",
+        "settings": {
+          "editor": "<div class=\"usadba-divider\"><span class=\"usadba-divider-line\"></span><span class=\"usadba-divider-star\">✦</span><span class=\"usadba-divider-line\"></span></div>"
+        },
+        "elements": [],
+        "widgetType": "text-editor",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_subtitle",
+        "elType": "widget",
+        "settings": {
+          "editor": "<p>Возвращение жизни в родовое гнездо на тамбовской земле.</p>",
+          "align": "center",
+          "text_color": "#F5EFE3"
+        },
+        "elements": [],
+        "widgetType": "text-editor",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_desc",
+        "elType": "widget",
+        "settings": {
+          "editor": "<p>Ищем партнёров, разделяющих наши ценности, для совместного создания устойчивого семейного поместья и культурно-исторического центра.</p>",
+          "align": "center",
+          "text_color": "#F5EFE3"
+        },
+        "elements": [],
+        "widgetType": "text-editor",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_btn",
+        "elType": "widget",
+        "settings": {
+          "text": "Узнать подробнее",
+          "link": {"url": "#contacts", "is_external": "", "nofollow": ""},
+          "align": "center",
+          "background_color": "#B8963E",
+          "button_text_color": "#2B2620"
+        },
+        "elements": [],
+        "widgetType": "button",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      }
+    ],
+    "isInner": false
+  }
+]

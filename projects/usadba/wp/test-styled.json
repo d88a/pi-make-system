@@ -1,0 +1,84 @@
+[
+  {
+    "id": "hero_section",
+    "elType": "container",
+    "settings": {
+      "container_type": "grid",
+      "grid_columns_grid": {"unit": "fr", "size": "1"},
+      "grid_rows_grid": {"unit": "fr", "size": "4"},
+      "background_background": "classic",
+      "background_color": "#2F4A33",
+      "padding": {"unit": "px", "top": "150", "right": "40", "bottom": "150", "left": "40", "isLinked": false}
+    },
+    "elements": [
+      {
+        "id": "hero_title",
+        "elType": "widget",
+        "settings": {
+          "title": {
+            "$$type": "html-v3",
+            "value": {
+              "content": {
+                "$$type": "string",
+                "value": "Проект возрождения усадьбы «Барышня-крестьянка»"
+              },
+              "children": []
+            }
+          },
+          "link": {"$$type": "link", "value": {"isTargetBlank": null}},
+          "title_color": "#F5EFE3"
+        },
+        "elements": [],
+        "widgetType": "e-heading",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_subtitle",
+        "elType": "widget",
+        "settings": {
+          "editor": "<p style=\"color: #F5EFE3;\">Возвращение жизни в родовое гнездо на тамбовской земле.</p>"
+        },
+        "elements": [],
+        "widgetType": "text-editor",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_desc",
+        "elType": "widget",
+        "settings": {
+          "editor": "<p style=\"color: #F5EFE3;\">Ищем партнёров, разделяющих наши ценности, для совместного создания устойчивого семейного поместья и культурно-исторического центра.</p>"
+        },
+        "elements": [],
+        "widgetType": "text-editor",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_btn",
+        "elType": "widget",
+        "settings": {
+          "text": "Узнать подробнее",
+          "link": {"url": "#contacts", "is_external": "", "nofollow": ""},
+          "background_color": "#B8963E",
+          "button_text_color": "#2B2620",
+          "align": "center"
+        },
+        "elements": [],
+        "widgetType": "button",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      }
+    ],
+    "isInner": false
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "id": "hero_section",
+    "elType": "section",
+    "settings": {
+      "layout": "full_width",
+      "gap": "no",
+      "background_background": "classic",
+      "background_color": "#2F4A33",
+      "padding": {"unit": "px", "top": "150", "right": "40", "bottom": "150", "left": "40"}
+    },
+    "elements": [
+      {
+        "id": "hero_column",
+        "elType": "column",
+        "settings": {
+          "_column_size": 100,
+          "_inline_size": null
+        },
+        "elements": [
+          {
+            "id": "hero_title",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "Проект возрождения усадьбы «Барышня-крестьянка»",
+              "size": "default",
+              "align": "center",
+              "title_color": "#F5EFE3"
+            }
+          },
+          {
+            "id": "hero_subtitle",
+            "elType": "widget",
+            "widgetType": "text-editor",
+            "settings": {
+              "editor": "<p style=\"text-align: center; color: #F5EFE3; font-style: italic;\">Возвращение жизни в родовое гнездо на тамбовской земле.</p>",
+              "align": "center"
+            }
+          },
+          {
+            "id": "hero_description",
+            "elType": "widget",
+            "widgetType": "text-editor",
+            "settings": {
+              "editor": "<p style=\"text-align: center; color: #F5EFE3; max-width: 700px; margin: 20px auto;\">Ищем партнёров, разделяющих наши ценности, для совместного создания устойчивого семейного поместья и культурно-исторического центра.</p>",
+              "align": "center"
+            }
+          },
+          {
+            "id": "hero_button",
+            "elType": "widget",
+            "widgetType": "button",
+            "settings": {
+              "text": "Узнать подробнее",
+              "align": "center",
+              "background_color": "#B8963E",
+              "button_text_color": "#2B2620"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

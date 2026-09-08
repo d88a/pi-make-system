@@ -1,0 +1,2924 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theme &amp; Color Dashboard — Pi Make</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700&family=Playfair+Display:wght@400;700&family=Source+Serif+4:wght@400;600&family=JetBrains+Mono:wght@400;700&family=Manrope:wght@400;500;700&family=Geist:wght@400;500;700&family=Fraunces:wght@400;600;700&family=Bricolage+Grotesque:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;700&family=Syne:wght@400;700&family=Outfit:wght@400;500;700&family=Archivo:wght@400;700;900&family=IBM+Plex+Sans:wght@400;500;700&family=Crimson+Pro:wght@400;600&family=Cormorant:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Space Grotesk', 'Sora', 'sans-serif'],
+            body: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    /* ── Dashboard chrome ── */
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+
+    /* ── Active theme card ── */
+    .theme-card {
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .theme-card:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px -4px rgba(0,0,0,0.12);
+    }
+    .theme-card.active {
+      border-color: var(--color-primary, #57534E);
+      box-shadow: 0 0 0 3px rgba(87,83,78,0.12);
+    }
+
+    /* ── Accent swatch ── */
+    .accent-swatch {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      flex-shrink: 0;
+      position: relative;
+    }
+    .accent-swatch:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px -4px rgba(0,0,0,0.2);
+    }
+    .accent-swatch.active {
+      border-color: #1C1917;
+      box-shadow: 0 0 0 3px rgba(0,0,0,0.08);
+    }
+    .accent-swatch.active::after {
+      content: '✓';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    }
+
+    /* ── Background swatch (8th axis) ── */
+    .bg-swatch {
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 2px solid #D6D3D1;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      flex-shrink: 0;
+      position: relative;
+    }
+    .bg-swatch:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px -4px rgba(0,0,0,0.2);
+    }
+    .bg-swatch.active {
+      border-color: #1C1917;
+      box-shadow: 0 0 0 3px rgba(0,0,0,0.08);
+    }
+    .bg-swatch.active::after {
+      content: '✓';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1C1917;
+      font-size: 14px;
+      font-weight: 700;
+      text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+    }
+    .bg-reset-btn {
+      transition: all 0.2s;
+    }
+    .bg-reset-btn:hover {
+      background: #F5F5F4;
+      border-color: #57534E;
+    }
+
+    /* ── Card variant picker (9th axis) ── */
+    .card-variant-card {
+      border: 2px solid #D6D3D1;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .card-variant-card:hover {
+      border-color: #57534E;
+    }
+    .card-variant-card.active {
+      border-color: #57534E;
+      background: #F5F5F4;
+      box-shadow: 0 0 0 1px #57534E;
+    }
+
+    /* ── Mood card ── */
+    .mood-card {
+      cursor: pointer;
+      border: 2px solid #E7E5E4;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .mood-card:hover {
+      border-color: #D6D3D1;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px -4px rgba(0,0,0,0.08);
+    }
+    .mood-card.active {
+      border-color: var(--color-primary, #57534E);
+      box-shadow: 0 0 0 3px rgba(87,83,78,0.1);
+    }
+
+    /* ── Radius toggle button ── */
+    .radius-btn {
+      cursor: pointer;
+      border: 2px solid #E7E5E4;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .radius-btn:hover {
+      border-color: #D6D3D1;
+      background: #F5F5F4;
+    }
+    .radius-btn.active {
+      border-color: var(--color-primary, #57534E);
+      background: var(--color-primary-subtle, rgba(87,83,78,0.08));
+    }
+    .radius-demo {
+      width: 32px;
+      height: 32px;
+      background: #D6D3D1;
+      transition: border-radius 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ── Font pair card ── */
+    .font-pair-card {
+      cursor: pointer;
+      border: 2px solid #E7E5E4;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .font-pair-card:hover {
+      border-color: #D6D3D1;
+      transform: translateY(-1px);
+    }
+    .font-pair-card.active {
+      border-color: var(--color-primary, #57534E);
+      box-shadow: 0 0 0 3px rgba(87,83,78,0.1);
+    }
+
+    /* ── Layout pattern card ── */
+    .layout-card {
+      cursor: pointer;
+      border: 2px solid #E7E5E4;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .layout-card:hover {
+      border-color: #D6D3D1;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px -4px rgba(0,0,0,0.08);
+    }
+    .layout-card.active {
+      border-color: var(--color-primary, #57534E);
+      box-shadow: 0 0 0 3px rgba(87,83,78,0.1);
+    }
+
+    /* ── Niche card ── */
+    .niche-card {
+      border: 2px solid #D6D3D1;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .niche-card:hover {
+      border-color: #57534E;
+    }
+    .niche-card.active {
+      border-color: #57534E;
+      background: #F5F5F4;
+      box-shadow: 0 0 0 1px #57534E;
+    }
+
+    /* ── Live preview transitions ── */
+    #live-preview * {
+      transition: background-color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                  color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                  border-color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                  box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                  border-radius 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ── Preview card hover ── */
+    .preview-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .preview-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--color-primary, #57534E) !important;
+      box-shadow: var(--shadow-brand, 0 10px 30px -10px rgba(87,83,78,0.35)) !important;
+    }
+
+    /* ── Preview button hover ── */
+    .preview-btn {
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .preview-btn:hover {
+      box-shadow: var(--shadow-brand, 0 10px 30px -10px rgba(87,83,78,0.35));
+      transform: translateY(-1px);
+    }
+
+    /* ── Layout wireframe preview ── */
+    .wireframe-block {
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 3px; }
+
+    /* ── JSON output ── */
+    #json-output {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+
+    /* ── Mood override badge ── */
+    .override-badge {
+      font-size: 9px;
+      padding: 1px 6px;
+      border-radius: 3px;
+      background: #FEF3C7;
+      color: #92400E;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      display: none;
+      align-items: center;
+      gap: 2px;
+    }
+    .override-badge.visible {
+      display: inline-flex;
+    }
+  </style>
+</head>
+<body class="bg-[#F5F5F4] text-[#1C1917] antialiased min-h-screen">
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- HEADER -->
+  <!-- ════════════════════════════════════════════════ -->
+  <header class="border-b border-[#D6D3D1] bg-[#F5F5F4]/90 backdrop-blur-md sticky top-0 z-50">
+    <div class="mx-auto flex h-14 max-w-[1600px] items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center gap-3">
+        <svg width="22" height="22" viewBox="0 0 28 28" fill="none" class="text-[#57534E]">
+          <rect x="2" y="2" width="10" height="24" rx="1" fill="currentColor"/>
+          <rect x="16" y="2" width="10" height="24" rx="1" fill="currentColor" opacity="0.5"/>
+          <rect x="2" y="12" width="24" height="4" rx="1" fill="currentColor" opacity="0.7"/>
+        </svg>
+        <span class="font-semibold text-sm tracking-tight" style="font-family:'Space Grotesk',sans-serif;">Theme &amp; Color Dashboard</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-xs text-[#57534E] hidden md:inline-flex items-center gap-1.5" title="Значения дашборда — рекомендация. Архитектор в диалоге может предложить свои цвета, шрифты, комбинации.">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 16v-4M12 8h.01"/></svg>
+          <span><span class="font-medium">Рекомендация</span> — архитектор может предложить свои варианты в диалоге</span>
+        </span>
+        <a href="#apply" class="rounded-md bg-[#57534E] px-4 py-1.5 text-xs font-semibold text-white transition-all duration-200 hover:bg-[#44403C] hover:shadow-[0_4px_14px_-6px_rgba(87,83,78,0.35)]">
+          Применить
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- MAIN: 2-COLUMN LAYOUT -->
+  <!-- ════════════════════════════════════════════════ -->
+  <main class="mx-auto flex max-w-[1600px] flex-col lg:flex-row">
+    <!-- LEFT: Controls -->
+    <nav class="w-full lg:w-[480px] lg:min-w-[440px] border-r border-[#D6D3D1] bg-white overflow-y-auto lg:max-h-[calc(100vh-56px)] lg:sticky lg:top-14" aria-label="Панель управления дизайн-системой">
+      <div class="p-5 sm:p-6 space-y-7">
+
+        <!-- ── SECTION 0: Niche ── -->
+        <section aria-labelledby="niche-heading">
+          <h2 id="niche-heading" class="text-xs font-semibold tracking-widest uppercase text-[#57534E] mb-3" style="font-family:'Space Grotesk',sans-serif;">Тип сайта (Niche)</h2>
+          <div class="grid grid-cols-1 gap-2" id="niche-grid">
+            <!-- Populated by JS -->
+          </div>
+        </section>
+
+        <!-- ── SECTION 1: Theme Grid ── -->
+        <section aria-labelledby="theme-heading">
+          <h2 id="theme-heading" class="text-xs font-semibold tracking-widest uppercase text-[#57534E] mb-3" style="font-family:'Space Grotesk',sans-serif;">Тема</h2>
+          <div class="grid grid-cols-2 gap-2.5" id="theme-grid">
+            <!-- Populated by JS -->
+          </div>
+        </section>
+
+        <!-- ── SECTION 2: Accent Picker ── -->
+        <section aria-labelledby="accent-heading">
+          <h2 id="accent-heading" class="text-xs font-semibold tracking-widest uppercase text-[#57534E] mb-3" style="font-family:'Space Grotesk',sans-serif;">Акцент</h2>
+
+          <!-- Cool blues/greens -->
+          <p class="text-[10px] font-semibold tracking-wider uppercase text-[#57534E] mb-2">Синие / Зелёные</p>
+          <div class="flex flex-wrap gap-2 mb-3" id="accent-cool"></div>
+
+          <!-- Warm reds/corals -->
+          <p class="text-[10px] font-semibold tracking-wider uppercase text-[#57534E] mb-2">Красные / Коралл</p>
+          <div class="flex flex-wrap gap-2 mb-3" id="accent-warm"></div>
+
+          <!-- Gold / Bronze -->
+          <p class="text-[10px] font-semibold tracking-wider uppercase text-[#57534E] mb-2">
+            Золото / Бронза
+            <span class="font-normal normal-case tracking-normal text-[#57534E] ml-1">— близко к отвергнутой зоне, использовать осторожно</span>
+          </p>
+          <div class="flex flex-wrap gap-2 mb-3" id="accent-gold"></div>
+
+          <!-- Neutrals -->
+          <p class="text-[10px] font-semibold tracking-wider uppercase text-[#57534E] mb-2">Нейтральные</p>
+          <div class="flex flex-wrap gap-2 mb-3" id="accent-neutral"></div>
+        </section>
+
+        <!-- ── SECTION 3: Custom Hex ── -->
+        <section aria-labelledby="custom-heading">
+          <h2 id="custom-heading" class="text-xs font-semibold tracking-widest uppercase text-[#57534E] mb-3" style="font-family:'Space Grotesk',sans-serif;">Свой цвет</h2>
+          <div class="flex items-center gap-3">
+            <input type="color" id="custom-color" value="#57534E"
+              class="w-10 h-10 rounded-md cursor-pointer border-2 border-[#D6D3D1] bg-transparent p-0.5 transition-all duration-200 hover:border-[#57534E]"
+              aria-label="Выбор цвета">
+            <input type="text" id="custom-hex" value="#57534E" placeholder="#57534E"
+              class="flex-1 rounded-md border-2 border-[#D6D3D1] px-3 py-2 text-sm font-mono text-[#1C1917] placeholder:text-[#57534E] transition-all duration-200 focus:border-[#57534E] focus:outline-none focus:ring-1 focus:ring-[#57534E]"
+              aria-label="HEX значение цвета">
+            <button id="apply-custom" class="rounded-md bg-[#57534E] px-4 py-2 text-xs font-semibold text-white transition-all duration-200 hover:bg-[#44403C]">
+              OK
+            </button>
+          </div>
+          <p class="text-[10px] text-[#57534E] mt-1.5">Коррекция акцента владельцем. Ввод → Enter или клик OK.</p>
+        </section>
+
+        <!-- ── SECTION 3.5: Background ── -->
+        <section aria-labelledby="bg-heading">
+          <div class="flex items-center justify-between mb-3">
+            <h2 id="bg-heading" class="text-xs font-semibold tracking-widest uppercase text-[#57534E]" style="font-family:'Space Grotesk',sans-serif;">Фон страницы (Background)</h2>
+            <span class="text-[10px] text-[#57534E]">override темы</span>
+          </div>
+          <p class="text-[10px] font-semibold tracking-wider uppercase text-[#57534E] mb-2">Светлые</p>
+          <div class="flex flex-wrap gap-2 mb-3" id="bg-light"></div>
+          <p class="text-[10px] font-semibold tracking-wider uppercase text-[#57534E] mb-2">Тёмные</p>
+          <div class="flex flex-wrap gap-2 mb-3" id="bg-dark"></div>
+          <div class="flex items-center gap-3">
+            <input type="color" id="bg-custom-color" value="#FFFFFF"
+              class="w-10 h-10 rounded-md cursor-pointer border-2 border-[#D6D3D1] bg-transparent p-0.5 transition-all duration-200 hover:border-[#57534E]"
+              aria-label="Выбор цвета фона">
+            <input type="text" id="bg-custom-hex" placeholder="#XXXXXX"
+              class="flex-1 rounded-md border-2 border-[#D6D3D1] px-3 py-2 text-sm font-mono text-[#1C1917] placeholder:text-[#57534E] transition-all duration-200 focus:border-[#57534E] focus:outline-none focus:ring-1 focus:ring-[#57534E]"
+              aria-label="HEX значение цвета фона">
+            <button id="bg-apply-custom" class="rounded-md bg-[#57534E] px-4 py-2 text-xs font-semibold text-white transition-all duration-200 hover:bg-[#44403C]">
+              OK
+            </button>
+          </div>
+          <button id="bg-reset" class="bg-reset-btn w-full mt-2 rounded-md border-2 border-[#D6D3D1] bg-transparent px-4 py-2 text-xs font-medium text-[#57534E] transition-all duration-200">
+            Сбросить фон (вернуть к теме)
+          </button>
+          <p class="text-[10px] text-[#57534E] mt-1.5">Тёмный фон → авто светлый текст. Светлый фон → авто тёмный текст. Accent НЕ трогается.</p>
+        </section>
+
+        <!-- ── SECTION 4: Mood ── -->
+        <section aria-labelledby="mood-heading">
+          <div class="flex items-center justify-between mb-3">
+            <h2 id="mood-heading" class="text-xs font-semibold tracking-widest uppercase text-[#57534E]" style="font-family:'Space Grotesk',sans-serif;">Настроение (Mood)</h2>
+            <span class="text-[10px] text-[#57534E]">пресет → auto-set radius</span>
+          </div>
+          <div class="grid grid-cols-2 gap-2" id="mood-grid">
+            <!-- Populated by JS -->
+          </div>
+        </section>
+
+        <!-- ── SECTION 5: Radius ── -->
+        <section aria-labelledby="radius-heading">
+          <div class="flex items-center justify-between mb-3">
+            <h2 id="radius-heading" class="text-xs font-semibold tracking-widest uppercase text-[#57534E]" style="font-family:'Space Grotesk',sans-serif;">Радиус скругления</h2>
+            <span class="override-badge" id="radius-override-badge">ручная</span>
+          </div>
+          <div class="grid grid-cols-4 gap-2" id="radius-grid" role="radiogroup" aria-label="Радиус скругления">
+            <!-- Populated by JS -->
+          </div>
+        </section>
+
+        <!-- ── SECTION 6: Font Pair ── -->
+        <section aria-labelledby="font-heading">
+          <h2 id="font-heading" class="text-xs font-semibold tracking-widest uppercase text-[#57534E] mb-3" style="font-family:'Space Grotesk',sans-serif;">Шрифтовая пара</h2>
+          <div class="grid grid-cols-1 gap-2" id="font-grid">
+            <!-- Populated by JS (preset pairs) -->
+          </div>
+
+          <p class="text-[10px] font-semibold tracking-wider uppercase text-[#57534E] mt-4 mb-2">Подобрать независимо</p>
+          <div class="space-y-2">
+            <div>
+              <label for="font-display-select" class="text-[10px] text-[#57534E] block mb-1">Заголовок (Display)</label>
+              <select id="font-display-select" class="w-full rounded-md border-2 border-[#D6D3D1] px-2 py-1.5 text-xs text-[#1C1917] bg-white transition-all duration-200 focus:border-[#57534E] focus:outline-none" aria-label="Шрифт заголовков">
+                <!-- Populated by JS -->
+              </select>
+            </div>
+            <div>
+              <label for="font-body-select" class="text-[10px] text-[#57534E] block mb-1">Текст (Body)</label>
+              <select id="font-body-select" class="w-full rounded-md border-2 border-[#D6D3D1] px-2 py-1.5 text-xs text-[#1C1917] bg-white transition-all duration-200 focus:border-[#57534E] focus:outline-none" aria-label="Шрифт текста">
+                <!-- Populated by JS -->
+              </select>
+            </div>
+          </div>
+          <p class="text-[10px] text-[#57534E] mt-1.5">Выбери display и body отдельно — переопределит пару. Пара = быстрый старт, селекты = тонкая настройка.</p>
+        </section>
+
+        <!-- ── SECTION 7: Layout Pattern ── -->
+        <section aria-labelledby="layout-heading">
+          <h2 id="layout-heading" class="text-xs font-semibold tracking-widest uppercase text-[#57534E] mb-3" style="font-family:'Space Grotesk',sans-serif;">Паттерн страницы (Layout)</h2>
+          <div class="grid grid-cols-3 gap-2" id="layout-grid">
+            <!-- Populated by JS -->
+          </div>
+        </section>
+
+        <!-- ── SECTION 7.5: Card Variant ── -->
+        <section aria-labelledby="card-variant-heading">
+          <div class="flex items-center justify-between mb-3">
+            <h2 id="card-variant-heading" class="text-xs font-semibold tracking-widest uppercase text-[#57534E]" style="font-family:'Space Grotesk',sans-serif;">Вариант карточки</h2>
+            <span class="text-[10px] text-[#57534E]">зависит от niche</span>
+          </div>
+          <div class="grid grid-cols-2 gap-2" id="card-variant-grid">
+            <!-- Populated by JS (niche-dependent) -->
+          </div>
+          <p class="text-[10px] text-[#57534E] mt-1.5">Разные структуры карточек для выбранного типа сайта. Меняется превью карточки справа.</p>
+        </section>
+
+        <!-- ── SECTION 8: Apply & Export ── -->
+        <section aria-labelledby="apply-heading" id="apply">
+          <h2 id="apply-heading" class="text-xs font-semibold tracking-widest uppercase text-[#57534E] mb-3" style="font-family:'Space Grotesk',sans-serif;">Экспорт</h2>
+          <button id="btn-apply" class="w-full rounded-md bg-[#57534E] px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-[#44403C] hover:shadow-[0_10px_30px_-10px_rgba(87,83,78,0.35)]">
+            Применить — показать JSON
+          </button>
+          <button id="btn-download" class="w-full mt-2 rounded-md border-2 border-[#D6D3D1] bg-transparent px-6 py-3 text-sm font-medium text-[#57534E] transition-all duration-200 hover:border-[#57534E] hover:text-[#44403C]">
+            Скачать project-theme.json
+          </button>
+          <pre id="json-output" class="mt-3 rounded-lg border border-[#D6D3D1] bg-[#F5F5F4] p-4 text-xs text-[#57534E] max-h-[200px] overflow-auto hidden"></pre>
+        </section>
+
+      </div>
+    </nav>
+
+    <!-- RIGHT: Live Preview -->
+    <section class="flex-1 lg:max-h-[calc(100vh-56px)] lg:overflow-y-auto" id="live-preview" aria-label="Предпросмотр">
+      <div class="p-6 sm:p-10 lg:p-12 max-w-[800px] mx-auto space-y-10" style="background:var(--color-bg-page, #F5F5F4);" id="preview-inner">
+
+        <!-- 1. Display heading -->
+        <div>
+          <span class="inline-block text-xs font-semibold tracking-widest uppercase mb-3" style="color:var(--color-text-muted, #57534E);font-family:var(--font-display, 'Space Grotesk'),sans-serif;">Типографика</span>
+          <h1 id="preview-heading" style="font-family:var(--font-display, 'Space Grotesk'),sans-serif;font-size:clamp(36px,6vw,64px);font-weight:700;line-height:1.1;letter-spacing:-0.03em;color:var(--color-text-primary, #1C1917);">
+            Привет, мир
+          </h1>
+          <p class="mt-3 max-w-lg" id="preview-body" style="font-family:var(--font-body, 'Inter'),sans-serif;font-size:16px;line-height:1.6;color:var(--color-text-muted, #57534E);">
+            Это живой предпросмотр темы. Все элементы используют <code style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--color-primary, #57534E);">var(--color-*)</code> и обновляются мгновенно при смене темы или акцента.
+          </p>
+        </div>
+
+        <!-- 2. Primary button -->
+        <div>
+          <span class="inline-block text-xs font-semibold tracking-widest uppercase mb-3" style="color:var(--color-text-muted, #57534E);font-family:var(--font-display, 'Space Grotesk'),sans-serif;">Кнопка Primary</span>
+          <button id="preview-btn" class="preview-btn inline-flex items-center rounded-md px-6 py-3 text-sm font-semibold" style="background:var(--color-primary, #57534E);color:#fff;font-family:var(--font-body, 'Inter'),sans-serif;border-radius:var(--radius-btn, 6px);" aria-label="Демо-кнопка">
+            Смотреть каталог →
+          </button>
+        </div>
+
+        <!-- 3. Product card -->
+        <div>
+          <span class="inline-block text-xs font-semibold tracking-widest uppercase mb-3" style="color:var(--color-text-muted, #57534E);font-family:var(--font-display, 'Space Grotesk'),sans-serif;">Карточка товара</span>
+          <div id="preview-card" class="preview-card rounded-2xl p-5 max-w-sm" style="background:var(--color-surface, #FFFFFF);border:2px solid var(--color-border, #D6D3D1);border-radius:var(--radius-card, 16px);box-shadow:var(--shadow-presence, none);">
+            <div class="aspect-[4/3] rounded-lg overflow-hidden mb-4" style="background:var(--color-bg-alt, #E7E5E4);">
+              <img src="https://picsum.photos/seed/build/400/300" alt="Товар" class="w-full h-full object-cover" loading="lazy" width="400" height="300">
+            </div>
+            <h3 class="text-base font-semibold mb-1" style="font-family:var(--font-display, 'Space Grotesk'),sans-serif;color:var(--color-text-primary, #1C1917);">Бетон М400 (B30)</h3>
+            <p class="text-sm leading-relaxed mb-3" style="font-family:var(--font-body, 'Inter'),sans-serif;color:var(--color-text-muted, #57534E);">Тяжёлый бетон. Морозостойкость F200. Водонепроницаемость W6.</p>
+            <div class="flex items-end justify-between">
+              <span class="text-lg font-bold" style="font-family:'JetBrains Mono',monospace;color:var(--color-primary, #57534E);">4 850 ₽</span>
+              <span class="text-xs" style="color:var(--color-text-muted, #57534E);">/м³</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Badge -->
+        <div>
+          <span class="inline-block text-xs font-semibold tracking-widest uppercase mb-3" style="color:var(--color-text-muted, #57534E);font-family:var(--font-display, 'Space Grotesk'),sans-serif;">Бейдж</span>
+          <span id="preview-badge" class="inline-flex items-center gap-1.5 rounded-md px-3 py-1 text-xs font-semibold" style="background:var(--color-primary-subtle, rgba(87,83,78,0.08));color:var(--color-primary, #57534E);font-family:var(--font-body, 'Inter'),sans-serif;border-radius:var(--radius-badge, 6px);">
+            <span class="w-1.5 h-1.5 rounded-full" style="background:var(--color-primary, #57534E);"></span>
+            В наличии
+          </span>
+        </div>
+
+        <!-- 5. Link / CTA text -->
+        <div>
+          <span class="inline-block text-xs font-semibold tracking-widest uppercase mb-3" style="color:var(--color-text-muted, #57534E);font-family:var(--font-display, 'Space Grotesk'),sans-serif;">Ссылка / CTA текст</span>
+          <a href="#" class="inline-flex items-center gap-1 text-sm font-medium transition-colors duration-200 hover:underline underline-offset-4" style="color:var(--color-primary, #57534E);font-family:var(--font-body, 'Inter'),sans-serif;" onclick="return false">
+            Все проекты
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- 6. Paragraph -->
+        <div>
+          <span class="inline-block text-xs font-semibold tracking-widest uppercase mb-3" style="color:var(--color-text-muted, #57534E);font-family:var(--font-display, 'Space Grotesk'),sans-serif;">Параграф</span>
+          <p class="max-w-lg leading-relaxed" style="font-family:var(--font-body, 'Inter'),sans-serif;font-size:16px;line-height:1.6;color:var(--color-text-primary, #1C1917);">
+            Основной текст страницы отображается здесь. Он использует <code style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--color-primary, #57534E);">--color-text-primary</code> для основного цвета и <span style="color:var(--color-text-muted, #57534E);">--color-text-muted</span> для второстепенного текста. Смена темы мгновенно обновляет все цвета на странице.
+          </p>
+        </div>
+
+        <!-- 7. Layout Wireframe Preview -->
+        <div id="layout-wireframe-section">
+          <span class="inline-block text-xs font-semibold tracking-widest uppercase mb-3" style="color:var(--color-text-muted, #57534E);font-family:var(--font-display, 'Space Grotesk'),sans-serif;">Структура страницы (Layout Wireframe)</span>
+          <div id="layout-wireframe" class="rounded-xl border-2 border-dashed p-4 space-y-2" style="border-color:var(--color-border, #D6D3D1);background:var(--color-bg-alt, #E7E5E4);min-height:120px;">
+            <p class="text-xs text-center" style="color:var(--color-text-muted, #57534E);">Выберите layout pattern слева</p>
+          </div>
+        </div>
+
+      </div>
+
+      <footer class="mt-auto border-t border-[#D6D3D1] bg-[#F5F5F4] px-6 py-4 text-center text-xs" style="color:var(--color-text-muted, #57534E);font-family:var(--font-body, 'Inter'),sans-serif;">
+        Pi Make — Theme &amp; Color Dashboard. Выбор записывается в project.json через «Применить».
+      </footer>
+    </section>
+  </main>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- DATA: Themes, Accents, Moods, Fonts, Layouts -->
+  <!-- ════════════════════════════════════════════════ -->
+  <script>
+    const THEMES = {
+      'concrete-steel': {
+        name: 'Concrete Steel',
+        description: 'Утилитарный, индустриальный stone',
+        displayFont: 'Space Grotesk',
+        bodyFont: 'Inter',
+        css: {
+          '--color-bg-page': '#F5F5F4',
+          '--color-bg-alt': '#E7E5E4',
+          '--color-surface': '#FFFFFF',
+          '--color-text-primary': '#1C1917',
+          '--color-text-muted': '#57534E',
+          '--color-primary': '#57534E',
+          '--color-primary-hover': '#44403C',
+          '--color-primary-subtle': 'rgba(87,83,78,0.08)',
+          '--color-border': '#D6D3D1',
+          '--color-border-hover': '#57534E',
+          '--shadow-brand': '0 10px 30px -10px rgba(87,83,78,0.35)',
+          '--shadow-card': '0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)',
+          '--shadow-card-hover': '0 8px 24px -8px rgba(87,83,78,0.2)',
+          '--transition-smooth': 'all 0.3s cubic-bezier(0.4,0,0.2,1)',
+          '--font-display': "'Space Grotesk', sans-serif",
+          '--font-body': "'Inter', sans-serif",
+          '--font-mono': "'JetBrains Mono', monospace",
+        }
+      },
+      'dusty-slate': {
+        name: 'Dusty Slate',
+        description: 'Корпоративный slate blue — профессиональный, технологичный',
+        displayFont: 'Space Grotesk',
+        bodyFont: 'Inter',
+        css: {
+          '--color-bg-page': '#F8FAFC',
+          '--color-bg-alt': '#F1F5F9',
+          '--color-surface': '#FFFFFF',
+          '--color-text-primary': '#0F172A',
+          '--color-text-muted': '#475569',
+          '--color-primary': '#475569',
+          '--color-primary-hover': '#334155',
+          '--color-primary-subtle': 'rgba(71,85,105,0.08)',
+          '--color-border': '#E2E8F0',
+          '--color-border-hover': '#CBD5E1',
+          '--shadow-brand': '0 10px 30px -10px rgba(71,85,105,0.3)',
+          '--shadow-card': '0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03)',
+          '--shadow-card-hover': '0 8px 24px -8px rgba(71,85,105,0.15)',
+          '--transition-smooth': 'all 0.3s cubic-bezier(0.4,0,0.2,1)',
+          '--font-display': "'Space Grotesk', sans-serif",
+          '--font-body': "'Inter', sans-serif",
+          '--font-mono': "'JetBrains Mono', monospace",
+        }
+      },
+      'graphite-mono': {
+        name: 'Graphite Mono',
+        description: 'Apple/Linear премиум монохром — роскошь через отсутствие цвета',
+        displayFont: 'Sora',
+        bodyFont: 'Inter',
+        css: {
+          '--color-bg-page': '#FAFAF9',
+          '--color-bg-alt': '#F5F5F4',
+          '--color-surface': '#FFFFFF',
+          '--color-text-primary': '#1C1917',
+          '--color-text-muted': '#57534E',
+          '--color-primary': '#44403C',
+          '--color-primary-hover': '#292524',
+          '--color-primary-subtle': 'rgba(68,64,60,0.08)',
+          '--color-border': '#E7E5E4',
+          '--color-border-hover': '#D6D3D1',
+          '--shadow-brand': '0 10px 30px -10px rgba(68,64,60,0.3)',
+          '--shadow-card': '0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03)',
+          '--shadow-card-hover': '0 8px 24px -8px rgba(68,64,60,0.15)',
+          '--transition-smooth': 'all 0.3s cubic-bezier(0.4,0,0.2,1)',
+          '--font-display': "'Sora', sans-serif",
+          '--font-body': "'Inter', sans-serif",
+          '--font-mono': "'JetBrains Mono', monospace",
+        }
+      },
+      'sage-stone': {
+        name: 'Sage Stone',
+        description: 'Органичный sage green — природная надёжность',
+        displayFont: 'Sora',
+        bodyFont: 'Inter',
+        css: {
+          '--color-bg-page': '#F7F6F3',
+          '--color-bg-alt': '#EFEDE9',
+          '--color-surface': '#FFFFFF',
+          '--color-text-primary': '#1C1917',
+          '--color-text-muted': '#57534E',
+          '--color-primary': '#4A5D4F',
+          '--color-primary-hover': '#3A4A3F',
+          '--color-primary-subtle': 'rgba(74,93,79,0.08)',
+          '--color-border': '#E7E5E4',
+          '--color-border-hover': '#D6D3D1',
+          '--shadow-brand': '0 10px 30px -10px rgba(74,93,79,0.3)',
+          '--shadow-card': '0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03)',
+          '--shadow-card-hover': '0 8px 24px -8px rgba(74,93,79,0.15)',
+          '--transition-smooth': 'all 0.3s cubic-bezier(0.4,0,0.2,1)',
+          '--font-display': "'Sora', sans-serif",
+          '--font-body': "'Inter', sans-serif",
+          '--font-mono': "'JetBrains Mono', monospace",
+        }
+      },
+      'editorial-cream': {
+        name: 'Editorial Cream',
+        description: 'Magazine serif mocha — книжная роскошь',
+        displayFont: 'Playfair Display',
+        bodyFont: 'Source Serif 4',
+        css: {
+          '--color-bg-page': '#FBF9F4',
+          '--color-bg-alt': '#F5F2EB',
+          '--color-surface': '#FFFFFF',
+          '--color-text-primary': '#2A2520',
+          '--color-text-muted': '#57534E',
+          '--color-primary': '#6B5D4F',
+          '--color-primary-hover': '#544A3E',
+          '--color-primary-subtle': 'rgba(107,93,79,0.07)',
+          '--color-border': '#E8E2D8',
+          '--color-border-hover': '#D4CCC0',
+          '--shadow-brand': '0 10px 30px -10px rgba(107,93,79,0.25)',
+          '--shadow-card': '0 1px 3px rgba(42,37,32,0.04), 0 1px 2px rgba(42,37,32,0.03)',
+          '--shadow-card-hover': '0 8px 24px -8px rgba(107,93,79,0.14)',
+          '--transition-smooth': 'all 0.3s cubic-bezier(0.4,0,0.2,1)',
+          '--font-display': "'Playfair Display', 'Georgia', serif",
+          '--font-body': "'Source Serif 4', 'Georgia', serif",
+          '--font-mono': "'JetBrains Mono', monospace",
+        }
+      },
+      'modern-clean': {
+        name: 'Modern Clean',
+        description: 'Linear/Vercel — чистый корпоративный indigo',
+        displayFont: 'Inter',
+        bodyFont: 'Inter',
+        css: {
+          '--color-bg-page': '#FFFFFF',
+          '--color-bg-alt': '#F8FAFC',
+          '--color-surface': '#FFFFFF',
+          '--color-text-primary': '#0F172A',
+          '--color-text-muted': '#475569',
+          '--color-primary': '#4F46E5',
+          '--color-primary-hover': '#4338CA',
+          '--color-primary-subtle': 'rgba(79,70,229,0.08)',
+          '--color-border': '#E2E8F0',
+          '--color-border-hover': '#CBD5E1',
+          '--shadow-brand': '0 10px 30px -10px rgba(79,70,229,0.3)',
+          '--shadow-card': '0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03)',
+          '--shadow-card-hover': '0 8px 24px -8px rgba(79,70,229,0.15)',
+          '--transition-smooth': 'all 0.3s cubic-bezier(0.4,0,0.2,1)',
+          '--font-display': "'Inter', sans-serif",
+          '--font-body': "'Inter', sans-serif",
+          '--font-mono': "'JetBrains Mono', monospace",
+        }
+      },
+      'warm-minimal': {
+        name: 'Warm Minimal',
+        description: 'Notion/Stripe — тёплый amber, редакционный',
+        displayFont: 'Inter',
+        bodyFont: 'Inter',
+        css: {
+          '--color-bg-page': '#FAF9F7',
+          '--color-bg-alt': '#FFFFFF',
+          '--color-surface': '#FFFFFF',
+          '--color-text-primary': '#1C1917',
+          '--color-text-muted': '#57534E',
+          '--color-primary': '#B45309',
+          '--color-primary-hover': '#92400E',
+          '--color-primary-subtle': 'rgba(217,119,6,0.08)',
+          '--color-border': '#E7E5E4',
+          '--color-border-hover': '#D6D3D1',
+          '--shadow-brand': '0 10px 30px -10px rgba(217,119,6,0.25)',
+          '--shadow-card': '0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03)',
+          '--shadow-card-hover': '0 8px 24px -8px rgba(217,119,6,0.12)',
+          '--transition-smooth': 'all 0.3s cubic-bezier(0.4,0,0.2,1)',
+          '--font-display': "'Inter', sans-serif",
+          '--font-body': "'Inter', sans-serif",
+          '--font-mono': "'JetBrains Mono', monospace",
+        }
+      },
+      'aurora': {
+        name: 'Aurora',
+        description: 'Vercel/Framer — тёмное северное сияние',
+        displayFont: 'Inter',
+        bodyFont: 'Inter',
+        css: {
+          '--color-bg-page': '#050505',
+          '--color-bg-alt': '#0A0A0A',
+          '--color-surface': '#0A0A0A',
+          '--color-text-primary': '#F5F5F5',
+          '--color-text-muted': '#525252',
+          '--color-primary': '#A78BFA',
+          '--color-primary-hover': '#8B5CF6',
+          '--color-primary-subtle': 'rgba(167,139,250,0.08)',
+          '--color-border': '#1A1A1A',
+          '--color-border-hover': '#333333',
+          '--shadow-brand': '0 10px 30px -10px rgba(167,139,250,0.35)',
+          '--shadow-card': '0 1px 3px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.15)',
+          '--shadow-card-hover': '0 8px 24px -8px rgba(167,139,250,0.25)',
+          '--transition-smooth': 'all 0.3s cubic-bezier(0.4,0,0.2,1)',
+          '--font-display': "'Inter', sans-serif",
+          '--font-body': "'Inter', sans-serif",
+          '--font-mono': "'JetBrains Mono', monospace",
+        }
+      },
+      'bento': {
+        name: 'Bento Grid',
+        description: 'Apple/Linear — мозаика из карточек',
+        displayFont: 'Inter',
+        bodyFont: 'Inter',
+        css: {
+          '--color-bg-page': '#FAFAFA',
+          '--color-bg-alt': '#F5F2EB',
+          '--color-surface': '#FFFFFF',
+          '--color-text-primary': '#0F0F0F',
+          '--color-text-muted': '#57534E',
+          '--color-primary': '#6366F1',
+          '--color-primary-hover': '#4F46E5',
+          '--color-primary-subtle': 'rgba(99,102,241,0.08)',
+          '--color-border': '#E7E5E4',
+          '--color-border-hover': '#D6D3CE',
+          '--shadow-brand': '0 10px 30px -10px rgba(99,102,241,0.25)',
+          '--shadow-card': '0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03)',
+          '--shadow-card-hover': '0 8px 24px -8px rgba(99,102,241,0.15)',
+          '--transition-smooth': 'all 0.3s cubic-bezier(0.4,0,0.2,1)',
+          '--font-display': "'Inter', sans-serif",
+          '--font-body': "'Inter', sans-serif",
+          '--font-mono': "'JetBrains Mono', monospace",
+        }
+      },
+      'bold-tech': {
+        name: 'Bold Tech',
+        description: 'Raycast/GitHub — дерзкий tech, cyan+violet glow',
+        displayFont: 'Inter',
+        bodyFont: 'Inter',
+        css: {
+          '--color-bg-page': '#0A0A0A',
+          '--color-bg-alt': '#171717',
+          '--color-surface': '#171717',
+          '--color-text-primary': '#FAFAFA',
+          '--color-text-muted': '#525252',
+          '--color-primary': '#06B6D4',
+          '--color-primary-hover': '#0891B2',
+          '--color-primary-subtle': 'rgba(6,182,212,0.08)',
+          '--color-border': '#262626',
+          '--color-border-hover': '#404040',
+          '--shadow-brand': '0 10px 30px -10px rgba(6,182,212,0.35)',
+          '--shadow-card': '0 1px 3px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.15)',
+          '--shadow-card-hover': '0 8px 24px -8px rgba(6,182,212,0.25)',
+          '--transition-smooth': 'all 0.3s cubic-bezier(0.4,0,0.2,1)',
+          '--font-display': "'Inter', sans-serif",
+          '--font-body': "'Inter', sans-serif",
+          '--font-mono': "'JetBrains Mono', monospace",
+        }
+      },
+      'dark-tech': {
+        name: 'Dark Tech',
+        description: 'Cyberpunk/Neon — тёмный с неоновой подсветкой',
+        displayFont: 'Inter',
+        bodyFont: 'Inter',
+        css: {
+          '--color-bg-page': '#0A0A0A',
+          '--color-bg-alt': '#121212',
+          '--color-surface': '#121212',
+          '--color-text-primary': '#FFFFFF',
+          '--color-text-muted': '#444444',
+          '--color-primary': '#00BFFF',
+          '--color-primary-hover': '#0099CC',
+          '--color-primary-subtle': 'rgba(0,191,255,0.08)',
+          '--color-border': '#222222',
+          '--color-border-hover': '#333333',
+          '--shadow-brand': '0 10px 30px -10px rgba(0,191,255,0.35)',
+          '--shadow-card': '0 1px 3px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.15)',
+          '--shadow-card-hover': '0 8px 24px -8px rgba(0,191,255,0.25)',
+          '--transition-smooth': 'all 0.3s cubic-bezier(0.4,0,0.2,1)',
+          '--font-display': "'Inter', sans-serif",
+          '--font-body': "'Inter', sans-serif",
+          '--font-mono': "'JetBrains Mono', monospace",
+        }
+      },
+      'earth-stone': {
+        name: 'Earth Stone',
+        description: 'Премиум B2B — тёплый песок, terracotta акцент',
+        displayFont: 'Inter',
+        bodyFont: 'Inter',
+        css: {
+          '--color-bg-page': '#F5F1EB',
+          '--color-bg-alt': '#EDE7DD',
+          '--color-surface': '#FFFFFF',
+          '--color-text-primary': '#1C1917',
+          '--color-text-muted': '#57534E',
+          '--color-primary': '#B45309',
+          '--color-primary-hover': '#92400E',
+          '--color-primary-subtle': 'rgba(180,83,9,0.08)',
+          '--color-border': '#E7E2D8',
+          '--color-border-hover': '#D6D3D1',
+          '--shadow-brand': '0 10px 30px -10px rgba(180,83,9,0.25)',
+          '--shadow-card': '0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03)',
+          '--shadow-card-hover': '0 8px 24px -8px rgba(180,83,9,0.15)',
+          '--transition-smooth': 'all 0.3s cubic-bezier(0.4,0,0.2,1)',
+          '--font-display': "'Inter', sans-serif",
+          '--font-body': "'Inter', sans-serif",
+          '--font-mono': "'JetBrains Mono', monospace",
+        }
+      },
+      'gaming': {
+        name: 'Gaming',
+        description: 'Neon/Retro — pixel-шрифт, зелёный неон',
+        displayFont: 'Press Start 2P',
+        bodyFont: 'Inter',
+        css: {
+          '--color-bg-page': '#000000',
+          '--color-bg-alt': '#121212',
+          '--color-surface': '#121212',
+          '--color-text-primary': '#FFFFFF',
+          '--color-text-muted': '#666666',
+          '--color-primary': '#00FF00',
+          '--color-primary-hover': '#00CC00',
+          '--color-primary-subtle': 'rgba(0,255,0,0.08)',
+          '--color-border': '#333333',
+          '--color-border-hover': '#444444',
+          '--shadow-brand': '0 10px 30px -10px rgba(0,255,0,0.35)',
+          '--shadow-card': '0 1px 3px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.15)',
+          '--shadow-card-hover': '0 8px 24px -8px rgba(0,255,0,0.25)',
+          '--transition-smooth': 'all 0.3s cubic-bezier(0.4,0,0.2,1)',
+          '--font-display': "'Press Start 2P', 'Inter', sans-serif",
+          '--font-body': "'Inter', sans-serif",
+          '--font-mono': "'JetBrains Mono', monospace",
+        }
+      },
+      'industrial-dark': {
+        name: 'Industrial Dark',
+        description: 'Промышленный B2B — глубокий синий, жёлтый акцент',
+        displayFont: 'Inter',
+        bodyFont: 'Inter',
+        css: {
+          '--color-bg-page': '#0B2653',
+          '--color-bg-alt': '#0F172A',
+          '--color-surface': '#1E293B',
+          '--color-text-primary': '#F8FAFC',
+          '--color-text-muted': '#64748B',
+          '--color-primary': '#FDB900',
+          '--color-primary-hover': '#E5A600',
+          '--color-primary-subtle': 'rgba(253,185,0,0.08)',
+          '--color-border': '#1E293B',
+          '--color-border-hover': '#334155',
+          '--shadow-brand': '0 10px 30px -10px rgba(253,185,0,0.3)',
+          '--shadow-card': '0 1px 3px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.15)',
+          '--shadow-card-hover': '0 8px 24px -8px rgba(253,185,0,0.18)',
+          '--transition-smooth': 'all 0.3s cubic-bezier(0.4,0,0.2,1)',
+          '--font-display': "'Inter', sans-serif",
+          '--font-body': "'Inter', sans-serif",
+          '--font-mono': "'JetBrains Mono', monospace",
+        }
+      },
+      'luxury': {
+        name: 'Luxury',
+        description: 'Apple Style — минимализм, монохром, чёрный акцент',
+        displayFont: 'Inter',
+        bodyFont: 'Inter',
+        css: {
+          '--color-bg-page': '#FFFFFF',
+          '--color-bg-alt': '#F5F5F5',
+          '--color-surface': '#FFFFFF',
+          '--color-text-primary': '#1A1A1A',
+          '--color-text-muted': '#8E8E8E',
+          '--color-primary': '#000000',
+          '--color-primary-hover': '#1A1A1A',
+          '--color-primary-subtle': 'rgba(0,0,0,0.05)',
+          '--color-border': '#E0E0E0',
+          '--color-border-hover': '#BBBBBB',
+          '--shadow-brand': '0 10px 30px -10px rgba(0,0,0,0.2)',
+          '--shadow-card': '0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03)',
+          '--shadow-card-hover': '0 8px 24px -8px rgba(0,0,0,0.1)',
+          '--transition-smooth': 'all 0.3s cubic-bezier(0.4,0,0.2,1)',
+          '--font-display': "'Inter', sans-serif",
+          '--font-body': "'Inter', sans-serif",
+          '--font-mono': "'JetBrains Mono', monospace",
+        }
+      },
+      'mesh-gradient': {
+        name: 'Mesh Gradient',
+        description: 'Stripe/Nubank — цветные пятна, glass-эффект',
+        displayFont: 'Inter',
+        bodyFont: 'Inter',
+        css: {
+          '--color-bg-page': '#FFFFFF',
+          '--color-bg-alt': '#F5F5F5',
+          '--color-surface': '#FFFFFF',
+          '--color-text-primary': '#09090B',
+          '--color-text-muted': '#A1A1AA',
+          '--color-primary': '#7C3AED',
+          '--color-primary-hover': '#6D28D9',
+          '--color-primary-subtle': 'rgba(124,58,237,0.08)',
+          '--color-border': '#E4E4E7',
+          '--color-border-hover': '#D4D4D8',
+          '--shadow-brand': '0 10px 30px -10px rgba(124,58,237,0.3)',
+          '--shadow-card': '0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03)',
+          '--shadow-card-hover': '0 8px 24px -8px rgba(124,58,237,0.2)',
+          '--transition-smooth': 'all 0.3s cubic-bezier(0.4,0,0.2,1)',
+          '--font-display': "'Inter', sans-serif",
+          '--font-body': "'Inter', sans-serif",
+          '--font-mono': "'JetBrains Mono', monospace",
+        }
+      }
+    };
+
+    const ACCENTS = {
+      cool: [
+        { name: 'Steel Blue', hex: '#3B5F8A', id: 'steel-blue' },
+        { name: 'Indigo', hex: '#4F46E5', id: 'indigo' },
+        { name: 'Teal', hex: '#0E7490', id: 'teal' },
+        { name: 'Emerald', hex: '#047857', id: 'emerald' },
+      ],
+      warm: [
+        { name: 'Crimson', hex: '#BE123C', id: 'crimson' },
+        { name: 'Coral', hex: '#FB7185', id: 'coral' },
+        { name: 'Rose', hex: '#E11D48', id: 'rose' },
+        { name: 'Wine', hex: '#9F1239', id: 'wine' },
+      ],
+      gold: [
+        { name: 'Gold', hex: '#CA8A04', id: 'gold' },
+        { name: 'Bronze', hex: '#92400E', id: 'bronze' },
+      ],
+      neutral: [
+        { name: 'Slate', hex: '#475569', id: 'slate' },
+        { name: 'Graphite', hex: '#44403C', id: 'graphite' },
+      ]
+    };
+
+    // ── MOOD PRESETS (from mood-axis.md) ──
+    const MOOD_PRESETS = {
+      bold: {
+        id: 'bold',
+        name: 'Дерзкий',
+        emoji: '💪',
+        description: 'Смелый, энергичный',
+        radius: '16px',
+        density: 'normal',
+        shadow: 'medium',
+        animation: 'some',
+        gradient: 'often',
+        dark: 'often'
+      },
+      serene: {
+        id: 'serene',
+        name: 'Спокойный',
+        emoji: '🌿',
+        description: 'Тихий, воздушный',
+        radius: '12px',
+        density: 'airy',
+        shadow: 'none',
+        animation: 'none',
+        gradient: 'rare',
+        dark: 'rare'
+      },
+      premium: {
+        id: 'premium',
+        name: 'Премиальный',
+        emoji: '💎',
+        description: 'Дорогой, сдержанный',
+        radius: '4px',
+        density: 'airy',
+        shadow: 'none',
+        animation: 'none',
+        gradient: 'rare',
+        dark: 'often'
+      },
+      industrial: {
+        id: 'industrial',
+        name: 'Индустриальный',
+        emoji: '🏗️',
+        description: 'Утилитарный, индустриальный',
+        radius: '2px',
+        density: 'tight',
+        shadow: 'none',
+        animation: 'some',
+        gradient: 'rare',
+        dark: 'mix'
+      },
+      editorial: {
+        id: 'editorial',
+        name: 'Журнальный',
+        emoji: '📖',
+        description: 'Печатный, книжный',
+        radius: '2px',
+        density: 'airy',
+        shadow: 'none',
+        animation: 'none',
+        gradient: 'no',
+        dark: 'rare'
+      },
+      playful: {
+        id: 'playful',
+        name: 'Игривый',
+        emoji: '🎨',
+        description: 'Весёлый, тёплый',
+        radius: '999px',
+        density: 'normal',
+        shadow: 'medium',
+        animation: 'lots',
+        gradient: 'often',
+        dark: 'mix'
+      },
+      friendly: {
+        id: 'friendly',
+        name: 'Дружелюбный',
+        emoji: '😊',
+        description: 'Подходящий, мягкий',
+        radius: '999px',
+        density: 'normal',
+        shadow: 'light',
+        animation: 'some',
+        gradient: 'sometimes',
+        dark: 'rare'
+      }
+    };
+
+    // ── RADIUS OPTIONS ──
+    const RADIUS_OPTIONS = [
+      { id: 'sharp',   label: 'Острые',      value: '2px',  cardValue: '2px',  btnValue: '2px',  badgeValue: '2px',  demoRadius: '1px' },
+      { id: 'soft',    label: 'Мягкие',      value: '8px',  cardValue: '8px',  btnValue: '6px',  badgeValue: '4px',  demoRadius: '6px' },
+      { id: 'round',   label: 'Скруглённые', value: '16px', cardValue: '16px', btnValue: '8px',  badgeValue: '8px',  demoRadius: '12px' },
+      { id: 'pill',    label: 'Капсульные',  value: '999px',cardValue: '24px', btnValue: '999px',badgeValue: '999px',demoRadius: '16px' }
+    ];
+
+    // ── FONT PAIRS (from tokens.md D-108) ──
+    const FONT_PAIRS = [
+      {
+        id: 'space-grotesk-inter',
+        name: 'Space Grotesk + Inter',
+        display: 'Space Grotesk',
+        body: 'Inter',
+        displaySample: 'Space Grotesk',
+        bodySample: 'Inter',
+        mood: 'Industrial / Tech',
+        cssDisplay: "'Space Grotesk', sans-serif",
+        cssBody: "'Inter', sans-serif"
+      },
+      {
+        id: 'sora-inter',
+        name: 'Sora + Inter',
+        display: 'Sora',
+        body: 'Inter',
+        displaySample: 'Sora',
+        bodySample: 'Inter',
+        mood: 'Premium / SaaS',
+        cssDisplay: "'Sora', sans-serif",
+        cssBody: "'Inter', sans-serif"
+      },
+      {
+        id: 'inter-inter',
+        name: 'Inter + Inter',
+        display: 'Inter',
+        body: 'Inter',
+        displaySample: 'Inter',
+        bodySample: 'Inter',
+        mood: 'SaaS / Clean',
+        cssDisplay: "'Inter', sans-serif",
+        cssBody: "'Inter', sans-serif"
+      },
+      {
+        id: 'playfair-source-serif',
+        name: 'Playfair Display + Source Serif 4',
+        display: 'Playfair Display',
+        body: 'Source Serif 4',
+        displaySample: 'Playfair Display',
+        bodySample: 'Source Serif 4',
+        mood: 'Editorial / Журнальный',
+        cssDisplay: "'Playfair Display', 'Georgia', serif",
+        cssBody: "'Source Serif 4', 'Georgia', serif"
+      },
+      {
+        id: 'jetbrains-inter',
+        name: 'JetBrains Mono + Inter',
+        display: 'JetBrains Mono',
+        body: 'Inter',
+        displaySample: 'JetBrains Mono',
+        bodySample: 'Inter',
+        mood: 'Tech / Developer',
+        cssDisplay: "'JetBrains Mono', monospace",
+        cssBody: "'Inter', sans-serif"
+      },
+      {
+        id: 'manrope-manrope',
+        name: 'Manrope + Manrope',
+        display: 'Manrope',
+        body: 'Manrope',
+        displaySample: 'Manrope',
+        bodySample: 'Manrope',
+        mood: 'Modern / Rounded',
+        cssDisplay: "'Manrope', sans-serif",
+        cssBody: "'Manrope', sans-serif"
+      },
+      {
+        id: 'geist-geist',
+        name: 'Geist + Geist',
+        display: 'Geist',
+        body: 'Geist',
+        displaySample: 'Geist',
+        bodySample: 'Geist',
+        mood: 'Vercel / Developer',
+        cssDisplay: "'Geist', sans-serif",
+        cssBody: "'Geist', sans-serif"
+      },
+      {
+        id: 'fraunces-inter',
+        name: 'Fraunces + Inter',
+        display: 'Fraunces',
+        body: 'Inter',
+        displaySample: 'Fraunces',
+        bodySample: 'Inter',
+        mood: 'Modern Editorial / Soft Serif',
+        cssDisplay: "'Fraunces', 'Georgia', serif",
+        cssBody: "'Inter', sans-serif"
+      },
+      {
+        id: 'bricolage-inter',
+        name: 'Bricolage Grotesque + Inter',
+        display: 'Bricolage Grotesque',
+        body: 'Inter',
+        displaySample: 'Bricolage',
+        bodySample: 'Inter',
+        mood: 'Bold Display / Creative',
+        cssDisplay: "'Bricolage Grotesque', sans-serif",
+        cssBody: "'Inter', sans-serif"
+      },
+      {
+        id: 'plus-jakarta-inter',
+        name: 'Plus Jakarta Sans + Inter',
+        display: 'Plus Jakarta Sans',
+        body: 'Inter',
+        displaySample: 'Plus Jakarta',
+        bodySample: 'Inter',
+        mood: 'Friendly / Geometric',
+        cssDisplay: "'Plus Jakarta Sans', sans-serif",
+        cssBody: "'Inter', sans-serif"
+      },
+      {
+        id: 'syne-inter',
+        name: 'Syne + Inter',
+        display: 'Syne',
+        body: 'Inter',
+        displaySample: 'Syne',
+        bodySample: 'Inter',
+        mood: 'Avant-garde / Art',
+        cssDisplay: "'Syne', sans-serif",
+        cssBody: "'Inter', sans-serif"
+      },
+      {
+        id: 'outfit-inter',
+        name: 'Outfit + Inter',
+        display: 'Outfit',
+        body: 'Inter',
+        displaySample: 'Outfit',
+        bodySample: 'Inter',
+        mood: 'Clean / Versatile',
+        cssDisplay: "'Outfit', sans-serif",
+        cssBody: "'Inter', sans-serif"
+      },
+      {
+        id: 'archivo-inter',
+        name: 'Archivo Black + Inter',
+        display: 'Archivo',
+        body: 'Inter',
+        displaySample: 'Archivo',
+        bodySample: 'Inter',
+        mood: 'Bold / Editorial Headlines',
+        cssDisplay: "'Archivo', sans-serif",
+        cssBody: "'Inter', sans-serif"
+      },
+      {
+        id: 'ibmplex-ibmplex',
+        name: 'IBM Plex Sans + IBM Plex Sans',
+        display: 'IBM Plex Sans',
+        body: 'IBM Plex Sans',
+        displaySample: 'IBM Plex',
+        bodySample: 'IBM Plex',
+        mood: 'Corporate / Technical',
+        cssDisplay: "'IBM Plex Sans', sans-serif",
+        cssBody: "'IBM Plex Sans', sans-serif"
+      },
+      {
+        id: 'crimson-sourceserif',
+        name: 'Crimson Pro + Source Serif 4',
+        display: 'Crimson Pro',
+        body: 'Source Serif 4',
+        displaySample: 'Crimson Pro',
+        bodySample: 'Source Serif',
+        mood: 'Classic Editorial / Book',
+        cssDisplay: "'Crimson Pro', 'Georgia', serif",
+        cssBody: "'Source Serif 4', 'Georgia', serif"
+      },
+      {
+        id: 'cormorant-inter',
+        name: 'Cormorant + Inter',
+        display: 'Cormorant',
+        body: 'Inter',
+        displaySample: 'Cormorant',
+        bodySample: 'Inter',
+        mood: 'Elegant / Luxury Serif',
+        cssDisplay: "'Cormorant', 'Georgia', serif",
+        cssBody: "'Inter', sans-serif"
+      },
+      {
+        id: 'dm-dm',
+        name: 'DM Sans + DM Sans',
+        display: 'DM Sans',
+        body: 'DM Sans',
+        displaySample: 'DM Sans',
+        bodySample: 'DM Sans',
+        mood: 'Geometric / Friendly',
+        cssDisplay: "'DM Sans', sans-serif",
+        cssBody: "'DM Sans', sans-serif"
+      }
+    ];
+
+    // ── Available fonts for independent display/body selection ──
+    const AVAILABLE_FONTS = [
+      { name: 'Inter', css: "'Inter', sans-serif", category: 'sans' },
+      { name: 'Space Grotesk', css: "'Space Grotesk', sans-serif", category: 'sans' },
+      { name: 'Sora', css: "'Sora', sans-serif", category: 'sans' },
+      { name: 'Manrope', css: "'Manrope', sans-serif", category: 'sans' },
+      { name: 'Geist', css: "'Geist', sans-serif", category: 'sans' },
+      { name: 'Plus Jakarta Sans', css: "'Plus Jakarta Sans', sans-serif", category: 'sans' },
+      { name: 'Outfit', css: "'Outfit', sans-serif", category: 'sans' },
+      { name: 'IBM Plex Sans', css: "'IBM Plex Sans', sans-serif", category: 'sans' },
+      { name: 'DM Sans', css: "'DM Sans', sans-serif", category: 'sans' },
+      { name: 'Syne', css: "'Syne', sans-serif", category: 'display' },
+      { name: 'Bricolage Grotesque', css: "'Bricolage Grotesque', sans-serif", category: 'display' },
+      { name: 'Archivo', css: "'Archivo', sans-serif", category: 'display' },
+      { name: 'Playfair Display', css: "'Playfair Display', 'Georgia', serif", category: 'serif' },
+      { name: 'Source Serif 4', css: "'Source Serif 4', 'Georgia', serif", category: 'serif' },
+      { name: 'Fraunces', css: "'Fraunces', 'Georgia', serif", category: 'serif' },
+      { name: 'Crimson Pro', css: "'Crimson Pro', 'Georgia', serif", category: 'serif' },
+      { name: 'Cormorant', css: "'Cormorant', 'Georgia', serif", category: 'serif' },
+      { name: 'JetBrains Mono', css: "'JetBrains Mono', monospace", category: 'mono' },
+    ];
+
+    // ── LAYOUT PATTERNS (from layout-patterns.md) ──
+    const LAYOUT_PATTERNS = [
+      {
+        id: 'asymmetric-hero-split',
+        name: 'Asymmetric Hero Split (60/40)',
+        shortName: 'Asymmetric Split',
+        description: 'Hero текст слева + изображение справа',
+        useCase: 'Продукты, услуги',
+        wireframe: 'asymmetric',
+        warning: null
+      },
+      {
+        id: 'full-bleed-product',
+        name: 'Full-Bleed Product Showcase',
+        shortName: 'Full-Bleed Showcase',
+        description: 'Фото на весь hero, текст overlay',
+        useCase: 'Премиум, портфолио',
+        wireframe: 'fullbleed',
+        warning: 'Требует качественное фото'
+      },
+      {
+        id: 'typography-first',
+        name: 'Typography-First Editorial',
+        shortName: 'Typography Hero',
+        description: 'Гигантский заголовок, без фото',
+        useCase: 'Медиа, студии (БЕЗ фото)',
+        wireframe: 'typography',
+        warning: null
+      },
+      {
+        id: 'bento-mosaic',
+        name: 'Bento Mosaic Grid',
+        shortName: 'Bento Grid',
+        description: 'Разноразмерные плитки Apple-style',
+        useCase: 'SaaS, tech',
+        wireframe: 'bento',
+        warning: null
+      },
+      {
+        id: 'gallery-heavy',
+        name: 'Gallery-Heavy Story',
+        shortName: 'Gallery Story',
+        description: 'Много изображений разных размеров',
+        useCase: 'Портфолио, фото',
+        wireframe: 'gallery',
+        warning: null
+      },
+      {
+        id: 'stats-heavy',
+        name: 'Stats-Heavy Credibility',
+        shortName: 'Stats Credibility',
+        description: 'Крупные числа, цифры',
+        useCase: 'Корпораты, доверие',
+        wireframe: 'stats',
+        warning: null
+      },
+      {
+        id: 'single-cta',
+        name: 'Single CTA Landing',
+        shortName: 'Single CTA',
+        description: 'Минимум секций, одна цель',
+        useCase: 'Лендинги, анонсы',
+        wireframe: 'cta',
+        warning: null
+      },
+      {
+        id: 'magazine-editorial',
+        name: 'Magazine Editorial Layout',
+        shortName: 'Magazine Layout',
+        description: 'Журнальный: лед-арт + статьи',
+        useCase: 'Контент, блог',
+        wireframe: 'magazine',
+        warning: null
+      },
+      {
+        id: 'architecture-portfolio',
+        name: 'Architecture Portfolio',
+        shortName: 'Architecture',
+        description: 'Full-bleed hero → gallery → content → gallery → CTA',
+        useCase: 'Портфолио, архитектура, строительство',
+        wireframe: 'architecture',
+        warning: null
+      }
+    ];
+
+    const NICHE_PRESETS = {
+      portfolio: {
+        id: 'portfolio',
+        name: 'Портфолио / Студия',
+        emoji: '🎨',
+        description: 'Проекты, работы, креатив',
+        preview: {
+          btn: 'Смотреть работы →',
+          cardLabel: 'Карточка проекта',
+          imgAlt: 'Проект',
+          imgSeed: 'portfolio',
+          cardTitle: 'Eisparser',
+          cardDesc: 'Next.js платформа аналитики trade данных в реальном времени.',
+          price: '2026',
+          priceUnit: 'проект',
+          badge: 'Featured',
+          link: 'Все проекты'
+        }
+      },
+      ecommerce: {
+        id: 'ecommerce',
+        name: 'Магазин / Каталог',
+        emoji: '🛒',
+        description: 'Товары, цены, корзина',
+        preview: {
+          btn: 'Смотреть каталог →',
+          cardLabel: 'Карточка товара',
+          imgAlt: 'Товар',
+          imgSeed: 'build',
+          cardTitle: 'Бетон М400 (B30)',
+          cardDesc: 'Тяжёлый бетон. Морозостойкость F200. Водонепроницаемость W6.',
+          price: '4 850 ₽',
+          priceUnit: '/м³',
+          badge: 'В наличии',
+          link: 'Все товары'
+        }
+      },
+      media: {
+        id: 'media',
+        name: 'Медиа / Блог',
+        emoji: '📰',
+        description: 'Статьи, журнал, контент',
+        preview: {
+          btn: 'Читать статью →',
+          cardLabel: 'Карточка статьи',
+          imgAlt: 'Иллюстрация',
+          imgSeed: 'article',
+          cardTitle: 'Как ИИ меняет веб-разработку',
+          cardDesc: 'Анализ трендов 2026: студийное качество силами одного человека и ИИ-команды.',
+          price: '5 мин',
+          priceUnit: 'чтение',
+          badge: 'Новое',
+          link: 'Все статьи'
+        }
+      },
+      corporate: {
+        id: 'corporate',
+        name: 'Корпорат / Услуги',
+        emoji: '🏢',
+        description: 'Услуги, B2B, доверие',
+        preview: {
+          btn: 'Наши услуги →',
+          cardLabel: 'Карточка услуги',
+          imgAlt: 'Услуга',
+          imgSeed: 'corp',
+          cardTitle: 'Аудит инфраструктуры',
+          cardDesc: 'Полная проверка серверов, архитектуры и безопасности проекта.',
+          price: 'от 5 000 ₽',
+          priceUnit: '',
+          badge: 'Эксперты',
+          link: 'Подробнее'
+        }
+      },
+      saas: {
+        id: 'saas',
+        name: 'SaaS / Tech',
+        emoji: '⚡',
+        description: 'Продукт, фичи, подписка',
+        preview: {
+          btn: 'Попробовать бесплатно →',
+          cardLabel: 'Карточка фичи',
+          imgAlt: 'Интерфейс',
+          imgSeed: 'saas',
+          cardTitle: 'Real-time аналитика',
+          cardDesc: 'Дашборды с живыми данными, алертами и автоматическими отчётами.',
+          price: 'от 0 ₽',
+          priceUnit: '',
+          badge: '14 дней',
+          link: 'Все возможности'
+        }
+      }
+    };
+
+    // ── BACKGROUND PRESETS (8th axis) ──
+    const BG_PRESETS = {
+      light: [
+        { name: 'White', hex: '#FFFFFF' },
+        { name: 'Cream', hex: '#FBF9F4' },
+        { name: 'Slate-50', hex: '#F8FAFC' },
+        { name: 'Stone-100', hex: '#F5F5F4' },
+      ],
+      dark: [
+        { name: 'Slate-900', hex: '#0F172A' },
+        { name: 'Neutral-950', hex: '#0A0A0F' },
+        { name: 'Zinc-900', hex: '#18181B' },
+        { name: 'Pure Black', hex: '#000000' },
+      ]
+    };
+
+    // ── CARD VARIANTS (9th axis, niche-dependent) ──
+    const CARD_VARIANTS = {
+      portfolio: [
+        { id: 'pf-minimal', name: 'Minimal', description: 'Название + категория, без фото' },
+        { id: 'pf-thumbnail', name: 'Thumbnail', description: 'Фото сверху + название + описание' },
+        { id: 'pf-hover-overlay', name: 'Hover Overlay', description: 'Фото, при hover overlay с описанием' },
+        { id: 'pf-large-feature', name: 'Large Feature', description: 'Большое фото + текст сбоку' }
+      ],
+      ecommerce: [
+        { id: 'ec-compact', name: 'Compact', description: 'Фото + название + цена' },
+        { id: 'ec-with-badge', name: 'With Badge', description: 'Фото + бейдж + название + цена' },
+        { id: 'ec-quick-view', name: 'Quick View', description: 'Фото + hover кнопка Быстрый просмотр' },
+        { id: 'ec-detailed', name: 'Detailed', description: 'Фото + название + описание + рейтинг + цена' }
+      ],
+      media: [
+        { id: 'md-vertical', name: 'Vertical', description: 'Фото + категория + заголовок + excerpt + дата' },
+        { id: 'md-horizontal', name: 'Horizontal', description: 'Фото слева + текст справа' },
+        { id: 'md-large-lead', name: 'Large Lead', description: 'Большое фото + крупный заголовок' },
+        { id: 'md-text-only', name: 'Text Only', description: 'Категория + заголовок + excerpt (без фото)' }
+      ],
+      corporate: [
+        { id: 'cp-icon-text', name: 'Icon + Text', description: 'Иконка + название + описание' },
+        { id: 'cp-numbered', name: 'Numbered', description: 'Большой номер + название + описание' },
+        { id: 'cp-with-photo', name: 'With Photo', description: 'Фото + название + описание' },
+        { id: 'cp-minimal', name: 'Minimal', description: 'Только название + описание' }
+      ],
+      saas: [
+        { id: 'sa-bento', name: 'Bento', description: 'Разноразмерные плитки' },
+        { id: 'sa-icon-grid', name: 'Icon Grid', description: '3-col иконки' },
+        { id: 'sa-stat', name: 'Stat', description: 'Крупные числа' },
+        { id: 'sa-alternating', name: 'Alternating', description: 'Текст-изображение чередование' }
+      ]
+    };
+
+    // ── SVG WIREFRAMES for layout cards ──
+    function getWireframeSVG(type) {
+      const svgs = {
+        asymmetric: `<svg viewBox="0 0 120 50" class="w-full h-auto"><rect x="2" y="2" width="68" height="46" rx="2" fill="#cbd5e1"/><rect x="74" y="2" width="44" height="46" rx="2" fill="#94a3b8"/></svg>`,
+        fullbleed: `<svg viewBox="0 0 120 50" class="w-full h-auto"><rect x="2" y="2" width="116" height="46" rx="2" fill="#475569"/><rect x="20" y="16" width="80" height="6" rx="1" fill="#94a3b8" opacity="0.7"/><rect x="30" y="26" width="60" height="3" rx="1" fill="#64748b" opacity="0.6"/></svg>`,
+        typography: `<svg viewBox="0 0 120 50" class="w-full h-auto"><rect x="12" y="10" width="96" height="6" rx="1" fill="#1e293b"/><rect x="18" y="20" width="84" height="3" rx="1" fill="#64748b"/><rect x="24" y="27" width="72" height="2" rx="1" fill="#94a3b8"/><rect x="30" y="33" width="60" height="2" rx="1" fill="#94a3b8"/></svg>`,
+        bento: `<svg viewBox="0 0 120 50" class="w-full h-auto"><rect x="2" y="2" width="44" height="22" rx="2" fill="#475569"/><rect x="50" y="2" width="30" height="22" rx="2" fill="#64748b"/><rect x="84" y="2" width="34" height="22" rx="2" fill="#94a3b8"/><rect x="2" y="28" width="44" height="20" rx="2" fill="#64748b"/><rect x="50" y="28" width="68" height="20" rx="2" fill="#475569"/></svg>`,
+        gallery: `<svg viewBox="0 0 120 50" class="w-full h-auto"><rect x="2" y="2" width="36" height="22" rx="2" fill="#64748b"/><rect x="42" y="2" width="36" height="22" rx="2" fill="#475569"/><rect x="82" y="2" width="36" height="22" rx="2" fill="#64748b"/><rect x="2" y="28" width="56" height="20" rx="2" fill="#475569"/><rect x="62" y="28" width="56" height="20" rx="2" fill="#64748b"/></svg>`,
+        stats: `<svg viewBox="0 0 120 50" class="w-full h-auto"><rect x="2" y="2" width="116" height="10" rx="2" fill="#e2e8f0"/><rect x="6" y="18" width="24" height="14" rx="2" fill="#475569"/><rect x="34" y="18" width="24" height="14" rx="2" fill="#475569"/><rect x="62" y="18" width="24" height="14" rx="2" fill="#475569"/><rect x="90" y="18" width="24" height="14" rx="2" fill="#475569"/><rect x="2" y="38" width="116" height="10" rx="2" fill="#e2e8f0"/></svg>`,
+        cta: `<svg viewBox="0 0 120 50" class="w-full h-auto"><rect x="15" y="10" width="90" height="6" rx="1" fill="#1e293b"/><rect x="25" y="20" width="70" height="3" rx="1" fill="#64748b"/><rect x="38" y="30" width="44" height="8" rx="2" fill="#475569"/></svg>`,
+        magazine: `<svg viewBox="0 0 120 50" class="w-full h-auto"><rect x="2" y="2" width="38" height="26" rx="2" fill="#475569"/><rect x="44" y="2" width="34" height="11" rx="2" fill="#64748b"/><rect x="82" y="2" width="36" height="11" rx="2" fill="#64748b"/><rect x="44" y="17" width="34" height="11" rx="2" fill="#94a3b8"/><rect x="82" y="17" width="36" height="11" rx="2" fill="#94a3b8"/><rect x="2" y="33" width="116" height="15" rx="2" fill="#e2e8f0"/></svg>`,
+        architecture: `<svg viewBox="0 0 120 50" class="w-full h-auto"><rect x="2" y="2" width="116" height="16" rx="2" fill="#475569"/><rect x="2" y="22" width="56" height="12" rx="2" fill="#64748b"/><rect x="62" y="22" width="56" height="12" rx="2" fill="#94a3b8"/><rect x="2" y="38" width="116" height="10" rx="2" fill="#e2e8f0"/></svg>`
+      };
+      return svgs[type] || '';
+    }
+  </script>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- APPLICATION LOGIC -->
+  <!-- ════════════════════════════════════════════════ -->
+  <script>
+    (function() {
+      // ── State ──
+      let activeTheme = 'concrete-steel';
+      let activeAccent = null;
+      let customHex = null;
+      let activeMood = null;
+      let activeRadius = 'soft';        // default: soft (8px)
+      let radiusOverride = false;       // true if user manually changed radius after mood
+      let activeFontPair = null;        // null = use theme default
+      let activeDisplayFont = null;     // independent display font override (string font name)
+      let activeBodyFont = null;        // independent body font override
+      let activeLayout = null;
+      let activeNiche = 'portfolio';    // default: portfolio (NOT ecommerce)
+      let activeBackground = null;       // null = use theme default; {hex, scheme} if overridden
+      let customBg = null;               // custom hex for background
+      let activeCardVariant = null;     // card variant id (niche-dependent)
+
+      // ── DOM refs ──
+      const root = document.documentElement;
+      const themeGrid = document.getElementById('theme-grid');
+      const accentCool = document.getElementById('accent-cool');
+      const accentWarm = document.getElementById('accent-warm');
+      const accentGold = document.getElementById('accent-gold');
+      const accentNeutral = document.getElementById('accent-neutral');
+      const customColor = document.getElementById('custom-color');
+      const customHexInput = document.getElementById('custom-hex');
+      const applyCustomBtn = document.getElementById('apply-custom');
+      const btnApply = document.getElementById('btn-apply');
+      const btnDownload = document.getElementById('btn-download');
+      const jsonOutput = document.getElementById('json-output');
+      const moodGrid = document.getElementById('mood-grid');
+      const radiusGrid = document.getElementById('radius-grid');
+      const fontGrid = document.getElementById('font-grid');
+      const fontDisplaySelect = document.getElementById('font-display-select');
+      const fontBodySelect = document.getElementById('font-body-select');
+      const layoutGrid = document.getElementById('layout-grid');
+      const nicheGrid = document.getElementById('niche-grid');
+      const bgLight = document.getElementById('bg-light');
+      const bgDark = document.getElementById('bg-dark');
+      const bgCustomColor = document.getElementById('bg-custom-color');
+      const bgCustomHex = document.getElementById('bg-custom-hex');
+      const bgApplyCustom = document.getElementById('bg-apply-custom');
+      const bgReset = document.getElementById('bg-reset');
+      const cardVariantGrid = document.getElementById('card-variant-grid');
+      const radiusOverrideBadge = document.getElementById('radius-override-badge');
+      const previewCard = document.getElementById('preview-card');
+      const previewBtn = document.getElementById('preview-btn');
+      const previewBadge = document.getElementById('preview-badge');
+      const previewHeading = document.getElementById('preview-heading');
+      const previewBody = document.getElementById('preview-body');
+      const previewInner = document.getElementById('preview-inner');
+      const layoutWireframe = document.getElementById('layout-wireframe');
+
+      // ── Apply all CSS variables to :root ──
+      function applyThemeCSS(themeId) {
+        const theme = THEMES[themeId];
+        if (!theme) return;
+        Object.entries(theme.css).forEach(([key, value]) => {
+          root.style.setProperty(key, value);
+        });
+        // Also set font pair from theme if no manual override
+        if (!activeFontPair) {
+          root.style.setProperty('--font-display', theme.css['--font-display']);
+          root.style.setProperty('--font-body', theme.css['--font-body']);
+        }
+      }
+
+      // ── Apply accent (override --color-primary and derivatives) ──
+      function applyAccent(hex) {
+        root.style.setProperty('--color-primary', hex);
+        const hoverHex = darkenHex(hex, 0.88);
+        root.style.setProperty('--color-primary-hover', hoverHex);
+        const rgb = hexToRgb(hex);
+        root.style.setProperty('--color-primary-subtle', `rgba(${rgb.r},${rgb.g},${rgb.b},0.08)`);
+        root.style.setProperty('--shadow-brand', `0 10px 30px -10px rgba(${rgb.r},${rgb.g},${rgb.b},0.35)`);
+        root.style.setProperty('--shadow-card-hover', `0 8px 24px -8px rgba(${rgb.r},${rgb.g},${rgb.b},0.2)`);
+      }
+
+      function hexToRgb(hex) {
+        const m = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return m ? { r: parseInt(m[1],16), g: parseInt(m[2],16), b: parseInt(m[3],16) } : { r:87, g:83, b:78 };
+      }
+
+      function darkenHex(hex, factor) {
+        const { r, g, b } = hexToRgb(hex);
+        const dr = Math.round(r * factor);
+        const dg = Math.round(g * factor);
+        const db = Math.round(b * factor);
+        return '#' + [dr, dg, db].map(c => Math.min(255, c).toString(16).padStart(2, '0')).join('');
+      }
+
+      function lightenHex(hex, factor) {
+        // factor > 1 = lighten (mix toward white)
+        const { r, g, b } = hexToRgb(hex);
+        const lr = Math.round(r + (255 - r) * (factor - 1));
+        const lg = Math.round(g + (255 - g) * (factor - 1));
+        const lb = Math.round(b + (255 - b) * (factor - 1));
+        return '#' + [lr, lg, lb].map(c => Math.max(0, Math.min(255, c)).toString(16).padStart(2, '0')).join('');
+      }
+
+      function luminance(hex) {
+        const { r, g, b } = hexToRgb(hex);
+        return (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+      }
+
+      function isDarkBg(hex) {
+        return luminance(hex) < 0.5;
+      }
+
+      // ── Activate theme ──
+      function setTheme(themeId) {
+        activeTheme = themeId;
+        activeAccent = null;
+        customHex = null;
+        applyThemeCSS(themeId);
+        const theme = THEMES[themeId];
+        const defaultAccent = theme.css['--color-primary'];
+        customColor.value = defaultAccent;
+        customHexInput.value = defaultAccent;
+
+        // Reset background override on theme change (new theme = new default bg)
+        activeBackground = null;
+        customBg = null;
+        bgCustomHex.value = '';
+        bgCustomColor.value = theme.css['--color-bg-page'];
+        updateBgSwatches();
+
+        // Reset font pair to theme default (unless manually overridden)
+        if (!activeFontPair) {
+          root.style.setProperty('--font-display', theme.css['--font-display']);
+          root.style.setProperty('--font-body', theme.css['--font-body']);
+        }
+        activeDisplayFont = null;
+        activeBodyFont = null;
+        updateFontSelects();
+
+        updateThemeCards();
+        updateAccentSwatches();
+        updateURL();
+      }
+
+      // ── Set accent ──
+      function setAccent(hex) {
+        activeAccent = hex;
+        customHex = null;
+        applyAccent(hex);
+        customColor.value = hex;
+        customHexInput.value = hex;
+        updateAccentSwatches();
+      }
+
+      // ── Set custom hex ──
+      function setCustomHex(hex) {
+        if (!/^#[0-9a-fA-F]{6}$/.test(hex)) return;
+        customHex = hex;
+        activeAccent = null;
+        applyAccent(hex);
+        customColor.value = hex;
+        customHexInput.value = hex;
+        updateAccentSwatches();
+      }
+
+      // ── MOOD ──
+      function setMood(moodId) {
+        if (activeMood === moodId) {
+          // Deselect
+          activeMood = null;
+          updateMoodCards();
+          return;
+        }
+        activeMood = moodId;
+        const mood = MOOD_PRESETS[moodId];
+
+        // Auto-set radius from mood (unless overridden)
+        if (!radiusOverride) {
+          // Map mood radius to closest RADIUS_OPTIONS entry
+          const moodRadiusVal = mood.radius;
+          let matchedRadius = RADIUS_OPTIONS.find(r => r.value === moodRadiusVal);
+          if (!matchedRadius) {
+            // Find closest: 2px→sharp, 4px→sharp, 8px→soft, 12px→soft, 16px→round, 999px→pill
+            if (moodRadiusVal === '4px') matchedRadius = RADIUS_OPTIONS[0]; // sharp
+            else if (moodRadiusVal === '12px') matchedRadius = RADIUS_OPTIONS[1]; // soft
+            else matchedRadius = RADIUS_OPTIONS[1]; // fallback soft
+          }
+          activeRadius = matchedRadius.id;
+          applyRadiusValues(matchedRadius);
+        }
+
+        // Apply mood CSS effects to preview
+        applyMoodEffects(mood);
+        updateMoodCards();
+        updateRadiusCards();
+      }
+
+      function applyMoodEffects(mood) {
+        // Density → spacing
+        const densityMap = { tight: '16px', normal: '24px', airy: '32px' };
+        const densityVal = densityMap[mood.density] || '24px';
+        previewInner.style.setProperty('--mood-density', densityVal);
+
+        // Shadow presence
+        const shadowMap = {
+          none: 'none',
+          light: '0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)',
+          medium: '0 4px 6px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.04)'
+        };
+        root.style.setProperty('--shadow-presence', shadowMap[mood.shadow] || 'none');
+
+        // Animation → transition duration on preview card
+        const animMap = { none: '0ms', some: '250ms', lots: '500ms' };
+        const animDur = animMap[mood.animation] || '250ms';
+        previewCard.style.transitionDuration = animDur;
+
+        // Gradient → badge background
+        if (mood.gradient === 'often' || mood.gradient === 'sometimes') {
+          previewBadge.style.background = `linear-gradient(135deg, var(--color-primary-subtle, rgba(87,83,78,0.08)), rgba(87,83,78,0.04))`;
+        } else {
+          previewBadge.style.background = 'var(--color-primary-subtle, rgba(87,83,78,0.08))';
+        }
+      }
+
+      // ── RADIUS ──
+      function setRadius(radiusId) {
+        activeRadius = radiusId;
+        radiusOverride = true; // Manual override
+        const option = RADIUS_OPTIONS.find(r => r.id === radiusId);
+        if (option) applyRadiusValues(option);
+        updateRadiusCards();
+        updateRadiusOverrideBadge();
+      }
+
+      function applyRadiusValues(option) {
+        root.style.setProperty('--radius-card', option.cardValue);
+        root.style.setProperty('--radius-btn', option.btnValue);
+        root.style.setProperty('--radius-badge', option.badgeValue);
+        root.style.setProperty('--radius', option.value);
+      }
+
+      function updateRadiusOverrideBadge() {
+        if (radiusOverride && activeMood) {
+          radiusOverrideBadge.classList.add('visible');
+        } else {
+          radiusOverrideBadge.classList.remove('visible');
+        }
+      }
+
+      // ── FONT PAIR ──
+      function setFontPair(pairId) {
+        if (activeFontPair === pairId) {
+          activeFontPair = null;
+          // Revert to theme default
+          const theme = THEMES[activeTheme];
+          root.style.setProperty('--font-display', theme.css['--font-display']);
+          root.style.setProperty('--font-body', theme.css['--font-body']);
+          activeDisplayFont = null;
+          activeBodyFont = null;
+          updateFontSelects();
+          updateFontCards();
+          return;
+        }
+        activeFontPair = pairId;
+        const pair = FONT_PAIRS.find(p => p.id === pairId);
+        if (pair) {
+          root.style.setProperty('--font-display', pair.cssDisplay);
+          root.style.setProperty('--font-body', pair.cssBody);
+        }
+        activeDisplayFont = null;
+        activeBodyFont = null;
+        updateFontSelects();
+        updateFontCards();
+      }
+
+      // ── LAYOUT ──
+      function setLayout(layoutId) {
+        if (activeLayout === layoutId) {
+          activeLayout = null;
+          updateLayoutCards();
+          renderLayoutWireframe(null);
+          return;
+        }
+        activeLayout = layoutId;
+        updateLayoutCards();
+        renderLayoutWireframe(layoutId);
+      }
+
+      function getWireframeLabels(layoutId) {
+        const labels = {
+          'asymmetric-hero-split': ['Hero Text 60%', 'Hero Image 40%'],
+          'full-bleed-product': ['Full-bleed Hero', 'Cards ×3', 'CTA'],
+          'typography-first': ['Display H1', 'Lede', 'Cards ×2'],
+          'bento-mosaic': ['Hero Bento', 'Tiles ×4'],
+          'gallery-heavy': ['Gallery 1×3', 'Gallery 2×1'],
+          'stats-heavy': ['Intro', 'Stats ×4', 'CTA'],
+          'single-cta': ['Headline', 'Subhead', 'CTA Button'],
+          'magazine-editorial': ['Lead Article', 'Side ×2', 'Side ×2', 'Wide CTA'],
+          'architecture-portfolio': ['Full-bleed Hero', 'Cards ×2', 'CTA Strip']
+        };
+        return labels[layoutId] || [];
+      }
+
+      function renderLayoutWireframe(layoutId) {
+        if (!layoutId) {
+          layoutWireframe.innerHTML = '<p class="text-xs text-center" style="color:var(--color-text-muted, #57534E);">Выберите layout pattern слева</p>';
+          return;
+        }
+
+        const pattern = LAYOUT_PATTERNS.find(p => p.id === layoutId);
+        if (!pattern) return;
+
+        const labels = getWireframeLabels(layoutId);
+
+        const wireframes = {
+          'asymmetric-hero-split': `
+            <div class="flex gap-2 h-16">
+              <div class="flex-1 rounded" style="background:var(--color-primary, #57534E);opacity:0.8;"></div>
+              <div class="w-[35%] rounded" style="background:var(--color-bg-alt, #E7E5E4);"></div>
+            </div>
+            <div class="flex gap-2 mt-1.5">
+              <div class="flex-1 h-3 rounded" style="background:var(--color-border, #D6D3D1);"></div>
+              <div class="flex-1 h-3 rounded" style="background:var(--color-border, #D6D3D1);"></div>
+              <div class="flex-1 h-3 rounded" style="background:var(--color-border, #D6D3D1);"></div>
+            </div>
+            <div class="h-4 rounded mt-1.5" style="background:var(--color-primary-subtle, rgba(87,83,78,0.08));border:1px solid var(--color-border, #D6D3D1);"></div>`,
+          'full-bleed-product': `
+            <div class="h-16 rounded relative overflow-hidden" style="background:var(--color-primary, #57534E);">
+              <div class="absolute inset-0 flex flex-col items-center justify-center">
+                <div class="w-3/4 h-2 rounded" style="background:rgba(255,255,255,0.3);"></div>
+                <div class="w-1/2 h-1.5 rounded mt-1" style="background:rgba(255,255,255,0.2);"></div>
+              </div>
+            </div>
+            <div class="flex gap-2 mt-1.5">
+              <div class="flex-1 h-8 rounded" style="background:var(--color-bg-alt, #E7E5E4);"></div>
+              <div class="flex-1 h-8 rounded" style="background:var(--color-bg-alt, #E7E5E4);"></div>
+              <div class="flex-1 h-8 rounded" style="background:var(--color-bg-alt, #E7E5E4);"></div>
+            </div>`,
+          'typography-first': `
+            <div class="flex flex-col items-center justify-center py-4">
+              <div class="w-3/4 h-4 rounded" style="background:var(--color-text-primary, #1C1917);"></div>
+              <div class="w-1/2 h-1.5 rounded mt-2" style="background:var(--color-text-muted, #57534E);"></div>
+              <div class="w-1/3 h-1 rounded mt-1.5" style="background:var(--color-border, #D6D3D1);"></div>
+            </div>
+            <div class="flex gap-2 mt-1.5">
+              <div class="flex-1 h-6 rounded" style="background:var(--color-bg-alt, #E7E5E4);"></div>
+              <div class="flex-1 h-6 rounded" style="background:var(--color-bg-alt, #E7E5E4);"></div>
+            </div>`,
+          'bento-mosaic': `
+            <div class="grid grid-cols-4 gap-1.5 h-16">
+              <div class="col-span-2 row-span-2 rounded" style="background:var(--color-primary, #57534E);opacity:0.8;"></div>
+              <div class="rounded" style="background:var(--color-bg-alt, #E7E5E4);"></div>
+              <div class="row-span-2 rounded" style="background:var(--color-bg-alt, #E7E5E4);"></div>
+              <div class="col-span-2 rounded" style="background:var(--color-border, #D6D3D1);"></div>
+              <div class="rounded" style="background:var(--color-border, #D6D3D1);"></div>
+            </div>`,
+          'gallery-heavy': `
+            <div class="flex gap-1.5 h-16">
+              <div class="flex-1 rounded" style="background:var(--color-bg-alt, #E7E5E4);"></div>
+              <div class="flex-1 rounded" style="background:var(--color-primary, #57534E);opacity:0.6;"></div>
+              <div class="flex-1 rounded" style="background:var(--color-bg-alt, #E7E5E4);"></div>
+            </div>
+            <div class="flex gap-1.5 mt-1.5">
+              <div class="flex-[2] h-8 rounded" style="background:var(--color-primary, #57534E);opacity:0.5;"></div>
+              <div class="flex-1 h-8 rounded" style="background:var(--color-bg-alt, #E7E5E4);"></div>
+            </div>`,
+          'stats-heavy': `
+            <div class="h-4 rounded mb-2" style="background:var(--color-bg-alt, #E7E5E4);"></div>
+            <div class="grid grid-cols-4 gap-1.5 h-12">
+              <div class="rounded flex items-center justify-center text-xs font-bold" style="background:var(--color-primary, #57534E);color:white;">72%</div>
+              <div class="rounded flex items-center justify-center text-xs font-bold" style="background:var(--color-primary, #57534E);color:white;opacity:0.8;">1M+</div>
+              <div class="rounded flex items-center justify-center text-xs font-bold" style="background:var(--color-primary, #57534E);color:white;opacity:0.7;">50K</div>
+              <div class="rounded flex items-center justify-center text-xs font-bold" style="background:var(--color-primary, #57534E);color:white;opacity:0.6;">99%</div>
+            </div>
+            <div class="h-4 rounded mt-1.5" style="background:var(--color-primary-subtle, rgba(87,83,78,0.08));border:1px solid var(--color-border, #D6D3D1);"></div>`,
+          'single-cta': `
+            <div class="flex flex-col items-center justify-center py-3">
+              <div class="w-2/3 h-3 rounded" style="background:var(--color-text-primary, #1C1917);"></div>
+              <div class="w-1/2 h-1.5 rounded mt-1.5" style="background:var(--color-text-muted, #57534E);"></div>
+              <div class="w-1/3 h-4 rounded mt-2" style="background:var(--color-primary, #57534E);"></div>
+            </div>`,
+          'magazine-editorial': `
+            <div class="flex gap-1.5 h-16">
+              <div class="w-[30%] rounded" style="background:var(--color-primary, #57534E);opacity:0.8;"></div>
+              <div class="flex-1 flex flex-col gap-1.5">
+                <div class="flex-1 rounded" style="background:var(--color-bg-alt, #E7E5E4);"></div>
+                <div class="flex-1 rounded" style="background:var(--color-bg-alt, #E7E5E4);"></div>
+              </div>
+              <div class="flex-1 flex flex-col gap-1.5">
+                <div class="flex-1 rounded" style="background:var(--color-border, #D6D3D1);"></div>
+                <div class="flex-1 rounded" style="background:var(--color-border, #D6D3D1);"></div>
+              </div>
+            </div>`,
+          'architecture-portfolio': `
+            <div class="h-12 rounded relative overflow-hidden" style="background:var(--color-primary, #57534E);">
+              <div class="absolute bottom-2 left-2 w-1/2 h-2 rounded" style="background:rgba(255,255,255,0.3);"></div>
+            </div>
+            <div class="flex gap-1.5 mt-1.5">
+              <div class="flex-1 h-8 rounded" style="background:var(--color-bg-alt, #E7E5E4);"></div>
+              <div class="flex-1 h-8 rounded" style="background:var(--color-bg-alt, #E7E5E4);"></div>
+            </div>
+            <div class="h-4 rounded mt-1.5" style="background:var(--color-primary-subtle, rgba(87,83,78,0.08));border:1px solid var(--color-border, #D6D3D1);"></div>`
+        };
+
+        const wireframeHTML = wireframes[layoutId] || '';
+        layoutWireframe.innerHTML = `
+          <p class="text-xs font-semibold mb-2" style="color:var(--color-text-primary, #1C1917);font-family:var(--font-display, 'Space Grotesk'),sans-serif;">${pattern.shortName}</p>
+          <div class="space-y-1">${wireframeHTML}</div>
+          <p class="text-[10px] mt-2" style="color:var(--color-text-muted, #57534E);">${pattern.description}</p>
+          ${labels.length > 0 ? `<div class="flex flex-wrap gap-1 mt-2 pt-2 border-t" style="border-color:var(--color-border, #D6D3D1);">${labels.map(l => `<span class="text-[9px] px-1.5 py-0.5 rounded" style="background:var(--color-surface, #fff);color:var(--color-text-muted, #57534E);border:1px solid var(--color-border, #D6D3D1);">${l}</span>`).join('')}</div>` : ''}
+        `;
+      }
+
+      // ── Render theme grid ──
+      function renderThemeGrid() {
+        themeGrid.innerHTML = '';
+        Object.entries(THEMES).forEach(([id, theme]) => {
+          const card = document.createElement('div');
+          card.className = 'theme-card rounded-xl p-4 bg-white';
+          card.setAttribute('data-theme', id);
+          card.innerHTML = `
+            <div class="flex items-center gap-2 mb-2">
+              <span class="w-3 h-3 rounded-full flex-shrink-0" style="background:${theme.css['--color-primary']};"></span>
+              <span class="text-sm font-semibold" style="font-family:'Space Grotesk',sans-serif;color:#1C1917;">${theme.name}</span>
+            </div>
+            <p class="text-xs leading-relaxed" style="color:#57534E;">${theme.description}</p>
+            <p class="text-[10px] mt-1.5 font-medium tracking-wider uppercase" style="color:#57534E;font-family:'JetBrains Mono',monospace;">${theme.displayFont} + ${theme.bodyFont}</p>
+          `;
+          card.addEventListener('click', () => setTheme(id));
+          themeGrid.appendChild(card);
+        });
+      }
+
+      function updateThemeCards() {
+        themeGrid.querySelectorAll('.theme-card').forEach(card => {
+          const id = card.getAttribute('data-theme');
+          card.classList.toggle('active', id === activeTheme);
+        });
+      }
+
+      // ── Render accent swatches ──
+      function renderAccentSwatches() {
+        const renderGroup = (container, accents) => {
+          container.innerHTML = '';
+          accents.forEach(acc => {
+            const swatch = document.createElement('button');
+            swatch.className = 'accent-swatch';
+            swatch.style.background = acc.hex;
+            swatch.setAttribute('data-accent', acc.hex);
+            swatch.setAttribute('aria-label', acc.name + ' ' + acc.hex);
+            swatch.setAttribute('title', acc.name + ' ' + acc.hex);
+            swatch.addEventListener('click', () => setAccent(acc.hex));
+            container.appendChild(swatch);
+          });
+        };
+        renderGroup(accentCool, ACCENTS.cool);
+        renderGroup(accentWarm, ACCENTS.warm);
+        renderGroup(accentGold, ACCENTS.gold);
+        renderGroup(accentNeutral, ACCENTS.neutral);
+      }
+
+      function updateAccentSwatches() {
+        const currentAccent = activeAccent || customHex || THEMES[activeTheme].css['--color-primary'];
+        document.querySelectorAll('.accent-swatch').forEach(swatch => {
+          const hex = swatch.getAttribute('data-accent');
+          swatch.classList.toggle('active', hex === currentAccent);
+        });
+      }
+
+      // ── Render mood grid ──
+      function renderMoodGrid() {
+        moodGrid.innerHTML = '';
+        Object.values(MOOD_PRESETS).forEach(mood => {
+          const card = document.createElement('div');
+          card.className = 'mood-card rounded-lg p-3 bg-white';
+          card.setAttribute('data-mood', mood.id);
+          card.setAttribute('role', 'radio');
+          card.setAttribute('aria-checked', 'false');
+          card.setAttribute('tabindex', '0');
+          card.innerHTML = `
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-lg">${mood.emoji}</span>
+              <span class="text-sm font-semibold" style="font-family:'Space Grotesk',sans-serif;color:#1C1917;">${mood.name}</span>
+            </div>
+            <p class="text-[11px] leading-relaxed" style="color:#57534E;">${mood.description}</p>
+          `;
+          card.addEventListener('click', () => setMood(mood.id));
+          card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setMood(mood.id); } });
+          moodGrid.appendChild(card);
+        });
+      }
+
+      function updateMoodCards() {
+        moodGrid.querySelectorAll('.mood-card').forEach(card => {
+          const id = card.getAttribute('data-mood');
+          const isActive = id === activeMood;
+          card.classList.toggle('active', isActive);
+          card.setAttribute('aria-checked', isActive ? 'true' : 'false');
+        });
+      }
+
+      // ── Render radius toggle ──
+      function renderRadiusGrid() {
+        radiusGrid.innerHTML = '';
+        RADIUS_OPTIONS.forEach(option => {
+          const btn = document.createElement('button');
+          btn.className = 'radius-btn rounded-lg p-2 flex flex-col items-center gap-1.5';
+          btn.setAttribute('data-radius', option.id);
+          btn.setAttribute('role', 'radio');
+          btn.setAttribute('aria-checked', 'false');
+          btn.setAttribute('aria-label', option.label);
+          btn.innerHTML = `
+            <div class="radius-demo" style="border-radius:${option.demoRadius};"></div>
+            <span class="text-[10px] font-medium leading-tight text-center" style="color:#1C1917;">${option.label}</span>
+          `;
+          btn.addEventListener('click', () => setRadius(option.id));
+          btn.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setRadius(option.id); } });
+          radiusGrid.appendChild(btn);
+        });
+      }
+
+      function updateRadiusCards() {
+        radiusGrid.querySelectorAll('.radius-btn').forEach(btn => {
+          const id = btn.getAttribute('data-radius');
+          const isActive = id === activeRadius;
+          btn.classList.toggle('active', isActive);
+          btn.setAttribute('aria-checked', isActive ? 'true' : 'false');
+        });
+        updateRadiusOverrideBadge();
+      }
+
+      // ── Render font pair grid ──
+      function renderFontGrid() {
+        fontGrid.innerHTML = '';
+        FONT_PAIRS.forEach(pair => {
+          const card = document.createElement('div');
+          card.className = 'font-pair-card rounded-lg p-3 bg-white';
+          card.setAttribute('data-font', pair.id);
+          card.setAttribute('role', 'radio');
+          card.setAttribute('aria-checked', 'false');
+          card.setAttribute('tabindex', '0');
+          card.innerHTML = `
+            <div class="mb-1.5">
+              <span class="text-base font-bold" style="font-family:${pair.cssDisplay};color:#1C1917;">${pair.displaySample}</span>
+              <span class="text-xs" style="color:#57534E;"> + </span>
+              <span class="text-sm" style="font-family:${pair.cssBody};color:#57534E;">${pair.bodySample}</span>
+            </div>
+            <p class="text-[10px] tracking-wider uppercase" style="color:#57534E;">${pair.mood}</p>
+          `;
+          card.addEventListener('click', () => setFontPair(pair.id));
+          card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setFontPair(pair.id); } });
+          fontGrid.appendChild(card);
+        });
+      }
+
+      function updateFontCards() {
+        fontGrid.querySelectorAll('.font-pair-card').forEach(card => {
+          const id = card.getAttribute('data-font');
+          card.classList.toggle('active', id === activeFontPair);
+          card.setAttribute('aria-checked', id === activeFontPair ? 'true' : 'false');
+        });
+      }
+
+      // ── Render independent font selects ──
+      function renderFontSelects() {
+        const renderSelect = (select, currentFont) => {
+          if (!select) return;
+          select.innerHTML = '';
+          // "Авто (из темы)" option — value empty
+          const autoOpt = document.createElement('option');
+          autoOpt.value = '';
+          autoOpt.textContent = 'Авто (из темы/пары)';
+          select.appendChild(autoOpt);
+          AVAILABLE_FONTS.forEach(font => {
+            const opt = document.createElement('option');
+            opt.value = font.name;
+            opt.textContent = font.name + (font.category === 'serif' ? ' (serif)' : font.category === 'mono' ? ' (mono)' : font.category === 'display' ? ' (display)' : '');
+            opt.style.fontFamily = font.css;
+            select.appendChild(opt);
+          });
+          select.value = currentFont || '';
+        };
+        renderSelect(fontDisplaySelect, activeDisplayFont);
+        renderSelect(fontBodySelect, activeBodyFont);
+      }
+
+      function updateFontSelects() {
+        if (fontDisplaySelect) fontDisplaySelect.value = activeDisplayFont || '';
+        if (fontBodySelect) fontBodySelect.value = activeBodyFont || '';
+      }
+
+      function setDisplayFont(fontName) {
+        if (!fontName) {
+          // Reset to pair/theme default
+          activeDisplayFont = null;
+          const pair = activeFontPair ? FONT_PAIRS.find(f => f.id === activeFontPair) : null;
+          const theme = THEMES[activeTheme];
+          root.style.setProperty('--font-display', pair ? pair.cssDisplay : theme.css['--font-display']);
+        } else {
+          const font = AVAILABLE_FONTS.find(f => f.name === fontName);
+          if (!font) return;
+          activeDisplayFont = fontName;
+          root.style.setProperty('--font-display', font.css);
+        }
+        updateFontSelects();
+        updateURL();
+      }
+
+      function setBodyFont(fontName) {
+        if (!fontName) {
+          activeBodyFont = null;
+          const pair = activeFontPair ? FONT_PAIRS.find(f => f.id === activeFontPair) : null;
+          const theme = THEMES[activeTheme];
+          root.style.setProperty('--font-body', pair ? pair.cssBody : theme.css['--font-body']);
+        } else {
+          const font = AVAILABLE_FONTS.find(f => f.name === fontName);
+          if (!font) return;
+          activeBodyFont = fontName;
+          root.style.setProperty('--font-body', font.css);
+        }
+        updateFontSelects();
+        updateURL();
+      }
+
+      // ── Render layout grid ──
+      function renderLayoutGrid() {
+        layoutGrid.innerHTML = '';
+        LAYOUT_PATTERNS.forEach(pattern => {
+          const card = document.createElement('div');
+          card.className = 'layout-card rounded-lg p-2 bg-white';
+          card.setAttribute('data-layout', pattern.id);
+          card.setAttribute('role', 'radio');
+          card.setAttribute('aria-checked', 'false');
+          card.setAttribute('tabindex', '0');
+          card.setAttribute('title', pattern.description);
+          card.innerHTML = `
+            <div class="mb-1.5">${getWireframeSVG(pattern.wireframe)}</div>
+            <p class="text-[10px] font-semibold leading-tight" style="color:#1C1917;">${pattern.shortName}</p>
+            <p class="text-[9px] leading-tight mt-0.5" style="color:#57534E;">${pattern.useCase}</p>
+            ${pattern.warning ? `<p class="text-[8px] mt-0.5 font-medium" style="color:#B45309;">⚠ ${pattern.warning}</p>` : ''}
+          `;
+          card.addEventListener('click', () => setLayout(pattern.id));
+          card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setLayout(pattern.id); } });
+          layoutGrid.appendChild(card);
+        });
+      }
+
+      function updateLayoutCards() {
+        layoutGrid.querySelectorAll('.layout-card').forEach(card => {
+          const id = card.getAttribute('data-layout');
+          card.classList.toggle('active', id === activeLayout);
+          card.setAttribute('aria-checked', id === activeLayout ? 'true' : 'false');
+        });
+      }
+
+      // ── Render niche grid ──
+      function renderNicheGrid() {
+        nicheGrid.innerHTML = '';
+        Object.values(NICHE_PRESETS).forEach(niche => {
+          const card = document.createElement('div');
+          card.className = 'niche-card rounded-lg p-3 bg-white';
+          card.setAttribute('data-niche', niche.id);
+          card.setAttribute('role', 'radio');
+          card.setAttribute('aria-checked', 'false');
+          card.setAttribute('tabindex', '0');
+          card.innerHTML = `
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-lg">${niche.emoji}</span>
+              <span class="text-sm font-semibold" style="font-family:'Space Grotesk',sans-serif;color:#1C1917;">${niche.name}</span>
+            </div>
+            <p class="text-[11px] leading-relaxed" style="color:#57534E;">${niche.description}</p>
+          `;
+          card.addEventListener('click', () => setNiche(niche.id));
+          card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setNiche(niche.id); } });
+          nicheGrid.appendChild(card);
+        });
+      }
+
+      function updateNicheCards() {
+        if (!nicheGrid) return;
+        nicheGrid.querySelectorAll('.niche-card').forEach(card => {
+          const id = card.getAttribute('data-niche');
+          const isActive = id === activeNiche;
+          card.classList.toggle('active', isActive);
+          card.setAttribute('aria-checked', isActive ? 'true' : 'false');
+        });
+      }
+
+      function setNiche(nicheId) {
+        if (!NICHE_PRESETS[nicheId]) return;
+        activeNiche = nicheId;
+        applyNicheToPreview();
+        const variants = CARD_VARIANTS[nicheId] || [];
+        activeCardVariant = variants.length > 0 ? variants[0].id : null;
+        renderCardVariantGrid();
+        renderCardPreview();
+        updateCardVariantCards();
+        updateNicheCards();
+        updateURL();
+      }
+
+      // ── Apply niche content to live preview (NOT CSS tokens — only text/images) ──
+      function applyNicheToPreview() {
+        const niche = NICHE_PRESETS[activeNiche];
+        if (!niche) return;
+        const p = niche.preview;
+        const btn = document.getElementById('preview-btn');
+        const card = document.getElementById('preview-card');
+        const badge = document.getElementById('preview-badge');
+        if (btn) btn.textContent = p.btn;
+
+        if (badge) {
+          const textNode = Array.from(badge.childNodes).find(n => n.nodeType === 3);
+          if (textNode) textNode.textContent = ' ' + p.badge;
+        }
+        const allLabels = document.querySelectorAll('#live-preview .text-xs.font-semibold.tracking-widest.uppercase');
+        allLabels.forEach(lbl => {
+          if (lbl.textContent.includes('Карточка') || lbl.textContent.includes('товара') || lbl.textContent.includes('проекта') || lbl.textContent.includes('статьи') || lbl.textContent.includes('услуги') || lbl.textContent.includes('фичи')) {
+            lbl.textContent = p.cardLabel;
+          }
+        });
+        const linkEl = document.querySelector('#live-preview a.inline-flex.items-center.gap-1');
+        if (linkEl) {
+          const linkText = linkEl.childNodes[0];
+          if (linkText && linkText.nodeType === 3) linkText.textContent = p.link + ' ';
+        }
+      }
+
+      // ── Render card variant grid (niche-dependent) ──
+      function renderCardVariantGrid() {
+        if (!cardVariantGrid) return;
+        const variants = CARD_VARIANTS[activeNiche] || [];
+        cardVariantGrid.innerHTML = '';
+        variants.forEach(variant => {
+          const card = document.createElement('div');
+          card.className = 'card-variant-card rounded-lg p-3 bg-white';
+          card.setAttribute('data-card-variant', variant.id);
+          card.setAttribute('role', 'radio');
+          card.setAttribute('aria-checked', 'false');
+          card.setAttribute('tabindex', '0');
+          card.setAttribute('title', variant.description);
+          card.innerHTML = `
+            <p class="text-xs font-semibold leading-tight" style="color:#1C1917;">${variant.name}</p>
+            <p class="text-[10px] leading-tight mt-0.5" style="color:#57534E;">${variant.description}</p>
+          `;
+          card.addEventListener('click', () => setCardVariant(variant.id));
+          card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setCardVariant(variant.id); } });
+          cardVariantGrid.appendChild(card);
+        });
+      }
+
+      function updateCardVariantCards() {
+        if (!cardVariantGrid) return;
+        cardVariantGrid.querySelectorAll('.card-variant-card').forEach(card => {
+          const id = card.getAttribute('data-card-variant');
+          const isActive = id === activeCardVariant;
+          card.classList.toggle('active', isActive);
+          card.setAttribute('aria-checked', isActive ? 'true' : 'false');
+        });
+      }
+
+      function setCardVariant(variantId) {
+        const variants = CARD_VARIANTS[activeNiche] || [];
+        if (!variants.find(v => v.id === variantId)) return;
+        activeCardVariant = variantId;
+        renderCardPreview();
+        updateCardVariantCards();
+        updateURL();
+      }
+
+      // ── Render card preview (replaces preview-card content based on variant + niche) ──
+      function renderCardPreview() {
+        const cardEl = document.getElementById('preview-card');
+        if (!cardEl) return;
+        const niche = NICHE_PRESETS[activeNiche];
+        if (!niche) return;
+        const p = niche.preview;
+        const variantId = activeCardVariant || (CARD_VARIANTS[activeNiche] && CARD_VARIANTS[activeNiche][0] && CARD_VARIANTS[activeNiche][0].id);
+        if (!variantId) return;
+
+        // Update card label heading
+        const allLabels = document.querySelectorAll('#live-preview .text-xs.font-semibold.tracking-widest.uppercase');
+        allLabels.forEach(lbl => {
+          if (lbl.textContent.includes('Карточка') || lbl.textContent.includes('товара') || lbl.textContent.includes('проекта') || lbl.textContent.includes('статьи') || lbl.textContent.includes('услуги') || lbl.textContent.includes('фичи')) {
+            lbl.textContent = p.cardLabel;
+          }
+        });
+
+        const imgSeed = p.imgSeed;
+        const imgAlt = p.imgAlt;
+        const cardTitle = p.cardTitle;
+        const cardDesc = p.cardDesc;
+        const price = p.price;
+        const priceUnit = p.priceUnit;
+        const badge = p.badge;
+        const tokenStyle = 'background:var(--color-surface, #fff);border:2px solid var(--color-border, #D6D3D1);border-radius:var(--radius-card, 16px);';
+
+        let html = '';
+        switch (variantId) {
+          // === PORTFOLIO ===
+          case 'pf-minimal':
+            html = `
+              <div class="p-6" style="${tokenStyle}">
+                <span class="text-[10px] font-semibold tracking-widest uppercase" style="color:var(--color-primary, #57534E);font-family:var(--font-mono, monospace);">PROJECT</span>
+                <h3 class="text-xl font-bold mt-2" style="font-family:var(--font-display, sans-serif);color:var(--color-text-primary, #1C1917);">${cardTitle}</h3>
+                <p class="text-sm mt-2" style="font-family:var(--font-body, sans-serif);color:var(--color-text-muted, #57534E);">${cardDesc}</p>
+                <a href="#" class="inline-flex items-center gap-1 text-sm font-medium mt-3" style="color:var(--color-primary, #57534E);font-family:var(--font-body, sans-serif);">Смотреть &rarr;</a>
+              </div>`;
+            break;
+          case 'pf-thumbnail':
+            html = `
+              <div style="${tokenStyle} overflow:hidden;">
+                <div class="aspect-[4/3] overflow-hidden" style="background:var(--color-bg-alt, #E7E5E4);">
+                  <img src="https://picsum.photos/seed/${imgSeed}/400/300" alt="${imgAlt}" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div class="p-5">
+                  <h3 class="text-base font-semibold" style="font-family:var(--font-display, sans-serif);color:var(--color-text-primary, #1C1917);">${cardTitle}</h3>
+                  <p class="text-sm mt-1.5" style="font-family:var(--font-body, sans-serif);color:var(--color-text-muted, #57534E);">${cardDesc}</p>
+                </div>
+              </div>`;
+            break;
+          case 'pf-hover-overlay':
+            html = `
+              <div style="${tokenStyle} overflow:hidden;" class="group relative">
+                <div class="aspect-[4/3] overflow-hidden relative" style="background:var(--color-bg-alt, #E7E5E4);">
+                  <img src="https://picsum.photos/seed/${imgSeed}/400/300" alt="${imgAlt}" class="w-full h-full object-cover" loading="lazy">
+                  <div class="absolute inset-0 flex flex-col justify-end p-4 opacity-0 hover:opacity-100 transition-opacity duration-300" style="background:linear-gradient(180deg,transparent,rgba(0,0,0,0.7));">
+                    <h3 class="text-base font-semibold text-white" style="font-family:var(--font-display, sans-serif);">${cardTitle}</h3>
+                    <p class="text-xs text-white/90 mt-1" style="font-family:var(--font-body, sans-serif);">${cardDesc}</p>
+                  </div>
+                </div>
+                <div class="p-4">
+                  <h3 class="text-base font-semibold" style="font-family:var(--font-display, sans-serif);color:var(--color-text-primary, #1C1917);">${cardTitle}</h3>
+                </div>
+              </div>`;
+            break;
+          case 'pf-large-feature':
+            html = `
+              <div class="flex" style="${tokenStyle} overflow:hidden;">
+                <div class="w-1/2 overflow-hidden" style="background:var(--color-bg-alt, #E7E5E4);">
+                  <img src="https://picsum.photos/seed/${imgSeed}/400/400" alt="${imgAlt}" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div class="w-1/2 p-6 flex flex-col justify-center">
+                  <span class="text-[10px] font-semibold tracking-widest uppercase" style="color:var(--color-primary, #57534E);font-family:var(--font-mono, monospace);">FEATURED</span>
+                  <h3 class="text-lg font-bold mt-2" style="font-family:var(--font-display, sans-serif);color:var(--color-text-primary, #1C1917);">${cardTitle}</h3>
+                  <p class="text-sm mt-2" style="font-family:var(--font-body, sans-serif);color:var(--color-text-muted, #57534E);">${cardDesc}</p>
+                </div>
+              </div>`;
+            break;
+
+          // === ECOMMERCE ===
+          case 'ec-compact':
+            html = `
+              <div style="${tokenStyle} overflow:hidden;">
+                <div class="aspect-square overflow-hidden" style="background:var(--color-bg-alt, #E7E5E4);">
+                  <img src="https://picsum.photos/seed/${imgSeed}/400/400" alt="${imgAlt}" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div class="p-3">
+                  <h3 class="text-sm font-semibold truncate" style="font-family:var(--font-display, sans-serif);color:var(--color-text-primary, #1C1917);">${cardTitle}</h3>
+                  <span class="text-base font-bold block mt-1" style="font-family:var(--font-mono, monospace);color:var(--color-primary, #57534E);">${price}</span>
+                </div>
+              </div>`;
+            break;
+          case 'ec-with-badge':
+            html = `
+              <div style="${tokenStyle} overflow:hidden;" class="relative">
+                <span class="absolute top-2 left-2 z-10 px-2 py-0.5 text-[10px] font-bold rounded" style="background:var(--color-primary, #57534E);color:#fff;">${badge}</span>
+                <div class="aspect-square overflow-hidden" style="background:var(--color-bg-alt, #E7E5E4);">
+                  <img src="https://picsum.photos/seed/${imgSeed}/400/400" alt="${imgAlt}" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div class="p-3">
+                  <h3 class="text-sm font-semibold" style="font-family:var(--font-display, sans-serif);color:var(--color-text-primary, #1C1917);">${cardTitle}</h3>
+                  <span class="text-base font-bold block mt-1" style="font-family:var(--font-mono, monospace);color:var(--color-primary, #57534E);">${price} <span class="text-xs font-normal" style="color:var(--color-text-muted, #57534E);">${priceUnit}</span></span>
+                </div>
+              </div>`;
+            break;
+          case 'ec-quick-view':
+            html = `
+              <div style="${tokenStyle} overflow:hidden;" class="group relative">
+                <div class="aspect-square overflow-hidden relative" style="background:var(--color-bg-alt, #E7E5E4);">
+                  <img src="https://picsum.photos/seed/${imgSeed}/400/400" alt="${imgAlt}" class="w-full h-full object-cover" loading="lazy">
+                  <button class="absolute bottom-2 left-2 right-2 py-2 text-xs font-semibold rounded opacity-0 group-hover:opacity-100 transition-opacity" style="background:var(--color-primary, #57534E);color:#fff;border-radius:var(--radius-btn, 6px);">Быстрый просмотр</button>
+                </div>
+                <div class="p-3">
+                  <h3 class="text-sm font-semibold" style="font-family:var(--font-display, sans-serif);color:var(--color-text-primary, #1C1917);">${cardTitle}</h3>
+                  <span class="text-base font-bold block mt-1" style="font-family:var(--font-mono, monospace);color:var(--color-primary, #57534E);">${price}</span>
+                </div>
+              </div>`;
+            break;
+          case 'ec-detailed':
+            html = `
+              <div style="${tokenStyle} overflow:hidden;">
+                <div class="aspect-[4/3] overflow-hidden" style="background:var(--color-bg-alt, #E7E5E4);">
+                  <img src="https://picsum.photos/seed/${imgSeed}/400/300" alt="${imgAlt}" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div class="p-4">
+                  <h3 class="text-sm font-semibold" style="font-family:var(--font-display, sans-serif);color:var(--color-text-primary, #1C1917);">${cardTitle}</h3>
+                  <p class="text-xs mt-1" style="font-family:var(--font-body, sans-serif);color:var(--color-text-muted, #57534E);">${cardDesc}</p>
+                  <div class="flex items-center gap-1 mt-2 text-xs" style="color:var(--color-primary, #57534E);">&#9733;&#9733;&#9733;&#9733;&#9733; <span style="color:var(--color-text-muted, #57534E);">(4.9)</span></div>
+                  <div class="flex items-center justify-between mt-2">
+                    <span class="text-base font-bold" style="font-family:var(--font-mono, monospace);color:var(--color-primary, #57534E);">${price}</span>
+                    <span class="text-xs" style="color:var(--color-text-muted, #57534E);">${priceUnit}</span>
+                  </div>
+                </div>
+              </div>`;
+            break;
+
+          // === MEDIA ===
+          case 'md-vertical':
+            html = `
+              <div style="${tokenStyle} overflow:hidden;">
+                <div class="aspect-[16/9] overflow-hidden" style="background:var(--color-bg-alt, #E7E5E4);">
+                  <img src="https://picsum.photos/seed/${imgSeed}/400/225" alt="${imgAlt}" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div class="p-4">
+                  <span class="text-[10px] font-semibold tracking-widest uppercase" style="color:var(--color-primary, #57534E);font-family:var(--font-mono, monospace);">${badge}</span>
+                  <h3 class="text-base font-bold mt-1.5 leading-tight" style="font-family:var(--font-display, sans-serif);color:var(--color-text-primary, #1C1917);">${cardTitle}</h3>
+                  <p class="text-xs mt-2" style="font-family:var(--font-body, sans-serif);color:var(--color-text-muted, #57534E);">${cardDesc}</p>
+                  <span class="text-[10px] mt-2 block" style="color:var(--color-text-muted, #57534E);font-family:var(--font-mono, monospace);">${price} &middot; ${priceUnit}</span>
+                </div>
+              </div>`;
+            break;
+          case 'md-horizontal':
+            html = `
+              <div class="flex" style="${tokenStyle} overflow:hidden;">
+                <div class="w-2/5 overflow-hidden" style="background:var(--color-bg-alt, #E7E5E4);">
+                  <img src="https://picsum.photos/seed/${imgSeed}/200/200" alt="${imgAlt}" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div class="w-3/5 p-4">
+                  <span class="text-[10px] font-semibold tracking-widest uppercase" style="color:var(--color-primary, #57534E);font-family:var(--font-mono, monospace);">${badge}</span>
+                  <h3 class="text-sm font-bold mt-1 leading-tight" style="font-family:var(--font-display, sans-serif);color:var(--color-text-primary, #1C1917);">${cardTitle}</h3>
+                  <p class="text-xs mt-1.5 line-clamp-2" style="font-family:var(--font-body, sans-serif);color:var(--color-text-muted, #57534E);">${cardDesc}</p>
+                  <span class="text-[10px] mt-1.5 block" style="color:var(--color-text-muted, #57534E);font-family:var(--font-mono, monospace);">${price}</span>
+                </div>
+              </div>`;
+            break;
+          case 'md-large-lead':
+            html = `
+              <div style="${tokenStyle} overflow:hidden;">
+                <div class="aspect-[21/9] overflow-hidden" style="background:var(--color-bg-alt, #E7E5E4);">
+                  <img src="https://picsum.photos/seed/${imgSeed}/600/257" alt="${imgAlt}" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div class="p-5">
+                  <span class="text-[10px] font-semibold tracking-widest uppercase" style="color:var(--color-primary, #57534E);font-family:var(--font-mono, monospace);">${badge}</span>
+                  <h3 class="text-xl font-bold mt-2 leading-tight" style="font-family:var(--font-display, sans-serif);color:var(--color-text-primary, #1C1917);">${cardTitle}</h3>
+                  <p class="text-sm mt-2" style="font-family:var(--font-body, sans-serif);color:var(--color-text-muted, #57534E);">${cardDesc}</p>
+                </div>
+              </div>`;
+            break;
+          case 'md-text-only':
+            html = `
+              <div class="p-6" style="${tokenStyle}">
+                <span class="text-[10px] font-semibold tracking-widest uppercase" style="color:var(--color-primary, #57534E);font-family:var(--font-mono, monospace);">${badge}</span>
+                <h3 class="text-lg font-bold mt-2 leading-tight" style="font-family:var(--font-display, sans-serif);color:var(--color-text-primary, #1C1917);">${cardTitle}</h3>
+                <p class="text-sm mt-2" style="font-family:var(--font-body, sans-serif);color:var(--color-text-muted, #57534E);">${cardDesc}</p>
+                <span class="text-[10px] mt-3 block" style="color:var(--color-text-muted, #57534E);font-family:var(--font-mono, monospace);">${price} &middot; ${priceUnit}</span>
+              </div>`;
+            break;
+
+          // === CORPORATE ===
+          case 'cp-icon-text':
+            html = `
+              <div class="p-6" style="${tokenStyle}">
+                <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-3" style="background:var(--color-primary-subtle, rgba(87,83,78,0.08));">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--color-primary, #57534E);"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                </div>
+                <h3 class="text-base font-semibold" style="font-family:var(--font-display, sans-serif);color:var(--color-text-primary, #1C1917);">${cardTitle}</h3>
+                <p class="text-sm mt-2" style="font-family:var(--font-body, sans-serif);color:var(--color-text-muted, #57534E);">${cardDesc}</p>
+              </div>`;
+            break;
+          case 'cp-numbered':
+            html = `
+              <div class="p-6" style="${tokenStyle}">
+                <span class="text-4xl font-black block" style="font-family:var(--font-mono, monospace);color:var(--color-primary, #57534E);opacity:0.3;">01</span>
+                <h3 class="text-base font-semibold -mt-2" style="font-family:var(--font-display, sans-serif);color:var(--color-text-primary, #1C1917);">${cardTitle}</h3>
+                <p class="text-sm mt-2" style="font-family:var(--font-body, sans-serif);color:var(--color-text-muted, #57534E);">${cardDesc}</p>
+              </div>`;
+            break;
+          case 'cp-with-photo':
+            html = `
+              <div style="${tokenStyle} overflow:hidden;">
+                <div class="aspect-[3/2] overflow-hidden" style="background:var(--color-bg-alt, #E7E5E4);">
+                  <img src="https://picsum.photos/seed/${imgSeed}/300/200" alt="${imgAlt}" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div class="p-4">
+                  <h3 class="text-base font-semibold" style="font-family:var(--font-display, sans-serif);color:var(--color-text-primary, #1C1917);">${cardTitle}</h3>
+                  <p class="text-sm mt-1.5" style="font-family:var(--font-body, sans-serif);color:var(--color-text-muted, #57534E);">${cardDesc}</p>
+                </div>
+              </div>`;
+            break;
+          case 'cp-minimal':
+            html = `
+              <div class="p-5 border-l-4" style="border-color:var(--color-primary, #57534E);background:var(--color-surface, #fff);">
+                <h3 class="text-base font-semibold" style="font-family:var(--font-display, sans-serif);color:var(--color-text-primary, #1C1917);">${cardTitle}</h3>
+                <p class="text-sm mt-1.5" style="font-family:var(--font-body, sans-serif);color:var(--color-text-muted, #57534E);">${cardDesc}</p>
+              </div>`;
+            break;
+
+          // === SAAS ===
+          case 'sa-bento':
+            html = `
+              <div class="p-6" style="${tokenStyle}">
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-3" style="background:var(--color-primary, #57534E);">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:#fff;"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                </div>
+                <h3 class="text-lg font-bold" style="font-family:var(--font-display, sans-serif);color:var(--color-text-primary, #1C1917);">${cardTitle}</h3>
+                <p class="text-sm mt-2" style="font-family:var(--font-body, sans-serif);color:var(--color-text-muted, #57534E);">${cardDesc}</p>
+                <div class="mt-3 h-16 rounded-lg" style="background:var(--color-primary-subtle, rgba(87,83,78,0.08));border:1px solid var(--color-border, #D6D3D1);"></div>
+              </div>`;
+            break;
+          case 'sa-icon-grid':
+            html = `
+              <div class="p-6 text-center" style="${tokenStyle}">
+                <div class="w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-3" style="background:var(--color-primary-subtle, rgba(87,83,78,0.08));">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--color-primary, #57534E);"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <h3 class="text-base font-semibold" style="font-family:var(--font-display, sans-serif);color:var(--color-text-primary, #1C1917);">${cardTitle}</h3>
+                <p class="text-sm mt-2" style="font-family:var(--font-body, sans-serif);color:var(--color-text-muted, #57534E);">${cardDesc}</p>
+              </div>`;
+            break;
+          case 'sa-stat':
+            html = `
+              <div class="p-6 text-center" style="${tokenStyle}">
+                <span class="text-4xl font-black block" style="font-family:var(--font-display, sans-serif);color:var(--color-primary, #57534E);">${price}</span>
+                <span class="text-xs mt-1 block" style="color:var(--color-text-muted, #57534E);font-family:var(--font-mono, monospace);">${priceUnit}</span>
+                <h3 class="text-sm font-semibold mt-3" style="font-family:var(--font-body, sans-serif);color:var(--color-text-primary, #1C1917);">${cardTitle}</h3>
+              </div>`;
+            break;
+          case 'sa-alternating':
+            html = `
+              <div class="flex" style="${tokenStyle} overflow:hidden;">
+                <div class="w-1/2 p-5 flex flex-col justify-center">
+                  <h3 class="text-base font-semibold" style="font-family:var(--font-display, sans-serif);color:var(--color-text-primary, #1C1917);">${cardTitle}</h3>
+                  <p class="text-xs mt-2" style="font-family:var(--font-body, sans-serif);color:var(--color-text-muted, #57534E);">${cardDesc}</p>
+                </div>
+                <div class="w-1/2 overflow-hidden" style="background:var(--color-bg-alt, #E7E5E4);">
+                  <img src="https://picsum.photos/seed/${imgSeed}/200/200" alt="${imgAlt}" class="w-full h-full object-cover" loading="lazy">
+                </div>
+              </div>`;
+            break;
+
+          default:
+            html = `<div class="p-5" style="${tokenStyle}"><h3 class="text-base font-semibold" style="font-family:var(--font-display, sans-serif);color:var(--color-text-primary, #1C1917);">${cardTitle}</h3></div>`;
+        }
+
+        cardEl.innerHTML = html;
+        cardEl.className = 'preview-card max-w-sm';
+        cardEl.removeAttribute('style');
+      }
+
+      // ── Apply background (8th axis): override bg + auto text colors, NOT accent ──
+      function applyBackground(hex, scheme) {
+        root.style.setProperty('--color-bg-page', hex);
+        if (scheme === 'dark') {
+          root.style.setProperty('--color-text-primary', '#F8FAFC');
+          root.style.setProperty('--color-text-muted', '#94A3B8');
+          root.style.setProperty('--color-border', '#1E293B');
+          root.style.setProperty('--color-surface', lightenHex(hex, 1.08));
+          root.style.setProperty('--color-bg-alt', lightenHex(hex, 1.04));
+        } else {
+          root.style.setProperty('--color-text-primary', '#0F172A');
+          root.style.setProperty('--color-text-muted', '#475569');
+          root.style.setProperty('--color-border', '#E2E8F0');
+          root.style.setProperty('--color-surface', '#FFFFFF');
+          root.style.setProperty('--color-bg-alt', darkenHex(hex, 0.97));
+        }
+      }
+
+      // ── Render background swatches ──
+      function renderBgSwatches() {
+        const renderGroup = (container, presets, scheme) => {
+          if (!container) return;
+          container.innerHTML = '';
+          presets.forEach(preset => {
+            const swatch = document.createElement('button');
+            swatch.className = 'bg-swatch';
+            swatch.style.background = preset.hex;
+            swatch.setAttribute('data-bg-hex', preset.hex);
+            swatch.setAttribute('data-bg-scheme', scheme);
+            swatch.setAttribute('aria-label', preset.name + ' ' + preset.hex);
+            swatch.setAttribute('title', preset.name + ' ' + preset.hex);
+            swatch.addEventListener('click', () => setBackground(preset.hex, scheme));
+            container.appendChild(swatch);
+          });
+        };
+        renderGroup(bgLight, BG_PRESETS.light, 'light');
+        renderGroup(bgDark, BG_PRESETS.dark, 'dark');
+      }
+
+      function updateBgSwatches() {
+        const currentBg = (activeBackground ? activeBackground.hex : null) || customBg;
+        document.querySelectorAll('.bg-swatch').forEach(swatch => {
+          const hex = swatch.getAttribute('data-bg-hex');
+          swatch.classList.toggle('active', hex === currentBg);
+        });
+      }
+
+      function setBackground(hex, scheme) {
+        activeBackground = { hex, scheme };
+        customBg = null;
+        applyBackground(hex, scheme);
+        bgCustomColor.value = hex;
+        bgCustomHex.value = hex;
+        updateBgSwatches();
+        updateURL();
+      }
+
+      function setCustomBackground(hex) {
+        if (!/^#[0-9a-fA-F]{6}$/.test(hex)) return;
+        customBg = hex;
+        activeBackground = null;
+        const scheme = isDarkBg(hex) ? 'dark' : 'light';
+        applyBackground(hex, scheme);
+        bgCustomColor.value = hex;
+        bgCustomHex.value = hex;
+        updateBgSwatches();
+        updateURL();
+      }
+
+      function resetBackground() {
+        activeBackground = null;
+        customBg = null;
+        // Restore only bg-related tokens from current theme (NOT accent/radius/font)
+        const theme = THEMES[activeTheme];
+        const css = theme.css;
+        root.style.setProperty('--color-bg-page', css['--color-bg-page']);
+        root.style.setProperty('--color-bg-alt', css['--color-bg-alt']);
+        root.style.setProperty('--color-surface', css['--color-surface']);
+        root.style.setProperty('--color-text-primary', css['--color-text-primary']);
+        root.style.setProperty('--color-text-muted', css['--color-text-muted']);
+        root.style.setProperty('--color-border', css['--color-border']);
+        bgCustomHex.value = '';
+        bgCustomColor.value = css['--color-bg-page'];
+        updateBgSwatches();
+        updateURL();
+      }
+
+      // ── URL hash support ──
+      function updateURL() {
+        try {
+          const url = new URL(window.location);
+          let hashStr = `theme=${activeTheme}&niche=${activeNiche}`;
+          if (activeBackground) hashStr += `&bg=${activeBackground.hex.replace('#','')}`;
+          else if (customBg) hashStr += `&bg=${customBg.replace('#','')}`;
+          if (activeDisplayFont) hashStr += `&df=${encodeURIComponent(activeDisplayFont)}`;
+          if (activeBodyFont) hashStr += `&bf=${encodeURIComponent(activeBodyFont)}`;
+          if (activeCardVariant) hashStr += `&cv=${activeCardVariant}`;
+          url.hash = hashStr;
+          window.history.replaceState({}, '', url);
+        } catch(e) { /* ignore */ }
+      }
+
+      function readURLHash() {
+        const hash = window.location.hash.replace('#', '');
+        if (!hash) return { theme: null, niche: null };
+        // New format: theme=X&niche=Y
+        if (hash.includes('=')) {
+          const params = new URLSearchParams(hash);
+          const bgParam = params.get('bg');
+          return {
+            theme: params.get('theme') && THEMES[params.get('theme')] ? params.get('theme') : null,
+            niche: params.get('niche') && NICHE_PRESETS[params.get('niche')] ? params.get('niche') : null,
+            bg: bgParam && /^#?[0-9a-fA-F]{6}$/.test(bgParam) ? (bgParam.startsWith('#') ? bgParam : '#' + bgParam) : null,
+            df: params.get('df') || null,
+            bf: params.get('bf') || null,
+            cv: params.get('cv') || null
+          };
+        }
+        // Legacy format: just theme id
+        if (THEMES[hash]) return { theme: hash, niche: null };
+        return { theme: null, niche: null };
+      }
+
+      // ── Export JSON (expanded with all 6 axes) ──
+      function getExportJSON() {
+        const theme = THEMES[activeTheme];
+        const accent = activeAccent || customHex || theme.css['--color-primary'];
+        const mood = activeMood ? MOOD_PRESETS[activeMood] : null;
+        const radius = RADIUS_OPTIONS.find(r => r.id === activeRadius);
+        const fontPair = activeFontPair ? FONT_PAIRS.find(f => f.id === activeFontPair) : null;
+        const layout = activeLayout ? LAYOUT_PATTERNS.find(l => l.id === activeLayout) : null;
+
+        const result = {
+          theme: activeTheme,
+          themeName: theme.name,
+          accent: accent,
+          niche: activeNiche,
+          nicheName: NICHE_PRESETS[activeNiche] ? NICHE_PRESETS[activeNiche].name : activeNiche,
+          background: activeBackground ? activeBackground.hex : (customBg || null),
+          backgroundCustom: !!customBg,
+          backgroundScheme: activeBackground ? activeBackground.scheme : undefined,
+          custom: !!customHex,
+          exportedAt: new Date().toISOString(),
+        };
+
+        // Mood
+        if (mood) {
+          result.mood = mood.id;
+          result.moodName = mood.name;
+        }
+
+        // Radius
+        result.radius = radius ? radius.id : 'soft';
+        result.radiusOverride = radiusOverride;
+
+        // Font pair (preset) OR independent selection
+        if (activeDisplayFont || activeBodyFont) {
+          result.font_pair = {
+            display: activeDisplayFont || (fontPair ? fontPair.display : theme.displayFont),
+            body: activeBodyFont || (fontPair ? fontPair.body : theme.bodyFont),
+            independent: true
+          };
+        } else if (fontPair) {
+          result.font_pair = { display: fontPair.display, body: fontPair.body };
+        } else {
+          result.font_pair = { display: theme.displayFont, body: theme.bodyFont };
+        }
+
+        // Layout
+        if (layout) {
+          result.layout_pattern = layout.id;
+          result.layout_name = layout.shortName;
+        }
+
+        // Card variant (niche-dependent)
+        if (activeCardVariant) {
+          const variants = CARD_VARIANTS[activeNiche] || [];
+          const cv = variants.find(v => v.id === activeCardVariant);
+          if (cv) {
+            result.card_variant = activeCardVariant;
+            result.card_variant_name = cv.name;
+          }
+        }
+
+        // CSS variables
+        result.css = {
+          '--color-primary': accent,
+          '--radius': radius ? radius.value : '8px',
+          '--font-display': activeDisplayFont ? AVAILABLE_FONTS.find(f => f.name === activeDisplayFont)?.css || theme.css['--font-display'] : (fontPair ? fontPair.cssDisplay : theme.css['--font-display']),
+          '--font-body': activeBodyFont ? AVAILABLE_FONTS.find(f => f.name === activeBodyFont)?.css || theme.css['--font-body'] : (fontPair ? fontPair.cssBody : theme.css['--font-body']),
+          '--shadow-brand': getComputedStyle(root).getPropertyValue('--shadow-brand').trim(),
+          '--transition-smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
+        };
+
+        // Notes
+        const notes = [];
+        if (radiusOverride && activeMood) notes.push(`Radius override: mood=${activeMood} auto-set ${MOOD_PRESETS[activeMood].radius}, manual=${radius ? radius.id : 'soft'}`);
+        if (layout && layout.warning) notes.push(`Layout warning: ${layout.warning}`);
+        if (notes.length > 0) result.notes = notes.join('; ');
+
+        return result;
+      }
+
+      function showJSON() {
+        const data = getExportJSON();
+        jsonOutput.textContent = JSON.stringify(data, null, 2);
+        jsonOutput.classList.remove('hidden');
+        jsonOutput.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+
+      function downloadJSON() {
+        const data = getExportJSON();
+        const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'project-theme.json';
+        a.click();
+        URL.revokeObjectURL(url);
+      }
+
+      // ── Event listeners ──
+      customColor.addEventListener('input', () => {
+        // Real-time apply: color picker always gives valid #rrggbb
+        setCustomHex(customColor.value);
+      });
+
+      customHexInput.addEventListener('input', () => {
+        const val = customHexInput.value;
+        if (/^#[0-9a-fA-F]{6}$/.test(val)) {
+          // Real-time apply only when full valid hex typed
+          setCustomHex(val);
+        }
+      });
+
+      customHexInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          setCustomHex(customHexInput.value);
+        }
+      });
+
+      applyCustomBtn.addEventListener('click', () => {
+        setCustomHex(customHexInput.value);
+      });
+
+      // ── Background event listeners ──
+      bgCustomColor.addEventListener('input', () => {
+        setCustomBackground(bgCustomColor.value);
+      });
+
+      bgCustomHex.addEventListener('input', () => {
+        const val = bgCustomHex.value;
+        if (/^#[0-9a-fA-F]{6}$/.test(val)) {
+          setCustomBackground(val);
+        }
+      });
+
+      bgCustomHex.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          setCustomBackground(bgCustomHex.value);
+        }
+      });
+
+      bgApplyCustom.addEventListener('click', () => {
+        setCustomBackground(bgCustomHex.value);
+      });
+
+      bgReset.addEventListener('click', () => {
+        resetBackground();
+      });
+
+      // ── Independent font selection event listeners ──
+      if (fontDisplaySelect) {
+        fontDisplaySelect.addEventListener('change', () => setDisplayFont(fontDisplaySelect.value));
+      }
+      if (fontBodySelect) {
+        fontBodySelect.addEventListener('change', () => setBodyFont(fontBodySelect.value));
+      }
+
+      btnApply.addEventListener('click', showJSON);
+      btnDownload.addEventListener('click', downloadJSON);
+
+      // ── Init ──
+      function init() {
+        renderThemeGrid();
+        renderAccentSwatches();
+        renderMoodGrid();
+        renderRadiusGrid();
+        renderFontGrid();
+        renderFontSelects();
+        renderLayoutGrid();
+        renderNicheGrid();
+        renderCardVariantGrid();
+        renderBgSwatches();
+
+        // Determine initial theme + niche: URL hash > defaults
+        const parsed = readURLHash();
+        const initialTheme = parsed.theme || 'concrete-steel';
+        const initialNiche = parsed.niche || 'portfolio';
+
+        setTheme(initialTheme);
+        setNiche(initialNiche);
+
+        // Apply background from URL if present
+        const initialBg = parsed.bg;
+        if (initialBg) setCustomBackground(initialBg);
+        if (parsed.df) setDisplayFont(parsed.df);
+        if (parsed.bf) setBodyFont(parsed.bf);
+        if (parsed.cv) {
+          const variants = CARD_VARIANTS[activeNiche] || [];
+          if (variants.find(v => v.id === parsed.cv)) setCardVariant(parsed.cv);
+        }
+
+        // Apply default radius (soft)
+        const defaultRadius = RADIUS_OPTIONS.find(r => r.id === 'soft');
+        if (defaultRadius) applyRadiusValues(defaultRadius);
+        updateRadiusCards();
+
+        // Init layout wireframe
+        renderLayoutWireframe(null);
+      }
+
+      init();
+    })();
+  </script>
+</body>
+</html>

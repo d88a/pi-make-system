@@ -1,0 +1,105 @@
+[
+  {
+    "id": "hero_section",
+    "elType": "container",
+    "settings": {
+      "container_type": "grid",
+      "grid_columns_grid": {"unit": "fr", "size": "1"},
+      "grid_rows_grid": {"unit": "fr", "size": "7"},
+      "background_background": "classic",
+      "background_color": "#2F4A33",
+      "padding": {"unit": "px", "top": "120", "right": "20", "bottom": "120", "left": "20", "isLinked": false}
+    },
+    "elements": [
+      {
+        "id": "hero_eyebrow",
+        "elType": "widget",
+        "settings": {
+          "editor": "<p style=\"text-align:center; font-size:12px; letter-spacing:3px; text-transform:uppercase; font-weight:600; color:#B8963E;\">Село Гагарино · Тамбовская область · осн. 1702</p>"
+        },
+        "elements": [],
+        "widgetType": "text-editor",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_title",
+        "elType": "widget",
+        "settings": {
+          "title": {
+            "$$type": "html-v3",
+            "value": {
+              "content": {
+                "$$type": "string",
+                "value": "Проект возрождения усадьбы «Барышня-крестьянка»"
+              },
+              "children": []
+            }
+          },
+          "link": {"$$type": "link", "value": {"isTargetBlank": null}}
+        },
+        "elements": [],
+        "widgetType": "e-heading",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_divider",
+        "elType": "widget",
+        "settings": {
+          "editor": "<div style=\"display:flex; align-items:center; justify-content:center; gap:14px; opacity:0.5; margin:24px 0;\"><div style=\"height:1px; width:72px; background:linear-gradient(90deg,transparent,#B8963E);\"></div><svg style=\"width:20px; height:20px; color:#B8963E;\" viewBox=\"0 0 20 20\"><path d=\"M10 1 L11.5 8.5 L19 10 L11.5 11.5 L10 19 L8.5 11.5 L1 10 L8.5 8.5 Z\" fill=\"currentColor\"/></svg><div style=\"height:1px; width:72px; background:linear-gradient(90deg,#B8963E,transparent);\"></div></div>"
+        },
+        "elements": [],
+        "widgetType": "text-editor",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_subtitle",
+        "elType": "widget",
+        "settings": {
+          "editor": "<p style=\"text-align:center; font-size:24px; font-style:italic; color:#F5EFE3;\">Возвращение жизни в родовое гнездо на тамбовской земле.</p>"
+        },
+        "elements": [],
+        "widgetType": "text-editor",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_desc",
+        "elType": "widget",
+        "settings": {
+          "editor": "<p style=\"text-align:center; color:#F5EFE3; font-size:18px; line-height:1.7; max-width:640px; margin:16px auto 0;\">Ищем партнёров, разделяющих наши ценности, для совместного создания устойчивого семейного поместья и культурно-исторического центра.</p>"
+        },
+        "elements": [],
+        "widgetType": "text-editor",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      },
+      {
+        "id": "hero_buttons",
+        "elType": "widget",
+        "settings": {
+          "editor": "<div style=\"display:flex; flex-wrap:wrap; justify-content:center; gap:16px; margin-top:40px;\"><a href=\"#contacts\" style=\"display:inline-block; background:#B8963E; color:#2B2620; padding:14px 28px; font-size:16px; font-weight:600; text-decoration:none;\">Узнать подробнее</a><a href=\"#contacts\" style=\"display:inline-block; border:1px solid rgba(245,239,227,0.4); color:#F5EFE3; padding:14px 28px; font-size:16px; font-weight:500; text-decoration:none;\">Связаться с нами</a></div>"
+        },
+        "elements": [],
+        "widgetType": "text-editor",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      }
+    ],
+    "isInner": false
+  }
+]

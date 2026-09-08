@@ -1,0 +1,57 @@
+{
+    "content": [
+        {
+            "id": "59389593",
+            "elType": "container",
+            "settings": {
+                "container_type": "grid",
+                "grid_columns_grid": {
+                    "unit": "fr",
+                    "size": "1"
+                },
+                "grid_rows_grid": {
+                    "unit": "fr",
+                    "size": "2"
+                },
+                "grid_rows_grid_mobile": {
+                    "unit": "fr",
+                    "size": "2"
+                }
+            },
+            "elements": [
+                {
+                    "id": "33c6971c",
+                    "elType": "widget",
+                    "settings": {
+                        "title": {
+                            "$$type": "html-v3",
+                            "value": {
+                                "content": {
+                                    "$$type": "string",
+                                    "value": "Тест программы"
+                                },
+                                "children": []
+                            }
+                        },
+                        "link": {
+                            "$$type": "link",
+                            "value": {
+                                "isTargetBlank": null
+                            }
+                        }
+                    },
+                    "elements": [],
+                    "widgetType": "e-heading",
+                    "styles": [],
+                    "interactions": [],
+                    "editor_settings": [],
+                    "version": "0.0"
+                }
+            ],
+            "isInner": false
+        }
+    ],
+    "version": "4.1.3",
+    "title": "Test UI Template",
+    "type": "page"
+}

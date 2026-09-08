@@ -1,0 +1,32 @@
+[
+  {
+    "id": "sec1",
+    "elType": "section",
+    "settings": {
+      "layout": "full_width",
+      "background_background": "classic",
+      "background_color": "#2F4A33",
+      "padding": {"unit": "px", "top": "100", "bottom": "100"}
+    },
+    "elements": [
+      {
+        "id": "col1",
+        "elType": "column",
+        "settings": {"_column_size": 100},
+        "elements": [
+          {
+            "id": "w1",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "Test Heading",
+              "header_size": "h1",
+              "align": "center",
+              "title_color": "#FFFFFF"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

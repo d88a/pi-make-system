@@ -1,0 +1,110 @@
+[
+  {
+    "id": "sec1",
+    "elType": "section",
+    "settings": {
+      "layout": "full_width",
+      "stretch_section": "section-stretched",
+      "background_background": "classic",
+      "background_color": "#2F4A33",
+      "padding": {"unit": "px", "top": "150", "bottom": "150"}
+    },
+    "elements": [{
+      "id": "col1",
+      "elType": "column",
+      "settings": {"_column_size": 100, "content_position": "center"},
+      "elements": [
+        {
+          "id": "w1",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "Проект возрождения усадьбы «Барышня-крестьянка»",
+            "header_size": "h1",
+            "align": "center",
+            "title_color": "#F5EFE3",
+            "typography_typography": "custom",
+            "typography_font_family": "Playfair Display",
+            "typography_font_size": {"unit": "px", "size": 56},
+            "typography_font_weight": "700"
+          }
+        },
+        {
+          "id": "w2",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "Возвращение жизни в родовое гнездо на тамбовской земле.",
+            "header_size": "h2",
+            "align": "center",
+            "title_color": "#F5EFE3",
+            "typography_typography": "custom",
+            "typography_font_family": "Playfair Display",
+            "typography_font_size": {"unit": "px", "size": 24},
+            "typography_font_style": "italic"
+          }
+        },
+        {
+          "id": "w3",
+          "elType": "widget",
+          "widgetType": "text-editor",
+          "settings": {
+            "editor": "<p style=\"text-align:center;color:#F5EFE3;max-width:700px;margin:20px auto;font-size:16px;line-height:1.6;\">Ищем партнёров, разделяющих наши ценности, для совместного создания устойчивого семейного поместья и культурно-исторического центра.</p>"
+          }
+        },
+        {
+          "id": "w4",
+          "elType": "widget",
+          "widgetType": "button",
+          "settings": {
+            "text": "Узнать подробнее",
+            "link": {"url": "#contacts"},
+            "align": "center",
+            "background_color": "#B8963E",
+            "button_text_color": "#2B2620"
+          }
+        }
+      ]
+    }]
+  },
+  {
+    "id": "sec2",
+    "elType": "section",
+    "settings": {
+      "layout": "boxed",
+      "background_background": "classic",
+      "background_color": "#FAF6EC",
+      "padding": {"unit": "px", "top": "80", "bottom": "80"}
+    },
+    "elements": [{
+      "id": "col2",
+      "elType": "column",
+      "settings": {"_column_size": 100},
+      "elements": [
+        {
+          "id": "w5",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "Дорогие друзья!",
+            "header_size": "h2",
+            "align": "center",
+            "title_color": "#2F4A33",
+            "typography_typography": "custom",
+            "typography_font_family": "Playfair Display",
+            "typography_font_size": {"unit": "px", "size": 42},
+            "typography_font_weight": "700"
+          }
+        },
+        {
+          "id": "w6",
+          "elType": "widget",
+          "widgetType": "text-editor",
+          "settings": {
+            "editor": "<p style=\"text-align:center;line-height:1.7;color:#2B2620;max-width:800px;margin:0 auto;\">Мы рады приветствовать вас на официальной странице проекта возрождения усадьбы «Барышня-крестьянка». Проект реализуется силами Благотворительного фонда содействия учебным заведениям и патриотического воспитания подрастающего поколения, при поддержке Администрации Тамбовской области, Совета Федерации ФС РФ и ветеранов Вооружённых Сил России.</p>"
+          }
+        }
+      ]
+    }]
+  }
+]

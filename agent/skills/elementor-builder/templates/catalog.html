@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог Elementor шаблонов</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        
+        .preview {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .content {
+            padding: 20px;
+        }
+        
+        .title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .description {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        
+        .stats {
+            display: flex;
+            gap: 15px;
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 15px;
+        }
+        
+        .actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: #9333ea;
+            color: white;
+            flex: 1;
+        }
+        
+        .btn-primary:hover {
+            background: #7c22ce;
+        }
+        
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #333;
+            padding: 8px 12px;
+        }
+        
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Каталог Elementor шаблонов</h1>
+    <p class="subtitle">10 готовых шаблонов для импорта в Elementor (совместимы с версиями 3.x и 4.x)</p>
+    
+    <div class="grid">
+        <div class="card">
+            <img src="ai-saas.png" alt="AI SaaS" class="preview">
+            <div class="content">
+                <div class="title">AI SaaS</div>
+                <div class="description">Современный лендинг для AI/SaaS продукта с фиолетовой цветовой схемой</div>
+                <div class="stats">
+                    <span>6 секций</span>
+                    <span>37 KB</span>
+                    <span>Inter</span>
+                </div>
+                <div class="actions">
+                    <a href="ai-saas.json" download class="btn btn-primary">Скачать JSON</a>
+                    <a href="ai-saas.html" class="btn btn-secondary">HTML</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <img src="analytics.png" alt="Analytics" class="preview">
+            <div class="content">
+                <div class="title">Analytics Dashboard</div>
+                <div class="description">Дашборд для аналитической платформы с графиками и метриками</div>
+                <div class="stats">
+                    <span>10 секций</span>
+                    <span>163 KB</span>
+                    <span>Inter</span>
+                </div>
+                <div class="actions">
+                    <a href="analytics.json" download class="btn btn-primary">Скачать JSON</a>
+                    <a href="analytics.html" class="btn btn-secondary">HTML</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <img src="app.png" alt="Mobile App" class="preview">
+            <div class="content">
+                <div class="title">Mobile App</div>
+                <div class="description">Лендинг для мобильного приложения с оранжевыми акцентами</div>
+                <div class="stats">
+                    <span>5 секций</span>
+                    <span>71 KB</span>
+                    <span>Inter</span>
+                </div>
+                <div class="actions">
+                    <a href="app.json" download class="btn btn-primary">Скачать JSON</a>
+                    <a href="app.html" class="btn btn-secondary">HTML</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <img src="blog.png" alt="Blog" class="preview">
+            <div class="content">
+                <div class="title">Blog</div>
+                <div class="description">Минималистичный блог с красными акцентами и типографикой</div>
+                <div class="stats">
+                    <span>6 секций</span>
+                    <span>68 KB</span>
+                    <span>Georgia</span>
+                </div>
+                <div class="actions">
+                    <a href="blog.json" download class="btn btn-primary">Скачать JSON</a>
+                    <a href="blog.html" class="btn btn-secondary">HTML</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <img src="conference.png" alt="Conference" class="preview">
+            <div class="content">
+                <div class="title">Conference</div>
+                <div class="description">Темная тема для конференции с розовыми акцентами</div>
+                <div class="stats">
+                    <span>9 секций</span>
+                    <span>115 KB</span>
+                    <span>Manrope</span>
+                </div>
+                <div class="actions">
+                    <a href="conference.json" download class="btn btn-primary">Скачать JSON</a>
+                    <a href="conference.html" class="btn btn-secondary">HTML</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <img src="education.png" alt="Education" class="preview">
+            <div class="content">
+                <div class="title">Education</div>
+                <div class="description">Образовательная платформа с фиолетовой палитрой</div>
+                <div class="stats">
+                    <span>8 секций</span>
+                    <span>85 KB</span>
+                    <span>Plus Jakarta Sans</span>
+                </div>
+                <div class="actions">
+                    <a href="education.json" download class="btn btn-primary">Скачать JSON</a>
+                    <a href="education.html" class="btn btn-secondary">HTML</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <img src="portfolio.png" alt="Portfolio" class="preview">
+            <div class="content">
+                <div class="title">Portfolio</div>
+                <div class="description">Портфолио с зелёной природной палитрой и минималистичным дизайном</div>
+                <div class="stats">
+                    <span>6 секций</span>
+                    <span>37 KB</span>
+                    <span>Inter</span>
+                </div>
+                <div class="actions">
+                    <a href="portfolio.json" download class="btn btn-primary">Скачать JSON</a>
+                    <a href="portfolio.html" class="btn btn-secondary">HTML</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <img src="pricing.png" alt="Pricing" class="preview">
+            <div class="content">
+                <div class="title">Pricing</div>
+                <div class="description">Страница с тарифами в синей палитре</div>
+                <div class="stats">
+                    <span>6 секций</span>
+                    <span>54 KB</span>
+                    <span>Inter</span>
+                </div>
+                <div class="actions">
+                    <a href="pricing.json" download class="btn btn-primary">Скачать JSON</a>
+                    <a href="pricing.html" class="btn btn-secondary">HTML</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <img src="studio.png" alt="Studio" class="preview">
+            <div class="content">
+                <div class="title">Studio</div>
+                <div class="description">Креативная студия с минималистичным дизайном</div>
+                <div class="stats">
+                    <span>8 секций</span>
+                    <span>109 KB</span>
+                    <span>Inter</span>
+                </div>
+                <div class="actions">
+                    <a href="studio.json" download class="btn btn-primary">Скачать JSON</a>
+                    <a href="studio.html" class="btn btn-secondary">HTML</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <img src="team.png" alt="Team" class="preview">
+            <div class="content">
+                <div class="title">Team</div>
+                <div class="description">Страница команды с бирюзовыми акцентами</div>
+                <div class="stats">
+                    <span>7 секций</span>
+                    <span>90 KB</span>
+                    <span>Inter</span>
+                </div>
+                <div class="actions">
+                    <a href="team.json" download class="btn btn-primary">Скачать JSON</a>
+                    <a href="team.html" class="btn btn-secondary">HTML</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 40px; padding: 20px; background: white; border-radius: 8px; max-width: 800px; margin-left: auto; margin-right: auto;">
+        <h3 style="margin-bottom: 15px; color: #333;">Инструкция по импорту</h3>
+        <ol style="text-align: left; line-height: 1.8; color: #666;">
+            <li>Скачайте JSON файл шаблона</li>
+            <li>В Elementor перейдите: Templates → Import</li>
+            <li>Выберите скачанный JSON файл</li>
+            <li>Шаблон появится в "My Templates"</li>
+            <li>Создайте новую страницу и импортируйте шаблон</li>
+        </ol>
+    </div>
+</body>
+</html>

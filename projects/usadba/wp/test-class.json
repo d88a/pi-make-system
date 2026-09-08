@@ -1,0 +1,29 @@
+[
+  {
+    "id": "hero_section",
+    "elType": "container",
+    "settings": {
+      "container_type": "grid",
+      "grid_columns_grid": {"unit": "fr", "size": "1"},
+      "grid_rows_grid": {"unit": "fr", "size": "2"},
+      "background_background": "classic",
+      "background_color": "#2F4A33"
+    },
+    "elements": [
+      {
+        "id": "test_class",
+        "elType": "widget",
+        "settings": {
+          "editor": "<p class=\"usadba-test\">Тест класса</p>"
+        },
+        "elements": [],
+        "widgetType": "text-editor",
+        "styles": [],
+        "interactions": [],
+        "editor_settings": [],
+        "version": "0.0"
+      }
+    ],
+    "isInner": false
+  }
+]
