@@ -1,0 +1,11 @@
+{
+  "project": "Test Project",
+  "domain": "test.example.com",
+  "type": "corporate-product",
+  "theme": "concrete-steel",
+  "accent": "#3B5F8A",
+  "pages": ["home", "about"],
+  "components": ["nav", "footer", "hero"],
+  "status": "planning",
+  "createdAt": "2026-09-08"
+}

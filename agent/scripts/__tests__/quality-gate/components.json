@@ -1,0 +1,25 @@
+{
+  "components": [
+    {
+      "name": "nav",
+      "file": "shared/components/nav.html",
+      "version": "1.0",
+      "description": "Navigation bar",
+      "used_by": ["home", "about"]
+    },
+    {
+      "name": "footer",
+      "file": "shared/components/footer.html",
+      "version": "1.0",
+      "description": "Footer",
+      "used_by": ["home", "about"]
+    },
+    {
+      "name": "hero",
+      "file": "shared/components/hero.html",
+      "version": "1.0",
+      "description": "Hero section",
+      "used_by": ["home"]
+    }
+  ]
+}

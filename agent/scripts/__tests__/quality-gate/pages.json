@@ -1,0 +1,16 @@
+[
+  {
+    "id": "home",
+    "title": "Home",
+    "slug": "/",
+    "role": "landing",
+    "blocks": ["hero", "nav", "footer"]
+  },
+  {
+    "id": "about",
+    "title": "About",
+    "slug": "/about",
+    "role": "content",
+    "blocks": ["nav", "footer"]
+  }
+]
