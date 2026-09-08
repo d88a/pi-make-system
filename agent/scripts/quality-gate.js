@@ -75,27 +75,37 @@ function walk(dir, pred) {
 }
 
 /**
- * Find HTML files in a project directory.
- * Checks dist/, then pages/, then root.
+ * Find HTML page files in a project directory.
+ * Checks dist/ (assembled output), then root-level .html, then pages/ (source).
+ * Does NOT recurse into shared/, _utilities/, etc. — only actual site pages.
  *
  * @param {string} projectDir
  * @returns {string[]}
  */
 function findHtmlFiles(projectDir) {
-  for (const sub of ['dist', 'pages', '.']) {
-    const dir = path.join(projectDir, sub);
-    if (fs.existsSync(dir) && fs.statSync(dir).isDirectory()) {
-      const files = walk(dir, (f) => f.toLowerCase().endsWith('.html'));
-      if (files.length > 0) return files.sort();
-    }
+  // 1. dist/ — assembled pages (recurse, only real output)
+  const distDir = path.join(projectDir, 'dist');
+  if (fs.existsSync(distDir) && fs.statSync(distDir).isDirectory()) {
+    const files = walk(distDir, (f) => f.toLowerCase().endsWith('.html'));
+    if (files.length > 0) return files.sort();
   }
-  // Also try root-level .html
+
+  // 2. Root-level .html — site pages only (no recursion into shared/, etc.)
   if (fs.existsSync(projectDir)) {
-    return fs.readdirSync(projectDir)
+    const rootFiles = fs.readdirSync(projectDir)
       .filter((f) => f.toLowerCase().endsWith('.html'))
       .map((f) => path.join(projectDir, f))
       .sort();
+    if (rootFiles.length > 0) return rootFiles;
   }
+
+  // 3. pages/ — source pages with @component markers
+  const pagesDir = path.join(projectDir, 'pages');
+  if (fs.existsSync(pagesDir) && fs.statSync(pagesDir).isDirectory()) {
+    const files = walk(pagesDir, (f) => f.toLowerCase().endsWith('.html'));
+    if (files.length > 0) return files.sort();
+  }
+
   return [];
 }
 
