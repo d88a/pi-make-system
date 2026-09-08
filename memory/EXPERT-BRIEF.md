@@ -28,7 +28,7 @@
 ### Технический стек
 - **Оркестратор:** Pi (TypeScript, локально на Windows, bun runtime)
 - **Модели:** 96 моделей через 4 провайдера (DashScope, clipproxy 90+, TokenRouter, NVIDIA)
-- **Агенты:** 17 специализированных (архитектор, ui-coder, дизайнер, code-auditor, researcher, wp-coder, wp-integration и др.)
+- **Агенты:** 19 специализированных (архитектор, ui-coder, дизайнер, code-auditor, researcher, wp-coder, wp-integration и др.)
 - **Верификация:** Playwright скриншоты + a11y-check.js (WCAG AA) + grep-аудит
 
 ### Что уже сделано (реальные проекты)
@@ -241,7 +241,7 @@ WP с кириллическими slugами → SEOPress sitemap декоди�
 ### Архитектура
 1. **3 pipeline** — правильная ли стратегия? HTML / кастомная WP-тема / Elementor JSON. Или лучше унифицировать?
 2. **Vision reliability** — qwen-vl-max галлюцинирует. Есть ли альтернатива для точного UI-аудита? Или vision принципиально не подходит?
-3. **Subagent architecture** — 17 агентов, orchestration через TypeScript extension. Это overkill или оправдано?
+3. **Subagent architecture** — 19 агентов, orchestration через TypeScript extension. Это overkill или оправдано?
 4. **wp-coder + PHP** — AI генерация PHP ненадёжна (висячие endif, пропущенные ?>). Это известная проблема или нужно менять подход?
 
 ### Elementor pipeline (НОВЫЙ)
@@ -265,7 +265,7 @@ WP с кириллическими slugами → SEOPress sitemap декоди�
 
 | Метрика | Значение |
 |---------|----------|
-| Агентов | 17 |
+| Агентов | 19 |
 | Тем | 16 (7 light + 5 dark + 4 special) |
 | Моделей доступно | 96 через clipproxy + 6 DashScope + TokenRouter + NVIDIA |
 | Сайтов в корпусе | 5609 (88 с полным extraction) |
@@ -285,7 +285,7 @@ WP с кириллическими slugами → SEOPress sitemap декоди�
 
 ```
 C:/Users/Ваня/.pi/agent/              ← Глобальный харнес Pi
-├── agents/ (17 .md файлов)            ← Определения агентов
+├── agents/ (19 .md файлов)            ← Определения агентов
 ├── config/design-system/              ← Токены, темы, паттерны
 │   ├── tokens.md
 │   ├── themes/ (16 тем)

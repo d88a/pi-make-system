@@ -151,31 +151,35 @@
 
 ---
 
-## 10. Оценка готовности к Production Quality Gate
+## 10. Оценка готовности к Production Quality Gate (ПОСЛЕ фиксов)
 
 | Компонент | Статус | Готовность |
 |-----------|--------|------------|
 | a11y-check.js | ✅ Работает | 100% |
-| Designer contract fix | ❌ Противоречие | 0% |
-| SSOT/component build | ❌ Нет | 0% |
-| Quality Gate orchestrator | ❌ Нет | 0% |
-| Static audit (tokens) | ❌ Нет | 0% |
-| Static audit (links) | ❌ Нет | 0% |
-| Static audit (HTML) | ❌ Нет | 0% |
-| Static audit (project model) | ❌ Нет | 0% |
+| Designer contract fix | ✅ designer.md переписан | 100% |
+| SSOT/component build | ✅ build.js | 100% |
+| Quality Gate orchestrator | ✅ quality-gate.js | 100% |
+| Static audit (tokens) | ✅ token-check.js | 100% |
+| Static audit (links) | ✅ link-check.js | 100% |
+| Static audit (HTML) | ⚠️ В quality-gate (базовый) | 60% |
+| Static audit (project model) | ⚠️ В quality-gate (базовый) | 60% |
 | Static audit (content diff) | ❌ Нет | 0% |
-| Code Auditor checklist | ❌ Нет | 0% |
-| Playwright desktop | ❌ Нет | 0% |
-| Playwright mobile | ❌ Нет | 0% |
-| Console/network audit | ❌ Нет | 0% |
-| Screenshot regression | ❌ Нет | 0% |
-| Agent count fix | ❌ 19≠17 | 0% |
-| Elementor matrix | ❌ Нет | 0% |
+| Code Auditor checklist | ✅ code-auditor.md обновлён | 100% |
+| Playwright desktop | ✅ playwright-check.js | 100% |
+| Playwright mobile | ✅ playwright-check.js | 100% |
+| Console/network audit | ✅ playwright-check.js | 100% |
+| Screenshot regression | ✅ screenshot-diff.js | 100% |
+| Agent count fix | ✅ 17→19 исправлено | 100% |
+| Elementor matrix | ✅ COMPATIBILITY-MATRIX.md | 100% |
 
-**Общая готовность:** 1/16 компонентов (6%)
+**Общая готовность:** 14/16 компонентов (88%)
 
 ---
 
-## 11. Следующий шаг
+## 11. Что осталось (P2)
 
-Старт Этапа 1: фикс `designer.md` — разделение на два контракта (visual/taste vs factual/spec).
+- Content diff для existing-site режима (ZERO INVENTION/ZERO LOSS проверка)
+- HTML validator (интеграция с html-validate или w3c)
+- Project model consistency check (глубокая валидация project.json↔pages.json↔components.json)
+- Прогон quality-gate на реальном проекте (maksplit или usadba)
+- Интеграция screenshot-diff.js в quality-gate.js
