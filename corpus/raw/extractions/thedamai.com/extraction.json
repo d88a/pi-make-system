@@ -1,0 +1,136 @@
+{
+  "url": "https://www.thedamai.com",
+  "hostname": "thedamai.com",
+  "title": "The Damai",
+  "niches": [
+    "ecommerce",
+    "minimal",
+    "other",
+    "architecture-realestate"
+  ],
+  "extracted_at": "2026-07-23",
+  "extract_duration_ms": 30947,
+  "page_metrics": {
+    "page_height_px": 7005,
+    "viewport_width": 1440,
+    "section_count": 11,
+    "has_sticky_nav": true,
+    "has_announcement_bar": false
+  },
+  "colors": {
+    "top_palette": [
+      [
+        "#322018",
+        0.87
+      ],
+      [
+        "#F8F6F4",
+        0.1
+      ],
+      [
+        "#000000",
+        0.01
+      ],
+      [
+        "#903C02",
+        0.01
+      ],
+      [
+        "#EAE5DF",
+        0
+      ],
+      [
+        "#00383C",
+        0
+      ]
+    ],
+    "bg_main": "#F8F6F4",
+    "text_main": "#322018",
+    "is_dark": false,
+    "bg_luminance": 0.97,
+    "primary_hue": 25,
+    "accent_hue": 184,
+    "accent_saturation_avg": 63,
+    "palette_size": 6
+  },
+  "typography": {
+    "display_font": "Kaftan Serif",
+    "body_font": "ABC Whyte",
+    "fonts_used": [
+      "Times New Roman",
+      "ABC Whyte",
+      "Kaftan Serif"
+    ],
+    "hero_h1_size_px": 108,
+    "body_size_px": 17,
+    "body_line_height": 1.5,
+    "display_weight": 400,
+    "font_count": 3
+  },
+  "layout": {
+    "hero_type": "asymmetric-split",
+    "hero_signals": {
+      "has_large_image": false,
+      "image_position": "left",
+      "image_width_pct": 22,
+      "has_centered_text": false
+    },
+    "section_sequence": [
+      "nav",
+      "features",
+      "content",
+      "features",
+      "content",
+      "gallery",
+      "content",
+      "content",
+      "content",
+      "features",
+      "footer"
+    ],
+    "section_types": {
+      "nav": 1,
+      "features": 3,
+      "content": 5,
+      "gallery": 1,
+      "footer": 1
+    },
+    "has_asymmetric_grid": false,
+    "grid_cols_max": 0,
+    "card_count": 36,
+    "card_aspect": "16/9",
+    "has_bento": false
+  },
+  "mood": {
+    "radius_avg_px": 254,
+    "radius_distribution": {
+      "0": 0.85,
+      "4": 0,
+      "8": 0,
+      "12": 0,
+      "16": 0,
+      "24": 0,
+      "999": 0.15
+    },
+    "density_padding_avg_px": 108,
+    "shadow_usage": "none",
+    "animation_count": 147,
+    "transition_durations_ms": [
+      10,
+      300,
+      400,
+      600,
+      800
+    ],
+    "has_gradient": true,
+    "dark_mode": false,
+    "monochrome": false
+  },
+  "raw_extras": {
+    "nav_links_count": 34,
+    "button_count": 7,
+    "primary_button_radius_px": 1728,
+    "image_count": 39,
+    "form_count": 0
+  }
+}

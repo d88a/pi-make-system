@@ -1,0 +1,143 @@
+{
+  "url": "https://heyorbi.com",
+  "hostname": "heyorbi.com",
+  "title": "Orbi",
+  "niches": [
+    "dark"
+  ],
+  "extracted_at": "2026-07-23",
+  "extract_duration_ms": 44137,
+  "page_metrics": {
+    "page_height_px": 3272,
+    "viewport_width": 1440,
+    "section_count": 14,
+    "has_sticky_nav": true,
+    "has_announcement_bar": false
+  },
+  "colors": {
+    "top_palette": [
+      [
+        "#FFFFFF",
+        0.73
+      ],
+      [
+        "#252525",
+        0.16
+      ],
+      [
+        "#43FD91",
+        0.05
+      ],
+      [
+        "#393939",
+        0.03
+      ],
+      [
+        "#F63A22",
+        0.02
+      ],
+      [
+        "#0A0A0A",
+        0.01
+      ],
+      [
+        "#DDDDDD",
+        0
+      ],
+      [
+        "#232323",
+        0
+      ]
+    ],
+    "bg_main": "#252525",
+    "text_main": "#FFFFFF",
+    "is_dark": true,
+    "bg_luminance": 0.15,
+    "primary_hue": 7,
+    "accent_hue": 145,
+    "accent_saturation_avg": 95,
+    "palette_size": 8
+  },
+  "typography": {
+    "display_font": "Instrument Sans",
+    "body_font": "Inter",
+    "fonts_used": [
+      "Inter",
+      "Instrument Sans"
+    ],
+    "hero_h1_size_px": 72,
+    "body_size_px": 16,
+    "body_line_height": 1.5,
+    "display_weight": 500,
+    "font_count": 2
+  },
+  "layout": {
+    "hero_type": "centered",
+    "hero_signals": {
+      "has_large_image": false,
+      "image_position": "none",
+      "image_width_pct": 0,
+      "has_centered_text": true
+    },
+    "section_sequence": [
+      "nav",
+      "hero",
+      "hero",
+      "hero",
+      "hero",
+      "hero",
+      "logos",
+      "gallery",
+      "content",
+      "content",
+      "cta",
+      "contact",
+      "hero",
+      "footer"
+    ],
+    "section_types": {
+      "nav": 1,
+      "hero": 6,
+      "logos": 1,
+      "gallery": 1,
+      "content": 2,
+      "cta": 1,
+      "contact": 1,
+      "footer": 1
+    },
+    "has_asymmetric_grid": true,
+    "grid_cols_max": 3,
+    "card_count": 6,
+    "card_aspect": "16/9",
+    "has_bento": false
+  },
+  "mood": {
+    "radius_avg_px": 12,
+    "radius_distribution": {
+      "0": 0,
+      "4": 0,
+      "8": 0,
+      "12": 1,
+      "16": 0,
+      "24": 0,
+      "999": 0
+    },
+    "density_padding_avg_px": 101,
+    "shadow_usage": "none",
+    "animation_count": 14,
+    "transition_durations_ms": [
+      200,
+      1000
+    ],
+    "has_gradient": true,
+    "dark_mode": true,
+    "monochrome": false
+  },
+  "raw_extras": {
+    "nav_links_count": 2,
+    "button_count": 2,
+    "primary_button_radius_px": 12,
+    "image_count": 41,
+    "form_count": 2
+  }
+}

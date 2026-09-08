@@ -1,0 +1,107 @@
+{
+  "url": "https://steven.com",
+  "hostname": "steven.com",
+  "title": "Steven",
+  "niches": [
+    "saas-tech",
+    "agency"
+  ],
+  "extracted_at": "2026-07-23",
+  "extract_duration_ms": 45241,
+  "page_metrics": {
+    "page_height_px": 900,
+    "viewport_width": 1440,
+    "section_count": 3,
+    "has_sticky_nav": true,
+    "has_announcement_bar": false
+  },
+  "colors": {
+    "top_palette": [
+      [
+        "#FFFFFF",
+        0.77
+      ],
+      [
+        "#121212",
+        0.22
+      ],
+      [
+        "#FF5541",
+        0.01
+      ]
+    ],
+    "bg_main": "#FFFFFF",
+    "text_main": "#121212",
+    "is_dark": false,
+    "bg_luminance": 1,
+    "primary_hue": 6,
+    "accent_hue": 6,
+    "accent_saturation_avg": 100,
+    "palette_size": 3
+  },
+  "typography": {
+    "display_font": "Field Gothic Trimmed",
+    "body_font": "Host Grotesk",
+    "fonts_used": [
+      "Host Grotesk",
+      "Field Gothic Trimmed"
+    ],
+    "hero_h1_size_px": 61,
+    "body_size_px": 12,
+    "body_line_height": 1.7,
+    "display_weight": 400,
+    "font_count": 2
+  },
+  "layout": {
+    "hero_type": "centered",
+    "hero_signals": {
+      "has_large_image": false,
+      "image_position": "none",
+      "image_width_pct": 0,
+      "has_centered_text": false
+    },
+    "section_sequence": [
+      "hero",
+      "content",
+      "hero"
+    ],
+    "section_types": {
+      "hero": 2,
+      "content": 1
+    },
+    "has_asymmetric_grid": false,
+    "grid_cols_max": 0,
+    "card_count": 0,
+    "card_aspect": "1/1",
+    "has_bento": false
+  },
+  "mood": {
+    "radius_avg_px": 12,
+    "radius_distribution": {
+      "0": 0.6,
+      "4": 0,
+      "8": 0,
+      "12": 0,
+      "16": 0,
+      "24": 0,
+      "999": 0.4
+    },
+    "density_padding_avg_px": 24,
+    "shadow_usage": "none",
+    "animation_count": 48,
+    "transition_durations_ms": [
+      300,
+      735
+    ],
+    "has_gradient": false,
+    "dark_mode": false,
+    "monochrome": true
+  },
+  "raw_extras": {
+    "nav_links_count": 12,
+    "button_count": 15,
+    "primary_button_radius_px": 0,
+    "image_count": 1,
+    "form_count": 0
+  }
+}

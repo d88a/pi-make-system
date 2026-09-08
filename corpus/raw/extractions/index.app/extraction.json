@@ -1,0 +1,81 @@
+{
+  "url": "https://index.app",
+  "hostname": "index.app",
+  "title": "Index",
+  "niches": [
+    "saas-tech",
+    "other"
+  ],
+  "extracted_at": "2026-07-23",
+  "extract_duration_ms": 76898,
+  "page_metrics": {
+    "page_height_px": 0,
+    "viewport_width": 1440,
+    "section_count": 0,
+    "has_sticky_nav": false,
+    "has_announcement_bar": false
+  },
+  "colors": {
+    "top_palette": [],
+    "bg_main": "#FFFFFF",
+    "text_main": "#000000",
+    "is_dark": false,
+    "bg_luminance": 1,
+    "primary_hue": 0,
+    "accent_hue": 0,
+    "accent_saturation_avg": 0,
+    "palette_size": 0
+  },
+  "typography": {
+    "display_font": "unknown",
+    "body_font": "unknown",
+    "fonts_used": [],
+    "hero_h1_size_px": 0,
+    "body_size_px": 16,
+    "body_line_height": 1.5,
+    "display_weight": 400,
+    "font_count": 0
+  },
+  "layout": {
+    "hero_type": "centered",
+    "hero_signals": {
+      "has_large_image": false,
+      "image_position": "none",
+      "image_width_pct": 0,
+      "has_centered_text": false
+    },
+    "section_sequence": [],
+    "section_types": {},
+    "has_asymmetric_grid": false,
+    "grid_cols_max": 0,
+    "card_count": 0,
+    "card_aspect": "1/1",
+    "has_bento": false
+  },
+  "mood": {
+    "radius_avg_px": 0,
+    "radius_distribution": {
+      "0": 0,
+      "4": 0,
+      "8": 0,
+      "12": 0,
+      "16": 0,
+      "24": 0,
+      "999": 0
+    },
+    "density_padding_avg_px": 0,
+    "shadow_usage": "none",
+    "animation_count": 0,
+    "transition_durations_ms": [],
+    "has_gradient": false,
+    "dark_mode": false,
+    "monochrome": true
+  },
+  "raw_extras": {
+    "nav_links_count": 0,
+    "button_count": 0,
+    "primary_button_radius_px": 0,
+    "image_count": 0,
+    "form_count": 0
+  }
+}

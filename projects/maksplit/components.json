@@ -1,0 +1,60 @@
+{
+  "components": [
+    {
+      "name": "nav",
+      "file": "shared/components/nav.html",
+      "version": "1.0",
+      "description": "Sticky header with logo, desktop nav links, phone, CTA button, mobile hamburger",
+      "used_by": ["home", "catalog", "product", "about", "contacts", "delivery", "calculator"]
+    },
+    {
+      "name": "footer",
+      "file": "shared/components/footer.html",
+      "version": "1.0",
+      "description": "3-column footer: brand+tagline, catalog links, contacts. Steel beam divider.",
+      "used_by": ["home", "catalog", "product", "about", "contacts", "delivery", "calculator"]
+    },
+    {
+      "name": "hero",
+      "file": "shared/components/hero.html",
+      "version": "1.0",
+      "description": "Industrial centered hero: eyebrow, h1 (Space Grotesk 5xl-7xl), subtitle, CTAs, stats bar",
+      "used_by": ["home"]
+    },
+    {
+      "name": "product-card",
+      "file": "shared/components/product-card.html",
+      "version": "1.0",
+      "description": "Product card: object-contain photo, category badge, title, price, «Смотреть» button. Hover: translateY + shadow.",
+      "used_by": ["catalog", "home", "product"]
+    },
+    {
+      "name": "category-grid",
+      "file": "shared/components/category-grid.html",
+      "version": "1.0",
+      "description": "Category grid: 4 categories, each with name + count, linking to catalog filters",
+      "used_by": ["home", "catalog"]
+    },
+    {
+      "name": "lead-form",
+      "file": "shared/components/lead-form.html",
+      "version": "1.0",
+      "description": "«Рассчитать стоимость» form: name + phone inputs, submit button. On accent bg or surface.",
+      "used_by": ["calculator", "contacts", "home", "catalog", "delivery", "about", "product"]
+    },
+    {
+      "name": "features",
+      "file": "shared/components/features.html",
+      "version": "1.0",
+      "description": "Feature grid 1→2→4: keflar-armoring, frost-resistance F300, 50-year warranty, own production",
+      "used_by": ["home"]
+    },
+    {
+      "name": "product-detail",
+      "file": "shared/components/product-detail.html",
+      "version": "1.0",
+      "description": "Product detail: gallery (object-contain), color picker, dynamic price, characteristics table, CTA buttons",
+      "used_by": ["product"]
+    }
+  ]
+}

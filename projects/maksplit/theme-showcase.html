@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Выбор темы — СтройМакс</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&family=Space+Grotesk:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    /* ── Section scroll snap ── */
+    .theme-section { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 80px 24px; }
+    .theme-section > .container { max-width: 1100px; width: 100%; }
+    .swatch { width: 64px; height: 64px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.08); flex-shrink: 0; }
+    .swatch-label { font-size: 11px; font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px; }
+    .card-mini { border-radius: 12px; padding: 20px; }
+    .badge { display: inline-block; padding: 4px 10px; border-radius: 9999px; font-size: 11px; font-weight: 600; letter-spacing: 0.3px; }
+  </style>
+</head>
+<body class="font-sans antialiased">
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- HEADER -->
+  <!-- ════════════════════════════════════════════════ -->
+  <header class="text-center py-16 px-4" style="background:#F5F5F4;">
+    <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4" style="font-family:'Sora',sans-serif;color:#1C1917;">
+      Выбор темы — СтройМакс
+    </h1>
+    <p class="text-lg max-w-2xl mx-auto" style="color:#57534E;">
+      5 палитр для сравнения. Каждая секция — полноценный preview темы
+      с реальными цветами, шрифтами, кнопкой и карточкой.
+    </p>
+    <div class="flex flex-wrap justify-center gap-2 mt-8">
+      <a href="#graphite" class="inline-block px-4 py-2 rounded-md text-sm font-medium transition-all" style="background:#44403C;color:#FAFAF9;">1. Graphite Mono</a>
+      <a href="#sage" class="inline-block px-4 py-2 rounded-md text-sm font-medium transition-all" style="background:#4A5D4F;color:#F7F6F3;">2. Sage Stone</a>
+      <a href="#dusty" class="inline-block px-4 py-2 rounded-md text-sm font-medium transition-all" style="background:#475569;color:#F8FAFC;">3. Dusty Slate</a>
+      <a href="#concrete" class="inline-block px-4 py-2 rounded-md text-sm font-medium transition-all" style="background:#57534E;color:#F5F5F4;">4. Concrete Steel</a>
+      <a href="#editorial" class="inline-block px-4 py-2 rounded-md text-sm font-medium transition-all" style="background:#6B5D4F;color:#FBF9F4;">5. Editorial Cream</a>
+    </div>
+  </header>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- 1. GRAPHITE MONO -->
+  <!-- ════════════════════════════════════════════════ -->
+  <section class="theme-section" id="graphite" style="background:#FAFAF9;">
+    <div class="container">
+      <!-- Number + Title -->
+      <div class="flex items-center gap-4 mb-2">
+        <span class="text-5xl md:text-7xl font-bold tracking-tighter" style="font-family:'Sora',sans-serif;color:#44403C;">01</span>
+        <div>
+          <h2 class="text-3xl md:text-5xl font-bold tracking-tight" style="font-family:'Sora',sans-serif;color:#1C1917;">Graphite Mono</h2>
+          <p class="text-sm mt-1" style="color:#A8A29E;">Apple/Linear премиум монохром</p>
+        </div>
+      </div>
+
+      <!-- Mood -->
+      <p class="text-base md:text-lg leading-relaxed max-w-2xl mb-8" style="color:#57534E;">
+        Premium, minimal, precise, quiet. Роскошь через отсутствие цвета.
+        Самый тихий, самый дорогой. Цвета нет — есть только типографика, сетка, whitespace.
+      </p>
+
+      <!-- Swatches -->
+      <div class="flex flex-wrap gap-5 mb-8">
+        <div class="text-center">
+          <div class="swatch" style="background:#FAFAF9;" title="bg-page"></div>
+          <div class="swatch-label" style="color:#A8A29E;">bg-page<br>#FAFAF9</div>
+        </div>
+        <div class="text-center">
+          <div class="swatch" style="background:#FFFFFF;" title="surface"></div>
+          <div class="swatch-label" style="color:#A8A29E;">surface<br>#FFFFFF</div>
+        </div>
+        <div class="text-center">
+          <div class="swatch" style="background:#1C1917;" title="text-primary"></div>
+          <div class="swatch-label" style="color:#A8A29E;">text<br>#1C1917</div>
+        </div>
+        <div class="text-center">
+          <div class="swatch" style="background:#44403C;" title="accent"></div>
+          <div class="swatch-label" style="color:#A8A29E;">accent<br>#44403C</div>
+        </div>
+        <div class="text-center">
+          <div class="swatch" style="background:#E7E5E4;" title="border"></div>
+          <div class="swatch-label" style="color:#A8A29E;">border<br>#E7E5E4</div>
+        </div>
+      </div>
+
+      <!-- Font + Button + Card row -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <!-- Font sample -->
+        <div class="card-mini" style="background:#FFFFFF;border:1px solid #E7E5E4;">
+          <p class="text-xs font-semibold tracking-wider mb-3" style="font-family:'JetBrains Mono',monospace;color:#A8A29E;">ШРИФТЫ</p>
+          <p class="text-4xl font-bold tracking-tight mb-2" style="font-family:'Sora',sans-serif;color:#1C1917;">Aa</p>
+          <p class="text-xs mb-2" style="font-family:'JetBrains Mono',monospace;color:#A8A29E;">Sora 700 — display</p>
+          <p class="text-sm leading-relaxed" style="color:#57534E;">
+            Бетонная плитка для фасада — надёжность и эстетика в каждом квадратном метре. Тротуарная плитка выдерживает морозы до −50°C.
+          </p>
+          <p class="text-xs mt-2" style="font-family:'JetBrains Mono',monospace;color:#A8A29E;">Inter 400 — body</p>
+        </div>
+
+        <!-- Button sample -->
+        <div class="card-mini flex flex-col justify-center items-center gap-4" style="background:#FFFFFF;border:1px solid #E7E5E4;">
+          <p class="text-xs font-semibold tracking-wider" style="font-family:'JetBrains Mono',monospace;color:#A8A29E;">КНОПКА</p>
+          <button class="px-6 py-3 rounded-md text-sm font-semibold transition-all hover:opacity-90" style="background:#44403C;color:#FAFAF9;font-family:'Sora',sans-serif;">
+            Смотреть каталог →
+          </button>
+          <p class="text-xs" style="font-family:'JetBrains Mono',monospace;color:#A8A29E;">rounded-md · solid accent</p>
+        </div>
+
+        <!-- Card sample -->
+        <div class="card-mini" style="background:#FFFFFF;border:1px solid #E7E5E4;">
+          <p class="text-xs font-semibold tracking-wider mb-3" style="font-family:'JetBrains Mono',monospace;color:#A8A29E;">КАРТОЧКА</p>
+          <p class="text-base font-semibold mb-1" style="font-family:'Sora',sans-serif;color:#1C1917;">Тротуарная плитка «Волна»</p>
+          <p class="text-sm leading-relaxed mb-3" style="color:#57534E;">Вибропрессованная, 200×100×60 мм, серая. Морозостойкость F200.</p>
+          <span class="text-sm font-semibold" style="font-family:'Sora',sans-serif;color:#44403C;">от 580 ₽/м²</span>
+        </div>
+      </div>
+
+      <!-- Badges -->
+      <div class="flex flex-wrap gap-3 items-center">
+        <span class="badge" style="background:#F5F5F4;color:#57534E;border:1px solid #E7E5E4;">☀️ Light Only</span>
+        <span class="text-sm" style="color:#A8A29E;">Подходит для: премиум SaaS, архитектурные бюро, финтех, портфолио минималистов</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- 2. SAGE STONE -->
+  <!-- ════════════════════════════════════════════════ -->
+  <section class="theme-section" id="sage" style="background:#F7F6F3;">
+    <div class="container">
+      <div class="flex items-center gap-4 mb-2">
+        <span class="text-5xl md:text-7xl font-bold tracking-tighter" style="font-family:'Sora',sans-serif;color:#4A5D4F;">02</span>
+        <div>
+          <h2 class="text-3xl md:text-5xl font-bold tracking-tight" style="font-family:'Sora',sans-serif;color:#1C1917;">Sage Stone</h2>
+          <p class="text-sm mt-1" style="color:#A8A29E;">Органичный sage green — природная надёжность</p>
+        </div>
+      </div>
+
+      <p class="text-base md:text-lg leading-relaxed max-w-2xl mb-8" style="color:#57534E;">
+        Organic, natural, calm, reliable, grounded. Роскошь через природную сдержанность.
+        Sage green — цвет мха на камне. Stone palette — земля, глина, песок. Натуральность и устойчивость.
+      </p>
+
+      <div class="flex flex-wrap gap-5 mb-8">
+        <div class="text-center">
+          <div class="swatch" style="background:#F7F6F3;" title="bg-page"></div>
+          <div class="swatch-label" style="color:#A8A29E;">bg-page<br>#F7F6F3</div>
+        </div>
+        <div class="text-center">
+          <div class="swatch" style="background:#FFFFFF;" title="surface"></div>
+          <div class="swatch-label" style="color:#A8A29E;">surface<br>#FFFFFF</div>
+        </div>
+        <div class="text-center">
+          <div class="swatch" style="background:#1C1917;" title="text-primary"></div>
+          <div class="swatch-label" style="color:#A8A29E;">text<br>#1C1917</div>
+        </div>
+        <div class="text-center">
+          <div class="swatch" style="background:#4A5D4F;" title="accent"></div>
+          <div class="swatch-label" style="color:#A8A29E;">accent<br>#4A5D4F</div>
+        </div>
+        <div class="text-center">
+          <div class="swatch" style="background:#E7E5E4;" title="border"></div>
+          <div class="swatch-label" style="color:#A8A29E;">border<br>#E7E5E4</div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <div class="card-mini" style="background:#FFFFFF;border:1px solid #E7E5E4;">
+          <p class="text-xs font-semibold tracking-wider mb-3" style="font-family:'JetBrains Mono',monospace;color:#A8A29E;">ШРИФТЫ</p>
+          <p class="text-4xl font-bold tracking-tight mb-2" style="font-family:'Sora',sans-serif;color:#1C1917;">Aa</p>
+          <p class="text-xs mb-2" style="font-family:'JetBrains Mono',monospace;color:#A8A29E;">Sora 700 — display</p>
+          <p class="text-sm leading-relaxed" style="color:#57534E;">
+            Натуральный камень для мощения — долговечность, проверенная веками. Брусчатка из гранита служит 50+ лет без потери цвета.
+          </p>
+          <p class="text-xs mt-2" style="font-family:'JetBrains Mono',monospace;color:#A8A29E;">Inter 400 — body</p>
+        </div>
+
+        <div class="card-mini flex flex-col justify-center items-center gap-4" style="background:#FFFFFF;border:1px solid #E7E5E4;">
+          <p class="text-xs font-semibold tracking-wider" style="font-family:'JetBrains Mono',monospace;color:#A8A29E;">КНОПКА</p>
+          <button class="px-6 py-3 rounded-md text-sm font-semibold transition-all hover:opacity-90" style="background:#4A5D4F;color:#F7F6F3;font-family:'Sora',sans-serif;">
+            Смотреть каталог →
+          </button>
+          <p class="text-xs" style="font-family:'JetBrains Mono',monospace;color:#A8A29E;">rounded-md · sage accent</p>
+        </div>
+
+        <div class="card-mini" style="background:#FFFFFF;border:1px solid #E7E5E4;">
+          <p class="text-xs font-semibold tracking-wider mb-3" style="font-family:'JetBrains Mono',monospace;color:#A8A29E;">КАРТОЧКА</p>
+          <p class="text-base font-semibold mb-1" style="font-family:'Sora',sans-serif;color:#1C1917;">Гранитная брусчатка «Габбро»</p>
+          <p class="text-sm leading-relaxed mb-3" style="color:#57534E;">Колотая, 100×100×50 мм, чёрная. Истираемость И1, водопоглощение 0.2%.</p>
+          <span class="text-sm font-semibold" style="font-family:'Sora',sans-serif;color:#4A5D4F;">от 1 200 ₽/м²</span>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-3 items-center">
+        <span class="badge" style="background:#EFEDE9;color:#57534E;border:1px solid #E7E5E4;">☀️ Light Only</span>
+        <span class="text-sm" style="color:#A8A29E;">Подходит для: строительные компании, эко-бренды, ландшафтный дизайн, wellness, архитектура</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- 3. DUSTY SLATE -->
+  <!-- ════════════════════════════════════════════════ -->
+  <section class="theme-section" id="dusty" style="background:#F8FAFC;">
+    <div class="container">
+      <div class="flex items-center gap-4 mb-2">
+        <span class="text-5xl md:text-7xl font-bold tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:#475569;">03</span>
+        <div>
+          <h2 class="text-3xl md:text-5xl font-bold tracking-tight" style="font-family:'Space Grotesk',sans-serif;color:#0F172A;">Dusty Slate</h2>
+          <p class="text-sm mt-1" style="color:#94A3B8;">Корпоративный slate blue — профессиональный, технологичный</p>
+        </div>
+      </div>
+
+      <p class="text-base md:text-lg leading-relaxed max-w-2xl mb-8" style="color:#475569;">
+        Corporate tech, cool blue-grey. Профессиональный, технологичный, надёжный.
+        Slate — прохладный сине-серый. Не тёплый, не цветной — пыльный сланец. SaaS / B2B / Enterprise.
+      </p>
+
+      <div class="flex flex-wrap gap-5 mb-8">
+        <div class="text-center">
+          <div class="swatch" style="background:#F8FAFC;" title="bg-page"></div>
+          <div class="swatch-label" style="color:#94A3B8;">bg-page<br>#F8FAFC</div>
+        </div>
+        <div class="text-center">
+          <div class="swatch" style="background:#FFFFFF;" title="surface"></div>
+          <div class="swatch-label" style="color:#94A3B8;">surface<br>#FFFFFF</div>
+        </div>
+        <div class="text-center">
+          <div class="swatch" style="background:#0F172A;" title="text-primary"></div>
+          <div class="swatch-label" style="color:#94A3B8;">text<br>#0F172A</div>
+        </div>
+        <div class="text-center">
+          <div class="swatch" style="background:#475569;" title="accent"></div>
+          <div class="swatch-label" style="color:#94A3B8;">accent<br>#475569</div>
+        </div>
+        <div class="text-center">
+          <div class="swatch" style="background:#E2E8F0;" title="border"></div>
+          <div class="swatch-label" style="color:#94A3B8;">border<br>#E2E8F0</div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <div class="card-mini" style="background:#FFFFFF;border:1px solid #E2E8F0;">
+          <p class="text-xs font-semibold tracking-wider mb-3" style="font-family:'JetBrains Mono',monospace;color:#94A3B8;">ШРИФТЫ</p>
+          <p class="text-4xl font-bold tracking-tight mb-2" style="font-family:'Space Grotesk',sans-serif;color:#0F172A;">Aa</p>
+          <p class="text-xs mb-2" style="font-family:'JetBrains Mono',monospace;color:#94A3B8;">Space Grotesk 700 — display</p>
+          <p class="text-sm leading-relaxed" style="color:#475569;">
+            Железобетонные плиты перекрытия — заводское качество, точная геометрия. Поставки от 24 часов по ЦФО.
+          </p>
+          <p class="text-xs mt-2" style="font-family:'JetBrains Mono',monospace;color:#94A3B8;">Inter 400 — body</p>
+        </div>
+
+        <div class="card-mini flex flex-col justify-center items-center gap-4" style="background:#FFFFFF;border:1px solid #E2E8F0;">
+          <p class="text-xs font-semibold tracking-wider" style="font-family:'JetBrains Mono',monospace;color:#94A3B8;">КНОПКА</p>
+          <button class="px-6 py-3 rounded-md text-sm font-semibold transition-all hover:opacity-90" style="background:#475569;color:#F8FAFC;font-family:'Space Grotesk',sans-serif;">
+            Смотреть каталог →
+          </button>
+          <p class="text-xs" style="font-family:'JetBrains Mono',monospace;color:#94A3B8;">rounded-md · slate accent</p>
+        </div>
+
+        <div class="card-mini" style="background:#FFFFFF;border:1px solid #E2E8F0;">
+          <p class="text-xs font-semibold tracking-wider mb-3" style="font-family:'JetBrains Mono',monospace;color:#94A3B8;">КАРТОЧКА</p>
+          <p class="text-base font-semibold mb-1" style="font-family:'Space Grotesk',sans-serif;color:#0F172A;">Плита перекрытия ПК 60-15</p>
+          <p class="text-sm leading-relaxed mb-3" style="color:#475569;">Пустотная, 5980×1490×220 мм. Нагрузка 800 кгс/м². ГОСТ 9561-2016.</p>
+          <span class="text-sm font-semibold" style="font-family:'Space Grotesk',sans-serif;color:#475569;">от 8 900 ₽/шт</span>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-3 items-center">
+        <span class="badge" style="background:#F1F5F9;color:#475569;border:1px solid #E2E8F0;">☀️ Light + 🌙 Dark</span>
+        <span class="text-sm" style="color:#94A3B8;">Подходит для: SaaS, B2B, enterprise, dev-tools, корпоративные сайты</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- 4. CONCRETE STEEL -->
+  <!-- ════════════════════════════════════════════════ -->
+  <section class="theme-section" id="concrete" style="background:#F5F5F4;">
+    <div class="container">
+      <div class="flex items-center gap-4 mb-2">
+        <span class="text-5xl md:text-7xl font-bold tracking-tighter" style="font-family:'Space Grotesk',sans-serif;color:#57534E;">04</span>
+        <div>
+          <h2 class="text-3xl md:text-5xl font-bold tracking-tight" style="font-family:'Space Grotesk',sans-serif;color:#1C1917;">Concrete Steel</h2>
+          <p class="text-sm mt-1" style="color:#A8A29E;">Индустриальный stone — уверенность строящегося здания ★</p>
+        </div>
+      </div>
+
+      <p class="text-base md:text-lg leading-relaxed max-w-2xl mb-8" style="color:#57534E;">
+        Industrial might of concrete and steel. Raw, architectural, warm monochrome.
+        Не премиальная тишина — уверенность строящегося здания. Form follows function.
+        <strong>★ Рекомендовано для СтройМакс.</strong>
+      </p>
+
+      <div class="flex flex-wrap gap-5 mb-8">
+        <div class="text-center">
+          <div class="swatch" style="background:#F5F5F4;" title="bg-page"></div>
+          <div class="swatch-label" style="color:#A8A29E;">bg-page<br>#F5F5F4</div>
+        </div>
+        <div class="text-center">
+          <div class="swatch" style="background:#FFFFFF;" title="surface"></div>
+          <div class="swatch-label" style="color:#A8A29E;">surface<br>#FFFFFF</div>
+        </div>
+        <div class="text-center">
+          <div class="swatch" style="background:#1C1917;" title="text-primary"></div>
+          <div class="swatch-label" style="color:#A8A29E;">text<br>#1C1917</div>
+        </div>
+        <div class="text-center">
+          <div class="swatch" style="background:#57534E;" title="accent"></div>
+          <div class="swatch-label" style="color:#A8A29E;">accent<br>#57534E</div>
+        </div>
+        <div class="text-center">
+          <div class="swatch" style="background:#D6D3D1;" title="border"></div>
+          <div class="swatch-label" style="color:#A8A29E;">border<br>#D6D3D1</div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <div class="card-mini" style="background:#FFFFFF;border:1px solid #D6D3D1;">
+          <p class="text-xs font-semibold tracking-wider mb-3" style="font-family:'JetBrains Mono',monospace;color:#A8A29E;">ШРИФТЫ</p>
+          <p class="text-4xl font-bold tracking-tight mb-2" style="font-family:'Space Grotesk',sans-serif;color:#1C1917;">Aa</p>
+          <p class="text-xs mb-2" style="font-family:'JetBrains Mono',monospace;color:#A8A29E;">Space Grotesk 700 — display</p>
+          <p class="text-sm leading-relaxed" style="color:#57534E;">
+            Стеновые блоки из керамзитобетона — тепло, прочность, скорость кладки. Доставка манипулятором в день заказа.
+          </p>
+          <p class="text-xs mt-2" style="font-family:'JetBrains Mono',monospace;color:#A8A29E;">Inter 400 — body</p>
+        </div>
+
+        <div class="card-mini flex flex-col justify-center items-center gap-4" style="background:#FFFFFF;border:1px solid #D6D3D1;">
+          <p class="text-xs font-semibold tracking-wider" style="font-family:'JetBrains Mono',monospace;color:#A8A29E;">КНОПКА</p>
+          <button class="px-6 py-3 rounded-md text-sm font-semibold transition-all hover:opacity-90" style="background:#57534E;color:#F5F5F4;font-family:'Space Grotesk',sans-serif;">
+            Смотреть каталог →
+          </button>
+          <p class="text-xs" style="font-family:'JetBrains Mono',monospace;color:#A8A29E;">rounded-md · stone accent</p>
+        </div>
+
+        <div class="card-mini" style="background:#FFFFFF;border:1px solid #D6D3D1;">
+          <p class="text-xs font-semibold tracking-wider mb-3" style="font-family:'JetBrains Mono',monospace;color:#A8A29E;">КАРТОЧКА</p>
+          <p class="text-base font-semibold mb-1" style="font-family:'Space Grotesk',sans-serif;color:#1C1917;">Керамзитоблок 390×190×188</p>
+          <p class="text-sm leading-relaxed mb-3" style="color:#57534E;">Полнотелый, М75, плотность D1200. Теплопроводность 0.35 Вт/м·°C.</p>
+          <span class="text-sm font-semibold" style="font-family:'Space Grotesk',sans-serif;color:#57534E;">от 65 ₽/шт</span>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-3 items-center">
+        <span class="badge" style="background:#E7E5E4;color:#57534E;border:1px solid #D6D3D1;">☀️ Light + 🌙 Dark</span>
+        <span class="text-sm" style="color:#A8A29E;">★ Подходит для: СтройМакс, промышленность, архитектура, строительные компании, производство</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- 5. EDITORIAL CREAM -->
+  <!-- ════════════════════════════════════════════════ -->
+  <section class="theme-section" id="editorial" style="background:#FBF9F4;">
+    <div class="container">
+      <div class="flex items-center gap-4 mb-2">
+        <span class="text-5xl md:text-7xl font-bold tracking-tighter" style="font-family:'Playfair Display',serif;color:#6B5D4F;">05</span>
+        <div>
+          <h2 class="text-3xl md:text-5xl font-bold tracking-tight" style="font-family:'Playfair Display',serif;color:#2A2520;">Editorial Cream</h2>
+          <p class="text-sm mt-1" style="color:#9B9088;">Magazine serif mocha — книжная роскошь</p>
+        </div>
+      </div>
+
+      <p class="text-base md:text-lg leading-relaxed max-w-2xl mb-8" style="font-family:'Source Serif 4',serif;color:#6B5D4F;">
+        Editorial, literate, warm, authoritative. Роскошь через типографику и тепло.
+        Не холодный минимализм — тёплая серьёзность The New Yorker. Самый книжный, самый «бумажный».
+      </p>
+
+      <div class="flex flex-wrap gap-5 mb-8">
+        <div class="text-center">
+          <div class="swatch" style="background:#FBF9F4;" title="bg-page"></div>
+          <div class="swatch-label" style="color:#9B9088;">bg-page<br>#FBF9F4</div>
+        </div>
+        <div class="text-center">
+          <div class="swatch" style="background:#FFFFFF;" title="surface"></div>
+          <div class="swatch-label" style="color:#9B9088;">surface<br>#FFFFFF</div>
+        </div>
+        <div class="text-center">
+          <div class="swatch" style="background:#2A2520;" title="text-primary"></div>
+          <div class="swatch-label" style="color:#9B9088;">text<br>#2A2520</div>
+        </div>
+        <div class="text-center">
+          <div class="swatch" style="background:#6B5D4F;" title="accent"></div>
+          <div class="swatch-label" style="color:#9B9088;">accent<br>#6B5D4F</div>
+        </div>
+        <div class="text-center">
+          <div class="swatch" style="background:#E8E2D8;" title="border"></div>
+          <div class="swatch-label" style="color:#9B9088;">border<br>#E8E2D8</div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <div class="card-mini" style="background:#FFFFFF;border:1px solid #E8E2D8;">
+          <p class="text-xs font-semibold tracking-wider mb-3" style="font-family:'JetBrains Mono',monospace;color:#9B9088;">ШРИФТЫ</p>
+          <p class="text-4xl font-bold tracking-tight mb-2 italic" style="font-family:'Playfair Display',serif;color:#2A2520;">Aa</p>
+          <p class="text-xs mb-2" style="font-family:'JetBrains Mono',monospace;color:#9B9088;">Playfair Display 700 — display</p>
+          <p class="text-sm leading-relaxed" style="font-family:'Source Serif 4',serif;color:#6B5D4F;">
+            Бетонная плитка для фасада — надёжность и эстетика в каждом квадратном метре. Тротуарная плитка выдерживает морозы до −50°C.
+          </p>
+          <p class="text-xs mt-2" style="font-family:'JetBrains Mono',monospace;color:#9B9088;">Source Serif 4 400 — body</p>
+        </div>
+
+        <div class="card-mini flex flex-col justify-center items-center gap-4" style="background:#FFFFFF;border:1px solid #E8E2D8;">
+          <p class="text-xs font-semibold tracking-wider" style="font-family:'JetBrains Mono',monospace;color:#9B9088;">КНОПКА</p>
+          <button class="px-6 py-3 rounded-md text-sm font-semibold transition-all hover:opacity-90" style="background:#6B5D4F;color:#FBF9F4;font-family:'Playfair Display',serif;">
+            Смотреть каталог →
+          </button>
+          <p class="text-xs" style="font-family:'JetBrains Mono',monospace;color:#9B9088;">rounded-md · mocha accent</p>
+        </div>
+
+        <div class="card-mini" style="background:#FFFFFF;border:1px solid #E8E2D8;">
+          <p class="text-xs font-semibold tracking-wider mb-3" style="font-family:'JetBrains Mono',monospace;color:#9B9088;">КАРТОЧКА</p>
+          <p class="text-base font-semibold mb-1" style="font-family:'Playfair Display',serif;color:#2A2520;">Тротуарная плитка «Волна»</p>
+          <p class="text-sm leading-relaxed mb-3" style="font-family:'Source Serif 4',serif;color:#6B5D4F;">Вибропрессованная, 200×100×60 мм, серая. Морозостойкость F200.</p>
+          <span class="text-sm font-semibold" style="font-family:'Playfair Display',serif;color:#6B5D4F;">от 580 ₽/м²</span>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-3 items-center">
+        <span class="badge" style="background:#F5F2EB;color:#6B5D4F;border:1px solid #E8E2D8;">☀️ Light Only</span>
+        <span class="text-sm" style="color:#9B9088;">Подходит для: премиальные медиа, бутиковые бренды, музеи, консалтинг, академические сайты</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- FOOTER: CTA -->
+  <!-- ════════════════════════════════════════════════ -->
+  <footer class="text-center py-16 px-4" style="background:#1C1917;">
+    <p class="text-2xl md:text-3xl font-bold mb-4" style="font-family:'Sora',sans-serif;color:#F5F5F4;">
+      Какую выбрать?
+    </p>
+    <p class="text-base mb-8" style="color:#A8A29E;">
+      Скажи архитектору номер или название темы — и начнём редизайн СтройМакс.
+    </p>
+    <div class="flex flex-wrap justify-center gap-3">
+      <span class="px-4 py-2 rounded-md text-sm" style="background:#44403C;color:#FAFAF9;">1. Graphite Mono</span>
+      <span class="px-4 py-2 rounded-md text-sm" style="background:#4A5D4F;color:#F7F6F3;">2. Sage Stone</span>
+      <span class="px-4 py-2 rounded-md text-sm" style="background:#475569;color:#F8FAFC;">3. Dusty Slate</span>
+      <span class="px-4 py-2 rounded-md text-sm" style="background:#57534E;color:#F5F5F4;border: 2px solid #A8A29E;">★ 4. Concrete Steel</span>
+      <span class="px-4 py-2 rounded-md text-sm" style="background:#6B5D4F;color:#FBF9F4;">5. Editorial Cream</span>
+    </div>
+  </footer>
+
+</body>
+</html>

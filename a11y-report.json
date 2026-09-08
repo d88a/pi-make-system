@@ -1,0 +1,87 @@
+{
+  "timestamp": "2026-07-22T12:22:17.043Z",
+  "target": "file://C:\\Users\\BFE1~1\\AppData\\Local\\Temp\\test-a11y.html",
+  "engine": "manual",
+  "summary": {
+    "total": 9,
+    "critical": 1,
+    "serious": 6,
+    "moderate": 1,
+    "minor": 1,
+    "pass": false
+  },
+  "violations": [
+    {
+      "severity": "critical",
+      "selector": "document",
+      "issue": "Missing <main> landmark",
+      "description": "No <main> element or [role=\"main\"] found. A main landmark is essential for screen reader navigation.",
+      "wcag": "WCAG 1.3.1 Info and Relationships (A)",
+      "source": "manual"
+    },
+    {
+      "severity": "serious",
+      "selector": "div.content > h2.bad-heading",
+      "issue": "Low contrast: 1.47:1 (requires 3:1)",
+      "description": "Text color rgb(209, 213, 219) on background rgb(255,255,255) has contrast ratio 1.47:1. WCAG AA requires 3:1 for large text.",
+      "wcag": "WCAG 1.4.3 Contrast (Minimum) (AA)",
+      "source": "manual"
+    },
+    {
+      "severity": "serious",
+      "selector": "div.content > p.low-contrast",
+      "issue": "Low contrast: 2.54:1 (requires 4.5:1)",
+      "description": "Text color rgb(156, 163, 175) on background rgb(255,255,255) has contrast ratio 2.54:1. WCAG AA requires 4.5:1 for normal text.",
+      "wcag": "WCAG 1.4.3 Contrast (Minimum) (AA)",
+      "source": "manual"
+    },
+    {
+      "severity": "serious",
+      "selector": "div.content > a.bad-link",
+      "issue": "Low contrast: 1.67:1 (requires 4.5:1)",
+      "description": "Text color rgb(251, 191, 36) on background rgb(255,255,255) has contrast ratio 1.67:1. WCAG AA requires 4.5:1 for normal text.",
+      "wcag": "WCAG 1.4.3 Contrast (Minimum) (AA)",
+      "source": "manual"
+    },
+    {
+      "severity": "serious",
+      "selector": "div.content > button",
+      "issue": "Low contrast: 1.41:1 (requires 4.5:1)",
+      "description": "Text color rgb(209, 213, 219) on background rgb(249,250,251) has contrast ratio 1.41:1. WCAG AA requires 4.5:1 for normal text.",
+      "wcag": "WCAG 1.4.3 Contrast (Minimum) (AA)",
+      "source": "manual"
+    },
+    {
+      "severity": "serious",
+      "selector": "div.content > img",
+      "issue": "Image missing alt attribute",
+      "description": "The <img> element lacks an alt attribute. Screen readers cannot convey the image content.",
+      "wcag": "WCAG 1.1.1 Non-text Content (A)",
+      "source": "manual"
+    },
+    {
+      "severity": "serious",
+      "selector": "div.content > img",
+      "issue": "Image missing alt attribute",
+      "description": "The <img> element lacks an alt attribute. Screen readers cannot convey the image content.",
+      "wcag": "WCAG 1.1.1 Non-text Content (A)",
+      "source": "manual"
+    },
+    {
+      "severity": "moderate",
+      "selector": "document",
+      "issue": "Missing <header> landmark",
+      "description": "No <header> element or [role=\"banner\"] found. A header landmark helps identify the site header.",
+      "wcag": "WCAG 1.3.1 Info and Relationships (A)",
+      "source": "manual"
+    },
+    {
+      "severity": "minor",
+      "selector": "document",
+      "issue": "Missing <footer> landmark",
+      "description": "No <footer> element or [role=\"contentinfo\"] found. A footer landmark helps identify site footer info.",
+      "wcag": "WCAG 1.3.1 Info and Relationships (A)",
+      "source": "manual"
+    }
+  ]
+}

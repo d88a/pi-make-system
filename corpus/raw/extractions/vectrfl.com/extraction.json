@@ -1,0 +1,140 @@
+{
+  "url": "https://www.vectrfl.com",
+  "hostname": "vectrfl.com",
+  "title": "Vectr",
+  "niches": [
+    "creative-animation",
+    "saas-tech"
+  ],
+  "extracted_at": "2026-07-23",
+  "extract_duration_ms": 76232,
+  "page_metrics": {
+    "page_height_px": 10729,
+    "viewport_width": 1440,
+    "section_count": 13,
+    "has_sticky_nav": true,
+    "has_announcement_bar": false
+  },
+  "colors": {
+    "top_palette": [
+      [
+        "#050419",
+        0.73
+      ],
+      [
+        "#FCFCFC",
+        0.1
+      ],
+      [
+        "#585765",
+        0.06
+      ],
+      [
+        "#000000",
+        0.05
+      ],
+      [
+        "#0000EE",
+        0.04
+      ],
+      [
+        "#8C8C95",
+        0.01
+      ],
+      [
+        "#D0E1EB",
+        0.01
+      ]
+    ],
+    "bg_main": "#050419",
+    "text_main": "#FCFCFC",
+    "is_dark": true,
+    "bg_luminance": 0.02,
+    "primary_hue": 202,
+    "accent_hue": 240,
+    "accent_saturation_avg": 70,
+    "palette_size": 7
+  },
+  "typography": {
+    "display_font": "Roboto",
+    "body_font": "Roboto",
+    "fonts_used": [
+      "Times New Roman",
+      "Roboto"
+    ],
+    "hero_h1_size_px": 96,
+    "body_size_px": 18,
+    "body_line_height": 1.4,
+    "display_weight": 500,
+    "font_count": 2
+  },
+  "layout": {
+    "hero_type": "asymmetric-split",
+    "hero_signals": {
+      "has_large_image": false,
+      "image_position": "left",
+      "image_width_pct": 7,
+      "has_centered_text": true
+    },
+    "section_sequence": [
+      "hero",
+      "hero",
+      "hero",
+      "hero",
+      "hero",
+      "hero",
+      "content",
+      "features",
+      "content",
+      "faq",
+      "cta",
+      "cta",
+      "footer"
+    ],
+    "section_types": {
+      "hero": 6,
+      "content": 2,
+      "features": 1,
+      "faq": 1,
+      "cta": 2,
+      "footer": 1
+    },
+    "has_asymmetric_grid": false,
+    "grid_cols_max": 0,
+    "card_count": 50,
+    "card_aspect": "16/9",
+    "has_bento": false
+  },
+  "mood": {
+    "radius_avg_px": 58,
+    "radius_distribution": {
+      "0": 0.53,
+      "4": 0,
+      "8": 0,
+      "12": 0,
+      "16": 0,
+      "24": 0.12,
+      "999": 0.35
+    },
+    "density_padding_avg_px": 160,
+    "shadow_usage": "none",
+    "animation_count": 82,
+    "transition_durations_ms": [
+      300,
+      400,
+      500,
+      600,
+      800
+    ],
+    "has_gradient": false,
+    "dark_mode": true,
+    "monochrome": false
+  },
+  "raw_extras": {
+    "nav_links_count": 13,
+    "button_count": 15,
+    "primary_button_radius_px": 156,
+    "image_count": 15,
+    "form_count": 0
+  }
+}

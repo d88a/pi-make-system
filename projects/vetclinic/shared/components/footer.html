@@ -1,0 +1,89 @@
+<!-- footer.html — Canonical Footer Component (v1) -->
+<!-- used_by: index, services, about, contact -->
+<!-- variant: minimal-warm -->
+
+<footer class="border-t border-stone-200 bg-stone-50">
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-10 md:grid-cols-3">
+      <!-- Brand column -->
+      <div>
+        <a href="index.html" class="flex items-center gap-2 font-nunito text-xl font-bold text-stone-900">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-600">
+            <path d="M12 14c-2 0-3.5 1.5-3.5 3.5S10 21 12 21s3.5-1.5 3.5-3.5S14 14 12 14z"/>
+            <path d="M8 8c0-1.5 1-3 2.5-3s2.5 1.5 2.5 3-1 3-2.5 3S8 9.5 8 8z"/>
+            <path d="M16 8c0-1.5 1-3 2.5-3s2.5 1.5 2.5 3-1 3-2.5 3S16 9.5 16 8z"/>
+            <path d="M5 10c0-1 1-2 2-2s2 1 2 2-1 2-2 2-2-1-2-2z"/>
+            <path d="M19 10c0-1 1-2 2-2s2 1 2 2-1 2-2 2-2-1-2-2z"/>
+          </svg>
+          ЛапЛап
+        </a>
+        <p class="mt-4 text-sm leading-relaxed text-stone-500">
+          Ветеринарная клиника для тех, кто любит своих питомцев. Современное оборудование, заботливые врачи и тёплая атмосфера.
+        </p>
+        <!-- Social icons -->
+        <div class="mt-6 flex items-center gap-4">
+          <a href="#" class="text-stone-400 hover:text-emerald-600 transition-colors duration-200" aria-label="Telegram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/>
+            </svg>
+          </a>
+          <a href="#" class="text-stone-400 hover:text-emerald-600 transition-colors duration-200" aria-label="VK">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+              <path d="M8 12h8M12 8v8"/>
+            </svg>
+          </a>
+          <a href="#" class="text-stone-400 hover:text-emerald-600 transition-colors duration-200" aria-label="WhatsApp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 21l1.65-4.35A9 9 0 1 1 7.5 18.3L3 21z"/>
+              <path d="M9 10h.01M12 10h.01M15 10h.01"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick links -->
+      <div>
+        <h4 class="font-nunito text-sm font-semibold text-stone-900">Навигация</h4>
+        <ul class="mt-4 space-y-3">
+          <li><a href="index.html" class="text-sm text-stone-500 hover:text-stone-900 transition-colors duration-200">Главная</a></li>
+          <li><a href="services.html" class="text-sm text-stone-500 hover:text-stone-900 transition-colors duration-200">Услуги</a></li>
+          <li><a href="about.html" class="text-sm text-stone-500 hover:text-stone-900 transition-colors duration-200">О нас</a></li>
+          <li><a href="contact.html" class="text-sm text-stone-500 hover:text-stone-900 transition-colors duration-200">Контакты</a></li>
+        </ul>
+      </div>
+
+      <!-- Contacts -->
+      <div>
+        <h4 class="font-nunito text-sm font-semibold text-stone-900">Контакты</h4>
+        <ul class="mt-4 space-y-3 text-sm text-stone-500">
+          <li class="flex items-start gap-2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 shrink-0 text-stone-400">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span>ул. Пушистая, 15, Москва</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 shrink-0 text-stone-400">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>+7 (495) 123-45-67</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 shrink-0 text-stone-400">
+              <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+            <span>hello@laplap.vet</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="mt-12 border-t border-stone-200 pt-8 text-center">
+      <p class="text-sm text-stone-400">
+        &copy; 2026 ЛапЛап. Все права защищены. С любовью к вашим питомцам &hearts;
+      </p>
+    </div>
+  </div>
+</footer>

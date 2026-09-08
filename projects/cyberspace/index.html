@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberSpace — AI-платформа кибербезопасности</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Fira Code', 'SF Mono', 'Menlo', 'monospace'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    /* ── Scroll Reveal + Stagger ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .stagger > .reveal:nth-child(1) { transition-delay: 0ms; }
+    .stagger > .reveal:nth-child(2) { transition-delay: 100ms; }
+    .stagger > .reveal:nth-child(3) { transition-delay: 200ms; }
+    .stagger > .reveal:nth-child(4) { transition-delay: 300ms; }
+    .stagger > .reveal:nth-child(5) { transition-delay: 400ms; }
+    .stagger > .reveal:nth-child(6) { transition-delay: 500ms; }
+
+    /* ── Text Shimmer ── */
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    .text-shimmer {
+      background: linear-gradient(90deg, #06b6d4 30%, #8b5cf6 50%, #06b6d4 70%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 3s linear infinite;
+    }
+
+    /* ── Animated Gradient Border (для главного тарифа) ── */
+    @keyframes gradient-rotate {
+      0% { --angle: 0deg; }
+      100% { --angle: 360deg; }
+    }
+    @property --angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+    .gradient-border-card {
+      position: relative;
+      background: #171717;
+      border-radius: 16px;
+    }
+    .gradient-border-card::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 18px;
+      background: conic-gradient(from var(--angle), #06b6d4, #8b5cf6, #22c55e, #06b6d4);
+      animation: gradient-rotate 4s linear infinite;
+      z-index: -1;
+    }
+
+    /* ── Hero animated gradient background ── */
+    @keyframes hero-pulse {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+    .hero-glow {
+      animation: hero-pulse 4s ease-in-out infinite;
+    }
+
+    /* ── Smooth scroll ── */
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="font-sans antialiased bg-neutral-950 text-neutral-400">
+
+  <!-- ═══════════════ NAVBAR ═══════════════ -->
+  <header class="sticky top-0 z-50 h-16 border-b border-neutral-800 bg-neutral-950/80 backdrop-blur-md">
+    <nav class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2.5 text-neutral-50">
+        <svg class="h-7 w-7 text-cyan-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+        </svg>
+        <span class="text-lg font-bold tracking-tight">CyberSpace</span>
+      </a>
+      <!-- Nav links -->
+      <div class="hidden items-center gap-8 md:flex">
+        <a href="#features" class="text-sm font-medium text-neutral-400 transition-colors hover:text-neutral-50">Возможности</a>
+        <a href="#stats" class="text-sm font-medium text-neutral-400 transition-colors hover:text-neutral-50">Статистика</a>
+        <a href="#pricing" class="text-sm font-medium text-neutral-400 transition-colors hover:text-neutral-50">Тарифы</a>
+      </div>
+      <!-- CTA -->
+      <a href="#pricing" class="rounded-md bg-gradient-to-r from-cyan-500 to-violet-500 px-4 py-2 text-sm font-medium text-white shadow-[0_0_20px_rgba(6,182,212,0.3)] transition-all duration-150 hover:shadow-[0_0_30px_rgba(6,182,212,0.5)]">
+        Начать бесплатно
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <section class="relative overflow-hidden bg-neutral-950 pt-32 pb-24">
+      <!-- Radial glow -->
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_50%_50%_at_50%_0%,rgba(6,182,212,0.15)_0%,transparent_70%)] hero-glow"></div>
+      <!-- Grid pattern -->
+      <div class="absolute inset-0 bg-[linear-gradient(rgba(38,38,38,0.3)_1px,transparent_1px),linear-gradient(90deg,rgba(38,38,38,0.3)_1px,transparent_1px)] bg-[size:64px_64px]"></div>
+      <!-- Decorative blobs -->
+      <div class="absolute top-20 -left-32 h-96 w-96 rounded-full bg-cyan-500/5 blur-3xl"></div>
+      <div class="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-violet-500/5 blur-3xl"></div>
+
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+          <!-- Badge -->
+          <span class="inline-flex items-center rounded-full border border-cyan-500/20 bg-cyan-500/5 px-3 py-1 text-shimmer font-mono text-xs font-medium tracking-wider uppercase">
+            AI-платформа нового поколения
+          </span>
+          <!-- Title -->
+          <h1 class="mt-6 text-5xl font-bold tracking-tight text-neutral-50 sm:text-6xl lg:text-7xl">
+            Кибербезопасность<br>
+            <span class="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">
+              на скорости AI
+            </span>
+          </h1>
+          <!-- Subtitle -->
+          <p class="mx-auto mt-8 max-w-xl text-lg text-neutral-400">
+            Обнаруживайте угрозы за секунды, а не часы. Автоматизируйте защиту
+            инфраструктуры с помощью искусственного интеллекта.
+          </p>
+          <!-- CTAs -->
+          <div class="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <a href="#pricing" class="rounded-md bg-gradient-to-r from-cyan-500 to-violet-500 px-8 py-3.5 text-base font-medium text-white shadow-[0_0_20px_rgba(6,182,212,0.3)] transition-all duration-150 hover:shadow-[0_0_30px_rgba(6,182,212,0.5)]">
+              Начать бесплатно
+            </a>
+            <a href="#features" class="rounded-md border border-neutral-700 bg-neutral-900 px-8 py-3.5 text-base font-medium text-neutral-300 transition-all duration-150 hover:border-neutral-600 hover:text-neutral-50">
+              Смотреть демо
+            </a>
+          </div>
+          <!-- Live indicator -->
+          <div class="mt-10 flex items-center justify-center gap-2">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
+              <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500"></span>
+            </span>
+            <span class="font-mono text-xs text-neutral-500">Система активна • 2.4M угроз обработано</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ FEATURES ═══════════════ -->
+    <section id="features" class="relative bg-neutral-950 py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <!-- Section header -->
+        <div class="reveal mx-auto max-w-2xl text-center">
+          <span class="font-mono text-xs font-medium tracking-wider uppercase text-cyan-500">
+            → Возможности
+          </span>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl">
+            Полный спектр<br>
+            <span class="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">AI-защиты</span>
+          </h2>
+          <p class="mt-4 text-base text-neutral-400">
+            Шесть уровней автоматизированной безопасности для вашего бизнеса.
+          </p>
+        </div>
+
+        <!-- Features grid -->
+        <div class="stagger mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Card 1 -->
+          <div class="reveal group rounded-2xl border border-neutral-800 bg-neutral-900 p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-500/40 hover:shadow-[0_0_0_1px_rgba(6,182,212,0.4),0_0_30px_rgba(6,182,212,0.15)]">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-500/10 text-cyan-500">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+              </svg>
+            </div>
+            <h3 class="mt-4 text-lg font-semibold tracking-tight text-neutral-50">Детекция угроз</h3>
+            <p class="mt-2 text-sm text-neutral-400">AI-модели анализируют трафик в реальном времени и выявляют аномалии до того, как они станут инцидентами.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="reveal group rounded-2xl border border-neutral-800 bg-neutral-900 p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-500/40 hover:shadow-[0_0_0_1px_rgba(6,182,212,0.4),0_0_30px_rgba(6,182,212,0.15)]">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-violet-500/10 text-violet-500">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+              </svg>
+            </div>
+            <h3 class="mt-4 text-lg font-semibold tracking-tight text-neutral-50">Автоответ на инциденты</h3>
+            <p class="mt-2 text-sm text-neutral-400">Мгновенная изоляция скомпрометированных узлов и автоматическое применение политик безопасности без участия человека.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="reveal group rounded-2xl border border-neutral-800 bg-neutral-900 p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-500/40 hover:shadow-[0_0_0_1px_rgba(6,182,212,0.4),0_0_30px_rgba(6,182,212,0.15)]">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-green-500/10 text-green-500">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z" />
+              </svg>
+            </div>
+            <h3 class="mt-4 text-lg font-semibold tracking-tight text-neutral-50">AI-скоринг рисков</h3>
+            <p class="mt-2 text-sm text-neutral-400">Каждый хост и сервис получает динамическую оценку риска. Приоритезация уязвимостей на основе ML-моделей.</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="reveal group rounded-2xl border border-neutral-800 bg-neutral-900 p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-500/40 hover:shadow-[0_0_0_1px_rgba(6,182,212,0.4),0_0_30px_rgba(6,182,212,0.15)]">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-500/10 text-amber-500">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+              </svg>
+            </div>
+            <h3 class="mt-4 text-lg font-semibold tracking-tight text-neutral-50">Поиск уязвимостей</h3>
+            <p class="mt-2 text-sm text-neutral-400">Непрерывное сканирование инфраструктуры. AI находит уязвимости, которые пропускают традиционные сканеры.</p>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="reveal group rounded-2xl border border-neutral-800 bg-neutral-900 p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-500/40 hover:shadow-[0_0_0_1px_rgba(6,182,212,0.4),0_0_30px_rgba(6,182,212,0.15)]">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-500/10 text-cyan-500">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+              </svg>
+            </div>
+            <h3 class="mt-4 text-lg font-semibold tracking-tight text-neutral-50">Шифрование данных</h3>
+            <p class="mt-2 text-sm text-neutral-400">End-to-end шифрование с квантово-устойчивыми алгоритмами. Ваши данные защищены даже от атак будущего.</p>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="reveal group rounded-2xl border border-neutral-800 bg-neutral-900 p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-500/40 hover:shadow-[0_0_0_1px_rgba(6,182,212,0.4),0_0_30px_rgba(6,182,212,0.15)]">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-violet-500/10 text-violet-500">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+              </svg>
+            </div>
+            <h3 class="mt-4 text-lg font-semibold tracking-tight text-neutral-50">Аналитика и отчёты</h3>
+            <p class="mt-2 text-sm text-neutral-400">Наглядные дашборды с метриками безопасности. Отчёты для compliance: SOC 2, ISO 27001, GDPR.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ STATS ═══════════════ -->
+    <section id="stats" class="relative bg-neutral-900 py-24">
+      <!-- Subtle grid -->
+      <div class="absolute inset-0 bg-[linear-gradient(rgba(38,38,38,0.3)_1px,transparent_1px),linear-gradient(90deg,rgba(38,38,38,0.3)_1px,transparent_1px)] bg-[size:64px_64px]"></div>
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <!-- Section header -->
+        <div class="reveal mx-auto max-w-2xl text-center">
+          <span class="font-mono text-xs font-medium tracking-wider uppercase text-cyan-500">
+            → Цифры
+          </span>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl">
+            Защита в действии
+          </h2>
+          <p class="mt-4 text-base text-neutral-400">
+            Результаты работы нашей платформы за последний год.
+          </p>
+        </div>
+
+        <!-- Stats grid -->
+        <div class="stagger mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <!-- Stat 1 -->
+          <div class="reveal rounded-2xl border border-neutral-800 bg-neutral-950 p-6 text-center transition-all duration-200 hover:border-cyan-500/40">
+            <span class="counter font-mono text-4xl font-bold text-neutral-50" data-target="2400000" data-suffix="+">0</span>
+            <span class="mt-2 block font-mono text-xs font-medium tracking-wider uppercase text-neutral-600">Угроз обработано</span>
+          </div>
+          <!-- Stat 2 -->
+          <div class="reveal rounded-2xl border border-neutral-800 bg-neutral-950 p-6 text-center transition-all duration-200 hover:border-cyan-500/40">
+            <span class="counter font-mono text-4xl font-bold text-neutral-50" data-target="12000" data-suffix="+">0</span>
+            <span class="mt-2 block font-mono text-xs font-medium tracking-wider uppercase text-neutral-600">Активных клиентов</span>
+          </div>
+          <!-- Stat 3 -->
+          <div class="reveal rounded-2xl border border-neutral-800 bg-neutral-950 p-6 text-center transition-all duration-200 hover:border-cyan-500/40">
+            <span class="font-mono text-4xl font-bold text-neutral-50">99.99<span class="text-cyan-500">%</span></span>
+            <span class="mt-2 block font-mono text-xs font-medium tracking-wider uppercase text-neutral-600">Uptime платформы</span>
+          </div>
+          <!-- Stat 4 -->
+          <div class="reveal rounded-2xl border border-neutral-800 bg-neutral-950 p-6 text-center transition-all duration-200 hover:border-cyan-500/40">
+            <span class="font-mono text-4xl font-bold text-neutral-50">&lt;100<span class="text-green-500">ms</span></span>
+            <span class="mt-2 block font-mono text-xs font-medium tracking-wider uppercase text-neutral-600">Время реакции AI</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ PRICING ═══════════════ -->
+    <section id="pricing" class="relative bg-neutral-950 py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <!-- Section header -->
+        <div class="reveal mx-auto max-w-2xl text-center">
+          <span class="font-mono text-xs font-medium tracking-wider uppercase text-cyan-500">
+            → Тарифы
+          </span>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl">
+            Выберите уровень
+            <span class="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">защиты</span>
+          </h2>
+          <p class="mt-4 text-base text-neutral-400">
+            От стартапа до enterprise. Масштабируйте безопасность вместе с ростом.
+          </p>
+        </div>
+
+        <!-- Pricing cards -->
+        <div class="stagger mt-16 grid grid-cols-1 gap-6 lg:grid-cols-3">
+          <!-- Starter -->
+          <div class="reveal flex flex-col rounded-2xl border border-neutral-800 bg-neutral-900 p-8 transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-500/40 hover:shadow-[0_0_0_1px_rgba(6,182,212,0.4),0_0_30px_rgba(6,182,212,0.15)]">
+            <span class="font-mono text-xs font-medium tracking-wider uppercase text-neutral-600">Starter</span>
+            <div class="mt-4 flex items-baseline gap-1">
+              <span class="font-mono text-5xl font-bold text-neutral-50">₽0</span>
+              <span class="font-mono text-sm text-neutral-600">/мес</span>
+            </div>
+            <p class="mt-4 text-sm text-neutral-400">Для небольших команд и стартапов. Базовый набор защиты.</p>
+            <ul class="mt-8 flex flex-col gap-3">
+              <li class="flex items-center gap-2 text-sm text-neutral-300">
+                <svg class="h-4 w-4 shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                До 5 хостов
+              </li>
+              <li class="flex items-center gap-2 text-sm text-neutral-300">
+                <svg class="h-4 w-4 shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                Базовый AI-скоринг
+              </li>
+              <li class="flex items-center gap-2 text-sm text-neutral-300">
+                <svg class="h-4 w-4 shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                Уведомления в Telegram
+              </li>
+            </ul>
+            <a href="#" class="mt-auto block rounded-md border border-neutral-700 bg-neutral-800 px-6 py-3 text-center text-sm font-medium text-neutral-300 transition-all duration-150 hover:border-neutral-600 hover:text-neutral-50 pt-[calc(theme(spacing.3)+2px)]">Начать бесплатно</a>
+          </div>
+
+          <!-- Pro (highlighted) -->
+          <div class="reveal gradient-border-card flex flex-col p-8 transition-all duration-200 hover:-translate-y-1">
+            <span class="inline-flex items-center gap-2">
+              <span class="font-mono text-xs font-medium tracking-wider uppercase text-cyan-500">Pro</span>
+              <span class="rounded-full bg-cyan-500/10 px-2 py-0.5 text-shimmer font-mono text-[10px] font-medium tracking-wider uppercase">Популярный</span>
+            </span>
+            <div class="mt-4 flex items-baseline gap-1">
+              <span class="font-mono text-5xl font-bold text-neutral-50">₽29 990</span>
+              <span class="font-mono text-sm text-neutral-600">/мес</span>
+            </div>
+            <p class="mt-4 text-sm text-neutral-400">Для растущих компаний. Полный AI-арсенал защиты.</p>
+            <ul class="mt-8 flex flex-col gap-3">
+              <li class="flex items-center gap-2 text-sm text-neutral-300">
+                <svg class="h-4 w-4 shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                До 50 хостов
+              </li>
+              <li class="flex items-center gap-2 text-sm text-neutral-300">
+                <svg class="h-4 w-4 shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                Продвинутый AI-скоринг
+              </li>
+              <li class="flex items-center gap-2 text-sm text-neutral-300">
+                <svg class="h-4 w-4 shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                Автоответ на инциденты
+              </li>
+              <li class="flex items-center gap-2 text-sm text-neutral-300">
+                <svg class="h-4 w-4 shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                Интеграция с SIEM
+              </li>
+              <li class="flex items-center gap-2 text-sm text-neutral-300">
+                <svg class="h-4 w-4 shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                Приоритетная поддержка
+              </li>
+            </ul>
+            <a href="#" class="mt-auto block rounded-md bg-gradient-to-r from-cyan-500 to-violet-500 px-6 py-3 text-center text-sm font-medium text-white shadow-[0_0_20px_rgba(6,182,212,0.3)] transition-all duration-150 hover:shadow-[0_0_30px_rgba(6,182,212,0.5)] pt-[calc(theme(spacing.3)+2px)]">Выбрать Pro</a>
+          </div>
+
+          <!-- Enterprise -->
+          <div class="reveal flex flex-col rounded-2xl border border-neutral-800 bg-neutral-900 p-8 transition-all duration-200 hover:-translate-y-0.5 hover:border-violet-500/40 hover:shadow-[0_0_0_1px_rgba(139,92,246,0.4),0_0_30px_rgba(139,92,246,0.15)]">
+            <span class="font-mono text-xs font-medium tracking-wider uppercase text-violet-500">Enterprise</span>
+            <div class="mt-4 flex items-baseline gap-1">
+              <span class="font-mono text-5xl font-bold text-neutral-50">Кастом</span>
+            </div>
+            <p class="mt-4 text-sm text-neutral-400">Для крупных организаций. Персональная конфигурация и выделенный инженер.</p>
+            <ul class="mt-8 flex flex-col gap-3">
+              <li class="flex items-center gap-2 text-sm text-neutral-300">
+                <svg class="h-4 w-4 shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                Неограниченное число хостов
+              </li>
+              <li class="flex items-center gap-2 text-sm text-neutral-300">
+                <svg class="h-4 w-4 shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                Кастомные AI-модели
+              </li>
+              <li class="flex items-center gap-2 text-sm text-neutral-300">
+                <svg class="h-4 w-4 shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                On-premise развёртывание
+              </li>
+              <li class="flex items-center gap-2 text-sm text-neutral-300">
+                <svg class="h-4 w-4 shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                Выделенный Security Engineer
+              </li>
+              <li class="flex items-center gap-2 text-sm text-neutral-300">
+                <svg class="h-4 w-4 shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                SLA 99.999%
+              </li>
+            </ul>
+            <a href="#" class="mt-auto block rounded-md border border-violet-500/30 bg-violet-500/5 px-6 py-3 text-center text-sm font-medium text-violet-400 transition-all duration-150 hover:border-violet-500/50 hover:bg-violet-500/10 pt-[calc(theme(spacing.3)+2px)]">Связаться с нами</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ CTA ═══════════════ -->
+    <section class="relative overflow-hidden bg-neutral-900 py-24">
+      <!-- Radial glow -->
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_50%_50%_at_50%_50%,rgba(139,92,246,0.12)_0%,transparent_70%)]"></div>
+      <!-- Dot grid -->
+      <div class="absolute inset-0 bg-[radial-gradient(rgba(38,38,38,0.8)_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal mx-auto max-w-2xl text-center">
+          <span class="font-mono text-xs font-medium tracking-wider uppercase text-cyan-500">
+            → Готовы к защите?
+          </span>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl lg:text-5xl">
+            Начните защищать
+            <span class="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">прямо сейчас</span>
+          </h2>
+          <p class="mt-4 text-base text-neutral-400">
+            Первые 14 дней бесплатно. Без ограничений. Без карты.
+          </p>
+          <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <a href="#" class="rounded-md bg-gradient-to-r from-cyan-500 to-violet-500 px-8 py-3.5 text-base font-medium text-white shadow-[0_0_20px_rgba(6,182,212,0.3)] transition-all duration-150 hover:shadow-[0_0_30px_rgba(6,182,212,0.5)]">
+              Попробовать бесплатно
+            </a>
+            <a href="#" class="rounded-md border border-neutral-700 bg-neutral-800 px-8 py-3.5 text-base font-medium text-neutral-300 transition-all duration-150 hover:border-neutral-600 hover:text-neutral-50">
+              Запросить демо
+            </a>
+          </div>
+          <p class="mt-6 font-mono text-xs text-neutral-600">
+            Без привязки карты • Отмена в один клик • SOC 2 Type II
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="border-t border-neutral-800 bg-neutral-950 py-12">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col items-center justify-between gap-8 md:flex-row">
+        <!-- Logo + copyright -->
+        <div class="flex items-center gap-2.5">
+          <svg class="h-6 w-6 text-cyan-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+          </svg>
+          <span class="text-sm font-semibold text-neutral-50">CyberSpace</span>
+        </div>
+        <!-- Links -->
+        <div class="flex flex-wrap items-center justify-center gap-6">
+          <a href="#" class="text-xs font-medium text-neutral-500 transition-colors hover:text-neutral-300">Документация</a>
+          <a href="#" class="text-xs font-medium text-neutral-500 transition-colors hover:text-neutral-300">API</a>
+          <a href="#" class="text-xs font-medium text-neutral-500 transition-colors hover:text-neutral-300">Блог</a>
+          <a href="#" class="text-xs font-medium text-neutral-500 transition-colors hover:text-neutral-300">Политика</a>
+          <a href="#" class="text-xs font-medium text-neutral-500 transition-colors hover:text-neutral-300">Контакты</a>
+        </div>
+        <!-- Copyright -->
+        <p class="font-mono text-xs text-neutral-600">
+          © 2026 CyberSpace. Все права защищены.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════ SCRIPTS ═══════════════ -->
+  <script>
+    // ── Scroll Reveal (IntersectionObserver) ──
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // ── Number Counter ──
+    const counters = document.querySelectorAll('.counter');
+    const counterObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseInt(el.dataset.target);
+            const suffix = el.dataset.suffix || '';
+            const prefix = el.dataset.prefix || '';
+            let current = 0;
+            const duration = 2000; // 2 seconds
+            const step = Math.max(1, Math.floor(target / (duration / 16)));
+            const timer = setInterval(() => {
+              current += step;
+              if (current >= target) {
+                current = target;
+                clearInterval(timer);
+              }
+              let display = current >= 1000000
+                ? (current / 1000000).toFixed(1) + 'M'
+                : current >= 1000
+                ? (current / 1000).toFixed(current >= 10000 ? 0 : 1) + 'K'
+                : current.toLocaleString('ru-RU');
+              el.textContent = prefix + display + suffix;
+            }, 16);
+            counterObserver.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    counters.forEach(c => counterObserver.observe(c));
+
+    // ── Smooth scroll for anchor links (fallback) ──
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

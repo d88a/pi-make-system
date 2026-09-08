@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>СтройМакс — Продукт</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ["'Playfair Display'", "'Georgia'", "serif"],
+            body: ["'Source Serif 4'", "'Georgia'", "serif"],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      /* ── Backgrounds ── */
+      --color-bg-page: #F8FAFC;
+      --color-bg-alt: #F1F5F9;
+      --color-surface: #FFFFFF;
+      --color-bg-elevated: #F8FAFC;
+
+      /* ── Text ── */
+      --color-text-primary: #0F172A;
+      --color-text-secondary: #475569;
+      --color-text-muted: #475569;
+
+      /* ── Accent — CUSTOM #32598f (dusty blue) ── */
+      --color-primary: #32598f;
+      --color-primary-hover: #274a7c;
+      --color-primary-glow: rgba(50,89,143,0.4);
+      --color-primary-subtle: rgba(50,89,143,0.08);
+
+      /* ── Semantic ── */
+      --color-success: #059669;
+      --color-danger: #DC2626;
+
+      /* ── Text on Primary ── */
+      --color-text-on-primary: #FFFFFF;
+
+      /* ── Borders ── */
+      --color-border: #E2E8F0;
+      --color-border-hover: #CBD5E1;
+
+      /* ── Gradients ── */
+      --gradient-subtle: linear-gradient(180deg, #F8FAFC, #F1F5F9);
+
+      /* ── Shadows ── */
+      --shadow-brand: 0 10px 30px -10px rgba(50,89,143,0.35);
+      --shadow-card: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+      --shadow-card-hover: 0 8px 24px -8px rgba(50,89,143,0.15);
+
+      /* ── Transitions ── */
+      --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+
+      /* ── Radius ── */
+      --radius: 16px;
+
+      /* ── Fonts ── */
+      --font-display: 'Playfair Display', 'Georgia', serif;
+      --font-body: 'Source Serif 4', 'Georgia', serif;
+    }
+
+    /* ── Reveal animation ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 600ms cubic-bezier(0.4, 0, 0.2, 1), transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Hover lift ── */
+    .hover-lift {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .hover-lift:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    /* ── Smooth scroll ── */
+    html { scroll-behavior: smooth; }
+
+    /* ── Body base ── */
+    body {
+      font-family: 'Source Serif 4', 'Georgia', serif;
+      background-color: var(--color-bg-page);
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ── Gallery thumb active ── */
+    .gallery-thumb {
+      transition: border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .gallery-thumb.active {
+      border-color: var(--color-primary);
+      opacity: 1;
+    }
+
+    /* ── Color swatch ── */
+    .color-swatch {
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .color-swatch.active {
+      background-color: var(--color-primary);
+      color: var(--color-text-on-primary);
+      border-color: var(--color-primary);
+    }
+
+    /* ── Not found state ── */
+    #not-found {
+      display: none;
+    }
+    #not-found.visible {
+      display: flex;
+    }
+    #product-content.hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body class="font-body antialiased">
+
+  <!-- ════════════════ NAVBAR ════════════════ -->
+  <header class="sticky top-0 z-50 h-16 border-b border-[var(--color-border)] bg-[var(--color-bg-page)]/80 backdrop-blur-md" role="banner">
+    <nav class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8" aria-label="Основная навигация">
+      <!-- Logo -->
+      <a href="home-v8.html" class="flex items-center gap-2 font-display text-xl font-bold text-[var(--color-text-primary)]" style="font-family: var(--font-display);">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" class="text-[var(--color-primary)]" aria-hidden="true">
+          <rect x="2" y="2" width="24" height="24" rx="6" fill="currentColor" opacity="0.12"/>
+          <rect x="5" y="5" width="18" height="18" rx="4" stroke="currentColor" stroke-width="2" fill="none"/>
+          <path d="M10 14h8M14 10v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span>СтройМакс</span>
+      </a>
+
+      <!-- Desktop nav links -->
+      <div class="hidden items-center gap-8 lg:flex">
+        <a href="home-v8.html" class="text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Главная</a>
+        <a href="catalog.html" class="text-sm font-medium text-[var(--color-primary)] transition-colors duration-150" style="font-family: var(--font-body);" aria-current="page">Каталог</a>
+        <a href="home-v8.html#about" class="text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">О компании</a>
+        <a href="delivery.html" class="text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Доставка</a>
+        <a href="home-v8.html#contacts" class="text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Контакты</a>
+        <a href="calculator.html" class="text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Калькулятор</a>
+      </div>
+
+      <!-- CTA + Mobile toggle -->
+      <div class="flex items-center gap-3">
+        <a href="home-v8.html#cta" class="hidden rounded-2xl bg-[var(--color-primary)] px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:shadow-[var(--shadow-brand)] sm:inline-flex" style="font-family: var(--font-body);">
+          Рассчитать стоимость
+        </a>
+        <button id="mobile-toggle" class="inline-flex items-center justify-center rounded-2xl p-2 text-[var(--color-text-secondary)] transition-colors duration-150 hover:bg-[var(--color-bg-alt)] lg:hidden" aria-label="Открыть меню" aria-expanded="false">
+          <svg id="menu-icon-open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="menu-icon-close" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden border-t border-[var(--color-border)] bg-[var(--color-surface)] lg:hidden">
+      <div class="flex flex-col gap-1 px-4 py-4">
+        <a href="home-v8.html" class="rounded-2xl px-4 py-3 text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-150 hover:bg-[var(--color-bg-alt)]" style="font-family: var(--font-body);">Главная</a>
+        <a href="catalog.html" class="rounded-2xl px-4 py-3 text-sm font-medium text-[var(--color-primary)] bg-[var(--color-primary-subtle)]" style="font-family: var(--font-body);">Каталог</a>
+        <a href="home-v8.html#about" class="rounded-2xl px-4 py-3 text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-150 hover:bg-[var(--color-bg-alt)]" style="font-family: var(--font-body);">О компании</a>
+        <a href="delivery.html" class="rounded-2xl px-4 py-3 text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-150 hover:bg-[var(--color-bg-alt)]" style="font-family: var(--font-body);">Доставка</a>
+        <a href="home-v8.html#contacts" class="rounded-2xl px-4 py-3 text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-150 hover:bg-[var(--color-bg-alt)]" style="font-family: var(--font-body);">Контакты</a>
+        <a href="calculator.html" class="rounded-2xl px-4 py-3 text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-150 hover:bg-[var(--color-bg-alt)]" style="font-family: var(--font-body);">Калькулятор</a>
+        <a href="home-v8.html#cta" class="mt-2 rounded-2xl bg-[var(--color-primary)] px-4 py-3 text-center text-sm font-semibold text-white transition-all duration-200 hover:bg-[var(--color-primary-hover)]" style="font-family: var(--font-body);">Рассчитать стоимость</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ════════════════ NOT FOUND STATE ════════════════ -->
+    <section id="not-found" class="flex min-h-[60vh] flex-col items-center justify-center py-20 text-center">
+      <div class="mx-auto max-w-md px-4">
+        <svg class="mx-auto h-16 w-16 text-[var(--color-text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"/></svg>
+        <h2 class="mt-6 font-display text-2xl font-bold text-[var(--color-text-primary)]" style="font-family: var(--font-display);">Продукт не найден</h2>
+        <p class="mt-2 text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">Запрошенный продукт отсутствует в каталоге. Проверьте ссылку или вернитесь к списку продукции.</p>
+        <a href="catalog.html" class="mt-6 inline-flex items-center rounded-2xl bg-[var(--color-primary)] px-6 py-3 text-base font-semibold text-white transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:shadow-[var(--shadow-brand)]" style="font-family: var(--font-body);">
+          <svg class="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m0 0l7 7m-7-7l7-7"/></svg>
+          Вернуться в каталог
+        </a>
+      </div>
+    </section>
+
+    <!-- ════════════════ PRODUCT CONTENT ════════════════ -->
+    <div id="product-content">
+      <!-- Breadcrumbs -->
+      <nav aria-label="Хлебные крошки" class="mx-auto max-w-7xl px-4 pt-8 sm:px-6 lg:px-8">
+        <ol class="flex flex-wrap items-center gap-2 text-sm" style="font-family: var(--font-body);">
+          <li><a href="home-v8.html" class="text-[var(--color-text-muted)] transition-colors duration-150 hover:text-[var(--color-text-primary)]">Главная</a></li>
+          <li><span class="text-[var(--color-border)]" aria-hidden="true">/</span></li>
+          <li><a href="catalog.html" class="text-[var(--color-text-muted)] transition-colors duration-150 hover:text-[var(--color-text-primary)]">Каталог</a></li>
+          <li><span class="text-[var(--color-border)]" aria-hidden="true">/</span></li>
+          <li><span id="breadcrumb-title" class="font-medium text-[var(--color-primary)]"></span></li>
+        </ol>
+      </nav>
+
+      <!-- ════════════════ PRODUCT ASYMMETRIC SPLIT ════════════════ -->
+      <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-20" aria-labelledby="product-title">
+        <div class="grid grid-cols-1 gap-10 lg:grid-cols-5 lg:gap-14">
+          <!-- LEFT: Gallery (col-span-2 = 40%) -->
+          <div class="lg:col-span-2">
+            <div class="sticky top-24 space-y-4">
+              <!-- Main image -->
+              <div class="overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-alt)]" style="border-radius: var(--radius);">
+                <img id="main-image" src="" alt="" class="w-full aspect-square object-contain" loading="eager">
+              </div>
+              <!-- Thumbnails -->
+              <div id="gallery-thumbs" class="flex gap-3 overflow-x-auto pb-1" role="list" aria-label="Галерея изображений"></div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Info (col-span-3 = 60%) -->
+          <div class="lg:col-span-3 flex flex-col">
+            <!-- Category badge -->
+            <span id="product-category" class="inline-flex items-center rounded-2xl bg-[var(--color-primary-subtle)] px-4 py-1.5 text-sm font-medium text-[var(--color-primary)] w-fit" style="font-family: var(--font-body);"></span>
+
+            <!-- Title -->
+            <h1 id="product-title" class="mt-5 font-display text-3xl font-bold leading-[1.12] tracking-[-0.01em] text-[var(--color-text-primary)] sm:text-4xl lg:text-5xl" style="font-family: var(--font-display);"></h1>
+
+            <!-- Price -->
+            <div class="mt-6">
+              <span id="product-price" class="font-display text-3xl font-bold text-[var(--color-primary)] sm:text-4xl" style="font-family: var(--font-display);"></span>
+              <span class="ml-1 text-sm text-[var(--color-text-muted)]" style="font-family: var(--font-body);">/ м²</span>
+            </div>
+
+            <!-- Short description -->
+            <p id="product-short-desc" class="mt-4 text-base leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);"></p>
+
+            <!-- Characteristics (dl) -->
+            <div class="mt-8 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6" style="border-radius: var(--radius);">
+              <h3 class="font-display text-lg font-semibold text-[var(--color-text-primary)]" style="font-family: var(--font-display);">Характеристики</h3>
+              <dl id="product-specs" class="mt-4 space-y-3" style="font-family: var(--font-body);"></dl>
+            </div>
+
+            <!-- Color variations (swatches) -->
+            <div id="color-variations" class="mt-8 hidden">
+              <h3 class="font-display text-lg font-semibold text-[var(--color-text-primary)]" style="font-family: var(--font-display);">Цвет</h3>
+              <div id="color-swatches" class="mt-3 flex flex-wrap gap-3" role="radiogroup" aria-label="Выбор цвета"></div>
+            </div>
+
+            <!-- Size variations (for bordyury/vodostoki) -->
+            <div id="size-variations" class="mt-8 hidden">
+              <h3 class="font-display text-lg font-semibold text-[var(--color-text-primary)]" style="font-family: var(--font-display);">Размер</h3>
+              <div id="size-swatches" class="mt-3 flex flex-wrap gap-3" role="radiogroup" aria-label="Выбор размера"></div>
+            </div>
+
+            <!-- CTA buttons -->
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a id="cta-calculate" href="calculator.html" class="inline-flex items-center rounded-2xl bg-[var(--color-primary)] px-6 py-3.5 text-base font-semibold text-white transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:shadow-[var(--shadow-brand)]" style="font-family: var(--font-body);">
+                Рассчитать стоимость
+                <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </a>
+              <a href="catalog.html" class="inline-flex items-center rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-6 py-3.5 text-base font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]" style="font-family: var(--font-body);">
+                <svg class="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m0 0l7 7m-7-7l7-7"/></svg>
+                Назад в каталог
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════ FULL DESCRIPTION ════════════════ -->
+      <section id="description-section" class="bg-[var(--color-bg-alt)] py-20 hidden" aria-labelledby="description-heading">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-3xl">
+            <h2 id="description-heading" class="font-display text-2xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-3xl" style="font-family: var(--font-display);">Описание</h2>
+            <div id="product-description" class="mt-6 space-y-4 text-base leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════ RELATED PRODUCTS ════════════════ -->
+      <section id="related-section" class="bg-[var(--color-bg-page)] py-20 hidden" aria-labelledby="related-heading">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-2xl text-center reveal">
+            <h2 id="related-heading" class="font-display text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl" style="font-family: var(--font-display);">Похожие товары</h2>
+            <p class="mt-4 text-lg leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">Другие продукты из этой же категории</p>
+          </div>
+          <div id="related-grid" class="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"></div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ════════════════ FOOTER ════════════════ -->
+  <footer class="bg-[var(--color-bg-alt)] py-16" role="contentinfo">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- Brand -->
+        <div class="lg:col-span-1">
+          <a href="home-v8.html" class="flex items-center gap-2 font-display text-xl font-bold text-[var(--color-text-primary)]" style="font-family: var(--font-display);">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" class="text-[var(--color-primary)]" aria-hidden="true">
+              <rect x="2" y="2" width="24" height="24" rx="6" fill="currentColor" opacity="0.12"/>
+              <rect x="5" y="5" width="18" height="18" rx="4" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M10 14h8M14 10v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            СтройМакс
+          </a>
+          <p class="mt-4 max-w-xs text-sm leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">
+            Производство кевларовой брусчатки и тротуарной плитки в Юрюзани. Качество, проверенное временем.
+          </p>
+          <div class="mt-4 inline-flex items-center gap-2 rounded-2xl bg-[var(--color-primary-subtle)] px-3 py-1.5 text-xs font-medium text-[var(--color-primary)]" style="border-radius: var(--radius); font-family: var(--font-body);">
+            <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+            Принимаем заказы
+          </div>
+        </div>
+
+        <!-- Навигация -->
+        <div>
+          <h4 class="text-xs font-semibold tracking-wider uppercase text-[var(--color-text-muted)]" style="font-family: var(--font-body);">Навигация</h4>
+          <ul class="mt-4 space-y-3">
+            <li><a href="home-v8.html" class="text-sm text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Главная</a></li>
+            <li><a href="catalog.html" class="text-sm text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Каталог</a></li>
+            <li><a href="home-v8.html#about" class="text-sm text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">О компании</a></li>
+            <li><a href="delivery.html" class="text-sm text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Доставка</a></li>
+            <li><a href="calculator.html" class="text-sm text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Калькулятор</a></li>
+          </ul>
+        </div>
+
+        <!-- Каталог -->
+        <div>
+          <h4 class="text-xs font-semibold tracking-wider uppercase text-[var(--color-text-muted)]" style="font-family: var(--font-body);">Каталог</h4>
+          <ul class="mt-4 space-y-3">
+            <li><a href="catalog.html" class="text-sm text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Брусчатка тротуарная</a></li>
+            <li><a href="catalog.html" class="text-sm text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Тротуарная плитка</a></li>
+            <li><a href="catalog.html" class="text-sm text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Бордюры и водостоки</a></li>
+            <li><a href="catalog.html" class="text-sm text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Памятники из бетона</a></li>
+            <li><a href="catalog.html" class="text-sm text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Эко-парковка</a></li>
+          </ul>
+        </div>
+
+        <!-- Контакты -->
+        <div>
+          <h4 class="text-xs font-semibold tracking-wider uppercase text-[var(--color-text-muted)]" style="font-family: var(--font-body);">Контакты</h4>
+          <ul class="mt-4 space-y-3">
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-[var(--color-text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+              <span class="text-sm text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">г. Юрюзань, Челябинская область, Катав-Ивановский район, ул. Тимирязева, 15а</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="h-4 w-4 flex-shrink-0 text-[var(--color-text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+              <span class="text-sm text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">+7 982 341 69 70</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="h-4 w-4 flex-shrink-0 text-[var(--color-text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+              <span class="text-sm text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">maksimdyd@gmail.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-[var(--color-border)] pt-8 md:flex-row">
+        <p class="text-sm text-[var(--color-text-muted)]" style="font-family: var(--font-body);">
+          &copy; 2024–2026 СтройМакс. Все права защищены.
+        </p>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- ════════════════ SCRIPTS ════════════════ -->
+  <script>
+    // ── PRODUCT DATA (inline, for file:// compatibility) ──
+    const PRODUCTS = [
+      {"slug":"domino","title":"Домино, брусчатка","short_description":"Цена за кв. м.\r\nРазмеры, мм: 300х150\r\nТолщина, мм: 35\r\n\r\nСерый: 850 руб. кв. м\r\nВ цвете: 1100 руб. кв. м","full_description":"Брусчатка «Домино» — это уникальный элемент для благоустройства, который сочетает в себе функциональность и эстетику. Ее характерные прямоугольные формы напоминают домино, что делает укладку не только практичной, но и игровой. Она позволяет создавать множество интересных узоров и композиций на поверхности, что идеально подходит для личных и общественных пространств.","price_range":"850 ₽ – 1100 ₽","category":"Брусчатка тротуарная","attributes":[{"name":"цвет","options":["Белый","Цветной"]}],"is_variable":true,"gallery_urls":["https://maksplit.ru/wp-content/uploads/2024/09/Domino.jpg","https://maksplit.ru/wp-content/uploads/2024/09/Domino2.png"]},
+      {"slug":"krakovskij-klever","title":"Краковский клевер, брусчатка","short_description":"Два камня разной фактуры\r\nРазмеры, мм:\r\n295х295\r\n210х210\r\nТолщина, мм: 40\r\n\r\nСерый: 850 руб. кв. м\r\nВ цвете: 1100 руб. кв. м","full_description":"Краковский клевер — это уникальный архитектурный элемент, который сочетает в себе красоту и функциональность. Брусчатка, уложенная в форме клеверного листа, не только привлекает внимание своей оригинальностью, но и служит практическим целям, обеспечивая надежное покрытие для пешеходных и велосипедных дорожек.","price_range":"850 ₽ – 1100 ₽","category":"Брусчатка тротуарная","attributes":[{"name":"цвет","options":["Белый","В цвете"]}],"is_variable":true,"gallery_urls":["https://maksplit.ru/wp-content/uploads/2024/09/Krakovskij-klever-e1744201631824.png","https://maksplit.ru/wp-content/uploads/2024/09/Krakovskij-klever-1.png"]},
+      {"slug":"doska","title":"Доска, брусчатка","short_description":"Цена за кв.м\r\nРазмеры, мм:\r\nТолщина, мм: 60\r\nСерый: 850 руб. кв. м\r\nВ цвете: 1100 руб. кв. м","full_description":"Брусчатка «доска» — это один из популярных материалов для благоустройства территорий и создания эстетически привлекательного ландшафта. Ее уникальная форма и текстура позволяют использовать такие элементы в различных проектах, от городских тротуаров до загородных террас.","price_range":"850 ₽ – 1100 ₽","category":"Брусчатка тротуарная","attributes":[{"name":"цвет","options":["Серый","В цвете"]}],"is_variable":true,"gallery_urls":["https://maksplit.ru/wp-content/uploads/2024/09/Doska-e1744201102236.png","https://maksplit.ru/wp-content/uploads/2024/09/Doska1.png"]},
+      {"slug":"staryj-gorod","title":"Старый город, брусчатка","short_description":"Размеры, мм:\r\n120х40\r\n120х90\r\n120х120\r\nТолщина, мм: 40\r\n\r\nВ 1м2: 34 шт.\r\nСерый: 850 руб.м2\r\nЦветной: 1100 руб.м2","full_description":"Брусчатка «Старый город» — это не просто строительный материал, а символ истории и культуры. Ее уникальный дизайн и фактура придают любому пространству атмосферу старины и уюта.","price_range":"850 ₽ – 1100 ₽","category":"Брусчатка тротуарная","attributes":[{"name":"цвет","options":["Серый","В цвете","Мрамор из бетона"]}],"is_variable":true,"gallery_urls":["https://maksplit.ru/wp-content/uploads/2024/09/Staryj-gorod-1.png","https://maksplit.ru/wp-content/uploads/2024/09/Staryj-gorod1.png"]},
+      {"slug":"kamennyj-czvetok","title":"Каменный цветок, брусчатка","short_description":"Шесть камней разной фактуры\r\nРазмеры, мм: 400х262х40, 252х155х40, 255х167х40, 315х287х40, 350х245х40, 248х220х40\r\nСерый: 850 руб.м2\r\nЦветной: 1100 руб.м2","full_description":"Брусчатка «Каменный цветок» — это гладкие камни разной формы и цвета, уложенные с тщательностью, рассказывают историю времени и труда. Каждая плитка словно пазл, встраивающийся в общую картину — покой и гармония в каждом шаге.","price_range":"850 ₽ – 1100 ₽","category":"Брусчатка тротуарная","attributes":[{"name":"цвет","options":["Серый","В цвете","Мрамор из бетона"]}],"is_variable":true,"gallery_urls":["https://maksplit.ru/wp-content/uploads/2024/09/KAMENNYJ-CZVETOK1.jpg","https://maksplit.ru/wp-content/uploads/2024/09/KAMENNYJ-CZVETOK.png"]},
+      {"slug":"staryj-arbat","title":"Старый Aрбат, брусчатка","short_description":"Размеры, мм: 195х140х40, 210х210х40, 200х140х30, 200х100х30, 205х100х30\r\nСерый: 850 руб.м2\r\nМрамор из бетона: 1100 руб.м2","full_description":"Тротуарная плитка брусчатка «Старый Арбат» — это утонченное решение для благоустройства urban-пространств, призванное создать атмосферу старинного города.","price_range":"850 ₽ – 1100 ₽","category":"Брусчатка тротуарная","attributes":[{"name":"цвет","options":["Серый","Мрамор из бетона"]}],"is_variable":true,"gallery_urls":["https://maksplit.ru/wp-content/uploads/2024/09/Staryj-arbat-2.jpg","https://maksplit.ru/wp-content/uploads/2024/09/Staryj-arbat1.png"]},
+      {"slug":"grecziya","title":"Греция, брусчатка","short_description":"Два камня разной фактуры\r\nРазмеры, мм: 285х285, 100х100\r\nТолщина, мм: 40\r\nЦена: от 850 руб. кв. м","full_description":"Использование брусчатки «Греция» дает возможность создать эффектный и долговечный ландшафтный проект. При ее укладке можно экспериментировать с различными схемами, сочетая элементы разных цветов для достижения уникального стиля.","price_range":"850 ₽","category":"Брусчатка тротуарная","attributes":[],"is_variable":false,"gallery_urls":["https://maksplit.ru/wp-content/uploads/2024/09/Grecziya-e1744200946190.png","https://maksplit.ru/wp-content/uploads/2024/09/Grecziya1.png"]},
+      {"slug":"kirpichik","title":"Кирпичик, брусчатка","short_description":"Размеры, мм: 200х100\r\nТолщина, мм: 40\r\nСерый: 850 руб.м2\r\nЦветной: 1100 руб.м2","full_description":"Брусчатка из кирпичика позволяет не только обеспечить прочность покрытия, но и создать выразительный внешний вид. Разнообразие цветов и текстур предоставляет возможность комбинации различных элементов, создавая уникальные узоры и композиции.","price_range":"850 ₽ – 1100 ₽","category":"Брусчатка тротуарная","attributes":[{"name":"цвет","options":["Серый","В цвете"]}],"is_variable":true,"gallery_urls":["https://maksplit.ru/wp-content/uploads/2024/09/insMind.jpg","https://maksplit.ru/wp-content/uploads/2024/09/Kirpichik1-1.png","https://maksplit.ru/wp-content/uploads/2024/09/Kirpichik-1.png"]},
+      {"slug":"osen","title":"Осень, брусчатка","short_description":"Комплект из камней разной формы: 2 камня 340х290х35, 4 камня 190х140х35, 4 камня 140х140х35\r\nТолщина, мм: 35\r\nСерый: 850 руб.м2\r\nЦветной: 1100 руб.м2","full_description":"Брусчатка «Осень» — это идеальное решение для тех, кто хочет добавить нотки природной красоты в свой ландшафтный дизайн. Цветовая палитра включает в себя мягкие коричневые и золотистые оттенки.","price_range":"850 ₽ – 1100 ₽","category":"Брусчатка тротуарная","attributes":[{"name":"цвет","options":["Серый","В цвете"]}],"is_variable":true,"gallery_urls":["https://maksplit.ru/wp-content/uploads/2024/09/Osen-1-e1744175775735.png"]},
+      {"slug":"kaliforniya-kamen","title":"Калифорния камень, тротуарная плитка","short_description":"Размеры, мм: 300х300\r\nТолщина, мм: 30\r\nКол-во в 1м2: 11 шт.\r\nСерый: 850 руб.м2\r\nЦветной: 1100 руб.м2\r\nМрамор из бетона: 1100 руб.м2","full_description":"Тротуарная плитка в стиле «Калифорния» активно используется для благоустройства частных участков. Бетонная тротуарная плитка характерна своей неприхотливостью в уходе: она не требует сложного обслуживания и сохраняет свой аккуратный вид в любых условиях.","price_range":"850 ₽ – 1100 ₽","category":"Тротуарная плитка","attributes":[{"name":"цвет","options":["Мрамор из бетона","Серый","В цвете"]}],"is_variable":true,"gallery_urls":["https://maksplit.ru/wp-content/uploads/2025/04/Kaliforniya-kamen-e1744176166958.png"]},
+      {"slug":"kaliforniya-derevo","title":"Калифорния дерево, тротуарная плитка","short_description":"Размеры, мм: 300х300\r\nТолщина, мм: 30\r\nКол-во в 1м2: 11 шт.\r\nСерый: 850 руб.м2\r\nЦветной: 1100 руб.м2\r\nМрамор из бетона: 1100 руб.м2","full_description":"Тротуарная плитка «Калифорния, дерево» — кроме эстетических качеств, плитка обладает высокой прочностью и долговечностью, что делает её отличным выбором для зон с интенсивным пешеходным трафиком.","price_range":"850 ₽ – 1100 ₽","category":"Тротуарная плитка","attributes":[{"name":"цвет","options":["Мрамор из бетона","Серый","В цвете"]}],"is_variable":true,"gallery_urls":["https://maksplit.ru/wp-content/uploads/2024/09/Kaliforniya-derevo-e1744172972390.png","https://maksplit.ru/wp-content/uploads/2024/09/Kaliforniya-derevo1.png"]},
+      {"slug":"kaliforniya-kubik","title":"Калифорния кубик, тротуарная плитка","short_description":"Размеры, мм: 300х300\r\nТолщина, мм: 30\r\nКол-во в 1м2: 11 шт.\r\nСерый: 850 руб.м2\r\nЦветной: 1100 руб.м2\r\nМрамор из бетона: 1100 руб.м2","full_description":"Плитка в стиле «Калифорния» предлагает массу вариантов декора, которые позволят создать уникальную атмосферу на вашем участке. Ее разнообразие по оттенкам и текстурам дает возможность сочетать различные элементы.","price_range":"850 ₽ – 1100 ₽","category":"Тротуарная плитка","attributes":[{"name":"цвет","options":["Мрамор из бетона","Серый","В цвете"]}],"is_variable":true,"gallery_urls":["https://maksplit.ru/wp-content/uploads/2024/09/Kaliforniya-kubik-e1744175883782.png","https://maksplit.ru/wp-content/uploads/2024/09/Kaliforniya-kubik1.png"]},
+      {"slug":"parket","title":"Паркет, тротуарная плитка","short_description":"Размеры, мм: 300х300\r\nТолщина, мм: 30\r\nКол-во в 1м2: 11 шт.\r\nСерый: 850 руб.м2\r\nЦветной: 1100 руб.м2\r\nМрамор из бетона: 1100 руб.м2","full_description":"Тротуарная плитка «Паркет» — это один из наиболее популярных материалов для благоустройства пешеходных зон и территорий. Ее привлекательный внешний вид, напоминающий традиционный паркет, придает прогулочным зонам особый шарм и изящество.","price_range":"850 ₽ – 1100 ₽","category":"Тротуарная плитка","attributes":[{"name":"цвет","options":["Мрамор из бетона","Серый","В цвете"]}],"is_variable":true,"gallery_urls":["https://maksplit.ru/wp-content/uploads/2024/09/Parket-e1744175859494.png"]},
+      {"slug":"tuchka","title":"Тучка, тротуарная плитка","short_description":"Размеры, мм: 300х300\r\nТолщина, мм: 30\r\nКол-во в 1м2: 11 шт.\r\nСерый: 850 руб.м2\r\nЦветной: 1100 руб.м2\r\nМрамор из бетона: 1100 руб.м2","full_description":"Тротуарная плитка «Тучка» — это современное и эстетически привлекательное решение для оформления пешеходных зон, площадок и дорожек. Благодаря своей оригинальной форме и разнообразной цветовой гамме, она позволяет создавать уникальные ландшафтные проекты.","price_range":"850 ₽ – 1100 ₽","category":"Тротуарная плитка","attributes":[{"name":"цвет","options":["В цвете","Серый","Мрамор из бетона"]}],"is_variable":true,"gallery_urls":["https://maksplit.ru/wp-content/uploads/2024/09/tuchka.jpeg","https://maksplit.ru/wp-content/uploads/2024/09/Tuchka1.png"]},
+      {"slug":"galka","title":"Галька, тротуарная плитка","short_description":"Размеры, мм: 300х300\r\nТолщина, мм: 30\r\nКол-во в 1м2: 11 шт.\r\nСерый: 850 руб.м2\r\nЦветной: 1100 руб.м2\r\nМрамор из бетона: 1100 руб.м2","full_description":"Тротуарная плитка «Галька» является одним из самых востребованных материалов для благоустройства пешеходных зон. Её популярность объясняется не только эстетическим видом, имитирующим натуральные камни, но и высоким уровнем прочности и долговечности.","price_range":"850 ₽ – 1100 ₽","category":"Тротуарная плитка","attributes":[{"name":"цвет","options":["Мрамор из бетона","Серый","В цвете"]}],"is_variable":true,"gallery_urls":["https://maksplit.ru/wp-content/uploads/2024/09/Galka-e1744202940405.png"]},
+      {"slug":"romb-uzornyj","title":"Ромб узорный, тротуарная плитка","short_description":"Размер, мм: 320x190\nТолщина, мм: 40\nКол-во в 1м²: 28 шт.\nСерый: 850 руб./м²\nЦветной: 1100 руб./м²","full_description":"Тротуарная плитка «Ромб узорный» — геометричный узор для создания орнаментов на площадках. Идеальная точность форм позволяет выкладывать гармоничные композиции. Изготовлена из кевларобетона методом вибролитья.","price_range":"850 ₽ – 1100 ₽","category":"Тротуарная плитка","attributes":[{"name":"цвет","options":["Серый","В цвете","Мрамор из бетона"]}],"is_variable":true,"gallery_urls":["images/p-romb-uzornyj.png"]},
+      {"slug":"eko-parkovka","title":"Эко-парковка","short_description":"Размеры, мм: 600х400\r\nТолщина, мм: 100\r\nЦена: 1700 руб. кв. м","full_description":"Эко-парковка — это не просто место для стоянки автомобилей, а концепция, направленная на гармонизацию городской инфраструктуры с природой. Она представляет собой зону, где автомобилисты могут оставлять свои транспортные средства, минимизируя негативное воздействие на окружающую среду.","price_range":"1700 ₽","category":"Бордюры, водостоки","attributes":[],"is_variable":false,"gallery_urls":["https://maksplit.ru/wp-content/uploads/2024/09/Eko-parkovka-e1744201893632.png","https://maksplit.ru/wp-content/uploads/2024/09/Eko-parkovka1.png"]},
+      {"slug":"bordyury","title":"Бордюры","short_description":"Размеры, мм:\r\n500х200х60 – 150 руб. кв. м\r\n1000х200х70 – 300 руб. кв. м\r\n500х200х40 – 120 руб. кв. м","full_description":"","price_range":"120 ₽ – 300 ₽","category":"Бордюры, водостоки","attributes":[{"name":"размеры","options":["500х200х60","1000х200х70","500х200х40"]}],"is_variable":true,"gallery_urls":["https://maksplit.ru/wp-content/uploads/2024/09/Bordyury-e1744204024229.png"]},
+      {"slug":"vodostoki","title":"Водостоки","short_description":"Размеры, мм:\r\n500х150х50 – 200 руб. кв. м\r\n300х150х60 – 150 руб. кв. м\r\n250х150х80 – 150 руб. кв. м","full_description":"","price_range":"150 ₽ – 200 ₽","category":"Бордюры, водостоки","attributes":[{"name":"размер","options":["500х150х50","300х150х60","250х150х80"]}],"is_variable":true,"gallery_urls":["https://maksplit.ru/wp-content/uploads/2025/04/0f760f71-d47e-4c4e-af9f-439dc38d655b.png"]},
+      {"slug":"pamyatnik-musulmansky","title":"Памятник из бетона «Мусульманский»","short_description":"Материал: кевларобетон\nМетод: вибролитьё\nЦена: по запросу","full_description":"Классический памятник из кевларобетона «Мусульманский» — идеальное сочетание прочности, долговечности и элегантного дизайна. Изготовлен из кевларобетона методом вибролитья. Прочность В45 (600 кг/см²), морозостойкость F700.","price_range":"По запросу","category":"Памятники из бетона","attributes":[],"is_variable":false,"gallery_urls":["images/p-pamyatnik-musulmansky.jpg"]},
+      {"slug":"pamyatnik-cvetnik","title":"Памятник из бетона с цветником","short_description":"Материал: кевларобетон\nМетод: вибролитьё\nЦена: по запросу","full_description":"Памятник из кевларобетона с цветником — долговечное изделие для благоустройства. Прочность В45 (600 кг/см²), морозостойкость F700, водопоглощение 0.5%. Сочетает прочность бетона с эстетикой натурального камня.","price_range":"По запросу","category":"Памятники из бетона","attributes":[],"is_variable":false,"gallery_urls":["images/p-pamyatnik-cvetnik.jpg"]},
+      {"slug":"pamyatnik-krest","title":"Памятник из бетона «Крест с цветником»","short_description":"Материал: кевларобетон\nМетод: вибролитьё\nЦена: по запросу","full_description":"Памятник из кевларобетона «Крест с цветником» — вневременной символ памяти. Создан с особым вниманием к деталям и уважением к традициям. Прочность В45 (600 кг/см²), морозостойкость F700.","price_range":"По запросу","category":"Памятники из бетона","attributes":[],"is_variable":false,"gallery_urls":["images/p-pamyatnik-krest.jpg"]}
+    ];
+
+    // ── LOCAL IMAGE MAP (for file:// display) ──
+    const IMAGE_MAP = {
+      'domino':'images/p-domino.jpg',
+      'krakovskij-klever':'images/p-krakovskij-klever.png',
+      'doska':'images/p-doska.png',
+      'staryj-gorod':'images/p-staryj-gorod.png',
+      'kamennyj-czvetok':'images/p-kamennyj-czvetok.jpg',
+      'staryj-arbat':'images/p-staryj-arbat.png',
+      'grecziya':'images/p-grecziya.png',
+      'kirpichik':'images/p-kirpichik.png',
+      'osen':'images/p-osen.png',
+      'kaliforniya-kamen':'images/p-kaliforniya-kamen.png',
+      'kaliforniya-derevo':'images/p-kaliforniya-derevo.png',
+      'kaliforniya-kubik':'images/p-kaliforniya-kubik.png',
+      'parket':'images/p-parket.png',
+      'tuchka':'images/p-tuchka.jpeg',
+      'galka':'images/p-galka.png',
+      'eko-parkovka':'images/c-eko-parkovka.png',
+      'bordyury':'images/c-bordyury.png',
+      'vodostoki':'images/p-vodostoki.png',
+      'romb-uzornyj':'images/p-romb-uzornyj.png',
+      'pamyatnik-musulmansky':'images/p-pamyatnik-musulmansky.jpg',
+      'pamyatnik-cvetnik':'images/p-pamyatnik-cvetnik.jpg',
+      'pamyatnik-krest':'images/p-pamyatnik-krest.jpg'
+    };
+
+    // ── GET LOCAL IMAGE ──
+    function getLocalImage(slug) {
+      if (IMAGE_MAP[slug]) return IMAGE_MAP[slug];
+      // памятники
+      const decoded = decodeURIComponent(slug);
+      if (decoded.includes('мусульманск')) return 'images/p-pamyatnik-musulmansky.jpg';
+      if (decoded.includes('цветником') && !decoded.includes('крест')) return 'images/p-pamyatnik-cvetnik.jpg';
+      if (decoded.includes('крест')) return 'images/p-pamyatnik-krest.jpg';
+      if (decoded.includes('ромб')) return 'images/p-romb-uzornyj.png';
+      return null;
+    }
+
+    // ── PARSE SHORT DESCRIPTION INTO SPECS ──
+    function parseSpecs(shortDesc) {
+      if (!shortDesc) return [];
+      const specs = [];
+      const text = shortDesc.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+
+      // Extract dimensions
+      const dimMatch = text.match(/Размер[ыы]?,\s*мм[.:]?\s*(.+?)(?:\n|$)/i);
+      if (dimMatch) specs.push({ label: 'Размеры', value: dimMatch[1].trim().replace(/\s+/g, ' ') });
+
+      // Extract thickness
+      const thickMatch = text.match(/Толщина,\s*мм[.:]?\s*(\d+)/i);
+      if (thickMatch) specs.push({ label: 'Толщина', value: thickMatch[1] + ' мм' });
+
+      // Extract quantity per m²
+      const qtyMatch = text.match(/Кол-во\s*(?:в\s*)?1\s*м2[.:]?\s*(\d+)\s*шт/i);
+      if (qtyMatch) specs.push({ label: 'Кол-во в м²', value: qtyMatch[1] + ' шт.' });
+
+      // Extract prices from text
+      const greyPrice = text.match(/Серый[.:]?\s*(\d+)\s*руб/i);
+      const colorPrice = text.match(/(?:В\s*)?Цвет(?:ной|е)[.:]?\s*(\d+)\s*руб/i);
+      const marblePrice = text.match(/Мрамор\s*(?:из\s*бетона)?[.:]?\s*(\d+)\s*руб/i);
+
+      if (greyPrice) specs.push({ label: 'Цена (серый)', value: greyPrice[1] + ' ₽/м²' });
+      if (colorPrice && !greyPrice) specs.push({ label: 'Цена (цветной)', value: colorPrice[1] + ' ₽/м²' });
+      if (colorPrice && greyPrice) specs.push({ label: 'Цена (цветной)', value: colorPrice[1] + ' ₽/м²' });
+      if (marblePrice) specs.push({ label: 'Цена (мрамор)', value: marblePrice[1] + ' ₽/м²' });
+
+      // If no structured prices found, try generic price
+      if (!greyPrice && !colorPrice && !marblePrice) {
+        const priceMatch = text.match(/Цена[.:]?\s*(?:от\s*)?(\d+)\s*руб/i);
+        if (priceMatch) specs.push({ label: 'Цена', value: priceMatch[1] + ' ₽/м²' });
+      }
+
+      return specs;
+    }
+
+    // ── GET PRICE BY COLOR ──
+    function getPriceForColor(shortDesc, colorOption) {
+      if (!shortDesc) return null;
+      const text = shortDesc.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\r\n/g, '\n');
+
+      const opt = colorOption.toLowerCase();
+      if (opt.includes('серый') || opt.includes('белый')) {
+        const m = text.match(/Серый[.:]?\s*(\d+)\s*руб/i);
+        if (m) return m[1];
+      }
+      if (opt.includes('цвет') || opt.includes('цветной')) {
+        const m = text.match(/(?:В\s*)?Цвет(?:ной|е)[.:]?\s*(\d+)\s*руб/i);
+        if (m) return m[1];
+      }
+      if (opt.includes('мрамор')) {
+        const m = text.match(/Мрамор\s*(?:из\s*бетона)?[.:]?\s*(\d+)\s*руб/i);
+        if (m) return m[1];
+      }
+      return null;
+    }
+
+    // ── GET BORDYUR/VODOSTOK PRICE BY SIZE ──
+    function getPriceForSize(shortDesc, sizeOption) {
+      if (!shortDesc) return null;
+      const text = shortDesc.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\r\n/g, '\n');
+      const lines = text.split('\n');
+      for (const line of lines) {
+        if (line.includes(sizeOption)) {
+          const m = line.match(/(\d+)\s*руб/);
+          if (m) return m[1];
+        }
+      }
+      return null;
+    }
+
+    // ── CLEAN FULL DESCRIPTION ──
+    function cleanDescription(html) {
+      if (!html) return '';
+      // Remove <h1>, <h3>, <hr> tags but keep their text content
+      let cleaned = html
+        .replace(/<h1[^>]*>/gi, '<p class="font-display text-xl font-semibold text-[var(--color-text-primary)]" style="font-family: var(--font-display);">')
+        .replace(/<\/h1>/gi, '</p>')
+        .replace(/<h3[^>]*>/gi, '<p class="font-display text-lg font-semibold text-[var(--color-text-primary)] mt-6" style="font-family: var(--font-display);">')
+        .replace(/<\/h3>/gi, '</p>')
+        .replace(/<hr\s*\/?>/gi, '<div class="my-4 border-t border-[var(--color-border)]"></div>')
+        .replace(/<div[^>]*class="my-2"[^>]*><\/div>/gi, '')
+        .replace(/<div[^>]*>/gi, '')
+        .replace(/<\/div>/gi, '')
+        .replace(/<strong[^>]*>/gi, '<strong>')
+        .replace(/<ul>/gi, '<ul class="list-disc pl-5 space-y-1">')
+        .replace(/<ol[^>]*>/gi, '<ol class="list-decimal pl-5 space-y-1">')
+        .replace(/<li>/gi, '<li>')
+        .replace(/data-spm-anchor-id="[^"]*"/gi, '')
+        .replace(/class="[^"]*"/gi, '')
+        .replace(/\r\n/g, '\n')
+        .replace(/\r/g, '\n');
+      // Split into paragraphs
+      const paragraphs = cleaned.split(/\n\n+/).filter(p => p.trim());
+      return paragraphs.map(p => `<p>${p.trim()}</p>`).join('\n');
+    }
+
+    // ── RENDER PRODUCT ──
+    function renderProduct(product) {
+      if (!product) {
+        document.getElementById('not-found').classList.add('visible');
+        document.getElementById('product-content').classList.add('hidden');
+        return;
+      }
+      document.getElementById('not-found').classList.remove('visible');
+      document.getElementById('product-content').classList.remove('hidden');
+
+      // Document title
+      document.title = product.title + ' — СтройМакс';
+
+      // Breadcrumbs
+      document.getElementById('breadcrumb-title').textContent = product.title;
+
+      // Category badge
+      const catEl = document.getElementById('product-category');
+      catEl.textContent = product.category;
+
+      // Title
+      document.getElementById('product-title').textContent = product.title;
+
+      // Price
+      const priceEl = document.getElementById('product-price');
+      priceEl.textContent = product.price_range;
+      priceEl.dataset.defaultPrice = product.price_range;
+
+      // Short description
+      const shortDescText = product.short_description
+        ? product.short_description.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\r\n/g, ' ').replace(/\s+/g, ' ').trim().substring(0, 200)
+        : '';
+      document.getElementById('product-short-desc').textContent = shortDescText;
+
+      // Specs
+      const specs = parseSpecs(product.short_description);
+      const specsDl = document.getElementById('product-specs');
+      specsDl.innerHTML = '';
+      if (specs.length === 0) {
+        specsDl.innerHTML = '<p class="text-sm text-[var(--color-text-muted)]">Характеристики уточняйте по телефону</p>';
+      } else {
+        specs.forEach(s => {
+          specsDl.innerHTML += `
+            <div class="flex justify-between gap-4 border-b border-[var(--color-border)] pb-2 last:border-0 last:pb-0">
+              <dt class="text-sm font-medium text-[var(--color-text-primary)]">${s.label}</dt>
+              <dd class="text-sm text-[var(--color-text-secondary)] text-right">${s.value}</dd>
+            </div>`;
+        });
+      }
+
+      // Gallery
+      const mainImg = document.getElementById('main-image');
+      const localImg = getLocalImage(product.slug);
+      const primarySrc = localImg || (product.gallery_urls && product.gallery_urls[0]) || '';
+      mainImg.src = primarySrc;
+      mainImg.alt = product.title;
+
+      const thumbsContainer = document.getElementById('gallery-thumbs');
+      thumbsContainer.innerHTML = '';
+      if (product.gallery_urls && product.gallery_urls.length > 1) {
+        product.gallery_urls.forEach((url, idx) => {
+          const thumbSrc = getLocalImage(product.slug) && idx === 0 ? localImg : url;
+          const thumb = document.createElement('button');
+          thumb.className = 'gallery-thumb flex-shrink-0 w-16 h-16 rounded-2xl border-2 overflow-hidden bg-[var(--color-bg-alt)] opacity-60 hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-2';
+          if (idx === 0) thumb.classList.add('active');
+          thumb.setAttribute('aria-label', 'Изображение ' + (idx + 1));
+          thumb.innerHTML = `<img src="${thumbSrc}" alt="${product.title} — фото ${idx + 1}" class="w-full h-full object-contain">`;
+          thumb.addEventListener('click', () => {
+            mainImg.src = thumbSrc;
+            thumbsContainer.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
+            thumb.classList.add('active');
+          });
+          thumbsContainer.appendChild(thumb);
+        });
+      }
+
+      // Color variations
+      const colorSection = document.getElementById('color-variations');
+      const colorSwatches = document.getElementById('color-swatches');
+      const sizeSection = document.getElementById('size-variations');
+      const sizeSwatches = document.getElementById('size-swatches');
+
+      colorSwatches.innerHTML = '';
+      sizeSwatches.innerHTML = '';
+      colorSection.classList.add('hidden');
+      sizeSection.classList.add('hidden');
+
+      if (product.is_variable && product.attributes && product.attributes.length > 0) {
+        const attr = product.attributes[0];
+        const attrName = (attr.name || '').toLowerCase();
+
+        if (attrName === 'цвет' && attr.options && attr.options.length > 0) {
+          colorSection.classList.remove('hidden');
+          attr.options.forEach((opt, idx) => {
+            const btn = document.createElement('button');
+            btn.className = 'color-swatch rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2 text-sm font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]';
+            if (idx === 0) btn.classList.add('active');
+            btn.textContent = opt;
+            btn.setAttribute('role', 'radio');
+            btn.setAttribute('aria-checked', idx === 0 ? 'true' : 'false');
+            btn.setAttribute('aria-label', 'Цвет: ' + opt);
+            btn.dataset.option = opt;
+            btn.addEventListener('click', () => {
+              colorSwatches.querySelectorAll('.color-swatch').forEach(b => {
+                b.classList.remove('active');
+                b.setAttribute('aria-checked', 'false');
+              });
+              btn.classList.add('active');
+              btn.setAttribute('aria-checked', 'true');
+              const price = getPriceForColor(product.short_description, opt);
+              if (price) {
+                priceEl.textContent = price + ' ₽/м²';
+              }
+            });
+            colorSwatches.appendChild(btn);
+          });
+        } else if ((attrName === 'размеры' || attrName === 'размер') && attr.options && attr.options.length > 0) {
+          sizeSection.classList.remove('hidden');
+          attr.options.forEach((opt, idx) => {
+            const btn = document.createElement('button');
+            btn.className = 'color-swatch rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2 text-sm font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]';
+            if (idx === 0) btn.classList.add('active');
+            btn.textContent = opt + ' мм';
+            btn.setAttribute('role', 'radio');
+            btn.setAttribute('aria-checked', idx === 0 ? 'true' : 'false');
+            btn.setAttribute('aria-label', 'Размер: ' + opt);
+            btn.dataset.option = opt;
+            btn.addEventListener('click', () => {
+              sizeSwatches.querySelectorAll('.color-swatch').forEach(b => {
+                b.classList.remove('active');
+                b.setAttribute('aria-checked', 'false');
+              });
+              btn.classList.add('active');
+              btn.setAttribute('aria-checked', 'true');
+              const price = getPriceForSize(product.short_description, opt);
+              if (price) {
+                priceEl.textContent = price + ' ₽/м²';
+              }
+            });
+            sizeSwatches.appendChild(btn);
+          });
+        }
+      }
+
+      // CTA link
+      const ctaLink = document.getElementById('cta-calculate');
+      ctaLink.href = 'home-v8.html#cta?product=' + encodeURIComponent(product.slug);
+
+      // Full description
+      const descSection = document.getElementById('description-section');
+      const descEl = document.getElementById('product-description');
+      if (product.full_description) {
+        descSection.classList.remove('hidden');
+        descEl.innerHTML = cleanDescription(product.full_description);
+      } else {
+        descSection.classList.add('hidden');
+      }
+
+      // Related products
+      renderRelated(product);
+    }
+
+    // ── RENDER RELATED PRODUCTS ──
+    function renderRelated(current) {
+      const related = PRODUCTS.filter(p => p.category === current.category && p.slug !== current.slug).slice(0, 4);
+      const section = document.getElementById('related-section');
+      const grid = document.getElementById('related-grid');
+
+      if (related.length === 0) {
+        section.classList.add('hidden');
+        return;
+      }
+      section.classList.remove('hidden');
+      grid.innerHTML = '';
+
+      related.forEach(p => {
+        const localImg = getLocalImage(p.slug);
+        const imgSrc = localImg || (p.gallery_urls && p.gallery_urls[0]) || '';
+        const card = document.createElement('article');
+        card.className = 'reveal hover-lift group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] overflow-hidden flex flex-col';
+        card.style.borderRadius = 'var(--radius)';
+        card.innerHTML = `
+          <div class="aspect-square bg-[var(--color-bg-alt)] flex items-center justify-center p-6">
+            <img src="${imgSrc}" alt="${p.title}" class="w-full h-full object-contain" loading="lazy">
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <span class="inline-flex self-start rounded-2xl bg-[var(--color-primary-subtle)] px-3 py-0.5 text-xs font-medium text-[var(--color-primary)]" style="font-family: var(--font-body);">${p.category}</span>
+            <h3 class="mt-3 font-display text-base font-semibold leading-tight text-[var(--color-text-primary)]" style="font-family: var(--font-display);">${p.title}</h3>
+            <div class="mt-auto pt-4 flex items-center justify-between">
+              <span class="text-sm font-bold text-[var(--color-primary)]" style="font-family: var(--font-body);">${p.price_range}</span>
+              <a href="product.html?slug=${encodeURIComponent(p.slug)}" class="rounded-2xl border border-[var(--color-border)] px-3 py-2 text-sm font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]" style="font-family: var(--font-body);">Подробнее</a>
+            </div>
+          </div>`;
+        grid.appendChild(card);
+      });
+
+      // Re-trigger reveal for related cards
+      setTimeout(() => {
+        document.querySelectorAll('#related-grid .reveal').forEach(el => observer.observe(el));
+      }, 100);
+    }
+
+    // ── INIT ──
+    const params = new URLSearchParams(window.location.search);
+    let slug = params.get('slug') || params.get('id') || 'domino';
+    // Decode if needed
+    try { slug = decodeURIComponent(slug); } catch(e) {}
+
+    const product = PRODUCTS.find(p => p.slug === slug || decodeURIComponent(p.slug) === slug);
+    renderProduct(product);
+
+    // ── Mobile menu toggle ──
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+
+    mobileToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('hidden');
+      mobileToggle.setAttribute('aria-expanded', !isOpen);
+      menuIconOpen.classList.toggle('hidden', !isOpen);
+      menuIconClose.classList.toggle('hidden', isOpen);
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        menuIconOpen.classList.remove('hidden');
+        menuIconClose.classList.add('hidden');
+      });
+    });
+
+    // ── Scroll reveal ──
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('is-visible');
+      }),
+      { threshold: 0.05, rootMargin: '0px 0px -30px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,677 @@
+[
+  {
+    "id": 6143,
+    "parent_id": 6132,
+    "parent_slug": "domino",
+    "attributes": {
+      "цвет": "Белый"
+    },
+    "price": "850",
+    "regular_price": "850",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: Белый"
+  },
+  {
+    "id": 6144,
+    "parent_id": 6132,
+    "parent_slug": "domino",
+    "attributes": {
+      "цвет": "Цветной"
+    },
+    "price": "1100",
+    "regular_price": "1100",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: Цветной"
+  },
+  {
+    "id": 6146,
+    "parent_id": 6134,
+    "parent_slug": "krakovskij-klever",
+    "attributes": {
+      "цвет": "Белый"
+    },
+    "price": "850",
+    "regular_price": "850",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: Белый"
+  },
+  {
+    "id": 6147,
+    "parent_id": 6134,
+    "parent_slug": "krakovskij-klever",
+    "attributes": {
+      "цвет": "В цвете"
+    },
+    "price": "1100",
+    "regular_price": "1100",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: В цвете"
+  },
+  {
+    "id": 6153,
+    "parent_id": 6135,
+    "parent_slug": "doska",
+    "attributes": {
+      "цвет": "Серый"
+    },
+    "price": "850",
+    "regular_price": "850",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: Серый"
+  },
+  {
+    "id": 6154,
+    "parent_id": 6135,
+    "parent_slug": "doska",
+    "attributes": {
+      "цвет": "В цвете"
+    },
+    "price": "1100",
+    "regular_price": "1100",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: В цвете"
+  },
+  {
+    "id": 6157,
+    "parent_id": 6156,
+    "parent_slug": "staryj-gorod",
+    "attributes": {
+      "цвет": "Серый"
+    },
+    "price": "850",
+    "regular_price": "850",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: Серый"
+  },
+  {
+    "id": 6158,
+    "parent_id": 6156,
+    "parent_slug": "staryj-gorod",
+    "attributes": {
+      "цвет": "В цвете"
+    },
+    "price": "1100",
+    "regular_price": "1100",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: В цвете"
+  },
+  {
+    "id": 6162,
+    "parent_id": 6161,
+    "parent_slug": "kamennyj-czvetok",
+    "attributes": {
+      "цвет": "Серый"
+    },
+    "price": "850",
+    "regular_price": "850",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: Серый"
+  },
+  {
+    "id": 6163,
+    "parent_id": 6161,
+    "parent_slug": "kamennyj-czvetok",
+    "attributes": {
+      "цвет": "В цвете"
+    },
+    "price": "1100",
+    "regular_price": "1100",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: В цвете"
+  },
+  {
+    "id": 6167,
+    "parent_id": 6166,
+    "parent_slug": "staryj-arbat",
+    "attributes": {
+      "цвет": "Серый"
+    },
+    "price": "850",
+    "regular_price": "850",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: Серый"
+  },
+  {
+    "id": 6168,
+    "parent_id": 6166,
+    "parent_slug": "staryj-arbat",
+    "attributes": {
+      "цвет": "Мрамор из бетона"
+    },
+    "price": "1100",
+    "regular_price": "1100",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: Мрамор из бетона"
+  },
+  {
+    "id": 6172,
+    "parent_id": 6161,
+    "parent_slug": "kamennyj-czvetok",
+    "attributes": {
+      "цвет": "Мрамор из бетона"
+    },
+    "price": "1100",
+    "regular_price": "1100",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: Мрамор из бетона"
+  },
+  {
+    "id": 6173,
+    "parent_id": 6156,
+    "parent_slug": "staryj-gorod",
+    "attributes": {
+      "цвет": "Мрамор из бетона"
+    },
+    "price": "1100",
+    "regular_price": "1100",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: Мрамор из бетона"
+  },
+  {
+    "id": 6186,
+    "parent_id": 6185,
+    "parent_slug": "kaliforniya-kamen",
+    "attributes": {
+      "цвет": "Мрамор из бетона"
+    },
+    "price": "1100",
+    "regular_price": "1100",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: Мрамор из бетона"
+  },
+  {
+    "id": 6187,
+    "parent_id": 6185,
+    "parent_slug": "kaliforniya-kamen",
+    "attributes": {
+      "цвет": "Серый"
+    },
+    "price": "850",
+    "regular_price": "850",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: Серый"
+  },
+  {
+    "id": 6188,
+    "parent_id": 6185,
+    "parent_slug": "kaliforniya-kamen",
+    "attributes": {
+      "цвет": "В цвете"
+    },
+    "price": "1100",
+    "regular_price": "1100",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: В цвете"
+  },
+  {
+    "id": 6196,
+    "parent_id": 6195,
+    "parent_slug": "kaliforniya-derevo",
+    "attributes": {
+      "цвет": "Мрамор из бетона"
+    },
+    "price": "1100",
+    "regular_price": "1100",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: Мрамор из бетона"
+  },
+  {
+    "id": 6197,
+    "parent_id": 6195,
+    "parent_slug": "kaliforniya-derevo",
+    "attributes": {
+      "цвет": "Серый"
+    },
+    "price": "850",
+    "regular_price": "850",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: Серый"
+  },
+  {
+    "id": 6198,
+    "parent_id": 6195,
+    "parent_slug": "kaliforniya-derevo",
+    "attributes": {
+      "цвет": "В цвете"
+    },
+    "price": "1100",
+    "regular_price": "1100",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: В цвете"
+  },
+  {
+    "id": 6203,
+    "parent_id": 6202,
+    "parent_slug": "kaliforniya-kubik",
+    "attributes": {
+      "цвет": "Мрамор из бетона"
+    },
+    "price": "1100",
+    "regular_price": "1100",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: Мрамор из бетона"
+  },
+  {
+    "id": 6204,
+    "parent_id": 6202,
+    "parent_slug": "kaliforniya-kubik",
+    "attributes": {
+      "цвет": "Серый"
+    },
+    "price": "850",
+    "regular_price": "850",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: Серый"
+  },
+  {
+    "id": 6205,
+    "parent_id": 6202,
+    "parent_slug": "kaliforniya-kubik",
+    "attributes": {
+      "цвет": "В цвете"
+    },
+    "price": "1100",
+    "regular_price": "1100",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: В цвете"
+  },
+  {
+    "id": 6207,
+    "parent_id": 6206,
+    "parent_slug": "parket",
+    "attributes": {
+      "цвет": "Мрамор из бетона"
+    },
+    "price": "1100",
+    "regular_price": "1100",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: Мрамор из бетона"
+  },
+  {
+    "id": 6208,
+    "parent_id": 6206,
+    "parent_slug": "parket",
+    "attributes": {
+      "цвет": "Серый"
+    },
+    "price": "850",
+    "regular_price": "850",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: Серый"
+  },
+  {
+    "id": 6209,
+    "parent_id": 6206,
+    "parent_slug": "parket",
+    "attributes": {
+      "цвет": "В цвете"
+    },
+    "price": "1100",
+    "regular_price": "1100",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: В цвете"
+  },
+  {
+    "id": 6211,
+    "parent_id": 6210,
+    "parent_slug": "tuchka",
+    "attributes": {
+      "цвет": "В цвете"
+    },
+    "price": "1100",
+    "regular_price": "1100",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: В цвете"
+  },
+  {
+    "id": 6212,
+    "parent_id": 6210,
+    "parent_slug": "tuchka",
+    "attributes": {
+      "цвет": "Серый"
+    },
+    "price": "850",
+    "regular_price": "850",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: Серый"
+  },
+  {
+    "id": 6213,
+    "parent_id": 6210,
+    "parent_slug": "tuchka",
+    "attributes": {
+      "цвет": "Мрамор из бетона"
+    },
+    "price": "1100",
+    "regular_price": "1100",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: Мрамор из бетона"
+  },
+  {
+    "id": 6215,
+    "parent_id": 6214,
+    "parent_slug": "galka",
+    "attributes": {
+      "цвет": "Мрамор из бетона"
+    },
+    "price": "1100",
+    "regular_price": "1100",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: Мрамор из бетона"
+  },
+  {
+    "id": 6216,
+    "parent_id": 6214,
+    "parent_slug": "galka",
+    "attributes": {
+      "цвет": "Серый"
+    },
+    "price": "850",
+    "regular_price": "850",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: Серый"
+  },
+  {
+    "id": 6217,
+    "parent_id": 6214,
+    "parent_slug": "galka",
+    "attributes": {
+      "цвет": "В цвете"
+    },
+    "price": "1100",
+    "regular_price": "1100",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: В цвете"
+  },
+  {
+    "id": 6220,
+    "parent_id": 6219,
+    "parent_slug": "kirpichik",
+    "attributes": {
+      "цвет": "Серый"
+    },
+    "price": "850",
+    "regular_price": "850",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: Серый"
+  },
+  {
+    "id": 6221,
+    "parent_id": 6219,
+    "parent_slug": "kirpichik",
+    "attributes": {
+      "цвет": "В цвете"
+    },
+    "price": "1100",
+    "regular_price": "1100",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: В цвете"
+  },
+  {
+    "id": 6226,
+    "parent_id": 6225,
+    "parent_slug": "osen",
+    "attributes": {
+      "цвет": "Серый"
+    },
+    "price": "850",
+    "regular_price": "850",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: Серый"
+  },
+  {
+    "id": 6227,
+    "parent_id": 6225,
+    "parent_slug": "osen",
+    "attributes": {
+      "цвет": "В цвете"
+    },
+    "price": "1100",
+    "regular_price": "1100",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: В цвете"
+  },
+  {
+    "id": 6235,
+    "parent_id": 6234,
+    "parent_slug": "bordyury",
+    "attributes": {
+      "размеры": "500х200х60"
+    },
+    "price": "150",
+    "regular_price": "150",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Размеры: 500х200х60"
+  },
+  {
+    "id": 6236,
+    "parent_id": 6234,
+    "parent_slug": "bordyury",
+    "attributes": {
+      "размеры": "1000х200х70"
+    },
+    "price": "300",
+    "regular_price": "300",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Размеры: 1000х200х70"
+  },
+  {
+    "id": 6237,
+    "parent_id": 6234,
+    "parent_slug": "bordyury",
+    "attributes": {
+      "размеры": "500х200х40"
+    },
+    "price": "120",
+    "regular_price": "120",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Размеры: 500х200х40"
+  },
+  {
+    "id": 6239,
+    "parent_id": 6238,
+    "parent_slug": "vodostoki",
+    "attributes": {
+      "размер": "500х150х50"
+    },
+    "price": "200",
+    "regular_price": "200",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Размер: 500х150х50"
+  },
+  {
+    "id": 6240,
+    "parent_id": 6238,
+    "parent_slug": "vodostoki",
+    "attributes": {
+      "размер": "300х150х60"
+    },
+    "price": "150",
+    "regular_price": "150",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Размер: 300х150х60"
+  },
+  {
+    "id": 6241,
+    "parent_id": 6238,
+    "parent_slug": "vodostoki",
+    "attributes": {
+      "размер": "250х150х80"
+    },
+    "price": "150",
+    "regular_price": "150",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Размер: 250х150х80"
+  },
+  {
+    "id": 6440,
+    "parent_id": 6435,
+    "parent_slug": "%d1%80%d0%be%d0%bc%d0%b1-%d1%83%d0%b7%d0%be%d1%80%d0%bd%d1%8b%d0%b9-%d1%82%d1%80%d0%be%d1%82%d1%83%d0%b0%d1%80%d0%bd%d0%b0%d1%8f-%d0%bf%d0%bb%d0%b8%d1%82%d0%ba%d0%b0",
+    "attributes": {
+      "цвет": "Серый"
+    },
+    "price": "850",
+    "regular_price": "850",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: Серый"
+  },
+  {
+    "id": 6441,
+    "parent_id": 6435,
+    "parent_slug": "%d1%80%d0%be%d0%bc%d0%b1-%d1%83%d0%b7%d0%be%d1%80%d0%bd%d1%8b%d0%b9-%d1%82%d1%80%d0%be%d1%82%d1%83%d0%b0%d1%80%d0%bd%d0%b0%d1%8f-%d0%bf%d0%bb%d0%b8%d1%82%d0%ba%d0%b0",
+    "attributes": {
+      "цвет": "В цвете"
+    },
+    "price": "1100",
+    "regular_price": "1100",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: В цвете"
+  },
+  {
+    "id": 6442,
+    "parent_id": 6435,
+    "parent_slug": "%d1%80%d0%be%d0%bc%d0%b1-%d1%83%d0%b7%d0%be%d1%80%d0%bd%d1%8b%d0%b9-%d1%82%d1%80%d0%be%d1%82%d1%83%d0%b0%d1%80%d0%bd%d0%b0%d1%8f-%d0%bf%d0%bb%d0%b8%d1%82%d0%ba%d0%b0",
+    "attributes": {
+      "цвет": "Мрамор из бетона"
+    },
+    "price": "1100",
+    "regular_price": "1100",
+    "sale_price": null,
+    "sku": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "description": "Цвет: Мрамор из бетона"
+  }
+]

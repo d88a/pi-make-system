@@ -1,0 +1,154 @@
+{
+  "total": 110,
+  "succeeded": 88,
+  "failed": 22,
+  "skipped": 0,
+  "failed_list": [
+    {
+      "hostname": "housesof.world",
+      "error": "timeout/connection"
+    },
+    {
+      "hostname": "sort.to",
+      "error": "timeout/connection"
+    },
+    {
+      "hostname": "backofthehouse.com",
+      "error": "timeout/connection"
+    },
+    {
+      "hostname": "adaline.ai",
+      "error": "timeout/connection"
+    },
+    {
+      "hostname": "board.fun",
+      "error": "timeout/connection"
+    },
+    {
+      "hostname": "quechua-lookbook.com",
+      "error": "timeout/connection"
+    },
+    {
+      "hostname": "cwgroup.com",
+      "error": "timeout/connection"
+    },
+    {
+      "hostname": "felixpeault.com",
+      "error": "timeout/connection"
+    },
+    {
+      "hostname": "shuttle.zip",
+      "error": "timeout/connection"
+    },
+    {
+      "hostname": "maryloufaure.com",
+      "error": "timeout/connection"
+    },
+    {
+      "hostname": "cuuut.com",
+      "error": "timeout/connection"
+    },
+    {
+      "hostname": "artefakt.mov",
+      "error": "timeout/connection"
+    },
+    {
+      "hostname": "radaville.studio",
+      "error": "timeout/connection"
+    },
+    {
+      "hostname": "curatr.paris",
+      "error": "timeout/connection"
+    },
+    {
+      "hostname": "studiorhe.com",
+      "error": "timeout/connection"
+    },
+    {
+      "hostname": "vitaarchitecture.com",
+      "error": "timeout/connection"
+    },
+    {
+      "hostname": "xoyozo.fun",
+      "error": "timeout/connection"
+    },
+    {
+      "hostname": "sileent.com",
+      "error": "timeout/connection"
+    },
+    {
+      "hostname": "shotoniphone.lorenzobocchi.com",
+      "error": "timeout/connection"
+    },
+    {
+      "hostname": "measured.site",
+      "error": "timeout/connection"
+    },
+    {
+      "hostname": "duroc.ma",
+      "error": "timeout/connection"
+    },
+    {
+      "hostname": "friendsoffriends.com",
+      "error": "timeout/connection"
+    }
+  ],
+  "avg_duration_ms": 56434,
+  "total_duration_min": 46,
+  "niche_breakdown": {
+    "saas-tech": {
+      "total": 30,
+      "ok": 25,
+      "failed": 5
+    },
+    "minimal": {
+      "total": 53,
+      "ok": 38,
+      "failed": 15
+    },
+    "other": {
+      "total": 59,
+      "ok": 51,
+      "failed": 8
+    },
+    "agency": {
+      "total": 35,
+      "ok": 25,
+      "failed": 10
+    },
+    "creative-animation": {
+      "total": 35,
+      "ok": 32,
+      "failed": 3
+    },
+    "architecture-realestate": {
+      "total": 27,
+      "ok": 20,
+      "failed": 7
+    },
+    "ecommerce": {
+      "total": 28,
+      "ok": 22,
+      "failed": 6
+    },
+    "portfolio": {
+      "total": 22,
+      "ok": 16,
+      "failed": 6
+    },
+    "dark": {
+      "total": 11,
+      "ok": 8,
+      "failed": 3
+    },
+    "universal-creative": {
+      "total": 5,
+      "ok": 4,
+      "failed": 1
+    }
+  },
+  "screenshot_viewport": 48,
+  "screenshot_full": 46,
+  "font_detection_rate": "55%",
+  "completed_at": "2026-07-23T12:32:42.226Z"
+}

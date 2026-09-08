@@ -1,0 +1,143 @@
+{
+  "url": "https://cushion.so",
+  "hostname": "cushion.so",
+  "title": "Cushion",
+  "niches": [
+    "dark"
+  ],
+  "extracted_at": "2026-07-23",
+  "extract_duration_ms": 90665,
+  "page_metrics": {
+    "page_height_px": 8202,
+    "viewport_width": 1440,
+    "section_count": 18,
+    "has_sticky_nav": true,
+    "has_announcement_bar": false
+  },
+  "colors": {
+    "top_palette": [
+      [
+        "#1F1F1F",
+        0.75
+      ],
+      [
+        "#E0E0E0",
+        0.12
+      ],
+      [
+        "#EBEBEB",
+        0.04
+      ],
+      [
+        "#858585",
+        0.03
+      ],
+      [
+        "#FCFCFC",
+        0.01
+      ],
+      [
+        "#FAFAFA",
+        0.01
+      ],
+      [
+        "#666666",
+        0.01
+      ],
+      [
+        "#8F8F8F",
+        0.01
+      ]
+    ],
+    "bg_main": "#E0E0E0",
+    "text_main": "#1F1F1F",
+    "is_dark": false,
+    "bg_luminance": 0.88,
+    "primary_hue": 0,
+    "accent_hue": 0,
+    "accent_saturation_avg": 0,
+    "palette_size": 8
+  },
+  "typography": {
+    "display_font": "Inter Tight",
+    "body_font": "ui-sans-serif",
+    "fonts_used": [
+      "ui-sans-serif",
+      "Inter Tight"
+    ],
+    "hero_h1_size_px": 60,
+    "body_size_px": 16,
+    "body_line_height": 1.5,
+    "display_weight": 600,
+    "font_count": 2
+  },
+  "layout": {
+    "hero_type": "centered",
+    "hero_signals": {
+      "has_large_image": false,
+      "image_position": "center",
+      "image_width_pct": 3,
+      "has_centered_text": true
+    },
+    "section_sequence": [
+      "hero",
+      "nav",
+      "features",
+      "content",
+      "features",
+      "features",
+      "features",
+      "features",
+      "features",
+      "features",
+      "content",
+      "features",
+      "nav",
+      "content",
+      "nav"
+    ],
+    "section_types": {
+      "hero": 1,
+      "nav": 4,
+      "features": 9,
+      "content": 3,
+      "footer": 1
+    },
+    "has_asymmetric_grid": true,
+    "grid_cols_max": 5,
+    "card_count": 425,
+    "card_aspect": "16/9",
+    "has_bento": true
+  },
+  "mood": {
+    "radius_avg_px": 9761283,
+    "radius_distribution": {
+      "0": 0.16,
+      "4": 0.07,
+      "8": 0.47,
+      "12": 0,
+      "16": 0,
+      "24": 0,
+      "999": 0.29
+    },
+    "density_padding_avg_px": 131,
+    "shadow_usage": "medium",
+    "animation_count": 113,
+    "transition_durations_ms": [
+      100,
+      150,
+      200,
+      500
+    ],
+    "has_gradient": true,
+    "dark_mode": false,
+    "monochrome": false
+  },
+  "raw_extras": {
+    "nav_links_count": 9,
+    "button_count": 32,
+    "primary_button_radius_px": 6,
+    "image_count": 16,
+    "form_count": 0
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "url": "https://diamondrosesanctuary.com",
+  "hostname": "diamondrosesanctuary.com",
+  "title": "Diamond Rose Sanctuary",
+  "niches": [
+    "architecture-realestate",
+    "other"
+  ],
+  "extracted_at": "2026-07-23",
+  "extract_duration_ms": 13054,
+  "page_metrics": {
+    "page_height_px": 16805,
+    "viewport_width": 1440,
+    "section_count": 17,
+    "has_sticky_nav": true,
+    "has_announcement_bar": false
+  },
+  "colors": {
+    "top_palette": [
+      [
+        "#303030",
+        0.61
+      ],
+      [
+        "#DFD7C9",
+        0.26
+      ],
+      [
+        "#F2EADA",
+        0.11
+      ],
+      [
+        "#20462B",
+        0.01
+      ],
+      [
+        "#1A3822",
+        0
+      ],
+      [
+        "#112617",
+        0
+      ]
+    ],
+    "bg_main": "#DFD7C9",
+    "text_main": "#303030",
+    "is_dark": false,
+    "bg_luminance": 0.85,
+    "primary_hue": 137,
+    "accent_hue": 40,
+    "accent_saturation_avg": 40,
+    "palette_size": 6
+  },
+  "typography": {
+    "display_font": "Aime",
+    "body_font": "Aime",
+    "fonts_used": [
+      "Aime",
+      "Times New Roman",
+      "NM"
+    ],
+    "hero_h1_size_px": 84,
+    "body_size_px": 14,
+    "body_line_height": 1.1,
+    "display_weight": 300,
+    "font_count": 3
+  },
+  "layout": {
+    "hero_type": "product-showcase",
+    "hero_signals": {
+      "has_large_image": true,
+      "image_position": "center",
+      "image_width_pct": 100,
+      "has_centered_text": true
+    },
+    "section_sequence": [
+      "hero",
+      "hero",
+      "hero",
+      "hero",
+      "hero",
+      "content",
+      "content",
+      "hero",
+      "content",
+      "content",
+      "gallery",
+      "content",
+      "content",
+      "content",
+      "cta"
+    ],
+    "section_types": {
+      "hero": 6,
+      "content": 7,
+      "gallery": 2,
+      "cta": 1,
+      "footer": 1
+    },
+    "has_asymmetric_grid": false,
+    "grid_cols_max": 3,
+    "card_count": 12,
+    "card_aspect": "16/9",
+    "has_bento": false
+  },
+  "mood": {
+    "radius_avg_px": 1,
+    "radius_distribution": {
+      "0": 0.71,
+      "4": 0.29,
+      "8": 0,
+      "12": 0,
+      "16": 0,
+      "24": 0,
+      "999": 0
+    },
+    "density_padding_avg_px": 48,
+    "shadow_usage": "none",
+    "animation_count": 25,
+    "transition_durations_ms": [
+      400,
+      450
+    ],
+    "has_gradient": false,
+    "dark_mode": false,
+    "monochrome": false
+  },
+  "raw_extras": {
+    "nav_links_count": 7,
+    "button_count": 13,
+    "primary_button_radius_px": 0,
+    "image_count": 16,
+    "form_count": 1
+  }
+}

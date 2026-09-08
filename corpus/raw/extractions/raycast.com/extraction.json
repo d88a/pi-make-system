@@ -1,0 +1,147 @@
+{
+  "url": "https://raycast.com",
+  "hostname": "raycast.com",
+  "title": "Raycast",
+  "niches": [
+    "saas-tech",
+    "creative-animation"
+  ],
+  "extracted_at": "2026-07-23",
+  "extract_duration_ms": 64272,
+  "page_metrics": {
+    "page_height_px": 15626,
+    "viewport_width": 1440,
+    "section_count": 39,
+    "has_sticky_nav": true,
+    "has_announcement_bar": false
+  },
+  "colors": {
+    "top_palette": [
+      [
+        "#FFFFFF",
+        0.83
+      ],
+      [
+        "#9C9C9D",
+        0.07
+      ],
+      [
+        "#434345",
+        0.04
+      ],
+      [
+        "#6A6B6C",
+        0.03
+      ],
+      [
+        "#E6E6E6",
+        0.02
+      ],
+      [
+        "#2F3031",
+        0
+      ],
+      [
+        "#08090C",
+        0
+      ],
+      [
+        "#000000",
+        0
+      ]
+    ],
+    "bg_main": "#FFFFFF",
+    "text_main": "#9C9C9D",
+    "is_dark": false,
+    "bg_luminance": 1,
+    "primary_hue": 225,
+    "accent_hue": 225,
+    "accent_saturation_avg": 20,
+    "palette_size": 8
+  },
+  "typography": {
+    "display_font": "Inter",
+    "body_font": "Inter",
+    "fonts_used": [
+      "Inter",
+      "GeistMono",
+      "SF Pro"
+    ],
+    "hero_h1_size_px": 64,
+    "body_size_px": 16,
+    "body_line_height": 1.2,
+    "display_weight": 600,
+    "font_count": 3
+  },
+  "layout": {
+    "hero_type": "typography",
+    "hero_signals": {
+      "has_large_image": false,
+      "image_position": "none",
+      "image_width_pct": 0,
+      "has_centered_text": true
+    },
+    "section_sequence": [
+      "hero",
+      "hero",
+      "hero",
+      "gallery",
+      "content",
+      "features",
+      "features",
+      "gallery",
+      "stats",
+      "content",
+      "stats",
+      "content",
+      "content",
+      "gallery",
+      "gallery"
+    ],
+    "section_types": {
+      "hero": 3,
+      "gallery": 4,
+      "content": 27,
+      "features": 2,
+      "stats": 2,
+      "footer": 1
+    },
+    "has_asymmetric_grid": true,
+    "grid_cols_max": 5,
+    "card_count": 221,
+    "card_aspect": "16/9",
+    "has_bento": true
+  },
+  "mood": {
+    "radius_avg_px": 7,
+    "radius_distribution": {
+      "0": 0.52,
+      "4": 0.01,
+      "8": 0.11,
+      "12": 0.1,
+      "16": 0.1,
+      "24": 0.15,
+      "999": 0.01
+    },
+    "density_padding_avg_px": 81,
+    "shadow_usage": "heavy",
+    "animation_count": 561,
+    "transition_durations_ms": [
+      150,
+      200,
+      300,
+      400,
+      500
+    ],
+    "has_gradient": false,
+    "dark_mode": false,
+    "monochrome": false
+  },
+  "raw_extras": {
+    "nav_links_count": 13,
+    "button_count": 25,
+    "primary_button_radius_px": 8,
+    "image_count": 115,
+    "form_count": 1
+  }
+}

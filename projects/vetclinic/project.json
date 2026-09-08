@@ -1,0 +1,61 @@
+{
+  "name": "ЛапЛап",
+  "created": "2026-07-14",
+  "status": {
+    "style": "done",
+    "components": "done",
+    "review": "done",
+    "pages": {
+      "index": "done",
+      "services": "done",
+      "about": "done",
+      "contact": "done"
+    }
+  },
+  "pages": [
+    "index",
+    "services",
+    "about",
+    "contact"
+  ],
+  "components": [
+    "nav",
+    "footer",
+    "hero",
+    "card",
+    "button",
+    "page-header",
+    "stats",
+    "contact-form",
+    "team-card"
+  ],
+  "brand": {
+    "colors": [
+      "#059669",
+      "#d97706",
+      "#faf9f7",
+      "#1c1917"
+    ],
+    "fonts": [
+      "Nunito",
+      "Inter"
+    ]
+  },
+  "decisions": [
+    "Дружелюбный стиль для молодых владельцев",
+    "Rounded corners (rounded-2xl для карточек)",
+    "Тёплые тона — sage green + warm amber",
+    "CTA кнопка hero = amber-600 для привлечения внимания (v2, 2026-07-14)",
+    "Nunito для заголовков, Inter для текста",
+    "Адаптация warm-minimal темы с зелёным акцентом"
+  ],
+  "rejected": [
+    "Dark theme — не подходит для медицинской тематики",
+    "Холодные цвета (blue/slate) — не передают теплоту"
+  ],
+  "todo": [
+    "Форма записи на приём",
+    "Галерея питомцев",
+    "Блог о здоровье животных"
+  ]
+}

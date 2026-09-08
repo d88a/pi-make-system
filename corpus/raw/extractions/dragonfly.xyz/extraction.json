@@ -1,0 +1,137 @@
+{
+  "url": "https://www.dragonfly.xyz",
+  "hostname": "dragonfly.xyz",
+  "title": "Dragonfly",
+  "niches": [
+    "saas-tech",
+    "other",
+    "creative-animation"
+  ],
+  "extracted_at": "2026-07-23",
+  "extract_duration_ms": 32681,
+  "page_metrics": {
+    "page_height_px": 13546,
+    "viewport_width": 1440,
+    "section_count": 11,
+    "has_sticky_nav": true,
+    "has_announcement_bar": false
+  },
+  "colors": {
+    "top_palette": [
+      [
+        "#F2F2F2",
+        0.93
+      ],
+      [
+        "#7D7D7D",
+        0.04
+      ],
+      [
+        "#FA4C14",
+        0.02
+      ],
+      [
+        "#000000",
+        0.01
+      ],
+      [
+        "#EC39B6",
+        0
+      ],
+      [
+        "#5014FA",
+        0
+      ]
+    ],
+    "bg_main": "#F2F2F2",
+    "text_main": "#7D7D7D",
+    "is_dark": false,
+    "bg_luminance": 0.95,
+    "primary_hue": 256,
+    "accent_hue": 15,
+    "accent_saturation_avg": 91,
+    "palette_size": 6
+  },
+  "typography": {
+    "display_font": "Times New Roman",
+    "body_font": "Times New Roman",
+    "fonts_used": [
+      "Times New Roman",
+      "FK Roman Standard",
+      "NON Natural Mono",
+      "NON Natural Grotesk"
+    ],
+    "hero_h1_size_px": 0,
+    "body_size_px": 16,
+    "body_line_height": 1.5,
+    "display_weight": 400,
+    "font_count": 4
+  },
+  "layout": {
+    "hero_type": "centered",
+    "hero_signals": {
+      "has_large_image": false,
+      "image_position": "none",
+      "image_width_pct": 0,
+      "has_centered_text": false
+    },
+    "section_sequence": [
+      "nav",
+      "gallery",
+      "hero",
+      "hero",
+      "about",
+      "content",
+      "content",
+      "about",
+      "gallery",
+      "content",
+      "footer"
+    ],
+    "section_types": {
+      "nav": 1,
+      "gallery": 2,
+      "hero": 2,
+      "about": 2,
+      "content": 3,
+      "footer": 1
+    },
+    "has_asymmetric_grid": true,
+    "grid_cols_max": 16,
+    "card_count": 65,
+    "card_aspect": "16/9",
+    "has_bento": true
+  },
+  "mood": {
+    "radius_avg_px": 0,
+    "radius_distribution": {
+      "0": 1,
+      "4": 0,
+      "8": 0,
+      "12": 0,
+      "16": 0,
+      "24": 0,
+      "999": 0
+    },
+    "density_padding_avg_px": 24,
+    "shadow_usage": "none",
+    "animation_count": 841,
+    "transition_durations_ms": [
+      120,
+      350,
+      400,
+      450,
+      600
+    ],
+    "has_gradient": false,
+    "dark_mode": false,
+    "monochrome": false
+  },
+  "raw_extras": {
+    "nav_links_count": 9,
+    "button_count": 1,
+    "primary_button_radius_px": 0,
+    "image_count": 44,
+    "form_count": 0
+  }
+}

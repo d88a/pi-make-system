@@ -1,0 +1,140 @@
+{
+  "url": "https://www.clearwater.london",
+  "hostname": "clearwater.london",
+  "title": "Clearwater",
+  "niches": [
+    "other",
+    "architecture-realestate"
+  ],
+  "extracted_at": "2026-07-23",
+  "extract_duration_ms": 66315,
+  "page_metrics": {
+    "page_height_px": 8864,
+    "viewport_width": 1440,
+    "section_count": 22,
+    "has_sticky_nav": true,
+    "has_announcement_bar": false
+  },
+  "colors": {
+    "top_palette": [
+      [
+        "#252525",
+        0.68
+      ],
+      [
+        "#FFFFFF",
+        0.19
+      ],
+      [
+        "#BFC9DC",
+        0.13
+      ],
+      [
+        "#F7FDFF",
+        0
+      ],
+      [
+        "#C5D3E2",
+        0
+      ],
+      [
+        "#1B1B1B",
+        0
+      ]
+    ],
+    "bg_main": "#FFFFFF",
+    "text_main": "#252525",
+    "is_dark": false,
+    "bg_luminance": 1,
+    "primary_hue": 211,
+    "accent_hue": 195,
+    "accent_saturation_avg": 54,
+    "palette_size": 6
+  },
+  "typography": {
+    "display_font": "Neuemontreal",
+    "body_font": "Neuemontreal",
+    "fonts_used": [
+      "Neuemontreal",
+      "Ryhmesdisplay",
+      "Times New Roman"
+    ],
+    "hero_h1_size_px": 142,
+    "body_size_px": 16,
+    "body_line_height": 1.3,
+    "display_weight": 400,
+    "font_count": 3
+  },
+  "layout": {
+    "hero_type": "centered",
+    "hero_signals": {
+      "has_large_image": false,
+      "image_position": "none",
+      "image_width_pct": 0,
+      "has_centered_text": false
+    },
+    "section_sequence": [
+      "hero",
+      "nav",
+      "hero",
+      "hero",
+      "hero",
+      "hero",
+      "hero",
+      "hero",
+      "hero",
+      "hero",
+      "hero",
+      "hero",
+      "hero",
+      "content",
+      "content"
+    ],
+    "section_types": {
+      "hero": 12,
+      "nav": 1,
+      "content": 4,
+      "gallery": 1,
+      "features": 2,
+      "cta": 1,
+      "footer": 1
+    },
+    "has_asymmetric_grid": true,
+    "grid_cols_max": 3,
+    "card_count": 52,
+    "card_aspect": "4/3",
+    "has_bento": true
+  },
+  "mood": {
+    "radius_avg_px": 11,
+    "radius_distribution": {
+      "0": 0.86,
+      "4": 0,
+      "8": 0,
+      "12": 0,
+      "16": 0,
+      "24": 0,
+      "999": 0.14
+    },
+    "density_padding_avg_px": 160,
+    "shadow_usage": "none",
+    "animation_count": 40,
+    "transition_durations_ms": [
+      300,
+      350,
+      400,
+      450,
+      500
+    ],
+    "has_gradient": false,
+    "dark_mode": false,
+    "monochrome": false
+  },
+  "raw_extras": {
+    "nav_links_count": 10,
+    "button_count": 19,
+    "primary_button_radius_px": 0,
+    "image_count": 17,
+    "form_count": 1
+  }
+}

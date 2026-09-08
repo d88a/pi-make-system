@@ -1,0 +1,102 @@
+{
+  "url": "https://cellag.org",
+  "hostname": "cellag.org",
+  "title": "Cellular Agriculture Society",
+  "niches": [
+    "universal-creative"
+  ],
+  "extracted_at": "2026-07-23",
+  "extract_duration_ms": 8938,
+  "page_metrics": {
+    "page_height_px": 900,
+    "viewport_width": 1440,
+    "section_count": 0,
+    "has_sticky_nav": false,
+    "has_announcement_bar": false
+  },
+  "colors": {
+    "top_palette": [
+      [
+        "#FFFFFF",
+        0.6
+      ],
+      [
+        "#130F4B",
+        0.39
+      ],
+      [
+        "#EEE2D0",
+        0.01
+      ]
+    ],
+    "bg_main": "#FFFFFF",
+    "text_main": "#130F4B",
+    "is_dark": false,
+    "bg_luminance": 1,
+    "primary_hue": 36,
+    "accent_hue": 244,
+    "accent_saturation_avg": 57,
+    "palette_size": 3
+  },
+  "typography": {
+    "display_font": "SuisseIntl",
+    "body_font": "SuisseIntl",
+    "fonts_used": [
+      "SuisseIntl",
+      "Arial"
+    ],
+    "hero_h1_size_px": 70,
+    "body_size_px": 40,
+    "body_line_height": 1.2,
+    "display_weight": 300,
+    "font_count": 2
+  },
+  "layout": {
+    "hero_type": "centered",
+    "hero_signals": {
+      "has_large_image": false,
+      "image_position": "none",
+      "image_width_pct": 0,
+      "has_centered_text": false
+    },
+    "section_sequence": [],
+    "section_types": {},
+    "has_asymmetric_grid": false,
+    "grid_cols_max": 0,
+    "card_count": 7,
+    "card_aspect": "1/1",
+    "has_bento": false
+  },
+  "mood": {
+    "radius_avg_px": 0,
+    "radius_distribution": {
+      "0": 1,
+      "4": 0,
+      "8": 0,
+      "12": 0,
+      "16": 0,
+      "24": 0,
+      "999": 0
+    },
+    "density_padding_avg_px": 24,
+    "shadow_usage": "none",
+    "animation_count": 377,
+    "transition_durations_ms": [
+      100,
+      200,
+      500,
+      700,
+      800
+    ],
+    "has_gradient": false,
+    "dark_mode": false,
+    "monochrome": true
+  },
+  "raw_extras": {
+    "nav_links_count": 10,
+    "button_count": 0,
+    "primary_button_radius_px": 0,
+    "image_count": 45,
+    "form_count": 4
+  }
+}

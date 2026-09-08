@@ -1,0 +1,2483 @@
+{
+  "selected_at": "2026-07-23",
+  "total": 110,
+  "by_niche": {
+    "saas-tech": 30,
+    "minimal": 53,
+    "other": 59,
+    "agency": 35,
+    "creative-animation": 35,
+    "architecture-realestate": 27,
+    "ecommerce": 28,
+    "portfolio": 22,
+    "dark": 11,
+    "universal-creative": 5
+  },
+  "sites": [
+    {
+      "url": "https://phantom.app",
+      "title": "Phantom",
+      "thumbnail": "https://cdn.landing.love/images/phantom-thumb.webp",
+      "tags": [
+        "App",
+        "SaaS",
+        "NFT",
+        "Minimal",
+        "Finance",
+        "DeFi",
+        "Crypto"
+      ],
+      "category": "SaaS",
+      "gallery_entry": "https://www.landing.love/sites/phantom/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "saas-tech",
+        "minimal",
+        "other"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://radga.com",
+      "title": "Rickman Architecture & Design",
+      "thumbnail": "https://cdn.landing.love/images/radga-thumb.webp",
+      "tags": [
+        "Studio",
+        "Agency",
+        "Horizontal Scroll",
+        "Minimal",
+        "Architecture",
+        "Home Living"
+      ],
+      "category": "Architecture",
+      "gallery_entry": "https://www.landing.love/sites/radga/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "agency",
+        "creative-animation",
+        "minimal",
+        "architecture-realestate",
+        "other"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.palmer-dinnerware.com",
+      "title": "Palmer Dinnerware",
+      "thumbnail": "https://cdn.landing.love/images/palmer-dinnerware-thumb.webp",
+      "tags": [
+        "Food Drink",
+        "eCommerce",
+        "Minimal",
+        "Home Living",
+        "Lifestyle",
+        "Business"
+      ],
+      "category": "ECommerce",
+      "gallery_entry": "https://www.landing.love/sites/palmer-dinnerware/",
+      "sources": [
+        "minimal-gallery",
+        "landinglove"
+      ],
+      "niches": [
+        "other",
+        "ecommerce",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.iyo.ai",
+      "title": "iyO AI",
+      "thumbnail": "https://cdn.landing.love/images/iyo-thumb.webp",
+      "tags": [
+        "AI",
+        "Hardware",
+        "Technology",
+        "eCommerce",
+        "Business",
+        "Minimal"
+      ],
+      "category": "Minimal",
+      "gallery_entry": "https://www.landing.love/sites/iyo/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "saas-tech",
+        "other",
+        "ecommerce",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.based.gg",
+      "title": "Based",
+      "thumbnail": "https://cdn.landing.love/images/based-thumb.webp",
+      "tags": [
+        "eCommerce",
+        "Illustration",
+        "OS",
+        "Lifestyle",
+        "Business",
+        "Minimal"
+      ],
+      "category": "ECommerce",
+      "gallery_entry": "https://www.landing.love/sites/based/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "ecommerce",
+        "other",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://ingraoinc.com",
+      "title": "Ingrao",
+      "thumbnail": "https://cdn.landing.love/images/ingraoinc-thumb.webp",
+      "tags": [
+        "Architecture",
+        "Studio",
+        "Design",
+        "Art",
+        "Home Living",
+        "Minimal"
+      ],
+      "category": "Architecture",
+      "gallery_entry": "https://www.landing.love/sites/ingraoinc/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "architecture-realestate",
+        "agency",
+        "other",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.northgarden.com",
+      "title": "NorthGarden",
+      "thumbnail": "https://cdn.landing.love/images/northgarden-thumb.webp",
+      "tags": [
+        "Studio",
+        "3D Website",
+        "Design",
+        "Technology",
+        "Minimal"
+      ],
+      "category": "Minimal",
+      "gallery_entry": "https://www.landing.love/sites/northgarden/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "agency",
+        "creative-animation",
+        "saas-tech",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.lusano.com",
+      "title": "Lusano",
+      "thumbnail": "https://cdn.landing.love/images/lusano-thumb.webp",
+      "tags": [
+        "eCommerce",
+        "Home Living",
+        "Architecture",
+        "Business",
+        "Minimal"
+      ],
+      "category": "ECommerce",
+      "gallery_entry": "https://www.landing.love/sites/lusano/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "ecommerce",
+        "other",
+        "architecture-realestate",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://ponpon-mania.com",
+      "title": "Ponpon Mania",
+      "thumbnail": "https://cdn.landing.love/images/ponpon-mania-thumb.webp",
+      "tags": [
+        "Illustration",
+        "Music",
+        "Lifestyle",
+        "Horizontal Scroll",
+        "Minimal"
+      ],
+      "category": "Gradient",
+      "gallery_entry": "https://www.landing.love/sites/ponpon-mania/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "other",
+        "creative-animation",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.usalproject.com",
+      "title": "Usal Project",
+      "thumbnail": "https://cdn.landing.love/images/usalproject-thumb.webp",
+      "tags": [
+        "Fashion",
+        "eCommerce",
+        "Lifestyle",
+        "Travel",
+        "Minimal"
+      ],
+      "category": "ECommerce",
+      "gallery_entry": "https://www.landing.love/sites/usalproject/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "ecommerce",
+        "other",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.aboutluca.com",
+      "title": "Luca Nardi",
+      "thumbnail": "https://cdn.landing.love/images/aboutluca-thumb.webp",
+      "tags": [
+        "Portfolio",
+        "3D Website",
+        "Development",
+        "Design",
+        "Minimal"
+      ],
+      "category": "Minimal",
+      "gallery_entry": "https://www.landing.love/sites/aboutluca/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "portfolio",
+        "creative-animation",
+        "agency",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://housesof.world",
+      "title": "Houses Of The World",
+      "thumbnail": "https://cdn.landing.love/images/housesofworld-thumb.webp",
+      "tags": [
+        "Photography",
+        "Minimal",
+        "Real Estate",
+        "Travel",
+        "Home Living"
+      ],
+      "category": "Real Estate",
+      "gallery_entry": "https://www.landing.love/sites/housesofworld/",
+      "sources": [
+        "tympanus-webzibition",
+        "minimal-gallery",
+        "landinglove"
+      ],
+      "niches": [
+        "portfolio",
+        "minimal",
+        "architecture-realestate",
+        "other"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://sort.to",
+      "title": "Sort",
+      "thumbnail": "https://minimal.gallery/wp-content/uploads/2025/12/sort.to_-3-900x500.png",
+      "tags": [
+        "startup",
+        "one page",
+        "tools",
+        "saas",
+        "app"
+      ],
+      "category": "",
+      "gallery_entry": "https://minimal.gallery/sort/",
+      "sources": [
+        "minimal-gallery"
+      ],
+      "niches": [
+        "saas-tech",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://backofthehouse.com",
+      "title": "Back of the House",
+      "thumbnail": "https://cdn.landing.love/images/backofthehouse-thumb.webp",
+      "tags": [
+        "Fashion",
+        "Photography",
+        "Architecture",
+        "Minimal",
+        "Studio"
+      ],
+      "category": "Architecture",
+      "gallery_entry": "https://www.landing.love/sites/backofthehouse/",
+      "sources": [
+        "minimal-gallery",
+        "landinglove"
+      ],
+      "niches": [
+        "ecommerce",
+        "portfolio",
+        "architecture-realestate",
+        "minimal",
+        "agency"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://artprize-shadows.com",
+      "title": "Richard Mille Art Prize",
+      "thumbnail": "https://cdn.landing.love/images/artprize-shadows-thumb.webp",
+      "tags": [
+        "3D Website",
+        "Design",
+        "Art",
+        "Lifestyle",
+        "Minimal"
+      ],
+      "category": "3D Website",
+      "gallery_entry": "https://www.landing.love/sites/artprize-shadows/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "creative-animation",
+        "other",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://poetry.camera",
+      "title": "poetry camera",
+      "thumbnail": "https://cdn.landing.love/images/poetry-thumb.webp",
+      "tags": [
+        "Hardware",
+        "Photography",
+        "Lifestyle",
+        "eCommerce",
+        "Minimal"
+      ],
+      "category": "ECommerce",
+      "gallery_entry": "https://www.landing.love/sites/poetry/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "other",
+        "portfolio",
+        "ecommerce",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.frankys-hats.com",
+      "title": "Franky's Hats",
+      "thumbnail": "https://cdn.landing.love/images/frankys-hats-thumb.webp",
+      "tags": [
+        "eCommerce",
+        "Fashion",
+        "3D Website",
+        "Lifestyle",
+        "Minimal"
+      ],
+      "category": "ECommerce",
+      "gallery_entry": "https://www.landing.love/sites/frankys-hats/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "ecommerce",
+        "creative-animation",
+        "other",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.campoallecomete.it",
+      "title": "Campo alle Comete",
+      "thumbnail": "https://cdn.landing.love/images/campoallecomete-thumb.webp",
+      "tags": [
+        "3D Website",
+        "eCommerce",
+        "Food Drink",
+        "Illustration",
+        "Minimal"
+      ],
+      "category": "ECommerce",
+      "gallery_entry": "https://www.landing.love/sites/campoallecomete/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "creative-animation",
+        "ecommerce",
+        "other",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://faces.app",
+      "title": "Faces",
+      "thumbnail": "https://cdn.landing.love/images/faces-thumb.webp",
+      "tags": [
+        "Design",
+        "SaaS",
+        "AI",
+        "App",
+        "Minimal"
+      ],
+      "category": "SaaS",
+      "gallery_entry": "https://www.landing.love/sites/faces/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "saas-tech",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://stax.ai",
+      "title": "Stax.ai",
+      "thumbnail": "https://cdn.landing.love/images/stax-thumb.webp",
+      "tags": [
+        "AI",
+        "Finance",
+        "Technology",
+        "Illustration",
+        "Minimal"
+      ],
+      "category": "AI",
+      "gallery_entry": "https://www.landing.love/sites/stax/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "saas-tech",
+        "other",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.adaline.ai",
+      "title": "Adaline",
+      "thumbnail": "https://cdn.landing.love/images/adaline-thumb.webp",
+      "tags": [
+        "AI",
+        "Illustration",
+        "SaaS",
+        "Development",
+        "Technology"
+      ],
+      "category": "SaaS",
+      "gallery_entry": "https://www.landing.love/sites/adaline/",
+      "sources": [
+        "minimal-gallery",
+        "landinglove"
+      ],
+      "niches": [
+        "saas-tech",
+        "agency"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://index.app",
+      "title": "Index",
+      "thumbnail": "https://minimal.gallery/wp-content/uploads/2024/03/index.app_beta-900x500.png",
+      "tags": [
+        "ai",
+        "startup",
+        "tools",
+        "saas",
+        "finance"
+      ],
+      "category": "",
+      "gallery_entry": "https://minimal.gallery/index/",
+      "sources": [
+        "minimal-gallery"
+      ],
+      "niches": [
+        "saas-tech",
+        "other"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.vectrfl.com",
+      "title": "Vectr",
+      "thumbnail": "https://cdn.landing.love/images/vectrfl-thumb.webp",
+      "tags": [
+        "3D Website",
+        "Business",
+        "AI",
+        "Technology",
+        "SaaS"
+      ],
+      "category": "3D Website",
+      "gallery_entry": "https://www.landing.love/sites/vectrfl/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "creative-animation",
+        "saas-tech"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://everswap.com",
+      "title": "EverSwap",
+      "thumbnail": "https://cdn.landing.love/images/everswap-thumb.webp",
+      "tags": [
+        "DeFi",
+        "Illustration",
+        "3D Website",
+        "Finance",
+        "Web3"
+      ],
+      "category": "3D Website",
+      "gallery_entry": "https://www.landing.love/sites/everswap/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "saas-tech",
+        "creative-animation",
+        "other"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://board.fun",
+      "title": "Board.fun",
+      "thumbnail": "https://cdn.landing.love/images/board-fun-thumb.webp",
+      "tags": [
+        "eCommerce",
+        "Gaming",
+        "Education",
+        "Hardware",
+        "Technology"
+      ],
+      "category": "ECommerce",
+      "gallery_entry": "https://www.landing.love/sites/board-fun/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "ecommerce",
+        "other",
+        "saas-tech"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.dragonfly.xyz",
+      "title": "Dragonfly",
+      "thumbnail": "https://cdn.landing.love/images/dragonfly-2-thumb.webp",
+      "tags": [
+        "Crypto",
+        "Venture",
+        "Finance",
+        "3D Website"
+      ],
+      "category": "3D Website",
+      "gallery_entry": "https://www.landing.love/sites/dragonfly-2/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "saas-tech",
+        "other",
+        "creative-animation"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://ponder.ai",
+      "title": "Ponder",
+      "thumbnail": "https://cdn.landing.love/images/ponder-thumb.webp",
+      "tags": [
+        "AI",
+        "SaaS",
+        "Design",
+        "App"
+      ],
+      "category": "SaaS",
+      "gallery_entry": "https://www.landing.love/sites/ponder/",
+      "sources": [
+        "tympanus-webzibition",
+        "minimal-gallery",
+        "landinglove",
+        "darkmodedesign"
+      ],
+      "niches": [
+        "saas-tech"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://steven.com",
+      "title": "Steven",
+      "thumbnail": "https://cdn.landing.love/images/steven-thumb.webp",
+      "tags": [
+        "SaaS",
+        "Technology",
+        "Business",
+        "Marketing"
+      ],
+      "category": "SaaS",
+      "gallery_entry": "https://www.landing.love/sites/steven/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "saas-tech",
+        "agency"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://katana.network",
+      "title": "katana",
+      "thumbnail": "https://cdn.landing.love/images/katana-thumb.webp",
+      "tags": [
+        "DeFi",
+        "Crypto",
+        "3D Website",
+        "Finance"
+      ],
+      "category": "Gradient",
+      "gallery_entry": "https://www.landing.love/sites/katana/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "saas-tech",
+        "creative-animation",
+        "other"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://alias.studio",
+      "title": "Alias",
+      "thumbnail": "https://cdn.landing.love/images/alias-thumb.webp",
+      "tags": [
+        "AI",
+        "SaaS",
+        "Design",
+        "Minimal"
+      ],
+      "category": "SaaS",
+      "gallery_entry": "https://www.landing.love/sites/alias/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "saas-tech",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.composites.archi",
+      "title": "Composites",
+      "thumbnail": "https://cdn.landing.love/images/composites-thumb.webp",
+      "tags": [
+        "3D Website",
+        "Architecture",
+        "Business",
+        "Technology"
+      ],
+      "category": "Architecture",
+      "gallery_entry": "https://www.landing.love/sites/composites/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "creative-animation",
+        "architecture-realestate",
+        "saas-tech"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.arago.inc",
+      "title": "Arago",
+      "thumbnail": "https://cdn.landing.love/images/arago-thumb.webp",
+      "tags": [
+        "Hardware",
+        "3D Website",
+        "Technology",
+        "Marketing"
+      ],
+      "category": "Gradient",
+      "gallery_entry": "https://www.landing.love/sites/arago/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "other",
+        "creative-animation",
+        "saas-tech",
+        "agency"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://kzero.com",
+      "title": "Kelvin Zero",
+      "thumbnail": "https://cdn.landing.love/images/kzero-thumb.webp",
+      "tags": [
+        "3D Website",
+        "SaaS",
+        "Technology",
+        "Hardware"
+      ],
+      "category": "SaaS",
+      "gallery_entry": "https://www.landing.love/sites/kzero/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "creative-animation",
+        "saas-tech",
+        "other"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.pluto.app",
+      "title": "Pluto",
+      "thumbnail": "https://cdn.landing.love/images/pluto-thumb.webp",
+      "tags": [
+        "App",
+        "3D Website",
+        "SaaS",
+        "Illustration"
+      ],
+      "category": "SaaS",
+      "gallery_entry": "https://www.landing.love/sites/pluto/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "saas-tech",
+        "creative-animation"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://posthog.com",
+      "title": "PostHog",
+      "thumbnail": "https://cdn.landing.love/images/posthog-thumb.webp",
+      "tags": [
+        "SaaS",
+        "Open Source",
+        "Illustration",
+        "OS"
+      ],
+      "category": "SaaS",
+      "gallery_entry": "https://www.landing.love/sites/posthog/",
+      "sources": [
+        "minimal-gallery",
+        "landinglove"
+      ],
+      "niches": [
+        "saas-tech"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://operate.so",
+      "title": "Operate",
+      "thumbnail": "https://cdn.landing.love/images/operate-thumb.webp",
+      "tags": [
+        "SaaS",
+        "Illustration",
+        "Finance",
+        "Marketing"
+      ],
+      "category": "SaaS",
+      "gallery_entry": "https://www.landing.love/sites/operate/",
+      "sources": [
+        "minimal-gallery",
+        "landinglove"
+      ],
+      "niches": [
+        "saas-tech",
+        "other",
+        "agency"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://tempo.xyz",
+      "title": "Tempo",
+      "thumbnail": "https://cdn.landing.love/images/tempo-2-thumb.webp",
+      "tags": [
+        "Crypto",
+        "DeFi",
+        "Minimal",
+        "Finance"
+      ],
+      "category": "Minimal",
+      "gallery_entry": "https://www.landing.love/sites/tempo-2/",
+      "sources": [
+        "minimal-gallery",
+        "landinglove"
+      ],
+      "niches": [
+        "saas-tech",
+        "minimal",
+        "other"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://antimetal.com",
+      "title": "Antimetal",
+      "thumbnail": "https://cdn.landing.love/images/antimetal-2-thumb.webp",
+      "tags": [
+        "AI",
+        "Development",
+        "Technology",
+        "SaaS"
+      ],
+      "category": "SaaS",
+      "gallery_entry": "https://www.landing.love/sites/antimetal-2/",
+      "sources": [
+        "minimal-gallery",
+        "landinglove"
+      ],
+      "niches": [
+        "saas-tech",
+        "agency"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.eathungrytiger.com",
+      "title": "Hungry Tiger",
+      "thumbnail": "https://cdn.landing.love/images/eathungrytiger-thumb.webp",
+      "tags": [
+        "Food Drink",
+        "eCommerce",
+        "3D Website",
+        "Lifestyle",
+        "Business"
+      ],
+      "category": "ECommerce",
+      "gallery_entry": "https://www.landing.love/sites/eathungrytiger/",
+      "sources": [
+        "tympanus-webzibition",
+        "minimal-gallery",
+        "landinglove"
+      ],
+      "niches": [
+        "other",
+        "ecommerce",
+        "creative-animation"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://cerealbnb.com",
+      "title": "CerealBNB",
+      "thumbnail": "https://cdn.landing.love/images/cerealbnb-thumb.webp",
+      "tags": [
+        "3D Website",
+        "Lifestyle",
+        "Home Living",
+        "eCommerce",
+        "Travel"
+      ],
+      "category": "3D Website",
+      "gallery_entry": "https://www.landing.love/sites/cerealbnb/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "creative-animation",
+        "other",
+        "ecommerce"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://lightweight.info/en",
+      "title": "Lightweight",
+      "thumbnail": "https://cdn.landing.love/images/lightweight-thumb.webp",
+      "tags": [
+        "3D Website",
+        "Sports",
+        "eCommerce",
+        "Lifestyle",
+        "Business"
+      ],
+      "category": "3D Website",
+      "gallery_entry": "https://www.landing.love/sites/lightweight/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "creative-animation",
+        "other",
+        "ecommerce"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://bolide.toys/en",
+      "title": "Bolide",
+      "thumbnail": "https://cdn.landing.love/images/bolide-thumb.webp",
+      "tags": [
+        "eCommerce",
+        "3D Website",
+        "Lifestyle",
+        "Automotive",
+        "Marketing"
+      ],
+      "category": "ECommerce",
+      "gallery_entry": "https://www.landing.love/sites/bolide/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "ecommerce",
+        "creative-animation",
+        "other",
+        "agency"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.thedamai.com",
+      "title": "The Damai",
+      "thumbnail": "https://cdn.landing.love/images/thedamai-thumb.webp",
+      "tags": [
+        "eCommerce",
+        "Minimal",
+        "Home Living",
+        "Real Estate",
+        "Travel"
+      ],
+      "category": "Real Estate",
+      "gallery_entry": "https://www.landing.love/sites/thedamai/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "ecommerce",
+        "minimal",
+        "other",
+        "architecture-realestate"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.chems.studio",
+      "title": "Chems Studio",
+      "thumbnail": "https://cdn.landing.love/images/chems-thumb.webp",
+      "tags": [
+        "Film",
+        "Studio",
+        "Fashion",
+        "Photography"
+      ],
+      "category": "Dark Mode",
+      "gallery_entry": "https://www.landing.love/sites/chems/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "other",
+        "agency",
+        "ecommerce",
+        "portfolio",
+        "dark"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://larevoltosa.es",
+      "title": "La Revoltosa",
+      "thumbnail": "https://cdn.landing.love/images/larevoltosa-thumb.webp",
+      "tags": [
+        "eCommerce",
+        "Food Drink",
+        "3D Website",
+        "Business"
+      ],
+      "category": "3D Website",
+      "gallery_entry": "https://www.landing.love/sites/larevoltosa/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "ecommerce",
+        "other",
+        "creative-animation"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://oryzo.ai",
+      "title": "ORYZO",
+      "thumbnail": "https://cdn.landing.love/images/oryzo-thumb.webp",
+      "tags": [
+        "3D Website",
+        "eCommerce",
+        "Home Living",
+        "Business"
+      ],
+      "category": "3D Website",
+      "gallery_entry": "https://www.landing.love/sites/oryzo/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "creative-animation",
+        "ecommerce",
+        "other"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://quechua-lookbook.com/ss25",
+      "title": "Quechua Lookbook - SS25",
+      "thumbnail": "https://cdn.landing.love/images/quechua-lookbook-thumb.webp",
+      "tags": [
+        "Fashion",
+        "eCommerce",
+        "Lifestyle",
+        "Travel"
+      ],
+      "category": "ECommerce",
+      "gallery_entry": "https://www.landing.love/sites/quechua-lookbook/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "ecommerce",
+        "other"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://truekindskincare.com",
+      "title": "TrueKind",
+      "thumbnail": "https://cdn.landing.love/images/truekindskincare-thumb.webp",
+      "tags": [
+        "Beauty",
+        "eCommerce",
+        "Lifestyle",
+        "Health"
+      ],
+      "category": "ECommerce",
+      "gallery_entry": "https://www.landing.love/sites/truekindskincare/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "other",
+        "ecommerce"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.ginivini.com/en",
+      "title": "Gini",
+      "thumbnail": "https://cdn.landing.love/images/ginivini-thumb.webp",
+      "tags": [
+        "eCommerce",
+        "Food Drink",
+        "Lifestyle",
+        "Minimal"
+      ],
+      "category": "ECommerce",
+      "gallery_entry": "https://www.landing.love/sites/ginivini/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "ecommerce",
+        "other",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.cwgroup.com",
+      "title": "C.W. Group",
+      "thumbnail": "https://cdn.landing.love/images/cwgroup-thumb.webp",
+      "tags": [
+        "Real Estate",
+        "Home Living",
+        "eCommerce",
+        "Minimal"
+      ],
+      "category": "Real Estate",
+      "gallery_entry": "https://www.landing.love/sites/cwgroup/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "architecture-realestate",
+        "other",
+        "ecommerce",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.becaneparis.com",
+      "title": "Bécane",
+      "thumbnail": "https://cdn.landing.love/images/becaneparis-thumb.webp",
+      "tags": [
+        "Fashion",
+        "eCommerce",
+        "Minimal",
+        "Lifestyle"
+      ],
+      "category": "ECommerce",
+      "gallery_entry": "https://www.landing.love/sites/becaneparis/",
+      "sources": [
+        "minimal-gallery",
+        "landinglove"
+      ],
+      "niches": [
+        "ecommerce",
+        "minimal",
+        "other"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://damso.com",
+      "title": "Damso",
+      "thumbnail": "https://cdn.landing.love/images/damso-thumb.webp",
+      "tags": [
+        "Fashion",
+        "eCommerce",
+        "Lifestyle",
+        "Minimal"
+      ],
+      "category": "ECommerce",
+      "gallery_entry": "https://www.landing.love/sites/damso/",
+      "sources": [
+        "minimal-gallery",
+        "landinglove"
+      ],
+      "niches": [
+        "ecommerce",
+        "other",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://milamend.com",
+      "title": "Milamend",
+      "thumbnail": "https://minimal.gallery/wp-content/uploads/2025/04/www.milamend.com_-900x500.png",
+      "tags": [
+        "e-commerce",
+        "food & drink",
+        "product",
+        "science"
+      ],
+      "category": "",
+      "gallery_entry": "https://minimal.gallery/milamend/",
+      "sources": [
+        "minimal-gallery"
+      ],
+      "niches": [
+        "ecommerce",
+        "other",
+        "saas-tech"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://stephenbarkan.com",
+      "title": "Stephen Barkan",
+      "thumbnail": "https://minimal.gallery/wp-content/uploads/2020/11/7094e884477a846da323d3081228bb1429a12f54-900x500.png",
+      "tags": [
+        "portfolio",
+        "personal",
+        "editorial",
+        "music",
+        "blog"
+      ],
+      "category": "",
+      "gallery_entry": "https://minimal.gallery/stephen-barkan/",
+      "sources": [
+        "minimal-gallery"
+      ],
+      "niches": [
+        "portfolio",
+        "other"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://felixpeault.com",
+      "title": "Félix Péault",
+      "thumbnail": "https://cdn.landing.love/images/felixpeault-thumb.webp",
+      "tags": [
+        "Photography",
+        "Portfolio",
+        "Lifestyle",
+        "Minimal"
+      ],
+      "category": "Portfolio",
+      "gallery_entry": "https://www.landing.love/sites/felixpeault/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "portfolio",
+        "other",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.powerhouse-company.com",
+      "title": "Powerhouse Company",
+      "thumbnail": "https://cdn.landing.love/images/powerhouse-company-thumb.webp",
+      "tags": [
+        "Architecture",
+        "Photography",
+        "Agency",
+        "Minimal"
+      ],
+      "category": "Architecture",
+      "gallery_entry": "https://www.landing.love/sites/powerhouse-company/",
+      "sources": [
+        "tympanus-webzibition",
+        "minimal-gallery",
+        "landinglove"
+      ],
+      "niches": [
+        "architecture-realestate",
+        "portfolio",
+        "agency",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://index-georgia.com",
+      "title": "Index Georgia",
+      "thumbnail": "https://minimal.gallery/wp-content/uploads/2026/06/index-georgia.com_-900x500.jpg",
+      "tags": [
+        "one page",
+        "art",
+        "photography",
+        "catalogue"
+      ],
+      "category": "",
+      "gallery_entry": "https://minimal.gallery/index-georgia/",
+      "sources": [
+        "minimal-gallery"
+      ],
+      "niches": [
+        "minimal",
+        "other",
+        "portfolio"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://teardwn.com",
+      "title": "Teardwn",
+      "thumbnail": "https://minimal.gallery/wp-content/uploads/2025/12/teardwn.com_-900x500.png",
+      "tags": [
+        "portfolio",
+        "personal",
+        "one page",
+        "writer"
+      ],
+      "category": "",
+      "gallery_entry": "https://minimal.gallery/teardwn/",
+      "sources": [
+        "minimal-gallery"
+      ],
+      "niches": [
+        "portfolio",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://heenachung.info",
+      "title": "Heena Chung",
+      "thumbnail": "https://minimal.gallery/wp-content/uploads/2024/04/heenachung.info_-900x500.png",
+      "tags": [
+        "portfolio",
+        "personal",
+        "branding",
+        "editorial"
+      ],
+      "category": "",
+      "gallery_entry": "https://minimal.gallery/heena-chung/",
+      "sources": [
+        "minimal-gallery"
+      ],
+      "niches": [
+        "portfolio"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://shuttle.zip",
+      "title": "Shuttle",
+      "thumbnail": "https://minimal.gallery/wp-content/uploads/2024/03/shuttle.zip_-900x500.png",
+      "tags": [
+        "one page",
+        "branding",
+        "saas",
+        "pricing"
+      ],
+      "category": "",
+      "gallery_entry": "https://minimal.gallery/shuttle/",
+      "sources": [
+        "minimal-gallery"
+      ],
+      "niches": [
+        "minimal",
+        "portfolio",
+        "saas-tech"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://abcdinamo.com",
+      "title": "Dinamo Typefaces",
+      "thumbnail": "https://minimal.gallery/wp-content/uploads/2022/10/Screenshot-2022-10-24-at-18.19.31-900x500.png",
+      "tags": [
+        "portfolio",
+        "agency",
+        "type foundry",
+        "pricing"
+      ],
+      "category": "",
+      "gallery_entry": "https://minimal.gallery/dinamo-typefaces/",
+      "sources": [
+        "minimal-gallery"
+      ],
+      "niches": [
+        "portfolio",
+        "agency"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://maryloufaure.com",
+      "title": "Marylou Faure",
+      "thumbnail": "https://minimal.gallery/wp-content/uploads/2020/11/c00c184a384a6e81e6cee7597200417a1379f660-900x500.png",
+      "tags": [
+        "portfolio",
+        "personal",
+        "e-commerce",
+        "pricing"
+      ],
+      "category": "",
+      "gallery_entry": "https://minimal.gallery/marylou-faure/",
+      "sources": [
+        "minimal-gallery"
+      ],
+      "niches": [
+        "portfolio",
+        "ecommerce"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://ericpetschek.com",
+      "title": "Eric Petschek",
+      "thumbnail": "https://minimal.gallery/wp-content/uploads/2020/11/630111148e6e4963027b74d45f5acefe97e581ab-900x500.png",
+      "tags": [
+        "portfolio",
+        "personal",
+        "architecture & interior design",
+        "photography"
+      ],
+      "category": "",
+      "gallery_entry": "https://minimal.gallery/eric-petschek/",
+      "sources": [
+        "minimal-gallery"
+      ],
+      "niches": [
+        "portfolio",
+        "architecture-realestate"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://aikawakenichi.com",
+      "title": "Kenichi Aikawa",
+      "thumbnail": "https://cdn.landing.love/images/aikawakenichi-2-thumb.webp",
+      "tags": [
+        "Photography",
+        "Portfolio",
+        "3D Website",
+        "Minimal"
+      ],
+      "category": "Minimal",
+      "gallery_entry": "https://www.landing.love/sites/aikawakenichi-2/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "portfolio",
+        "creative-animation",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.cuuut.com",
+      "title": "Cuuut",
+      "thumbnail": "https://cdn.landing.love/images/cuuut-thumb.webp",
+      "tags": [
+        "Studio",
+        "Fashion",
+        "Minimal",
+        "Photography"
+      ],
+      "category": "Minimal",
+      "gallery_entry": "https://www.landing.love/sites/cuuut/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "agency",
+        "ecommerce",
+        "minimal",
+        "portfolio"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.lukebaffait.fr",
+      "title": "Luke Baffait",
+      "thumbnail": "https://cdn.landing.love/images/lukebaffait-thumb.webp",
+      "tags": [
+        "Portfolio",
+        "Development",
+        "Design",
+        "Minimal"
+      ],
+      "category": "Minimal",
+      "gallery_entry": "https://www.landing.love/sites/lukebaffait/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "portfolio",
+        "agency",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://yutaabe.com",
+      "title": "Yuta Abe",
+      "thumbnail": "https://cdn.landing.love/images/yutaabe-thumb.webp",
+      "tags": [
+        "Portfolio",
+        "Design",
+        "Development",
+        "3D Website"
+      ],
+      "category": "3D Website",
+      "gallery_entry": "https://www.landing.love/sites/yutaabe/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "portfolio",
+        "agency",
+        "creative-animation"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.serenacongiu.com",
+      "title": "Serena Congiu",
+      "thumbnail": "https://cdn.landing.love/images/serenacongiu-thumb.webp",
+      "tags": [
+        "Beauty",
+        "Portfolio",
+        "Fashion",
+        "Photography"
+      ],
+      "category": "Portfolio",
+      "gallery_entry": "https://www.landing.love/sites/serenacongiu/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "other",
+        "portfolio",
+        "ecommerce"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.clouarchitects.com",
+      "title": "CLOU architects",
+      "thumbnail": "https://cdn.landing.love/images/clouarchitects-thumb.webp",
+      "tags": [
+        "3D Website",
+        "Architecture",
+        "Minimal",
+        "Agency",
+        "Studio"
+      ],
+      "category": "Architecture",
+      "gallery_entry": "https://www.landing.love/sites/clouarchitects/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "creative-animation",
+        "architecture-realestate",
+        "minimal",
+        "agency"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://incredibles.dev",
+      "title": "incredibles",
+      "thumbnail": "https://cdn.landing.love/images/incredibles-2-thumb.webp",
+      "tags": [
+        "Agency",
+        "Development",
+        "Studio",
+        "Minimal"
+      ],
+      "category": "Minimal",
+      "gallery_entry": "https://www.landing.love/sites/incredibles-2/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "agency",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.thisisstudiox.com",
+      "title": "Studio X",
+      "thumbnail": "https://cdn.landing.love/images/thisisstudiox-thumb.webp",
+      "tags": [
+        "Studio",
+        "Architecture",
+        "Home Living",
+        "Business"
+      ],
+      "category": "Architecture",
+      "gallery_entry": "https://www.landing.love/sites/thisisstudiox/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "agency",
+        "architecture-realestate",
+        "other"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://artefakt.mov",
+      "title": "artefakt",
+      "thumbnail": "https://cdn.landing.love/images/artefakt-thumb.webp",
+      "tags": [
+        "Agency",
+        "Marketing",
+        "Studio",
+        "Minimal"
+      ],
+      "category": "Minimal",
+      "gallery_entry": "https://www.landing.love/sites/artefakt/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "agency",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "http://wearecollins.com",
+      "title": "COLLINS",
+      "thumbnail": "https://cdn.landing.love/images/wearecollins-thumb.webp",
+      "tags": [
+        "Agency",
+        "Studio",
+        "Marketing",
+        "Minimal"
+      ],
+      "category": "Agency",
+      "gallery_entry": "https://www.landing.love/sites/wearecollins/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "agency",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://radaville.studio",
+      "title": "Radaville Studio",
+      "thumbnail": "https://cdn.landing.love/images/radaville-thumb.webp",
+      "tags": [
+        "Studio",
+        "Home Living",
+        "Architecture",
+        "Minimal"
+      ],
+      "category": "Architecture",
+      "gallery_entry": "https://www.landing.love/sites/radaville/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "agency",
+        "other",
+        "architecture-realestate",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.archi-malinstudio.com",
+      "title": "Archi-malin",
+      "thumbnail": "https://cdn.landing.love/images/archi-malinstudio-thumb.webp",
+      "tags": [
+        "Studio",
+        "Minimal",
+        "Architecture",
+        "Home Living"
+      ],
+      "category": "Architecture",
+      "gallery_entry": "https://www.landing.love/sites/archi-malinstudio/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "agency",
+        "minimal",
+        "architecture-realestate",
+        "other"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://curatr.paris/en",
+      "title": "CURATR Paris",
+      "thumbnail": "https://minimal.gallery/wp-content/uploads/2024/01/curatr.paris_en_-900x500.png",
+      "tags": [
+        "one page",
+        "agency",
+        "consulting",
+        "advertising"
+      ],
+      "category": "",
+      "gallery_entry": "https://minimal.gallery/curatr-paris/",
+      "sources": [
+        "tympanus-webzibition",
+        "minimal-gallery"
+      ],
+      "niches": [
+        "minimal",
+        "agency"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.studiorhe.com",
+      "title": "Studio RHE",
+      "thumbnail": "https://cdn.landing.love/images/studiorhe-thumb.webp",
+      "tags": [
+        "Studio",
+        "Architecture",
+        "Minimal",
+        "Horizontal Scroll"
+      ],
+      "category": "Architecture",
+      "gallery_entry": "https://www.landing.love/sites/studiorhe/",
+      "sources": [
+        "tympanus-webzibition",
+        "minimal-gallery",
+        "landinglove"
+      ],
+      "niches": [
+        "agency",
+        "architecture-realestate",
+        "minimal",
+        "creative-animation"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://vitaarchitecture.com",
+      "title": "Vita Architecture",
+      "thumbnail": "https://cdn.landing.love/images/vitaarchitecture-thumb.webp",
+      "tags": [
+        "Studio",
+        "Agency",
+        "Home Living",
+        "Architecture"
+      ],
+      "category": "Architecture",
+      "gallery_entry": "https://www.landing.love/sites/vitaarchitecture/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "agency",
+        "other",
+        "architecture-realestate"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://cinedept.com",
+      "title": "CINEDEPT",
+      "thumbnail": "https://cdn.landing.love/images/cinedept-thumb.webp",
+      "tags": [
+        "Agency",
+        "Studio",
+        "Marketing",
+        "Minimal"
+      ],
+      "category": "Agency",
+      "gallery_entry": "https://www.landing.love/sites/cinedept/",
+      "sources": [
+        "minimal-gallery",
+        "landinglove"
+      ],
+      "niches": [
+        "agency",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://huly.io",
+      "title": "Huly",
+      "thumbnail": "https://cdn.landing.love/images/huly-thumb.webp",
+      "tags": [
+        "SaaS",
+        "Development",
+        "Open Source",
+        "Technology"
+      ],
+      "category": "SaaS",
+      "gallery_entry": "https://www.landing.love/sites/huly/",
+      "sources": [
+        "minimal-gallery",
+        "landinglove"
+      ],
+      "niches": [
+        "saas-tech",
+        "agency"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://xox.makemepulse.com",
+      "title": "XOX",
+      "thumbnail": "https://cdn.landing.love/images/xox-makemepulse-thumb.webp",
+      "tags": [
+        "Gaming",
+        "Illustration",
+        "Design"
+      ],
+      "category": "Dark Mode",
+      "gallery_entry": "https://www.landing.love/sites/xox-makemepulse/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "other",
+        "dark"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://theblinkfish.com",
+      "title": "The Blink Fish",
+      "thumbnail": "https://cdn.landing.love/images/theblinkfish-thumb.webp",
+      "tags": [
+        "Film",
+        "Studio",
+        "Photography"
+      ],
+      "category": "Dark Mode",
+      "gallery_entry": "https://www.landing.love/sites/theblinkfish/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "other",
+        "agency",
+        "portfolio",
+        "dark"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://xoyozo.fun",
+      "title": "xoyozo",
+      "thumbnail": "https://cdn.landing.love/images/xoyozo-thumb.webp",
+      "tags": [
+        "Studio",
+        "Illustration",
+        "Minimal"
+      ],
+      "category": "Dark Mode",
+      "gallery_entry": "https://www.landing.love/sites/xoyozo/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "agency",
+        "minimal",
+        "dark"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.sileent.com",
+      "title": "Sileent",
+      "thumbnail": "https://cdn.landing.love/images/sileent-thumb.webp",
+      "tags": [
+        "Studio",
+        "Minimal"
+      ],
+      "category": "Dark Mode",
+      "gallery_entry": "https://www.landing.love/sites/sileent/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "agency",
+        "minimal",
+        "dark"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://shopify.com/editions/winter2026",
+      "title": "The Renaissance Edition",
+      "thumbnail": "https://minimal.gallery/wp-content/uploads/2026/01/www.shopify.com_editions_winter2026-900x500.png",
+      "tags": [
+        "directory",
+        "catalogue"
+      ],
+      "category": "",
+      "gallery_entry": "https://minimal.gallery/the-renaissance-edition/",
+      "sources": [
+        "tympanus-webzibition",
+        "minimal-gallery",
+        "darkmodedesign"
+      ],
+      "niches": [
+        "universal-creative",
+        "dark"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://artemiilebedev.com",
+      "title": "Artemii Lebedev",
+      "thumbnail": "https://cdn.prod.website-files.com/5ea7fd4e3d52ef73804bc877/64094220de5aef6933eaca7e_Screenshot-min.avif",
+      "tags": [],
+      "category": "Dark Mode",
+      "gallery_entry": "https://www.darkmodedesign.com/?60a99e98_page=8",
+      "sources": [
+        "tympanus-webzibition",
+        "darkmodedesign"
+      ],
+      "niches": [
+        "dark"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.studioherrstrom.com",
+      "title": "Studio Herrstrom",
+      "thumbnail": "https://cdn.prod.website-files.com/5ea7fd4e3d52ef73804bc877/69d3ebe7ffe085685d134344_image-3.webp",
+      "tags": [],
+      "category": "Dark Mode",
+      "gallery_entry": "https://www.darkmodedesign.com/?60a99e98_page=3",
+      "sources": [
+        "tympanus-webzibition",
+        "darkmodedesign"
+      ],
+      "niches": [
+        "dark"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://shotoniphone.lorenzobocchi.com",
+      "title": "Shot on iPhone",
+      "thumbnail": "https://cdn.prod.website-files.com/5ea7fd4e3d52ef73804bc877/6a274c939fb007ba3d5fc699_image-2.webp",
+      "tags": [],
+      "category": "Dark Mode",
+      "gallery_entry": "https://www.darkmodedesign.com/",
+      "sources": [
+        "minimal-gallery",
+        "darkmodedesign"
+      ],
+      "niches": [
+        "dark"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://heyorbi.com",
+      "title": "Orbi",
+      "thumbnail": "https://cdn.prod.website-files.com/5ea7fd4e3d52ef73804bc877/69d3eccdef282b137befeffe_image-5.webp",
+      "tags": [],
+      "category": "Dark Mode",
+      "gallery_entry": "https://www.darkmodedesign.com/?60a99e98_page=3",
+      "sources": [
+        "minimal-gallery",
+        "darkmodedesign"
+      ],
+      "niches": [
+        "dark"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://cushion.so",
+      "title": "Cushion",
+      "thumbnail": "https://cdn.prod.website-files.com/5ea7fd4e3d52ef73804bc877/69d3ec75144041ab8562842a_image-4.webp",
+      "tags": [],
+      "category": "Dark Mode",
+      "gallery_entry": "https://www.darkmodedesign.com/?60a99e98_page=3",
+      "sources": [
+        "minimal-gallery",
+        "darkmodedesign"
+      ],
+      "niches": [
+        "dark"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://explore.ownprimland.com",
+      "title": "Primland Residences",
+      "thumbnail": "https://cdn.landing.love/images/ownprimland-thumb.webp",
+      "tags": [
+        "Real Estate",
+        "3D Website",
+        "Lifestyle",
+        "Travel",
+        "Business"
+      ],
+      "category": "3D Website",
+      "gallery_entry": "https://www.landing.love/sites/ownprimland/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "architecture-realestate",
+        "creative-animation",
+        "other"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://25residences.com",
+      "title": "25 Residences",
+      "thumbnail": "https://cdn.landing.love/images/25residences-thumb.webp",
+      "tags": [
+        "3D Website",
+        "Home Living",
+        "Real Estate",
+        "Minimal"
+      ],
+      "category": "Real Estate",
+      "gallery_entry": "https://www.landing.love/sites/25residences/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "creative-animation",
+        "other",
+        "architecture-realestate",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://blueyard.com",
+      "title": "BlueYard",
+      "thumbnail": "https://cdn.landing.love/images/blueyard-thumb.webp",
+      "tags": [
+        "Venture",
+        "3D Website",
+        "Finance",
+        "Minimal"
+      ],
+      "category": "Gradient",
+      "gallery_entry": "https://www.landing.love/sites/blueyard/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "creative-animation",
+        "other",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://raycast.com",
+      "title": "Raycast",
+      "thumbnail": "https://minimal.gallery/wp-content/uploads/2024/04/www.raycast.com_-1-900x500.png",
+      "tags": [
+        "startup",
+        "tools",
+        "saas",
+        "animation"
+      ],
+      "category": "",
+      "gallery_entry": "https://minimal.gallery/raycast/",
+      "sources": [
+        "minimal-gallery"
+      ],
+      "niches": [
+        "saas-tech",
+        "creative-animation"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.measured.site",
+      "title": "Measured Analytics",
+      "thumbnail": "https://cdn.landing.love/images/measured-thumb.webp",
+      "tags": [
+        "SaaS",
+        "Technology",
+        "3D Website",
+        "Minimal"
+      ],
+      "category": "Minimal",
+      "gallery_entry": "https://www.landing.love/sites/measured/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "saas-tech",
+        "creative-animation",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.rabenrifaie.com",
+      "title": "RabenRifaie",
+      "thumbnail": "https://cdn.landing.love/images/rabenrifaie-2-thumb.webp",
+      "tags": [
+        "Agency",
+        "3D Website",
+        "Design",
+        "Studio"
+      ],
+      "category": "3D Website",
+      "gallery_entry": "https://www.landing.love/sites/rabenrifaie-2/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "agency",
+        "creative-animation"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://batcloud.art",
+      "title": "THE BAT CLOUD",
+      "thumbnail": "https://cdn.landing.love/images/batcloud-thumb.webp",
+      "tags": [
+        "Art",
+        "3D Website",
+        "Event",
+        "Architecture"
+      ],
+      "category": "3D Website",
+      "gallery_entry": "https://www.landing.love/sites/batcloud/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "other",
+        "creative-animation",
+        "architecture-realestate"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://the-nocodeshader.hardikbhansali.com",
+      "title": "NO CODE-SHADER",
+      "thumbnail": "https://cdn.landing.love/images/the-nocodeshader-thumb.webp",
+      "tags": [
+        "3D Website",
+        "Development",
+        "Design",
+        "Technology"
+      ],
+      "category": "3D Website",
+      "gallery_entry": "https://www.landing.love/sites/the-nocodeshader/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "creative-animation",
+        "agency",
+        "saas-tech"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://dancerobotphl.com",
+      "title": "dancerobot",
+      "thumbnail": "https://cdn.landing.love/images/dancerobotphl-thumb.webp",
+      "tags": [
+        "Real Estate",
+        "OS",
+        "Lifestyle",
+        "Business",
+        "Illustration"
+      ],
+      "category": "Real Estate",
+      "gallery_entry": "https://www.landing.love/sites/dancerobotphl/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "architecture-realestate",
+        "other"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://diamondrosesanctuary.com",
+      "title": "Diamond Rose Sanctuary",
+      "thumbnail": "https://cdn.landing.love/images/diamondrosesanctuary-thumb.webp",
+      "tags": [
+        "Real Estate",
+        "Travel",
+        "Wellness",
+        "Business"
+      ],
+      "category": "Real Estate",
+      "gallery_entry": "https://www.landing.love/sites/diamondrosesanctuary/",
+      "sources": [
+        "tympanus-webzibition",
+        "landinglove"
+      ],
+      "niches": [
+        "architecture-realestate",
+        "other"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://biga.cat/en",
+      "title": "Biga",
+      "thumbnail": "https://cdn.landing.love/images/biga-thumb.webp",
+      "tags": [
+        "Architecture",
+        "Design",
+        "Home Living",
+        "Minimal"
+      ],
+      "category": "Architecture",
+      "gallery_entry": "https://www.landing.love/sites/biga/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "architecture-realestate",
+        "other",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://www.clearwater.london",
+      "title": "Clearwater",
+      "thumbnail": "https://cdn.landing.love/images/clearwater-thumb.webp",
+      "tags": [
+        "Health",
+        "Wellness",
+        "Home Living",
+        "Architecture"
+      ],
+      "category": "Architecture",
+      "gallery_entry": "https://www.landing.love/sites/clearwater/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "other",
+        "architecture-realestate"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://ch-projects.com",
+      "title": "CH Projects",
+      "thumbnail": "https://cdn.landing.love/images/ch-projects-thumb.webp",
+      "tags": [
+        "3D Website",
+        "Minimal",
+        "Real Estate",
+        "Architecture"
+      ],
+      "category": "Architecture",
+      "gallery_entry": "https://www.landing.love/sites/ch-projects/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "creative-animation",
+        "minimal",
+        "architecture-realestate"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://era.estate",
+      "title": "ERA Residential Complex",
+      "thumbnail": "https://cdn.landing.love/images/era-estate-thumb.webp",
+      "tags": [
+        "Real Estate",
+        "Architecture",
+        "Marketing",
+        "Home Living"
+      ],
+      "category": "Architecture",
+      "gallery_entry": "https://www.landing.love/sites/era-estate/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "architecture-realestate",
+        "agency",
+        "other"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://christophecoenon.com",
+      "title": "Christophe Coënon",
+      "thumbnail": "https://cdn.landing.love/images/christophecoenon-thumb.webp",
+      "tags": [
+        "Photography",
+        "Portfolio",
+        "Architecture",
+        "Minimal"
+      ],
+      "category": "Architecture",
+      "gallery_entry": "https://www.landing.love/sites/christophecoenon/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "portfolio",
+        "architecture-realestate",
+        "minimal"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://duroc.ma/en",
+      "title": "Duroc",
+      "thumbnail": "https://cdn.landing.love/images/duroc-thumb.webp",
+      "tags": [
+        "3D Website",
+        "Food Drink",
+        "Minimal",
+        "Real Estate"
+      ],
+      "category": "Real Estate",
+      "gallery_entry": "https://www.landing.love/sites/duroc/",
+      "sources": [
+        "landinglove"
+      ],
+      "niches": [
+        "creative-animation",
+        "other",
+        "minimal",
+        "architecture-realestate"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://hemstacks.antikythera.org",
+      "title": "Hemispherical Stacks",
+      "thumbnail": "https://minimal.gallery/wp-content/uploads/2026/02/hemstacks.antikythera.org_-1-900x500.png",
+      "tags": [
+        "writer",
+        "editorial",
+        "science",
+        "blog"
+      ],
+      "category": "",
+      "gallery_entry": "https://minimal.gallery/hemispherical-stacks/",
+      "sources": [
+        "minimal-gallery"
+      ],
+      "niches": [
+        "universal-creative"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://cellag.org",
+      "title": "Cellular Agriculture Society",
+      "thumbnail": "https://minimal.gallery/wp-content/uploads/2020/11/fd6da68a0c9f6ee5d0c531fc6be205db6b75d1a0-900x500.png",
+      "tags": [
+        "non-profit & charity",
+        "science",
+        "research"
+      ],
+      "category": "",
+      "gallery_entry": "https://minimal.gallery/cellular-agriculture-society/",
+      "sources": [
+        "tympanus-webzibition",
+        "minimal-gallery"
+      ],
+      "niches": [
+        "universal-creative"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://friendsoffriends.com",
+      "title": "Friends of Friends",
+      "thumbnail": "https://minimal.gallery/wp-content/uploads/2021/09/friends-of-friends-900x500.jpg",
+      "tags": [
+        "podcast",
+        "editorial",
+        "blog"
+      ],
+      "category": "",
+      "gallery_entry": "https://minimal.gallery/friends-of-friends/",
+      "sources": [
+        "minimal-gallery"
+      ],
+      "niches": [
+        "universal-creative"
+      ],
+      "alive": true
+    },
+    {
+      "url": "https://outrider.org",
+      "title": "Outrider",
+      "thumbnail": "https://minimal.gallery/wp-content/uploads/2020/11/tumblr_p8nt46TDRj1sjvgq8o1_1280-900x500.png",
+      "tags": [
+        "environmental",
+        "editorial",
+        "science"
+      ],
+      "category": "",
+      "gallery_entry": "https://minimal.gallery/outrider/",
+      "sources": [
+        "minimal-gallery"
+      ],
+      "niches": [
+        "universal-creative"
+      ],
+      "alive": true
+    }
+  ]
+}

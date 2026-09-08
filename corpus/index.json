@@ -1,0 +1,21 @@
+{
+  "scraped_at": "2026-07-23",
+  "galleries": [
+    "tympanus-webzibition",
+    "minimal-gallery",
+    "bestagencysites",
+    "landinglove",
+    "darkmodedesign"
+  ],
+  "total_input": 5609,
+  "unique_hostnames": 5220,
+  "duplicates_removed": 389,
+  "alive_count": 4179,
+  "dead_count": 1041,
+  "selected_for_extraction": 110,
+  "files": {
+    "deduped": "raw/deduped.json",
+    "alive": "raw/alive-check.json",
+    "selected": "selected.json"
+  }
+}

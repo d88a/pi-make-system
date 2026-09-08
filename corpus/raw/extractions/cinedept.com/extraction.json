@@ -1,0 +1,108 @@
+{
+  "url": "https://cinedept.com",
+  "hostname": "cinedept.com",
+  "title": "CINEDEPT",
+  "niches": [
+    "agency",
+    "minimal"
+  ],
+  "extracted_at": "2026-07-23",
+  "extract_duration_ms": 16132,
+  "page_metrics": {
+    "page_height_px": 900,
+    "viewport_width": 1440,
+    "section_count": 2,
+    "has_sticky_nav": true,
+    "has_announcement_bar": false
+  },
+  "colors": {
+    "top_palette": [
+      [
+        "#FFFFFF",
+        0.94
+      ],
+      [
+        "#191919",
+        0.05
+      ],
+      [
+        "#000000",
+        0.01
+      ]
+    ],
+    "bg_main": "#191919",
+    "text_main": "#FFFFFF",
+    "is_dark": true,
+    "bg_luminance": 0.1,
+    "primary_hue": 0,
+    "accent_hue": 0,
+    "accent_saturation_avg": 0,
+    "palette_size": 3
+  },
+  "typography": {
+    "display_font": "Fragment Mono",
+    "body_font": "Fragment Mono",
+    "fonts_used": [
+      "Times New Roman",
+      "Fragment Mono",
+      "Liberation Sans"
+    ],
+    "hero_h1_size_px": 9,
+    "body_size_px": 9,
+    "body_line_height": 1.2,
+    "display_weight": 400,
+    "font_count": 3
+  },
+  "layout": {
+    "hero_type": "product-showcase",
+    "hero_signals": {
+      "has_large_image": true,
+      "image_position": "center",
+      "image_width_pct": 100,
+      "has_centered_text": false
+    },
+    "section_sequence": [
+      "hero",
+      "content"
+    ],
+    "section_types": {
+      "hero": 1,
+      "content": 1
+    },
+    "has_asymmetric_grid": false,
+    "grid_cols_max": 0,
+    "card_count": 5,
+    "card_aspect": "16/9",
+    "has_bento": false
+  },
+  "mood": {
+    "radius_avg_px": 0,
+    "radius_distribution": {
+      "0": 1,
+      "4": 0,
+      "8": 0,
+      "12": 0,
+      "16": 0,
+      "24": 0,
+      "999": 0
+    },
+    "density_padding_avg_px": 6,
+    "shadow_usage": "none",
+    "animation_count": 118,
+    "transition_durations_ms": [
+      100,
+      200,
+      400
+    ],
+    "has_gradient": false,
+    "dark_mode": true,
+    "monochrome": true
+  },
+  "raw_extras": {
+    "nav_links_count": 15,
+    "button_count": 4,
+    "primary_button_radius_px": 0,
+    "image_count": 65,
+    "form_count": 1
+  }
+}

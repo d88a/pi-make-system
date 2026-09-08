@@ -1,0 +1,30 @@
+{
+  "project": "СтройМакс",
+  "domain": "maksplit.ru",
+  "type": "corporate-product",
+  "description": "Производитель кевларбетонной тротуарной плитки. FULL REBOOT. NO e-commerce — lead form only.",
+  "theme": "concrete-steel",
+  "accent": "#3B5F8A",
+  "accentName": "Steel Blue",
+  "fonts": {
+    "display": "Space Grotesk",
+    "body": "Inter",
+    "mono": "JetBrains Mono"
+  },
+  "language": "ru",
+  "noEcommerce": true,
+  "leadFormOnly": true,
+  "photoPolicy": "object-contain",
+  "status": "planning",
+  "pages": ["home", "catalog", "product", "about", "contacts", "delivery", "calculator"],
+  "components": ["nav", "footer", "hero", "product-card", "category-grid", "lead-form", "features", "product-detail"],
+  "categories": [
+    {"id": 54, "name": "Тротуарная плитка", "slug": "plitka", "count": 7},
+    {"id": 55, "name": "Бордюры, водостоки", "slug": "bordyury", "count": 3},
+    {"id": 56, "name": "Брусчатка тротуарная", "slug": "bruschatka", "count": 9},
+    {"id": 95, "name": "Памятники из бетона", "slug": "pamyatniki", "count": 3}
+  ],
+  "productCount": 22,
+  "createdAt": "2026-07-22",
+  "currentPage": null
+}

@@ -1,0 +1,103 @@
+{
+  "url": "https://ch-projects.com",
+  "hostname": "ch-projects.com",
+  "title": "CH Projects",
+  "niches": [
+    "creative-animation",
+    "minimal",
+    "architecture-realestate"
+  ],
+  "extracted_at": "2026-07-23",
+  "extract_duration_ms": 54158,
+  "page_metrics": {
+    "page_height_px": 1851,
+    "viewport_width": 1440,
+    "section_count": 2,
+    "has_sticky_nav": true,
+    "has_announcement_bar": false
+  },
+  "colors": {
+    "top_palette": [
+      [
+        "#FFFFFF",
+        0.87
+      ],
+      [
+        "#000000",
+        0.13
+      ]
+    ],
+    "bg_main": "#000000",
+    "text_main": "#FFFFFF",
+    "is_dark": true,
+    "bg_luminance": 0,
+    "primary_hue": 0,
+    "accent_hue": 0,
+    "accent_saturation_avg": 0,
+    "palette_size": 2
+  },
+  "typography": {
+    "display_font": "ABC ROM Condensed",
+    "body_font": "ABC ROM Condensed",
+    "fonts_used": [
+      "ui-sans-serif",
+      "ABC ROM Condensed",
+      "ABC ROM"
+    ],
+    "hero_h1_size_px": 0,
+    "body_size_px": 10,
+    "body_line_height": 1.5,
+    "display_weight": 400,
+    "font_count": 3
+  },
+  "layout": {
+    "hero_type": "centered",
+    "hero_signals": {
+      "has_large_image": false,
+      "image_position": "none",
+      "image_width_pct": 0,
+      "has_centered_text": false
+    },
+    "section_sequence": [
+      "contact",
+      "footer"
+    ],
+    "section_types": {
+      "contact": 1,
+      "footer": 1
+    },
+    "has_asymmetric_grid": true,
+    "grid_cols_max": 12,
+    "card_count": 8,
+    "card_aspect": "16/9",
+    "has_bento": true
+  },
+  "mood": {
+    "radius_avg_px": 1,
+    "radius_distribution": {
+      "0": 0.78,
+      "4": 0,
+      "8": 0.22,
+      "12": 0,
+      "16": 0,
+      "24": 0,
+      "999": 0
+    },
+    "density_padding_avg_px": 24,
+    "shadow_usage": "none",
+    "animation_count": 1,
+    "transition_durations_ms": [
+      300
+    ],
+    "has_gradient": false,
+    "dark_mode": true,
+    "monochrome": true
+  },
+  "raw_extras": {
+    "nav_links_count": 43,
+    "button_count": 8,
+    "primary_button_radius_px": 5,
+    "image_count": 1,
+    "form_count": 1
+  }
+}

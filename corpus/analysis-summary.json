@@ -1,0 +1,1056 @@
+{
+  "generated_at": "2026-07-23T12:53:44.918Z",
+  "source": "D:/pi/corpus (88 sites, 5 galleries, scraped 2026-07-22)",
+  "total_extractions": 88,
+  "total_selected": 110,
+  "errors": 22,
+  "architecture_realestate_count": 20,
+  "hero_type_distribution": {
+    "typography": 4,
+    "centered": 64,
+    "asymmetric-split": 11,
+    "product-showcase": 9
+  },
+  "hero_signal_image": {
+    "center": 13,
+    "left": 10,
+    "right": 1,
+    "none": 64,
+    "unknown": 0
+  },
+  "hero_signal_centered": {
+    "true": 16,
+    "false": 72
+  },
+  "top_section_sequences": [
+    {
+      "sequence": "",
+      "count": 40,
+      "pct": "45.5",
+      "examples": [
+        "abcdinamo.com",
+        "aikawakenichi.com",
+        "antimetal.com",
+        "archi-malinstudio.com",
+        "artprize-shadows.com"
+      ]
+    },
+    {
+      "sequence": "hero→gallery",
+      "count": 3,
+      "pct": "3.4",
+      "examples": [
+        "artemiilebedev.com",
+        "lusano.com",
+        "teardwn.com"
+      ]
+    },
+    {
+      "sequence": "hero",
+      "count": 3,
+      "pct": "3.4",
+      "examples": [
+        "chems.studio",
+        "faces.app",
+        "iyo.ai"
+      ]
+    },
+    {
+      "sequence": "hero→content",
+      "count": 3,
+      "pct": "3.4",
+      "examples": [
+        "cinedept.com",
+        "truekindskincare.com",
+        "usalproject.com"
+      ]
+    },
+    {
+      "sequence": "hero→nav→features→hero→content→about→content→footer",
+      "count": 1,
+      "pct": "1.1",
+      "examples": [
+        "25residences.com"
+      ]
+    },
+    {
+      "sequence": "hero→footer",
+      "count": 1,
+      "pct": "1.1",
+      "examples": [
+        "aboutluca.com"
+      ]
+    },
+    {
+      "sequence": "hero→features→content→features→content→gallery→content→footer",
+      "count": 1,
+      "pct": "1.1",
+      "examples": [
+        "alias.studio"
+      ]
+    },
+    {
+      "sequence": "nav→features→hero→content→about→content→features",
+      "count": 1,
+      "pct": "1.1",
+      "examples": [
+        "arago.inc"
+      ]
+    },
+    {
+      "sequence": "nav→cta→content→footer",
+      "count": 1,
+      "pct": "1.1",
+      "examples": [
+        "becaneparis.com"
+      ]
+    },
+    {
+      "sequence": "hero→content→stats→content→stats→content→stats→content→stats→content",
+      "count": 1,
+      "pct": "1.1",
+      "examples": [
+        "blueyard.com"
+      ]
+    },
+    {
+      "sequence": "hero→content→about→content",
+      "count": 1,
+      "pct": "1.1",
+      "examples": [
+        "cerealbnb.com"
+      ]
+    },
+    {
+      "sequence": "contact→footer",
+      "count": 1,
+      "pct": "1.1",
+      "examples": [
+        "ch-projects.com"
+      ]
+    },
+    {
+      "sequence": "hero→nav→hero→content",
+      "count": 1,
+      "pct": "1.1",
+      "examples": [
+        "clearwater.london"
+      ]
+    },
+    {
+      "sequence": "hero→gallery→content→nav→content→gallery→features→gallery→footer",
+      "count": 1,
+      "pct": "1.1",
+      "examples": [
+        "clouarchitects.com"
+      ]
+    },
+    {
+      "sequence": "hero→nav→features→content→features→content→features→nav→content→nav",
+      "count": 1,
+      "pct": "1.1",
+      "examples": [
+        "cushion.so"
+      ]
+    }
+  ],
+  "section_type_frequencies": [
+    {
+      "type": "hero",
+      "count": 185
+    },
+    {
+      "type": "content",
+      "count": 151
+    },
+    {
+      "type": "gallery",
+      "count": 60
+    },
+    {
+      "type": "features",
+      "count": 46
+    },
+    {
+      "type": "footer",
+      "count": 30
+    },
+    {
+      "type": "nav",
+      "count": 20
+    },
+    {
+      "type": "stats",
+      "count": 10
+    },
+    {
+      "type": "cta",
+      "count": 9
+    },
+    {
+      "type": "about",
+      "count": 6
+    },
+    {
+      "type": "testimonial",
+      "count": 6
+    },
+    {
+      "type": "contact",
+      "count": 5
+    },
+    {
+      "type": "logos",
+      "count": 3
+    },
+    {
+      "type": "faq",
+      "count": 3
+    },
+    {
+      "type": "pricing",
+      "count": 2
+    },
+    {
+      "type": "blog",
+      "count": 1
+    }
+  ],
+  "palette_clusters": [
+    {
+      "key": "light|0-29 (Red)|0-29 (Red)|low (<30%)",
+      "count": 44,
+      "pct": "50.0",
+      "is_dark": false,
+      "primary_hue_bucket": "0-29 (Red)",
+      "accent_hue_bucket": "0-29 (Red)",
+      "saturation_bucket": "low (<30%)",
+      "bg_main_mode": "#FFFFFF",
+      "text_main_mode": "#000000",
+      "bg_luminance_median": "1.00",
+      "representative_hexes": [
+        "#000000",
+        "#FFFFFF",
+        "#F1F1F1",
+        "#F0F0F0",
+        "#303030",
+        "#1F1F1F"
+      ],
+      "examples": [
+        "25residences.com",
+        "abcdinamo.com",
+        "aikawakenichi.com",
+        "antimetal.com",
+        "archi-malinstudio.com"
+      ]
+    },
+    {
+      "key": "dark|0-29 (Red)|0-29 (Red)|low (<30%)",
+      "count": 7,
+      "pct": "8.0",
+      "is_dark": true,
+      "primary_hue_bucket": "0-29 (Red)",
+      "accent_hue_bucket": "0-29 (Red)",
+      "saturation_bucket": "low (<30%)",
+      "bg_main_mode": "#000000",
+      "text_main_mode": "#FFFFFF",
+      "bg_luminance_median": "0.00",
+      "representative_hexes": [
+        "#FFFFFF",
+        "#000000",
+        "#DDDEE3",
+        "#101010",
+        "#E8E8E9",
+        "#90959A"
+      ],
+      "examples": [
+        "arago.inc",
+        "based.gg",
+        "ch-projects.com",
+        "chems.studio",
+        "cinedept.com"
+      ]
+    },
+    {
+      "key": "light|240-269 (Indigo)|240-269 (Indigo)|high (≥70%)",
+      "count": 7,
+      "pct": "8.0",
+      "is_dark": false,
+      "primary_hue_bucket": "240-269 (Indigo)",
+      "accent_hue_bucket": "240-269 (Indigo)",
+      "saturation_bucket": "high (≥70%)",
+      "bg_main_mode": "#F0F0F0",
+      "text_main_mode": "#000000",
+      "bg_luminance_median": "0.94",
+      "representative_hexes": [
+        "#000000",
+        "#0000EE",
+        "#F0F0F0",
+        "#E0E0FF"
+      ],
+      "examples": [
+        "batcloud.art",
+        "becaneparis.com",
+        "lightweight.info",
+        "lusano.com",
+        "teardwn.com"
+      ]
+    },
+    {
+      "key": "dark|210-239 (Blue)|210-239 (Blue)|low (<30%)",
+      "count": 2,
+      "pct": "2.3",
+      "is_dark": true,
+      "primary_hue_bucket": "210-239 (Blue)",
+      "accent_hue_bucket": "210-239 (Blue)",
+      "saturation_bucket": "low (<30%)",
+      "bg_main_mode": "#151515",
+      "text_main_mode": "#FFFFFF",
+      "bg_luminance_median": "0.09",
+      "representative_hexes": [
+        "#FFFFFF",
+        "#303236",
+        "#212529",
+        "#0B0D10",
+        "#797D86",
+        "#151515"
+      ],
+      "examples": [
+        "aboutluca.com",
+        "huly.io"
+      ]
+    },
+    {
+      "key": "light|210-239 (Blue)|210-239 (Blue)|low (<30%)",
+      "count": 2,
+      "pct": "2.3",
+      "is_dark": false,
+      "primary_hue_bucket": "210-239 (Blue)",
+      "accent_hue_bucket": "210-239 (Blue)",
+      "saturation_bucket": "low (<30%)",
+      "bg_main_mode": "#FDFDF8",
+      "text_main_mode": "#374151",
+      "bg_luminance_median": "0.99",
+      "representative_hexes": [
+        "#FFFFFF",
+        "#374151",
+        "#111111",
+        "#000000",
+        "#9C9C9D",
+        "#111827"
+      ],
+      "examples": [
+        "posthog.com",
+        "raycast.com"
+      ]
+    },
+    {
+      "key": "dark|240-269 (Indigo)|240-269 (Indigo)|high (≥70%)",
+      "count": 1,
+      "pct": "1.1",
+      "is_dark": true,
+      "primary_hue_bucket": "240-269 (Indigo)",
+      "accent_hue_bucket": "240-269 (Indigo)",
+      "saturation_bucket": "high (≥70%)",
+      "bg_main_mode": "#0000FF",
+      "text_main_mode": "#FFFFFF",
+      "bg_luminance_median": "0.07",
+      "representative_hexes": [
+        "#FFFFFF",
+        "#0000FF",
+        "#7D7AFF",
+        "#020202"
+      ],
+      "examples": [
+        "alias.studio"
+      ]
+    },
+    {
+      "key": "light|210-239 (Blue)|30-59 (Orange)|high (≥70%)",
+      "count": 1,
+      "pct": "1.1",
+      "is_dark": false,
+      "primary_hue_bucket": "210-239 (Blue)",
+      "accent_hue_bucket": "30-59 (Orange)",
+      "saturation_bucket": "high (≥70%)",
+      "bg_main_mode": "#FFFFFF",
+      "text_main_mode": "#090B11",
+      "bg_luminance_median": "1.00",
+      "representative_hexes": [
+        "#090B11",
+        "#FFFFFF",
+        "#FFCF9E",
+        "#BABFFF",
+        "#E3A2EF",
+        "#FFF6F4"
+      ],
+      "examples": [
+        "blueyard.com"
+      ]
+    },
+    {
+      "key": "light|30-59 (Orange)|240-269 (Indigo)|mid (30-70%)",
+      "count": 1,
+      "pct": "1.1",
+      "is_dark": false,
+      "primary_hue_bucket": "30-59 (Orange)",
+      "accent_hue_bucket": "240-269 (Indigo)",
+      "saturation_bucket": "mid (30-70%)",
+      "bg_main_mode": "#FFFFFF",
+      "text_main_mode": "#130F4B",
+      "bg_luminance_median": "1.00",
+      "representative_hexes": [
+        "#FFFFFF",
+        "#130F4B",
+        "#EEE2D0"
+      ],
+      "examples": [
+        "cellag.org"
+      ]
+    },
+    {
+      "key": "light|330-359 (Pink)|240-269 (Indigo)|high (≥70%)",
+      "count": 1,
+      "pct": "1.1",
+      "is_dark": false,
+      "primary_hue_bucket": "330-359 (Pink)",
+      "accent_hue_bucket": "240-269 (Indigo)",
+      "saturation_bucket": "high (≥70%)",
+      "bg_main_mode": "#FFFFFF",
+      "text_main_mode": "#173792",
+      "bg_luminance_median": "1.00",
+      "representative_hexes": [
+        "#FFFFFF",
+        "#173792",
+        "#000000",
+        "#0000EE",
+        "#FF385C"
+      ],
+      "examples": [
+        "cerealbnb.com"
+      ]
+    },
+    {
+      "key": "light|210-239 (Blue)|180-209 (Cyan)|mid (30-70%)",
+      "count": 1,
+      "pct": "1.1",
+      "is_dark": false,
+      "primary_hue_bucket": "210-239 (Blue)",
+      "accent_hue_bucket": "180-209 (Cyan)",
+      "saturation_bucket": "mid (30-70%)",
+      "bg_main_mode": "#FFFFFF",
+      "text_main_mode": "#252525",
+      "bg_luminance_median": "1.00",
+      "representative_hexes": [
+        "#252525",
+        "#FFFFFF",
+        "#BFC9DC",
+        "#F7FDFF",
+        "#C5D3E2",
+        "#1B1B1B"
+      ],
+      "examples": [
+        "clearwater.london"
+      ]
+    },
+    {
+      "key": "dark|60-89 (Yellow)|60-89 (Yellow)|high (≥70%)",
+      "count": 1,
+      "pct": "1.1",
+      "is_dark": true,
+      "primary_hue_bucket": "60-89 (Yellow)",
+      "accent_hue_bucket": "60-89 (Yellow)",
+      "saturation_bucket": "high (≥70%)",
+      "bg_main_mode": "#000000",
+      "text_main_mode": "#FFFFFC",
+      "bg_luminance_median": "0.00",
+      "representative_hexes": [
+        "#000000",
+        "#FFFFFC",
+        "#FFFFFF"
+      ],
+      "examples": [
+        "clouarchitects.com"
+      ]
+    },
+    {
+      "key": "dark|300-329 (Magenta)|150-179 (Teal)|high (≥70%)",
+      "count": 1,
+      "pct": "1.1",
+      "is_dark": true,
+      "primary_hue_bucket": "300-329 (Magenta)",
+      "accent_hue_bucket": "150-179 (Teal)",
+      "saturation_bucket": "high (≥70%)",
+      "bg_main_mode": "#130033",
+      "text_main_mode": "#00FFE5",
+      "bg_luminance_median": "0.03",
+      "representative_hexes": [
+        "#00FFE5",
+        "#FF00EE",
+        "#130033",
+        "#0F160E",
+        "#20D4E2",
+        "#120638"
+      ],
+      "examples": [
+        "dancerobotphl.com"
+      ]
+    }
+  ],
+  "typography": {
+    "top_font_pairs": [
+      {
+        "pair": "unknown|unknown",
+        "count": 24,
+        "pct": "27.3"
+      },
+      {
+        "pair": "Times New Roman|Times New Roman",
+        "count": 14,
+        "pct": "15.9"
+      },
+      {
+        "pair": "Fragment Mono|Fragment Mono",
+        "count": 2,
+        "pct": "2.3"
+      },
+      {
+        "pair": "Inter|Inter",
+        "count": 2,
+        "pct": "2.3"
+      },
+      {
+        "pair": "Europa Medium Condensed|Europa Light",
+        "count": 1,
+        "pct": "1.1"
+      },
+      {
+        "pair": "IBM Plex Mono|IBM Plex Mono",
+        "count": 1,
+        "pct": "1.1"
+      },
+      {
+        "pair": "Satoshi|Satoshi",
+        "count": 1,
+        "pct": "1.1"
+      },
+      {
+        "pair": "Antartica|Antartica",
+        "count": 1,
+        "pct": "1.1"
+      },
+      {
+        "pair": "VVDS Fifties|VVDS Fifties",
+        "count": 1,
+        "pct": "1.1"
+      },
+      {
+        "pair": "Based|Based",
+        "count": 1,
+        "pct": "1.1"
+      },
+      {
+        "pair": "Instrument Sans|Instrument Sans",
+        "count": 1,
+        "pct": "1.1"
+      },
+      {
+        "pair": "SuisseIntl|SuisseIntl",
+        "count": 1,
+        "pct": "1.1"
+      },
+      {
+        "pair": "Caprasimo|Manrope",
+        "count": 1,
+        "pct": "1.1"
+      },
+      {
+        "pair": "ABC ROM Condensed|ABC ROM Condensed",
+        "count": 1,
+        "pct": "1.1"
+      },
+      {
+        "pair": "Simplon Mono|Simplon Mono",
+        "count": 1,
+        "pct": "1.1"
+      }
+    ],
+    "top_display_fonts": [
+      {
+        "font": "unknown",
+        "count": 24
+      },
+      {
+        "font": "Times New Roman",
+        "count": 14
+      },
+      {
+        "font": "Fragment Mono",
+        "count": 2
+      },
+      {
+        "font": "Instrument Sans",
+        "count": 2
+      },
+      {
+        "font": "Inter",
+        "count": 2
+      },
+      {
+        "font": "Europa Medium Condensed",
+        "count": 1
+      },
+      {
+        "font": "IBM Plex Mono",
+        "count": 1
+      },
+      {
+        "font": "Satoshi",
+        "count": 1
+      },
+      {
+        "font": "Antartica",
+        "count": 1
+      },
+      {
+        "font": "VVDS Fifties",
+        "count": 1
+      },
+      {
+        "font": "Based",
+        "count": 1
+      },
+      {
+        "font": "SuisseIntl",
+        "count": 1
+      },
+      {
+        "font": "Caprasimo",
+        "count": 1
+      },
+      {
+        "font": "ABC ROM Condensed",
+        "count": 1
+      },
+      {
+        "font": "Simplon Mono",
+        "count": 1
+      }
+    ],
+    "top_body_fonts": [
+      {
+        "font": "unknown",
+        "count": 24
+      },
+      {
+        "font": "Times New Roman",
+        "count": 16
+      },
+      {
+        "font": "Inter",
+        "count": 5
+      },
+      {
+        "font": "Fragment Mono",
+        "count": 2
+      },
+      {
+        "font": "ui-sans-serif",
+        "count": 2
+      },
+      {
+        "font": "Europa Light",
+        "count": 1
+      },
+      {
+        "font": "IBM Plex Mono",
+        "count": 1
+      },
+      {
+        "font": "Satoshi",
+        "count": 1
+      },
+      {
+        "font": "Antartica",
+        "count": 1
+      },
+      {
+        "font": "VVDS Fifties",
+        "count": 1
+      },
+      {
+        "font": "Based",
+        "count": 1
+      },
+      {
+        "font": "Instrument Sans",
+        "count": 1
+      },
+      {
+        "font": "SuisseIntl",
+        "count": 1
+      },
+      {
+        "font": "Manrope",
+        "count": 1
+      },
+      {
+        "font": "ABC ROM Condensed",
+        "count": 1
+      }
+    ],
+    "hero_h1_size": {
+      "min": 9,
+      "max": 257,
+      "median": 62,
+      "avg": "71.5"
+    },
+    "body_size": {
+      "min": 9,
+      "max": 40,
+      "median": 16,
+      "avg": "15.8"
+    },
+    "body_line_height": {
+      "min": "1.00",
+      "max": "2.70",
+      "median": "1.50",
+      "avg": "1.42"
+    }
+  },
+  "mood_distribution": {
+    "radius": {
+      "sharp (<4px)": 61,
+      "pill (≥20px)": 11,
+      "soft (4-12px)": 6,
+      "round (12-20px)": 4
+    },
+    "density": {
+      "airy (≥32px)": 18,
+      "tight (<16px)": 30,
+      "normal (16-32px)": 40
+    },
+    "shadow": {
+      "none": 77,
+      "light": 2,
+      "medium": 6,
+      "heavy": 3
+    },
+    "animation": {
+      "lots (≥30)": 34,
+      "none (<5)": 43,
+      "some (5-30)": 11
+    },
+    "gradient": {
+      "yes": 11,
+      "no": 77
+    },
+    "dark_mode": {
+      "yes": 19,
+      "no": 69
+    },
+    "monochrome": {
+      "yes": 56,
+      "no": 32
+    }
+  },
+  "architecture_realestate": {
+    "count": 20,
+    "hero_types": {
+      "typography": 1,
+      "centered": 12,
+      "product-showcase": 4,
+      "asymmetric-split": 3
+    },
+    "top_section_sequences": [
+      {
+        "sequence": "",
+        "count": 7
+      },
+      {
+        "sequence": "hero→nav→features→hero→hero→hero→content→about→content→footer",
+        "count": 1
+      },
+      {
+        "sequence": "contact→footer",
+        "count": 1
+      },
+      {
+        "sequence": "hero→nav→hero→hero→hero→hero→hero→hero→hero→hero→hero→hero→hero→content→content",
+        "count": 1
+      },
+      {
+        "sequence": "hero→gallery→content→nav→content→gallery→features→gallery→gallery→gallery→footer",
+        "count": 1
+      },
+      {
+        "sequence": "hero→content→content→gallery",
+        "count": 1
+      },
+      {
+        "sequence": "hero→hero→hero→hero→hero→content→content→hero→content→content→gallery→content→content→content→cta",
+        "count": 1
+      },
+      {
+        "sequence": "nav→content→content→content→gallery→content→gallery→content→gallery→content→pricing→content→footer",
+        "count": 1
+      },
+      {
+        "sequence": "gallery",
+        "count": 1
+      },
+      {
+        "sequence": "nav",
+        "count": 1
+      }
+    ],
+    "palette": {
+      "bg_main_mode": "#F0F0F0",
+      "text_main_mode": "#1C1C1C",
+      "primary_hue_median": 0,
+      "accent_hue_median": 0,
+      "accent_sat_median": 0,
+      "top_hexes": [
+        {
+          "hex": "#000000",
+          "weight": 0.268
+        },
+        {
+          "hex": "#FFFFFF",
+          "weight": 0.074
+        },
+        {
+          "hex": "#322018",
+          "weight": 0.043
+        },
+        {
+          "hex": "#9C9C9C",
+          "weight": 0.038
+        },
+        {
+          "hex": "#F0F0F0",
+          "weight": 0.038
+        },
+        {
+          "hex": "#00FFE5",
+          "weight": 0.037
+        },
+        {
+          "hex": "#252525",
+          "weight": 0.034
+        },
+        {
+          "hex": "#1D1D1D",
+          "weight": 0.031
+        },
+        {
+          "hex": "#303030",
+          "weight": 0.03
+        },
+        {
+          "hex": "#1C1C1C",
+          "weight": 0.029
+        },
+        {
+          "hex": "#0000EE",
+          "weight": 0.028
+        },
+        {
+          "hex": "#F8F0E8",
+          "weight": 0.027
+        },
+        {
+          "hex": "#051936",
+          "weight": 0.019
+        },
+        {
+          "hex": "#DFD7C9",
+          "weight": 0.013
+        },
+        {
+          "hex": "#F2F0E6",
+          "weight": 0.01
+        }
+      ]
+    },
+    "mood": {
+      "radius": {
+        "values": {
+          "min": 0,
+          "max": 366,
+          "median": 0,
+          "avg": "35.5"
+        },
+        "distribution": {
+          "sharp": 15,
+          "soft": 1,
+          "round": 0,
+          "pill": 4
+        }
+      },
+      "density": {
+        "avg": "38.0",
+        "median": 24
+      },
+      "shadow": {
+        "none": 18,
+        "light": 1,
+        "medium": 1
+      },
+      "animation": {
+        "lots (≥30)": 7,
+        "none (<5)": 11,
+        "some (5-30)": 2
+      },
+      "gradient": {
+        "yes": 3,
+        "no": 17
+      },
+      "dark": {
+        "yes": 4,
+        "no": 16
+      }
+    },
+    "typography": {
+      "top_font_pairs": [
+        {
+          "pair": "unknown|unknown",
+          "count": 4
+        },
+        {
+          "pair": "Times New Roman|Times New Roman",
+          "count": 3
+        },
+        {
+          "pair": "Europa Medium Condensed|Europa Light",
+          "count": 1
+        },
+        {
+          "pair": "VVDS Fifties|VVDS Fifties",
+          "count": 1
+        },
+        {
+          "pair": "ABC ROM Condensed|ABC ROM Condensed",
+          "count": 1
+        },
+        {
+          "pair": "Neuemontreal|Neuemontreal",
+          "count": 1
+        },
+        {
+          "pair": "Circular Std|Circular Std",
+          "count": 1
+        },
+        {
+          "pair": "Chikarego|FindersKeepers",
+          "count": 1
+        },
+        {
+          "pair": "Aime|Aime",
+          "count": 1
+        },
+        {
+          "pair": "Decart|Gilroy",
+          "count": 1
+        }
+      ],
+      "hero_h1_median": 108,
+      "hero_h1_avg": "105.0"
+    },
+    "sites": [
+      "25residences.com",
+      "archi-malinstudio.com",
+      "batcloud.art",
+      "biga.cat",
+      "ch-projects.com",
+      "christophecoenon.com",
+      "clearwater.london",
+      "clouarchitects.com",
+      "composites.archi",
+      "dancerobotphl.com",
+      "diamondrosesanctuary.com",
+      "era.estate",
+      "ericpetschek.com",
+      "explore.ownprimland.com",
+      "ingraoinc.com",
+      "lusano.com",
+      "powerhouse-company.com",
+      "radga.com",
+      "thedamai.com",
+      "thisisstudiox.com"
+    ]
+  },
+  "card_analysis": {
+    "aspect_distribution": {
+      "16/9": 41,
+      "1/1": 42,
+      "4/3": 4,
+      "3/4": 1
+    },
+    "count_avg": "53.0",
+    "count_median": 4.5
+  },
+  "button_radius": {
+    "avg": "5.1",
+    "median": 0,
+    "sharp": 69,
+    "soft": 6,
+    "round": 2,
+    "pill": 7
+  },
+  "nav_links": {
+    "avg": "7.3",
+    "median": 2
+  },
+  "page_metrics": {
+    "page_height": {
+      "avg": "11512",
+      "median": 5967
+    },
+    "section_count": {
+      "avg": "6.1",
+      "median": 1
+    },
+    "sticky_nav": {
+      "yes": 33,
+      "no": 55
+    },
+    "announcement_bar": {
+      "yes": 0,
+      "no": 88
+    }
+  },
+  "kids_zone": {
+    "description": "Accent hue 25-45° (amber/orange), saturation <50% — \"dirty amber/terracotta\" zone",
+    "count": 2,
+    "sites": [
+      {
+        "hostname": "diamondrosesanctuary.com",
+        "accent_hue": 40,
+        "accent_sat": 40,
+        "bg_main": "#DFD7C9",
+        "text_main": "#303030",
+        "is_dark": false
+      },
+      {
+        "hostname": "era.estate",
+        "accent_hue": 30,
+        "accent_sat": 47,
+        "bg_main": "#051936",
+        "text_main": "#F8F0E8",
+        "is_dark": true
+      }
+    ],
+    "recommendation": "Использовать осторожно, не как default. Владелица отвергла warm-minimal/amber по умолчанию."
+  },
+  "data_quality_notes": {
+    "font_detection_rate": "55%",
+    "hero_type_centered": "73% — возможно классификатор слишком грубый",
+    "empty_section_sequence": "40/88 sites (45%) — section_sequence и section_types пустые. Классификатор секций отказал почти на половине сайтов.",
+    "empty_section_types": "40/88 — те же сайты",
+    "zero_hue_both": "51 sites — ожидаемо для grayscale/monochrome сайтов",
+    "body_size_bugs": "1 sites с body_size_px ≤ 1 — extraction артефакт",
+    "radius_outlier": "некоторые radius_avg_px > 1000 — extraction артефакт (исключены из radius статистик)",
+    "text_on_bg_mismatch": "2 sites с белым текстом на светлом фоне — extraction артефакт"
+  }
+}

@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeuralEye — Мониторинг AI-моделей</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Fira Code', 'SF Mono', 'Menlo', 'monospace'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Stagger delays for reveal */
+    .reveal-delay-1 { transition-delay: 100ms; }
+    .reveal-delay-2 { transition-delay: 200ms; }
+    .reveal-delay-3 { transition-delay: 300ms; }
+    .reveal-delay-4 { transition-delay: 400ms; }
+    .reveal-delay-5 { transition-delay: 500ms; }
+    .reveal-delay-6 { transition-delay: 600ms; }
+  </style>
+</head>
+<body class="font-sans antialiased bg-neutral-950">
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 h-16 border-b border-neutral-800 bg-neutral-950/80 backdrop-blur-md">
+    <nav class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2.5 text-neutral-50" aria-label="NeuralEye home">
+        <svg class="h-7 w-7 text-cyan-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+        </svg>
+        <span class="text-lg font-semibold tracking-tight">Neural<span class="text-cyan-500">Eye</span></span>
+      </a>
+      <!-- Nav links (desktop) -->
+      <div class="hidden lg:flex lg:items-center lg:gap-8">
+        <a href="#features" class="text-sm font-medium text-neutral-400 transition-colors duration-150 hover:text-neutral-50">Возможности</a>
+        <a href="#dashboard" class="text-sm font-medium text-neutral-400 transition-colors duration-150 hover:text-neutral-50">Дашборд</a>
+        <a href="#pricing" class="text-sm font-medium text-neutral-400 transition-colors duration-150 hover:text-neutral-50">Тарифы</a>
+        <a href="#" class="text-sm font-medium text-neutral-400 transition-colors duration-150 hover:text-neutral-50">Документация</a>
+        <a href="#" class="text-sm font-medium text-neutral-400 transition-colors duration-150 hover:text-neutral-50">API</a>
+      </div>
+      <!-- CTA (desktop) -->
+      <div class="hidden lg:flex lg:items-center lg:gap-4">
+        <a href="#" class="text-sm font-medium text-neutral-400 transition-colors duration-150 hover:text-neutral-50">Войти</a>
+        <a href="#" class="rounded-md bg-gradient-to-r from-cyan-500 to-violet-500 px-5 py-2 text-sm font-medium text-white shadow-[0_0_20px_rgba(6,182,212,0.3)] transition-all duration-150 hover:shadow-[0_0_30px_rgba(6,182,212,0.5)]">
+          Начать бесплатно
+        </a>
+      </div>
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-btn" class="lg:hidden flex items-center justify-center h-10 w-10 rounded-md text-neutral-400 hover:text-neutral-50 hover:bg-neutral-800 transition-colors duration-150" aria-label="Toggle menu" aria-expanded="false">
+        <svg id="menu-icon-open" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="4" y1="6" x2="20" y2="6"/>
+          <line x1="4" y1="12" x2="20" y2="12"/>
+          <line x1="4" y1="18" x2="20" y2="18"/>
+        </svg>
+        <svg id="menu-icon-close" class="hidden h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </nav>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-neutral-800 bg-neutral-950/95 backdrop-blur-md">
+      <div class="mx-auto max-w-7xl px-4 py-4 space-y-3">
+        <a href="#features" class="block py-2 text-sm font-medium text-neutral-400 hover:text-neutral-50 transition-colors duration-150">Возможности</a>
+        <a href="#dashboard" class="block py-2 text-sm font-medium text-neutral-400 hover:text-neutral-50 transition-colors duration-150">Дашборд</a>
+        <a href="#pricing" class="block py-2 text-sm font-medium text-neutral-400 hover:text-neutral-50 transition-colors duration-150">Тарифы</a>
+        <a href="#" class="block py-2 text-sm font-medium text-neutral-400 hover:text-neutral-50 transition-colors duration-150">Документация</a>
+        <a href="#" class="block py-2 text-sm font-medium text-neutral-400 hover:text-neutral-50 transition-colors duration-150">API</a>
+        <div class="pt-3 border-t border-neutral-800 flex flex-col gap-3">
+          <a href="#" class="text-sm font-medium text-neutral-400 hover:text-neutral-50 transition-colors duration-150">Войти</a>
+          <a href="#" class="rounded-md bg-gradient-to-r from-cyan-500 to-violet-500 px-5 py-2.5 text-sm font-medium text-white text-center shadow-[0_0_20px_rgba(6,182,212,0.3)]">
+            Начать бесплатно
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="relative overflow-hidden bg-neutral-950 pt-32 pb-24">
+      <!-- Radial glow background -->
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_50%_50%_at_50%_0%,rgba(6,182,212,0.15)_0%,transparent_70%)]"></div>
+      <!-- Grid pattern -->
+      <div class="absolute inset-0 bg-[linear-gradient(rgba(38,38,38,0.3)_1px,transparent_1px),linear-gradient(90deg,rgba(38,38,38,0.3)_1px,transparent_1px)] bg-[size:64px_64px]"></div>
+
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center reveal">
+          <!-- Eyebrow -->
+          <span class="font-mono text-xs font-medium tracking-wider text-cyan-500 uppercase">
+            → Платформа мониторинга AI
+          </span>
+          <!-- Hero title -->
+          <h1 class="mt-6 text-5xl font-bold tracking-tight text-neutral-50 sm:text-6xl lg:text-7xl">
+            Мониторинг ваших AI
+            <br>
+            <span class="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">
+              в реальном времени
+            </span>
+          </h1>
+          <!-- Subtitle -->
+          <p class="mx-auto mt-8 max-w-xl text-lg text-neutral-400">
+            Отслеживайте задержки, ошибки и расходы по всем нейросетям.
+            Мгновенные уведомления при дрейфе моделей или снижении производительности.
+          </p>
+          <!-- CTAs -->
+          <div class="mt-12 flex items-center justify-center gap-4 flex-wrap">
+            <a href="#" class="rounded-md bg-gradient-to-r from-cyan-500 to-violet-500 px-6 py-3 text-base font-medium text-white shadow-[0_0_20px_rgba(6,182,212,0.3)] transition-all duration-150 hover:shadow-[0_0_30px_rgba(6,182,212,0.5)]">
+              Попробовать бесплатно
+            </a>
+            <a href="#" class="rounded-md border border-neutral-700 bg-neutral-900 px-6 py-3 text-base font-medium text-neutral-300 transition-all duration-150 hover:border-neutral-600 hover:text-neutral-50">
+              Посмотреть демо
+            </a>
+          </div>
+
+          <!-- Live metrics -->
+          <div class="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 reveal">
+            <div class="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
+              <span class="font-mono text-xs font-medium tracking-wider uppercase text-neutral-600">Ср. задержка</span>
+              <div class="mt-3 flex items-baseline gap-2">
+                <span class="font-mono text-3xl font-bold text-neutral-50">12</span>
+                <span class="font-mono text-sm text-neutral-400">мс</span>
+              </div>
+              <div class="mt-3 flex items-center gap-2">
+                <span class="font-mono text-xs text-green-500">−2.3мс</span>
+                <span class="font-mono text-xs text-neutral-600">за неделю</span>
+              </div>
+            </div>
+            <div class="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
+              <span class="font-mono text-xs font-medium tracking-wider uppercase text-neutral-600">Аптайм</span>
+              <div class="mt-3 flex items-baseline gap-2">
+                <span class="font-mono text-3xl font-bold text-green-500">99.97</span>
+                <span class="font-mono text-sm text-neutral-400">%</span>
+              </div>
+              <div class="mt-3 flex items-center gap-2">
+                <span class="font-mono text-xs text-green-500">SLA выполнен</span>
+                <span class="font-mono text-xs text-neutral-600">30 дней</span>
+              </div>
+            </div>
+            <div class="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
+              <span class="font-mono text-xs font-medium tracking-wider uppercase text-neutral-600">Активных моделей</span>
+              <div class="mt-3 flex items-baseline gap-2">
+                <span class="font-mono text-3xl font-bold text-neutral-50">847</span>
+                <span class="font-mono text-sm text-neutral-400">моделей</span>
+              </div>
+              <div class="mt-3 flex items-center gap-2">
+                <span class="font-mono text-xs text-green-500">+12</span>
+                <span class="font-mono text-xs text-neutral-600">за неделю</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="py-24 bg-neutral-950">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <!-- Section header -->
+        <div class="mx-auto max-w-2xl text-center reveal">
+          <span class="font-mono text-xs font-medium tracking-wider uppercase text-cyan-500">→ Возможности</span>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl">
+            Всё необходимое для
+            <span class="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">мониторинга AI</span>
+          </h2>
+          <p class="mt-4 text-base text-neutral-400">
+            От отслеживания задержек до оптимизации расходов — NeuralEye даёт полный видение вашего AI-стека в продакшене.
+          </p>
+        </div>
+
+        <!-- Feature cards -->
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 1: Real-time Latency -->
+          <article class="group reveal reveal-delay-1 rounded-2xl border border-neutral-800 bg-neutral-900 p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-500/40 hover:shadow-[0_0_0_1px_rgba(6,182,212,0.4),0_0_30px_rgba(6,182,212,0.15)]">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-500/10 text-cyan-500">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <h3 class="mt-4 text-lg font-semibold tracking-tight text-neutral-50">Отслеживание задержек</h3>
+            <p class="mt-2 text-sm leading-relaxed text-neutral-400">
+              Мониторинг задержки инференса в миллисекундах по всем моделям. Задавайте пороги и получайте мгновенные уведомления при скачках.
+            </p>
+          </article>
+
+          <!-- Card 2: Error Tracking -->
+          <article class="group reveal reveal-delay-2 rounded-2xl border border-neutral-800 bg-neutral-900 p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-500/40 hover:shadow-[0_0_0_1px_rgba(6,182,212,0.4),0_0_30px_rgba(6,182,212,0.15)]">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-500/10 text-red-500">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+            </div>
+            <h3 class="mt-4 text-lg font-semibold tracking-tight text-neutral-50">Обнаружение ошибок и аномалий</h3>
+            <p class="mt-2 text-sm leading-relaxed text-neutral-400">
+              Автоматическое обнаружение галлюцинаций моделей, аномалий вывода и всплесков ошибок. Анализ первопричины менее чем за 60 секунд.
+            </p>
+          </article>
+
+          <!-- Card 3: Cost Analytics -->
+          <article class="group reveal reveal-delay-3 rounded-2xl border border-neutral-800 bg-neutral-900 p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-500/40 hover:shadow-[0_0_0_1px_rgba(6,182,212,0.4),0_0_30px_rgba(6,182,212,0.15)]">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-violet-500/10 text-violet-500">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <h3 class="mt-4 text-lg font-semibold tracking-tight text-neutral-50">Аналитика расходов</h3>
+            <p class="mt-2 text-sm leading-relaxed text-neutral-400">
+              Отслеживание расхода токенов и вычислительных затрат по моделям, командам, проектам. Выявляйте перерасход и оптимизируйте бюджет в реальном времени.
+            </p>
+          </article>
+
+          <!-- Card 4: Model Comparison -->
+          <article class="group reveal reveal-delay-4 rounded-2xl border border-neutral-800 bg-neutral-900 p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-500/40 hover:shadow-[0_0_0_1px_rgba(6,182,212,0.4),0_0_30px_rgba(6,182,212,0.15)]">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-green-500/10 text-green-500">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10"/>
+                <line x1="12" y1="20" x2="12" y2="4"/>
+                <line x1="6" y1="20" x2="6" y2="14"/>
+              </svg>
+            </div>
+            <h3 class="mt-4 text-lg font-semibold tracking-tight text-neutral-50">Сравнение моделей</h3>
+            <p class="mt-2 text-sm leading-relaxed text-neutral-400">
+              A/B тестирование моделей бок о бок. Сравнивайте GPT-4, Claude, Gemini и open-source модели по задержке, точности и стоимости.
+            </p>
+          </article>
+
+          <!-- Card 5: Alert System -->
+          <article class="group reveal reveal-delay-5 rounded-2xl border border-neutral-800 bg-neutral-900 p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-500/40 hover:shadow-[0_0_0_1px_rgba(6,182,212,0.4),0_0_30px_rgba(6,182,212,0.15)]">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-yellow-500/10 text-yellow-500">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+              </svg>
+            </div>
+            <h3 class="mt-4 text-lg font-semibold tracking-tight text-neutral-50">Смарт-уведомления</h3>
+            <p class="mt-2 text-sm leading-relaxed text-neutral-400">
+              Настраиваемые уведомления через Slack, Telegram, email и вебхуки. Умная группировка предотвращает усталость от алертов. Задавайте свои SLO.
+            </p>
+          </article>
+
+          <!-- Card 6: API Access -->
+          <article class="group reveal reveal-delay-6 rounded-2xl border border-neutral-800 bg-neutral-900 p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-500/40 hover:shadow-[0_0_0_1px_rgba(6,182,212,0.4),0_0_30px_rgba(6,182,212,0.15)]">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-500/10 text-cyan-500">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"/>
+                <polyline points="8 6 2 12 8 18"/>
+              </svg>
+            </div>
+            <h3 class="mt-4 text-lg font-semibold tracking-tight text-neutral-50">API для разработчиков</h3>
+            <p class="mt-2 text-sm leading-relaxed text-neutral-400">
+              REST и GraphQL API с библиотеками для Python, Node.js и Go. Вебхуки для стриминга событий в реальном времени. OpenAPI спецификация включена.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live Dashboard Preview -->
+    <section id="dashboard" class="py-24 bg-neutral-900">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <!-- Section header -->
+        <div class="mx-auto max-w-2xl text-center reveal">
+          <span class="font-mono text-xs font-medium tracking-wider uppercase text-cyan-500">→ Дашборд</span>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl">
+            Весь ваш AI-стек
+            <span class="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent"> в одном окне</span>
+          </h2>
+          <p class="mt-4 text-base text-neutral-400">
+            Дашборд реального времени с тепловыми картами задержек, распределением ошибок и разбивкой расходов.
+          </p>
+        </div>
+
+        <!-- Dashboard mock -->
+        <div class="mt-16 reveal">
+          <div class="rounded-2xl border border-neutral-700 bg-neutral-950 p-6 sm:p-8">
+            <!-- Dashboard header -->
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+              <div class="flex items-center gap-3">
+                <div class="flex gap-1.5">
+                  <div class="h-3 w-3 rounded-full bg-red-500"></div>
+                  <div class="h-3 w-3 rounded-full bg-yellow-500"></div>
+                  <div class="h-3 w-3 rounded-full bg-green-500"></div>
+                </div>
+                <span class="font-mono text-xs text-neutral-600">neuraleye.io/dashboard</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="flex items-center gap-1.5 font-mono text-xs text-green-500">
+                  <span class="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                  LIVE
+                </span>
+                <span class="font-mono text-xs text-neutral-600">Last 24 hours</span>
+              </div>
+            </div>
+
+            <!-- Top metric cards -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+              <div class="rounded-xl border border-neutral-800 bg-neutral-900 p-4">
+                <span class="font-mono text-xs text-neutral-600">Всего запросов</span>
+                <div class="mt-1 font-mono text-xl font-bold text-neutral-50">2.4М</div>
+                <span class="font-mono text-xs text-green-500">+8.2%</span>
+              </div>
+              <div class="rounded-xl border border-neutral-800 bg-neutral-900 p-4">
+                <span class="font-mono text-xs text-neutral-600">P99 задержка</span>
+                <div class="mt-1 font-mono text-xl font-bold text-neutral-50">187мс</div>
+                <span class="font-mono text-xs text-red-500">+5мс</span>
+              </div>
+              <div class="rounded-xl border border-neutral-800 bg-neutral-900 p-4">
+                <span class="font-mono text-xs text-neutral-600">Уровень ошибок</span>
+                <div class="mt-1 font-mono text-xl font-bold text-green-500">0.12%</div>
+                <span class="font-mono text-xs text-green-500">−0.03%</span>
+              </div>
+              <div class="rounded-xl border border-neutral-800 bg-neutral-900 p-4">
+                <span class="font-mono text-xs text-neutral-600">Расходы сегодня</span>
+                <div class="mt-1 font-mono text-xl font-bold text-neutral-50">₽112,470</div>
+                <span class="font-mono text-xs text-neutral-600">₽47/1K запр.</span>
+              </div>
+            </div>
+
+            <!-- Charts row -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <!-- Latency chart -->
+              <div class="lg:col-span-2 rounded-xl border border-neutral-800 bg-neutral-900 p-5">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-mono text-xs font-medium text-neutral-400 uppercase tracking-wider">Задержки по времени</span>
+                  <div class="flex items-center gap-4">
+                    <span class="flex items-center gap-1.5 font-mono text-xs text-neutral-600">
+                      <span class="h-2 w-2 rounded-sm bg-cyan-500"></span> P50
+                    </span>
+                    <span class="flex items-center gap-1.5 font-mono text-xs text-neutral-600">
+                      <span class="h-2 w-2 rounded-sm bg-violet-500"></span> P99
+                    </span>
+                  </div>
+                </div>
+                <!-- Simulated line chart -->
+                <div class="relative h-48">
+                  <!-- Grid lines -->
+                  <div class="absolute inset-0 flex flex-col justify-between">
+                    <div class="border-t border-neutral-800"></div>
+                    <div class="border-t border-neutral-800"></div>
+                    <div class="border-t border-neutral-800"></div>
+                    <div class="border-t border-neutral-800"></div>
+                  </div>
+                  <!-- Bars representing P50/P99 -->
+                  <div class="absolute inset-0 flex items-end gap-0.5 px-1">
+                    <!-- 24 bars for 24 hours -->
+                    <div class="flex-1 flex flex-col justify-end gap-0.5">
+                      <div class="w-full h-[20px] bg-violet-500/40 rounded-sm"></div>
+                      <div class="w-full h-[14px] bg-cyan-500/60 rounded-sm"></div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-0.5">
+                      <div class="w-full h-[24px] bg-violet-500/40 rounded-sm"></div>
+                      <div class="w-full h-[16px] bg-cyan-500/60 rounded-sm"></div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-0.5">
+                      <div class="w-full h-[18px] bg-violet-500/40 rounded-sm"></div>
+                      <div class="w-full h-[12px] bg-cyan-500/60 rounded-sm"></div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-0.5">
+                      <div class="w-full h-[28px] bg-violet-500/40 rounded-sm"></div>
+                      <div class="w-full h-[18px] bg-cyan-500/60 rounded-sm"></div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-0.5">
+                      <div class="w-full h-[22px] bg-violet-500/40 rounded-sm"></div>
+                      <div class="w-full h-[14px] bg-cyan-500/60 rounded-sm"></div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-0.5">
+                      <div class="w-full h-[32px] bg-violet-500/40 rounded-sm"></div>
+                      <div class="w-full h-[20px] bg-cyan-500/60 rounded-sm"></div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-0.5">
+                      <div class="w-full h-[26px] bg-violet-500/40 rounded-sm"></div>
+                      <div class="w-full h-[16px] bg-cyan-500/60 rounded-sm"></div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-0.5">
+                      <div class="w-full h-[30px] bg-violet-500/40 rounded-sm"></div>
+                      <div class="w-full h-[18px] bg-cyan-500/60 rounded-sm"></div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-0.5">
+                      <div class="w-full h-[20px] bg-violet-500/40 rounded-sm"></div>
+                      <div class="w-full h-[14px] bg-cyan-500/60 rounded-sm"></div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-0.5">
+                      <div class="w-full h-[18px] bg-violet-500/40 rounded-sm"></div>
+                      <div class="w-full h-[12px] bg-cyan-500/60 rounded-sm"></div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-0.5">
+                      <div class="w-full h-[24px] bg-violet-500/40 rounded-sm"></div>
+                      <div class="w-full h-[16px] bg-cyan-500/60 rounded-sm"></div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-0.5">
+                      <div class="w-full h-[36px] bg-violet-500/40 rounded-sm"></div>
+                      <div class="w-full h-[22px] bg-cyan-500/60 rounded-sm"></div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-0.5">
+                      <div class="w-full h-[28px] bg-violet-500/40 rounded-sm"></div>
+                      <div class="w-full h-[18px] bg-cyan-500/60 rounded-sm"></div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-0.5">
+                      <div class="w-full h-[22px] bg-violet-500/40 rounded-sm"></div>
+                      <div class="w-full h-[14px] bg-cyan-500/60 rounded-sm"></div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-0.5">
+                      <div class="w-full h-[20px] bg-violet-500/40 rounded-sm"></div>
+                      <div class="w-full h-[14px] bg-cyan-500/60 rounded-sm"></div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-0.5">
+                      <div class="w-full h-[26px] bg-violet-500/40 rounded-sm"></div>
+                      <div class="w-full h-[16px] bg-cyan-500/60 rounded-sm"></div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-0.5">
+                      <div class="w-full h-[18px] bg-violet-500/40 rounded-sm"></div>
+                      <div class="w-full h-[12px] bg-cyan-500/60 rounded-sm"></div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-0.5">
+                      <div class="w-full h-[24px] bg-violet-500/40 rounded-sm"></div>
+                      <div class="w-full h-[16px] bg-cyan-500/60 rounded-sm"></div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-0.5">
+                      <div class="w-full h-[30px] bg-violet-500/40 rounded-sm"></div>
+                      <div class="w-full h-[20px] bg-cyan-500/60 rounded-sm"></div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-0.5">
+                      <div class="w-full h-[22px] bg-violet-500/40 rounded-sm"></div>
+                      <div class="w-full h-[14px] bg-cyan-500/60 rounded-sm"></div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-0.5">
+                      <div class="w-full h-[28px] bg-violet-500/40 rounded-sm"></div>
+                      <div class="w-full h-[18px] bg-cyan-500/60 rounded-sm"></div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-0.5">
+                      <div class="w-full h-[20px] bg-violet-500/40 rounded-sm"></div>
+                      <div class="w-full h-[14px] bg-cyan-500/60 rounded-sm"></div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-0.5">
+                      <div class="w-full h-[16px] bg-violet-500/40 rounded-sm"></div>
+                      <div class="w-full h-[10px] bg-cyan-500/60 rounded-sm"></div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-end gap-0.5">
+                      <div class="w-full h-[22px] bg-violet-500/40 rounded-sm"></div>
+                      <div class="w-full h-[14px] bg-cyan-500/60 rounded-sm"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-3 flex justify-between font-mono text-xs text-neutral-600">
+                  <span>00:00</span><span>06:00</span><span>12:00</span><span>18:00</span><span>23:59</span>
+                </div>
+              </div>
+
+              <!-- Model distribution -->
+              <div class="rounded-xl border border-neutral-800 bg-neutral-900 p-5">
+                <span class="font-mono text-xs font-medium text-neutral-400 uppercase tracking-wider">Топ модели</span>
+                <div class="mt-5 space-y-4">
+                  <div>
+                    <div class="flex justify-between mb-1">
+                      <span class="font-mono text-xs text-neutral-300">gpt-4-turbo</span>
+                      <span class="font-mono text-xs text-neutral-50">34%</span>
+                    </div>
+                    <div class="h-2 rounded-full bg-neutral-800 overflow-hidden">
+                      <div class="h-full w-[34%] rounded-full bg-cyan-500"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="flex justify-between mb-1">
+                      <span class="font-mono text-xs text-neutral-300">claude-3-opus</span>
+                      <span class="font-mono text-xs text-neutral-50">27%</span>
+                    </div>
+                    <div class="h-2 rounded-full bg-neutral-800 overflow-hidden">
+                      <div class="h-full w-[27%] rounded-full bg-violet-500"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="flex justify-between mb-1">
+                      <span class="font-mono text-xs text-neutral-300">gemini-1.5-pro</span>
+                      <span class="font-mono text-xs text-neutral-50">18%</span>
+                    </div>
+                    <div class="h-2 rounded-full bg-neutral-800 overflow-hidden">
+                      <div class="h-full w-[18%] rounded-full bg-green-500"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="flex justify-between mb-1">
+                      <span class="font-mono text-xs text-neutral-300">llama-3-70b</span>
+                      <span class="font-mono text-xs text-neutral-50">12%</span>
+                    </div>
+                    <div class="h-2 rounded-full bg-neutral-800 overflow-hidden">
+                      <div class="h-full w-[12%] rounded-full bg-yellow-500"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="flex justify-between mb-1">
+                      <span class="font-mono text-xs text-neutral-300">mixtral-8x7b</span>
+                      <span class="font-mono text-xs text-neutral-50">9%</span>
+                    </div>
+                    <div class="h-2 rounded-full bg-neutral-800 overflow-hidden">
+                      <div class="h-full w-[9%] rounded-full bg-red-500/60"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recent alerts -->
+            <div class="mt-6 rounded-xl border border-neutral-800 bg-neutral-900 p-5">
+              <div class="flex items-center justify-between mb-4">
+                <span class="font-mono text-xs font-medium text-neutral-400 uppercase tracking-wider">Последние уведомления</span>
+                <span class="font-mono text-xs text-neutral-600">3 активных</span>
+              </div>
+              <div class="space-y-3">
+                <div class="flex items-center gap-3 py-2 border-b border-neutral-800">
+                  <span class="h-2 w-2 rounded-full bg-yellow-500 flex-shrink-0"></span>
+                  <span class="font-mono text-xs text-neutral-400">14:32</span>
+                  <span class="text-sm text-neutral-300">P99 задержка превысила 200мс для gpt-4-turbo</span>
+                </div>
+                <div class="flex items-center gap-3 py-2 border-b border-neutral-800">
+                  <span class="h-2 w-2 rounded-full bg-red-500 flex-shrink-0"></span>
+                  <span class="font-mono text-xs text-neutral-400">13:15</span>
+                  <span class="text-sm text-neutral-300">Всплеск ошибок: 0.8% на эндпоинте claude-3-opus</span>
+                </div>
+                <div class="flex items-center gap-3 py-2">
+                  <span class="h-2 w-2 rounded-full bg-green-500 flex-shrink-0"></span>
+                  <span class="font-mono text-xs text-neutral-400">12:48</span>
+                  <span class="text-sm text-neutral-300">Ошибки gpt-4-turbo восстановились, сейчас 0.11%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-24 bg-neutral-950">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <!-- Section header -->
+        <div class="mx-auto max-w-2xl text-center reveal">
+          <span class="font-mono text-xs font-medium tracking-wider uppercase text-cyan-500">→ Тарифы</span>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl">
+            Тарифы для команд
+            <span class="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent"> любого размера</span>
+          </h2>
+          <p class="mt-4 text-base text-neutral-400">
+            Начните бесплатно, масштабируйтесь по мере роста. Без скрытых платежей.
+          </p>
+        </div>
+
+        <!-- Pricing cards -->
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <!-- Starter -->
+          <article class="reveal reveal-delay-1 rounded-2xl border border-neutral-800 bg-neutral-900 p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-500/40 hover:shadow-[0_0_0_1px_rgba(6,182,212,0.4),0_0_30px_rgba(6,182,212,0.15)] flex flex-col">
+            <div>
+              <h3 class="text-lg font-semibold tracking-tight text-neutral-50">Стартер</h3>
+              <p class="mt-1 text-sm text-neutral-400">Для инди-разработчиков и небольших проектов.</p>
+              <div class="mt-5 flex items-baseline gap-1">
+                <span class="font-mono text-4xl font-bold text-neutral-50">₽4,900</span>
+                <span class="font-mono text-sm text-neutral-400">/месяц</span>
+              </div>
+            </div>
+            <ul class="mt-8 space-y-3 flex-1">
+              <li class="flex items-start gap-3 text-sm text-neutral-400">
+                <svg class="h-5 w-5 flex-shrink-0 text-green-500 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                До 10 моделей
+              </li>
+              <li class="flex items-start gap-3 text-sm text-neutral-400">
+                <svg class="h-5 w-5 flex-shrink-0 text-green-500 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                100K запросов/месяц
+              </li>
+              <li class="flex items-start gap-3 text-sm text-neutral-400">
+                <svg class="h-5 w-5 flex-shrink-0 text-green-500 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Базовые уведомления (email)
+              </li>
+              <li class="flex items-start gap-3 text-sm text-neutral-400">
+                <svg class="h-5 w-5 flex-shrink-0 text-green-500 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Хранение данных 7 дней
+              </li>
+            </ul>
+            <a href="#" class="mt-8 block rounded-md border border-neutral-700 bg-neutral-800 px-6 py-3 text-sm font-medium text-neutral-300 text-center transition-all duration-150 hover:border-neutral-600 hover:text-neutral-50">
+              Начать
+            </a>
+          </article>
+
+          <!-- Pro (выделенный) -->
+          <article class="reveal reveal-delay-2 rounded-2xl border border-cyan-500/40 bg-neutral-900 p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-500/60 hover:shadow-[0_0_0_1px_rgba(6,182,212,0.5),0_0_40px_rgba(6,182,212,0.2)] flex flex-col relative">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-md bg-cyan-500 px-4 py-1 font-mono text-xs font-medium text-neutral-950">
+              Популярный
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold tracking-tight text-neutral-50">Профи</h3>
+              <p class="mt-1 text-sm text-neutral-400">Для растущих команд и продакшн-нагрузок.</p>
+              <div class="mt-5 flex items-baseline gap-1">
+                <span class="font-mono text-4xl font-bold text-neutral-50">₽14,900</span>
+                <span class="font-mono text-sm text-neutral-400">/месяц</span>
+              </div>
+            </div>
+            <ul class="mt-8 space-y-3 flex-1">
+              <li class="flex items-start gap-3 text-sm text-neutral-400">
+                <svg class="h-5 w-5 flex-shrink-0 text-green-500 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Безлимитные модели
+              </li>
+              <li class="flex items-start gap-3 text-sm text-neutral-400">
+                <svg class="h-5 w-5 flex-shrink-0 text-green-500 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                1M запросов/месяц
+              </li>
+              <li class="flex items-start gap-3 text-sm text-neutral-400">
+                <svg class="h-5 w-5 flex-shrink-0 text-green-500 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Slack + Telegram + вебхуки
+              </li>
+              <li class="flex items-start gap-3 text-sm text-neutral-400">
+                <svg class="h-5 w-5 flex-shrink-0 text-green-500 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Сравнение моделей и A/B тесты
+              </li>
+              <li class="flex items-start gap-3 text-sm text-neutral-400">
+                <svg class="h-5 w-5 flex-shrink-0 text-green-500 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Хранение данных 30 дней
+              </li>
+            </ul>
+            <a href="#" class="mt-8 block rounded-md bg-gradient-to-r from-cyan-500 to-violet-500 px-6 py-3 text-sm font-medium text-white text-center shadow-[0_0_20px_rgba(6,182,212,0.3)] transition-all duration-150 hover:shadow-[0_0_30px_rgba(6,182,212,0.5)]">
+              Попробовать бесплатно
+            </a>
+          </article>
+
+          <!-- Enterprise -->
+          <article class="reveal reveal-delay-3 rounded-2xl border border-neutral-800 bg-neutral-900 p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-500/40 hover:shadow-[0_0_0_1px_rgba(6,182,212,0.4),0_0_30px_rgba(6,182,212,0.15)] flex flex-col">
+            <div>
+              <h3 class="text-lg font-semibold tracking-tight text-neutral-50">Энтерпрайз</h3>
+              <p class="mt-1 text-sm text-neutral-400">Для крупных организаций с особыми требованиями.</p>
+              <div class="mt-5 flex items-baseline gap-1">
+                <span class="font-mono text-4xl font-bold text-neutral-50">По запросу</span>
+              </div>
+            </div>
+            <ul class="mt-8 space-y-3 flex-1">
+              <li class="flex items-start gap-3 text-sm text-neutral-400">
+                <svg class="h-5 w-5 flex-shrink-0 text-green-500 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Безлимит на всё
+              </li>
+              <li class="flex items-start gap-3 text-sm text-neutral-400">
+                <svg class="h-5 w-5 flex-shrink-0 text-green-500 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                SSO и SAML
+              </li>
+              <li class="flex items-start gap-3 text-sm text-neutral-400">
+                <svg class="h-5 w-5 flex-shrink-0 text-green-500 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Развёртывание on-premise
+              </li>
+              <li class="flex items-start gap-3 text-sm text-neutral-400">
+                <svg class="h-5 w-5 flex-shrink-0 text-green-500 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Индивидуальные SLA и поддержка
+              </li>
+              <li class="flex items-start gap-3 text-sm text-neutral-400">
+                <svg class="h-5 w-5 flex-shrink-0 text-green-500 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Безлимитное хранение
+              </li>
+            </ul>
+            <a href="#" class="mt-8 block rounded-md border border-neutral-700 bg-neutral-800 px-6 py-3 text-sm font-medium text-neutral-300 text-center transition-all duration-150 hover:border-neutral-600 hover:text-neutral-50">
+              Связаться с нами
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 bg-neutral-900">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <!-- Section header -->
+        <div class="mx-auto max-w-2xl text-center reveal">
+          <span class="font-mono text-xs font-medium tracking-wider uppercase text-cyan-500">→ Отзывы</span>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl">
+            Нам доверяют
+            <span class="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">AI-команды</span>
+          </h2>
+          <p class="mt-4 text-base text-neutral-400">
+            Что говорят инженеры и исследователи о NeuralEye.
+          </p>
+        </div>
+
+        <!-- Testimonial cards -->
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <article class="reveal reveal-delay-1 rounded-2xl border border-neutral-800 bg-neutral-950 p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-500/40 hover:shadow-[0_0_0_1px_rgba(6,182,212,0.4),0_0_30px_rgba(6,182,212,0.15)] overflow-hidden">
+            <div class="flex gap-1 text-yellow-500">
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="mt-4 text-sm leading-relaxed text-neutral-300">
+              «NeuralEye поймал скачок задержки в нашем продакшен GPT-4 до того, как пользователи это заметили. Интеграция со Slack — спасение для нашей дежурной команды.»
+            </p>
+            <div class="mt-6 flex items-center gap-3">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-500/20 text-cyan-500 font-mono text-sm font-semibold">СМ</div>
+              <div>
+                <div class="text-sm font-semibold text-neutral-50">Сара Митчелл</div>
+                <div class="text-xs text-neutral-500">ML-инженер, TechScale</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="reveal reveal-delay-2 rounded-2xl border border-neutral-800 bg-neutral-950 p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-500/40 hover:shadow-[0_0_0_1px_rgba(6,182,212,0.4),0_0_30px_rgba(6,182,212,0.15)] overflow-hidden">
+            <div class="flex gap-1 text-yellow-500">
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="mt-4 text-sm leading-relaxed text-neutral-300">
+              «Только аналитика расходов сэкономила нам 1.2 млн ₽ в первый месяц. Мы переплачивали за модель, которая была на 30% медленнее альтернативы. NeuralEye это наглядно показал.»
+            </p>
+            <div class="mt-6 flex items-center gap-3">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-violet-500/20 text-violet-500 font-mono text-sm font-semibold">ДК</div>
+              <div>
+                <div class="text-sm font-semibold text-neutral-50">Давид Ким</div>
+                <div class="text-xs text-neutral-500">VP Engineering, Aether AI</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="reveal reveal-delay-3 rounded-2xl border border-neutral-800 bg-neutral-950 p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-500/40 hover:shadow-[0_0_0_1px_rgba(6,182,212,0.4),0_0_30px_rgba(6,182,212,0.15)] overflow-hidden">
+            <div class="flex gap-1 text-yellow-500">
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="mt-4 text-sm leading-relaxed text-neutral-300">
+              «Мы управляем 200+ файн-тюн моделями в 3 облачных провайдерах. Единый дашборд NeuralEye — единственный инструмент, который даёт нам полную картину.»
+            </p>
+            <div class="mt-6 flex items-center gap-3">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-green-500/20 text-green-500 font-mono text-sm font-semibold">АР</div>
+              <div>
+                <div class="text-sm font-semibold text-neutral-50">Алексей Ривера</div>
+                <div class="text-xs text-neutral-500">Руководитель платформы, Nova Labs</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="relative overflow-hidden bg-neutral-950 py-24">
+      <!-- Radial glow -->
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_50%_50%_at_50%_50%,rgba(6,182,212,0.1)_0%,transparent_70%)]"></div>
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center reveal">
+          <span class="font-mono text-xs font-medium tracking-wider uppercase text-cyan-500">→ Начните сейчас</span>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl lg:text-5xl">
+            Готовы мониторить ваш
+            <span class="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">AI-стек</span>?
+          </h2>
+          <p class="mx-auto mt-6 max-w-lg text-base text-neutral-400">
+            Присоединяйтесь к 2,000+ инженерным командам. Начните бесплатный 14-дневный триал — без карты.
+          </p>
+          <div class="mt-10 flex items-center justify-center gap-4 flex-wrap">
+            <a href="#" class="rounded-md bg-gradient-to-r from-cyan-500 to-violet-500 px-6 py-3 text-base font-medium text-white shadow-[0_0_20px_rgba(6,182,212,0.3)] transition-all duration-150 hover:shadow-[0_0_30px_rgba(6,182,212,0.5)]">
+              Попробовать бесплатно
+            </a>
+            <a href="#" class="rounded-md border border-neutral-700 bg-neutral-900 px-6 py-3 text-base font-medium text-neutral-300 transition-all duration-150 hover:border-neutral-600 hover:text-neutral-50">
+              Связаться с продажами
+            </a>
+          </div>
+          <p class="mt-6 font-mono text-xs text-neutral-600">
+            14 дней бесплатно · Без карты · Отмена в любой момент
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-neutral-800 bg-neutral-950 py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+        <!-- Brand -->
+        <div class="col-span-2 md:col-span-1">
+          <a href="#" class="flex items-center gap-2.5 text-neutral-50" aria-label="NeuralEye home">
+            <svg class="h-7 w-7 text-cyan-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+            </svg>
+            <span class="text-lg font-semibold tracking-tight">Neural<span class="text-cyan-500">Eye</span></span>
+          </a>
+          <p class="mt-4 text-sm text-neutral-500">
+            AI-мониторинг для команд, которые выпускают продукты.
+          </p>
+        </div>
+        <!-- Product -->
+        <div>
+          <h4 class="font-mono text-xs font-medium tracking-wider uppercase text-neutral-600">Продукт</h4>
+          <ul class="mt-4 space-y-3">
+            <li><a href="#" class="text-sm text-neutral-400 transition-colors duration-150 hover:text-neutral-50">Возможности</a></li>
+            <li><a href="#" class="text-sm text-neutral-400 transition-colors duration-150 hover:text-neutral-50">Тарифы</a></li>
+            <li><a href="#" class="text-sm text-neutral-400 transition-colors duration-150 hover:text-neutral-50">Обновления</a></li>
+            <li><a href="#" class="text-sm text-neutral-400 transition-colors duration-150 hover:text-neutral-50">Статус</a></li>
+          </ul>
+        </div>
+        <!-- Developers -->
+        <div>
+          <h4 class="font-mono text-xs font-medium tracking-wider uppercase text-neutral-600">Разработчикам</h4>
+          <ul class="mt-4 space-y-3">
+            <li><a href="#" class="text-sm text-neutral-400 transition-colors duration-150 hover:text-neutral-50">Документация</a></li>
+            <li><a href="#" class="text-sm text-neutral-400 transition-colors duration-150 hover:text-neutral-50">API Reference</a></li>
+            <li><a href="#" class="text-sm text-neutral-400 transition-colors duration-150 hover:text-neutral-50">SDK</a></li>
+            <li><a href="#" class="text-sm text-neutral-400 transition-colors duration-150 hover:text-neutral-50">Вебхуки</a></li>
+          </ul>
+        </div>
+        <!-- Company -->
+        <div>
+          <h4 class="font-mono text-xs font-medium tracking-wider uppercase text-neutral-600">Компания</h4>
+          <ul class="mt-4 space-y-3">
+            <li><a href="#" class="text-sm text-neutral-400 transition-colors duration-150 hover:text-neutral-50">О нас</a></li>
+            <li><a href="#" class="text-sm text-neutral-400 transition-colors duration-150 hover:text-neutral-50">Блог</a></li>
+            <li><a href="#" class="text-sm text-neutral-400 transition-colors duration-150 hover:text-neutral-50">Вакансии</a></li>
+            <li><a href="#" class="text-sm text-neutral-400 transition-colors duration-150 hover:text-neutral-50">Контакты</a></li>
+          </ul>
+        </div>
+        <!-- Legal -->
+        <div class="col-span-2 md:col-span-1">
+          <h4 class="font-mono text-xs font-medium tracking-wider uppercase text-neutral-600">Правовая информация</h4>
+          <ul class="mt-4 space-y-3">
+            <li><a href="#" class="text-sm text-neutral-400 transition-colors duration-150 hover:text-neutral-50">Конфиденциальность</a></li>
+            <li><a href="#" class="text-sm text-neutral-400 transition-colors duration-150 hover:text-neutral-50">Условия</a></li>
+            <li><a href="#" class="text-sm text-neutral-400 transition-colors duration-150 hover:text-neutral-50">Безопасность</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Bottom bar -->
+      <div class="mt-12 pt-8 border-t border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="font-mono text-xs text-neutral-600">
+          &copy; 2026 NeuralEye. Все права защищены.
+        </p>
+        <div class="flex items-center gap-6">
+          <a href="#" class="text-neutral-500 hover:text-neutral-300 transition-colors duration-150" aria-label="Twitter">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="text-neutral-500 hover:text-neutral-300 transition-colors duration-150" aria-label="GitHub">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="#" class="text-neutral-500 hover:text-neutral-300 transition-colors duration-150" aria-label="Discord">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .084-.013c3.92 1.79 8.16 1.79 12.04 0a.074.074 0 0 1 .084.013c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.332.956-2.42 2.157-2.42 1.21 0 2.176 1.096 2.157 2.42 0 1.334-.956 2.419-2.157 2.419zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.332.955-2.42 2.157-2.42 1.21 0 2.176 1.096 2.157 2.42 0 1.334-.946 2.419-2.157 2.419z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+
+    menuBtn.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('hidden');
+      menuIconOpen.classList.toggle('hidden', !isOpen);
+      menuIconClose.classList.toggle('hidden', isOpen);
+      menuBtn.setAttribute('aria-expanded', !isOpen);
+    });
+
+    // Close mobile menu when a link is clicked
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIconOpen.classList.remove('hidden');
+        menuIconClose.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); }),
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

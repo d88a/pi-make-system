@@ -1,0 +1,136 @@
+{
+  "url": "https://katana.network",
+  "hostname": "katana.network",
+  "title": "katana",
+  "niches": [
+    "saas-tech",
+    "creative-animation",
+    "other"
+  ],
+  "extracted_at": "2026-07-23",
+  "extract_duration_ms": 55222,
+  "page_metrics": {
+    "page_height_px": 21205,
+    "viewport_width": 1440,
+    "section_count": 19,
+    "has_sticky_nav": true,
+    "has_announcement_bar": false
+  },
+  "colors": {
+    "top_palette": [
+      [
+        "#FCFCFC",
+        0.78
+      ],
+      [
+        "#F6FF0D",
+        0.18
+      ],
+      [
+        "#11162F",
+        0.03
+      ],
+      [
+        "#0000EE",
+        0.01
+      ],
+      [
+        "#D9D9D9",
+        0
+      ]
+    ],
+    "bg_main": "#11162F",
+    "text_main": "#FCFCFC",
+    "is_dark": true,
+    "bg_luminance": 0.09,
+    "primary_hue": 240,
+    "accent_hue": 62,
+    "accent_saturation_avg": 100,
+    "palette_size": 5
+  },
+  "typography": {
+    "display_font": "OTJubilee Diamond",
+    "body_font": "Nikkey Line",
+    "fonts_used": [
+      "Nikkey Line",
+      "OTJubilee Diamond"
+    ],
+    "hero_h1_size_px": 72,
+    "body_size_px": 16,
+    "body_line_height": 1.4,
+    "display_weight": 400,
+    "font_count": 2
+  },
+  "layout": {
+    "hero_type": "centered",
+    "hero_signals": {
+      "has_large_image": false,
+      "image_position": "none",
+      "image_width_pct": 0,
+      "has_centered_text": false
+    },
+    "section_sequence": [
+      "nav",
+      "hero",
+      "hero",
+      "hero",
+      "hero",
+      "hero",
+      "hero",
+      "hero",
+      "content",
+      "content",
+      "gallery",
+      "testimonial",
+      "features",
+      "content",
+      "gallery"
+    ],
+    "section_types": {
+      "nav": 1,
+      "hero": 7,
+      "content": 3,
+      "gallery": 2,
+      "testimonial": 2,
+      "features": 1,
+      "cta": 1,
+      "footer": 2
+    },
+    "has_asymmetric_grid": false,
+    "grid_cols_max": 0,
+    "card_count": 12,
+    "card_aspect": "16/9",
+    "has_bento": false
+  },
+  "mood": {
+    "radius_avg_px": 0,
+    "radius_distribution": {
+      "0": 1,
+      "4": 0,
+      "8": 0,
+      "12": 0,
+      "16": 0,
+      "24": 0,
+      "999": 0
+    },
+    "density_padding_avg_px": 102,
+    "shadow_usage": "none",
+    "animation_count": 1027,
+    "transition_durations_ms": [
+      300,
+      400,
+      600,
+      800
+    ],
+    "has_gradient": false,
+    "dark_mode": true,
+    "monochrome": false
+  },
+  "raw_extras": {
+    "nav_links_count": 16,
+    "button_count": 11,
+    "primary_button_radius_px": 0,
+    "image_count": 38,
+    "form_count": 0
+  }
+}

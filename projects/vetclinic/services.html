@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Услуги — ЛапЛап</title>
+  <meta name="description" content="Услуги ветеринарной клиники ЛапЛап: приём, вакцинация, хирургия, стоматология, груминг, чек-ап. Цены и описание.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            nunito: ['Nunito', 'Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased bg-stone-50">
+
+  <!-- ===== NAVBAR (inlined, active: services) ===== -->
+  <header class="sticky top-0 z-50 h-16 border-b border-stone-200 bg-stone-50/90 backdrop-blur-sm">
+    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <a href="index.html" class="flex items-center gap-2 font-nunito text-xl font-bold text-stone-900 hover:text-emerald-600 transition-colors duration-200" aria-label="ЛапЛап — на главную">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-600">
+          <path d="M12 14c-2 0-3.5 1.5-3.5 3.5S10 21 12 21s3.5-1.5 3.5-3.5S14 14 12 14z"/>
+          <path d="M8 8c0-1.5 1-3 2.5-3s2.5 1.5 2.5 3-1 3-2.5 3S8 9.5 8 8z"/>
+          <path d="M16 8c0-1.5 1-3 2.5-3s2.5 1.5 2.5 3-1 3-2.5 3S16 9.5 16 8z"/>
+          <path d="M5 10c0-1 1-2 2-2s2 1 2 2-1 2-2 2-2-1-2-2z"/>
+          <path d="M19 10c0-1 1-2 2-2s2 1 2 2-1 2-2 2-2-1-2-2z"/>
+        </svg>
+        ЛапЛап
+      </a>
+      <nav class="hidden md:flex items-center gap-8" aria-label="Основная навигация">
+        <a href="index.html" class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors duration-200">Главная</a>
+        <a href="services.html" class="text-sm font-medium text-emerald-600 transition-colors duration-200">Услуги</a>
+        <a href="about.html" class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors duration-200">О нас</a>
+        <a href="contact.html" class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors duration-200">Контакты</a>
+      </nav>
+      <div class="hidden md:flex items-center gap-4">
+        <a href="contact.html" class="inline-flex items-center rounded-md bg-emerald-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-emerald-700 transition duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-stone-50">Записаться</a>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-stone-600 hover:bg-stone-100 hover:text-stone-900 transition duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-500" aria-expanded="false" aria-label="Открыть меню">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path id="menu-icon-open" stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+          <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden">
+      <div class="space-y-1 border-t border-stone-200 bg-white px-4 pb-4 pt-2 shadow-lg">
+        <a href="index.html" class="block rounded-md px-3 py-2 text-base font-medium text-stone-600 hover:bg-stone-50 hover:text-stone-900">Главная</a>
+        <a href="services.html" class="block rounded-md px-3 py-2 text-base font-medium text-emerald-600">Услуги</a>
+        <a href="about.html" class="block rounded-md px-3 py-2 text-base font-medium text-stone-600 hover:bg-stone-50 hover:text-stone-900">О нас</a>
+        <a href="contact.html" class="block rounded-md px-3 py-2 text-base font-medium text-stone-600 hover:bg-stone-50 hover:text-stone-900">Контакты</a>
+        <a href="contact.html" class="mt-2 block rounded-md bg-emerald-600 px-3 py-2.5 text-center text-base font-medium text-white hover:bg-emerald-700 transition duration-200">Записаться на приём</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== PAGE HEADER (inlined) ===== -->
+    <section class="bg-stone-50 pt-32 pb-16">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center reveal">
+          <h1 class="font-nunito text-4xl font-bold tracking-tight text-stone-900 sm:text-5xl">Наши услуги</h1>
+          <p class="mt-6 text-lg leading-relaxed text-stone-500">Полный спектр ветеринарной помощи — от профилактики до сложных операций. Прозрачные цены, заботливый подход.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES GRID ===== -->
+    <section class="bg-white py-28">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Service 1 -->
+          <div class="group rounded-2xl border border-stone-200 bg-white p-8 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:border-stone-300 reveal">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+              </svg>
+            </div>
+            <h3 class="mt-6 font-nunito text-xl font-semibold text-stone-900">Первичный приём</h3>
+            <p class="mt-3 text-base leading-relaxed text-stone-500">Полный осмотр питомца, сбор анамнеза, консультация по уходу, питанию и профилактике заболеваний. При необходимости — назначение анализов.</p>
+            <div class="mt-6 flex items-center justify-between border-t border-stone-100 pt-4">
+              <span class="text-sm text-stone-400">Длительность: 30 мин</span>
+              <span class="text-sm font-semibold text-amber-600">от 1 500 ₽</span>
+            </div>
+          </div>
+          <!-- Service 2 -->
+          <div class="group rounded-2xl border border-stone-200 bg-white p-8 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:border-stone-300 reveal">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Z"/><path d="M12 8v8M8 12h8"/>
+              </svg>
+            </div>
+            <h3 class="mt-6 font-nunito text-xl font-semibold text-stone-900">Вакцинация</h3>
+            <p class="mt-3 text-base leading-relaxed text-stone-500">Полный спектр прививок для кошек и собак. Используем только проверенные импортные вакцины. Оформляем ветпаспорт.</p>
+            <div class="mt-6 flex items-center justify-between border-t border-stone-100 pt-4">
+              <span class="text-sm text-stone-400">Длительность: 15 мин</span>
+              <span class="text-sm font-semibold text-amber-600">от 800 ₽</span>
+            </div>
+          </div>
+          <!-- Service 3 -->
+          <div class="group rounded-2xl border border-stone-200 bg-white p-8 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:border-stone-300 reveal">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/>
+              </svg>
+            </div>
+            <h3 class="mt-6 font-nunito text-xl font-semibold text-stone-900">Стоматология</h3>
+            <p class="mt-3 text-base leading-relaxed text-stone-500">Ультразвуковая чистка зубов, удаление зубного камня, лечение дёсен. Безопасная анестезия, без боли и стресса.</p>
+            <div class="mt-6 flex items-center justify-between border-t border-stone-100 pt-4">
+              <span class="text-sm text-stone-400">Длительность: 45 мин</span>
+              <span class="text-sm font-semibold text-amber-600">от 2 000 ₽</span>
+            </div>
+          </div>
+          <!-- Service 4 -->
+          <div class="group rounded-2xl border border-stone-200 bg-white p-8 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:border-stone-300 reveal">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+              </svg>
+            </div>
+            <h3 class="mt-6 font-nunito text-xl font-semibold text-stone-900">Хирургия</h3>
+            <p class="mt-3 text-base leading-relaxed text-stone-500">Плановые и экстренные операции любой сложности. Современная операционная, опытные хирурги, безопасный наркоз.</p>
+            <div class="mt-6 flex items-center justify-between border-t border-stone-100 pt-4">
+              <span class="text-sm text-stone-400">Длительность: от 1 часа</span>
+              <span class="text-sm font-semibold text-amber-600">от 3 500 ₽</span>
+            </div>
+          </div>
+          <!-- Service 5 -->
+          <div class="group rounded-2xl border border-stone-200 bg-white p-8 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:border-stone-300 reveal">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/><path d="M12 18v-2M12 8V6M18 12h-2M8 12H6"/>
+              </svg>
+            </div>
+            <h3 class="mt-6 font-nunito text-xl font-semibold text-stone-900">Диагностика</h3>
+            <p class="mt-3 text-base leading-relaxed text-stone-500">УЗИ, рентген, анализы крови и мочи. Быстрая и точная диагностика на современном оборудовании.</p>
+            <div class="mt-6 flex items-center justify-between border-t border-stone-100 pt-4">
+              <span class="text-sm text-stone-400">Длительность: 20–40 мин</span>
+              <span class="text-sm font-semibold text-amber-600">от 1 200 ₽</span>
+            </div>
+          </div>
+          <!-- Service 6 -->
+          <div class="group rounded-2xl border border-stone-200 bg-white p-8 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:border-stone-300 reveal">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a4 4 0 0 0-4 4c0 2 2 4 4 4s4-2 4-4a4 4 0 0 0-4-4Z"/><path d="M12 14c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5Z"/>
+              </svg>
+            </div>
+            <h3 class="mt-6 font-nunito text-xl font-semibold text-stone-900">Груминг</h3>
+            <p class="mt-3 text-base leading-relaxed text-stone-500">Стрижка, мытьё, вычёсывание, уход за когтями. Бережный подход, гипоаллергенная косметика.</p>
+            <div class="mt-6 flex items-center justify-between border-t border-stone-100 pt-4">
+              <span class="text-sm text-stone-400">Длительность: 1–2 часа</span>
+              <span class="text-sm font-semibold text-amber-600">от 2 500 ₽</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="bg-stone-50 py-28">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center reveal">
+          <h2 class="font-nunito text-4xl font-bold tracking-tight text-stone-900">Не нашли нужную услугу?</h2>
+          <p class="mt-6 text-lg leading-relaxed text-stone-500">Позвоните нам или оставьте заявку — мы подберём индивидуальный план лечения для вашего питомца.</p>
+          <div class="mt-10">
+            <a href="contact.html" class="inline-flex items-center rounded-md bg-emerald-600 px-8 py-4 text-base font-medium text-white hover:bg-emerald-700 transition duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-stone-50">
+              Связаться с нами
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="ml-2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER (inlined) ===== -->
+  <footer class="border-t border-stone-200 bg-stone-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 gap-10 md:grid-cols-3">
+        <div>
+          <a href="index.html" class="flex items-center gap-2 font-nunito text-xl font-bold text-stone-900">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-600">
+              <path d="M12 14c-2 0-3.5 1.5-3.5 3.5S10 21 12 21s3.5-1.5 3.5-3.5S14 14 12 14z"/>
+              <path d="M8 8c0-1.5 1-3 2.5-3s2.5 1.5 2.5 3-1 3-2.5 3S8 9.5 8 8z"/>
+              <path d="M16 8c0-1.5 1-3 2.5-3s2.5 1.5 2.5 3-1 3-2.5 3S16 9.5 16 8z"/>
+              <path d="M5 10c0-1 1-2 2-2s2 1 2 2-1 2-2 2-2-1-2-2z"/>
+              <path d="M19 10c0-1 1-2 2-2s2 1 2 2-1 2-2 2-2-1-2-2z"/>
+            </svg>
+            ЛапЛап
+          </a>
+          <p class="mt-4 text-sm leading-relaxed text-stone-500">Ветеринарная клиника для тех, кто любит своих питомцев. Современное оборудование, заботливые врачи и тёплая атмосфера.</p>
+          <div class="mt-6 flex items-center gap-4">
+            <a href="#" class="text-stone-400 hover:text-emerald-600 transition-colors duration-200" aria-label="Telegram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg></a>
+            <a href="#" class="text-stone-400 hover:text-emerald-600 transition-colors duration-200" aria-label="VK"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h8M12 8v8"/></svg></a>
+            <a href="#" class="text-stone-400 hover:text-emerald-600 transition-colors duration-200" aria-label="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-4.35A9 9 0 1 1 7.5 18.3L3 21z"/><path d="M9 10h.01M12 10h.01M15 10h.01"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-nunito text-sm font-semibold text-stone-900">Навигация</h4>
+          <ul class="mt-4 space-y-3">
+            <li><a href="index.html" class="text-sm text-stone-500 hover:text-stone-900 transition-colors duration-200">Главная</a></li>
+            <li><a href="services.html" class="text-sm text-stone-500 hover:text-stone-900 transition-colors duration-200">Услуги</a></li>
+            <li><a href="about.html" class="text-sm text-stone-500 hover:text-stone-900 transition-colors duration-200">О нас</a></li>
+            <li><a href="contact.html" class="text-sm text-stone-500 hover:text-stone-900 transition-colors duration-200">Контакты</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-nunito text-sm font-semibold text-stone-900">Контакты</h4>
+          <ul class="mt-4 space-y-3 text-sm text-stone-500">
+            <li class="flex items-start gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 shrink-0 text-stone-400"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>ул. Пушистая, 15, Москва</span></li>
+            <li class="flex items-start gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 shrink-0 text-stone-400"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>+7 (495) 123-45-67</span></li>
+            <li class="flex items-start gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 shrink-0 text-stone-400"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><span>hello@laplap.vet</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12 border-t border-stone-200 pt-8 text-center">
+        <p class="text-sm text-stone-400">&copy; 2026 ЛапЛап. Все права защищены. С любовью к вашим питомцам &hearts;</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      const iconOpen = document.getElementById('menu-icon-open');
+      const iconClose = document.getElementById('menu-icon-close');
+      if (btn && menu) {
+        btn.addEventListener('click', function() {
+          const isOpen = !menu.classList.contains('hidden');
+          menu.classList.toggle('hidden');
+          if (iconOpen && iconClose) {
+            iconOpen.classList.toggle('hidden', !isOpen);
+            iconClose.classList.toggle('hidden', isOpen);
+          }
+          btn.setAttribute('aria-expanded', !isOpen);
+        });
+      }
+    })();
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); }),
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

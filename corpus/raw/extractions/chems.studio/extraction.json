@@ -1,0 +1,106 @@
+{
+  "url": "https://www.chems.studio",
+  "hostname": "chems.studio",
+  "title": "Chems Studio",
+  "niches": [
+    "other",
+    "agency",
+    "ecommerce",
+    "portfolio",
+    "dark"
+  ],
+  "extracted_at": "2026-07-23",
+  "extract_duration_ms": 8037,
+  "page_metrics": {
+    "page_height_px": 900,
+    "viewport_width": 1440,
+    "section_count": 1,
+    "has_sticky_nav": true,
+    "has_announcement_bar": false
+  },
+  "colors": {
+    "top_palette": [
+      [
+        "#FFFFFF",
+        0.99
+      ],
+      [
+        "#161616",
+        0.01
+      ],
+      [
+        "#000000",
+        0
+      ]
+    ],
+    "bg_main": "#161616",
+    "text_main": "#FFFFFF",
+    "is_dark": true,
+    "bg_luminance": 0.09,
+    "primary_hue": 0,
+    "accent_hue": 0,
+    "accent_saturation_avg": 0,
+    "palette_size": 3
+  },
+  "typography": {
+    "display_font": "Simplon Mono",
+    "body_font": "Simplon Mono",
+    "fonts_used": [
+      "Simplon Mono",
+      "Times New Roman"
+    ],
+    "hero_h1_size_px": 11,
+    "body_size_px": 11,
+    "body_line_height": 1.2,
+    "display_weight": 400,
+    "font_count": 2
+  },
+  "layout": {
+    "hero_type": "product-showcase",
+    "hero_signals": {
+      "has_large_image": true,
+      "image_position": "center",
+      "image_width_pct": 100,
+      "has_centered_text": false
+    },
+    "section_sequence": [
+      "hero"
+    ],
+    "section_types": {
+      "hero": 1
+    },
+    "has_asymmetric_grid": false,
+    "grid_cols_max": 0,
+    "card_count": 19,
+    "card_aspect": "16/9",
+    "has_bento": false
+  },
+  "mood": {
+    "radius_avg_px": 1,
+    "radius_distribution": {
+      "0": 0.57,
+      "4": 0.43,
+      "8": 0,
+      "12": 0,
+      "16": 0,
+      "24": 0,
+      "999": 0
+    },
+    "density_padding_avg_px": 12,
+    "shadow_usage": "none",
+    "animation_count": 27,
+    "transition_durations_ms": [
+      300
+    ],
+    "has_gradient": false,
+    "dark_mode": true,
+    "monochrome": true
+  },
+  "raw_extras": {
+    "nav_links_count": 2,
+    "button_count": 1,
+    "primary_button_radius_px": 0,
+    "image_count": 2,
+    "form_count": 1
+  }
+}

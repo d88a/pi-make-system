@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-07-24T06:25:55.574Z",
+  "target": "file://D:\\pi\\projects\\maksplit\\catalog.html",
+  "engine": "manual",
+  "summary": {
+    "total": 0,
+    "critical": 0,
+    "serious": 0,
+    "moderate": 0,
+    "minor": 0,
+    "pass": true
+  },
+  "violations": []
+}

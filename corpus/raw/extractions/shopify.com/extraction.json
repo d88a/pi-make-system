@@ -1,0 +1,146 @@
+{
+  "url": "https://shopify.com/editions/winter2026",
+  "hostname": "shopify.com",
+  "title": "The Renaissance Edition",
+  "niches": [
+    "universal-creative",
+    "dark"
+  ],
+  "extracted_at": "2026-07-23",
+  "extract_duration_ms": 56734,
+  "page_metrics": {
+    "page_height_px": 54129,
+    "viewport_width": 1440,
+    "section_count": 14,
+    "has_sticky_nav": false,
+    "has_announcement_bar": false
+  },
+  "colors": {
+    "top_palette": [
+      [
+        "#000000",
+        0.35
+      ],
+      [
+        "#292919",
+        0.24
+      ],
+      [
+        "#F7F7EE",
+        0.17
+      ],
+      [
+        "#909083",
+        0.1
+      ],
+      [
+        "#5C5C4E",
+        0.07
+      ],
+      [
+        "#FFFFFF",
+        0.04
+      ],
+      [
+        "#DCDCD0",
+        0.02
+      ],
+      [
+        "#303030",
+        0.01
+      ]
+    ],
+    "bg_main": "#F7F7EE",
+    "text_main": "#000000",
+    "is_dark": false,
+    "bg_luminance": 0.97,
+    "primary_hue": 60,
+    "accent_hue": 60,
+    "accent_saturation_avg": 20,
+    "palette_size": 8
+  },
+  "typography": {
+    "display_font": "NeueMontreal",
+    "body_font": "ui-sans-serif",
+    "fonts_used": [
+      "ui-sans-serif",
+      "Inter-Variable",
+      "PP Neue Montreal",
+      "NeueMontreal",
+      "HWCigars"
+    ],
+    "hero_h1_size_px": 193,
+    "body_size_px": 14,
+    "body_line_height": 1.5,
+    "display_weight": 700,
+    "font_count": 5
+  },
+  "layout": {
+    "hero_type": "centered",
+    "hero_signals": {
+      "has_large_image": false,
+      "image_position": "none",
+      "image_width_pct": 0,
+      "has_centered_text": false
+    },
+    "section_sequence": [
+      "hero",
+      "features",
+      "features",
+      "features",
+      "features",
+      "features",
+      "features",
+      "stats",
+      "features",
+      "features",
+      "features",
+      "features",
+      "gallery",
+      "features"
+    ],
+    "section_types": {
+      "hero": 1,
+      "features": 11,
+      "stats": 1,
+      "gallery": 1
+    },
+    "has_asymmetric_grid": true,
+    "grid_cols_max": 14,
+    "card_count": 882,
+    "card_aspect": "16/9",
+    "has_bento": true
+  },
+  "mood": {
+    "radius_avg_px": 1307316,
+    "radius_distribution": {
+      "0": 0.79,
+      "4": 0.05,
+      "8": 0.05,
+      "12": 0.08,
+      "16": 0,
+      "24": 0,
+      "999": 0.04
+    },
+    "density_padding_avg_px": 20,
+    "shadow_usage": "medium",
+    "animation_count": 477,
+    "transition_durations_ms": [
+      50,
+      150,
+      200,
+      300,
+      400
+    ],
+    "has_gradient": true,
+    "dark_mode": false,
+    "monochrome": false
+  },
+  "raw_extras": {
+    "nav_links_count": 42,
+    "button_count": 65,
+    "primary_button_radius_px": 4,
+    "image_count": 345,
+    "form_count": 2
+  }
+}

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Выбор акцента — Concrete Steel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Space Grotesk', 'sans-serif'],
+            body: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      /* Concrete Steel base — ALL backgrounds + text from theme */
+      --cs-bg-page: #F5F5F4;
+      --cs-bg-alt: #E7E5E4;
+      --cs-surface: #FFFFFF;
+      --cs-text-primary: #1C1917;
+      --cs-text-secondary: #57534E;
+      --cs-text-muted: #A8A29E;
+      --cs-border: #D6D3D1;
+      --cs-border-hover: #A8A29E;
+      --cs-primary: #57534E;
+      --cs-primary-hover: #44403C;
+      --cs-primary-subtle: rgba(87, 83, 78, 0.08);
+      --cs-shadow-card: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --cs-shadow-card-hover: 0 8px 24px -8px rgba(87,83,78,0.2);
+      --cs-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Accent variables — each section overrides these */
+    .accent-section {
+      --accent: #3B5F8A;
+      --accent-hover: #2F4E73;
+      --accent-glow: rgba(59, 95, 138, 0.35);
+      --accent-subtle: rgba(59, 95, 138, 0.08);
+    }
+
+    /* Sculptural divider between sections */
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cs-border), transparent);
+    }
+
+    /* Accent swatch */
+    .swatch {
+      width: 96px;
+      height: 96px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      color: white;
+      box-shadow: 0 8px 24px -8px var(--accent-glow);
+    }
+
+    /* Card sample */
+    .demo-card {
+      background: var(--cs-surface);
+      border: 2px solid var(--cs-border);
+      border-radius: 8px;
+      padding: 20px;
+      transition: var(--cs-transition);
+    }
+    .demo-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 8px 24px -8px var(--accent-glow);
+      transform: translateY(-2px);
+    }
+
+    /* Button sample */
+    .demo-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 24px;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: white;
+      background: var(--accent);
+      transition: var(--cs-transition);
+      box-shadow: 0 4px 14px -6px var(--accent-glow);
+      cursor: default;
+      user-select: none;
+    }
+    .demo-btn:hover {
+      background: var(--accent-hover);
+      box-shadow: 0 8px 24px -8px var(--accent-glow);
+      transform: translateY(-1px);
+    }
+
+    /* Link sample */
+    .demo-link {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--accent);
+      cursor: default;
+      transition: color 0.15s cubic-bezier(0.4,0,0.2,1);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .demo-link:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Number badge */
+    .accent-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      background: var(--accent);
+      color: white;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body class="font-body antialiased text-[var(--cs-text-primary)]" style="background: var(--cs-bg-page);">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b-2 border-[var(--cs-border)] backdrop-blur-md" style="background: rgba(245,245,244,0.92);">
+    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center gap-3">
+        <svg width="24" height="24" viewBox="0 0 28 28" fill="none" class="text-[var(--cs-primary)]">
+          <rect x="2" y="2" width="10" height="24" rx="1" fill="currentColor"/>
+          <rect x="16" y="2" width="10" height="24" rx="1" fill="currentColor" opacity="0.5"/>
+          <rect x="2" y="12" width="24" height="4" rx="1" fill="currentColor" opacity="0.7"/>
+        </svg>
+        <span class="font-display text-lg font-bold tracking-tight text-[var(--cs-text-primary)]">СтройМакс</span>
+      </div>
+      <span class="font-display text-xs font-semibold tracking-wider uppercase text-[var(--cs-text-muted)]">Выбор акцента</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- Intro -->
+    <section class="py-16" style="background: var(--cs-bg-page);">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+          <span class="font-display text-xs font-semibold tracking-widest uppercase text-[var(--cs-text-muted)]">Concrete Steel</span>
+          <h1 class="mt-4 font-display text-4xl font-bold tracking-tight text-[var(--cs-text-primary)] sm:text-5xl">
+            Выбор акцента
+          </h1>
+          <p class="mt-4 text-lg leading-relaxed text-[var(--cs-text-secondary)]">
+            Базовая палитра stone <span class="font-mono font-semibold text-[var(--cs-text-primary)]">#57534E</span> + холодный цветной акцент.<br>
+            Каждый вариант показан на реальном фоне Concrete Steel.
+          </p>
+          <div class="mt-6 flex items-center justify-center gap-3 text-sm text-[var(--cs-text-muted)]">
+            <span class="inline-flex items-center gap-1.5">
+              <span class="h-2.5 w-2.5 rounded-sm" style="background: var(--cs-bg-page); border: 1.5px solid var(--cs-border);"></span> bg-page
+            </span>
+            <span class="inline-flex items-center gap-1.5">
+              <span class="h-2.5 w-2.5 rounded-sm" style="background: var(--cs-surface); border: 1.5px solid var(--cs-border);"></span> surface
+            </span>
+            <span class="inline-flex items-center gap-1.5">
+              <span class="h-2.5 w-2.5 rounded-sm" style="background: var(--cs-text-primary);"></span> text
+            </span>
+            <span class="inline-flex items-center gap-1.5">
+              <span class="h-2.5 w-2.5 rounded-sm" style="background: var(--cs-primary);"></span> stone accent
+            </span>
+            <span class="inline-flex items-center gap-1.5">
+              <span class="h-2.5 w-2.5 rounded-sm" style="background: var(--accent); border: 1.5px dashed var(--accent);"></span> color accent
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ACCENT 1: Steel Blue -->
+    <section class="accent-section py-20" style="--accent: #3B5F8A; --accent-hover: #2F4E73; --accent-glow: rgba(59,95,138,0.35); --accent-subtle: rgba(59,95,138,0.08); background: var(--cs-bg-page);">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-12 flex items-center gap-4">
+          <span class="accent-number">1</span>
+          <div>
+            <h2 class="font-display text-3xl font-bold tracking-tight text-[var(--cs-text-primary)]">Steel Blue</h2>
+            <p class="mt-1 font-mono text-sm font-medium text-[var(--cs-text-muted)]">#3B5F8A</p>
+          </div>
+        </div>
+
+        <p class="mb-10 max-w-xl text-base leading-relaxed text-[var(--cs-text-secondary)]">
+          Индустриальный синий. Сталь и кевлар. Максимально органично для строительного бренда — цвет спецодежды, металлоконструкций, чертежей.
+        </p>
+
+        <!-- Demo grid: swatch + button + card + link -->
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <!-- Swatch -->
+          <div class="flex flex-col items-start gap-4">
+            <span class="font-display text-xs font-semibold tracking-wider uppercase text-[var(--cs-text-muted)]">Цвет</span>
+            <div class="swatch" style="background: var(--accent);">#3B5F8A</div>
+          </div>
+
+          <!-- Button -->
+          <div class="flex flex-col items-start gap-4">
+            <span class="font-display text-xs font-semibold tracking-wider uppercase text-[var(--cs-text-muted)]">Кнопка</span>
+            <div class="demo-btn">Заказать расчёт</div>
+            <span class="text-xs text-[var(--cs-text-muted)]">text-white на accent</span>
+          </div>
+
+          <!-- Card sample -->
+          <div class="flex flex-col items-start gap-4">
+            <span class="font-display text-xs font-semibold tracking-wider uppercase text-[var(--cs-text-muted)]">Карточка (hover)</span>
+            <div class="demo-card">
+              <span class="rounded-sm px-2.5 py-1 font-display text-[11px] font-semibold tracking-wider uppercase" style="background: var(--accent-subtle); color: var(--accent);">В наличии</span>
+              <h4 class="mt-3 font-display text-base font-semibold text-[var(--cs-text-primary)]">Бетон М400 (B30)</h4>
+              <p class="mt-1 text-sm text-[var(--cs-text-secondary)]">Тяжёлый бетон. Морозостойкость F200.</p>
+              <div class="mt-3 flex items-end justify-between">
+                <span class="font-mono text-lg font-bold tabular-nums text-[var(--cs-text-primary)]">4 850 ₽</span>
+                <span class="text-xs text-[var(--cs-text-muted)]">/м³</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Link -->
+          <div class="flex flex-col items-start gap-4">
+            <span class="font-display text-xs font-semibold tracking-wider uppercase text-[var(--cs-text-muted)]">Ссылка / CTA</span>
+            <a class="demo-link">
+              Все проекты
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </a>
+            <a class="demo-link">
+              Скачать каталог
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <p class="mt-8 text-sm text-[var(--cs-text-muted)]">
+          <strong class="text-[var(--cs-text-secondary)]">Подходит если:</strong> нужен индустриальный, маскулинный, «строительный» акцент. Самый безопасный выбор для СтройМакс — не спутаешь с SaaS или финтехом.
+        </p>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ACCENT 2: Cyan-Teal -->
+    <section class="accent-section py-20" style="--accent: #0E7490; --accent-hover: #155E75; --accent-glow: rgba(14,116,144,0.35); --accent-subtle: rgba(14,116,144,0.08); background: var(--cs-bg-page);">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-12 flex items-center gap-4">
+          <span class="accent-number">2</span>
+          <div>
+            <h2 class="font-display text-3xl font-bold tracking-tight text-[var(--cs-text-primary)]">Cyan-Teal</h2>
+            <p class="mt-1 font-mono text-sm font-medium text-[var(--cs-text-muted)]">#0E7490</p>
+          </div>
+        </div>
+
+        <p class="mb-10 max-w-xl text-base leading-relaxed text-[var(--cs-text-secondary)]">
+          Технологичный циан. Вода, лёд, инженерные системы. Ассоциация с точностью, расчётами, BIM-моделированием.
+        </p>
+
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div class="flex flex-col items-start gap-4">
+            <span class="font-display text-xs font-semibold tracking-wider uppercase text-[var(--cs-text-muted)]">Цвет</span>
+            <div class="swatch" style="background: var(--accent);">#0E7490</div>
+          </div>
+          <div class="flex flex-col items-start gap-4">
+            <span class="font-display text-xs font-semibold tracking-wider uppercase text-[var(--cs-text-muted)]">Кнопка</span>
+            <div class="demo-btn">Заказать расчёт</div>
+            <span class="text-xs text-[var(--cs-text-muted)]">text-white на accent</span>
+          </div>
+          <div class="flex flex-col items-start gap-4">
+            <span class="font-display text-xs font-semibold tracking-wider uppercase text-[var(--cs-text-muted)]">Карточка (hover)</span>
+            <div class="demo-card">
+              <span class="rounded-sm px-2.5 py-1 font-display text-[11px] font-semibold tracking-wider uppercase" style="background: var(--accent-subtle); color: var(--accent);">В наличии</span>
+              <h4 class="mt-3 font-display text-base font-semibold text-[var(--cs-text-primary)]">Бетон М400 (B30)</h4>
+              <p class="mt-1 text-sm text-[var(--cs-text-secondary)]">Тяжёлый бетон. Морозостойкость F200.</p>
+              <div class="mt-3 flex items-end justify-between">
+                <span class="font-mono text-lg font-bold tabular-nums text-[var(--cs-text-primary)]">4 850 ₽</span>
+                <span class="text-xs text-[var(--cs-text-muted)]">/м³</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col items-start gap-4">
+            <span class="font-display text-xs font-semibold tracking-wider uppercase text-[var(--cs-text-muted)]">Ссылка / CTA</span>
+            <a class="demo-link">Все проекты <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+            <a class="demo-link">Скачать каталог <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></a>
+          </div>
+        </div>
+
+        <p class="mt-8 text-sm text-[var(--cs-text-muted)]">
+          <strong class="text-[var(--cs-text-secondary)]">Подходит если:</strong> хотите подчеркнуть технологичность и инженерный подход. Хорошо смотрится на фоне Concrete Steel — холодный циан на тёплом stone создаёт приятный контраст.
+        </p>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ACCENT 3: Slate Blue -->
+    <section class="accent-section py-20" style="--accent: #475569; --accent-hover: #334155; --accent-glow: rgba(71,85,105,0.35); --accent-subtle: rgba(71,85,105,0.08); background: var(--cs-bg-page);">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-12 flex items-center gap-4">
+          <span class="accent-number">3</span>
+          <div>
+            <h2 class="font-display text-3xl font-bold tracking-tight text-[var(--cs-text-primary)]">Slate Blue</h2>
+            <p class="mt-1 font-mono text-sm font-medium text-[var(--cs-text-muted)]">#475569</p>
+          </div>
+        </div>
+
+        <p class="mb-10 max-w-xl text-base leading-relaxed text-[var(--cs-text-secondary)]">
+          Корпоративный сине-серый. Спокойный, сдержанный. Государственные тендеры, крупные B2B-контракты, серьёзный подрядчик.
+        </p>
+
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div class="flex flex-col items-start gap-4">
+            <span class="font-display text-xs font-semibold tracking-wider uppercase text-[var(--cs-text-muted)]">Цвет</span>
+            <div class="swatch" style="background: var(--accent);">#475569</div>
+          </div>
+          <div class="flex flex-col items-start gap-4">
+            <span class="font-display text-xs font-semibold tracking-wider uppercase text-[var(--cs-text-muted)]">Кнопка</span>
+            <div class="demo-btn">Заказать расчёт</div>
+            <span class="text-xs text-[var(--cs-text-muted)]">text-white на accent</span>
+          </div>
+          <div class="flex flex-col items-start gap-4">
+            <span class="font-display text-xs font-semibold tracking-wider uppercase text-[var(--cs-text-muted)]">Карточка (hover)</span>
+            <div class="demo-card">
+              <span class="rounded-sm px-2.5 py-1 font-display text-[11px] font-semibold tracking-wider uppercase" style="background: var(--accent-subtle); color: var(--accent);">В наличии</span>
+              <h4 class="mt-3 font-display text-base font-semibold text-[var(--cs-text-primary)]">Бетон М400 (B30)</h4>
+              <p class="mt-1 text-sm text-[var(--cs-text-secondary)]">Тяжёлый бетон. Морозостойкость F200.</p>
+              <div class="mt-3 flex items-end justify-between">
+                <span class="font-mono text-lg font-bold tabular-nums text-[var(--cs-text-primary)]">4 850 ₽</span>
+                <span class="text-xs text-[var(--cs-text-muted)]">/м³</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col items-start gap-4">
+            <span class="font-display text-xs font-semibold tracking-wider uppercase text-[var(--cs-text-muted)]">Ссылка / CTA</span>
+            <a class="demo-link">Все проекты <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+            <a class="demo-link">Скачать каталог <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></a>
+          </div>
+        </div>
+
+        <p class="mt-8 text-sm text-[var(--cs-text-muted)]">
+          <strong class="text-[var(--cs-text-secondary)]">Подходит если:</strong> целевая аудитория — корпоративные заказчики и госструктуры. Неброский, «взрослый» акцент. Минус: может сливаться с stone-палитрой, низкий контраст.
+        </p>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ACCENT 4: Electric Indigo -->
+    <section class="accent-section py-20" style="--accent: #4F46E5; --accent-hover: #4338CA; --accent-glow: rgba(79,70,229,0.35); --accent-subtle: rgba(79,70,229,0.08); background: var(--cs-bg-page);">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-12 flex items-center gap-4">
+          <span class="accent-number">4</span>
+          <div>
+            <h2 class="font-display text-3xl font-bold tracking-tight text-[var(--cs-text-primary)]">Electric Indigo</h2>
+            <p class="mt-1 font-mono text-sm font-medium text-[var(--cs-text-muted)]">#4F46E5</p>
+          </div>
+        </div>
+
+        <p class="mb-10 max-w-xl text-base leading-relaxed text-[var(--cs-text-secondary)]">
+          Премиальный tech-индиго. Яркий, современный. Контрастирует с серым бетоном максимально выразительно.
+        </p>
+
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div class="flex flex-col items-start gap-4">
+            <span class="font-display text-xs font-semibold tracking-wider uppercase text-[var(--cs-text-muted)]">Цвет</span>
+            <div class="swatch" style="background: var(--accent);">#4F46E5</div>
+          </div>
+          <div class="flex flex-col items-start gap-4">
+            <span class="font-display text-xs font-semibold tracking-wider uppercase text-[var(--cs-text-muted)]">Кнопка</span>
+            <div class="demo-btn">Заказать расчёт</div>
+            <span class="text-xs text-[var(--cs-text-muted)]">text-white на accent</span>
+          </div>
+          <div class="flex flex-col items-start gap-4">
+            <span class="font-display text-xs font-semibold tracking-wider uppercase text-[var(--cs-text-muted)]">Карточка (hover)</span>
+            <div class="demo-card">
+              <span class="rounded-sm px-2.5 py-1 font-display text-[11px] font-semibold tracking-wider uppercase" style="background: var(--accent-subtle); color: var(--accent);">В наличии</span>
+              <h4 class="mt-3 font-display text-base font-semibold text-[var(--cs-text-primary)]">Бетон М400 (B30)</h4>
+              <p class="mt-1 text-sm text-[var(--cs-text-secondary)]">Тяжёлый бетон. Морозостойкость F200.</p>
+              <div class="mt-3 flex items-end justify-between">
+                <span class="font-mono text-lg font-bold tabular-nums text-[var(--cs-text-primary)]">4 850 ₽</span>
+                <span class="text-xs text-[var(--cs-text-muted)]">/м³</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col items-start gap-4">
+            <span class="font-display text-xs font-semibold tracking-wider uppercase text-[var(--cs-text-muted)]">Ссылка / CTA</span>
+            <a class="demo-link">Все проекты <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+            <a class="demo-link">Скачать каталог <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></a>
+          </div>
+        </div>
+
+        <p class="mt-8 text-sm text-[var(--cs-text-muted)]">
+          <strong class="text-[var(--cs-text-secondary)]">Подходит если:</strong> хотите выделиться среди конкурентов. Самый яркий вариант, максимальный контраст с серым бетоном. Риск: может выглядеть «SaaS-но» для стройки.
+        </p>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ACCENT 5: Cool Emerald -->
+    <section class="accent-section py-20" style="--accent: #047857; --accent-hover: #065F46; --accent-glow: rgba(4,120,87,0.35); --accent-subtle: rgba(4,120,87,0.08); background: var(--cs-bg-page);">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-12 flex items-center gap-4">
+          <span class="accent-number">5</span>
+          <div>
+            <h2 class="font-display text-3xl font-bold tracking-tight text-[var(--cs-text-primary)]">Cool Emerald</h2>
+            <p class="mt-1 font-mono text-sm font-medium text-[var(--cs-text-muted)]">#047857</p>
+          </div>
+        </div>
+
+        <p class="mb-10 max-w-xl text-base leading-relaxed text-[var(--cs-text-secondary)]">
+          Природный холодный зелёный. Эко-строительство, устойчивое развитие, зелёные стандарты. Без «травяной» теплоты — чистый, холодный изумруд.
+        </p>
+
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div class="flex flex-col items-start gap-4">
+            <span class="font-display text-xs font-semibold tracking-wider uppercase text-[var(--cs-text-muted)]">Цвет</span>
+            <div class="swatch" style="background: var(--accent);">#047857</div>
+          </div>
+          <div class="flex flex-col items-start gap-4">
+            <span class="font-display text-xs font-semibold tracking-wider uppercase text-[var(--cs-text-muted)]">Кнопка</span>
+            <div class="demo-btn">Заказать расчёт</div>
+            <span class="text-xs text-[var(--cs-text-muted)]">text-white на accent</span>
+          </div>
+          <div class="flex flex-col items-start gap-4">
+            <span class="font-display text-xs font-semibold tracking-wider uppercase text-[var(--cs-text-muted)]">Карточка (hover)</span>
+            <div class="demo-card">
+              <span class="rounded-sm px-2.5 py-1 font-display text-[11px] font-semibold tracking-wider uppercase" style="background: var(--accent-subtle); color: var(--accent);">В наличии</span>
+              <h4 class="mt-3 font-display text-base font-semibold text-[var(--cs-text-primary)]">Бетон М400 (B30)</h4>
+              <p class="mt-1 text-sm text-[var(--cs-text-secondary)]">Тяжёлый бетон. Морозостойкость F200.</p>
+              <div class="mt-3 flex items-end justify-between">
+                <span class="font-mono text-lg font-bold tabular-nums text-[var(--cs-text-primary)]">4 850 ₽</span>
+                <span class="text-xs text-[var(--cs-text-muted)]">/м³</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col items-start gap-4">
+            <span class="font-display text-xs font-semibold tracking-wider uppercase text-[var(--cs-text-muted)]">Ссылка / CTA</span>
+            <a class="demo-link">Все проекты <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+            <a class="demo-link">Скачать каталог <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></a>
+          </div>
+        </div>
+
+        <p class="mt-8 text-sm text-[var(--cs-text-muted)]">
+          <strong class="text-[var(--cs-text-secondary)]">Подходит если:</strong> позиционируетесь как «зелёный» застройщик. LEED/BREEAM сертификация, энергоэффективные технологии. Холодный зелёный = экология без «хипповости».
+        </p>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Footer -->
+    <footer class="py-16" style="background: var(--cs-bg-alt);">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="font-display text-2xl font-bold tracking-tight text-[var(--cs-text-primary)]">Какой акцент?</h2>
+          <p class="mt-3 text-base leading-relaxed text-[var(--cs-text-secondary)]">
+            Скажи архитектору номер или название.<br>
+            <span class="text-[var(--cs-text-muted)]">Например: «Берём Steel Blue, вариант 1» или «Давай Electric Indigo».</span>
+          </p>
+          <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <span class="rounded-md border-2 border-[var(--cs-border)] px-4 py-2 font-mono text-sm font-semibold text-[var(--cs-text-primary)]">1. Steel Blue</span>
+            <span class="rounded-md border-2 border-[var(--cs-border)] px-4 py-2 font-mono text-sm font-semibold text-[var(--cs-text-primary)]">2. Cyan-Teal</span>
+            <span class="rounded-md border-2 border-[var(--cs-border)] px-4 py-2 font-mono text-sm font-semibold text-[var(--cs-text-primary)]">3. Slate Blue</span>
+            <span class="rounded-md border-2 border-[var(--cs-border)] px-4 py-2 font-mono text-sm font-semibold text-[var(--cs-text-primary)]">4. Electric Indigo</span>
+            <span class="rounded-md border-2 border-[var(--cs-border)] px-4 py-2 font-mono text-sm font-semibold text-[var(--cs-text-primary)]">5. Cool Emerald</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

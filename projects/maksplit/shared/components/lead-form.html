@@ -1,0 +1,171 @@
+<!-- ============================================================ -->
+<!-- LEAD FORM — «Рассчитать стоимость» (NO e-commerce, lead capture) -->
+<!-- Поля: имя, телефон, объём (м²), комментарий. -->
+<!-- Submit → localStorage. Валидация. Успех → сообщение. -->
+<!-- Steel Blue accent. concrete-steel. -->
+<!-- ============================================================ -->
+<section class="bg-[var(--color-primary)] py-20" id="calculate" aria-labelledby="lead-form-heading">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 id="lead-form-heading" class="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        Рассчитаем стоимость за 15 минут
+      </h2>
+      <p class="mt-4 text-lg text-white/70">
+        Оставьте заявку — инженер перезвонит, уточнит объём и подготовит точный расчёт. Без обязательств.
+      </p>
+    </div>
+
+    <form id="lead-form" class="mx-auto mt-10 max-w-md rounded-lg border-2 border-white/20 bg-white/10 p-8 backdrop-blur-sm" aria-label="Форма расчёта стоимости" novalidate>
+      <!-- Success message (hidden by default) -->
+      <div id="form-success" class="hidden rounded-md border-2 border-white/30 bg-white/15 p-5 text-center" role="status">
+        <svg class="mx-auto h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        <p class="mt-3 font-display text-lg font-semibold text-white">Заявка отправлена</p>
+        <p class="mt-1 text-sm text-white/70">Инженер перезвонит в течение 15 минут. Спасибо!</p>
+      </div>
+
+      <!-- Form fields -->
+      <div id="form-fields" class="space-y-5">
+        <!-- Name -->
+        <div>
+          <label for="lead-name" class="block font-display text-xs font-semibold tracking-wider uppercase text-white/80">Имя</label>
+          <input
+            id="lead-name"
+            type="text"
+            placeholder="Александр"
+            required
+            aria-required="true"
+            class="mt-2 block w-full rounded-md border-2 border-white/20 bg-white/10 px-4 py-3 font-body text-sm text-white placeholder:text-white/40 transition-all duration-150 focus:border-white focus:outline-none focus:ring-1 focus:ring-white"
+            style="transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);"
+          />
+          <p id="lead-name-error" class="mt-1.5 hidden text-xs text-red-300" role="alert">Укажите имя</p>
+        </div>
+
+        <!-- Phone -->
+        <div>
+          <label for="lead-phone" class="block font-display text-xs font-semibold tracking-wider uppercase text-white/80">Телефон</label>
+          <input
+            id="lead-phone"
+            type="tel"
+            placeholder="+7 (999) 123-45-67"
+            required
+            aria-required="true"
+            class="mt-2 block w-full rounded-md border-2 border-white/20 bg-white/10 px-4 py-3 font-body text-sm text-white placeholder:text-white/40 transition-all duration-150 focus:border-white focus:outline-none focus:ring-1 focus:ring-white"
+            style="transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);"
+          />
+          <p id="lead-phone-error" class="mt-1.5 hidden text-xs text-red-300" role="alert">Укажите телефон</p>
+        </div>
+
+        <!-- Volume (m²) -->
+        <div>
+          <label for="lead-volume" class="block font-display text-xs font-semibold tracking-wider uppercase text-white/80">Объём, м²</label>
+          <input
+            id="lead-volume"
+            type="number"
+            placeholder="100"
+            min="1"
+            step="1"
+            class="mt-2 block w-full rounded-md border-2 border-white/20 bg-white/10 px-4 py-3 font-mono text-sm text-white placeholder:text-white/40 transition-all duration-150 focus:border-white focus:outline-none focus:ring-1 focus:ring-white"
+            style="transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);"
+          />
+        </div>
+
+        <!-- Comment -->
+        <div>
+          <label for="lead-comment" class="block font-display text-xs font-semibold tracking-wider uppercase text-white/80">Комментарий</label>
+          <textarea
+            id="lead-comment"
+            rows="3"
+            placeholder="Опишите проект: тип плитки, цвет, сроки..."
+            class="mt-2 block w-full rounded-md border-2 border-white/20 bg-white/10 px-4 py-3 font-body text-sm text-white placeholder:text-white/40 transition-all duration-150 focus:border-white focus:outline-none focus:ring-1 focus:ring-white"
+            style="transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);"
+          ></textarea>
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <button
+        id="lead-submit"
+        type="submit"
+        class="mt-6 w-full rounded-md bg-white px-6 py-3.5 font-body text-base font-semibold text-[var(--color-primary)] transition-all duration-200 hover:bg-stone-100 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[var(--color-primary)]"
+      >
+        Получить расчёт
+      </button>
+      <p class="mt-3 text-center text-xs text-white/50">
+        Нажимая кнопку, вы соглашаетесь с политикой обработки данных.
+      </p>
+    </form>
+  </div>
+</section>
+
+<script>
+  (function() {
+    var form = document.getElementById('lead-form');
+    if (!form) return;
+
+    var fields = document.getElementById('form-fields');
+    var success = document.getElementById('form-success');
+    var submitBtn = document.getElementById('lead-submit');
+
+    var nameInput = document.getElementById('lead-name');
+    var phoneInput = document.getElementById('lead-phone');
+    var nameErr = document.getElementById('lead-name-error');
+    var phoneErr = document.getElementById('lead-phone-error');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Reset errors
+      nameErr.classList.add('hidden');
+      phoneErr.classList.add('hidden');
+      var valid = true;
+
+      // Validate name
+      if (!nameInput.value.trim()) {
+        nameErr.classList.remove('hidden');
+        nameInput.focus();
+        valid = false;
+      }
+
+      // Validate phone
+      if (!phoneInput.value.trim()) {
+        phoneErr.classList.remove('hidden');
+        if (valid) phoneInput.focus();
+        valid = false;
+      }
+
+      if (!valid) return;
+
+      // Save to localStorage
+      var lead = {
+        name: nameInput.value.trim(),
+        phone: phoneInput.value.trim(),
+        volume: document.getElementById('lead-volume').value,
+        comment: document.getElementById('lead-comment').value,
+        timestamp: new Date().toISOString()
+      };
+
+      try {
+        var leads = JSON.parse(localStorage.getItem('stroymax_leads') || '[]');
+        leads.push(lead);
+        localStorage.setItem('stroymax_leads', JSON.stringify(leads));
+      } catch (err) {
+        // localStorage unavailable — proceed anyway
+      }
+
+      // Show success
+      fields.classList.add('hidden');
+      success.classList.remove('hidden');
+      submitBtn.classList.add('hidden');
+
+      // Reset after 4 seconds
+      setTimeout(function() {
+        fields.classList.remove('hidden');
+        success.classList.add('hidden');
+        submitBtn.classList.remove('hidden');
+        form.reset();
+      }, 4000);
+    });
+  })();
+</script>

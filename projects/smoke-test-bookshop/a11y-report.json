@@ -1,0 +1,71 @@
+{
+  "timestamp": "2026-07-22T12:47:47.184Z",
+  "target": "file://D:\\pi\\projects\\smoke-test-bookshop\\index.html",
+  "engine": "manual",
+  "summary": {
+    "total": 7,
+    "critical": 0,
+    "serious": 2,
+    "moderate": 5,
+    "minor": 0,
+    "pass": false
+  },
+  "violations": [
+    {
+      "severity": "serious",
+      "selector": "#footer > div.mx-auto.max-w-7xl > div.grid.grid-cols-1 > div > div.mt-4.space-y-3 > p.text-sm.leading-relaxed > span.text-stone-400",
+      "issue": "Low contrast: 2.31:1 (requires 4.5:1)",
+      "description": "Text color rgb(168, 162, 158) on background rgb(245,245,244) has contrast ratio 2.31:1. WCAG AA requires 4.5:1 for normal text.",
+      "wcag": "WCAG 1.4.3 Contrast (Minimum) (AA)",
+      "source": "manual"
+    },
+    {
+      "severity": "serious",
+      "selector": "#footer > div.mx-auto.max-w-7xl > div.mt-12.pt-8 > p.text-sm.text-stone-400",
+      "issue": "Low contrast: 2.31:1 (requires 4.5:1)",
+      "description": "Text color rgb(168, 162, 158) on background rgb(245,245,244) has contrast ratio 2.31:1. WCAG AA requires 4.5:1 for normal text.",
+      "wcag": "WCAG 1.4.3 Contrast (Minimum) (AA)",
+      "source": "manual"
+    },
+    {
+      "severity": "moderate",
+      "selector": "header.sticky.top-0 > nav.mx-auto.flex > div.hidden.md\\:block > a.inline-flex.items-center",
+      "issue": "Low contrast: 3.19:1 (requires 4.5:1)",
+      "description": "Text color rgb(255, 255, 255) on background rgb(217,119,6) has contrast ratio 3.19:1. WCAG AA requires 4.5:1 for normal text.",
+      "wcag": "WCAG 1.4.3 Contrast (Minimum) (AA)",
+      "source": "manual"
+    },
+    {
+      "severity": "moderate",
+      "selector": "main > section.bg-stone-50.pt-40 > div.mx-auto.max-w-7xl > div.mx-auto.max-w-2xl > span.inline-flex.items-center",
+      "issue": "Low contrast: 3.07:1 (requires 4.5:1)",
+      "description": "Text color rgb(217, 119, 6) on background rgb(255,251,235) has contrast ratio 3.07:1. WCAG AA requires 4.5:1 for normal text.",
+      "wcag": "WCAG 1.4.3 Contrast (Minimum) (AA)",
+      "source": "manual"
+    },
+    {
+      "severity": "moderate",
+      "selector": "#book-of-month > div.mx-auto.max-w-7xl > div.reveal.mt-14 > div.flex.flex-col > div.flex-1.text-center > span.text-xs.font-medium",
+      "issue": "Low contrast: 3.19:1 (requires 4.5:1)",
+      "description": "Text color rgb(217, 119, 6) on background rgb(255,255,255) has contrast ratio 3.19:1. WCAG AA requires 4.5:1 for normal text.",
+      "wcag": "WCAG 1.4.3 Contrast (Minimum) (AA)",
+      "source": "manual"
+    },
+    {
+      "severity": "moderate",
+      "selector": "#book-of-month > div.mx-auto.max-w-7xl > div.reveal.mt-14 > div.flex.flex-col > div.flex-1.text-center > div.mt-7 > a.inline-flex.items-center",
+      "issue": "Low contrast: 3.19:1 (requires 4.5:1)",
+      "description": "Text color rgb(255, 255, 255) on background rgb(217,119,6) has contrast ratio 3.19:1. WCAG AA requires 4.5:1 for normal text.",
+      "wcag": "WCAG 1.4.3 Contrast (Minimum) (AA)",
+      "source": "manual"
+    },
+    {
+      "severity": "moderate",
+      "selector": "#footer > div.mx-auto.max-w-7xl > div.grid.grid-cols-1 > div.md\\:col-span-1 > p.mt-3.max-w-xs",
+      "issue": "Low contrast: 4.40:1 (requires 4.5:1)",
+      "description": "Text color rgb(120, 113, 108) on background rgb(245,245,244) has contrast ratio 4.40:1. WCAG AA requires 4.5:1 for normal text.",
+      "wcag": "WCAG 1.4.3 Contrast (Minimum) (AA)",
+      "source": "manual"
+    }
+  ]
+}

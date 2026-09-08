@@ -1,0 +1,141 @@
+{
+  "url": "https://www.eathungrytiger.com",
+  "hostname": "eathungrytiger.com",
+  "title": "Hungry Tiger",
+  "niches": [
+    "other",
+    "ecommerce",
+    "creative-animation"
+  ],
+  "extracted_at": "2026-07-23",
+  "extract_duration_ms": 15515,
+  "page_metrics": {
+    "page_height_px": 16866,
+    "viewport_width": 1440,
+    "section_count": 13,
+    "has_sticky_nav": true,
+    "has_announcement_bar": false
+  },
+  "colors": {
+    "top_palette": [
+      [
+        "#FAAE33",
+        0.76
+      ],
+      [
+        "#402011",
+        0.17
+      ],
+      [
+        "#F7AC32",
+        0.04
+      ],
+      [
+        "#823513",
+        0.02
+      ],
+      [
+        "#281006",
+        0.01
+      ],
+      [
+        "#D1255C",
+        0.01
+      ],
+      [
+        "#000000",
+        0
+      ]
+    ],
+    "bg_main": "#FAAE33",
+    "text_main": "#402011",
+    "is_dark": false,
+    "bg_luminance": 0.71,
+    "primary_hue": 18,
+    "accent_hue": 37,
+    "accent_saturation_avg": 74,
+    "palette_size": 7
+  },
+  "typography": {
+    "display_font": "Salmond",
+    "body_font": "Salmond",
+    "fonts_used": [
+      "Salmond",
+      "Graphikx"
+    ],
+    "hero_h1_size_px": 213,
+    "body_size_px": 14,
+    "body_line_height": 1,
+    "display_weight": 700,
+    "font_count": 2
+  },
+  "layout": {
+    "hero_type": "centered",
+    "hero_signals": {
+      "has_large_image": false,
+      "image_position": "center",
+      "image_width_pct": 5,
+      "has_centered_text": false
+    },
+    "section_sequence": [
+      "nav",
+      "hero",
+      "hero",
+      "hero",
+      "hero",
+      "hero",
+      "content",
+      "gallery",
+      "gallery",
+      "content",
+      "features",
+      "contact",
+      "footer"
+    ],
+    "section_types": {
+      "nav": 1,
+      "hero": 5,
+      "content": 2,
+      "gallery": 2,
+      "features": 1,
+      "contact": 1,
+      "footer": 1
+    },
+    "has_asymmetric_grid": false,
+    "grid_cols_max": 4,
+    "card_count": 40,
+    "card_aspect": "1/1",
+    "has_bento": false
+  },
+  "mood": {
+    "radius_avg_px": 190,
+    "radius_distribution": {
+      "0": 0.66,
+      "4": 0,
+      "8": 0.11,
+      "12": 0.08,
+      "16": 0,
+      "24": 0,
+      "999": 0.15
+    },
+    "density_padding_avg_px": 24,
+    "shadow_usage": "none",
+    "animation_count": 40,
+    "transition_durations_ms": [
+      400,
+      450,
+      600,
+      1500
+    ],
+    "has_gradient": false,
+    "dark_mode": false,
+    "monochrome": false
+  },
+  "raw_extras": {
+    "nav_links_count": 12,
+    "button_count": 9,
+    "primary_button_radius_px": 1296,
+    "image_count": 49,
+    "form_count": 3
+  }
+}

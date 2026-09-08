@@ -1,0 +1,143 @@
+{
+  "url": "https://huly.io",
+  "hostname": "huly.io",
+  "title": "Huly",
+  "niches": [
+    "saas-tech",
+    "agency"
+  ],
+  "extracted_at": "2026-07-23",
+  "extract_duration_ms": 10091,
+  "page_metrics": {
+    "page_height_px": 9802,
+    "viewport_width": 1440,
+    "section_count": 13,
+    "has_sticky_nav": false,
+    "has_announcement_bar": false
+  },
+  "colors": {
+    "top_palette": [
+      [
+        "#303236",
+        0.65
+      ],
+      [
+        "#FFFFFF",
+        0.21
+      ],
+      [
+        "#0B0D10",
+        0.05
+      ],
+      [
+        "#797D86",
+        0.03
+      ],
+      [
+        "#95979E",
+        0.02
+      ],
+      [
+        "#18191B",
+        0.02
+      ],
+      [
+        "#0C0C0D",
+        0.01
+      ],
+      [
+        "#68686A",
+        0.01
+      ]
+    ],
+    "bg_main": "#18191B",
+    "text_main": "#303236",
+    "is_dark": true,
+    "bg_luminance": 0.1,
+    "primary_hue": 216,
+    "accent_hue": 216,
+    "accent_saturation_avg": 19,
+    "palette_size": 8
+  },
+  "typography": {
+    "display_font": "__esbuild_b38aaf",
+    "body_font": "__Inter_f367f3",
+    "fonts_used": [
+      "__Inter_f367f3",
+      "__esbuild_b38aaf",
+      "Times New Roman"
+    ],
+    "hero_h1_size_px": 84,
+    "body_size_px": 16,
+    "body_line_height": 1.5,
+    "display_weight": 600,
+    "font_count": 3
+  },
+  "layout": {
+    "hero_type": "product-showcase",
+    "hero_signals": {
+      "has_large_image": true,
+      "image_position": "center",
+      "image_width_pct": 133,
+      "has_centered_text": false
+    },
+    "section_sequence": [
+      "hero",
+      "hero",
+      "hero",
+      "hero",
+      "gallery",
+      "features",
+      "gallery",
+      "gallery",
+      "gallery",
+      "gallery",
+      "gallery",
+      "gallery",
+      "footer"
+    ],
+    "section_types": {
+      "hero": 4,
+      "gallery": 7,
+      "features": 1,
+      "footer": 1
+    },
+    "has_asymmetric_grid": true,
+    "grid_cols_max": 3,
+    "card_count": 97,
+    "card_aspect": "16/9",
+    "has_bento": true
+  },
+  "mood": {
+    "radius_avg_px": 699,
+    "radius_distribution": {
+      "0": 0.45,
+      "4": 0.03,
+      "8": 0,
+      "12": 0.1,
+      "16": 0,
+      "24": 0.21,
+      "999": 0.21
+    },
+    "density_padding_avg_px": 186,
+    "shadow_usage": "medium",
+    "animation_count": 72,
+    "transition_durations_ms": [
+      150,
+      200,
+      300,
+      1000,
+      1500
+    ],
+    "has_gradient": true,
+    "dark_mode": true,
+    "monochrome": false
+  },
+  "raw_extras": {
+    "nav_links_count": 14,
+    "button_count": 12,
+    "primary_button_radius_px": 0,
+    "image_count": 69,
+    "form_count": 0
+  }
+}

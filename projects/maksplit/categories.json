@@ -1,0 +1,42 @@
+[
+  {
+    "id": 49,
+    "name": "Все",
+    "slug": "misc",
+    "description": "",
+    "count": 0,
+    "parent": 0
+  },
+  {
+    "id": 54,
+    "name": "Тротуарная плитка",
+    "slug": "plitka",
+    "description": "Купить тротуарную плитку",
+    "count": 7,
+    "parent": 0
+  },
+  {
+    "id": 55,
+    "name": "Бордюры, водостоки",
+    "slug": "bordyury",
+    "description": "Купить Бордюры Водостоки",
+    "count": 3,
+    "parent": 0
+  },
+  {
+    "id": 56,
+    "name": "Брусчатка тротуарная",
+    "slug": "bruschatka",
+    "description": "Купить брусчатку",
+    "count": 9,
+    "parent": 0
+  },
+  {
+    "id": 95,
+    "name": "Памятники из бетона",
+    "slug": "%d0%bf%d0%b0%d0%bc%d1%8f%d1%82%d0%bd%d0%b8%d0%ba%d0%b8-%d0%b8%d0%b7-%d0%b1%d0%b5%d1%82%d0%be%d0%bd%d0%b0",
+    "description": "Памятники из кавларобетона купить",
+    "count": 3,
+    "parent": 0
+  }
+]

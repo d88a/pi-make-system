@@ -1,0 +1,121 @@
+{
+  "url": "https://www.clouarchitects.com",
+  "hostname": "clouarchitects.com",
+  "title": "CLOU architects",
+  "niches": [
+    "creative-animation",
+    "architecture-realestate",
+    "minimal",
+    "agency"
+  ],
+  "extracted_at": "2026-07-23",
+  "extract_duration_ms": 13917,
+  "page_metrics": {
+    "page_height_px": 0,
+    "viewport_width": 1440,
+    "section_count": 11,
+    "has_sticky_nav": true,
+    "has_announcement_bar": false
+  },
+  "colors": {
+    "top_palette": [
+      [
+        "#000000",
+        0.87
+      ],
+      [
+        "#FFFFFC",
+        0.13
+      ],
+      [
+        "#FFFFFF",
+        0
+      ]
+    ],
+    "bg_main": "#000000",
+    "text_main": "#FFFFFC",
+    "is_dark": true,
+    "bg_luminance": 0,
+    "primary_hue": 60,
+    "accent_hue": 60,
+    "accent_saturation_avg": 100,
+    "palette_size": 3
+  },
+  "typography": {
+    "display_font": "Circular Std",
+    "body_font": "Circular Std",
+    "fonts_used": [
+      "Times New Roman",
+      "Circular Std"
+    ],
+    "hero_h1_size_px": 165,
+    "body_size_px": 16,
+    "body_line_height": 1.6,
+    "display_weight": 400,
+    "font_count": 2
+  },
+  "layout": {
+    "hero_type": "product-showcase",
+    "hero_signals": {
+      "has_large_image": true,
+      "image_position": "center",
+      "image_width_pct": 105,
+      "has_centered_text": true
+    },
+    "section_sequence": [
+      "hero",
+      "gallery",
+      "content",
+      "nav",
+      "content",
+      "gallery",
+      "features",
+      "gallery",
+      "gallery",
+      "gallery",
+      "footer"
+    ],
+    "section_types": {
+      "hero": 1,
+      "gallery": 5,
+      "content": 2,
+      "nav": 1,
+      "features": 1,
+      "footer": 1
+    },
+    "has_asymmetric_grid": true,
+    "grid_cols_max": 0,
+    "card_count": 121,
+    "card_aspect": "16/9",
+    "has_bento": false
+  },
+  "mood": {
+    "radius_avg_px": 0,
+    "radius_distribution": {
+      "0": 1,
+      "4": 0,
+      "8": 0,
+      "12": 0,
+      "16": 0,
+      "24": 0,
+      "999": 0
+    },
+    "density_padding_avg_px": 100,
+    "shadow_usage": "none",
+    "animation_count": 14,
+    "transition_durations_ms": [
+      200,
+      300
+    ],
+    "has_gradient": false,
+    "dark_mode": true,
+    "monochrome": true
+  },
+  "raw_extras": {
+    "nav_links_count": 32,
+    "button_count": 32,
+    "primary_button_radius_px": 0,
+    "image_count": 52,
+    "form_count": 0
+  }
+}

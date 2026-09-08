@@ -1,0 +1,94 @@
+<!-- ============================================================ -->
+<!-- HERO — Concrete Steel + Steel Blue #3B5F8A -->
+<!-- Signature element: Giant display type (Space Grotesk 72px+) -->
+<!-- «Кевларбетонная плитка СтройМакс» с цветной тенью Steel Blue -->
+<!-- Layered depth 4+: bg-page (L0) → texture overlay (L1) → content (L2) → accent shadow/stats (L4) -->
+<!-- Asymmetric: text 60% left + stats bar right -->
+<!-- ============================================================ -->
+<section class="relative overflow-hidden bg-[var(--color-bg-page)] pt-36 pb-32" aria-labelledby="hero-heading">
+  <!-- Subtle concrete texture overlay (L1) -->
+  <div class="pointer-events-none absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg width=%22100%22 height=%22100%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22/%3E%3C/filter%3E%3Crect width=%22100%22 height=%22100%22 filter=%22url(%23n)%22 opacity=%220.5%22/%3E%3C/svg%3E');"></div>
+
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid items-center gap-12 lg:grid-cols-5 lg:gap-16">
+      <!-- Left: text block (3/5 — asymmetric emphasis) -->
+      <div class="lg:col-span-3">
+        <!-- Eyebrow -->
+        <span class="font-display text-xs font-semibold tracking-widest uppercase text-[var(--color-text-muted)]">
+          Производство в Юрюзани с 2015
+        </span>
+
+        <!-- SIGNATURE ELEMENT: giant display type with Steel Blue colored shadow -->
+        <h1 id="hero-heading" class="mt-6 font-display text-5xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-6xl lg:text-7xl" style="text-shadow: 0 2px 8px rgba(59, 95, 138, 0.12);">
+          Кевларбетонная<br>
+          <span class="text-[var(--color-primary)]">плитка СтройМакс</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="mt-8 max-w-xl text-lg leading-relaxed text-[var(--color-text-secondary)]">
+          Армирование кевларовым волокном увеличивает прочность на изгиб в 5 раз.
+          Морозостойкость F200, водонепроницаемость W6. 50 лет гарантии на каждый метр.
+        </p>
+
+        <!-- CTA buttons -->
+        <div class="mt-10 flex flex-wrap items-center gap-4">
+          <a href="#calculate" class="rounded-md bg-[var(--color-primary)] px-7 py-3.5 font-body text-base font-semibold text-white transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:shadow-[var(--shadow-brand)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-2 focus:ring-offset-[var(--color-bg-page)]">
+            Рассчитать стоимость
+          </a>
+          <a href="/catalog" class="rounded-md border-2 border-[var(--color-border)] bg-transparent px-7 py-3.5 font-body text-base font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-2 focus:ring-offset-[var(--color-bg-page)]">
+            Каталог
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: product photo + stats (2/5 — visual anchor) -->
+      <div class="flex flex-col gap-8 lg:col-span-2">
+        <!-- Product hero photo: object-contain, bg-surface, framed -->
+        <div class="flex aspect-square items-center justify-center overflow-hidden rounded-lg border-2 border-[var(--color-border)] bg-[var(--color-surface)] p-4" style="box-shadow: var(--shadow-brand);">
+          <img
+            src="https://maksplit.ru/wp-content/uploads/2024/09/Domino.jpg"
+            alt="Кевларбетонная плитка СтройМакс — брусчатка Домино"
+            class="max-h-full max-w-full object-contain"
+            width="600"
+            height="600"
+          />
+        </div>
+
+        <!-- Stats cards -->
+        <div class="space-y-4 rounded-lg border-2 border-[var(--color-border)] bg-[var(--color-surface)] p-6">
+          <div class="border-b-2 border-[var(--color-border-subtle)] pb-4">
+            <span class="font-mono text-4xl font-bold tabular-nums text-[var(--color-text-primary)]">F200</span>
+            <span class="mt-1 block font-display text-xs font-semibold tracking-widest uppercase text-[var(--color-text-muted)]">Морозостойкость</span>
+            <p class="mt-1.5 text-sm leading-relaxed text-[var(--color-text-secondary)]">200 циклов заморозки-разморозки. От -50°C до +50°C.</p>
+          </div>
+          <div class="border-b-2 border-[var(--color-border-subtle)] pb-4">
+            <span class="font-mono text-4xl font-bold tabular-nums text-[var(--color-text-primary)]">W6</span>
+            <span class="mt-1 block font-display text-xs font-semibold tracking-widest uppercase text-[var(--color-text-muted)]">Водонепроницаемость</span>
+            <p class="mt-1.5 text-sm leading-relaxed text-[var(--color-text-secondary)]">Максимальный класс для бетонных изделий.</p>
+          </div>
+          <div>
+            <span class="font-mono text-4xl font-bold tabular-nums text-[var(--color-primary)]">22</span>
+            <span class="mt-1 block font-display text-xs font-semibold tracking-widest uppercase text-[var(--color-text-muted)]">Продукта в каталоге</span>
+            <p class="mt-1.5 text-sm leading-relaxed text-[var(--color-text-secondary)]">Плитка, брусчатка, бордюры, памятники из кевларбетона.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats bar (bottom) — centered, steel divider -->
+    <div class="mx-auto mt-20 grid max-w-3xl grid-cols-3 gap-8 border-t-2 border-[var(--color-border)] pt-10 text-center">
+      <div>
+        <span class="font-mono text-3xl font-bold tabular-nums text-[var(--color-text-primary)]">5×</span>
+        <span class="mt-1.5 block font-display text-xs font-semibold tracking-widest uppercase text-[var(--color-text-muted)]">Прочнее бетона</span>
+      </div>
+      <div>
+        <span class="font-mono text-3xl font-bold tabular-nums text-[var(--color-text-primary)]">50</span>
+        <span class="mt-1.5 block font-display text-xs font-semibold tracking-widest uppercase text-[var(--color-text-muted)]">Лет гарантии</span>
+      </div>
+      <div>
+        <span class="font-mono text-3xl font-bold tabular-nums text-[var(--color-text-primary)]">850 ₽</span>
+        <span class="mt-1.5 block font-display text-xs font-semibold tracking-widest uppercase text-[var(--color-text-muted)]">От за м²</span>
+      </div>
+    </div>
+  </div>
+</section>

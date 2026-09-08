@@ -1,0 +1,85 @@
+{
+  "components": {
+    "nav": {
+      "id": "nav-main",
+      "type": "nav",
+      "file": "shared/components/nav.html",
+      "variant": "sticky-backdrop",
+      "version": 1,
+      "slots": ["logo", "links", "cta"],
+      "used_by": ["index", "services", "about", "contact"]
+    },
+    "footer": {
+      "id": "footer-main",
+      "type": "footer",
+      "file": "shared/components/footer.html",
+      "variant": "minimal-warm",
+      "version": 1,
+      "slots": ["contacts", "social", "copyright"],
+      "used_by": ["index", "services", "about", "contact"]
+    },
+    "hero": {
+      "id": "hero-main",
+      "type": "hero",
+      "file": "shared/components/hero.html",
+      "variant": "centered-cta",
+      "version": 2,
+      "slots": ["eyebrow", "title", "subtitle", "cta-primary", "cta-secondary"],
+      "used_by": ["index"]
+    },
+    "card": {
+      "id": "card-service",
+      "type": "card",
+      "file": "shared/components/card.html",
+      "variant": "border-hover",
+      "version": 1,
+      "slots": ["icon", "title", "description", "price"],
+      "used_by": ["index", "services"]
+    },
+    "button": {
+      "id": "button-cta",
+      "type": "button",
+      "file": "shared/components/button.html",
+      "variant": "primary-secondary",
+      "version": 1,
+      "slots": [],
+      "used_by": ["index", "services", "about", "contact"]
+    },
+    "page-header": {
+      "id": "page-header",
+      "type": "header",
+      "file": "shared/components/page-header.html",
+      "variant": "centered-title",
+      "version": 1,
+      "slots": ["title", "subtitle"],
+      "used_by": ["services", "about", "contact"]
+    },
+    "stats": {
+      "id": "stats-section",
+      "type": "section",
+      "file": "shared/components/stats.html",
+      "variant": "counter",
+      "version": 1,
+      "slots": ["stat-1", "stat-2", "stat-3", "stat-4"],
+      "used_by": ["index"]
+    },
+    "contact-form": {
+      "id": "contact-form",
+      "type": "form",
+      "file": "shared/components/contact-form.html",
+      "variant": "split-layout",
+      "version": 1,
+      "slots": ["form", "info"],
+      "used_by": ["contact"]
+    },
+    "team-card": {
+      "id": "team-card",
+      "type": "card",
+      "file": "shared/components/team-card.html",
+      "variant": "photo-name",
+      "version": 1,
+      "slots": ["photo", "name", "role", "bio"],
+      "used_by": ["about"]
+    }
+  }
+}

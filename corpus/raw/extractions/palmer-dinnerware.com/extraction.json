@@ -1,0 +1,111 @@
+{
+  "url": "https://www.palmer-dinnerware.com",
+  "hostname": "palmer-dinnerware.com",
+  "title": "Palmer Dinnerware",
+  "niches": [
+    "other",
+    "ecommerce",
+    "minimal"
+  ],
+  "extracted_at": "2026-07-23",
+  "extract_duration_ms": 60011,
+  "page_metrics": {
+    "page_height_px": 165604,
+    "viewport_width": 1440,
+    "section_count": 3,
+    "has_sticky_nav": true,
+    "has_announcement_bar": false
+  },
+  "colors": {
+    "top_palette": [
+      [
+        "#222222",
+        0.93
+      ],
+      [
+        "#F5F6EE",
+        0.07
+      ],
+      [
+        "#E0E1DA",
+        0
+      ]
+    ],
+    "bg_main": "#222222",
+    "text_main": "#F5F6EE",
+    "is_dark": true,
+    "bg_luminance": 0.13,
+    "primary_hue": 67,
+    "accent_hue": 67,
+    "accent_saturation_avg": 31,
+    "palette_size": 3
+  },
+  "typography": {
+    "display_font": "TWK Lausanne",
+    "body_font": "TWK Lausanne",
+    "fonts_used": [
+      "TWK Lausanne"
+    ],
+    "hero_h1_size_px": 120,
+    "body_size_px": 12,
+    "body_line_height": 1.4,
+    "display_weight": 300,
+    "font_count": 1
+  },
+  "layout": {
+    "hero_type": "asymmetric-split",
+    "hero_signals": {
+      "has_large_image": false,
+      "image_position": "left",
+      "image_width_pct": 1,
+      "has_centered_text": true
+    },
+    "section_sequence": [
+      "nav",
+      "hero",
+      "content"
+    ],
+    "section_types": {
+      "nav": 1,
+      "hero": 1,
+      "content": 1
+    },
+    "has_asymmetric_grid": false,
+    "grid_cols_max": 3,
+    "card_count": 258,
+    "card_aspect": "16/9",
+    "has_bento": false
+  },
+  "mood": {
+    "radius_avg_px": 30,
+    "radius_distribution": {
+      "0": 0.57,
+      "4": 0,
+      "8": 0,
+      "12": 0.14,
+      "16": 0,
+      "24": 0,
+      "999": 0.29
+    },
+    "density_padding_avg_px": 24,
+    "shadow_usage": "none",
+    "animation_count": 9,
+    "transition_durations_ms": [
+      200,
+      250,
+      300,
+      500,
+      1000
+    ],
+    "has_gradient": false,
+    "dark_mode": true,
+    "monochrome": true
+  },
+  "raw_extras": {
+    "nav_links_count": 8,
+    "button_count": 5,
+    "primary_button_radius_px": 0,
+    "image_count": 120,
+    "form_count": 0
+  }
+}

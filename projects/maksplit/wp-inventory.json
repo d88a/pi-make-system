@@ -1,0 +1,423 @@
+{
+  "theme_name": "stroymaks2026",
+  "theme_title": "StroyMaks 2026",
+  "analyzed_at": "2026-07-23",
+  "design_system": "concrete-steel",
+  "accent": "#3B5F8A",
+  "fonts": {
+    "display": "Space Grotesk",
+    "body": "Inter",
+    "mono": "JetBrains Mono"
+  },
+  "images_policy": "object-contain",
+  "no_ecommerce": true,
+  "lead_form_only": true,
+  "tailwind_usage": "CDN",
+  "pages": {
+    "home.html": {
+      "type": "front_page",
+      "wp_template": "front-page.php",
+      "sections": [
+        "hero",
+        "features",
+        "category-grid",
+        "popular-products",
+        "lead-cta"
+      ],
+      "dynamic_data": [
+        "products_loop (WC)",
+        "categories_list (WC)",
+        "hero_eyebrow (customizer)",
+        "hero_title (customizer)",
+        "hero_subtitle (customizer)",
+        "hero_stats (customizer)",
+        "features_list (customizer/ACF)"
+      ],
+      "hardcoded_content": [
+        "hero_eyebrow: 'Производство в Юрюзани с 2015'",
+        "hero_title: 'Кевларбетонная плитка СтройМакс'",
+        "hero_subtitle: 'Армирование кевларовым волокном...'",
+        "hero_stats: F200, W6, 22, 5x, 50 лет, от 850 руб",
+        "features: 4 карточки (01 Кевлар-армирование, F200, 50 лет, Своё производство)",
+        "category_grid: 4 категории (брусчатка/плитка/бордюры/памятники)",
+        "popular_products: 6 карточек (Домино, Краковский клевер, Доска, Старый город, Калифорния камень, Бордюры)"
+      ]
+    },
+    "catalog.html": {
+      "type": "woocommerce_archive",
+      "wp_template": "archive-product.php (WC override)",
+      "sections": [
+        "catalog-header",
+        "category-filter",
+        "product-grid",
+        "lead-cta"
+      ],
+      "dynamic_data": [
+        "wc_product_loop (all 22 products)",
+        "wc_category_filter",
+        "wc_breadcrumbs",
+        "catalog_title (customizer)",
+        "catalog_subtitle (customizer)",
+        "catalog_quick_stats (customizer)"
+      ],
+      "hardcoded_content": [
+        "catalog_title: 'Каталог продукции'",
+        "catalog_subtitle: '22 продукта из кевларбетона...'",
+        "quick_stats: 22 продукта, 5 категорий, от 850 руб",
+        "filter_pills: Все, Тротуарная плитка, Брусчатка, Бордюры, Памятники"
+      ],
+      "components_used": [
+        "nav",
+        "footer",
+        "product-card",
+        "lead-form"
+      ]
+    },
+    "product.html": {
+      "type": "woocommerce_single",
+      "wp_template": "single-product.php (WC override)",
+      "sections": [
+        "breadcrumb",
+        "product-gallery",
+        "product-info",
+        "color-picker",
+        "characteristics",
+        "product-description",
+        "features",
+        "related-products",
+        "lead-cta"
+      ],
+      "dynamic_data": [
+        "wc_gallery + thumbnails",
+        "wc_title",
+        "wc_price",
+        "wc_category_badge",
+        "wc_short_description",
+        "wc_attributes (characteristics table)",
+        "wc_related_products",
+        "wc_breadcrumbs"
+      ],
+      "hardcoded_content": [
+        "product_title: 'Домино' (template, 22 products)",
+        "product_subtitle: 'Брусчатка тротуарная'",
+        "description: кевлар-армированная бетонная плитка...",
+        "characteristics: Размеры/Толщина/Цвета/Морозостойкость/Материал",
+        "color_picker: Белый 850р (var 6143) / Цветной 1100р (var 6144)",
+        "CTA: 'Рассчитать стоимость' (не 'В корзину')"
+      ],
+      "variations": {
+        "type": "wc_variable_product",
+        "attribute": "Цвет",
+        "options": [
+          {"label": "Белый", "price": 850, "variant_id": 6143, "color": "#F5F5F0"},
+          {"label": "Цветной", "price": 1100, "variant_id": 6144, "color": "#A8A29E"}
+        ],
+        "display_only": true,
+        "note": "Color picker меняет цену display, НЕ добавляет в корзину → ведёт на /calculator"
+      },
+      "components_used": [
+        "nav",
+        "footer",
+        "product-detail",
+        "lead-form",
+        "features"
+      ]
+    },
+    "about.html": {
+      "type": "page",
+      "wp_template": "page-about.php",
+      "sections": [
+        "about-hero",
+        "stats",
+        "history-timeline",
+        "advantages",
+        "production-process",
+        "lead-cta"
+      ],
+      "dynamic_data": [
+        "the_title()",
+        "the_content() (page content from WP editor)",
+        "stats_counters (customizer/ACF)",
+        "timeline_events (ACF repeater)",
+        "advantages_list (ACF repeater)",
+        "process_steps (ACF repeater)"
+      ],
+      "hardcoded_content": [
+        "hero_title: 'Производитель кевларбетона №1'",
+        "mission: 'С 2015 года мы производим...'",
+        "stats: 11 лет, 200000+ м², F200, 1000+ объектов",
+        "timeline: 2015/2017/2019/2022/2026",
+        "advantages: 6 карточек",
+        "process: 4 шага производства"
+      ]
+    },
+    "contacts.html": {
+      "type": "page",
+      "wp_template": "page-contacts.php",
+      "sections": [
+        "contacts-hero",
+        "contact-info",
+        "map",
+        "lead-form"
+      ],
+      "dynamic_data": [
+        "the_title()",
+        "the_content()",
+        "contact_info (customizer/ACF)",
+        "map_embed (customizer)",
+        "lead_form (CF7)"
+      ],
+      "hardcoded_content": [
+        "hero_title: 'Контакты'",
+        "address: г. Юрюзань, ул. Строителей, 15",
+        "phone: +7 (35147) 1-23-45",
+        "email: info@maksplit.ru",
+        "working_hours: Пн-Пт 8:00-18:00, Сб 9:00-15:00",
+        "map: placeholder"
+      ]
+    },
+    "delivery.html": {
+      "type": "page",
+      "wp_template": "page-delivery.php",
+      "sections": [
+        "delivery-hero",
+        "delivery-options",
+        "payment",
+        "faq",
+        "lead-cta"
+      ],
+      "dynamic_data": [
+        "the_title()",
+        "the_content()",
+        "delivery_options (ACF repeater)",
+        "payment_methods (ACF repeater)",
+        "faq_items (ACF repeater)"
+      ],
+      "hardcoded_content": [
+        "hero_title: 'Доставка и оплата'",
+        "delivery_options: 3 варианта (самовывоз, Челябинская обл, Россия)",
+        "payment: 2 способа (наличный, безналичный)",
+        "faq: 4 вопроса"
+      ]
+    },
+    "calculator.html": {
+      "type": "page",
+      "wp_template": "page-calculator.php",
+      "sections": [
+        "calculator-hero",
+        "calculator-form",
+        "how-it-works",
+        "lead-form"
+      ],
+      "dynamic_data": [
+        "the_title()",
+        "the_content()",
+        "calculator_form (CF7 или custom)",
+        "how_it_works_steps (ACF)"
+      ],
+      "hardcoded_content": [
+        "hero_title: 'Рассчитать стоимость'",
+        "subtitle: 'Бесплатный расчёт за 15 минут...'",
+        "how_it_works: 3 шага",
+        "form_fields: имя, телефон, email, тип плитки, объём, комментарий"
+      ]
+    }
+  },
+  "shared_components": {
+    "nav.html": {
+      "wp_dest": "header.php",
+      "type": "global",
+      "has_mobile_menu": true,
+      "has_cta_button": true,
+      "cta_text": "Рассчитать стоимость",
+      "cta_link": "/calculator",
+      "phone": "+7 (35147) 1-23-45",
+      "menu_items": ["Главная", "Каталог", "О компании", "Доставка", "Контакты"]
+    },
+    "footer.html": {
+      "wp_dest": "footer.php",
+      "type": "global",
+      "columns": "3 (brand + catalog + contacts)",
+      "has_steel_divider": true,
+      "copyright": "© 2015–2025 СтройМакс",
+      "email": "info@maksplit.ru"
+    },
+    "hero.html": {
+      "wp_dest": "template-parts/hero.php",
+      "type": "reusable",
+      "used_by": ["home"],
+      "has_texture_overlay": true,
+      "has_stats_bar": true,
+      "has_cta_buttons": true
+    },
+    "product-card.html": {
+      "wp_dest": "template-parts/product-card.php",
+      "type": "reusable",
+      "used_by": ["home", "catalog", "product"],
+      "photo_policy": "object-contain",
+      "has_category_badge": true,
+      "has_price": true,
+      "cta_button": "Подробнее (→ product page, NOT add to cart)"
+    },
+    "category-grid.html": {
+      "wp_dest": "template-parts/category-grid.php",
+      "type": "reusable",
+      "used_by": ["home", "catalog"],
+      "categories": [
+        {"name": "Брусчатка", "slug": "bruschatka", "count": 9},
+        {"name": "Тротуарная плитка", "slug": "plitka", "count": 7},
+        {"name": "Бордюры, водостоки", "slug": "bordury", "count": 3},
+        {"name": "Памятники из бетона", "slug": "pamyatniki", "count": 3}
+      ]
+    },
+    "lead-form.html": {
+      "wp_dest": "template-parts/lead-form.php",
+      "type": "reusable",
+      "used_by": ["home", "catalog", "product", "about", "contacts", "delivery", "calculator"],
+      "fields": ["name", "phone", "volume", "comment"],
+      "action": "cf7",
+      "cta_text": "Получить расчёт",
+      "bg": "accent (Steel Blue #3B5F8A)"
+    },
+    "features.html": {
+      "wp_dest": "template-parts/features.php",
+      "type": "reusable",
+      "used_by": ["home", "product"],
+      "variant": "numbered + icon cards",
+      "count": 4
+    },
+    "product-detail.html": {
+      "wp_dest": "template-parts/product-detail.php",
+      "type": "reusable",
+      "used_by": ["product"],
+      "includes": ["gallery", "info", "color_picker", "characteristics", "cta"]
+    }
+  },
+  "forms_found": [
+    {
+      "file": "shared/components/lead-form.html",
+      "fields": ["name", "phone", "volume", "comment"],
+      "action": "cf7",
+      "cf7_title": "Форма расчёта стоимости",
+      "description": "Primary lead capture form. Used on ALL pages. Steel Blue accent bg.",
+      "used_by": ["home", "catalog", "product", "about", "contacts", "delivery", "calculator"]
+    },
+    {
+      "file": "product.html",
+      "fields": ["name", "phone"],
+      "action": "cf7",
+      "cf7_title": "Форма расчёта стоимости (product page)",
+      "description": "Simplified version on product page CTA section."
+    },
+    {
+      "file": "contacts.html",
+      "fields": ["name", "phone", "email", "message"],
+      "action": "cf7",
+      "cf7_title": "Форма обратной связи",
+      "description": "Contact form on contacts page."
+    },
+    {
+      "file": "calculator.html",
+      "fields": ["name", "phone", "email", "product_type", "volume", "comment"],
+      "action": "cf7",
+      "cf7_title": "Форма расчёта стоимости (расширенная)",
+      "description": "Extended calculator form with product type selection."
+    }
+  ],
+  "woocommerce_overrides_needed": [
+    "single-product.php",
+    "archive-product.php",
+    "content-product.php",
+    "single-product/price.php",
+    "single-product/product-image.php",
+    "single-product/product-attributes.php",
+    "loop/price.php",
+    "loop/sale-flash.php",
+    "global/breadcrumb.php"
+  ],
+  "woocommerce_catalog_mode": {
+    "enabled": true,
+    "remove_add_to_cart": true,
+    "replace_with": "Рассчитать стоимость → /calculator",
+    "hooks": [
+      "remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30)",
+      "remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10)"
+    ],
+    "enquiry_button_callback": "stroymaks2026_enquiry_button"
+  },
+  "static_assets": {
+    "images": [
+      "assets/images/ (from WP uploads, not local)"
+    ],
+    "css": [
+      "tailwind/input.css → assets/css/tailwind.css"
+    ],
+    "js": [
+      "assets/js/main.js"
+    ]
+  },
+  "tailwind_config": {
+    "mode": "CDN (dev) → CLI build (prod)",
+    "cdn_url": "https://cdn.tailwindcss.com",
+    "fonts": [
+      "Space Grotesk (display)",
+      "Inter (body)",
+      "JetBrains Mono (mono)"
+    ],
+    "css_custom_properties_count": 24,
+    "custom_properties": [
+      "--color-bg-page",
+      "--color-bg-alt",
+      "--color-surface",
+      "--color-bg-elevated",
+      "--color-bg-inset",
+      "--color-text-primary",
+      "--color-text-secondary",
+      "--color-text-muted",
+      "--color-text-inverse",
+      "--color-primary",
+      "--color-primary-hover",
+      "--color-primary-active",
+      "--color-primary-glow",
+      "--color-primary-subtle",
+      "--color-success",
+      "--color-danger",
+      "--color-warning",
+      "--color-border",
+      "--color-border-hover",
+      "--color-border-accent-hover",
+      "--color-border-subtle",
+      "--gradient-primary",
+      "--gradient-steel",
+      "--shadow-brand",
+      "--shadow-card",
+      "--shadow-card-hover",
+      "--shadow-elevated",
+      "--product-white",
+      "--product-color",
+      "--transition-smooth",
+      "--transition-fast",
+      "--transition-spring",
+      "--font-display",
+      "--font-body",
+      "--font-mono",
+      "--radius-sm",
+      "--radius-md",
+      "--radius-lg",
+      "--radius-xl"
+    ]
+  },
+  "recommendations": [
+    "Hero content on home page → WP Customizer settings (hero_title, hero_subtitle, hero_eyebrow)",
+    "Category grid → dynamic from WC product categories (wc_get_product_category_list)",
+    "Popular products → WP_Query or wc_get_products with meta_key for 'popular'",
+    "product.html color picker → WC variable product variations (display-only, no cart)",
+    "All 'Подробнее' buttons → NOT add_to_cart, link to product page",
+    "Lead form → CF7 single form, reuse via shortcode on all pages",
+    "Footer catalog links → dynamic from WC categories",
+    "About page timeline → ACF repeater field",
+    "object-contain on ALL product images (owner requirement)",
+    "NO hardcoded hex colors outside :root block",
+    "WC Catalog Mode: удалить цену из корзины, убрать checkout, убрать cart page"
+  ]
+}

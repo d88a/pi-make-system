@@ -1,0 +1,50 @@
+# Pi Make System .gitignore
+
+# Node
+node_modules/
+package-lock.json
+
+# Python
+__pycache__/
+*.pyc
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Windows reserved names
+nul
+
+# Large binaries (скриншоты не в репозитории)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+
+# Exceptions: если нужны маленькие иконки/логотипы в проекте
+# !projects/*/favicon.*
+
+# Archives
+*.zip
+*.tgz
+*.tar.gz
+
+# SQL dumps (слишком большие для GitHub)
+*.sql
+*.sql.gz
+
+# Temp
+tmp/
+
+# IDE
+.idea/
+.vscode/
+*.code-workspace
+
+# Build artifacts
+dist/
+.next/

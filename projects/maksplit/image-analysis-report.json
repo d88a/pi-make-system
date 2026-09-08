@@ -1,0 +1,457 @@
+{
+  "generated_at": "2026-07-22T11:52:19.038Z",
+  "model": "qwen-vl-max",
+  "usage_context": "catalog-card",
+  "total_images": 6,
+  "analyzed": 5,
+  "errors": 1,
+  "results": [
+    {
+      "url": "D:/Anna/Сайты/maksplit.ru/wp-content/uploads/2024/09/Domino.jpg",
+      "filename": "Domino.jpg",
+      "dimensions": {
+        "width": 342,
+        "height": 335
+      },
+      "status": "ok",
+      "analysis": {
+        "url": "D:/Anna/Сайты/maksplit.ru/wp-content/uploads/2024/09/Domino.jpg",
+        "filename": "Domino.jpg",
+        "content_type": "texture-macro",
+        "quality": {
+          "resolution": "med",
+          "resolution_px": {
+            "width": 342,
+            "height": 335,
+            "shortest_side": 335
+          },
+          "lighting": "ok",
+          "background": "clean",
+          "sharpness": "ok",
+          "white_balance": "neutral",
+          "score": 6
+        },
+        "crop_safe": false,
+        "crop_safe_reason": "Image is a close-up texture with no distinct subject; edges contain important pattern details.",
+        "object_position": "center",
+        "large_ok": false,
+        "recommended_handling": "cover",
+        "usage_context_suggestions": [
+          "inline-texture",
+          "catalog-card",
+          "category-cover"
+        ],
+        "regenerate": {
+          "needed": true,
+          "mode": "similar",
+          "prompt": "Close-up of two textured gray tiles side by side, showing subtle surface patterns and slight variations in tone, evenly lit, neutral background, high detail for web use",
+          "preserve_subject": true,
+          "reason": "Original image has low resolution and lacks sharpness; regeneration can improve clarity and usability for larger displays.",
+          "suggested_size": "1024*1024"
+        },
+        "css_recommendation": {
+          "object_fit": "contain",
+          "object_position": "center",
+          "container_classes": "w-full h-64 bg-gray-100 flex items-center justify-center",
+          "image_classes": "object-contain w-full h-full"
+        },
+        "confidence": 0.9,
+        "reasoning": "The image shows a macro view of a textured surface resembling stone or concrete tiles, split into two panels. It's not a product but a material sample. The resolution is medium, lighting is even, and white balance is neutral. However, the image is too small and slightly soft for large display. Safe cropping is not possible due to edge texture importance. Regeneration is recommended for better quality."
+      },
+      "decision": {
+        "strategy": "cover",
+        "rule": "R20",
+        "css": {
+          "container": "h-32 md:h-40 overflow-hidden",
+          "image": "h-full w-full object-cover"
+        }
+      },
+      "usage_matrix": {
+        "inline-texture": {
+          "strategy": "cover",
+          "rule": "R20",
+          "css": {
+            "container": "h-32 md:h-40 overflow-hidden",
+            "image": "h-full w-full object-cover"
+          }
+        },
+        "catalog-card": {
+          "strategy": "cover",
+          "rule": "R20",
+          "css": {
+            "container": "h-32 md:h-40 overflow-hidden",
+            "image": "h-full w-full object-cover"
+          }
+        },
+        "category-cover": {
+          "strategy": "contain",
+          "rule": "R37",
+          "css": {
+            "container": "aspect-square bg-slate-800 rounded-2xl flex items-center justify-center",
+            "image": "max-w-full max-h-full object-contain"
+          }
+        }
+      },
+      "gen_image_command": "python D:/pi/scripts/gen_image.py --prompt \"Close-up of two textured gray tiles side by side, showing subtle surface patterns and slight variations in tone, evenly lit, neutral background, high detail for web use\" --size 1024*1024 --output \"images\\regen\\Domino-regen.png\""
+    },
+    {
+      "url": "D:/Anna/Сайты/maksplit.ru/wp-content/uploads/2024/09/Krakovskij-klever-e1744201631824.png",
+      "filename": "Krakovskij-klever-e1744201631824.png",
+      "dimensions": {
+        "width": 346,
+        "height": 346
+      },
+      "status": "error",
+      "error": "Request timeout"
+    },
+    {
+      "url": "D:/Anna/Сайты/maksplit.ru/wp-content/uploads/2024/09/Doska-e1744201102236.png",
+      "filename": "Doska-e1744201102236.png",
+      "dimensions": {
+        "width": 323,
+        "height": 320
+      },
+      "status": "ok",
+      "analysis": {
+        "url": "D:/Anna/Сайты/maksplit.ru/wp-content/uploads/2024/09/Doska-e1744201102236.png",
+        "filename": "Doska-e1744201102236.png",
+        "content_type": "texture-macro",
+        "quality": {
+          "resolution": "med",
+          "resolution_px": {
+            "width": 323,
+            "height": 320,
+            "shortest_side": 320
+          },
+          "lighting": "ok",
+          "background": "none",
+          "sharpness": "sharp",
+          "white_balance": "neutral",
+          "score": 6
+        },
+        "crop_safe": false,
+        "crop_safe_reason": "The image is a seamless texture pattern filling the entire frame; cropping would disrupt the repeating pattern and visual continuity.",
+        "object_position": "center",
+        "large_ok": false,
+        "recommended_handling": "cover",
+        "usage_context_suggestions": [
+          "inline-texture",
+          "category-cover",
+          "catalog-card"
+        ],
+        "regenerate": {
+          "needed": false,
+          "mode": "none",
+          "prompt": "",
+          "preserve_subject": false,
+          "reason": "Image is already suitable for its intended use as a texture; no regeneration needed.",
+          "suggested_size": "1024*1024"
+        },
+        "css_recommendation": {
+          "object_fit": "cover",
+          "object_position": "center",
+          "container_classes": "w-full h-64 bg-gray-200",
+          "image_classes": "w-full h-full object-cover"
+        },
+        "confidence": 0.95,
+        "reasoning": "This is a high-quality close-up of a wooden plank surface with consistent grain patterns, typical of a texture macro shot. The lighting is even, sharpness is good, and white balance is neutral. The image fills the frame completely with no subject to center or crop safely. It's best used as a background or texture in web design, hence 'cover' handling is recommended. Resolution is medium, so it won't scale well beyond ~600px without degradation."
+      },
+      "decision": {
+        "strategy": "cover",
+        "rule": "R20",
+        "css": {
+          "container": "h-32 md:h-40 overflow-hidden",
+          "image": "h-full w-full object-cover"
+        }
+      },
+      "usage_matrix": {
+        "inline-texture": {
+          "strategy": "cover",
+          "rule": "R20",
+          "css": {
+            "container": "h-32 md:h-40 overflow-hidden",
+            "image": "h-full w-full object-cover"
+          }
+        },
+        "category-cover": {
+          "strategy": "contain",
+          "rule": "R37",
+          "css": {
+            "container": "aspect-square bg-slate-800 rounded-2xl flex items-center justify-center",
+            "image": "max-w-full max-h-full object-contain"
+          }
+        },
+        "catalog-card": {
+          "strategy": "cover",
+          "rule": "R20",
+          "css": {
+            "container": "h-32 md:h-40 overflow-hidden",
+            "image": "h-full w-full object-cover"
+          }
+        }
+      }
+    },
+    {
+      "url": "D:/Anna/Сайты/maksplit.ru/wp-content/uploads/2024/09/Staryj-gorod-1.png",
+      "filename": "Staryj-gorod-1.png",
+      "dimensions": {
+        "width": 387,
+        "height": 387
+      },
+      "status": "ok",
+      "analysis": {
+        "url": "D:/Anna/Сайты/maksplit.ru/wp-content/uploads/2024/09/Staryj-gorod-1.png",
+        "filename": "Staryj-gorod-1.png",
+        "content_type": "product-group",
+        "quality": {
+          "resolution": "med",
+          "resolution_px": {
+            "width": 387,
+            "height": 387,
+            "shortest_side": 387
+          },
+          "lighting": "good",
+          "background": "clean",
+          "sharpness": "ok",
+          "white_balance": "neutral",
+          "score": 6
+        },
+        "crop_safe": true,
+        "crop_safe_reason": "Subject is centered and evenly spaced, with clean edges and no critical details near borders.",
+        "object_position": "center",
+        "large_ok": false,
+        "recommended_handling": "cover",
+        "usage_context_suggestions": [
+          "product-main",
+          "catalog-card",
+          "category-cover"
+        ],
+        "regenerate": {
+          "needed": false,
+          "mode": "none",
+          "prompt": "",
+          "preserve_subject": false,
+          "reason": "",
+          "suggested_size": "1024*1024"
+        },
+        "css_recommendation": {
+          "object_fit": "contain",
+          "object_position": "center",
+          "container_classes": "w-full h-auto aspect-square",
+          "image_classes": "object-contain w-full h-full"
+        },
+        "confidence": 0.9,
+        "reasoning": "The image displays a group of six rectangular soap bars in pastel colors arranged symmetrically on a black background. The composition is clean, well-lit, and balanced, suitable for product display. Resolution is medium (387px), so it's not ideal for large displays but acceptable for thumbnails and catalog cards. No text or complex elements near edges make cropping safe. Recommended to use 'contain' to preserve the full layout."
+      },
+      "decision": {
+        "strategy": "cover",
+        "rule": "R26",
+        "css": {
+          "container": "h-32 md:h-40 overflow-hidden",
+          "image": "h-full w-full object-cover"
+        }
+      },
+      "usage_matrix": {
+        "product-main": {
+          "strategy": "regenerate-similar",
+          "rule": "R39",
+          "css": {
+            "container": "aspect-square bg-slate-800 rounded-2xl flex items-center justify-center",
+            "image": "max-w-full max-h-full object-contain"
+          }
+        },
+        "catalog-card": {
+          "strategy": "cover",
+          "rule": "R26",
+          "css": {
+            "container": "h-32 md:h-40 overflow-hidden",
+            "image": "h-full w-full object-cover"
+          }
+        },
+        "category-cover": {
+          "strategy": "cover-position",
+          "rule": "R27",
+          "css": {
+            "container": "min-h-[400px] md:min-h-[500px] overflow-hidden",
+            "image": "h-full w-full object-cover object-center"
+          }
+        }
+      }
+    },
+    {
+      "url": "D:/Anna/Сайты/maksplit.ru/wp-content/uploads/2024/09/KAMENNYJ-CZVETOK1.jpg",
+      "filename": "KAMENNYJ-CZVETOK1.jpg",
+      "dimensions": {
+        "width": 236,
+        "height": 236
+      },
+      "status": "ok",
+      "analysis": {
+        "url": "D:/Anna/Сайты/maksplit.ru/wp-content/uploads/2024/09/KAMENNYJ-CZVETOK1.jpg",
+        "filename": "KAMENNYJ-CZVETOK1.jpg",
+        "content_type": "texture-macro",
+        "quality": {
+          "resolution": "low",
+          "resolution_px": {
+            "width": 236,
+            "height": 236,
+            "shortest_side": 236
+          },
+          "lighting": "ok",
+          "background": "none",
+          "sharpness": "ok",
+          "white_balance": "neutral",
+          "score": 5
+        },
+        "crop_safe": false,
+        "crop_safe_reason": "The image is a close-up texture with no distinct subject or focal point; edges contain pattern details that would be lost in cropping.",
+        "object_position": "center",
+        "large_ok": false,
+        "recommended_handling": "cover",
+        "usage_context_suggestions": [
+          "inline-texture",
+          "catalog-card",
+          "category-cover"
+        ],
+        "regenerate": {
+          "needed": true,
+          "mode": "similar",
+          "prompt": "Close-up of natural stone paving with irregular hexagonal shapes, earthy tones, subtle texture and mortar lines, realistic lighting, high detail, suitable for architectural or landscaping design",
+          "preserve_subject": true,
+          "reason": "Original resolution is too low for large displays; regeneration can improve clarity and usability while preserving the stone pattern style.",
+          "suggested_size": "1024*1024"
+        },
+        "css_recommendation": {
+          "object_fit": "cover",
+          "object_position": "center",
+          "container_classes": "w-full h-64 bg-gray-100",
+          "image_classes": "w-full h-full object-cover"
+        },
+        "confidence": 0.9,
+        "reasoning": "Image shows a detailed stone pavement pattern filling the frame—typical of a texture macro shot. Low resolution limits scalability. Lighting is even, sharpness acceptable, white balance neutral. Not safe to crop due to edge details. Best used as texture or background; enhancement or regeneration recommended for larger use."
+      },
+      "decision": {
+        "strategy": "cover",
+        "rule": "R20",
+        "css": {
+          "container": "h-32 md:h-40 overflow-hidden",
+          "image": "h-full w-full object-cover"
+        }
+      },
+      "usage_matrix": {
+        "inline-texture": {
+          "strategy": "cover",
+          "rule": "R20",
+          "css": {
+            "container": "h-32 md:h-40 overflow-hidden",
+            "image": "h-full w-full object-cover"
+          }
+        },
+        "catalog-card": {
+          "strategy": "cover",
+          "rule": "R20",
+          "css": {
+            "container": "h-32 md:h-40 overflow-hidden",
+            "image": "h-full w-full object-cover"
+          }
+        },
+        "category-cover": {
+          "strategy": "regenerate-similar",
+          "rule": "R12",
+          "css": {
+            "container": "aspect-square bg-slate-800 rounded-2xl flex items-center justify-center",
+            "image": "max-w-full max-h-full object-contain"
+          }
+        }
+      },
+      "gen_image_command": "python D:/pi/scripts/gen_image.py --prompt \"Close-up of natural stone paving with irregular hexagonal shapes, earthy tones, subtle texture and mortar lines, realistic lighting, high detail, suitable for architectural or landscaping design\" --size 1024*1024 --output \"images\\regen\\KAMENNYJ-CZVETOK1-regen.png\""
+    },
+    {
+      "url": "D:/Anna/Сайты/maksplit.ru/wp-content/uploads/2024/09/Staryj-arbat-2.jpg",
+      "filename": "Staryj-arbat-2.jpg",
+      "dimensions": {
+        "width": 369,
+        "height": 369
+      },
+      "status": "ok",
+      "analysis": {
+        "url": "D:/Anna/Сайты/maksplit.ru/wp-content/uploads/2024/09/Staryj-arbat-2.jpg",
+        "filename": "Staryj-arbat-2.jpg",
+        "content_type": "product-group",
+        "quality": {
+          "resolution": "low",
+          "resolution_px": {
+            "width": 369,
+            "height": 369,
+            "shortest_side": 369
+          },
+          "lighting": "ok",
+          "background": "clean",
+          "sharpness": "ok",
+          "white_balance": "neutral",
+          "score": 5
+        },
+        "crop_safe": true,
+        "crop_safe_reason": "Three rectangular objects are centered and evenly spaced, with clean edges and no critical details near borders.",
+        "object_position": "center",
+        "large_ok": false,
+        "recommended_handling": "cover",
+        "usage_context_suggestions": [
+          "product-thumbnail",
+          "catalog-card",
+          "category-cover"
+        ],
+        "regenerate": {
+          "needed": false,
+          "mode": "none",
+          "prompt": "",
+          "preserve_subject": false,
+          "reason": "",
+          "suggested_size": "1024*1024"
+        },
+        "css_recommendation": {
+          "object_fit": "contain",
+          "object_position": "center",
+          "container_classes": "w-full h-auto aspect-square",
+          "image_classes": "object-contain"
+        },
+        "confidence": 0.8,
+        "reasoning": "The image shows three textured rectangular items side by side on a neutral background, likely fabric or stone samples. The resolution is low (369px), lighting is even but not studio-grade, sharpness is acceptable, and white balance is neutral. The composition is balanced and centered, making it safe for cropping. It's suitable for thumbnails or catalog cards but not ideal for large displays due to low resolution."
+      },
+      "decision": {
+        "strategy": "cover",
+        "rule": "R26",
+        "css": {
+          "container": "h-32 md:h-40 overflow-hidden",
+          "image": "h-full w-full object-cover"
+        }
+      },
+      "usage_matrix": {
+        "product-thumbnail": {
+          "strategy": "thumbnail-cover",
+          "rule": "R30",
+          "css": {
+            "container": "w-14 h-14 md:w-16 md:h-16 rounded-lg overflow-hidden",
+            "image": "h-full w-full object-cover"
+          }
+        },
+        "catalog-card": {
+          "strategy": "cover",
+          "rule": "R26",
+          "css": {
+            "container": "h-32 md:h-40 overflow-hidden",
+            "image": "h-full w-full object-cover"
+          }
+        },
+        "category-cover": {
+          "strategy": "cover",
+          "rule": "R36",
+          "css": {
+            "container": "h-32 md:h-40 overflow-hidden",
+            "image": "h-full w-full object-cover"
+          }
+        }
+      }
+    }
+  ]
+}

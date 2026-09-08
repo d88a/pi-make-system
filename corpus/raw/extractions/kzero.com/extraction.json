@@ -1,0 +1,148 @@
+{
+  "url": "https://kzero.com",
+  "hostname": "kzero.com",
+  "title": "Kelvin Zero",
+  "niches": [
+    "creative-animation",
+    "saas-tech",
+    "other"
+  ],
+  "extracted_at": "2026-07-23",
+  "extract_duration_ms": 12266,
+  "page_metrics": {
+    "page_height_px": 12996,
+    "viewport_width": 1440,
+    "section_count": 14,
+    "has_sticky_nav": false,
+    "has_announcement_bar": false
+  },
+  "colors": {
+    "top_palette": [
+      [
+        "#F2F2F2",
+        0.66
+      ],
+      [
+        "#FFFFFF",
+        0.1
+      ],
+      [
+        "#212121",
+        0.09
+      ],
+      [
+        "#000000",
+        0.09
+      ],
+      [
+        "#F85C3A",
+        0.06
+      ],
+      [
+        "#293C5B",
+        0
+      ],
+      [
+        "#070707",
+        0
+      ],
+      [
+        "#1863DC",
+        0
+      ]
+    ],
+    "bg_main": "#FFFFFF",
+    "text_main": "#F2F2F2",
+    "is_dark": false,
+    "bg_luminance": 1,
+    "primary_hue": 217,
+    "accent_hue": 11,
+    "accent_saturation_avg": 70,
+    "palette_size": 8
+  },
+  "typography": {
+    "display_font": "Neue Machina",
+    "body_font": "Geist Mono",
+    "fonts_used": [
+      "Geist Mono",
+      "Neue Machina"
+    ],
+    "hero_h1_size_px": 45,
+    "body_size_px": 10,
+    "body_line_height": 1.5,
+    "display_weight": 500,
+    "font_count": 2
+  },
+  "layout": {
+    "hero_type": "asymmetric-split",
+    "hero_signals": {
+      "has_large_image": false,
+      "image_position": "left",
+      "image_width_pct": 21,
+      "has_centered_text": true
+    },
+    "section_sequence": [
+      "hero",
+      "gallery",
+      "content",
+      "content",
+      "logos",
+      "features",
+      "content",
+      "features",
+      "gallery",
+      "features",
+      "content",
+      "faq",
+      "contact",
+      "footer"
+    ],
+    "section_types": {
+      "hero": 1,
+      "gallery": 2,
+      "content": 4,
+      "logos": 1,
+      "features": 3,
+      "faq": 1,
+      "contact": 1,
+      "footer": 1
+    },
+    "has_asymmetric_grid": true,
+    "grid_cols_max": 3,
+    "card_count": 112,
+    "card_aspect": "16/9",
+    "has_bento": true
+  },
+  "mood": {
+    "radius_avg_px": 1617,
+    "radius_distribution": {
+      "0": 0.55,
+      "4": 0.19,
+      "8": 0.03,
+      "12": 0,
+      "16": 0,
+      "24": 0,
+      "999": 0.23
+    },
+    "density_padding_avg_px": 88,
+    "shadow_usage": "none",
+    "animation_count": 153,
+    "transition_durations_ms": [
+      200,
+      300,
+      400,
+      500,
+      700
+    ],
+    "has_gradient": false,
+    "dark_mode": false,
+    "monochrome": false
+  },
+  "raw_extras": {
+    "nav_links_count": 41,
+    "button_count": 20,
+    "primary_button_radius_px": 0,
+    "image_count": 32,
+    "form_count": 1
+  }
+}

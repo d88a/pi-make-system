@@ -1,0 +1,129 @@
+{
+  "url": "https://faces.app",
+  "hostname": "faces.app",
+  "title": "Faces",
+  "niches": [
+    "saas-tech",
+    "minimal"
+  ],
+  "extracted_at": "2026-07-23",
+  "extract_duration_ms": 9112,
+  "page_metrics": {
+    "page_height_px": 900,
+    "viewport_width": 1440,
+    "section_count": 1,
+    "has_sticky_nav": false,
+    "has_announcement_bar": false
+  },
+  "colors": {
+    "top_palette": [
+      [
+        "#000000",
+        0.58
+      ],
+      [
+        "#666666",
+        0.15
+      ],
+      [
+        "#FFFFFF",
+        0.13
+      ],
+      [
+        "#F3F3F3",
+        0.07
+      ],
+      [
+        "#727272",
+        0.03
+      ],
+      [
+        "#266EF1",
+        0.01
+      ],
+      [
+        "#01AE5A",
+        0.01
+      ],
+      [
+        "#34A853",
+        0.01
+      ]
+    ],
+    "bg_main": "#FFFFFF",
+    "text_main": "#000000",
+    "is_dark": false,
+    "bg_luminance": 1,
+    "primary_hue": 219,
+    "accent_hue": 151,
+    "accent_saturation_avg": 80,
+    "palette_size": 8
+  },
+  "typography": {
+    "display_font": "openRunde",
+    "body_font": "Inter",
+    "fonts_used": [
+      "ui-sans-serif",
+      "Inter",
+      "openRunde",
+      "Times New Roman"
+    ],
+    "hero_h1_size_px": 84,
+    "body_size_px": 16,
+    "body_line_height": 1.5,
+    "display_weight": 600,
+    "font_count": 4
+  },
+  "layout": {
+    "hero_type": "asymmetric-split",
+    "hero_signals": {
+      "has_large_image": true,
+      "image_position": "left",
+      "image_width_pct": 34,
+      "has_centered_text": true
+    },
+    "section_sequence": [
+      "hero"
+    ],
+    "section_types": {
+      "hero": 1
+    },
+    "has_asymmetric_grid": true,
+    "grid_cols_max": 9,
+    "card_count": 106,
+    "card_aspect": "16/9",
+    "has_bento": true
+  },
+  "mood": {
+    "radius_avg_px": 13,
+    "radius_distribution": {
+      "0": 0.14,
+      "4": 0,
+      "8": 0.11,
+      "12": 0.67,
+      "16": 0,
+      "24": 0,
+      "999": 0.08
+    },
+    "density_padding_avg_px": 12,
+    "shadow_usage": "heavy",
+    "animation_count": 212,
+    "transition_durations_ms": [
+      50,
+      150,
+      200,
+      300,
+      450
+    ],
+    "has_gradient": false,
+    "dark_mode": false,
+    "monochrome": false
+  },
+  "raw_extras": {
+    "nav_links_count": 0,
+    "button_count": 8,
+    "primary_button_radius_px": 0,
+    "image_count": 35,
+    "form_count": 0
+  }
+}

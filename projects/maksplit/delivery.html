@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Доставка — СтройМакс | Кевларовая брусчатка и тротуарная плитка</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ["'Playfair Display'", "'Georgia'", "serif"],
+            body: ["'Source Serif 4'", "'Georgia'", "serif"],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      /* ── Backgrounds ── */
+      --color-bg-page: #F8FAFC;
+      --color-bg-alt: #F1F5F9;
+      --color-surface: #FFFFFF;
+      --color-bg-elevated: #F8FAFC;
+
+      /* ── Text ── */
+      --color-text-primary: #0F172A;
+      --color-text-secondary: #475569;
+      --color-text-muted: #475569;
+
+      /* ── Accent — CUSTOM #32598f (dusty blue) ── */
+      --color-primary: #32598f;
+      --color-primary-hover: #274a7c;
+      --color-primary-glow: rgba(50,89,143,0.4);
+      --color-primary-subtle: rgba(50,89,143,0.08);
+
+      /* ── Semantic ── */
+      --color-success: #059669;
+      --color-danger: #DC2626;
+
+      /* ── Borders ── */
+      --color-border: #E2E8F0;
+      --color-border-hover: #CBD5E1;
+
+      /* ── Gradients ── */
+      --gradient-subtle: linear-gradient(180deg, #F8FAFC, #F1F5F9);
+
+      /* ── Shadows ── */
+      --shadow-brand: 0 10px 30px -10px rgba(50,89,143,0.35);
+      --shadow-card: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+      --shadow-card-hover: 0 8px 24px -8px rgba(50,89,143,0.15);
+
+      /* ── Transitions ── */
+      --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+
+      /* ── Radius ── */
+      --radius: 16px;
+
+      /* ── Fonts ── */
+      --font-display: 'Playfair Display', 'Georgia', serif;
+      --font-body: 'Source Serif 4', 'Georgia', serif;
+    }
+
+    /* ── Reveal animation ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 600ms cubic-bezier(0.4, 0, 0.2, 1), transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .stagger > .reveal:nth-child(1) { transition-delay: 0ms; }
+    .stagger > .reveal:nth-child(2) { transition-delay: 80ms; }
+    .stagger > .reveal:nth-child(3) { transition-delay: 160ms; }
+    .stagger > .reveal:nth-child(4) { transition-delay: 240ms; }
+    .stagger > .reveal:nth-child(5) { transition-delay: 320ms; }
+    .stagger > .reveal:nth-child(6) { transition-delay: 400ms; }
+
+    /* ── Hover lift ── */
+    .hover-lift {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .hover-lift:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    /* ── Smooth scroll ── */
+    html { scroll-behavior: smooth; }
+
+    /* ── Body base ── */
+    body {
+      font-family: 'Source Serif 4', 'Georgia', serif;
+      background-color: var(--color-bg-page);
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body class="font-body antialiased">
+
+  <!-- ════════════════ NAVBAR ════════════════ -->
+  <header class="sticky top-0 z-50 h-16 border-b border-[var(--color-border)] bg-[var(--color-bg-page)]/80 backdrop-blur-md" role="banner">
+    <nav class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8" aria-label="Основная навигация">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2 font-display text-xl font-bold text-[var(--color-text-primary)]" style="font-family: var(--font-display);">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" class="text-[var(--color-primary)]" aria-hidden="true">
+          <rect x="2" y="2" width="24" height="24" rx="6" fill="currentColor" opacity="0.12"/>
+          <rect x="5" y="5" width="18" height="18" rx="4" stroke="currentColor" stroke-width="2" fill="none"/>
+          <path d="M10 14h8M14 10v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span>СтройМакс</span>
+      </a>
+
+      <!-- Desktop nav links -->
+      <div class="hidden items-center gap-8 lg:flex">
+        <a href="home-v8.html" class="text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Главная</a>
+        <a href="catalog.html" class="text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Каталог</a>
+        <a href="about.html" class="text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">О компании</a>
+        <a href="delivery.html" class="text-sm font-medium text-[var(--color-primary)] transition-colors duration-150" style="font-family: var(--font-body);" aria-current="page">Доставка</a>
+        <a href="contacts.html" class="text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Контакты</a>
+        <a href="calculator.html" class="text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Калькулятор</a>
+      </div>
+
+      <!-- CTA + Mobile toggle -->
+      <div class="flex items-center gap-3">
+        <a href="#cta" class="hidden rounded-2xl bg-[var(--color-primary)] px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:shadow-[var(--shadow-brand)] sm:inline-flex" style="font-family: var(--font-body);">
+          Рассчитать стоимость
+        </a>
+        <button id="mobile-toggle" class="inline-flex items-center justify-center rounded-2xl p-2 text-[var(--color-text-secondary)] transition-colors duration-150 hover:bg-[var(--color-bg-alt)] lg:hidden" aria-label="Открыть меню" aria-expanded="false">
+          <svg id="menu-icon-open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="menu-icon-close" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden border-t border-[var(--color-border)] bg-[var(--color-surface)] lg:hidden">
+      <div class="flex flex-col gap-1 px-4 py-4">
+        <a href="home-v8.html" class="rounded-2xl px-4 py-3 text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-150 hover:bg-[var(--color-bg-alt)]" style="font-family: var(--font-body);">Главная</a>
+        <a href="catalog.html" class="rounded-2xl px-4 py-3 text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-150 hover:bg-[var(--color-bg-alt)]" style="font-family: var(--font-body);">Каталог</a>
+        <a href="about.html" class="rounded-2xl px-4 py-3 text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-150 hover:bg-[var(--color-bg-alt)]" style="font-family: var(--font-body);">О компании</a>
+        <a href="delivery.html" class="rounded-2xl px-4 py-3 text-sm font-medium text-[var(--color-primary)] bg-[var(--color-primary-subtle)]" style="font-family: var(--font-body);">Доставка</a>
+        <a href="contacts.html" class="rounded-2xl px-4 py-3 text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-150 hover:bg-[var(--color-bg-alt)]" style="font-family: var(--font-body);">Контакты</a>
+        <a href="calculator.html" class="rounded-2xl px-4 py-3 text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-150 hover:bg-[var(--color-bg-alt)]" style="font-family: var(--font-body);">Калькулятор</a>
+        <a href="#cta" class="mt-2 rounded-2xl bg-[var(--color-primary)] px-4 py-3 text-center text-sm font-semibold text-white transition-all duration-200 hover:bg-[var(--color-primary-hover)]" style="font-family: var(--font-body);">Рассчитать стоимость</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ════════════════ HERO (Asymmetric Split 60/40) ════════════════ -->
+    <section class="relative flex items-center bg-[var(--color-bg-page)] min-h-[500px] lg:min-h-[60vh] overflow-hidden" aria-labelledby="hero-heading">
+      <!-- Subtle grid pattern -->
+      <div class="absolute inset-0 opacity-[0.03]" aria-hidden="true" style="background-image: url('data:image/svg+xml,<svg width=&quot;60&quot; height=&quot;60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;><defs><pattern id=&quot;g&quot; width=&quot;60&quot; height=&quot;60&quot; patternUnits=&quot;userSpaceOnUse&quot;><path d=&quot;M60 0H0v60&quot; fill=&quot;none&quot; stroke=&quot;%2332598f&quot; stroke-width=&quot;1&quot;/></pattern></defs><rect width=&quot;100%25&quot; height=&quot;100%25&quot; fill=&quot;url(%23g)&quot;/></svg>');"></div>
+
+      <div class="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-5 lg:px-8 w-full">
+        <!-- Left: text (60% = 3/5) -->
+        <div class="lg:col-span-3 flex flex-col justify-center py-12 lg:py-20 reveal">
+          <span class="inline-flex items-center rounded-2xl bg-[var(--color-primary-subtle)] px-4 py-1.5 text-sm font-medium tracking-wide text-[var(--color-primary)] w-fit" style="font-family: var(--font-body);">
+            Доставка по всей России
+          </span>
+          <h1 id="hero-heading" class="mt-6 font-display text-4xl font-bold leading-[1.08] tracking-[-0.02em] text-[var(--color-text-primary)] sm:text-5xl lg:text-6xl xl:text-7xl" style="font-family: var(--font-display);">
+            Доставка<br><span class="text-[var(--color-primary)]">продукции</span>
+          </h1>
+          <p class="mt-6 max-w-lg text-lg leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">
+            Доставка продукции по Челябинской области и всей России
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="#tk-companies" class="inline-flex items-center rounded-2xl bg-[var(--color-primary)] px-6 py-3.5 text-base font-semibold text-white transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:shadow-[var(--shadow-brand)]" style="font-family: var(--font-body);">
+              Выбрать ТК
+              <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+            <a href="#cta" class="inline-flex items-center rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-6 py-3.5 text-base font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]" style="font-family: var(--font-body);">
+              Рассчитать стоимость
+            </a>
+          </div>
+          <!-- Trust indicators -->
+          <div class="mt-10 flex flex-wrap items-center gap-6 text-sm text-[var(--color-text-muted)]" style="font-family: var(--font-body);">
+            <span class="flex items-center gap-1.5">
+              <svg class="h-5 w-5 text-[var(--color-primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Челябинская область
+            </span>
+            <span class="flex items-center gap-1.5">
+              <svg class="h-5 w-5 text-[var(--color-primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Вся Россия
+            </span>
+          </div>
+        </div>
+
+        <!-- Right: truck illustration (40% = 2/5) -->
+        <div class="lg:col-span-2 reveal">
+          <div class="relative overflow-hidden rounded-2xl bg-[var(--color-bg-alt)] p-12 flex items-center justify-center" style="border-radius: var(--radius);">
+            <!-- Large truck SVG illustration -->
+            <svg class="w-full h-auto max-h-[320px] text-[var(--color-primary)]" viewBox="0 0 640 512" fill="currentColor" aria-hidden="true" style="opacity: 0.85;">
+              <path d="M624 352h-16V243.9c0-12.7-5.1-24.9-14.1-33.9L494 110.1c-9-9-21.2-14.1-33.9-14.1H416V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h16c0 53 43 96 96 96s96-43 96-96h128c0 53 43 96 96 96s96-43 96-96h48c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM160 464c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm320 0c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-208H416V144h44.1l99.9 99.9V256z"/>
+            </svg>
+            <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-[var(--color-border)]" aria-hidden="true" style="border-radius: var(--radius);"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════ INTRO (About delivery) ════════════════ -->
+    <section class="bg-[var(--color-bg-alt)] py-20" aria-labelledby="intro-heading">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-4xl reveal">
+          <div class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-8 sm:p-10 shadow-[var(--shadow-card)]" style="border-radius: var(--radius);">
+            <div class="flex items-start gap-4">
+              <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-[var(--color-primary-subtle)]" style="border-radius: var(--radius);">
+                <svg class="h-6 w-6 text-[var(--color-primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/>
+                </svg>
+              </div>
+              <div>
+                <h2 id="intro-heading" class="font-display text-2xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-3xl" style="font-family: var(--font-display);">
+                  Доставка по всей России
+                </h2>
+                <p class="mt-4 text-lg leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">
+                  Компания «СтройМакс» осуществляет доставку продукции по Челябинской области и всей России транспортными компаниями. Мы работаем с проверенными логистическими партнёрами, чтобы ваша брусчатка, плитка и бордюры прибыли в целости и сохранности в любую точку страны.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════ TRANSPORT COMPANIES (3 TK cards) ════════════════ -->
+    <section id="tk-companies" class="bg-[var(--color-bg-page)] py-24" aria-labelledby="tk-heading">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center reveal">
+          <h2 id="tk-heading" class="font-display text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl" style="font-family: var(--font-display);">
+            Транспортные компании
+          </h2>
+          <p class="mt-4 text-lg leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">
+            Выберите удобный способ доставки — все три партнёра работают по всей России
+          </p>
+        </div>
+
+        <div class="mt-16 stagger grid grid-cols-1 gap-6 md:grid-cols-3">
+          <!-- TK Card 1: КИТ -->
+          <div class="reveal hover-lift group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-8 flex flex-col" style="border-radius: var(--radius);">
+            <div class="flex h-14 w-14 items-center justify-center rounded-full bg-[var(--color-primary-subtle)]" style="border-radius: 9999px;">
+              <span class="text-2xl">🚚</span>
+            </div>
+            <h3 class="mt-5 font-display text-xl font-semibold tracking-tight text-[var(--color-text-primary)]" style="font-family: var(--font-display);">
+              Транспортная компания КИТ
+            </h3>
+            <p class="mt-3 flex-1 text-sm leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">
+              Доступные грузоперевозки для людей и бизнеса, многолетний опыт, широчайшая география присутствия и выгодные тарифы.
+            </p>
+            <a href="https://tk-kit.com/order" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center justify-center rounded-2xl bg-[var(--color-primary)] px-5 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:shadow-[var(--shadow-brand)]" style="font-family: var(--font-body); border-radius: var(--radius);" aria-label="Рассчитать доставку через транспортную компанию КИТ">
+              Рассчитать
+              <svg class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+
+          <!-- TK Card 2: ЛУЧ -->
+          <div class="reveal hover-lift group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-8 flex flex-col" style="border-radius: var(--radius);">
+            <div class="flex h-14 w-14 items-center justify-center rounded-full bg-[var(--color-primary-subtle)]" style="border-radius: 9999px;">
+              <span class="text-2xl">🚚</span>
+            </div>
+            <h3 class="mt-5 font-display text-xl font-semibold tracking-tight text-[var(--color-text-primary)]" style="font-family: var(--font-display);">
+              Транспортная компания ЛУЧ
+            </h3>
+            <p class="mt-3 flex-1 text-sm leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">
+              Логистическая сеть, представлена в 85 городах: 48 полноценных складов и 37 пунктов выдачи с борта автомобиля.
+            </p>
+            <a href="https://xn----stbeziy.xn--p1ai/" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center justify-center rounded-2xl bg-[var(--color-primary)] px-5 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:shadow-[var(--shadow-brand)]" style="font-family: var(--font-body); border-radius: var(--radius);" aria-label="Рассчитать доставку через транспортную компанию ЛУЧ">
+              Рассчитать
+              <svg class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+
+          <!-- TK Card 3: СДЭК -->
+          <div class="reveal hover-lift group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-8 flex flex-col" style="border-radius: var(--radius);">
+            <div class="flex h-14 w-14 items-center justify-center rounded-full bg-[var(--color-primary-subtle)]" style="border-radius: 9999px;">
+              <span class="text-2xl">🚚</span>
+            </div>
+            <h3 class="mt-5 font-display text-xl font-semibold tracking-tight text-[var(--color-text-primary)]" style="font-family: var(--font-display);">
+              Транспортная компания СДЭК
+            </h3>
+            <p class="mt-3 flex-1 text-sm leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">
+              Гораздо больше, чем просто доставка. Экосистема сервисов для людей. Главный принцип — забота о клиенте.
+            </p>
+            <a href="https://www.cdek.ru/ru/" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center justify-center rounded-2xl bg-[var(--color-primary)] px-5 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:shadow-[var(--shadow-brand)]" style="font-family: var(--font-body); border-radius: var(--radius);" aria-label="Рассчитать доставку через транспортную компанию СДЭК">
+              Рассчитать
+              <svg class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════ CTA BANNER ════════════════ -->
+    <section id="cta" class="bg-[var(--color-bg-alt)] py-24" aria-labelledby="cta-heading">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal rounded-2xl bg-[var(--color-primary)] px-8 py-14 sm:px-12 lg:px-16 text-center shadow-[var(--shadow-brand)]" style="border-radius: var(--radius);">
+          <h2 id="cta-heading" class="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl" style="font-family: var(--font-display);">
+            Рассчитайте стоимость продукции
+          </h2>
+          <p class="mt-4 mx-auto max-w-2xl text-lg leading-relaxed text-white/80" style="font-family: var(--font-body);">
+            Оставьте заявку и получите точный расчёт с учётом доставки в ваш регион. Мы подберём оптимальную транспортную компанию.
+          </p>
+          <div class="mt-8 flex flex-wrap justify-center gap-4">
+            <a href="home-v8.html#cta" class="inline-flex items-center rounded-2xl bg-white px-6 py-3.5 text-base font-semibold text-[var(--color-primary)] transition-all duration-200 hover:bg-white/90 hover:shadow-lg" style="font-family: var(--font-body); border-radius: var(--radius);">
+              Оставить заявку
+              <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+            <a href="tel:+79823416970" class="inline-flex items-center rounded-2xl border border-white/30 bg-transparent px-6 py-3.5 text-base font-medium text-white transition-all duration-200 hover:bg-white/10" style="font-family: var(--font-body); border-radius: var(--radius);">
+              <svg class="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+              +7 982 341 69 70
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ════════════════ FOOTER ════════════════ -->
+  <footer id="contacts" class="bg-[var(--color-bg-alt)] py-16" role="contentinfo">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- Brand -->
+        <div class="lg:col-span-1">
+          <a href="/" class="flex items-center gap-2 font-display text-xl font-bold text-[var(--color-text-primary)]" style="font-family: var(--font-display);">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" class="text-[var(--color-primary)]" aria-hidden="true">
+              <rect x="2" y="2" width="24" height="24" rx="6" fill="currentColor" opacity="0.12"/>
+              <rect x="5" y="5" width="18" height="18" rx="4" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M10 14h8M14 10v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            СтройМакс
+          </a>
+          <p class="mt-4 max-w-xs text-sm leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">
+            Производство кевларовой брусчатки и тротуарной плитки в Юрюзани. Качество, проверенное временем.
+          </p>
+          <div class="mt-4 inline-flex items-center gap-2 rounded-2xl bg-[var(--color-primary-subtle)] px-3 py-1.5 text-xs font-medium text-[var(--color-primary)]" style="border-radius: var(--radius); font-family: var(--font-body);">
+            <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+            Принимаем заказы
+          </div>
+        </div>
+
+        <!-- Навигация -->
+        <div>
+          <h4 class="text-xs font-semibold tracking-wider uppercase text-[var(--color-text-muted)]" style="font-family: var(--font-body);">Навигация</h4>
+          <ul class="mt-4 space-y-3">
+            <li><a href="home-v8.html" class="text-sm text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Главная</a></li>
+            <li><a href="catalog.html" class="text-sm text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Каталог</a></li>
+            <li><a href="about.html" class="text-sm text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">О компании</a></li>
+            <li><a href="delivery.html" class="text-sm text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Доставка</a></li>
+            <li><a href="calculator.html" class="text-sm text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Калькулятор</a></li>
+          </ul>
+        </div>
+
+        <!-- Каталог -->
+        <div>
+          <h4 class="text-xs font-semibold tracking-wider uppercase text-[var(--color-text-muted)]" style="font-family: var(--font-body);">Каталог</h4>
+          <ul class="mt-4 space-y-3">
+            <li><a href="catalog.html" class="text-sm text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Брусчатка тротуарная</a></li>
+            <li><a href="catalog.html" class="text-sm text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Тротуарная плитка</a></li>
+            <li><a href="catalog.html" class="text-sm text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Бордюры и водостоки</a></li>
+            <li><a href="catalog.html" class="text-sm text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Памятники из бетона</a></li>
+            <li><a href="catalog.html" class="text-sm text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Эко-парковка</a></li>
+          </ul>
+        </div>
+
+        <!-- Контакты -->
+        <div>
+          <h4 class="text-xs font-semibold tracking-wider uppercase text-[var(--color-text-muted)]" style="font-family: var(--font-body);">Контакты</h4>
+          <ul class="mt-4 space-y-3">
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-[var(--color-text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+              <span class="text-sm text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">г. Юрюзань, Челябинская область, Катав-Ивановский район, ул. Тимирязева, 15а</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="h-4 w-4 flex-shrink-0 text-[var(--color-text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+              <span class="text-sm text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">+7 982 341 69 70</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="h-4 w-4 flex-shrink-0 text-[var(--color-text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+              <span class="text-sm text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">maksimdyd@gmail.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-[var(--color-border)] pt-8 md:flex-row">
+        <p class="text-sm text-[var(--color-text-muted)]" style="font-family: var(--font-body);">
+          &copy; 2024–2026 СтройМакс. Все права защищены.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ════════════════ SCRIPTS ════════════════ -->
+  <script>
+    // ── Mobile menu toggle ──
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+
+    mobileToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('hidden');
+      mobileToggle.setAttribute('aria-expanded', !isOpen);
+      menuIconOpen.classList.toggle('hidden', !isOpen);
+      menuIconClose.classList.toggle('hidden', isOpen);
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        menuIconOpen.classList.remove('hidden');
+        menuIconClose.classList.add('hidden');
+      });
+    });
+
+    // ── Scroll reveal (IntersectionObserver) ──
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('is-visible');
+      }),
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

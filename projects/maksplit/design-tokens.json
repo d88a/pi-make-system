@@ -1,0 +1,54 @@
+{
+  "theme": "concrete-steel",
+  "accent": "#3B5F8A",
+  "accentName": "Steel Blue",
+  "colors": {
+    "bg-page": "#F5F5F4",
+    "bg-alt": "#E7E5E4",
+    "surface": "#FFFFFF",
+    "bg-elevated": "#FAFAF9",
+    "bg-inset": "#D6D3D1",
+    "text-primary": "#1C1917",
+    "text-secondary": "#57534E",
+    "text-muted": "#57534E",
+    "text-inverse": "#F5F5F4",
+    "success": "#059669",
+    "danger": "#DC2626",
+    "warning": "#D97706",
+    "border": "#D6D3D1",
+    "border-hover": "#A8A29E",
+    "border-subtle": "#E7E5E4",
+    "primary": "#3B5F8A",
+    "primary-hover": "#2E4A6E",
+    "primary-active": "#1E3550",
+    "primary-glow": "rgba(59,95,138,0.35)",
+    "primary-subtle": "rgba(59,95,138,0.08)",
+    "border-primary-hover": "rgba(59,95,138,0.5)"
+  },
+  "gradients": {
+    "primary": "linear-gradient(135deg, #3B5F8A, #2E4A6E)",
+    "steel": "linear-gradient(135deg, #78716C, #57534E, #44403C)"
+  },
+  "fonts": {
+    "display": "Space Grotesk",
+    "body": "Inter",
+    "mono": "JetBrains Mono"
+  },
+  "radius": {
+    "sm": "4px",
+    "md": "6px",
+    "lg": "12px",
+    "xl": "16px"
+  },
+  "shadow": {
+    "brand": "0 10px 30px -10px rgba(59,95,138,0.35)",
+    "card": "0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)",
+    "card-hover": "0 8px 24px -8px rgba(59,95,138,0.2)",
+    "elevated": "0 4px 16px -4px rgba(59,95,138,0.15)"
+  },
+  "transition": {
+    "smooth": "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+    "fast": "all 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+    "spring": "all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)"
+  }
+}

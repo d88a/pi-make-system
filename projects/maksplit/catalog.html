@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог продукции — СтройМакс</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ["'Playfair Display'", "'Georgia'", "serif"],
+            body: ["'Source Serif 4'", "'Georgia'", "serif"],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      /* ── Backgrounds ── */
+      --color-bg-page: #F8FAFC;
+      --color-bg-alt: #F1F5F9;
+      --color-surface: #FFFFFF;
+      --color-bg-elevated: #F8FAFC;
+
+      /* ── Text ── */
+      --color-text-primary: #0F172A;
+      --color-text-secondary: #475569;
+      --color-text-muted: #475569;
+
+      /* ── Accent — CUSTOM #32598f (dusty blue, NOT default #475569) ── */
+      --color-primary: #32598f;
+      --color-primary-hover: #274a7c;
+      --color-primary-glow: rgba(50,89,143,0.4);
+      --color-primary-subtle: rgba(50,89,143,0.08);
+
+      /* ── Semantic ── */
+      --color-success: #059669;
+      --color-danger: #DC2626;
+
+      /* ── Text on Primary ── */
+      --color-text-on-primary: #FFFFFF;
+
+      /* ── Borders ── */
+      --color-border: #E2E8F0;
+      --color-border-hover: #CBD5E1;
+
+      /* ── Gradients ── */
+      --gradient-subtle: linear-gradient(180deg, #F8FAFC, #F1F5F9);
+
+      /* ── Shadows ── */
+      --shadow-brand: 0 10px 30px -10px rgba(50,89,143,0.35);
+      --shadow-card: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+      --shadow-card-hover: 0 8px 24px -8px rgba(50,89,143,0.15);
+
+      /* ── Transitions ── */
+      --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+
+      /* ── Radius ── */
+      --radius: 16px;
+
+      /* ── Fonts ── */
+      --font-display: 'Playfair Display', 'Georgia', serif;
+      --font-body: 'Source Serif 4', 'Georgia', serif;
+    }
+
+    /* ── Reveal animation ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 600ms cubic-bezier(0.4, 0, 0.2, 1), transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .stagger > .reveal:nth-child(1) { transition-delay: 0ms; }
+    .stagger > .reveal:nth-child(2) { transition-delay: 50ms; }
+    .stagger > .reveal:nth-child(3) { transition-delay: 100ms; }
+    .stagger > .reveal:nth-child(4) { transition-delay: 150ms; }
+    .stagger > .reveal:nth-child(5) { transition-delay: 200ms; }
+    .stagger > .reveal:nth-child(6) { transition-delay: 250ms; }
+    .stagger > .reveal:nth-child(7) { transition-delay: 300ms; }
+    .stagger > .reveal:nth-child(8) { transition-delay: 350ms; }
+    .stagger > .reveal:nth-child(9) { transition-delay: 400ms; }
+    .stagger > .reveal:nth-child(10) { transition-delay: 450ms; }
+    .stagger > .reveal:nth-child(11) { transition-delay: 500ms; }
+    .stagger > .reveal:nth-child(12) { transition-delay: 550ms; }
+
+    /* ── Hover lift ── */
+    .hover-lift {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .hover-lift:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    /* ── Smooth scroll ── */
+    html { scroll-behavior: smooth; }
+
+    /* ── Body base ── */
+    body {
+      font-family: 'Source Serif 4', 'Georgia', serif;
+      background-color: var(--color-bg-page);
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ── Filter tab active ── */
+    .filter-tab {
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .filter-tab.active {
+      background-color: var(--color-primary);
+      color: var(--color-text-on-primary);
+    }
+
+    /* ── Product card fade ── */
+    .product-card {
+      transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .product-card.hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body class="font-body antialiased">
+
+  <!-- ════════════════ NAVBAR ════════════════ -->
+  <header class="sticky top-0 z-50 h-16 border-b border-[var(--color-border)] bg-[var(--color-bg-page)]/80 backdrop-blur-md" role="banner">
+    <nav class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8" aria-label="Основная навигация">
+      <!-- Logo -->
+      <a href="home-v8.html" class="flex items-center gap-2 font-display text-xl font-bold text-[var(--color-text-primary)]" style="font-family: var(--font-display);">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" class="text-[var(--color-primary)]" aria-hidden="true">
+          <rect x="2" y="2" width="24" height="24" rx="6" fill="currentColor" opacity="0.12"/>
+          <rect x="5" y="5" width="18" height="18" rx="4" stroke="currentColor" stroke-width="2" fill="none"/>
+          <path d="M10 14h8M14 10v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span>СтройМакс</span>
+      </a>
+
+      <!-- Desktop nav links -->
+      <div class="hidden items-center gap-8 lg:flex">
+        <a href="home-v8.html" class="text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Главная</a>
+        <a href="catalog.html" class="text-sm font-medium text-[var(--color-primary)] transition-colors duration-150" style="font-family: var(--font-body);" aria-current="page">Каталог</a>
+        <a href="home-v8.html#about" class="text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">О компании</a>
+        <a href="delivery.html" class="text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Доставка</a>
+        <a href="home-v8.html#contacts" class="text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Контакты</a>
+        <a href="calculator.html" class="text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Калькулятор</a>
+      </div>
+
+      <!-- CTA + Mobile toggle -->
+      <div class="flex items-center gap-3">
+        <a href="home-v8.html#cta" class="hidden rounded-2xl bg-[var(--color-primary)] px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:shadow-[var(--shadow-brand)] sm:inline-flex" style="font-family: var(--font-body);">
+          Рассчитать стоимость
+        </a>
+        <button id="mobile-toggle" class="inline-flex items-center justify-center rounded-2xl p-2 text-[var(--color-text-secondary)] transition-colors duration-150 hover:bg-[var(--color-bg-alt)] lg:hidden" aria-label="Открыть меню" aria-expanded="false">
+          <svg id="menu-icon-open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="menu-icon-close" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden border-t border-[var(--color-border)] bg-[var(--color-surface)] lg:hidden">
+      <div class="flex flex-col gap-1 px-4 py-4">
+        <a href="home-v8.html" class="rounded-2xl px-4 py-3 text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-150 hover:bg-[var(--color-bg-alt)]" style="font-family: var(--font-body);">Главная</a>
+        <a href="catalog.html" class="rounded-2xl px-4 py-3 text-sm font-medium text-[var(--color-primary)] bg-[var(--color-primary-subtle)]" style="font-family: var(--font-body);">Каталог</a>
+        <a href="home-v8.html#about" class="rounded-2xl px-4 py-3 text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-150 hover:bg-[var(--color-bg-alt)]" style="font-family: var(--font-body);">О компании</a>
+        <a href="delivery.html" class="rounded-2xl px-4 py-3 text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-150 hover:bg-[var(--color-bg-alt)]" style="font-family: var(--font-body);">Доставка</a>
+        <a href="home-v8.html#contacts" class="rounded-2xl px-4 py-3 text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-150 hover:bg-[var(--color-bg-alt)]" style="font-family: var(--font-body);">Контакты</a>
+        <a href="calculator.html" class="rounded-2xl px-4 py-3 text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-150 hover:bg-[var(--color-bg-alt)]" style="font-family: var(--font-body);">Калькулятор</a>
+        <a href="home-v8.html#cta" class="mt-2 rounded-2xl bg-[var(--color-primary)] px-4 py-3 text-center text-sm font-semibold text-white transition-all duration-200 hover:bg-[var(--color-primary-hover)]" style="font-family: var(--font-body);">Рассчитать стоимость</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ════════════════ CATALOG HERO (Compact) ════════════════ -->
+    <section class="bg-[var(--color-bg-page)] py-20 lg:py-24" aria-labelledby="catalog-heading">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center reveal">
+          <span class="inline-flex items-center rounded-2xl bg-[var(--color-primary-subtle)] px-4 py-1.5 text-sm font-medium tracking-wide text-[var(--color-primary)]" style="font-family: var(--font-body);">
+            Каталог
+          </span>
+          <h1 id="catalog-heading" class="mt-5 font-display text-4xl font-bold tracking-[-0.02em] text-[var(--color-text-primary)] sm:text-5xl lg:text-6xl" style="font-family: var(--font-display);">
+            Каталог продукции
+          </h1>
+          <p class="mt-4 text-lg leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">
+            22 вида изделий из кевларобетона для благоустройства любой сложности
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════ FILTER TABS ════════════════ -->
+    <div class="sticky top-16 z-40 border-b border-[var(--color-border)] bg-[var(--color-bg-page)]/90 backdrop-blur-md" role="tablist" aria-label="Фильтр по категориям">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap items-center gap-2 py-4">
+          <button class="filter-tab active rounded-2xl px-5 py-2.5 text-sm font-medium transition-all duration-200" style="font-family: var(--font-body);" role="tab" aria-selected="true" aria-controls="product-grid" data-filter="all">
+            Все <span class="ml-1.5 opacity-70">22</span>
+          </button>
+          <button class="filter-tab rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-2.5 text-sm font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]" style="font-family: var(--font-body);" role="tab" aria-selected="false" aria-controls="product-grid" data-filter="bruschatka">
+            Брусчатка тротуарная <span class="ml-1.5 opacity-70">9</span>
+          </button>
+          <button class="filter-tab rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-2.5 text-sm font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]" style="font-family: var(--font-body);" role="tab" aria-selected="false" aria-controls="product-grid" data-filter="plitka">
+            Тротуарная плитка <span class="ml-1.5 opacity-70">7</span>
+          </button>
+          <button class="filter-tab rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-2.5 text-sm font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]" style="font-family: var(--font-body);" role="tab" aria-selected="false" aria-controls="product-grid" data-filter="bordyury">
+            Бордюры, водостоки <span class="ml-1.5 opacity-70">3</span>
+          </button>
+          <button class="filter-tab rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-2.5 text-sm font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]" style="font-family: var(--font-body);" role="tab" aria-selected="false" aria-controls="product-grid" data-filter="pamyatniki">
+            Памятники из бетона <span class="ml-1.5 opacity-70">3</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════════════ PRODUCT GRID ════════════════ -->
+    <section id="product-grid" class="bg-[var(--color-bg-page)] py-16" role="tabpanel" aria-label="Сетка товаров">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="stagger grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+
+          <!-- ═══ 1. Домино (Брусчатка) ═══ -->
+          <article class="product-card reveal hover-lift group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] overflow-hidden flex flex-col" style="border-radius: var(--radius);" data-category="bruschatka">
+            <div class="aspect-square bg-[var(--color-bg-alt)] flex items-center justify-center p-6">
+              <img src="images/p-domino.jpg" alt="Домино, брусчатка" class="w-full h-full object-contain" loading="lazy">
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <span class="inline-flex self-start rounded-2xl bg-[var(--color-primary-subtle)] px-3 py-0.5 text-xs font-medium text-[var(--color-primary)]" style="font-family: var(--font-body);">Брусчатка</span>
+              <h3 class="mt-3 font-display text-lg font-semibold leading-tight text-[var(--color-text-primary)]" style="font-family: var(--font-display);">Домино, брусчатка</h3>
+              <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">300×150 мм, толщина 35 мм</p>
+              <div class="mt-auto pt-4 flex items-center justify-between">
+                <span class="text-base font-bold text-[var(--color-primary)]" style="font-family: var(--font-body);">850–1100 ₽</span>
+                <a href="product.html?id=domino" class="rounded-2xl border border-[var(--color-border)] px-4 py-2 text-sm font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]" style="font-family: var(--font-body);">Подробнее</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ═══ 2. Краковский клевер (Брусчатка) ═══ -->
+          <article class="product-card reveal hover-lift group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] overflow-hidden flex flex-col" style="border-radius: var(--radius);" data-category="bruschatka">
+            <div class="aspect-square bg-[var(--color-bg-alt)] flex items-center justify-center p-6">
+              <img src="images/p-krakovskij-klever.png" alt="Краковский клевер, брусчатка" class="w-full h-full object-contain" loading="lazy">
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <span class="inline-flex self-start rounded-2xl bg-[var(--color-primary-subtle)] px-3 py-0.5 text-xs font-medium text-[var(--color-primary)]" style="font-family: var(--font-body);">Брусчатка</span>
+              <h3 class="mt-3 font-display text-lg font-semibold leading-tight text-[var(--color-text-primary)]" style="font-family: var(--font-display);">Краковский клевер</h3>
+              <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">Два камня разной фактуры, 295×295 и 210×210 мм</p>
+              <div class="mt-auto pt-4 flex items-center justify-between">
+                <span class="text-base font-bold text-[var(--color-primary)]" style="font-family: var(--font-body);">850–1100 ₽</span>
+                <a href="product.html?id=krakovskij-klever" class="rounded-2xl border border-[var(--color-border)] px-4 py-2 text-sm font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]" style="font-family: var(--font-body);">Подробнее</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ═══ 3. Доска (Брусчатка) ═══ -->
+          <article class="product-card reveal hover-lift group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] overflow-hidden flex flex-col" style="border-radius: var(--radius);" data-category="bruschatka">
+            <div class="aspect-square bg-[var(--color-bg-alt)] flex items-center justify-center p-6">
+              <img src="images/p-doska.png" alt="Доска, брусчатка" class="w-full h-full object-contain" loading="lazy">
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <span class="inline-flex self-start rounded-2xl bg-[var(--color-primary-subtle)] px-3 py-0.5 text-xs font-medium text-[var(--color-primary)]" style="font-family: var(--font-body);">Брусчатка</span>
+              <h3 class="mt-3 font-display text-lg font-semibold leading-tight text-[var(--color-text-primary)]" style="font-family: var(--font-display);">Доска, брусчатка</h3>
+              <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">Толщина 60 мм, усиленная конструкция</p>
+              <div class="mt-auto pt-4 flex items-center justify-between">
+                <span class="text-base font-bold text-[var(--color-primary)]" style="font-family: var(--font-body);">850–1100 ₽</span>
+                <a href="product.html?id=doska" class="rounded-2xl border border-[var(--color-border)] px-4 py-2 text-sm font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]" style="font-family: var(--font-body);">Подробнее</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ═══ 4. Старый город (Брусчатка) ═══ -->
+          <article class="product-card reveal hover-lift group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] overflow-hidden flex flex-col" style="border-radius: var(--radius);" data-category="bruschatka">
+            <div class="aspect-square bg-[var(--color-bg-alt)] flex items-center justify-center p-6">
+              <img src="images/p-staryj-gorod.png" alt="Старый город, брусчатка" class="w-full h-full object-contain" loading="lazy">
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <span class="inline-flex self-start rounded-2xl bg-[var(--color-primary-subtle)] px-3 py-0.5 text-xs font-medium text-[var(--color-primary)]" style="font-family: var(--font-body);">Брусчатка</span>
+              <h3 class="mt-3 font-display text-lg font-semibold leading-tight text-[var(--color-text-primary)]" style="font-family: var(--font-display);">Старый город</h3>
+              <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">Три размера: 120×40, 120×90, 120×120 мм</p>
+              <div class="mt-auto pt-4 flex items-center justify-between">
+                <span class="text-base font-bold text-[var(--color-primary)]" style="font-family: var(--font-body);">850–1100 ₽</span>
+                <a href="product.html?id=staryj-gorod" class="rounded-2xl border border-[var(--color-border)] px-4 py-2 text-sm font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]" style="font-family: var(--font-body);">Подробнее</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ═══ 5. Каменный цветок (Брусчатка) ═══ -->
+          <article class="product-card reveal hover-lift group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] overflow-hidden flex flex-col" style="border-radius: var(--radius);" data-category="bruschatka">
+            <div class="aspect-square bg-[var(--color-bg-alt)] flex items-center justify-center p-6">
+              <img src="images/p-kamennyj-czvetok.jpg" alt="Каменный цветок, брусчатка" class="w-full h-full object-contain" loading="lazy">
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <span class="inline-flex self-start rounded-2xl bg-[var(--color-primary-subtle)] px-3 py-0.5 text-xs font-medium text-[var(--color-primary)]" style="font-family: var(--font-body);">Брусчатка</span>
+              <h3 class="mt-3 font-display text-lg font-semibold leading-tight text-[var(--color-text-primary)]" style="font-family: var(--font-display);">Каменный цветок, брусчатка</h3>
+              <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">Шесть камней разной фактуры, толщина 40 мм</p>
+              <div class="mt-auto pt-4 flex items-center justify-between">
+                <span class="text-base font-bold text-[var(--color-primary)]" style="font-family: var(--font-body);">850–1100 ₽</span>
+                <a href="product.html?id=kamennyj-czvetok" class="rounded-2xl border border-[var(--color-border)] px-4 py-2 text-sm font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]" style="font-family: var(--font-body);">Подробнее</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ═══ 6. Старый Арбат (Брусчатка) ═══ -->
+          <article class="product-card reveal hover-lift group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] overflow-hidden flex flex-col" style="border-radius: var(--radius);" data-category="bruschatka">
+            <div class="aspect-square bg-[var(--color-bg-alt)] flex items-center justify-center p-6">
+              <img src="images/p-staryj-arbat.png" alt="Старый Арбат, брусчатка" class="w-full h-full object-contain" loading="lazy">
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <span class="inline-flex self-start rounded-2xl bg-[var(--color-primary-subtle)] px-3 py-0.5 text-xs font-medium text-[var(--color-primary)]" style="font-family: var(--font-body);">Брусчатка</span>
+              <h3 class="mt-3 font-display text-lg font-semibold leading-tight text-[var(--color-text-primary)]" style="font-family: var(--font-display);">Старый Арбат</h3>
+              <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">Пять размеров от 195×140 до 210×210 мм</p>
+              <div class="mt-auto pt-4 flex items-center justify-between">
+                <span class="text-base font-bold text-[var(--color-primary)]" style="font-family: var(--font-body);">850–1100 ₽</span>
+                <a href="product.html?id=staryj-arbat" class="rounded-2xl border border-[var(--color-border)] px-4 py-2 text-sm font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]" style="font-family: var(--font-body);">Подробнее</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ═══ 7. Греция (Брусчатка) ═══ -->
+          <article class="product-card reveal hover-lift group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] overflow-hidden flex flex-col" style="border-radius: var(--radius);" data-category="bruschatka">
+            <div class="aspect-square bg-[var(--color-bg-alt)] flex items-center justify-center p-6">
+              <img src="images/p-grecziya.png" alt="Греция, брусчатка" class="w-full h-full object-contain" loading="lazy">
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <span class="inline-flex self-start rounded-2xl bg-[var(--color-primary-subtle)] px-3 py-0.5 text-xs font-medium text-[var(--color-primary)]" style="font-family: var(--font-body);">Брусчатка</span>
+              <h3 class="mt-3 font-display text-lg font-semibold leading-tight text-[var(--color-text-primary)]" style="font-family: var(--font-display);">Греция, брусчатка</h3>
+              <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">Два камня разной фактуры, 285×285 и 100×100 мм</p>
+              <div class="mt-auto pt-4 flex items-center justify-between">
+                <span class="text-base font-bold text-[var(--color-primary)]" style="font-family: var(--font-body);">850 ₽</span>
+                <a href="product.html?id=grecziya" class="rounded-2xl border border-[var(--color-border)] px-4 py-2 text-sm font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]" style="font-family: var(--font-body);">Подробнее</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ═══ 8. Кирпичик (Брусчатка) ═══ -->
+          <article class="product-card reveal hover-lift group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] overflow-hidden flex flex-col" style="border-radius: var(--radius);" data-category="bruschatka">
+            <div class="aspect-square bg-[var(--color-bg-alt)] flex items-center justify-center p-6">
+              <img src="images/p-kirpichik.png" alt="Кирпичик, брусчатка" class="w-full h-full object-contain" loading="lazy">
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <span class="inline-flex self-start rounded-2xl bg-[var(--color-primary-subtle)] px-3 py-0.5 text-xs font-medium text-[var(--color-primary)]" style="font-family: var(--font-body);">Брусчатка</span>
+              <h3 class="mt-3 font-display text-lg font-semibold leading-tight text-[var(--color-text-primary)]" style="font-family: var(--font-display);">Кирпичик, брусчатка</h3>
+              <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">200×100 мм, толщина 40 мм</p>
+              <div class="mt-auto pt-4 flex items-center justify-between">
+                <span class="text-base font-bold text-[var(--color-primary)]" style="font-family: var(--font-body);">850–1100 ₽</span>
+                <a href="product.html?id=kirpichik" class="rounded-2xl border border-[var(--color-border)] px-4 py-2 text-sm font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]" style="font-family: var(--font-body);">Подробнее</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ═══ 9. Осень (Брусчатка) ═══ -->
+          <article class="product-card reveal hover-lift group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] overflow-hidden flex flex-col" style="border-radius: var(--radius);" data-category="bruschatka">
+            <div class="aspect-square bg-[var(--color-bg-alt)] flex items-center justify-center p-6">
+              <img src="images/p-osen.png" alt="Осень, брусчатка" class="w-full h-full object-contain" loading="lazy">
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <span class="inline-flex self-start rounded-2xl bg-[var(--color-primary-subtle)] px-3 py-0.5 text-xs font-medium text-[var(--color-primary)]" style="font-family: var(--font-body);">Брусчатка</span>
+              <h3 class="mt-3 font-display text-lg font-semibold leading-tight text-[var(--color-text-primary)]" style="font-family: var(--font-display);">Осень, брусчатка</h3>
+              <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">Комплект из камней разной формы, толщина 35 мм</p>
+              <div class="mt-auto pt-4 flex items-center justify-between">
+                <span class="text-base font-bold text-[var(--color-primary)]" style="font-family: var(--font-body);">850–1100 ₽</span>
+                <a href="product.html?id=osen" class="rounded-2xl border border-[var(--color-border)] px-4 py-2 text-sm font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]" style="font-family: var(--font-body);">Подробнее</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ═══ 10. Калифорния камень (Плитка) ═══ -->
+          <article class="product-card reveal hover-lift group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] overflow-hidden flex flex-col" style="border-radius: var(--radius);" data-category="plitka">
+            <div class="aspect-square bg-[var(--color-bg-alt)] flex items-center justify-center p-6">
+              <img src="images/p-kaliforniya-kamen.png" alt="Калифорния камень, тротуарная плитка" class="w-full h-full object-contain" loading="lazy">
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <span class="inline-flex self-start rounded-2xl bg-[var(--color-primary-subtle)] px-3 py-0.5 text-xs font-medium text-[var(--color-primary)]" style="font-family: var(--font-body);">Плитка</span>
+              <h3 class="mt-3 font-display text-lg font-semibold leading-tight text-[var(--color-text-primary)]" style="font-family: var(--font-display);">Калифорния камень</h3>
+              <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">300×300 мм, толщина 30 мм, 11 шт/м²</p>
+              <div class="mt-auto pt-4 flex items-center justify-between">
+                <span class="text-base font-bold text-[var(--color-primary)]" style="font-family: var(--font-body);">850–1100 ₽</span>
+                <a href="product.html?id=kaliforniya-kamen" class="rounded-2xl border border-[var(--color-border)] px-4 py-2 text-sm font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]" style="font-family: var(--font-body);">Подробнее</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ═══ 11. Калифорния дерево (Плитка) ═══ -->
+          <article class="product-card reveal hover-lift group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] overflow-hidden flex flex-col" style="border-radius: var(--radius);" data-category="plitka">
+            <div class="aspect-square bg-[var(--color-bg-alt)] flex items-center justify-center p-6">
+              <img src="images/p-kaliforniya-derevo.png" alt="Калифорния дерево, тротуарная плитка" class="w-full h-full object-contain" loading="lazy">
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <span class="inline-flex self-start rounded-2xl bg-[var(--color-primary-subtle)] px-3 py-0.5 text-xs font-medium text-[var(--color-primary)]" style="font-family: var(--font-body);">Плитка</span>
+              <h3 class="mt-3 font-display text-lg font-semibold leading-tight text-[var(--color-text-primary)]" style="font-family: var(--font-display);">Калифорния дерево</h3>
+              <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">300×300 мм, толщина 30 мм, 11 шт/м²</p>
+              <div class="mt-auto pt-4 flex items-center justify-between">
+                <span class="text-base font-bold text-[var(--color-primary)]" style="font-family: var(--font-body);">850–1100 ₽</span>
+                <a href="product.html?id=kaliforniya-derevo" class="rounded-2xl border border-[var(--color-border)] px-4 py-2 text-sm font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]" style="font-family: var(--font-body);">Подробнее</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ═══ 12. Калифорния кубик (Плитка) ═══ -->
+          <article class="product-card reveal hover-lift group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] overflow-hidden flex flex-col" style="border-radius: var(--radius);" data-category="plitka">
+            <div class="aspect-square bg-[var(--color-bg-alt)] flex items-center justify-center p-6">
+              <img src="images/p-kaliforniya-kubik.png" alt="Калифорния кубик, тротуарная плитка" class="w-full h-full object-contain" loading="lazy">
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <span class="inline-flex self-start rounded-2xl bg-[var(--color-primary-subtle)] px-3 py-0.5 text-xs font-medium text-[var(--color-primary)]" style="font-family: var(--font-body);">Плитка</span>
+              <h3 class="mt-3 font-display text-lg font-semibold leading-tight text-[var(--color-text-primary)]" style="font-family: var(--font-display);">Калифорния кубик</h3>
+              <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">300×300 мм, толщина 30 мм, 11 шт/м²</p>
+              <div class="mt-auto pt-4 flex items-center justify-between">
+                <span class="text-base font-bold text-[var(--color-primary)]" style="font-family: var(--font-body);">850–1100 ₽</span>
+                <a href="product.html?id=kaliforniya-kubik" class="rounded-2xl border border-[var(--color-border)] px-4 py-2 text-sm font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]" style="font-family: var(--font-body);">Подробнее</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ═══ 13. Паркет (Плитка) ═══ -->
+          <article class="product-card reveal hover-lift group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] overflow-hidden flex flex-col" style="border-radius: var(--radius);" data-category="plitka">
+            <div class="aspect-square bg-[var(--color-bg-alt)] flex items-center justify-center p-6">
+              <img src="images/p-parket.png" alt="Паркет, тротуарная плитка" class="w-full h-full object-contain" loading="lazy">
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <span class="inline-flex self-start rounded-2xl bg-[var(--color-primary-subtle)] px-3 py-0.5 text-xs font-medium text-[var(--color-primary)]" style="font-family: var(--font-body);">Плитка</span>
+              <h3 class="mt-3 font-display text-lg font-semibold leading-tight text-[var(--color-text-primary)]" style="font-family: var(--font-display);">Паркет</h3>
+              <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">300×300 мм, толщина 30 мм, 11 шт/м²</p>
+              <div class="mt-auto pt-4 flex items-center justify-between">
+                <span class="text-base font-bold text-[var(--color-primary)]" style="font-family: var(--font-body);">850–1100 ₽</span>
+                <a href="product.html?id=parket" class="rounded-2xl border border-[var(--color-border)] px-4 py-2 text-sm font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]" style="font-family: var(--font-body);">Подробнее</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ═══ 14. Тучка (Плитка) ═══ -->
+          <article class="product-card reveal hover-lift group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] overflow-hidden flex flex-col" style="border-radius: var(--radius);" data-category="plitka">
+            <div class="aspect-square bg-[var(--color-bg-alt)] flex items-center justify-center p-6">
+              <img src="images/p-tuchka.jpeg" alt="Тучка, тротуарная плитка" class="w-full h-full object-contain" loading="lazy">
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <span class="inline-flex self-start rounded-2xl bg-[var(--color-primary-subtle)] px-3 py-0.5 text-xs font-medium text-[var(--color-primary)]" style="font-family: var(--font-body);">Плитка</span>
+              <h3 class="mt-3 font-display text-lg font-semibold leading-tight text-[var(--color-text-primary)]" style="font-family: var(--font-display);">Тучка</h3>
+              <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">300×300 мм, толщина 30 мм, 11 шт/м²</p>
+              <div class="mt-auto pt-4 flex items-center justify-between">
+                <span class="text-base font-bold text-[var(--color-primary)]" style="font-family: var(--font-body);">850–1100 ₽</span>
+                <a href="product.html?id=tuchka" class="rounded-2xl border border-[var(--color-border)] px-4 py-2 text-sm font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]" style="font-family: var(--font-body);">Подробнее</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ═══ 15. Галька (Плитка) ═══ -->
+          <article class="product-card reveal hover-lift group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] overflow-hidden flex flex-col" style="border-radius: var(--radius);" data-category="plitka">
+            <div class="aspect-square bg-[var(--color-bg-alt)] flex items-center justify-center p-6">
+              <img src="images/p-galka.png" alt="Галька, тротуарная плитка" class="w-full h-full object-contain" loading="lazy">
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <span class="inline-flex self-start rounded-2xl bg-[var(--color-primary-subtle)] px-3 py-0.5 text-xs font-medium text-[var(--color-primary)]" style="font-family: var(--font-body);">Плитка</span>
+              <h3 class="mt-3 font-display text-lg font-semibold leading-tight text-[var(--color-text-primary)]" style="font-family: var(--font-display);">Галька</h3>
+              <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">300×300 мм, толщина 30 мм, 11 шт/м²</p>
+              <div class="mt-auto pt-4 flex items-center justify-between">
+                <span class="text-base font-bold text-[var(--color-primary)]" style="font-family: var(--font-body);">850–1100 ₽</span>
+                <a href="product.html?id=galka" class="rounded-2xl border border-[var(--color-border)] px-4 py-2 text-sm font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]" style="font-family: var(--font-body);">Подробнее</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ═══ 16. Ромб узорный (Плитка) ═══ -->
+          <article class="product-card reveal hover-lift group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] overflow-hidden flex flex-col" style="border-radius: var(--radius);" data-category="plitka">
+            <div class="aspect-square bg-[var(--color-bg-alt)] flex items-center justify-center p-6">
+              <img src="images/p-romb-uzornyj.png" alt="Ромб узорный, тротуарная плитка" class="w-full h-full object-contain" loading="lazy">
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <span class="inline-flex self-start rounded-2xl bg-[var(--color-primary-subtle)] px-3 py-0.5 text-xs font-medium text-[var(--color-primary)]" style="font-family: var(--font-body);">Плитка</span>
+              <h3 class="mt-3 font-display text-lg font-semibold leading-tight text-[var(--color-text-primary)]" style="font-family: var(--font-display);">Ромб узорный</h3>
+              <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">320×190 мм, толщина 40 мм, 28 шт/м²</p>
+              <div class="mt-auto pt-4 flex items-center justify-between">
+                <span class="text-base font-bold text-[var(--color-primary)]" style="font-family: var(--font-body);">850–1100 ₽</span>
+                <a href="product.html?id=romb-uzornyj" class="rounded-2xl border border-[var(--color-border)] px-4 py-2 text-sm font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]" style="font-family: var(--font-body);">Подробнее</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ═══ 17. Эко-парковка (Бордюры) ═══ -->
+          <article class="product-card reveal hover-lift group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] overflow-hidden flex flex-col" style="border-radius: var(--radius);" data-category="bordyury">
+            <div class="aspect-square bg-[var(--color-bg-alt)] flex items-center justify-center p-6">
+              <img src="images/c-eko-parkovka.png" alt="Эко-парковка" class="w-full h-full object-contain" loading="lazy">
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <span class="inline-flex self-start rounded-2xl bg-[var(--color-primary-subtle)] px-3 py-0.5 text-xs font-medium text-[var(--color-primary)]" style="font-family: var(--font-body);">Бордюры</span>
+              <h3 class="mt-3 font-display text-lg font-semibold leading-tight text-[var(--color-text-primary)]" style="font-family: var(--font-display);">Эко-парковка</h3>
+              <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">600×400 мм, толщина 100 мм</p>
+              <div class="mt-auto pt-4 flex items-center justify-between">
+                <span class="text-base font-bold text-[var(--color-primary)]" style="font-family: var(--font-body);">1700 ₽</span>
+                <a href="product.html?id=eko-parkovka" class="rounded-2xl border border-[var(--color-border)] px-4 py-2 text-sm font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]" style="font-family: var(--font-body);">Подробнее</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ═══ 18. Бордюры (Бордюры) ═══ -->
+          <article class="product-card reveal hover-lift group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] overflow-hidden flex flex-col" style="border-radius: var(--radius);" data-category="bordyury">
+            <div class="aspect-square bg-[var(--color-bg-alt)] flex items-center justify-center p-6">
+              <img src="images/c-bordyury.png" alt="Бордюры" class="w-full h-full object-contain" loading="lazy">
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <span class="inline-flex self-start rounded-2xl bg-[var(--color-primary-subtle)] px-3 py-0.5 text-xs font-medium text-[var(--color-primary)]" style="font-family: var(--font-body);">Бордюры</span>
+              <h3 class="mt-3 font-display text-lg font-semibold leading-tight text-[var(--color-text-primary)]" style="font-family: var(--font-display);">Бордюры</h3>
+              <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">500×200×60, 1000×200×70, 500×200×40 мм</p>
+              <div class="mt-auto pt-4 flex items-center justify-between">
+                <span class="text-base font-bold text-[var(--color-primary)]" style="font-family: var(--font-body);">120–300 ₽</span>
+                <a href="product.html?id=bordyury" class="rounded-2xl border border-[var(--color-border)] px-4 py-2 text-sm font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]" style="font-family: var(--font-body);">Подробнее</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ═══ 19. Водостоки (Бордюры) ═══ -->
+          <article class="product-card reveal hover-lift group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] overflow-hidden flex flex-col" style="border-radius: var(--radius);" data-category="bordyury">
+            <div class="aspect-square bg-[var(--color-bg-alt)] flex items-center justify-center p-6">
+              <img src="images/p-vodostoki.png" alt="Водостоки" class="w-full h-full object-contain" loading="lazy">
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <span class="inline-flex self-start rounded-2xl bg-[var(--color-primary-subtle)] px-3 py-0.5 text-xs font-medium text-[var(--color-primary)]" style="font-family: var(--font-body);">Бордюры</span>
+              <h3 class="mt-3 font-display text-lg font-semibold leading-tight text-[var(--color-text-primary)]" style="font-family: var(--font-display);">Водостоки</h3>
+              <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">500×150×50, 300×150×60, 250×150×80 мм</p>
+              <div class="mt-auto pt-4 flex items-center justify-between">
+                <span class="text-base font-bold text-[var(--color-primary)]" style="font-family: var(--font-body);">150–200 ₽</span>
+                <a href="product.html?id=vodostoki" class="rounded-2xl border border-[var(--color-border)] px-4 py-2 text-sm font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]" style="font-family: var(--font-body);">Подробнее</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ═══ 20. Памятник Мусульманский (Памятники) ═══ -->
+          <article class="product-card reveal hover-lift group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] overflow-hidden flex flex-col" style="border-radius: var(--radius);" data-category="pamyatniki">
+            <div class="aspect-square bg-[var(--color-bg-alt)] flex items-center justify-center p-6">
+              <img src="images/p-pamyatnik-musulmansky.jpg" alt="Памятник из бетона Мусульманский" class="w-full h-full object-contain" loading="lazy">
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <span class="inline-flex self-start rounded-2xl bg-[var(--color-primary-subtle)] px-3 py-0.5 text-xs font-medium text-[var(--color-primary)]" style="font-family: var(--font-body);">Памятники</span>
+              <h3 class="mt-3 font-display text-lg font-semibold leading-tight text-[var(--color-text-primary)]" style="font-family: var(--font-display);">Памятник Мусульманский</h3>
+              <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">Из кевларобетона, с полумесяцем</p>
+              <div class="mt-auto pt-4 flex items-center justify-between">
+                <span class="text-sm font-medium text-[var(--color-text-muted)]" style="font-family: var(--font-body);">Цена по запросу</span>
+                <a href="product.html?id=pamyatnik-musulmansky" class="rounded-2xl bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-[var(--color-primary-hover)]" style="font-family: var(--font-body);">Рассчитать стоимость</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ═══ 21. Памятник с цветником (Памятники) ═══ -->
+          <article class="product-card reveal hover-lift group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] overflow-hidden flex flex-col" style="border-radius: var(--radius);" data-category="pamyatniki">
+            <div class="aspect-square bg-[var(--color-bg-alt)] flex items-center justify-center p-6">
+              <img src="images/p-pamyatnik-cvetnik.jpg" alt="Памятник из бетона с цветником" class="w-full h-full object-contain" loading="lazy">
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <span class="inline-flex self-start rounded-2xl bg-[var(--color-primary-subtle)] px-3 py-0.5 text-xs font-medium text-[var(--color-primary)]" style="font-family: var(--font-body);">Памятники</span>
+              <h3 class="mt-3 font-display text-lg font-semibold leading-tight text-[var(--color-text-primary)]" style="font-family: var(--font-display);">Памятник с цветником</h3>
+              <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">Из кевларобетона, со встроенным цветником</p>
+              <div class="mt-auto pt-4 flex items-center justify-between">
+                <span class="text-sm font-medium text-[var(--color-text-muted)]" style="font-family: var(--font-body);">Цена по запросу</span>
+                <a href="product.html?id=pamyatnik-cvetnik" class="rounded-2xl bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-[var(--color-primary-hover)]" style="font-family: var(--font-body);">Рассчитать стоимость</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ═══ 22. Памятник Крест с цветником (Памятники) ═══ -->
+          <article class="product-card reveal hover-lift group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] overflow-hidden flex flex-col" style="border-radius: var(--radius);" data-category="pamyatniki">
+            <div class="aspect-square bg-[var(--color-bg-alt)] flex items-center justify-center p-6">
+              <img src="images/p-pamyatnik-krest.jpg" alt="Памятник из бетона Крест с цветником" class="w-full h-full object-contain" loading="lazy">
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <span class="inline-flex self-start rounded-2xl bg-[var(--color-primary-subtle)] px-3 py-0.5 text-xs font-medium text-[var(--color-primary)]" style="font-family: var(--font-body);">Памятники</span>
+              <h3 class="mt-3 font-display text-lg font-semibold leading-tight text-[var(--color-text-primary)]" style="font-family: var(--font-display);">Памятник Крест с цветником</h3>
+              <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">Из кевларобетона, классический крест с цветником</p>
+              <div class="mt-auto pt-4 flex items-center justify-between">
+                <span class="text-sm font-medium text-[var(--color-text-muted)]" style="font-family: var(--font-body);">Цена по запросу</span>
+                <a href="product.html?id=pamyatnik-krest" class="rounded-2xl bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-[var(--color-primary-hover)]" style="font-family: var(--font-body);">Рассчитать стоимость</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════ BOTTOM CTA ════════════════ -->
+    <section class="bg-[var(--color-bg-alt)] py-20" aria-labelledby="bottom-cta-heading">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center reveal">
+          <h2 id="bottom-cta-heading" class="font-display text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl" style="font-family: var(--font-display);">
+            Не нашли нужный вариант?
+          </h2>
+          <p class="mt-4 text-lg leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">
+            Свяжитесь с нами — подберём продукцию под ваш проект и рассчитаем точную стоимость с доставкой
+          </p>
+          <div class="mt-8 flex flex-wrap justify-center gap-4">
+            <a href="home-v8.html#cta" class="inline-flex items-center rounded-2xl bg-[var(--color-primary)] px-6 py-3.5 text-base font-semibold text-white transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:shadow-[var(--shadow-brand)]" style="font-family: var(--font-body);">
+              Рассчитать стоимость
+              <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+            <a href="tel:+79823416970" class="inline-flex items-center rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-6 py-3.5 text-base font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]" style="font-family: var(--font-body);">
+              +7 982 341 69 70
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ════════════════ FOOTER ════════════════ -->
+  <footer id="contacts" class="bg-[var(--color-bg-alt)] py-16" role="contentinfo">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- Brand -->
+        <div class="lg:col-span-1">
+          <a href="home-v8.html" class="flex items-center gap-2 font-display text-xl font-bold text-[var(--color-text-primary)]" style="font-family: var(--font-display);">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" class="text-[var(--color-primary)]" aria-hidden="true">
+              <rect x="2" y="2" width="24" height="24" rx="6" fill="currentColor" opacity="0.12"/>
+              <rect x="5" y="5" width="18" height="18" rx="4" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M10 14h8M14 10v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            СтройМакс
+          </a>
+          <p class="mt-4 max-w-xs text-sm leading-relaxed text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">
+            Производство кевларовой брусчатки и тротуарной плитки в Юрюзани. Качество, проверенное временем.
+          </p>
+          <div class="mt-4 inline-flex items-center gap-2 rounded-2xl bg-[var(--color-primary-subtle)] px-3 py-1.5 text-xs font-medium text-[var(--color-primary)]" style="border-radius: var(--radius); font-family: var(--font-body);">
+            <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+            Принимаем заказы
+          </div>
+        </div>
+
+        <!-- Навигация -->
+        <div>
+          <h4 class="text-xs font-semibold tracking-wider uppercase text-[var(--color-text-muted)]" style="font-family: var(--font-body);">Навигация</h4>
+          <ul class="mt-4 space-y-3">
+            <li><a href="home-v8.html" class="text-sm text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Главная</a></li>
+            <li><a href="catalog.html" class="text-sm text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Каталог</a></li>
+            <li><a href="home-v8.html#about" class="text-sm text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">О компании</a></li>
+            <li><a href="delivery.html" class="text-sm text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Доставка</a></li>
+            <li><a href="calculator.html" class="text-sm text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Калькулятор</a></li>
+          </ul>
+        </div>
+
+        <!-- Каталог -->
+        <div>
+          <h4 class="text-xs font-semibold tracking-wider uppercase text-[var(--color-text-muted)]" style="font-family: var(--font-body);">Каталог</h4>
+          <ul class="mt-4 space-y-3">
+            <li><a href="catalog.html" class="text-sm text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Брусчатка тротуарная</a></li>
+            <li><a href="catalog.html" class="text-sm text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Тротуарная плитка</a></li>
+            <li><a href="catalog.html" class="text-sm text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Бордюры и водостоки</a></li>
+            <li><a href="catalog.html" class="text-sm text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Памятники из бетона</a></li>
+            <li><a href="catalog.html" class="text-sm text-[var(--color-text-secondary)] transition-colors duration-150 hover:text-[var(--color-text-primary)]" style="font-family: var(--font-body);">Эко-парковка</a></li>
+          </ul>
+        </div>
+
+        <!-- Контакты -->
+        <div>
+          <h4 class="text-xs font-semibold tracking-wider uppercase text-[var(--color-text-muted)]" style="font-family: var(--font-body);">Контакты</h4>
+          <ul class="mt-4 space-y-3">
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-[var(--color-text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+              <span class="text-sm text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">г. Юрюзань, Челябинская область, Катав-Ивановский район, ул. Тимирязева, 15а</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="h-4 w-4 flex-shrink-0 text-[var(--color-text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+              <span class="text-sm text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">+7 982 341 69 70</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="h-4 w-4 flex-shrink-0 text-[var(--color-text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+              <span class="text-sm text-[var(--color-text-secondary)]" style="font-family: var(--font-body);">maksimdyd@gmail.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-[var(--color-border)] pt-8 md:flex-row">
+        <p class="text-sm text-[var(--color-text-muted)]" style="font-family: var(--font-body);">
+          &copy; 2024–2026 СтройМакс. Все права защищены.
+        </p>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- ════════════════ SCRIPTS ════════════════ -->
+  <script>
+    // ── Mobile menu toggle ──
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+
+    mobileToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('hidden');
+      mobileToggle.setAttribute('aria-expanded', !isOpen);
+      menuIconOpen.classList.toggle('hidden', !isOpen);
+      menuIconClose.classList.toggle('hidden', isOpen);
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        menuIconOpen.classList.remove('hidden');
+        menuIconClose.classList.add('hidden');
+      });
+    });
+
+    // ── Filter tabs ──
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const productCards = document.querySelectorAll('.product-card');
+
+    filterTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Update active tab
+        filterTabs.forEach(t => {
+          t.classList.remove('active');
+          t.classList.add('border', 'border-[var(--color-border)]', 'bg-[var(--color-surface)]', 'text-[var(--color-text-secondary)]');
+          t.setAttribute('aria-selected', 'false');
+        });
+        tab.classList.add('active');
+        tab.classList.remove('border', 'border-[var(--color-border)]', 'bg-[var(--color-surface)]', 'text-[var(--color-text-secondary)]');
+        tab.setAttribute('aria-selected', 'true');
+
+        const filter = tab.getAttribute('data-filter');
+
+        // Filter products
+        productCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+
+        // Re-trigger reveal for visible cards
+        setTimeout(() => {
+          const visibleCards = document.querySelectorAll('.product-card:not(.hidden) .reveal');
+          visibleCards.forEach(el => {
+            el.classList.remove('is-visible');
+            void el.offsetWidth;
+            el.classList.add('is-visible');
+          });
+        }, 50);
+      });
+    });
+
+    // ── Scroll reveal (IntersectionObserver) ──
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('is-visible');
+      }),
+      { threshold: 0.05, rootMargin: '0px 0px -30px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

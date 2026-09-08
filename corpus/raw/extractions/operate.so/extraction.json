@@ -1,0 +1,143 @@
+{
+  "url": "https://operate.so",
+  "hostname": "operate.so",
+  "title": "Operate",
+  "niches": [
+    "saas-tech",
+    "other",
+    "agency"
+  ],
+  "extracted_at": "2026-07-23",
+  "extract_duration_ms": 11077,
+  "page_metrics": {
+    "page_height_px": 7604,
+    "viewport_width": 1440,
+    "section_count": 11,
+    "has_sticky_nav": false,
+    "has_announcement_bar": false
+  },
+  "colors": {
+    "top_palette": [
+      [
+        "#29211E",
+        0.35
+      ],
+      [
+        "#09352E",
+        0.25
+      ],
+      [
+        "#117025",
+        0.14
+      ],
+      [
+        "#E0E0E0",
+        0.08
+      ],
+      [
+        "#6C7A79",
+        0.07
+      ],
+      [
+        "#E0E5E0",
+        0.04
+      ],
+      [
+        "#FAFAFA",
+        0.04
+      ],
+      [
+        "#DEDEDE",
+        0.03
+      ]
+    ],
+    "bg_main": "#E0E0E0",
+    "text_main": "#29211E",
+    "is_dark": false,
+    "bg_luminance": 0.88,
+    "primary_hue": 170,
+    "accent_hue": 133,
+    "accent_saturation_avg": 53,
+    "palette_size": 8
+  },
+  "typography": {
+    "display_font": "denim",
+    "body_font": "denim",
+    "fonts_used": [
+      "muoto",
+      "denim",
+      "cinetype"
+    ],
+    "hero_h1_size_px": 32,
+    "body_size_px": 16,
+    "body_line_height": 1.4,
+    "display_weight": 500,
+    "font_count": 3
+  },
+  "layout": {
+    "hero_type": "centered",
+    "hero_signals": {
+      "has_large_image": false,
+      "image_position": "none",
+      "image_width_pct": 0,
+      "has_centered_text": false
+    },
+    "section_sequence": [
+      "hero",
+      "features",
+      "content",
+      "content",
+      "content",
+      "features",
+      "features",
+      "features",
+      "about",
+      "content",
+      "stats"
+    ],
+    "section_types": {
+      "hero": 1,
+      "features": 4,
+      "content": 4,
+      "about": 1,
+      "stats": 1
+    },
+    "has_asymmetric_grid": true,
+    "grid_cols_max": 21,
+    "card_count": 223,
+    "card_aspect": "16/9",
+    "has_bento": true
+  },
+  "mood": {
+    "radius_avg_px": 9586971,
+    "radius_distribution": {
+      "0": 0.71,
+      "4": 0,
+      "8": 0,
+      "12": 0,
+      "16": 0,
+      "24": 0,
+      "999": 0.29
+    },
+    "density_padding_avg_px": 24,
+    "shadow_usage": "heavy",
+    "animation_count": 63,
+    "transition_durations_ms": [
+      150,
+      300,
+      350,
+      400,
+      500
+    ],
+    "has_gradient": true,
+    "dark_mode": false,
+    "monochrome": false
+  },
+  "raw_extras": {
+    "nav_links_count": 0,
+    "button_count": 23,
+    "primary_button_radius_px": 33554400,
+    "image_count": 21,
+    "form_count": 0
+  }
+}

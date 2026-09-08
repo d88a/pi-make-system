@@ -1,0 +1,122 @@
+{
+  "url": "https://www.arago.inc",
+  "hostname": "arago.inc",
+  "title": "Arago",
+  "niches": [
+    "other",
+    "creative-animation",
+    "saas-tech",
+    "agency"
+  ],
+  "extracted_at": "2026-07-23",
+  "extract_duration_ms": 95817,
+  "page_metrics": {
+    "page_height_px": 12860,
+    "viewport_width": 1440,
+    "section_count": 10,
+    "has_sticky_nav": true,
+    "has_announcement_bar": false
+  },
+  "colors": {
+    "top_palette": [
+      [
+        "#000000",
+        0.58
+      ],
+      [
+        "#E8E8E9",
+        0.22
+      ],
+      [
+        "#90959A",
+        0.2
+      ]
+    ],
+    "bg_main": "#000000",
+    "text_main": "#E8E8E9",
+    "is_dark": true,
+    "bg_luminance": 0,
+    "primary_hue": 0,
+    "accent_hue": 0,
+    "accent_saturation_avg": 0,
+    "palette_size": 3
+  },
+  "typography": {
+    "display_font": "Antartica",
+    "body_font": "Antartica",
+    "fonts_used": [
+      "Antartica",
+      "Arial"
+    ],
+    "hero_h1_size_px": 11,
+    "body_size_px": 15,
+    "body_line_height": 1,
+    "display_weight": 400,
+    "font_count": 2
+  },
+  "layout": {
+    "hero_type": "asymmetric-split",
+    "hero_signals": {
+      "has_large_image": false,
+      "image_position": "left",
+      "image_width_pct": 6,
+      "has_centered_text": true
+    },
+    "section_sequence": [
+      "nav",
+      "features",
+      "hero",
+      "content",
+      "content",
+      "content",
+      "content",
+      "about",
+      "content",
+      "features"
+    ],
+    "section_types": {
+      "nav": 1,
+      "features": 2,
+      "hero": 1,
+      "content": 5,
+      "about": 1
+    },
+    "has_asymmetric_grid": false,
+    "grid_cols_max": 16,
+    "card_count": 51,
+    "card_aspect": "4/3",
+    "has_bento": false
+  },
+  "mood": {
+    "radius_avg_px": 0,
+    "radius_distribution": {
+      "0": 1,
+      "4": 0,
+      "8": 0,
+      "12": 0,
+      "16": 0,
+      "24": 0,
+      "999": 0
+    },
+    "density_padding_avg_px": 371,
+    "shadow_usage": "none",
+    "animation_count": 53,
+    "transition_durations_ms": [
+      250,
+      300,
+      350,
+      400,
+      500
+    ],
+    "has_gradient": false,
+    "dark_mode": true,
+    "monochrome": true
+  },
+  "raw_extras": {
+    "nav_links_count": 12,
+    "button_count": 2,
+    "primary_button_radius_px": 0,
+    "image_count": 14,
+    "form_count": 0
+  }
+}

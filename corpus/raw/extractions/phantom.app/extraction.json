@@ -1,0 +1,137 @@
+{
+  "url": "https://phantom.app",
+  "hostname": "phantom.app",
+  "title": "phantom.app",
+  "niches": [
+    "manual"
+  ],
+  "extracted_at": "2026-07-23",
+  "extract_duration_ms": 8110,
+  "page_metrics": {
+    "page_height_px": 8041,
+    "viewport_width": 1440,
+    "section_count": 9,
+    "has_sticky_nav": true,
+    "has_announcement_bar": false
+  },
+  "colors": {
+    "top_palette": [
+      [
+        "#3C315B",
+        0.74
+      ],
+      [
+        "#FFFDF8",
+        0.1
+      ],
+      [
+        "#1C1C1C",
+        0.08
+      ],
+      [
+        "#FDFCFE",
+        0.03
+      ],
+      [
+        "#E2DFFE",
+        0.02
+      ],
+      [
+        "#AB9FF2",
+        0.02
+      ],
+      [
+        "#86848D",
+        0.01
+      ],
+      [
+        "#E9E8EA",
+        0.01
+      ]
+    ],
+    "bg_main": "#FDFCFE",
+    "text_main": "#3C315B",
+    "is_dark": false,
+    "bg_luminance": 0.99,
+    "primary_hue": 246,
+    "accent_hue": 43,
+    "accent_saturation_avg": 75,
+    "palette_size": 8
+  },
+  "typography": {
+    "display_font": "Phantom",
+    "body_font": "Phantom",
+    "fonts_used": [
+      "Times New Roman",
+      "Phantom"
+    ],
+    "hero_h1_size_px": 96,
+    "body_size_px": 16,
+    "body_line_height": 1.5,
+    "display_weight": 400,
+    "font_count": 2
+  },
+  "layout": {
+    "hero_type": "centered",
+    "hero_signals": {
+      "has_large_image": false,
+      "image_position": "none",
+      "image_width_pct": 0,
+      "has_centered_text": false
+    },
+    "section_sequence": [
+      "nav",
+      "gallery",
+      "content",
+      "gallery",
+      "gallery",
+      "gallery",
+      "content",
+      "content",
+      "footer"
+    ],
+    "section_types": {
+      "nav": 1,
+      "gallery": 4,
+      "content": 3,
+      "footer": 1
+    },
+    "has_asymmetric_grid": false,
+    "grid_cols_max": 0,
+    "card_count": 4,
+    "card_aspect": "1/1",
+    "has_bento": false
+  },
+  "mood": {
+    "radius_avg_px": 17,
+    "radius_distribution": {
+      "0": 0.25,
+      "4": 0.25,
+      "8": 0,
+      "12": 0,
+      "16": 0,
+      "24": 0.04,
+      "999": 0.46
+    },
+    "density_padding_avg_px": 86,
+    "shadow_usage": "none",
+    "animation_count": 57,
+    "transition_durations_ms": [
+      100,
+      150,
+      200,
+      300,
+      400
+    ],
+    "has_gradient": false,
+    "dark_mode": false,
+    "monochrome": false
+  },
+  "raw_extras": {
+    "nav_links_count": 24,
+    "button_count": 21,
+    "primary_button_radius_px": 32,
+    "image_count": 2,
+    "form_count": 1
+  }
+}

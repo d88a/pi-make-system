@@ -1,0 +1,299 @@
+{
+  "galka": {
+    "url": "https://maksplit.ru/product/galka/",
+    "title": "Галька, тротуарная плитка",
+    "price": "850,00 ₽ – 1100,00 ₽",
+    "priceHTML": "<span class=\"woocommerce-Price-amount amount\"><bdi>850,00&nbsp;<span class=\"woocommerce-Price-currencySymbol\">₽</span></bdi></span> – <span class=\"woocommerce-Price-amount amount\"><bdi>1100,00&nbsp;<span class=\"woocommerce-Price-currencySymbol\">₽</span></bdi></span>",
+    "shortDesc": "Размеры, мм: 300х300\nТолщина, мм: 30\nКол-во в 1м2: 11 шт.\n\n\n\nЦвет\nЦена\n\n\nСерый\n850 руб.м2\n\n\nЦветной\n1100 руб.м2\n\n\nМрамор из бетона\n1100 руб.м2",
+    "shortDescHTML": "<p>Размеры, мм: 300х300</p>\n<p>Толщина, мм: 30</p>\n<p>Кол-во в 1м2: 11 шт.</p>\n<table class=\"table\">\n<tbody>\n<tr>\n<td>Цвет</td>\n<td>Цена</td>\n</tr>\n<tr>\n<td>Серый</td>\n<td>850 руб.м2</td>\n</tr>\n<tr>\n<td>Цветной</td>\n<td>1100 руб.м2</td>\n</tr>\n<tr>\n<td>Мрамор из бетона</td>\n<td>1100 руб.м2</td>\n</tr>\n</tbody>\n</table>\n<p>&nbsp;</p>",
+    "fullDescText": "Описание\n\nТротуарная плитка “Галька”\nявляется одним из самых востребованных материалов для благоустройства пешеходных зон. Её популярность объясняется не только эстетическим видом, имитирующим натуральные камни, но и высоким уровнем прочности и долговечности. Плитка производится из бетона с добавлением специальных красителей, что позволяет добиться разнообразия цветовых решений и текстур. Такой подход делает её идеальным выбором для создания уникальных ландшафтных дизайнов.\nТротуарную плитку “Галька” можно купить в Челябинской области, г. Юрюзань или заказать с доставкой по России в компании “СтройМакс”.",
+    "fullDescHTML": "<h2>Описание</h2>\n\n<h1>Тротуарная плитка “Галька”</h1>\n<p>является одним из самых востребованных материалов для благоустройства пешеходных зон. Её популярность объясняется не только эстетическим видом, имитирующим натуральные камни, но и высоким уровнем прочности и долговечности. Плитка производится из бетона с добавлением специальных красителей, что позволяет добиться разнообразия цветовых решений и текстур. Такой подход делает её идеальным выбором для создания уникальных ландшафтных дизайнов.</p>\n<h3>Тротуарную плитку “Галька” можно купить в Челябинской области, г. Юрюзань или заказать с доставкой по России в компании “СтройМакс”.</h3>",
+    "gallery": [
+      "https://maksplit.ru/wp-content/uploads/2024/09/Galka-e1744202940405.png"
+    ],
+    "attributes": [
+      {
+        "label": "Цвет",
+        "value": "Серый, В цвете, Мрамор из бетона"
+      }
+    ],
+    "hasVariationForm": true,
+    "variations": [
+      {
+        "attributes": {
+          "attribute_%d1%86%d0%b2%d0%b5%d1%82": "Мрамор из бетона"
+        },
+        "price_html": "<span class=\"price\"><span class=\"woocommerce-Price-amount amount\"><bdi>1100,00&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&#8381;</span></bdi></span></span>",
+        "display_price": 1100,
+        "sku": ""
+      },
+      {
+        "attributes": {
+          "attribute_%d1%86%d0%b2%d0%b5%d1%82": "Серый"
+        },
+        "price_html": "<span class=\"price\"><span class=\"woocommerce-Price-amount amount\"><bdi>850,00&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&#8381;</span></bdi></span></span>",
+        "display_price": 850,
+        "sku": ""
+      },
+      {
+        "attributes": {
+          "attribute_%d1%86%d0%b2%d0%b5%d1%82": "В цвете"
+        },
+        "price_html": "<span class=\"price\"><span class=\"woocommerce-Price-amount amount\"><bdi>1100,00&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&#8381;</span></bdi></span></span>",
+        "display_price": 1100,
+        "sku": ""
+      }
+    ],
+    "variationCount": 3,
+    "selects": [
+      {
+        "name": "attribute_%d1%86%d0%b2%d0%b5%d1%82",
+        "label": "Цвет",
+        "options": [
+          "Выбрать опцию",
+          "Серый",
+          "В цвете",
+          "Мрамор из бетона"
+        ]
+      }
+    ],
+    "tabs": [
+      {
+        "id": "tab-description",
+        "heading": "Описание",
+        "textLen": 611,
+        "htmlLen": 656,
+        "preview": "Описание\n\nТротуарная плитка “Галька”\nявляется одним из самых востребованных материалов для благоустройства пешеходных зон. Её популярность объясняется не только эстетическим видом, имитирующим натуральные камни, но и высоким уровнем прочности и долговечности. Плитка производится из бетона с добавлен"
+      },
+      {
+        "id": "tab-additional_information",
+        "heading": "Детали",
+        "textLen": 56,
+        "htmlLen": 460,
+        "preview": "Детали\n\n\n\t\t\t\n\t\t\tЦвет\n\t\t\tСерый, В цвете, Мрамор из бетона"
+      }
+    ],
+    "categories": [],
+    "sku": "",
+    "additionalInfoText": "Детали\n\n\n\t\t\t\n\t\t\tЦвет\n\t\t\tСерый, В цвете, Мрамор из бетона"
+  },
+  "grecziya": {
+    "url": "https://maksplit.ru/product/grecziya/",
+    "title": "Греция, брусчатка",
+    "price": "850,00 ₽",
+    "priceHTML": "<span class=\"woocommerce-Price-amount amount\"><bdi>850,00&nbsp;<span class=\"woocommerce-Price-currencySymbol\">₽</span></bdi></span>",
+    "shortDesc": "Два камня\nразной фактуры\nРазмеры, мм:\n285х285\n100х100\nТолщина, мм: 40\nЦена: от 850 руб. кв. м",
+    "shortDescHTML": "<p>Два камня<br>\nразной фактуры<br>\nРазмеры, мм:<br>\n285х285<br>\n100х100<br>\nТолщина, мм: 40</p>\n<p>Цена: от 850 руб. кв. м</p>",
+    "fullDescText": "Описание\n\nИспользование брусчатки “Греция”\nдает возможность создать эффектный и долговечный ландшафтный проект. При ее укладке можно экспериментировать с различными схемами, сочетая элементы разных цветов для достижения уникального стиля. Это делает брусчатку универсальным выбором для дорожек, площадок и террас.",
+    "fullDescHTML": "<h2>Описание</h2>\n\n<h1>Использование брусчатки “Греция”</h1>\n<p>дает возможность создать эффектный и долговечный ландшафтный проект. При ее укладке можно экспериментировать с различными схемами, сочетая элементы разных цветов для достижения уникального стиля. Это делает брусчатку универсальным выбором для дорожек, площадок и террас.</p>",
+    "gallery": [
+      "https://maksplit.ru/wp-content/uploads/2024/09/Grecziya-e1744200946190.png",
+      "https://maksplit.ru/wp-content/uploads/2024/09/Grecziya1.png",
+      "https://maksplit.ru/wp-content/uploads/2024/09/Grecziya-e1744200946190-300x300.png",
+      "https://maksplit.ru/wp-content/uploads/2024/09/Grecziya1-300x300.png"
+    ],
+    "attributes": [],
+    "hasVariationForm": false,
+    "variations": null,
+    "variationCount": 0,
+    "selects": [],
+    "tabs": [
+      {
+        "id": "tab-description",
+        "heading": "Описание",
+        "textLen": 313,
+        "htmlLen": 349,
+        "preview": "Описание\n\nИспользование брусчатки “Греция”\nдает возможность создать эффектный и долговечный ландшафтный проект. При ее укладке можно экспериментировать с различными схемами, сочетая элементы разных цветов для достижения уникального стиля. Это делает брусчатку универсальным выбором для дорожек, площа"
+      }
+    ],
+    "categories": [],
+    "sku": "",
+    "additionalInfoText": ""
+  },
+  "vodostoki": {
+    "url": "https://maksplit.ru/product/vodostoki/",
+    "title": "Водостоки",
+    "price": "150,00 ₽ – 200,00 ₽",
+    "priceHTML": "<span class=\"woocommerce-Price-amount amount\"><bdi>150,00&nbsp;<span class=\"woocommerce-Price-currencySymbol\">₽</span></bdi></span> – <span class=\"woocommerce-Price-amount amount\"><bdi>200,00&nbsp;<span class=\"woocommerce-Price-currencySymbol\">₽</span></bdi></span>",
+    "shortDesc": "Размеры, мм:\n500х150х50 – 200 руб. кв. м\n300х150х60 – 150 руб. кв. м\n250х150х80 – 150 руб. кв. м",
+    "shortDescHTML": "<p>Размеры, мм:<br>\n500х150х50 – 200 руб. кв. м<br>\n300х150х60 – 150 руб. кв. м<br>\n250х150х80 – 150 руб. кв. м</p>",
+    "fullDescText": "",
+    "fullDescHTML": "",
+    "gallery": [
+      "https://maksplit.ru/wp-content/uploads/2025/04/0f760f71-d47e-4c4e-af9f-439dc38d655b-702x600.png",
+      "https://maksplit.ru/wp-content/uploads/2025/04/0f760f71-d47e-4c4e-af9f-439dc38d655b.png"
+    ],
+    "attributes": [
+      {
+        "label": "Размер",
+        "value": "500х150х50, 300х150х60, 250х150х80"
+      }
+    ],
+    "hasVariationForm": true,
+    "variations": [
+      {
+        "attributes": {
+          "attribute_%d1%80%d0%b0%d0%b7%d0%bc%d0%b5%d1%80": "500х150х50"
+        },
+        "price_html": "<span class=\"price\"><span class=\"woocommerce-Price-amount amount\"><bdi>200,00&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&#8381;</span></bdi></span></span>",
+        "display_price": 200,
+        "sku": ""
+      },
+      {
+        "attributes": {
+          "attribute_%d1%80%d0%b0%d0%b7%d0%bc%d0%b5%d1%80": "300х150х60"
+        },
+        "price_html": "<span class=\"price\"><span class=\"woocommerce-Price-amount amount\"><bdi>150,00&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&#8381;</span></bdi></span></span>",
+        "display_price": 150,
+        "sku": ""
+      },
+      {
+        "attributes": {
+          "attribute_%d1%80%d0%b0%d0%b7%d0%bc%d0%b5%d1%80": "250х150х80"
+        },
+        "price_html": "<span class=\"price\"><span class=\"woocommerce-Price-amount amount\"><bdi>150,00&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&#8381;</span></bdi></span></span>",
+        "display_price": 150,
+        "sku": ""
+      }
+    ],
+    "variationCount": 3,
+    "selects": [
+      {
+        "name": "attribute_%d1%80%d0%b0%d0%b7%d0%bc%d0%b5%d1%80",
+        "label": "Размер",
+        "options": [
+          "Выбрать опцию",
+          "500х150х50",
+          "300х150х60",
+          "250х150х80"
+        ]
+      }
+    ],
+    "tabs": [
+      {
+        "id": "tab-additional_information",
+        "heading": "Детали",
+        "textLen": 60,
+        "htmlLen": 476,
+        "preview": "Детали\n\n\n\t\t\t\n\t\t\tРазмер\n\t\t\t500х150х50, 300х150х60, 250х150х80"
+      }
+    ],
+    "categories": [],
+    "sku": "",
+    "additionalInfoText": "Детали\n\n\n\t\t\t\n\t\t\tРазмер\n\t\t\t500х150х50, 300х150х60, 250х150х80"
+  },
+  "eko-parkovka": {
+    "url": "https://maksplit.ru/product/eko-parkovka/",
+    "title": "Эко-парковка",
+    "price": "1700,00 ₽",
+    "priceHTML": "<span class=\"woocommerce-Price-amount amount\"><bdi>1700,00&nbsp;<span class=\"woocommerce-Price-currencySymbol\">₽</span></bdi></span>",
+    "shortDesc": "Размеры, мм:\n600х400\nТолщина, мм: 100\nЦена: 1700 руб. кв. м",
+    "shortDescHTML": "<p>Размеры, мм:<br>\n600х400<br>\nТолщина, мм: 100</p>\n<p>Цена: 1700 руб. кв. м</p>",
+    "fullDescText": "Описание\n\nЭко-парковка — это не просто место для стоянки автомобилей, а концепция, направленная на гармонизацию городской инфраструктуры с природой. Она представляет собой зону, где автомобилисты могут оставлять свои транспортные средства, минимизируя негативное воздействие на окружающую среду. Эко-парковки часто располагаются вблизи общественного транспорта, что способствует сокращению количества машин на улицах и снижению уровня загрязнения воздуха.",
+    "fullDescHTML": "<h2>Описание</h2>\n\n<p>Эко-парковка — это не просто место для стоянки автомобилей, а концепция, направленная на гармонизацию городской инфраструктуры с природой. Она представляет собой зону, где автомобилисты могут оставлять свои транспортные средства, минимизируя негативное воздействие на окружающую среду. Эко-парковки часто располагаются вблизи общественного транспорта, что способствует сокращению количества машин на улицах и снижению уровня загрязнения воздуха.</p>",
+    "gallery": [
+      "https://maksplit.ru/wp-content/uploads/2024/09/Eko-parkovka-e1744201893632.png",
+      "https://maksplit.ru/wp-content/uploads/2024/09/Eko-parkovka1.png",
+      "https://maksplit.ru/wp-content/uploads/2024/09/Eko-parkovka-e1744201893632-300x300.png",
+      "https://maksplit.ru/wp-content/uploads/2024/09/Eko-parkovka1-300x300.png"
+    ],
+    "attributes": [],
+    "hasVariationForm": false,
+    "variations": null,
+    "variationCount": 0,
+    "selects": [],
+    "tabs": [
+      {
+        "id": "tab-description",
+        "heading": "Описание",
+        "textLen": 455,
+        "htmlLen": 482,
+        "preview": "Описание\n\nЭко-парковка — это не просто место для стоянки автомобилей, а концепция, направленная на гармонизацию городской инфраструктуры с природой. Она представляет собой зону, где автомобилисты могут оставлять свои транспортные средства, минимизируя негативное воздействие на окружающую среду. Эко-"
+      }
+    ],
+    "categories": [],
+    "sku": "",
+    "additionalInfoText": ""
+  },
+  "staryj-gorod": {
+    "url": "https://maksplit.ru/product/staryj-gorod/",
+    "title": "Старый город, брусчатка",
+    "price": "850,00 ₽ – 1100,00 ₽",
+    "priceHTML": "<span class=\"woocommerce-Price-amount amount\"><bdi>850,00&nbsp;<span class=\"woocommerce-Price-currencySymbol\">₽</span></bdi></span> – <span class=\"woocommerce-Price-amount amount\"><bdi>1100,00&nbsp;<span class=\"woocommerce-Price-currencySymbol\">₽</span></bdi></span>",
+    "shortDesc": "Размеры, мм:\n120х40\n120х90\n120х120\nТолщина, мм: 40\nВ 1м2: 34 шт.\n\n\n\nЦвет\nЦена\n\n\nСерый\n850 руб.м2\n\n\nЦветной\n1100 руб.м2",
+    "shortDescHTML": "<p>Размеры, мм:<br>\n120х40<br>\n120х90<br>\n120х120<br>\nТолщина, мм: 40</p>\n<p>В 1м2: 34 шт.</p>\n<table class=\"table\">\n<tbody>\n<tr>\n<td>Цвет</td>\n<td>Цена</td>\n</tr>\n<tr>\n<td>Серый</td>\n<td>850 руб.м2</td>\n</tr>\n<tr>\n<td>Цветной</td>\n<td>1100 руб.м2</td>\n</tr>\n</tbody>\n</table>",
+    "fullDescText": "Описание\n\nБрусчатка “Старый город”\n– это не просто строительный материал, а символ истории и культуры. Ее уникальный дизайн и фактура придают любому пространству атмосферу старины и уюта. Эта брусчатка часто используется для облицовки пешеходных улиц, площадей и общественных пространств, где цель состоит не только в создании долговечной конструкции, но и в формировании привлекательной городской среды.",
+    "fullDescHTML": "<h2>Описание</h2>\n\n<h1>Брусчатка “Старый город”</h1>\n<p>– это не просто строительный материал, а символ истории и культуры. Ее уникальный дизайн и фактура придают любому пространству атмосферу старины и уюта. Эта брусчатка часто используется для облицовки пешеходных улиц, площадей и общественных пространств, где цель состоит не только в создании долговечной конструкции, но и в формировании привлекательной городской среды.</p>",
+    "gallery": [
+      "https://maksplit.ru/wp-content/uploads/2024/09/Staryj-gorod-1.png",
+      "https://maksplit.ru/wp-content/uploads/2024/09/Staryj-gorod1.png",
+      "https://maksplit.ru/wp-content/uploads/2024/09/Staryj-gorod-1-300x300.png",
+      "https://maksplit.ru/wp-content/uploads/2024/09/Staryj-gorod1-300x300.png"
+    ],
+    "attributes": [
+      {
+        "label": "Цвет",
+        "value": "Серый, В цвете, Мрамор из бетона"
+      }
+    ],
+    "hasVariationForm": true,
+    "variations": [
+      {
+        "attributes": {
+          "attribute_%d1%86%d0%b2%d0%b5%d1%82": "Мрамор из бетона"
+        },
+        "price_html": "<span class=\"price\"><span class=\"woocommerce-Price-amount amount\"><bdi>1100,00&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&#8381;</span></bdi></span></span>",
+        "display_price": 1100,
+        "sku": ""
+      },
+      {
+        "attributes": {
+          "attribute_%d1%86%d0%b2%d0%b5%d1%82": "Серый"
+        },
+        "price_html": "<span class=\"price\"><span class=\"woocommerce-Price-amount amount\"><bdi>850,00&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&#8381;</span></bdi></span></span>",
+        "display_price": 850,
+        "sku": ""
+      },
+      {
+        "attributes": {
+          "attribute_%d1%86%d0%b2%d0%b5%d1%82": "В цвете"
+        },
+        "price_html": "<span class=\"price\"><span class=\"woocommerce-Price-amount amount\"><bdi>1100,00&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&#8381;</span></bdi></span></span>",
+        "display_price": 1100,
+        "sku": ""
+      }
+    ],
+    "variationCount": 3,
+    "selects": [
+      {
+        "name": "attribute_%d1%86%d0%b2%d0%b5%d1%82",
+        "label": "Цвет",
+        "options": [
+          "Выбрать опцию",
+          "Серый",
+          "В цвете",
+          "Мрамор из бетона"
+        ]
+      }
+    ],
+    "tabs": [
+      {
+        "id": "tab-description",
+        "heading": "Описание",
+        "textLen": 404,
+        "htmlLen": 440,
+        "preview": "Описание\n\nБрусчатка “Старый город”\n– это не просто строительный материал, а символ истории и культуры. Ее уникальный дизайн и фактура придают любому пространству атмосферу старины и уюта. Эта брусчатка часто используется для облицовки пешеходных улиц, площадей и общественных пространств, где цель со"
+      },
+      {
+        "id": "tab-additional_information",
+        "heading": "Детали",
+        "textLen": 56,
+        "htmlLen": 460,
+        "preview": "Детали\n\n\n\t\t\t\n\t\t\tЦвет\n\t\t\tСерый, В цвете, Мрамор из бетона"
+      }
+    ],
+    "categories": [],
+    "sku": "",
+    "additionalInfoText": "Детали\n\n\n\t\t\t\n\t\t\tЦвет\n\t\t\tСерый, В цвете, Мрамор из бетона"
+  }
+}

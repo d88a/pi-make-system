@@ -1,0 +1,60 @@
+[
+  {
+    "id": "home",
+    "title": "Главная",
+    "slug": "/",
+    "role": "landing",
+    "blocks": ["hero", "features", "category-grid", "popular-products", "lead-cta", "footer"],
+    "nav": ["catalog", "about", "contacts"]
+  },
+  {
+    "id": "catalog",
+    "title": "Каталог",
+    "slug": "/catalog",
+    "role": "product-list",
+    "blocks": ["nav", "catalog-header", "category-filter", "product-grid", "lead-cta", "footer"],
+    "nav": ["home", "about", "contacts"]
+  },
+  {
+    "id": "product",
+    "title": "Карточка товара",
+    "slug": "/product/:slug",
+    "role": "product-detail",
+    "blocks": ["nav", "breadcrumb", "product-detail", "related-products", "lead-cta", "footer"],
+    "nav": ["home", "catalog", "contacts"],
+    "template": true,
+    "products": 22
+  },
+  {
+    "id": "about",
+    "title": "О компании",
+    "slug": "/about",
+    "role": "content",
+    "blocks": ["nav", "about-hero", "stats", "history", "advantages", "lead-cta", "footer"],
+    "nav": ["home", "catalog", "contacts"]
+  },
+  {
+    "id": "contacts",
+    "title": "Контакты",
+    "slug": "/contacts",
+    "role": "content",
+    "blocks": ["nav", "contacts-hero", "contact-info", "map", "lead-form", "footer"],
+    "nav": ["home", "catalog", "about"]
+  },
+  {
+    "id": "delivery",
+    "title": "Доставка и оплата",
+    "slug": "/delivery",
+    "role": "content",
+    "blocks": ["nav", "delivery-hero", "delivery-options", "payment", "faq", "lead-cta", "footer"],
+    "nav": ["home", "catalog", "contacts"]
+  },
+  {
+    "id": "calculator",
+    "title": "Рассчитать стоимость",
+    "slug": "/calculator",
+    "role": "lead",
+    "blocks": ["nav", "calc-hero", "lead-form", "contacts-mini", "footer"],
+    "nav": ["home", "catalog", "contacts"]
+  }
+]

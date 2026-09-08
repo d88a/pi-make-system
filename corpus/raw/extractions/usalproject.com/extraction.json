@@ -1,0 +1,104 @@
+{
+  "url": "https://www.usalproject.com",
+  "hostname": "usalproject.com",
+  "title": "Usal Project",
+  "niches": [
+    "ecommerce",
+    "other",
+    "minimal"
+  ],
+  "extracted_at": "2026-07-23",
+  "extract_duration_ms": 46466,
+  "page_metrics": {
+    "page_height_px": 2450,
+    "viewport_width": 1440,
+    "section_count": 2,
+    "has_sticky_nav": false,
+    "has_announcement_bar": false
+  },
+  "colors": {
+    "top_palette": [
+      [
+        "#000000",
+        0.73
+      ],
+      [
+        "#F0F0F0",
+        0.16
+      ],
+      [
+        "#0000EE",
+        0.11
+      ]
+    ],
+    "bg_main": "#F0F0F0",
+    "text_main": "#000000",
+    "is_dark": false,
+    "bg_luminance": 0.94,
+    "primary_hue": 240,
+    "accent_hue": 240,
+    "accent_saturation_avg": 100,
+    "palette_size": 3
+  },
+  "typography": {
+    "display_font": "Times New Roman",
+    "body_font": "Times New Roman",
+    "fonts_used": [
+      "Times New Roman",
+      "Arial"
+    ],
+    "hero_h1_size_px": 0,
+    "body_size_px": 16,
+    "body_line_height": 1.5,
+    "display_weight": 400,
+    "font_count": 2
+  },
+  "layout": {
+    "hero_type": "centered",
+    "hero_signals": {
+      "has_large_image": false,
+      "image_position": "none",
+      "image_width_pct": 0,
+      "has_centered_text": false
+    },
+    "section_sequence": [
+      "hero",
+      "content"
+    ],
+    "section_types": {
+      "hero": 1,
+      "content": 1
+    },
+    "has_asymmetric_grid": false,
+    "grid_cols_max": 0,
+    "card_count": 5,
+    "card_aspect": "16/9",
+    "has_bento": false
+  },
+  "mood": {
+    "radius_avg_px": 0,
+    "radius_distribution": {
+      "0": 1,
+      "4": 0,
+      "8": 0,
+      "12": 0,
+      "16": 0,
+      "24": 0,
+      "999": 0
+    },
+    "density_padding_avg_px": 24,
+    "shadow_usage": "none",
+    "animation_count": 0,
+    "transition_durations_ms": [],
+    "has_gradient": true,
+    "dark_mode": false,
+    "monochrome": true
+  },
+  "raw_extras": {
+    "nav_links_count": 0,
+    "button_count": 11,
+    "primary_button_radius_px": 0,
+    "image_count": 1,
+    "form_count": 0
+  }
+}

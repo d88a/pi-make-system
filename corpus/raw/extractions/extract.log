@@ -1,0 +1,37 @@
+[corpus-extract] Starting extraction of 110 sites (concurrency=1)
+[corpus-extract] Output: D:\pi\corpus\raw\extractions
+
+    ⚠️ viewport screenshot failed: page.screenshot: Timeout 20000ms exceeded.
+Call log:
+[2m  - taking page screenshot[22m
+[2m  - waiting for fonts to load...[22m
+
+    ⚠️ full screenshot failed: page.screenshot: Timeout 30000ms exceeded.
+Call log:
+[2m  - taking page screenshot[22m
+[2m  - waiting for fonts to load...[22m
+
+  [1/110] ✅ phantom.app 122s
+  [2/110] ❌ radga.com — goto failed: page.goto: Timeout 60000ms exceeded.
+Call log:
+[2m  - navigating to "https://radga.com/", waiting until "domcontentloaded"[22m
+
+    ⚠️ full screenshot skipped: page too tall (165604px > 40000)
+  [3/110] ✅ palmer-dinnerware.com 122s
+  [4/110] ✅ iyo.ai 78s
+  [5/110] ✅ based.gg 9s
+[5/110] ok:4 fail:1 skip:0 | 7m 2s
+  [6/110] ✅ ingraoinc.com 59s
+    ⚠️ viewport screenshot failed: page.screenshot: Timeout 20000ms exceeded.
+Call log:
+[2m  - taking page screenshot[22m
+[2m  - waiting for fonts to load...[22m
+
+    ⚠️ full screenshot failed: page.screenshot: Timeout 30000ms exceeded.
+Call log:
+[2m  - taking page screenshot[22m
+[2m  - waiting for fonts to load...[22m
+
+  [7/110] ✅ northgarden.com 124s
+    ⚠️ full screenshot skipped: page too tall (92324px > 40000)
+  [8/110] ✅ lusano.com 79s

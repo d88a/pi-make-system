@@ -1,0 +1,28 @@
+{
+  "pages": {
+    "index": {
+      "title": "Главная",
+      "url": "/",
+      "sections": ["hero", "services-preview", "stats", "cta"],
+      "components": ["nav", "hero", "card", "button", "footer"]
+    },
+    "services": {
+      "title": "Услуги",
+      "url": "/services",
+      "sections": ["page-header", "services-grid"],
+      "components": ["nav", "page-header", "card", "footer"]
+    },
+    "about": {
+      "title": "О нас",
+      "url": "/about",
+      "sections": ["page-header", "team", "philosophy"],
+      "components": ["nav", "page-header", "team-card", "footer"]
+    },
+    "contact": {
+      "title": "Контакты",
+      "url": "/contact",
+      "sections": ["page-header", "contact-form", "contact-info"],
+      "components": ["nav", "page-header", "contact-form", "footer"]
+    }
+  }
+}

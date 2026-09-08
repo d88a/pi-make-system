@@ -1,0 +1,129 @@
+{
+  "url": "https://www.lukebaffait.fr",
+  "hostname": "lukebaffait.fr",
+  "title": "Luke Baffait",
+  "niches": [
+    "portfolio",
+    "agency",
+    "minimal"
+  ],
+  "extracted_at": "2026-07-23",
+  "extract_duration_ms": 138338,
+  "page_metrics": {
+    "page_height_px": 17713,
+    "viewport_width": 1440,
+    "section_count": 10,
+    "has_sticky_nav": false,
+    "has_announcement_bar": false
+  },
+  "colors": {
+    "top_palette": [
+      [
+        "#F0F0F0",
+        0.54
+      ],
+      [
+        "#FFFFFF",
+        0.38
+      ],
+      [
+        "#0A0A0A",
+        0.07
+      ],
+      [
+        "#FF1E00",
+        0.01
+      ]
+    ],
+    "bg_main": "#0A0A0A",
+    "text_main": "#F0F0F0",
+    "is_dark": true,
+    "bg_luminance": 0.04,
+    "primary_hue": 7,
+    "accent_hue": 7,
+    "accent_saturation_avg": 100,
+    "palette_size": 4
+  },
+  "typography": {
+    "display_font": "Breton",
+    "body_font": "Inter",
+    "fonts_used": [
+      "Times New Roman",
+      "Inter",
+      "Breton",
+      "other",
+      "Zirena",
+      "Courier New"
+    ],
+    "hero_h1_size_px": 72,
+    "body_size_px": 16,
+    "body_line_height": 1.5,
+    "display_weight": 700,
+    "font_count": 6
+  },
+  "layout": {
+    "hero_type": "centered",
+    "hero_signals": {
+      "has_large_image": false,
+      "image_position": "none",
+      "image_width_pct": 0,
+      "has_centered_text": false
+    },
+    "section_sequence": [
+      "hero",
+      "hero",
+      "hero",
+      "content",
+      "gallery",
+      "content",
+      "content",
+      "contact",
+      "footer",
+      "gallery"
+    ],
+    "section_types": {
+      "hero": 3,
+      "content": 3,
+      "gallery": 2,
+      "contact": 1,
+      "footer": 1
+    },
+    "has_asymmetric_grid": false,
+    "grid_cols_max": 0,
+    "card_count": 14,
+    "card_aspect": "16/9",
+    "has_bento": false
+  },
+  "mood": {
+    "radius_avg_px": 0,
+    "radius_distribution": {
+      "0": 1,
+      "4": 0,
+      "8": 0,
+      "12": 0,
+      "16": 0,
+      "24": 0,
+      "999": 0
+    },
+    "density_padding_avg_px": 24,
+    "shadow_usage": "none",
+    "animation_count": 311,
+    "transition_durations_ms": [
+      300,
+      350,
+      400,
+      500,
+      600
+    ],
+    "has_gradient": false,
+    "dark_mode": true,
+    "monochrome": false
+  },
+  "raw_extras": {
+    "nav_links_count": 15,
+    "button_count": 0,
+    "primary_button_radius_px": 0,
+    "image_count": 5,
+    "form_count": 0
+  }
+}

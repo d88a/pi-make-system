@@ -1,0 +1,227 @@
+<!-- ============================================================ -->
+<!-- PRODUCT DETAIL — Concrete Steel + Steel Blue #3B5F8A -->
+<!-- Галерея: main photo object-contain + thumbnails. -->
+<!-- Info: title display, price, характеристики, color picker, CTA. -->
+<!-- Asymmetric: gallery 2/5 + info 3/5. -->
+<!-- Layered depth: page bg (L0) → surface cards (L2) → content (L3) → accent shadow (L4) -->
+<!-- ============================================================ -->
+<section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-16" aria-labelledby="product-detail-heading">
+
+  <!-- Breadcrumb -->
+  <nav class="flex flex-wrap items-center gap-2 text-sm text-[var(--color-text-muted)]" aria-label="Хлебные крошки">
+    <a href="/" class="transition-colors duration-150 hover:text-[var(--color-text-primary)]">Главная</a>
+    <svg class="h-3.5 w-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+    <a href="/catalog" class="transition-colors duration-150 hover:text-[var(--color-text-primary)]">Каталог</a>
+    <svg class="h-3.5 w-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+    <span class="font-medium text-[var(--color-text-secondary)]">Название товара</span>
+  </nav>
+
+  <!-- Two-column layout: gallery (left) + info (right) — asymmetric -->
+  <div class="mt-8 grid grid-cols-1 gap-10 lg:grid-cols-5 lg:gap-16">
+    <!-- GALLERY COLUMN (2/5) -->
+    <div class="lg:col-span-2">
+      <!-- Main photo: object-contain, aspect-square, bg-surface -->
+      <div class="flex aspect-square items-center justify-center overflow-hidden rounded-lg border-2 border-[var(--color-border)] bg-[var(--color-surface)] p-6">
+        <img
+          id="main-photo"
+          src=""
+          alt=""
+          class="max-h-full max-w-full object-contain"
+          width="800"
+          height="800"
+        />
+      </div>
+
+      <!-- Thumbnails row -->
+      <div class="mt-4 flex gap-3" role="list" aria-label="Галерея товара">
+        <button
+          class="thumb-btn active h-16 w-16 overflow-hidden rounded-lg border-2 border-[var(--color-primary)] bg-[var(--color-surface)] p-1"
+          data-src=""
+          data-alt=""
+          aria-label="Фото 1"
+          aria-current="true"
+        >
+          <img src="" alt="" class="h-full w-full rounded object-cover" loading="lazy" width="64" height="64" />
+        </button>
+      </div>
+    </div>
+
+    <!-- INFO COLUMN (3/5) — asymmetric, more space for content -->
+    <div class="flex flex-col gap-6 lg:col-span-3">
+      <!-- Category badge -->
+      <span class="inline-flex w-fit rounded-sm bg-[var(--color-primary-subtle)] px-2.5 py-1 font-display text-[11px] font-semibold tracking-wider uppercase text-[var(--color-primary)]">
+        Категория
+      </span>
+
+      <!-- Product title (signature element: display 48px+ with colored shadow) -->
+      <h1 id="product-detail-heading" class="font-display text-5xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-6xl lg:text-7xl" style="text-shadow: 0 2px 8px rgba(59, 95, 138, 0.12);">
+        Название товара
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="font-display text-xl font-semibold tracking-tight text-[var(--color-text-secondary)]">
+        Тип продукции
+      </p>
+
+      <!-- Description -->
+      <p class="text-base leading-relaxed text-[var(--color-text-secondary)]">
+        Описание товара. Кевларбетонная плитка с уникальными характеристиками. Производство в Юрюзани.
+      </p>
+
+      <!-- Color picker + Price block -->
+      <div class="rounded-lg border-2 border-[var(--color-border)] bg-[var(--color-bg-page)] p-5">
+        <!-- Color selector (for variable products) -->
+        <div id="color-selector" role="radiogroup" aria-label="Выбор цвета" class="space-y-3">
+          <span class="font-display text-xs font-semibold tracking-wider uppercase text-[var(--color-text-muted)]">Цвет</span>
+          <div class="flex gap-3">
+            <button
+              class="color-swatch active group flex items-center gap-3 rounded-lg border-2 px-4 py-2.5 transition-all duration-300"
+              style="transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);"
+              role="radio"
+              aria-checked="true"
+              data-price="850"
+              data-variant=""
+              data-label="Серый"
+            >
+              <span class="h-6 w-6 shrink-0 rounded-full border-2 border-[var(--color-border)] bg-[#A8A29E]"></span>
+              <span class="font-body text-sm font-medium text-[var(--color-text-primary)]">Серый</span>
+            </button>
+            <button
+              class="color-swatch group flex items-center gap-3 rounded-lg border-2 border-[var(--color-border)] px-4 py-2.5 transition-all duration-300"
+              style="transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);"
+              role="radio"
+              aria-checked="false"
+              data-price="1100"
+              data-variant=""
+              data-label="Цветной"
+            >
+              <span class="h-6 w-6 shrink-0 rounded-full border-2 border-[var(--color-border)] bg-[#D97706]"></span>
+              <span class="font-body text-sm font-medium text-[var(--color-text-secondary)]">Цветной</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Dynamic price -->
+        <div class="mt-4 border-t border-[var(--color-border-subtle)] pt-4">
+          <span class="font-display text-xs font-semibold tracking-wider uppercase text-[var(--color-text-muted)]">Цена за м²</span>
+          <div class="mt-1 flex items-baseline gap-2">
+            <span id="product-price" class="font-mono text-4xl font-bold tabular-nums text-[var(--color-text-primary)] transition-all duration-300">850</span>
+            <span class="font-mono text-lg text-[var(--color-text-muted)]">₽</span>
+          </div>
+          <p id="variant-label" class="mt-2 text-sm text-[var(--color-text-muted)]">Серый</p>
+        </div>
+      </div>
+
+      <!-- Characteristics table -->
+      <div class="overflow-hidden rounded-lg border-2 border-[var(--color-border)] bg-[var(--color-surface)]">
+        <div class="border-b-2 border-[var(--color-border)] bg-[var(--color-bg-alt)] px-5 py-3">
+          <h2 class="font-display text-sm font-semibold tracking-wider uppercase text-[var(--color-text-secondary)]">Характеристики</h2>
+        </div>
+        <table class="w-full text-left text-sm">
+          <tbody>
+            <tr class="border-b border-[var(--color-border-subtle)] transition-colors duration-150 hover:bg-[var(--color-bg-elevated)]">
+              <td class="px-5 py-3 font-display text-xs font-semibold tracking-wider uppercase text-[var(--color-text-muted)]">Размеры</td>
+              <td class="px-5 py-3 font-mono tabular-nums text-[var(--color-text-primary)]">—</td>
+            </tr>
+            <tr class="border-b border-[var(--color-border-subtle)] transition-colors duration-150 hover:bg-[var(--color-bg-elevated)]">
+              <td class="px-5 py-3 font-display text-xs font-semibold tracking-wider uppercase text-[var(--color-text-muted)]">Толщина</td>
+              <td class="px-5 py-3 font-mono tabular-nums text-[var(--color-text-primary)]">—</td>
+            </tr>
+            <tr class="border-b border-[var(--color-border-subtle)] transition-colors duration-150 hover:bg-[var(--color-bg-elevated)]">
+              <td class="px-5 py-3 font-display text-xs font-semibold tracking-wider uppercase text-[var(--color-text-muted)]">Морозостойкость</td>
+              <td class="px-5 py-3 font-mono tabular-nums text-[var(--color-text-primary)]">F200</td>
+            </tr>
+            <tr class="transition-colors duration-150 hover:bg-[var(--color-bg-elevated)]">
+              <td class="px-5 py-3 font-display text-xs font-semibold tracking-wider uppercase text-[var(--color-text-muted)]">Материал</td>
+              <td class="px-5 py-3 text-[var(--color-text-primary)]">Кевларбетон</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- CTA buttons -->
+      <div class="flex flex-col gap-3 sm:flex-row">
+        <a href="#calculate" class="flex-1 rounded-md bg-[var(--color-primary)] px-6 py-4 text-center font-body text-base font-semibold text-white transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:shadow-[var(--shadow-brand)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-2 focus:ring-offset-[var(--color-bg-page)]">
+          Рассчитать стоимость
+        </a>
+        <a href="tel:+73514712345" class="flex items-center justify-center gap-2 rounded-md border-2 border-[var(--color-border)] px-6 py-4 text-center font-body text-base font-medium text-[var(--color-text-secondary)] transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]">
+          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+          Позвонить
+        </a>
+      </div>
+
+      <!-- Delivery info -->
+      <p class="text-sm text-[var(--color-text-muted)]">
+        Производство: г. Юрюзань, Челябинская обл. Доставка по всей России.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .color-swatch.active {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 1px var(--color-primary-glow), var(--shadow-brand);
+    transform: scale(1.02);
+  }
+  .color-swatch:hover:not(.active) {
+    border-color: var(--color-border-hover);
+  }
+
+  .thumb-btn {
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .thumb-btn.active {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 1px var(--color-primary-glow);
+  }
+</style>
+
+<script>
+  (function() {
+    // Thumbnail gallery switcher
+    var mainPhoto = document.getElementById('main-photo');
+    var thumbs = document.querySelectorAll('.thumb-btn');
+    if (!mainPhoto || !thumbs.length) return;
+
+    thumbs.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        mainPhoto.src = btn.dataset.src;
+        mainPhoto.alt = btn.dataset.alt;
+        thumbs.forEach(function(b) {
+          b.classList.remove('active');
+          b.setAttribute('aria-current', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-current', 'true');
+      });
+    });
+
+    // Color swatch price switching
+    var swatches = document.querySelectorAll('.color-swatch');
+    var priceEl = document.getElementById('product-price');
+    var labelEl = document.getElementById('variant-label');
+    if (!swatches.length || !priceEl) return;
+
+    swatches.forEach(function(swatch) {
+      swatch.addEventListener('click', function() {
+        priceEl.style.opacity = '0';
+        priceEl.style.transform = 'translateY(-8px)';
+        setTimeout(function() {
+          priceEl.textContent = swatch.dataset.price;
+          priceEl.style.opacity = '1';
+          priceEl.style.transform = 'translateY(0)';
+        }, 150);
+
+        if (labelEl) labelEl.textContent = swatch.dataset.label;
+
+        swatches.forEach(function(s) {
+          s.setAttribute('aria-checked', 'false');
+          s.classList.remove('active');
+        });
+        swatch.setAttribute('aria-checked', 'true');
+        swatch.classList.add('active');
+      });
+    });
+  })();
+</script>

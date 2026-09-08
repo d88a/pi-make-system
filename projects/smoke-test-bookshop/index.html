@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Полярная сова — независимый книжный магазин</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 100ms; }
+    .reveal-delay-2 { transition-delay: 200ms; }
+  </style>
+</head>
+<body class="font-sans antialiased bg-stone-50 text-stone-900">
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 h-16 border-b border-stone-200 bg-stone-50/90 backdrop-blur-sm" role="banner">
+    <nav class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8" aria-label="Основная навигация">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2.5" aria-label="Полярная сова — на главную">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-stone-900" aria-hidden="true">
+          <path d="M16 4C11 4 6 7 6 13v7c0 2 1.5 4 3 4.5V28l4-4h6c5 0 9-4 9-9s-4-11-12-11z" fill="currentColor"/>
+          <circle cx="11" cy="14" r="2.5" fill="#faf9f7"/>
+          <circle cx="21" cy="14" r="2.5" fill="#faf9f7"/>
+          <circle cx="11.5" cy="14" r="1" fill="#1c1917"/>
+          <circle cx="20.5" cy="14" r="1" fill="#1c1917"/>
+          <polygon points="16,17 14.5,20 17.5,20" fill="#d97706"/>
+        </svg>
+        <span class="text-lg font-semibold tracking-tight text-stone-900">Полярная сова</span>
+      </a>
+
+      <!-- Desktop nav links -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#book-of-month" class="text-sm font-medium text-stone-600 transition-colors duration-150 hover:text-stone-900">Книга месяца</a>
+        <a href="#footer" class="text-sm font-medium text-stone-600 transition-colors duration-150 hover:text-stone-900">Контакты</a>
+      </div>
+
+      <!-- Desktop CTA -->
+      <div class="hidden md:block">
+        <a href="#book-of-month" class="inline-flex items-center rounded-md bg-amber-600 px-4 py-2 text-sm font-medium text-white transition-colors duration-150 hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-600 focus:ring-offset-2 focus:ring-offset-stone-50">
+          Заказать книгу
+        </a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button id="menu-toggle" class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-stone-600 transition-colors duration-150 hover:bg-stone-100 focus:outline-none focus:ring-2 focus:ring-stone-400 focus:ring-offset-2 focus:ring-offset-stone-50" aria-expanded="false" aria-label="Открыть меню">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path id="menu-icon-open" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          <path id="menu-icon-close" stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6l-12 12" class="hidden"/>
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-stone-200 bg-stone-50">
+      <div class="space-y-1 px-4 py-4">
+        <a href="#book-of-month" class="block rounded-md px-3 py-2 text-base font-medium text-stone-600 transition-colors duration-150 hover:bg-stone-100 hover:text-stone-900">Книга месяца</a>
+        <a href="#footer" class="block rounded-md px-3 py-2 text-base font-medium text-stone-600 transition-colors duration-150 hover:bg-stone-100 hover:text-stone-900">Контакты</a>
+        <a href="#book-of-month" class="mt-2 block rounded-md bg-amber-600 px-3 py-2.5 text-center text-base font-medium text-white transition-colors duration-150 hover:bg-amber-700">Заказать книгу</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="bg-stone-50 pt-40 pb-32" aria-labelledby="hero-heading">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+          <span class="inline-flex items-center rounded-full bg-amber-50 px-3 py-1 text-xs font-medium tracking-wider uppercase text-amber-600">
+            Независимый книжный
+          </span>
+          <h1 id="hero-heading" class="mt-6 font-serif text-5xl font-bold tracking-tight text-stone-900 sm:text-6xl md:text-7xl">
+            Полярная сова
+          </h1>
+          <p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-stone-500 sm:text-xl">
+            Бумага пахнет тишиной. Читайте медленно.
+          </p>
+          <div class="mt-10 flex items-center justify-center gap-4">
+            <a href="#book-of-month" class="inline-flex items-center rounded-md bg-stone-900 px-6 py-3 text-base font-medium text-white transition-colors duration-150 hover:bg-stone-800 focus:outline-none focus:ring-2 focus:ring-stone-500 focus:ring-offset-2 focus:ring-offset-stone-50">
+              Смотреть каталог
+            </a>
+            <a href="#footer" class="inline-flex items-center rounded-md border border-stone-300 bg-white px-6 py-3 text-base font-medium text-stone-700 transition-colors duration-150 hover:bg-stone-50 focus:outline-none focus:ring-2 focus:ring-stone-400 focus:ring-offset-2 focus:ring-offset-white">
+              Контакты
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Book of the Month -->
+    <section id="book-of-month" class="bg-white py-28" aria-labelledby="book-heading">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h2 id="book-heading" class="text-center text-2xl font-semibold tracking-tight text-stone-900 sm:text-3xl">
+          Книга месяца
+        </h2>
+        <p class="mx-auto mt-3 max-w-lg text-center text-base text-stone-500">
+          Каждый месяц мы выбираем одну книгу, которую стоит прочитать не спеша
+        </p>
+
+        <div class="reveal mt-14 mx-auto max-w-4xl">
+          <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-center rounded-2xl border border-stone-200 bg-white p-6 sm:p-8 md:p-10">
+            <!-- Book cover -->
+            <div class="shrink-0 w-full max-w-[220px] sm:max-w-[260px]">
+              <img
+                src="https://placehold.co/520x780/78716c/faf9f7?text=Медленное+чтение"
+                alt="Обложка книги «Медленное чтение» Алексея Титова"
+                class="w-full rounded-md"
+                width="520"
+                height="780"
+              >
+            </div>
+
+            <!-- Book details -->
+            <div class="flex-1 text-center md:text-left">
+              <span class="text-xs font-medium tracking-wider uppercase text-amber-600">Рекомендация месяца</span>
+              <h3 class="mt-2 text-2xl font-semibold text-stone-900 sm:text-3xl">
+                Медленное чтение
+              </h3>
+              <p class="mt-1 text-lg text-stone-500">Алексей Титов</p>
+              <p class="mt-5 text-base leading-relaxed text-stone-600">
+                Эссе о том, почему мы разучились читать медленно&nbsp;&mdash; и&nbsp;как вернуть себе эту способность.
+                Алексей Титов исследует феномен тихого чтения: от&nbsp;средневековых скрипториев до&nbsp;современных
+                практик slow reading. Книга для тех, кто хочет читать не&nbsp;больше, а&nbsp;глубже.
+              </p>
+              <div class="mt-7">
+                <a href="#" class="inline-flex items-center rounded-md bg-amber-600 px-6 py-3 text-base font-medium text-white transition-colors duration-150 hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-600 focus:ring-offset-2 focus:ring-offset-white">
+                  Заказать
+                  <svg class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer" class="border-t border-stone-200 bg-stone-100 pt-16 pb-12" role="contentinfo">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Brand -->
+        <div class="md:col-span-1">
+          <a href="/" class="flex items-center gap-2.5">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-stone-700" aria-hidden="true">
+              <path d="M16 4C11 4 6 7 6 13v7c0 2 1.5 4 3 4.5V28l4-4h6c5 0 9-4 9-9s-4-11-12-11z" fill="currentColor"/>
+              <circle cx="11" cy="14" r="2.5" fill="#f5f5f4"/>
+              <circle cx="21" cy="14" r="2.5" fill="#f5f5f4"/>
+              <circle cx="11.5" cy="14" r="1" fill="#1c1917"/>
+              <circle cx="20.5" cy="14" r="1" fill="#1c1917"/>
+              <polygon points="16,17 14.5,20 17.5,20" fill="#d97706"/>
+            </svg>
+            <span class="text-lg font-semibold tracking-tight text-stone-900">Полярная сова</span>
+          </a>
+          <p class="mt-3 max-w-xs text-sm leading-relaxed text-stone-500">
+            Независимый книжный магазин для тех, кто любит бумагу, тишину и&nbsp;медленное чтение.
+          </p>
+          <!-- Social icons -->
+          <div class="mt-5 flex items-center gap-4">
+            <a href="#" class="text-stone-400 transition-colors duration-150 hover:text-amber-600" aria-label="Telegram">
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.46-1.901-.903-1.056-.692-1.653-1.123-2.678-1.798-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.015-.15-.056-.212s-.174-.04-.249-.024c-.106.024-1.793 1.139-5.062 3.345-.479.329-.913.489-1.302.48-.428-.009-1.252-.242-1.865-.441-.752-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.014 3.333-1.386 4.025-1.627 4.476-1.635.099-.002.321.023.465.14.12.097.152.229.168.322.016.094.037.306.021.472z"/>
+              </svg>
+            </a>
+            <a href="#" class="text-stone-400 transition-colors duration-150 hover:text-amber-600" aria-label="Instagram">
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <a href="#" class="text-stone-400 transition-colors duration-150 hover:text-amber-600" aria-label="ВКонтакте">
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15.684 0H8.316C3.724 0 0 3.723 0 8.316v7.368C0 20.277 3.724 24 8.316 24h7.368C20.277 24 24 20.277 24 15.684V8.316C24 3.723 20.277 0 15.684 0zm3.692 17.123h-1.916c-.647 0-.845-.513-2.001-1.688-1.007-1.02-1.451-1.148-1.702-1.148-.348 0-.447.1-.447.582v1.64c0 .435-.14.696-1.284.696-1.894 0-3.989-1.148-5.464-3.27-2.216-3.127-2.822-5.473-2.822-5.955 0-.26.1-.5.576-.5h1.916c.437 0 .6.2.767.697.955 2.78 2.555 5.21 3.213 5.21.25 0 .364-.114.364-.73V9.279c-.078-1.297-.758-1.407-.758-1.87 0-.2.167-.3.435-.3h3.017c.365 0 .496.1.496.33v.064c0 .365-.334.415-.334 1.332v2.2c0 .394.18.534.3.534.25 0 .455-.148.914-.98.548-1.003.938-2.186 1.168-2.786.11-.262.263-.5.7-.5h1.916c.38 0 .53.2.43.53-.18.56-1.327 2.275-2.067 3.63-.563.947-.823 1.415-.823 1.563 0 .18.13.35.46.685.346.347 1.478 1.448 1.84 2.168.2.395.05.76-.43.76z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Address & Hours -->
+        <div>
+          <h4 class="text-sm font-semibold text-stone-900">Адрес и часы</h4>
+          <div class="mt-4 space-y-3">
+            <p class="text-sm leading-relaxed text-stone-600">
+              Москва, ул. Покровка, 17<br>
+              <span class="text-stone-400">м. Китай-город, 5 минут пешком</span>
+            </p>
+            <p class="text-sm leading-relaxed text-stone-600">
+              Пн–Сб: <span class="font-medium text-stone-700">10:00–21:00</span><br>
+              Вс: <span class="font-medium text-stone-700">11:00–19:00</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Info -->
+        <div>
+          <h4 class="text-sm font-semibold text-stone-900">Информация</h4>
+          <ul class="mt-4 space-y-2">
+            <li><a href="#" class="text-sm text-stone-600 transition-colors duration-150 hover:text-stone-900">О магазине</a></li>
+            <li><a href="#" class="text-sm text-stone-600 transition-colors duration-150 hover:text-stone-900">Доставка и оплата</a></li>
+            <li><a href="#" class="text-sm text-stone-600 transition-colors duration-150 hover:text-stone-900">Возврат</a></li>
+            <li><a href="#" class="text-sm text-stone-600 transition-colors duration-150 hover:text-stone-900">Политика конфиденциальности</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="mt-12 pt-8 border-t border-stone-200">
+        <p class="text-sm text-stone-400">
+          © 2025 Полярная сова. Читайте медленно.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('hidden');
+      menuToggle.setAttribute('aria-expanded', !isOpen);
+      iconOpen.classList.toggle('hidden', !isOpen);
+      iconClose.classList.toggle('hidden', isOpen);
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        iconOpen.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+      });
+    });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('is-visible');
+      }),
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,857 @@
+[
+  {
+    "id": 6132,
+    "slug": "domino",
+    "title": "Домино, брусчатка",
+    "short_description": "Цена за кв. м.\r\nРазмеры, мм: 300х150\r\nТолщина, мм: 35\r\n\r\nСерый: 850 руб. кв. м\r\nВ цвете: 1100 руб. кв. м",
+    "full_description": "<h1>Брусчатка «Домино»</h1>\r\n— это уникальный элемент для благоустройства, который сочетает в себе функциональность и эстетику. Ее характерные прямоугольные формы напоминают домино, что делает укладку не только практичной, но и игровой. Она позволяет создавать множество интересных узоров и композиций на поверхности, что идеально подходит для личных и общественных пространств.",
+    "price_range": "850 ₽ – 1100 ₽",
+    "regular_price": null,
+    "sale_price": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "gallery": [
+      {
+        "id": 6533,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/Domino.jpg",
+        "alt": "Domino"
+      },
+      {
+        "id": 6139,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/Domino2.png",
+        "alt": "Брусчатка Домино"
+      }
+    ],
+    "featured_image": {
+      "id": 6533,
+      "url": "https://maksplit.ru/wp-content/uploads/2024/09/Domino.jpg",
+      "alt": "Domino"
+    },
+    "category": "Брусчатка тротуарная",
+    "attributes": [
+      {
+        "name": "цвет",
+        "options": [
+          "Белый",
+          "Цветной"
+        ]
+      }
+    ],
+    "is_variable": true,
+    "sku": null,
+    "variation_count": 2
+  },
+  {
+    "id": 6134,
+    "slug": "krakovskij-klever",
+    "title": "Краковский клевер, брусчатка",
+    "short_description": "Два камня разной фактуры\r\nРазмеры, мм:\r\n295х295\r\n210х210\r\nТолщина, мм: 40\r\n\r\nСерый: 850 руб. кв. м\r\nВ цвете: 1100 руб. кв. м",
+    "full_description": "Краковский клевер — это уникальный архитектурный элемент, который сочетает в себе красоту и функциональность. Брусчатка, уложенная в форме клеверного листа, не только привлекает внимание своей оригинальностью, но и служит практическим целям, обеспечивая надежное покрытие для пешеходных и велосипедных дорожек. Такой дизайн часто используется в исторических центрах городов, где он гармонично вписывается в общий ландшафт и подчеркивает историческую ценность местности.",
+    "price_range": "850 ₽ – 1100 ₽",
+    "regular_price": null,
+    "sale_price": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "gallery": [
+      {
+        "id": 6151,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/Krakovskij-klever-e1744201631824.png",
+        "alt": "Брусчатка Краковский клевер"
+      },
+      {
+        "id": 6150,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/Krakovskij-klever-1.png",
+        "alt": "Брусчатка Краковский клевер"
+      }
+    ],
+    "featured_image": {
+      "id": 6151,
+      "url": "https://maksplit.ru/wp-content/uploads/2024/09/Krakovskij-klever-e1744201631824.png",
+      "alt": "Брусчатка Краковский клевер"
+    },
+    "category": "Брусчатка тротуарная",
+    "attributes": [
+      {
+        "name": "цвет",
+        "options": [
+          "Белый",
+          "В цвете"
+        ]
+      }
+    ],
+    "is_variable": true,
+    "sku": null,
+    "variation_count": 2
+  },
+  {
+    "id": 6135,
+    "slug": "doska",
+    "title": "Доска, брусчатка",
+    "short_description": "Цена за кв.м\r\nРазмеры, мм:\r\nТолщина, мм: 60\r\nСерый: 850 руб. кв. м\r\nВ цвете: 1100 руб. кв. м",
+    "full_description": "<h3>Купить брусчатку в Юрюзани</h3>\r\nБрусчатка «доска» — это один из популярных материалов для благоустройства территорий и создания эстетически привлекательного ландшафта. Ее уникальная форма и текстура позволяют использовать такие элементы в различных проектах, от городских тротуаров до загородных террас. Брусчатка «доска» выглядит не только современно, но и органично вписывается в природный ландшафт, что делает ее идеальным выбором для садов и парков.",
+    "price_range": "850 ₽ – 1100 ₽",
+    "regular_price": null,
+    "sale_price": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "gallery": [
+      {
+        "id": 6149,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/Doska-e1744201102236.png",
+        "alt": "Брусчатка Доска"
+      },
+      {
+        "id": 6148,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/Doska1.png",
+        "alt": "Брусчатка Доска"
+      }
+    ],
+    "featured_image": {
+      "id": 6149,
+      "url": "https://maksplit.ru/wp-content/uploads/2024/09/Doska-e1744201102236.png",
+      "alt": "Брусчатка Доска"
+    },
+    "category": "Брусчатка тротуарная",
+    "attributes": [
+      {
+        "name": "цвет",
+        "options": [
+          "Серый",
+          "В цвете"
+        ]
+      }
+    ],
+    "is_variable": true,
+    "sku": null,
+    "variation_count": 2
+  },
+  {
+    "id": 6156,
+    "slug": "staryj-gorod",
+    "title": "Старый город, брусчатка",
+    "short_description": "Размеры, мм:\r\n120х40\r\n120х90\r\n120х120\r\nТолщина, мм: 40\r\n\r\nВ 1м2: 34 шт.\r\n<table class=\"table\">\r\n<tbody>\r\n<tr>\r\n<td>Цвет</td>\r\n<td>Цена</td>\r\n</tr>\r\n<tr>\r\n<td>Серый</td>\r\n<td>850 руб.м2</td>\r\n</tr>\r\n<tr>\r\n<td>Цветной</td>\r\n<td>1100 руб.м2</td>\r\n</tr>\r\n</tbody>\r\n</table>",
+    "full_description": "<h1>Брусчатка \"Старый город\"</h1>\r\n– это не просто строительный материал, а символ истории и культуры. Ее уникальный дизайн и фактура придают любому пространству атмосферу старины и уюта. Эта брусчатка часто используется для облицовки пешеходных улиц, площадей и общественных пространств, где цель состоит не только в создании долговечной конструкции, но и в формировании привлекательной городской среды.",
+    "price_range": "850 ₽ – 1100 ₽",
+    "regular_price": null,
+    "sale_price": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "gallery": [
+      {
+        "id": 6530,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/Staryj-gorod-1.png",
+        "alt": "Staryj-gorod (1)"
+      },
+      {
+        "id": 6159,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/Staryj-gorod1.png",
+        "alt": "Брусчатка Старый город"
+      }
+    ],
+    "featured_image": {
+      "id": 6530,
+      "url": "https://maksplit.ru/wp-content/uploads/2024/09/Staryj-gorod-1.png",
+      "alt": "Staryj-gorod (1)"
+    },
+    "category": "Брусчатка тротуарная",
+    "attributes": [
+      {
+        "name": "цвет",
+        "options": [
+          "Серый",
+          "В цвете",
+          "Мрамор из бетона"
+        ]
+      }
+    ],
+    "is_variable": true,
+    "sku": null,
+    "variation_count": 3
+  },
+  {
+    "id": 6161,
+    "slug": "kamennyj-czvetok",
+    "title": "Каменный цветок, брусчатка",
+    "short_description": "Шесть камней\r\nразной фактуры\r\nРазмеры, мм:\r\n\r\n400х262х40, 252х155х40,\r\n\r\n255х167х40, 315х287х40,\r\n\r\n350х245х40, 248х220х40\r\n<table class=\"table\">\r\n<tbody>\r\n<tr>\r\n<td>Цвет</td>\r\n<td>Цена</td>\r\n</tr>\r\n<tr>\r\n<td>Серый</td>\r\n<td>850 руб.м2</td>\r\n</tr>\r\n<tr>\r\n<td>Цветной</td>\r\n<td>1100 руб.м2</td>\r\n</tr>\r\n</tbody>\r\n</table>",
+    "full_description": "<h1>Брусчатка \"Каменный цветок\"</h1>\r\n-- это гладкие камни разной формы и цвета, уложенные с тщательностью, рассказывают историю времени и труда. Каждая плитка словно пазл, встраивающийся в общую картину — покой и гармония в каждом шаге. Природа и искусство здесь соединяются, создавая нечто удивительное. Вокруг распускаются цветы, их аромат заполняет воздух, а каменная тропа ведет к загадочным уголкам, полным вдохновения.",
+    "price_range": "850 ₽ – 1100 ₽",
+    "regular_price": null,
+    "sale_price": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "gallery": [
+      {
+        "id": 6531,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/KAMENNYJ-CZVETOK1.jpg",
+        "alt": "KAMENNYJ-CZVETOK1"
+      },
+      {
+        "id": 6165,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/KAMENNYJ-CZVETOK.png",
+        "alt": "Брусчатка КАМЕННЫЙ ЦВЕТОК"
+      }
+    ],
+    "featured_image": {
+      "id": 6531,
+      "url": "https://maksplit.ru/wp-content/uploads/2024/09/KAMENNYJ-CZVETOK1.jpg",
+      "alt": "KAMENNYJ-CZVETOK1"
+    },
+    "category": "Брусчатка тротуарная",
+    "attributes": [
+      {
+        "name": "цвет",
+        "options": [
+          "Серый",
+          "В цвете",
+          "Мрамор из бетона"
+        ]
+      }
+    ],
+    "is_variable": true,
+    "sku": null,
+    "variation_count": 3
+  },
+  {
+    "id": 6166,
+    "slug": "staryj-arbat",
+    "title": "Старый Aрбат, брусчатка",
+    "short_description": "Размеры, мм:\r\n\r\n195х140х40, 210х210х40,\r\n200х140х30,200х100х30,\r\n205х100х30\r\n<table class=\"table\">\r\n<tbody>\r\n<tr>\r\n<td>Цвет</td>\r\n<td>Цена</td>\r\n</tr>\r\n<tr>\r\n<td>Серый</td>\r\n<td>850 руб.м2</td>\r\n</tr>\r\n<tr>\r\n<td>Мрамор из бетона</td>\r\n<td>1100 руб.м2</td>\r\n</tr>\r\n</tbody>\r\n</table>",
+    "full_description": "<h1>Тротуарная плитка брусчатка \"Старый Арбат\"</h1>\r\n– это утонченное решение для благоустройства urban-пространств, призванное создать атмосферу старинного города. Каждый элемент этой плитки, придающий особый шарм и аутентичность, выглядит так, будто впитали в себя дыхание истории. Выполненная из высококачественного бетона и имеющая характерную текстуру, она отлично противостоит времени и воздействию внешней среды.",
+    "price_range": "850 ₽ – 1100 ₽",
+    "regular_price": null,
+    "sale_price": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "gallery": [
+      {
+        "id": 6529,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/Staryj-arbat-2.jpg",
+        "alt": "Staryj-arbat"
+      },
+      {
+        "id": 6169,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/Staryj-arbat1.png",
+        "alt": "Брусчатка Старый арбат"
+      }
+    ],
+    "featured_image": {
+      "id": 6529,
+      "url": "https://maksplit.ru/wp-content/uploads/2024/09/Staryj-arbat-2.jpg",
+      "alt": "Staryj-arbat"
+    },
+    "category": "Брусчатка тротуарная",
+    "attributes": [
+      {
+        "name": "цвет",
+        "options": [
+          "Серый",
+          "Мрамор из бетона"
+        ]
+      }
+    ],
+    "is_variable": true,
+    "sku": null,
+    "variation_count": 2
+  },
+  {
+    "id": 6174,
+    "slug": "grecziya",
+    "title": "Греция, брусчатка",
+    "short_description": "Два камня\r\nразной фактуры\r\nРазмеры, мм:\r\n285х285\r\n100х100\r\nТолщина, мм: 40\r\n\r\nЦена: от 850 руб. кв. м",
+    "full_description": "<h1>Использование брусчатки \"Греция\"</h1>\r\nдает возможность создать эффектный и долговечный ландшафтный проект. При ее укладке можно экспериментировать с различными схемами, сочетая элементы разных цветов для достижения уникального стиля. Это делает брусчатку универсальным выбором для дорожек, площадок и террас.",
+    "price_range": "850 ₽",
+    "regular_price": "850",
+    "sale_price": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "gallery": [
+      {
+        "id": 6179,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/Grecziya-e1744200946190.png",
+        "alt": "Брусчатка Греция"
+      },
+      {
+        "id": 6178,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/Grecziya1.png",
+        "alt": "Брусчатка Греция"
+      }
+    ],
+    "featured_image": {
+      "id": 6179,
+      "url": "https://maksplit.ru/wp-content/uploads/2024/09/Grecziya-e1744200946190.png",
+      "alt": "Брусчатка Греция"
+    },
+    "category": "Брусчатка тротуарная",
+    "attributes": [],
+    "is_variable": false,
+    "sku": null,
+    "variation_count": 0
+  },
+  {
+    "id": 6185,
+    "slug": "kaliforniya-kamen",
+    "title": "Калифорния камень, тротуарная плитка",
+    "short_description": "Размеры, мм: 300х300\r\n\r\nТолщина, мм: 30\r\n\r\nКол-во в 1м2: 11 шт.\r\n<table class=\"table\">\r\n<tbody>\r\n<tr>\r\n<td>Цвет</td>\r\n<td>Цена</td>\r\n</tr>\r\n<tr>\r\n<td>Серый</td>\r\n<td>850 руб.м2</td>\r\n</tr>\r\n<tr>\r\n<td>Цветной</td>\r\n<td>1100 руб.м2</td>\r\n</tr>\r\n<tr>\r\n<td>Мрамор из бетона</td>\r\n<td>1100 руб.м2</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n&nbsp;",
+    "full_description": "<h1>Тротуарная плитка в стиле «Калифорния»</h1>\r\nактивно используется для благоустройства частных участков, и её популярность среди владельцев домов и загородных дач неуклонно растет. С помощью этой плитки можно красиво оформить пешеходные дорожки, площадки или садовые тропинки. Бетонная тротуарная плитка характерна своей неприхотливостью в уходе: она не требует сложного обслуживания, не сильно загрязняется и сохраняет свой аккуратный вид в любых условиях, независимо от места установки.\r\n<h3>Тротуарную плитку \"Калифорния\" можно купить в Челябинской области, г. Юрюзань или заказать с доставкой по России в компании \"СтройМакс\".</h3>",
+    "price_range": "850 ₽ – 1100 ₽",
+    "regular_price": null,
+    "sale_price": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "gallery": [
+      {
+        "id": 6526,
+        "url": "https://maksplit.ru/wp-content/uploads/2025/04/Kaliforniya-kamen-e1744176166958.png",
+        "alt": "Kaliforniya-kamen-e1744176166958"
+      }
+    ],
+    "featured_image": {
+      "id": 6526,
+      "url": "https://maksplit.ru/wp-content/uploads/2025/04/Kaliforniya-kamen-e1744176166958.png",
+      "alt": "Kaliforniya-kamen-e1744176166958"
+    },
+    "category": "Тротуарная плитка",
+    "attributes": [
+      {
+        "name": "цвет",
+        "options": [
+          "Мрамор из бетона",
+          "Серый",
+          "В цвете"
+        ]
+      }
+    ],
+    "is_variable": true,
+    "sku": null,
+    "variation_count": 3
+  },
+  {
+    "id": 6195,
+    "slug": "kaliforniya-derevo",
+    "title": "Калифорния дерево, тротуарная плитка",
+    "short_description": "Размеры, мм: 300х300\r\n\r\nТолщина, мм: 30\r\n\r\nКол-во в 1м2: 11 шт.\r\n<table class=\"table\">\r\n<tbody>\r\n<tr>\r\n<td>Цвет</td>\r\n<td>Цена</td>\r\n</tr>\r\n<tr>\r\n<td>Серый</td>\r\n<td>850 руб.м2</td>\r\n</tr>\r\n<tr>\r\n<td>Цветной</td>\r\n<td>1100 руб.м2</td>\r\n</tr>\r\n<tr>\r\n<td>Мрамор из бетона</td>\r\n<td>1100 руб.м2</td>\r\n</tr>\r\n</tbody>\r\n</table>",
+    "full_description": "Тротуарная плитка \"Калифорния, дерево\"\r\n\r\nКроме эстетических качеств, плитка «Калифорния» обладает высокой прочностью и долговечностью, что делает её отличным выбором для зон с интенсивным пешеходным трафиком. Бетонные компоненты обеспечивают стойкость к воздействиям внешней среды, включая осадки и перепады температур. Это позволяет гарантировать, что плитка сохранит свою привлекательность и функциональность на протяжении многих лет.\r\n\r\nТротуарную плитку \"Калифорния\" можно купить в Челябинской области, г. Юрюзань или заказать с доставкой по России в компании \"СтройМакс\".",
+    "price_range": "850 ₽ – 1100 ₽",
+    "regular_price": null,
+    "sale_price": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "gallery": [
+      {
+        "id": 6193,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/Kaliforniya-derevo-e1744172972390.png",
+        "alt": "Плитка Калифорния дерево"
+      },
+      {
+        "id": 6201,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/Kaliforniya-derevo1.png",
+        "alt": "Плитка Калифорния дерево"
+      }
+    ],
+    "featured_image": {
+      "id": 6193,
+      "url": "https://maksplit.ru/wp-content/uploads/2024/09/Kaliforniya-derevo-e1744172972390.png",
+      "alt": "Плитка Калифорния дерево"
+    },
+    "category": "Тротуарная плитка",
+    "attributes": [
+      {
+        "name": "цвет",
+        "options": [
+          "Мрамор из бетона",
+          "Серый",
+          "В цвете"
+        ]
+      }
+    ],
+    "is_variable": true,
+    "sku": null,
+    "variation_count": 3
+  },
+  {
+    "id": 6202,
+    "slug": "kaliforniya-kubik",
+    "title": "Калифорния кубик, тротуарная плитка",
+    "short_description": "Размеры, мм:300х300\r\n\r\nТолщина, мм: 30\r\n\r\nКол-во в 1м2: 11 шт.\r\n<table class=\"table\">\r\n<tbody>\r\n<tr>\r\n<td>Цвет</td>\r\n<td>Цена</td>\r\n</tr>\r\n<tr>\r\n<td>Серый</td>\r\n<td>850 руб.м2</td>\r\n</tr>\r\n<tr>\r\n<td>Цветной</td>\r\n<td>1100 руб.м2</td>\r\n</tr>\r\n<tr>\r\n<td>Мрамор из бетона</td>\r\n<td>1100 руб.м2</td>\r\n</tr>\r\n</tbody>\r\n</table>",
+    "full_description": "<h1>Плитка в стиле «Калифорния»</h1>\r\nпредлагает массу вариантов декора, которые позволят создать уникальную атмосферу на вашем участке. Ее разнообразие по оттенкам и текстурам дает возможность сочетать различные элементы, подбирая их под общий стиль ландшафта. Например, использование плитки в теплых, солнечных тонах гармонично впишется в окружение зеленых насаждений, добавляя яркие акценты и свежесть.\r\n<h3>Тротуарную плитку \"Калифорния\" можно купить в Челябинской области, г. Юрюзань или заказать с доставкой по России в компании \"СтройМакс\".</h3>",
+    "price_range": "850 ₽ – 1100 ₽",
+    "regular_price": null,
+    "sale_price": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "gallery": [
+      {
+        "id": 6192,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/Kaliforniya-kubik-e1744175883782.png",
+        "alt": "Плитка Калифорния кубик"
+      },
+      {
+        "id": 6200,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/Kaliforniya-kubik1.png",
+        "alt": "Плитка Калифорния кубик"
+      }
+    ],
+    "featured_image": {
+      "id": 6192,
+      "url": "https://maksplit.ru/wp-content/uploads/2024/09/Kaliforniya-kubik-e1744175883782.png",
+      "alt": "Плитка Калифорния кубик"
+    },
+    "category": "Тротуарная плитка",
+    "attributes": [
+      {
+        "name": "цвет",
+        "options": [
+          "Мрамор из бетона",
+          "Серый",
+          "В цвете"
+        ]
+      }
+    ],
+    "is_variable": true,
+    "sku": null,
+    "variation_count": 3
+  },
+  {
+    "id": 6206,
+    "slug": "parket",
+    "title": "Паркет, тротуарная плитка",
+    "short_description": "Размеры, мм: 300х300\r\n\r\nТолщина, мм: 30\r\n\r\nКол-во в 1м2: 11 шт.\r\n<table class=\"table\">\r\n<tbody>\r\n<tr>\r\n<td>Цвет</td>\r\n<td>Цена</td>\r\n</tr>\r\n<tr>\r\n<td>Серый</td>\r\n<td>850 руб.м2</td>\r\n</tr>\r\n<tr>\r\n<td>Цветной</td>\r\n<td>1100 руб.м2</td>\r\n</tr>\r\n<tr>\r\n<td>Мрамор из бетона</td>\r\n<td>1100 руб.м2</td>\r\n</tr>\r\n</tbody>\r\n</table>",
+    "full_description": "<h1>Тротуарная плитка \"Паркет\"</h1>\r\nэто один из наиболее популярных материалов для благоустройства пешеходных зон и территорий. Ее привлекательный внешний вид, напоминающий традиционный паркет, придает прогулочным зонам особый шарм и изящество. Благодаря разнообразию цветов и форм, такая плитка позволяет создавать уникальные дизайнерские решения, подходящие как для городских улиц, так и для частных участков.\r\n<h3>Тротуарную плитку \"Паркет\" можно купить в Челябинской области, г. Юрюзань или заказать с доставкой по России в компании \"СтройМакс\".</h3>",
+    "price_range": "850 ₽ – 1100 ₽",
+    "regular_price": null,
+    "sale_price": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "gallery": [
+      {
+        "id": 6191,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/Parket-e1744175859494.png",
+        "alt": "Плитка Паркет"
+      }
+    ],
+    "featured_image": {
+      "id": 6191,
+      "url": "https://maksplit.ru/wp-content/uploads/2024/09/Parket-e1744175859494.png",
+      "alt": "Плитка Паркет"
+    },
+    "category": "Тротуарная плитка",
+    "attributes": [
+      {
+        "name": "цвет",
+        "options": [
+          "Мрамор из бетона",
+          "Серый",
+          "В цвете"
+        ]
+      }
+    ],
+    "is_variable": true,
+    "sku": null,
+    "variation_count": 3
+  },
+  {
+    "id": 6210,
+    "slug": "tuchka",
+    "title": "Тучка, тротуарная плитка",
+    "short_description": "Размеры, мм: 300х300\r\n\r\nТолщина, мм: 30\r\n\r\nКол-во в 1м2: 11 шт.\r\n<table class=\"table\">\r\n<tbody>\r\n<tr>\r\n<td>Цвет</td>\r\n<td>Цена</td>\r\n</tr>\r\n<tr>\r\n<td>Серый</td>\r\n<td>850 руб.м2</td>\r\n</tr>\r\n<tr>\r\n<td>Цветной</td>\r\n<td>1100 руб.м2</td>\r\n</tr>\r\n<tr>\r\n<td>Мрамор из бетона</td>\r\n<td>1100 руб.м2</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n&nbsp;\r\n\r\n&nbsp;",
+    "full_description": "<h1>Тротуарная плитка «Тучка»</h1>\r\n— это современное и эстетически привлекательное решение для оформления пешеходных зон, площадок и дорожек. Благодаря своей оригинальной форме и разнообразной цветовой гамме, она позволяет создавать уникальные ландшафтные проекты, в которых гармонично сочетаются функциональность и стиль. Плитка «Тучка» легко укладывается и выдерживает нагрузки, что делает ее идеальной для использования в условиях активной эксплуатации.\r\n<h3>Тротуарную плитку \"Тучка\" можно купить в Челябинской области, г. Юрюзань или заказать с доставкой по России в компании \"СтройМакс\".</h3>",
+    "price_range": "850 ₽ – 1100 ₽",
+    "regular_price": null,
+    "sale_price": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "gallery": [
+      {
+        "id": 6532,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/tuchka.jpeg",
+        "alt": "tuchka"
+      },
+      {
+        "id": 6199,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/Tuchka1.png",
+        "alt": "Плитка Тучка"
+      }
+    ],
+    "featured_image": {
+      "id": 6532,
+      "url": "https://maksplit.ru/wp-content/uploads/2024/09/tuchka.jpeg",
+      "alt": "tuchka"
+    },
+    "category": "Тротуарная плитка",
+    "attributes": [
+      {
+        "name": "цвет",
+        "options": [
+          "В цвете",
+          "Серый",
+          "Мрамор из бетона"
+        ]
+      }
+    ],
+    "is_variable": true,
+    "sku": null,
+    "variation_count": 3
+  },
+  {
+    "id": 6214,
+    "slug": "galka",
+    "title": "Галька, тротуарная плитка",
+    "short_description": "Размеры, мм: 300х300\r\n\r\nТолщина, мм: 30\r\n\r\nКол-во в 1м2: 11 шт.\r\n<table class=\"table\">\r\n<tbody>\r\n<tr>\r\n<td>Цвет</td>\r\n<td>Цена</td>\r\n</tr>\r\n<tr>\r\n<td>Серый</td>\r\n<td>850 руб.м2</td>\r\n</tr>\r\n<tr>\r\n<td>Цветной</td>\r\n<td>1100 руб.м2</td>\r\n</tr>\r\n<tr>\r\n<td>Мрамор из бетона</td>\r\n<td>1100 руб.м2</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n&nbsp;",
+    "full_description": "<h1>Тротуарная плитка \"Галька\"</h1>\r\nявляется одним из самых востребованных материалов для благоустройства пешеходных зон. Её популярность объясняется не только эстетическим видом, имитирующим натуральные камни, но и высоким уровнем прочности и долговечности. Плитка производится из бетона с добавлением специальных красителей, что позволяет добиться разнообразия цветовых решений и текстур. Такой подход делает её идеальным выбором для создания уникальных ландшафтных дизайнов.\r\n<h3>Тротуарную плитку \"Галька\" можно купить в Челябинской области, г. Юрюзань или заказать с доставкой по России в компании \"СтройМакс\".</h3>",
+    "price_range": "850 ₽ – 1100 ₽",
+    "regular_price": null,
+    "sale_price": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "gallery": [
+      {
+        "id": 6189,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/Galka-e1744202940405.png",
+        "alt": "Плитка Галька"
+      }
+    ],
+    "featured_image": {
+      "id": 6189,
+      "url": "https://maksplit.ru/wp-content/uploads/2024/09/Galka-e1744202940405.png",
+      "alt": "Плитка Галька"
+    },
+    "category": "Тротуарная плитка",
+    "attributes": [
+      {
+        "name": "цвет",
+        "options": [
+          "Мрамор из бетона",
+          "Серый",
+          "В цвете"
+        ]
+      }
+    ],
+    "is_variable": true,
+    "sku": null,
+    "variation_count": 3
+  },
+  {
+    "id": 6219,
+    "slug": "kirpichik",
+    "title": "Кирпичик, брусчатка",
+    "short_description": "Размеры, мм:200х100\r\n\r\nТолщина, мм: 40\r\n<table class=\"table\">\r\n<tbody>\r\n<tr>\r\n<td>Цвет</td>\r\n<td>Цена</td>\r\n</tr>\r\n<tr>\r\n<td>Серый</td>\r\n<td>850 руб.м2</td>\r\n</tr>\r\n<tr>\r\n<td>Цветной</td>\r\n<td>1100 руб.м2</td>\r\n</tr>\r\n</tbody>\r\n</table>",
+    "full_description": "<h1>Брусчатка из кирпичика</h1>\r\nпозволяет не только обеспечить прочность покрытия, но и создать выразительный внешний вид. Разнообразие цветов и текстур предоставляет возможность комбинации различных элементов, создавая уникальные узоры и композиции. Это делает каждую территорию индивидуальной и неповторимой. Кроме того, такие покрытия способствуют хорошему отводу воды, предотвращая образование луж и тем самым увеличивая безопасность передвижения.\r\n<h3>Брусчатку \"Кирпичик\", тротуарную плитку  можно купить в Челябинской области, г. Юрюзань или заказать с доставкой по России в компании «СтройМакс».</h3>",
+    "price_range": "850 ₽ – 1100 ₽",
+    "regular_price": null,
+    "sale_price": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "gallery": [
+      {
+        "id": 6538,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/insMind.jpg",
+        "alt": "insMind"
+      },
+      {
+        "id": 6223,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/Kirpichik1-1.png",
+        "alt": "Брусчатка Кирпичик"
+      },
+      {
+        "id": 6224,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/Kirpichik-1.png",
+        "alt": "Брусчатка Кирпичик"
+      }
+    ],
+    "featured_image": {
+      "id": 6538,
+      "url": "https://maksplit.ru/wp-content/uploads/2024/09/insMind.jpg",
+      "alt": "insMind"
+    },
+    "category": "Брусчатка тротуарная",
+    "attributes": [
+      {
+        "name": "цвет",
+        "options": [
+          "Серый",
+          "В цвете"
+        ]
+      }
+    ],
+    "is_variable": true,
+    "sku": null,
+    "variation_count": 2
+  },
+  {
+    "id": 6225,
+    "slug": "osen",
+    "title": "Осень, брусчатка",
+    "short_description": "Комплект из камней разной формы\r\n<table class=\"table\">\r\n<tbody>\r\n<tr>\r\n<td>Кол-во</td>\r\n<td>Размер, мм</td>\r\n</tr>\r\n<tr>\r\n<td>2 камня</td>\r\n<td>340х290х35</td>\r\n</tr>\r\n<tr>\r\n<td>4 камня</td>\r\n<td>190х140х35</td>\r\n</tr>\r\n<tr>\r\n<td>4 камня</td>\r\n<td>140х140х35</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\nТолщина, мм: 35\r\n<table class=\"table\">\r\n<tbody>\r\n<tr>\r\n<td>Цвет</td>\r\n<td>Цена</td>\r\n</tr>\r\n<tr>\r\n<td>Серый</td>\r\n<td>850 руб.м2</td>\r\n</tr>\r\n<tr>\r\n<td>Цветной</td>\r\n<td>1100 руб.м2</td>\r\n</tr>\r\n</tbody>\r\n</table>",
+    "full_description": "<h1>Брусчатка \"Осень\"</h1>\r\n— это идеальное решение для тех, кто хочет добавить нотки природной красоты в свой ландшафтный дизайн. Она не только элегантно вписывается в любые внешние пространства, но и символизирует теплоту и уют осенних дней. Цветовая палитра этой брусчатки включает в себя мягкие коричневые и золотистые оттенки, которые напоминают о падающих листьях и изменениях в природе. Это делает ее особенно привлекательной для создания гармоничного и спокойного облика вашего приусадебного участка.",
+    "price_range": "850 ₽ – 1100 ₽",
+    "regular_price": null,
+    "sale_price": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "gallery": [
+      {
+        "id": 6222,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/Osen-1-e1744175775735.png",
+        "alt": "Брусчатка Осень"
+      }
+    ],
+    "featured_image": {
+      "id": 6222,
+      "url": "https://maksplit.ru/wp-content/uploads/2024/09/Osen-1-e1744175775735.png",
+      "alt": "Брусчатка Осень"
+    },
+    "category": "Брусчатка тротуарная",
+    "attributes": [
+      {
+        "name": "цвет",
+        "options": [
+          "Серый",
+          "В цвете"
+        ]
+      }
+    ],
+    "is_variable": true,
+    "sku": null,
+    "variation_count": 2
+  },
+  {
+    "id": 6228,
+    "slug": "eko-parkovka",
+    "title": "Эко-парковка",
+    "short_description": "Размеры, мм:\r\n600х400\r\nТолщина, мм: 100\r\n\r\nЦена: 1700 руб. кв. м",
+    "full_description": "Эко-парковка — это не просто место для стоянки автомобилей, а концепция, направленная на гармонизацию городской инфраструктуры с природой. Она представляет собой зону, где автомобилисты могут оставлять свои транспортные средства, минимизируя негативное воздействие на окружающую среду. Эко-парковки часто располагаются вблизи общественного транспорта, что способствует сокращению количества машин на улицах и снижению уровня загрязнения воздуха.",
+    "price_range": "1700 ₽",
+    "regular_price": "1700",
+    "sale_price": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "gallery": [
+      {
+        "id": 6233,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/Eko-parkovka-e1744201893632.png",
+        "alt": "Эко-парковка"
+      },
+      {
+        "id": 6232,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/Eko-parkovka1.png",
+        "alt": "Эко-парковка"
+      }
+    ],
+    "featured_image": {
+      "id": 6233,
+      "url": "https://maksplit.ru/wp-content/uploads/2024/09/Eko-parkovka-e1744201893632.png",
+      "alt": "Эко-парковка"
+    },
+    "category": "Бордюры, водостоки",
+    "attributes": [],
+    "is_variable": false,
+    "sku": null,
+    "variation_count": 0
+  },
+  {
+    "id": 6234,
+    "slug": "bordyury",
+    "title": "Бордюры",
+    "short_description": "Размеры, мм:\r\n500х200х60 – 150 руб. кв. м\r\n1000х200х70 – 300 руб. кв. м\r\n500х200х40 – 120 руб. кв. м",
+    "full_description": "",
+    "price_range": "120 ₽ – 300 ₽",
+    "regular_price": null,
+    "sale_price": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "gallery": [
+      {
+        "id": 6231,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/Bordyury-e1744204024229.png",
+        "alt": "Бордюры"
+      }
+    ],
+    "featured_image": {
+      "id": 6231,
+      "url": "https://maksplit.ru/wp-content/uploads/2024/09/Bordyury-e1744204024229.png",
+      "alt": "Бордюры"
+    },
+    "category": "Бордюры, водостоки",
+    "attributes": [
+      {
+        "name": "размеры",
+        "options": [
+          "500х200х60",
+          "1000х200х70",
+          "500х200х40"
+        ]
+      }
+    ],
+    "is_variable": true,
+    "sku": null,
+    "variation_count": 3
+  },
+  {
+    "id": 6238,
+    "slug": "vodostoki",
+    "title": "Водостоки",
+    "short_description": "Размеры, мм:\r\n500х150х50 – 200 руб. кв. м\r\n300х150х60 – 150 руб. кв. м\r\n250х150х80 – 150 руб. кв. м",
+    "full_description": "",
+    "price_range": "150 ₽ – 200 ₽",
+    "regular_price": null,
+    "sale_price": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "gallery": [
+      {
+        "id": 6524,
+        "url": "https://maksplit.ru/wp-content/uploads/2025/04/0f760f71-d47e-4c4e-af9f-439dc38d655b.png",
+        "alt": "0f760f71-d47e-4c4e-af9f-439dc38d655b"
+      }
+    ],
+    "featured_image": {
+      "id": 6524,
+      "url": "https://maksplit.ru/wp-content/uploads/2025/04/0f760f71-d47e-4c4e-af9f-439dc38d655b.png",
+      "alt": "0f760f71-d47e-4c4e-af9f-439dc38d655b"
+    },
+    "category": "Бордюры, водостоки",
+    "attributes": [
+      {
+        "name": "размер",
+        "options": [
+          "500х150х50",
+          "300х150х60",
+          "250х150х80"
+        ]
+      }
+    ],
+    "is_variable": true,
+    "sku": null,
+    "variation_count": 3
+  },
+  {
+    "id": 6435,
+    "slug": "%d1%80%d0%be%d0%bc%d0%b1-%d1%83%d0%b7%d0%be%d1%80%d0%bd%d1%8b%d0%b9-%d1%82%d1%80%d0%be%d1%82%d1%83%d0%b0%d1%80%d0%bd%d0%b0%d1%8f-%d0%bf%d0%bb%d0%b8%d1%82%d0%ba%d0%b0",
+    "title": "Ромб узорный, тротуарная плитка",
+    "short_description": "<strong>Размер, мм:</strong> 320x190\r\n\r\nТолщина, мм: 40\r\n\r\nКол-во 1м2: 28 шт.\r\n<table class=\"table\">\r\n<tbody>\r\n<tr>\r\n<td>Цвет</td>\r\n<td>Цена</td>\r\n</tr>\r\n<tr>\r\n<td>Серый</td>\r\n<td>850 руб.м2</td>\r\n</tr>\r\n<tr>\r\n<td>Цветной</td>\r\n<td>1100 руб.м2</td>\r\n</tr>\r\n<tr>\r\n<td>Мрамор из бетона</td>\r\n<td>1100 руб.м2</td>\r\n</tr>\r\n</tbody>\r\n</table>",
+    "full_description": "<h1>Ромб узорный, тротуарная плитка</h1>\r\n— это не просто элемент благоустройства, а настоящий шедевр, способный преобразить любое пространство. Каждый ромб, выложенный с идеальной точностью, создает гармонию и элегантность, словно танец геометрических фигур на земле. Тротуарная плитка, выполненная в таком дизайне, великолепно дополняет парки, улицы и пешеходные зоны, превращая их в произведения искусства на открытом воздухе.\r\n<h3>Тротуарную плитку «Ромб» можно купить в Челябинской области, г. Юрюзань или заказать с доставкой по России в компании «СтройМакс».</h3>",
+    "price_range": "850 ₽ – 1100 ₽",
+    "regular_price": null,
+    "sale_price": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "gallery": [
+      {
+        "id": 6519,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/a2f50c43-aaaf-42ab-8048-54b92f71e4c5.png",
+        "alt": "a2f50c43-aaaf-42ab-8048-54b92f71e4c5"
+      },
+      {
+        "id": 6438,
+        "url": "https://maksplit.ru/wp-content/uploads/2024/09/plitka-romb1.jpg",
+        "alt": "plitka romb1"
+      }
+    ],
+    "featured_image": {
+      "id": 6519,
+      "url": "https://maksplit.ru/wp-content/uploads/2024/09/a2f50c43-aaaf-42ab-8048-54b92f71e4c5.png",
+      "alt": "a2f50c43-aaaf-42ab-8048-54b92f71e4c5"
+    },
+    "category": "Тротуарная плитка",
+    "attributes": [
+      {
+        "name": "цвет",
+        "options": [
+          "Серый",
+          "В цвете",
+          "Мрамор из бетона"
+        ]
+      }
+    ],
+    "is_variable": true,
+    "sku": null,
+    "variation_count": 3
+  },
+  {
+    "id": 6542,
+    "slug": "%d0%bf%d0%b0%d0%bc%d1%8f%d1%82%d0%bd%d0%b8%d0%ba-%d0%b8%d0%b7-%d0%b1%d0%b5%d1%82%d0%be%d0%bd%d0%b0-%d0%bc%d1%83%d1%81%d1%83%d0%bb%d1%8c%d0%bc%d0%b0%d0%bd%d1%81%d0%ba%d0%b8%d0%b9",
+    "title": "Памятник из бетона Мусульманский",
+    "short_description": "",
+    "full_description": "<strong>Памятник из кавларобетона \"Мусульманский\"</strong>\r\n\r\nКлассический памятник из кавларобетона \"Мусульманский\" — это идеальное сочетание прочности, долговечности и элегантного дизайна.\r\n\r\n<hr />\r\n\r\n<h3><strong>Особенности памятника:</strong></h3>\r\n<ul>\r\n \t<li><strong>Материал: </strong>Изготовлен из инновационного кавларобетона, который отличается повышенной прочностью и устойчивостью к внешним воздействиям. Благодаря армирующим волокнам материал не подвержен растрескиванию и сохраняет свой первоначальный вид на протяжении десятилетий.</li>\r\n \t<li><strong>Дизайн: </strong>Модель украшена традиционными элементами, такими как полумесяц.</li>\r\n \t<li><strong>Размеры: </strong>Удобная и универсальная конструкция позволяет разместить памятник на любом участке.</li>\r\n</ul>\r\n<div class=\"my-2\"></div>\r\n\r\n<hr />\r\n\r\n<h3><strong>Преимущества кавларобетона:</strong></h3>\r\n<ol start=\"1\">\r\n \t<li><strong>Прочность: </strong>Кавларобетон устойчив к механическим нагрузкам, перепадам температур и воздействию влаги.</li>\r\n \t<li><strong>Долговечность: </strong>Материал не теряет своих свойств даже при длительной эксплуатации.</li>\r\n \t<li><strong>Эстетика: </strong>Гладкая поверхность и четкие линии делают памятник визуально привлекательным.</li>\r\n \t<li><strong>Экологичность: </strong>В производстве используются безопасные компоненты, что делает материал экологически чистым.</li>\r\n</ol>\r\n<div class=\"my-2\"></div>\r\n\r\n<hr />\r\n\r\n<h3><strong>Комплектация:</strong></h3>\r\n<ul>\r\n \t<li>Основной монумент.</li>\r\n</ul>",
+    "price_range": "1 ₽",
+    "regular_price": "1",
+    "sale_price": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "gallery": [
+      {
+        "id": 6540,
+        "url": "https://maksplit.ru/wp-content/uploads/2025/04/Памятник1.jpg",
+        "alt": "Памятник1"
+      }
+    ],
+    "featured_image": {
+      "id": 6540,
+      "url": "https://maksplit.ru/wp-content/uploads/2025/04/Памятник1.jpg",
+      "alt": "Памятник1"
+    },
+    "category": "Памятники из бетона",
+    "attributes": [],
+    "is_variable": false,
+    "sku": null,
+    "variation_count": 0
+  },
+  {
+    "id": 6549,
+    "slug": "%d0%bf%d0%b0%d0%bc%d1%8f%d1%82%d0%bd%d0%b8%d0%ba-%d0%b8%d0%b7-%d0%b1%d0%b5%d1%82%d0%be%d0%bd%d0%b0-%d1%81-%d1%86%d0%b2%d0%b5%d1%82%d0%bd%d0%b8%d0%ba%d0%be%d0%bc",
+    "title": "Памятник из бетона с цветником",
+    "short_description": "",
+    "full_description": "<div class=\"flex-shrink-0 mr-2.5 svelte-kicyhr\"></div>\r\n<div class=\"w-0 flex-auto\">\r\n<div class=\"mb-0.5 line-clamp-1 contents self-center font-semibold\"><strong data-spm-anchor-id=\"a2ty_o01.29997173.0.i33.170ec921GVMqrl\">Памятник из кавларобетона с цветником</strong></div>\r\n<div class=\"mt-[-4px]\">\r\n<div class=\"chat-assistant markdown-prose  w-full min-w-full svelte-kicyhr\" dir=\"auto\">\r\n<div class=\" \">\r\n<div id=\"response-content-container\" class=\"relative flex w-full max-w-full  flex-col\">\r\n<p data-spm-anchor-id=\"a2ty_o01.29997173.0.i34.170ec921GVMqrl\">Создайте особую атмосферу умиротворения и памяти с уникальным <strong>памятником из кавларобетона с цветником </strong>. Это идеальное решение для тех, кто стремится увековечить память о близких, сочетая в себе прочность современных материалов и эстетику природы.</p>\r\n\r\n<div class=\"my-2\"></div>\r\n\r\n<hr />\r\n\r\n<h3><strong>Особенности памятника:</strong></h3>\r\n<strong>Инновационный материал:</strong>\r\nПамятник изготовлен из <strong>кавларобетона </strong>, который отличается исключительной прочностью и долговечностью. Благодаря армирующим волокнам (например, кевлару), материал устойчив к механическим нагрузкам, перепадам температур и воздействию влаги. Это гарантирует, что памятник сохранит свой первоначальный вид на протяжении десятилетий.\r\n\r\n<strong>Цветник как элемент дизайна:</strong>\r\nВ нижней части памятника предусмотрен встроенный цветник, который можно украсить живыми или искусственными цветами. Это создает гармоничное сочетание строгой геометрии памятника и нежной красоты растений, символизируя вечный цикл жизни.\r\n<div class=\"my-2\"></div>\r\n\r\n<hr />\r\n\r\n<h3><strong>Преимущества кавларобетона:</strong></h3>\r\n<ul>\r\n \t<li><strong>Прочность: </strong>Материал не трескается и не деформируется даже при экстремальных условиях.</li>\r\n \t<li><strong>Экологичность: </strong>Безопасен для окружающей среды, так как производится из экологически чистых компонентов.</li>\r\n \t<li><strong>Эстетика: </strong>Гладкая поверхность и четкие линии делают памятник визуально привлекательным.</li>\r\n \t<li><strong>Уход: </strong>Не требует сложного обслуживания. Достаточно периодической очистки от пыли и грязи.</li>\r\n</ul>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>",
+    "price_range": "1 ₽",
+    "regular_price": "1",
+    "sale_price": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "gallery": [
+      {
+        "id": 6539,
+        "url": "https://maksplit.ru/wp-content/uploads/2025/04/Памятник-с-цветником.jpg",
+        "alt": "Памятник с цветником"
+      }
+    ],
+    "featured_image": {
+      "id": 6539,
+      "url": "https://maksplit.ru/wp-content/uploads/2025/04/Памятник-с-цветником.jpg",
+      "alt": "Памятник с цветником"
+    },
+    "category": "Памятники из бетона",
+    "attributes": [],
+    "is_variable": false,
+    "sku": null,
+    "variation_count": 0
+  },
+  {
+    "id": 6552,
+    "slug": "%d0%bf%d0%b0%d0%bc%d1%8f%d1%82%d0%bd%d0%b8%d0%ba-%d0%b8%d0%b7-%d0%b1%d0%b5%d1%82%d0%be%d0%bd%d0%b0-%d0%ba%d1%80%d0%b5%d1%81%d1%82-%d1%81-%d1%86%d0%b2%d0%b5%d1%82%d0%bd%d0%b8%d0%ba%d0%be%d0%bc",
+    "title": "Памятник из бетона Крест с цветником",
+    "short_description": "",
+    "full_description": "<strong>Памятник из кавларобетона \"Крест с цветником\"</strong>\r\n\r\nСозданный с особым вниманием к деталям и уважением к традициям, памятник из кавларобетона \"Крест с цветником\" представляет собой вневременной символ памяти и благочестия. Это не просто изделие — это дань уважения тем, кто навсегда останется в наших сердцах.\r\n<div class=\"my-2\"></div>\r\n\r\n<hr />\r\n\r\n<h3><strong>Особенности изделия:</strong></h3>\r\n<strong>Прочный материал:</strong>\r\nИзготовлен из высококачественного кавларобетона, который отличается исключительной прочностью, устойчивостью к механическим нагрузкам, перепадам температур и воздействию влаги. В основе материала лежат армирующие волокна, обеспечивающие долговечность конструкции на протяжении десятилетий.\r\n\r\n<strong>Элегантный дизайн:</strong>\r\nСтрогий крест, выполненный в классическом стиле, подчеркивает значимость момента. В нижней части памятника предусмотрен встроенный цветник, который позволяет создать гармоничное сочетание строгой геометрии и живой природы.\r\n\r\n<hr />\r\n\r\n<h3><strong>Преимущества кавларобетона:</strong></h3>\r\n<ul>\r\n \t<li><strong>Надежность: </strong>Материал не трескается, не деформируется и сохраняет свой первоначальный вид даже в самых суровых условиях.</li>\r\n \t<li><strong>Эстетика: </strong>Гладкая поверхность и четкие линии делают памятник визуально привлекательным.</li>\r\n \t<li><strong>Устойчивость: </strong>Устойчив к воздействию внешних факторов, включая влагу, морозы и ультрафиолет.</li>\r\n \t<li><strong>Минимальный уход: </strong>Не требует сложного обслуживания, достаточно периодической очистки от пыли и грязи.</li>\r\n</ul>",
+    "price_range": "1 ₽",
+    "regular_price": "1",
+    "sale_price": null,
+    "stock_status": "instock",
+    "stock_quantity": null,
+    "gallery": [
+      {
+        "id": 6541,
+        "url": "https://maksplit.ru/wp-content/uploads/2025/04/Цветник-с-крестом.jpg",
+        "alt": "Цветник с крестом"
+      }
+    ],
+    "featured_image": {
+      "id": 6541,
+      "url": "https://maksplit.ru/wp-content/uploads/2025/04/Цветник-с-крестом.jpg",
+      "alt": "Цветник с крестом"
+    },
+    "category": "Памятники из бетона",
+    "attributes": [],
+    "is_variable": false,
+    "sku": null,
+    "variation_count": 0
+  }
+]

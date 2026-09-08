@@ -1,0 +1,54 @@
+<!-- ============================================================ -->
+<!-- PRODUCT CARD — Concrete Steel + Steel Blue #3B5F8A -->
+<!-- object-contain (ТРЕБОВАНИЕ владельца: не обрезать фото). -->
+<!-- Hover: Steel Blue border + --shadow-brand. -->
+<!-- Layered depth: page bg (L0) → card surface (L2) → photo bg (L1 inset) → accent detail (L4) -->
+<!-- ============================================================ -->
+<article class="product-card group overflow-hidden rounded-md border-2 border-[var(--color-border)] bg-[var(--color-surface)] transition-all duration-300 hover:border-[var(--color-border-accent-hover)]" style="transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);" role="article">
+  <!-- Photo container: object-contain, aspect-square, bg-page inset -->
+  <div class="flex aspect-square items-center justify-center bg-[var(--color-bg-page)] p-4">
+    <img
+      src=""
+      alt=""
+      class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+      width="600"
+      height="600"
+      loading="lazy"
+    />
+  </div>
+
+  <!-- Card content -->
+  <div class="flex flex-col gap-3 p-5">
+    <!-- Category badge -->
+    <span class="font-display text-[11px] font-semibold tracking-wider uppercase text-[var(--color-text-muted)]">Категория</span>
+
+    <!-- Product name -->
+    <h3 class="font-display text-lg font-semibold tracking-tight text-[var(--color-text-primary)]">Название товара</h3>
+
+    <!-- Short description -->
+    <p class="text-sm leading-relaxed text-[var(--color-text-secondary)] line-clamp-2">
+      Краткое описание товара. Размеры, характеристики, особенности кевларбетона.
+    </p>
+
+    <!-- Price + CTA row -->
+    <div class="mt-2 flex items-end justify-between">
+      <div>
+        <span class="font-mono text-xl font-bold tabular-nums text-[var(--color-text-primary)]">850 ₽</span>
+        <span class="ml-1 text-xs text-[var(--color-text-muted)]">/м²</span>
+      </div>
+      <a href="#" class="inline-flex items-center gap-1.5 rounded-md bg-[var(--color-primary)] px-4 py-2 font-body text-sm font-semibold text-white transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:shadow-[var(--shadow-brand)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-2 focus:ring-offset-[var(--color-surface)]">
+        Подробнее
+        <svg class="product-card__arrow h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" style="transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</article>
+
+<style>
+  .product-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card-hover);
+  }
+</style>
