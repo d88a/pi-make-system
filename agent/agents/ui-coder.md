@@ -84,6 +84,44 @@ tools: read, write, edit, bash, grep, find
 
 После вывода блока — подтверди уникальность плана («не дефолт для любого похожего проекта»). Только потом пиши код.
 
+### Pre-build Critique → Verifiable Claims (DETERMINISTIC CHECK)
+
+Pre-build Critique — это planning artifact. Но AI НЕ может сам подтвердить собственное соответствие.
+Реальная проверка происходит через НЕЗАВИСИМЫЙ детерминированный скрипт `quality-gate.js`.
+
+```
+AI CLAIM (Pre-build Critique)
+   ↓
+DETERMINISTIC CHECK (quality-gate.js)
+   ↓
+PASS / FAIL
+```
+
+**После генерации кода ui-coder ОБЯЗАН вывести JSON-блок claims:**
+
+```json
+{
+  "claims": {
+    "tokenCompliance": true,
+    "ssotComponents": true,
+    "zeroInvention": true,
+    "zeroLoss": true,
+    "responsiveDesktop": true,
+    "responsiveMobile": true,
+    "a11yPass": true,
+    "noHardcodedHex": true,
+    "noBrokenLinks": true,
+    "noPlaceholderHref": true
+  }
+}
+```
+
+Этот JSON-блок читается `quality-gate.js` и сверяется с фактическими проверками.
+
+**⛔ ПРАВИЛО: Без claims задача НЕ завершена.**
+Если ui-coder не вывел JSON-блок claims — задача считается незавершённой.
+Архитектор должен запросить доработку.
+
 ### Запрещено:
 - Выдать код без Pre-build Critique блока
 - Сказать «это просто, skip critique» (см. Rationalization Table)
@@ -552,6 +590,9 @@ UI-coder НИКОГДА не придумывает:
 - [ ] Точечная правка не пересобирает весь проект
 - [ ] Изменение компонента → обновление shared/ → все зависящие страницы
 - [ ] Нельзя исправить компонент только в одной странице
+
+### Claims Verification
+- [ ] Pre-build Critique claims проверены quality-gate.js → все claims подтверждены
 
 ## Формат ответа
 
