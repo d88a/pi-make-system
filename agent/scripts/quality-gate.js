@@ -548,7 +548,30 @@ function parseDiffSummary(stdout) {
   return lines.length > 0 ? lines[lines.length - 1] : 'unknown';
 }
 
-// ── Stage 8: Designer review ────────────────────────────────────────────────
+// ── Stage 8: Anti-template QA ──────────────────────────────────────────────
+
+function stageAntiTemplate(projectDir, skipAntiTemplate) {
+  if (skipAntiTemplate) {
+    return { name: 'Anti-template', status: 'SKIP', details: 'Skipped via --skip-anti-template', violations: [] };
+  }
+  const htmlFiles = findHtmlFiles(projectDir);
+  if (htmlFiles.length === 0) {
+    return { name: 'Anti-template', status: 'SKIP', details: 'No HTML files found', violations: [] };
+  }
+  const result = runScript('anti-template.js', [projectDir, '--threshold', '50', '--json']);
+  if (result.code === -1) {
+    return { name: 'Anti-template', status: 'ERROR', details: 'anti-template.js not found', violations: [] };
+  }
+  try {
+    const data = JSON.parse(result.stdout);
+    if (data.passed) {
+      return { name: 'Anti-template', status: 'PASS', details: 'Uniqueness ' + data.score + '% (threshold: 50%)', violations: [] };
+    }
+    return { name: 'Anti-template', status: 'FAIL', details: 'Uniqueness ' + data.score + '% < threshold 50%', violations: (data.signals||[]).filter(s=>s.detected).map(d=>({file:'design',line:0,selector:'',problem:d.desc,fix:'Добавить визуальные мотивы, сменить hero composition, не-Inter шрифты'})) };
+  } catch (_) { return { name: 'Anti-template', status: 'ERROR', details: 'Invalid output', violations: [] }; }
+}
+
+// ── Stage 9: Designer review ────────────────────────────────────────────────
 
 function stageDesigner(projectDir, skipDesigner) {
   if (skipDesigner) {
@@ -628,7 +651,7 @@ function parseViolationsFromOutput(output) {
  * @returns {Promise<{ project: string, stages: StageResult[], final: 'PASS'|'FAIL' }>}
  */
 async function runQualityGate(projectDir, options = {}) {
-  const { skipDesigner = false, skipA11y = false, skipVisual = false } = options;
+  const { skipDesigner = false, skipA11y = false, skipVisual = false, skipAntiTemplate = false } = options;
 
   const stages = [];
 
@@ -653,10 +676,13 @@ async function runQualityGate(projectDir, options = {}) {
   // 7. Visual regression
   stages.push(stageVisual(projectDir, skipVisual));
 
-  // 8. Designer
+  // 8. Anti-template QA
+  stages.push(stageAntiTemplate(projectDir, skipAntiTemplate));
+
+  // 9. Designer
   stages.push(stageDesigner(projectDir, skipDesigner));
 
-  // 9. Final gate
+  // 10. Final gate
   const blockingStages = stages.filter((s) => s.status === 'FAIL');
   const final = blockingStages.length > 0 ? 'FAIL' : 'PASS';
 
@@ -753,6 +779,7 @@ Arguments:
   --skip-designer     Skip the designer review stage.
   --skip-a11y         Skip the a11y accessibility check.
   --skip-visual       Skip the visual regression check.
+  --skip-anti-template  Skip the anti-template uniqueness check.
   --json              Output report as JSON instead of text.
   --output <file>     Write report to a file.
   --help, -h          Show this help.
@@ -777,6 +804,7 @@ if (require.main === module) {
     const skipDesigner = args.includes('--skip-designer');
     const skipA11y = args.includes('--skip-a11y');
     const skipVisual = args.includes('--skip-visual');
+    const skipAntiTemplate = args.includes('--skip-anti-template');
     const jsonMode = args.includes('--json');
 
     const outputIdx = args.indexOf('--output');
@@ -787,7 +815,7 @@ if (require.main === module) {
       process.exit(1);
     }
 
-    const { project, stages, final } = await runQualityGate(projectDir, { skipDesigner, skipA11y, skipVisual });
+    const { project, stages, final } = await runQualityGate(projectDir, { skipDesigner, skipA11y, skipVisual, skipAntiTemplate });
 
     if (jsonMode) {
       const report = buildJsonReport(stages, final, project);
@@ -810,4 +838,4 @@ if (require.main === module) {
   })();
 }
 
-module.exports = { runQualityGate, findHtmlFiles, findScreenshots, stageBuild, stageProjectModel, stageTokens, stageLinks, stageHtml, stageA11y, stageVisual, stageDesigner };
+module.exports = { runQualityGate, findHtmlFiles, findScreenshots, stageBuild, stageProjectModel, stageTokens, stageLinks, stageHtml, stageA11y, stageVisual, stageAntiTemplate, stageDesigner };
