@@ -1,60 +1,143 @@
-<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>СтройКомфорт — строительство домов под ключ</title><script src="https://cdn.tailwindcss.com"></script><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"><style>
-:root{--bg:#FAF8F5;--text:#1C1917;--muted:#78716C;--accent:#2D4A3E}
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>СтройКомфорт — строительство домов под ключ</title><script src="https://cdn.tailwindcss.com"></script><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet"><style>
+:root{--bg:#F7F4EF;--dark:#1C1917;--text:#2A2724;--muted:#7A746E;--accent:#2D4A3E;--gold:#B8A16A}
+*{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text)}
-.display{font-family:'Playfair Display',serif}
+.dsp{font-family:'Playfair Display',serif}
 .num{font-feature-settings:"tnum";font-variant-numeric:tabular-nums}
+.fade-up{animation:fadeUp .8s ease-out both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.btn{transition:transform .2s ease,background .2s ease,box-shadow .2s ease}
+.btn:hover{transform:translateY(-2px)}
+.rule{height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
 </style></head><body>
 
-<nav class="flex items-center justify-between max-w-6xl mx-auto px-6 h-16 text-sm text-[var(--muted)]">
-  <span class="text-[var(--text)] font-semibold tracking-tight">СтройКомфорт</span>
-  <div class="flex gap-6"><a href="#" class="hover:text-[var(--text)]">Проекты</a><a href="#" class="hover:text-[var(--text)]">О нас</a><a href="#" class="hover:text-[var(--text)]">Контакты</a></div>
+<!-- ===== NAV ===== -->
+<nav class="flex items-center justify-between max-w-6xl mx-auto px-6 h-20">
+  <span class="dsp text-lg font-semibold tracking-wide">СтройКомфорт</span>
+  <div class="flex gap-8 text-sm font-medium text-[var(--muted)]">
+    <a href="#why" class="hover:text-[var(--text)] transition-colors">Почему мы</a>
+    <a href="#projects" class="hover:text-[var(--text)] transition-colors">Проекты</a>
+    <a href="#contact" class="hover:text-[var(--text)] transition-colors">Контакты</a>
+  </div>
+  <a href="#contact" class="text-sm font-medium text-[var(--accent)] border-b border-[var(--accent)] pb-0.5">+7 351 200-40-10</a>
 </nav>
 
-<!-- Фото дома на весь экран -->
-<section class="min-h-[85vh] flex items-end pb-20 px-6 relative" style="background:linear-gradient(180deg,transparent 60%,var(--bg) 100%),#D5D0C8">
-  <div class="max-w-3xl">
-    <p class="text-xs tracking-[0.2em] text-[var(--muted)] uppercase mb-4">Строительство домов · 15 лет</p>
-    <h1 class="display text-5xl md:text-6xl font-bold leading-[1.05] mb-4">Строим дома<br>под ключ за <span style="color:var(--accent)">8 месяцев</span></h1>
-    <p class="text-[var(--muted)] text-lg max-w-md mb-8">Без скрытых платежей. Без субподрядчиков. Собственная бригада.</p>
-    <button class="bg-[var(--accent)] text-white px-8 py-3 font-medium hover:bg-[#1F3A30] transition-colors">Бесплатный расчёт</button>
+<!-- ===== HERO: полноэкранное фото дома + overlay ===== -->
+<section class="relative min-h-[92vh] flex items-end">
+  <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80" alt="Готовый дом" class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(28,25,23,0.15) 0%,rgba(28,25,23,0.55) 70%,rgba(28,25,23,0.85) 100%)"></div>
+  <div class="relative z-10 max-w-6xl mx-auto px-6 pb-16 w-full fade-up">
+    <p class="text-xs tracking-[0.3em] text-[var(--gold)] uppercase mb-5 font-medium">Построено · 2024 · Челябинская область</p>
+    <h1 class="dsp text-white text-5xl md:text-7xl font-semibold leading-[1.02] max-w-3xl mb-6">Дом, в котором<br>хочется <span class="text-[var(--gold)] italic">жить</span></h1>
+    <p class="text-white/80 text-lg max-w-md mb-10 font-light">Строим под ключ за 8 месяцев. Фиксируем цену до начала работ — без скрытых платежей.</p>
+    <div class="flex gap-4 items-center">
+      <a href="#contact" class="btn bg-white text-[var(--dark)] px-8 py-4 font-medium text-sm tracking-wide">Рассчитать стоимость</a>
+      <a href="#projects" class="btn text-white border border-white/40 px-8 py-4 font-medium text-sm tracking-wide hover:bg-white/10">Смотреть дома</a>
+    </div>
   </div>
 </section>
 
-<!-- Цифры опыта -->
-<section class="py-12 px-6 max-w-5xl mx-auto">
-  <div class="grid grid-cols-3 gap-8 border-t border-b border-stone-200 py-10">
-    <div><span class="num text-4xl font-bold text-[var(--accent)]">156</span><p class="text-sm text-[var(--muted)] mt-1">построенных домов</p></div>
-    <div><span class="num text-4xl font-bold text-[var(--accent)]">15</span><p class="text-sm text-[var(--muted)] mt-1">лет на рынке</p></div>
-    <div><span class="num text-4xl font-bold text-[var(--accent)]">0</span><p class="text-sm text-[var(--muted)] mt-1">просрочек по срокам</p></div>
+<!-- ===== ЦИФРЫ: воздух + крупные цифры ===== -->
+<section class="py-24 px-6 max-w-5xl mx-auto" id="why">
+  <div class="rule mb-16"></div>
+  <p class="dsp text-sm text-[var(--muted)] italic mb-12">За 15 лет мы построили 156 домов. И ни одного одинакового.</p>
+  <div class="grid grid-cols-3 gap-8">
+    <div><span class="num dsp text-6xl font-semibold text-[var(--accent)]">156</span><p class="text-sm text-[var(--muted)] mt-3 font-light">построенных домов</p></div>
+    <div><span class="num dsp text-6xl font-semibold text-[var(--accent)]">8</span><p class="text-sm text-[var(--muted)] mt-3 font-light">месяцев средний срок</p></div>
+    <div><span class="num dsp text-6xl font-semibold text-[var(--accent)]">0</span><p class="text-sm text-[var(--muted)] mt-3 font-light">скрытых платежей</p></div>
   </div>
 </section>
 
-<!-- Как работаем -->
-<section class="py-16 px-6 max-w-5xl mx-auto">
-  <h2 class="display text-3xl font-bold mb-10">Как мы <span style="color:var(--accent)">работаем</span></h2>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-    <div><span class="num text-4xl text-stone-300 font-bold">01</span><h3 class="font-semibold mt-3 mb-2">Проект и смета</h3><p class="text-[var(--muted)] text-sm">Фиксируем стоимость до начала работ. Без сюрпризов.</p></div>
-    <div><span class="num text-4xl text-stone-300 font-bold">02</span><h3 class="font-semibold mt-3 mb-2">Строительство</h3><p class="text-[var(--muted)] text-sm">8 месяцев от фундамента до чистовой. Еженедельный фотоотчёт.</p></div>
-    <div><span class="num text-4xl text-stone-300 font-bold">03</span><h3 class="font-semibold mt-3 mb-2">Сдача объекта</h3><p class="text-[var(--muted)] text-sm">Ключи в руки. Гарантия 5 лет на конструкции.</p></div>
+<!-- ===== ПРОЦЕСС: три этапа с разделителем ===== -->
+<section class="py-20 px-6 max-w-6xl mx-auto">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-0">
+    <div class="md:border-r border-[var(--gold)]/20 md:pr-10 py-4">
+      <span class="num text-xs text-[var(--gold)] tracking-widest">01</span>
+      <h3 class="dsp text-2xl font-semibold mt-4 mb-3">Проект и смета</h3>
+      <p class="text-[var(--muted)] text-sm font-light leading-relaxed">Фиксируем стоимость до начала работ. Прозрачная смета — вы видите каждую статью.</p>
+    </div>
+    <div class="md:border-r border-[var(--gold)]/20 md:px-10 py-4">
+      <span class="num text-xs text-[var(--gold)] tracking-widest">02</span>
+      <h3 class="dsp text-2xl font-semibold mt-4 mb-3">Строительство</h3>
+      <p class="text-[var(--muted)] text-sm font-light leading-relaxed">Собственная бригада без субподряда. Еженедельный фотоотчёт в мессенджер.</p>
+    </div>
+    <div class="md:pl-10 py-4">
+      <span class="num text-xs text-[var(--gold)] tracking-widest">03</span>
+      <h3 class="dsp text-2xl font-semibold mt-4 mb-3">Передача ключей</h3>
+      <p class="text-[var(--muted)] text-sm font-light leading-relaxed">Гарантия 5 лет на конструкции. Остаёмся на связи после сдачи.</p>
+    </div>
   </div>
 </section>
 
-<!-- Проекты -->
-<section class="py-12 px-6 max-w-5xl mx-auto">
-  <h2 class="display text-3xl font-bold mb-8">Наши <span style="color:var(--accent)">проекты</span></h2>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-    <div><div class="bg-stone-200 h-56 mb-3 flex items-end p-4"><span class="num text-xs text-[var(--muted)]">001 · 2024</span></div><p class="font-semibold text-sm">Коттедж «Лесной»</p><p class="text-[var(--muted)] text-xs mt-1">480 м² · 7 месяцев</p></div>
-    <div><div class="bg-stone-300 h-56 mb-3 flex items-end p-4"><span class="num text-xs text-[var(--muted)]">002 · 2023</span></div><p class="font-semibold text-sm">Дом «Озёрный»</p><p class="text-[var(--muted)] text-xs mt-1">320 м² · 8 месяцев</p></div>
-    <div><div class="bg-stone-200 h-56 mb-3 flex items-end p-4"><span class="num text-xs text-[var(--muted)]">003 · 2024</span></div><p class="font-semibold text-sm">Таунхаус «Речной»</p><p class="text-[var(--muted)] text-xs mt-1">180 м² · 6 месяцев</p></div>
+<!-- ===== ГАЛЕРЕЯ: полноширинное фото, интегрированное ===== -->
+<section class="px-6 max-w-6xl mx-auto" id="projects">
+  <div class="grid grid-cols-12 gap-4">
+    <div class="col-span-12 md:col-span-7 relative overflow-hidden group">
+      <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&q=80" alt="Дом Озёрный" class="w-full h-[420px] object-cover transition-transform duration-500 group-hover:scale-105">
+      <div class="absolute bottom-0 left-0 p-6 text-white" style="background:linear-gradient(transparent,rgba(0,0,0,0.6))">
+        <p class="num text-xs text-[var(--gold)] tracking-widest mb-1">001</p>
+        <p class="dsp text-xl font-semibold">Дом «Озёрный»</p>
+        <p class="text-white/70 text-xs font-light">320 м² · 8 месяцев · 2024</p>
+      </div>
+    </div>
+    <div class="col-span-12 md:col-span-5 grid grid-rows-2 gap-4">
+      <div class="relative overflow-hidden group">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80" alt="Коттедж Лесной" class="w-full h-[202px] object-cover transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute bottom-0 left-0 p-4 text-white" style="background:linear-gradient(transparent,rgba(0,0,0,0.6))">
+          <p class="num text-xs text-[var(--gold)] tracking-widest mb-0.5">002</p>
+          <p class="dsp text-base font-semibold">Коттедж «Лесной»</p>
+        </div>
+      </div>
+      <div class="relative overflow-hidden group">
+        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&q=80" alt="Таунхаус Речной" class="w-full h-[202px] object-cover transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute bottom-0 left-0 p-4 text-white" style="background:linear-gradient(transparent,rgba(0,0,0,0.6))">
+          <p class="num text-xs text-[var(--gold)] tracking-widest mb-0.5">003</p>
+          <p class="dsp text-base font-semibold">Таунхаус «Речной»</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- Форма -->
-<section class="py-16 px-6 max-w-xl mx-auto text-center border-t border-stone-200">
-  <h2 class="display text-3xl font-bold mb-2">Обсудить <span style="color:var(--accent)">проект</span></h2>
-  <p class="text-[var(--muted)] mb-8">Оставьте телефон — архитектор перезвонит сегодня</p>
-  <form class="flex gap-3 max-w-md mx-auto"><input class="flex-1 border border-stone-300 px-4 py-3 text-sm" placeholder="+7 (___) ___-__-__"><button class="bg-[var(--accent)] text-white px-6 py-3 font-medium text-sm hover:bg-[#1F3A30] transition-colors">Отправить</button></form>
+<!-- ===== КУЛЬМИНАЦИЯ: тёмная секция ===== -->
+<section class="mt-24 py-28 px-6" style="background:var(--dark);color:#F7F4EF">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="dsp text-sm text-[var(--gold)] italic mb-8">Самый важный отзыв</p>
+    <p class="dsp text-3xl md:text-4xl leading-relaxed font-medium mb-10">«Боялись, что стройка растянется и обрастёт доплатами. Получили ключи через 7,5 месяцев и ни одной лишней копейки»</p>
+    <p class="text-[var(--gold)] font-medium text-sm tracking-wide">Алексей и Ольга · дом «Озёрный» · 2024</p>
+  </div>
 </section>
 
-<footer class="py-8 text-center text-xs text-[var(--muted)] border-t border-stone-200">СтройКомфорт © 2026 · Челябинская область</footer>
+<!-- ===== ФОРМА ===== -->
+<section class="py-24 px-6 max-w-xl mx-auto text-center" id="contact">
+  <h2 class="dsp text-4xl font-semibold mb-4">Начнём ваш <span class="text-[var(--accent)] italic">проект</span></h2>
+  <p class="text-[var(--muted)] font-light mb-10">Оставьте телефон — архитектор перезвонит сегодня и задаст 3 вопроса, чтобы понять задачу.</p>
+  <form class="flex gap-3 max-w-md mx-auto">
+    <input class="flex-1 bg-white border border-stone-200 px-5 py-4 text-sm focus:outline-none focus:border-[var(--accent)] transition-colors" placeholder="+7 (___) ___-__-__">
+    <button class="btn bg-[var(--accent)] text-white px-8 py-4 font-medium text-sm tracking-wide hover:bg-[#244036]">Отправить</button>
+  </form>
+</section>
+
+<!-- ===== FOOTER: законченный ===== -->
+<footer class="py-16 px-6" style="background:var(--dark);color:#9a948e">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+    <div class="md:col-span-2">
+      <p class="dsp text-lg text-[#F7F4EF] font-semibold mb-4">СтройКомфорт</p>
+      <p class="text-sm font-light leading-relaxed max-w-xs">Строим дома под ключ в Челябинской области с 2011 года. 156 домов, ни одного одинакового.</p>
+    </div>
+    <div>
+      <p class="text-xs text-[#F7F4EF] tracking-widest mb-4 font-medium">НАВИГАЦИЯ</p>
+      <ul class="space-y-2 text-sm font-light"><li><a href="#why" class="hover:text-[#F7F4EF] transition-colors">Почему мы</a></li><li><a href="#projects" class="hover:text-[#F7F4EF] transition-colors">Проекты</a></li><li><a href="#contact" class="hover:text-[#F7F4EF] transition-colors">Контакты</a></li></ul>
+    </div>
+    <div>
+      <p class="text-xs text-[#F7F4EF] tracking-widest mb-4 font-medium">КОНТАКТЫ</p>
+      <ul class="space-y-2 text-sm font-light"><li>+7 351 200-40-10</li><li>info@stroykomfort.ru</li><li>г. Челябинск, ул. Лесная, 12</li></ul>
+    </div>
+  </div>
+  <div class="max-w-6xl mx-auto mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between text-xs font-light">
+    <span>© 2026 СтройКомфорт. Все права защищены.</span>
+    <span>Политика конфиденциальности · Договор оферты</span>
+  </div>
+</footer>
+
 </body></html>

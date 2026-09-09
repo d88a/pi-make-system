@@ -1,64 +1,111 @@
-<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Смайл Денталь — стоматология для всей семьи</title><script src="https://cdn.tailwindcss.com"></script><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
-:root{--bg:#FAFCFE;--text:#1A2332;--muted:#7B8A9B;--accent:#5B9BD5;--warm:#F0F6FC}
-body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text)}
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Смайл Денталь — стоматология без боли</title><script src="https://cdn.tailwindcss.com"></script><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><style>
+:root{--bg:#FAFBFD;--text:#1F2A3A;--muted:#7A8699;--accent:#5B9BD5;--soft:#EEF4FA;--warm:#FDF6F0}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text)}
+.fade-up{animation:fadeUp .8s ease-out both}@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.btn{transition:transform .25s ease,box-shadow .25s ease,background .25s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(91,155,213,.25)}
 </style></head><body>
 
-<nav class="flex items-center justify-between max-w-5xl mx-auto px-6 h-16 text-sm text-[var(--muted)]">
-  <span class="text-[var(--accent)] font-bold text-lg">Смайл Денталь</span>
-  <div class="flex gap-6"><a href="#" class="hover:text-[var(--text)]">Услуги</a><a href="#" class="hover:text-[var(--text)]">Врачи</a><a href="#" class="hover:text-[var(--text)]">Контакты</a></div>
+<!-- ===== NAV ===== -->
+<nav class="flex items-center justify-between max-w-5xl mx-auto px-6 h-18">
+  <span class="font-extrabold text-xl text-[var(--accent)] tracking-tight">Смайл Денталь</span>
+  <div class="flex gap-8 text-sm font-medium text-[var(--muted)]">
+    <a href="#why" class="hover:text-[var(--text)] transition-colors">Почему не страшно</a>
+    <a href="#doctors" class="hover:text-[var(--text)] transition-colors">Врачи</a>
+    <a href="#contact" class="hover:text-[var(--text)] transition-colors">Запись</a>
+  </div>
 </nav>
 
-<!-- Улыбка + мягкий заголовок -->
-<section class="min-h-[80vh] flex items-center px-6" style="background:linear-gradient(135deg,#FAFCFE 0%,#F0F6FC 100%)">
-  <div class="max-w-3xl">
-    <p class="text-xs tracking-[0.2em] text-[var(--accent)] uppercase mb-4">Стоматология для всей семьи</p>
-    <h1 class="text-5xl md:text-6xl font-bold leading-[1.1] mb-4">Лечим зубы<br><span style="color:var(--accent);font-weight:800">без боли</span></h1>
-    <p class="text-[var(--muted)] text-lg max-w-md mb-8">Современная анестезия, заботливые врачи и рассрочка 0% на имплантацию.</p>
-    <button class="bg-[var(--accent)] text-white px-8 py-3 font-semibold hover:bg-[#4A8AC4] transition-colors" style="border-radius:24px">Записаться на приём</button>
-    <p class="text-xs text-[var(--muted)] mt-3">Первая консультация — бесплатно</p>
+<!-- ===== HERO: улыбка + мягкий оверлей ===== -->
+<section class="relative min-h-[85vh] flex items-center">
+  <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1600&q=80" alt="Счастливая улыбка" class="absolute inset-0 w-full h-full object-cover object-center" style="object-position:50% 25%">
+  <div class="absolute inset-0" style="background:linear-gradient(135deg,var(--bg) 0%,transparent 55%,transparent 100%)"></div>
+  <div class="relative z-10 max-w-5xl mx-auto px-6 fade-up">
+    <p class="text-sm tracking-[0.2em] text-[var(--accent)] font-bold uppercase mb-5">Стоматология для всей семьи</p>
+    <h1 class="text-5xl md:text-6xl font-extrabold leading-[1.05] max-w-xl mb-6">Лечим зубы<br><span class="text-[var(--accent)]">без страха</span><br>и без боли</h1>
+    <p class="text-[var(--muted)] text-lg max-w-md mb-10 font-medium">Современная анестезия, заботливые врачи, рассрочка 0% на имплантацию. Первый осмотр — бесплатно.</p>
+    <a href="#contact" class="btn inline-block bg-[var(--accent)] text-white px-10 py-4 font-bold text-sm tracking-wide" style="border-radius:28px">Записаться на приём</a>
   </div>
-  <div class="hidden md:block ml-auto mr-8"><div class="w-72 h-72 bg-[var(--accent)]/10 flex items-center justify-center text-6xl" style="border-radius:50%">😊</div></div>
 </section>
 
-<!-- Почему не страшно -->
-<section class="py-16 px-6 max-w-4xl mx-auto text-center">
-  <h2 class="text-3xl font-bold mb-10">Почему у нас <span style="color:var(--accent)">не страшно</span></h2>
+<!-- ===== ТРИ АРГУМЕНТА ===== -->
+<section class="py-20 px-6 max-w-5xl mx-auto" id="why">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+    <div class="text-center md:text-left"><div class="text-5xl mb-5">💉</div><h3 class="font-extrabold text-xl mb-3">Без боли</h3><p class="text-[var(--muted)] text-sm font-medium leading-relaxed">Анестезия последнего поколения. Вы не почувствуете укола и процедуры.</p></div>
+    <div class="text-center md:text-left"><div class="text-5xl mb-5">⏱️</div><h3 class="font-extrabold text-xl mb-3">Без очередей</h3><p class="text-[var(--muted)] text-sm font-medium leading-relaxed">Приём точно по записи. Среднее ожидание — 2 минуты. Кофе в подарок.</p></div>
+    <div class="text-center md:text-left"><div class="text-5xl mb-5">💳</div><h3 class="font-extrabold text-xl mb-3">Рассрочка 0%</h3><p class="text-[var(--muted)] text-sm font-medium leading-relaxed">На имплантацию и сложное лечение. Без переплат и скрытых условий.</p></div>
+  </div>
+</section>
+
+<!-- ===== УСЛУГИ: две колонки с ценой ===== -->
+<section class="py-16 px-6 max-w-5xl mx-auto" style="background:var(--soft);border-radius:32px">
+  <h2 class="font-extrabold text-3xl mb-10 text-center">Услуги <span class="text-[var(--accent)]">и цены</span></h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-5 max-w-2xl mx-auto">
+    <div class="flex justify-between border-b border-[var(--bg)] py-2"><span class="font-semibold text-sm">Лечение кариеса</span><span class="text-[var(--accent)] font-extrabold text-sm">от 3 500 ₽</span></div>
+    <div class="flex justify-between border-b border-[var(--bg)] py-2"><span class="font-semibold text-sm">Имплантация</span><span class="text-[var(--accent)] font-extrabold text-sm">от 45 000 ₽</span></div>
+    <div class="flex justify-between border-b border-[var(--bg)] py-2"><span class="font-semibold text-sm">Протезирование</span><span class="text-[var(--accent)] font-extrabold text-sm">от 25 000 ₽</span></div>
+    <div class="flex justify-between border-b border-[var(--bg)] py-2"><span class="font-semibold text-sm">Чистка и гигиена</span><span class="text-[var(--accent)] font-extrabold text-sm">от 2 000 ₽</span></div>
+    <div class="flex justify-between border-b border-[var(--bg)] py-2"><span class="font-semibold text-sm">Детская стоматология</span><span class="text-[var(--accent)] font-extrabold text-sm">от 2 500 ₽</span></div>
+    <div class="flex justify-between border-b border-[var(--bg)] py-2"><span class="font-semibold text-sm">Отбеливание</span><span class="text-[var(--accent)] font-extrabold text-sm">от 8 000 ₽</span></div>
+  </div>
+</section>
+
+<!-- ===== ВРАЧИ: акцент ===== -->
+<section class="py-20 px-6 max-w-5xl mx-auto" id="doctors">
+  <h2 class="font-extrabold text-3xl mb-12 text-center">Вас будут <span class="text-[var(--accent)]">лечить</span></h2>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-    <div class="bg-white p-8 shadow-sm" style="border-radius:20px"><div class="text-4xl mb-4">💉</div><h3 class="font-bold mb-2">Безболезненно</h3><p class="text-[var(--muted)] text-sm">Современная анестезия последнего поколения. Вы ничего не почувствуете.</p></div>
-    <div class="bg-white p-8 shadow-sm" style="border-radius:20px"><div class="text-4xl mb-4">🕐</div><h3 class="font-bold mb-2">Без очередей</h3><p class="text-[var(--muted)] text-sm">Приём точно по записи. Среднее время ожидания — 2 минуты.</p></div>
-    <div class="bg-white p-8 shadow-sm" style="border-radius:20px"><div class="text-4xl mb-4">💰</div><h3 class="font-bold mb-2">Рассрочка 0%</h3><p class="text-[var(--muted)] text-sm">На имплантацию и сложное лечение. Без переплат.</p></div>
+    <div class="text-center group">
+      <div class="w-32 h-32 mx-auto mb-5 overflow-hidden" style="border-radius:50%">
+        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=300&q=80" alt="Врач" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+      </div>
+      <p class="font-extrabold text-lg">Анна Соколова</p>
+      <p class="text-sm text-[var(--accent)] font-bold mb-1">Терапевт, 12 лет</p>
+      <p class="text-[var(--muted)] text-xs font-medium">«Самое важное — чтобы пациент вышел с улыбкой»</p>
+    </div>
+    <div class="text-center group">
+      <div class="w-32 h-32 mx-auto mb-5 overflow-hidden" style="border-radius:50%">
+        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=300&q=80" alt="Врач" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+      </div>
+      <p class="font-extrabold text-lg">Дмитрий Орлов</p>
+      <p class="text-sm text-[var(--accent)] font-bold mb-1">Хирург-имплантолог, 15 лет</p>
+      <p class="text-[var(--muted)] text-xs font-medium">«Имплантация — это не больно. Это вопрос технологии»</p>
+    </div>
+    <div class="text-center group">
+      <div class="w-32 h-32 mx-auto mb-5 overflow-hidden" style="border-radius:50%">
+        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&q=80" alt="Врач" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+      </div>
+      <p class="font-extrabold text-lg">Елена Градова</p>
+      <p class="text-sm text-[var(--accent)] font-bold mb-1">Ортодонт, 10 лет</p>
+      <p class="text-[var(--muted)] text-xs font-medium">«Ровная улыбка меняет жизнь. Проверено.»</p>
+    </div>
   </div>
 </section>
 
-<!-- Услуги компактно -->
-<section class="py-12 px-6 max-w-4xl mx-auto">
-  <h2 class="text-3xl font-bold mb-8">Наши <span style="color:var(--accent)">услуги</span></h2>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-8">
-    <div class="border-b border-stone-100 pb-3"><span class="font-semibold">Лечение кариеса</span><p class="text-xs text-[var(--muted)]">от 3 500 ₽</p></div>
-    <div class="border-b border-stone-100 pb-3"><span class="font-semibold">Имплантация</span><p class="text-xs text-[var(--muted)]">от 45 000 ₽</p></div>
-    <div class="border-b border-stone-100 pb-3"><span class="font-semibold">Протезирование</span><p class="text-xs text-[var(--muted)]">от 25 000 ₽</p></div>
-    <div class="border-b border-stone-100 pb-3"><span class="font-semibold">Чистка и гигиена</span><p class="text-xs text-[var(--muted)]">от 2 000 ₽</p></div>
-    <div class="border-b border-stone-100 pb-3"><span class="font-semibold">Детская стоматология</span><p class="text-xs text-[var(--muted)]">от 2 500 ₽</p></div>
-    <div class="border-b border-stone-100 pb-3"><span class="font-semibold">Отбеливание</span><p class="text-xs text-[var(--muted)]">от 8 000 ₽</p></div>
+<!-- ===== КУЛЬМИНАЦИЯ: контрастный testimonial ===== -->
+<section class="py-24 px-6" style="background:var(--text);color:white">
+  <div class="max-w-3xl mx-auto text-center">
+    <div class="text-6xl mb-6">😊</div>
+    <p class="text-2xl md:text-3xl font-light leading-relaxed mb-8">«Привела сына 7 лет с жутким страхом стоматологов. Через полчаса он спросил: „Мам, а когда ещё придём?“»</p>
+    <p class="font-extrabold text-sm text-[var(--accent)]">Марина, мама Артёма</p>
+    <p class="text-white/50 text-xs font-medium mt-1">Пациенты с 2023 года</p>
   </div>
 </section>
 
-<!-- Врачи -->
-<section class="py-12 px-6 max-w-4xl mx-auto" style="background:var(--warm);border-radius:24px">
-  <h2 class="text-3xl font-bold mb-8 text-center">Вас будут <span style="color:var(--accent)">лечить</span></h2>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-    <div><div class="w-20 h-20 bg-[var(--accent)]/20 mx-auto mb-3" style="border-radius:50%"></div><p class="font-bold">Анна Соколова</p><p class="text-xs text-[var(--muted)]">Терапевт, 12 лет</p></div>
-    <div><div class="w-20 h-20 bg-[var(--accent)]/20 mx-auto mb-3" style="border-radius:50%"></div><p class="font-bold">Дмитрий Орлов</p><p class="text-xs text-[var(--muted)]">Хирург, 15 лет</p></div>
-    <div><div class="w-20 h-20 bg-[var(--accent)]/20 mx-auto mb-3" style="border-radius:50%"></div><p class="font-bold">Елена Градова</p><p class="text-xs text-[var(--muted)]">Ортодонт, 10 лет</p></div>
+<!-- ===== ЗАПИСЬ ===== -->
+<section class="py-24 px-6 max-w-lg mx-auto text-center" id="contact">
+  <h2 class="font-extrabold text-3xl mb-4">Запишитесь на <span class="text-[var(--accent)]">осмотр</span></h2>
+  <p class="text-[var(--muted)] font-medium mb-10">Перезвоним за 15 минут, подберём удобное время. Первый осмотр — бесплатно.</p>
+  <form class="space-y-3"><input class="w-full border border-stone-200 px-5 py-4 text-sm font-medium text-[var(--text)] focus:outline-none focus:border-[var(--accent)] transition-colors" style="border-radius:24px" placeholder="Ваше имя"><input class="w-full border border-stone-200 px-5 py-4 text-sm font-medium focus:outline-none focus:border-[var(--accent)] transition-colors" style="border-radius:24px" placeholder="Телефон"><button class="btn w-full bg-[var(--accent)] text-white py-4 font-extrabold text-sm tracking-wide hover:bg-[#4A8AC4]" style="border-radius:28px">Записаться</button></form>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="py-14 px-6" style="background:var(--text);color:#7A8699">
+  <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+    <div><p class="font-extrabold text-white text-lg mb-4">Смайл Денталь</p><p class="text-sm font-medium leading-relaxed max-w-xs">Стоматология для всей семьи. Лечим без боли с 2012 года.</p></div>
+    <div><p class="text-xs text-white tracking-widest mb-4 font-bold">НАВИГАЦИЯ</p><ul class="space-y-2 text-sm font-medium"><li><a href="#why" class="hover:text-white transition-colors">Почему не страшно</a></li><li><a href="#doctors" class="hover:text-white transition-colors">Врачи</a></li><li><a href="#contact" class="hover:text-white transition-colors">Запись</a></li></ul></div>
+    <div><p class="text-xs text-white tracking-widest mb-4 font-bold">КОНТАКТЫ</p><ul class="space-y-2 text-sm font-medium"><li>+7 351 200-40-20</li><li>hello@smiledental.ru</li><li>г. Челябинск, ул. Цветочная, 5</li><li class="text-xs mt-2">Пн–Сб: 9:00–20:00</li></ul></div>
   </div>
-</section>
+  <div class="max-w-5xl mx-auto mt-10 pt-5 border-t border-white/10 flex flex-col md:flex-row justify-between text-xs font-medium"><span>© 2026 Смайл Денталь</span><span>Политика конфиденциальности · Договор</span></div>
+</footer>
 
-<!-- Запись -->
-<section class="py-16 px-6 max-w-xl mx-auto text-center">
-  <h2 class="text-3xl font-bold mb-2">Записаться на <span style="color:var(--accent)">приём</span></h2>
-  <p class="text-[var(--muted)] mb-8">Перезвоним за 15 минут, подберём удобное время</p>
-  <form class="flex gap-3 max-w-md mx-auto"><input class="flex-1 border border-stone-200 px-4 py-3 text-sm" style="border-radius:20px" placeholder="Ваш телефон"><button class="bg-[var(--accent)] text-white px-6 py-3 font-semibold text-sm hover:bg-[#4A8AC4] transition-colors" style="border-radius:24px">Записаться</button></form>
-</section>
-
-<footer class="py-8 text-center text-xs text-[var(--muted)] border-t border-stone-100">Смайл Денталь © 2026 · Лечим без боли</footer>
 </body></html>

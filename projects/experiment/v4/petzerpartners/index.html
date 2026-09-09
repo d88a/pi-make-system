@@ -1,65 +1,119 @@
-<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Право и Партнёры — юридическая фирма</title><script src="https://cdn.tailwindcss.com"></script><link href="https://fonts.googleapis.com/css2?family=Georgia&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"><style>
-:root{--bg:#FAF9F7;--text:#1A1817;--muted:#6B6560;--navy:#1B2A4A;--gold:#C4A35A}
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Право и Партнёры — юридическая фирма</title><script src="https://cdn.tailwindcss.com"></script><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"><style>
+:root{--bg:#FAF8F5;--text:#1C1917;--muted:#6B6560;--navy:#152238;--gold:#C4A35A}
+*{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text)}
-.serif{font-family:Georgia,serif}
-.divider{width:1px;background:var(--gold);opacity:0.3;align-self:stretch}
+.serif{font-family:'Cormorant Garamond',Georgia,serif}
+.ornament{width:40px;height:1px;background:var(--gold)}
+.fade-up{animation:fadeUp .8s ease-out both}@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.btn{transition:all .25s ease}.btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(21,34,56,.15)}
 </style></head><body>
 
-<nav class="flex items-center justify-between max-w-5xl mx-auto px-6 h-20 text-sm">
-  <span class="serif text-xl font-bold text-[var(--navy)]">Право&nbsp;<span style="color:var(--gold);font-size:12px">◆</span>&nbsp;Партнёры</span>
-  <div class="flex gap-8 text-[var(--muted)]"><a href="#" class="hover:text-[var(--navy)]">Практики</a><a href="#" class="hover:text-[var(--navy)]">Команда</a><a href="#" class="hover:text-[var(--navy)]">Контакты</a></div>
+<!-- ===== NAV ===== -->
+<nav class="flex items-center justify-between max-w-5xl mx-auto px-6 h-20 border-b border-stone-200">
+  <span class="serif text-2xl font-semibold text-[var(--navy)] tracking-tight">Право<span class="text-[var(--gold)]"> & </span>Партнёры</span>
+  <div class="flex gap-8 text-sm font-medium text-[var(--muted)]">
+    <a href="#practices" class="hover:text-[var(--navy)] transition-colors">Практики</a>
+    <a href="#team" class="hover:text-[var(--navy)] transition-colors">Команда</a>
+    <a href="#contact" class="hover:text-[var(--navy)] transition-colors">Контакты</a>
+  </div>
 </nav>
 
-<!-- Строгий hero -->
-<section class="min-h-[70vh] flex items-center px-6 max-w-5xl mx-auto">
-  <div class="max-w-2xl">
-    <div class="flex items-center gap-4 mb-6"><div class="w-12 border-t border-[var(--gold)]"></div><p class="text-xs tracking-[0.25em] text-[var(--muted)] uppercase">Юридическая фирма</p></div>
-    <h1 class="serif text-5xl font-bold leading-[1.1] mb-4">Защита ваших<br><span style="color:var(--navy)">интересов</span> в суде<br>и в бизнесе</h1>
-    <p class="text-[var(--muted)] text-lg max-w-md mb-8 leading-relaxed">20 лет практики. Специализация — корпоративное право, недвижимость, арбитраж. 98% выигранных дел.</p>
-    <div class="flex gap-6 items-center">
-      <button class="bg-[var(--navy)] text-white px-8 py-3 font-medium text-sm hover:bg-[#15223a] transition-colors">Записаться на консультацию</button>
-      <span class="text-[var(--muted)] text-sm">или</span>
-      <span class="serif text-lg font-bold text-[var(--navy)]">+7 (351) 200-40-10</span>
+<!-- ===== HERO: строгий, с фото библиотеки/офиса ===== -->
+<section class="min-h-[80vh] flex items-center px-6 max-w-5xl mx-auto">
+  <div class="grid grid-cols-1 md:grid-cols-5 gap-12 items-center fade-up">
+    <div class="md:col-span-3">
+      <div class="ornament mb-6"></div>
+      <p class="text-xs tracking-[0.3em] text-[var(--gold)] font-medium mb-5">ЮРИДИЧЕСКАЯ ФИРМА · ОСНОВАНА В 2006</p>
+      <h1 class="serif text-5xl md:text-6xl font-semibold leading-[1.06] mb-6">Защита ваших интересов — <span class="text-[var(--navy)] italic">наше дело</span></h1>
+      <p class="text-[var(--muted)] text-lg leading-relaxed max-w-lg mb-10 font-light">Корпоративное право. Недвижимость. Арбитраж. Банкротство. 20 лет практики. 98% успешных дел.</p>
+      <div class="flex gap-6 items-center">
+        <a href="#contact" class="btn bg-[var(--navy)] text-white px-8 py-4 font-medium text-sm tracking-wide">Консультация</a>
+        <a href="tel:+73512004010" class="serif text-xl font-semibold text-[var(--navy)] tracking-tight">+7 351 200-40-10</a>
+      </div>
+    </div>
+    <div class="md:col-span-2 relative">
+      <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80" alt="Юридическая библиотека" class="w-full h-[500px] object-cover">
+      <div class="absolute -bottom-4 -left-4 bg-[var(--navy)] text-white p-4 text-center"><span class="serif text-3xl font-bold text-[var(--gold)]">98<span class="text-lg">%</span></span><p class="text-xs mt-1 text-white/70">выигранных дел</p></div>
     </div>
   </div>
 </section>
 
-<!-- Практики -->
-<section class="py-16 px-6 max-w-5xl mx-auto border-t border-stone-200">
-  <h2 class="serif text-3xl font-bold mb-10">Направления <span style="color:var(--navy)">практики</span></h2>
-  <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-    <div class="border-l-2 border-[var(--gold)] pl-5 py-2"><h3 class="serif text-lg font-bold mb-1">Корпоративное право</h3><p class="text-[var(--muted)] text-xs leading-relaxed">Создание, реструктуризация, сделки M&A, due diligence</p></div>
-    <div class="border-l-2 border-[var(--gold)] pl-5 py-2"><h3 class="serif text-lg font-bold mb-1">Недвижимость</h3><p class="text-[var(--muted)] text-xs leading-relaxed">Регистрация прав, споры с застройщиками, земельное право</p></div>
-    <div class="border-l-2 border-[var(--gold)] pl-5 py-2"><h3 class="serif text-lg font-bold mb-1">Арбитраж</h3><p class="text-[var(--muted)] text-xs leading-relaxed">Представительство в арбитражных судах всех инстанций</p></div>
-    <div class="border-l-2 border-[var(--gold)] pl-5 py-2"><h3 class="serif text-lg font-bold mb-1">Банкротство</h3><p class="text-[var(--muted)] text-xs leading-relaxed">Сопровождение процедур банкротства юридических и физических лиц</p></div>
+<!-- ===== ПРАКТИКИ ===== -->
+<section class="py-20 px-6 max-w-5xl mx-auto border-t border-stone-200" id="practices">
+  <p class="text-xs tracking-[0.3em] text-[var(--gold)] font-medium mb-4">НАПРАВЛЕНИЯ</p>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+    <div class="border-l-2 border-[var(--gold)] pl-6">
+      <h3 class="serif text-2xl font-semibold mb-3">Корпоративное право</h3>
+      <p class="text-[var(--muted)] text-sm font-light leading-relaxed">Создание и реструктуризация компаний, сделки M&A, due diligence, корпоративные споры.</p>
+    </div>
+    <div class="border-l-2 border-[var(--gold)] pl-6">
+      <h3 class="serif text-2xl font-semibold mb-3">Недвижимость и земля</h3>
+      <p class="text-[var(--muted)] text-sm font-light leading-relaxed">Регистрация прав, споры с застройщиками, земельное право, кадастровые вопросы.</p>
+    </div>
+    <div class="border-l-2 border-[var(--gold)] pl-6">
+      <h3 class="serif text-2xl font-semibold mb-3">Арбитраж и суды</h3>
+      <p class="text-[var(--muted)] text-sm font-light leading-relaxed">Представительство в арбитражных судах всех инстанций. Взыскание задолженности.</p>
+    </div>
+    <div class="border-l-2 border-[var(--gold)] pl-6">
+      <h3 class="serif text-2xl font-semibold mb-3">Банкротство</h3>
+      <p class="text-[var(--muted)] text-sm font-light leading-relaxed">Сопровождение процедур банкротства юридических и физических лиц.</p>
+    </div>
   </div>
 </section>
 
-<!-- Опыт в цифрах -->
-<section class="py-12 px-6 max-w-5xl mx-auto" style="background:var(--navy);color:white">
-  <div class="grid grid-cols-3 gap-8 text-center">
-    <div><span class="serif text-5xl font-bold text-[var(--gold)]">98<span class="text-2xl">%</span></span><p class="text-sm text-white/60 mt-2">выигранных дел</p></div>
-    <div><span class="serif text-5xl font-bold text-[var(--gold)]">20</span><p class="text-sm text-white/60 mt-2">лет практики</p></div>
-    <div><span class="serif text-5xl font-bold text-[var(--gold)]">340+</span><p class="text-sm text-white/60 mt-2">успешных дел</p></div>
-  </div>
-</section>
-
-<!-- Команда -->
-<section class="py-16 px-6 max-w-5xl mx-auto">
-  <h2 class="serif text-3xl font-bold mb-10">Команда <span style="color:var(--navy)">партнёров</span></h2>
+<!-- ===== КОМАНДА ===== -->
+<section class="py-20 px-6 max-w-5xl mx-auto" style="background:var(--navy);color:white" id="team">
+  <p class="text-xs tracking-[0.3em] text-[var(--gold)] font-medium mb-4">КОМАНДА ПАРТНЁРОВ</p>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-    <div class="border border-stone-200 p-8"><div class="w-16 h-16 bg-stone-200 mb-4"></div><p class="serif text-lg font-bold">Алексей Петров</p><p class="text-xs text-[var(--gold)] font-medium mb-2">Управляющий партнёр</p><p class="text-[var(--muted)] text-xs leading-relaxed">Корпоративное право, M&A. 20 лет практики. МГУ им. Ломоносова.</p></div>
-    <div class="border border-stone-200 p-8"><div class="w-16 h-16 bg-stone-200 mb-4"></div><p class="serif text-lg font-bold">Мария Зернова</p><p class="text-xs text-[var(--gold)] font-medium mb-2">Партнёр</p><p class="text-[var(--muted)] text-xs leading-relaxed">Арбитраж, банкротство. 15 лет практики. СПбГУ.</p></div>
-    <div class="border border-stone-200 p-8"><div class="w-16 h-16 bg-stone-200 mb-4"></div><p class="serif text-lg font-bold">Игорь Ветров</p><p class="text-xs text-[var(--gold)] font-medium mb-2">Партнёр</p><p class="text-[var(--muted)] text-xs leading-relaxed">Недвижимость, земельное право. 18 лет практики.</p></div>
+    <div class="bg-white/5 p-8 group hover:bg-white/10 transition-colors">
+      <div class="w-20 h-20 overflow-hidden mb-5">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80" alt="Партнёр" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all">
+      </div>
+      <p class="serif text-xl font-semibold mb-1">Алексей Петров</p>
+      <p class="text-xs text-[var(--gold)] font-medium mb-3">Управляющий партнёр</p>
+      <p class="text-white/60 text-sm font-light leading-relaxed">Корпоративное право, M&A. 20 лет практики. МГУ им. Ломоносова.</p>
+    </div>
+    <div class="bg-white/5 p-8 group hover:bg-white/10 transition-colors">
+      <div class="w-20 h-20 overflow-hidden mb-5">
+        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=300&q=80" alt="Партнёр" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all">
+      </div>
+      <p class="serif text-xl font-semibold mb-1">Мария Зернова</p>
+      <p class="text-xs text-[var(--gold)] font-medium mb-3">Партнёр</p>
+      <p class="text-white/60 text-sm font-light leading-relaxed">Арбитраж, банкротство. 15 лет практики. СПбГУ.</p>
+    </div>
+    <div class="bg-white/5 p-8 group hover:bg-white/10 transition-colors">
+      <div class="w-20 h-20 overflow-hidden mb-5">
+        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&q=80" alt="Партнёр" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all">
+      </div>
+      <p class="serif text-xl font-semibold mb-1">Игорь Ветров</p>
+      <p class="text-xs text-[var(--gold)] font-medium mb-3">Партнёр</p>
+      <p class="text-white/60 text-sm font-light leading-relaxed">Недвижимость, земельное право. 18 лет практики.</p>
+    </div>
   </div>
 </section>
 
-<!-- Консультация -->
-<section class="py-16 px-6 max-w-xl mx-auto text-center border-t border-stone-200">
-  <h2 class="serif text-3xl font-bold mb-2">Первая консультация — <span style="color:var(--navy)">бесплатно</span></h2>
-  <p class="text-[var(--muted)] mb-8">Опишите ситуацию — партнёр перезвонит сегодня</p>
-  <form class="space-y-3 max-w-md mx-auto"><input class="w-full border border-stone-300 px-4 py-3 text-sm" placeholder="Ваше имя"><input class="w-full border border-stone-300 px-4 py-3 text-sm" placeholder="Телефон"><textarea class="w-full border border-stone-300 px-4 py-3 text-sm" rows="2" placeholder="Кратко опишите ситуацию"></textarea><button class="w-full bg-[var(--navy)] text-white py-3 font-medium text-sm hover:bg-[#15223a] transition-colors">Отправить</button></form>
+<!-- ===== КОНСУЛЬТАЦИЯ ===== -->
+<section class="py-24 px-6 max-w-xl mx-auto text-center border-t border-stone-200" id="contact">
+  <div class="ornament mx-auto mb-6"></div>
+  <h2 class="serif text-4xl font-semibold mb-4">Первая консультация — <span class="text-[var(--navy)] italic">бесплатно</span></h2>
+  <p class="text-[var(--muted)] font-light mb-10 leading-relaxed">Опишите ситуацию — партнёр перезвонит сегодня и скажет честно, есть ли перспектива.</p>
+  <form class="space-y-3 max-w-md mx-auto">
+    <input class="w-full border border-stone-300 px-5 py-4 text-sm font-medium bg-white focus:outline-none focus:border-[var(--navy)] transition-colors" placeholder="Ваше имя">
+    <input class="w-full border border-stone-300 px-5 py-4 text-sm font-medium bg-white focus:outline-none focus:border-[var(--navy)] transition-colors" placeholder="Телефон">
+    <textarea class="w-full border border-stone-300 px-5 py-4 text-sm font-medium bg-white focus:outline-none focus:border-[var(--navy)] transition-colors" rows="3" placeholder="Кратко опишите ситуацию"></textarea>
+    <button class="btn w-full bg-[var(--navy)] text-white py-4 font-medium text-sm tracking-wide hover:bg-[#102030]">Отправить</button>
+  </form>
+  <p class="text-xs text-[var(--muted)] mt-4 font-light">Или позвоните: <span class="serif text-lg font-semibold text-[var(--navy)]">+7 351 200-40-10</span></p>
 </section>
 
-<footer class="py-8 text-center text-xs text-[var(--muted)] border-t border-stone-200"><span class="serif text-[var(--navy)] font-bold">Право&nbsp;◆&nbsp;Партнёры</span> © 2026</footer>
+<!-- ===== FOOTER ===== -->
+<footer class="py-14 px-6" style="background:var(--navy);color:#9aa0b0">
+  <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+    <div class="md:col-span-2"><p class="serif text-xl text-white font-semibold mb-3">Право & Партнёры</p><p class="text-sm font-light leading-relaxed max-w-xs">Юридическая защита бизнеса и частных клиентов с 2006 года. 98% успешных дел.</p></div>
+    <div><p class="text-xs text-[var(--gold)] tracking-widest mb-4 font-medium">ПРАКТИКИ</p><ul class="space-y-2 text-sm font-light"><li><a href="#practices" class="hover:text-white transition-colors">Корпоративное право</a></li><li><a href="#practices" class="hover:text-white transition-colors">Недвижимость</a></li><li><a href="#practices" class="hover:text-white transition-colors">Арбитраж</a></li><li><a href="#practices" class="hover:text-white transition-colors">Банкротство</a></li></ul></div>
+    <div><p class="text-xs text-[var(--gold)] tracking-widest mb-4 font-medium">КОНТАКТЫ</p><ul class="space-y-2 text-sm font-light"><li>+7 351 200-40-10</li><li>info@pravo-partners.ru</li><li>г. Челябинск, ул. Кирова, 15</li></ul></div>
+  </div>
+  <div class="max-w-5xl mx-auto mt-10 pt-5 border-t border-white/10 flex flex-col md:flex-row justify-between text-xs font-light"><span>© 2026 Право & Партнёры</span><span>Политика конфиденциальности · Оферта</span></div>
+</footer>
+
 </body></html>
