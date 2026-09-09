@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>A — Editorial Premium</title><script src="https://cdn.tailwindcss.com"></script><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"><style>
+:root{--bg:#F6F1E9;--ink:#1E1B16;--muted:#7C7566;--accent:#2D4A3E;--gold:#B8A16A}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink)}
+.dsp{font-family:'Playfair Display',serif}
+.fade{animation:fadeUp .9s ease-out both}@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+.rule{height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+</style></head><body>
+
+<!-- NAV: прозрачный, лёгкий -->
+<nav class="flex items-center justify-between max-w-6xl mx-auto px-6 h-20">
+  <span class="dsp text-xl font-semibold tracking-wide">СтройКомфорт</span>
+  <div class="flex gap-8 text-xs tracking-[0.15em] uppercase text-[var(--muted)]">
+    <a href="#" class="hover:text-[var(--ink)] transition-colors">Проекты</a>
+    <a href="#" class="hover:text-[var(--ink)] transition-colors">Подход</a>
+    <a href="#" class="hover:text-[var(--ink)] transition-colors">Контакты</a>
+  </div>
+</nav>
+
+<!-- HERO A: full-bleed + огромный serif заголовок + золотая линия -->
+<section class="relative min-h-[92vh] flex items-end">
+  <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1800&q=80" alt="Дом" class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(30,27,22,0.05) 0%,rgba(30,27,22,0.55) 65%,rgba(30,27,22,0.85) 100%)"></div>
+  <div class="relative z-10 max-w-6xl mx-auto px-6 pb-20 fade">
+    <div class="rule w-24 mb-8"></div>
+    <p class="dsp text-sm italic text-[var(--gold)] mb-5">Готовый дом · 480 м² · передали ключи в 2024</p>
+    <h1 class="dsp text-white text-6xl md:text-8xl font-semibold leading-[0.98] max-w-4xl mb-8">Дом — это больше,<br>чем стены и крыша</h1>
+    <div class="flex gap-6 items-center">
+      <a href="#" class="text-white border border-white/40 px-8 py-3 text-sm tracking-wide hover:bg-white/10 transition-colors">Смотреть проекты</a>
+      <span class="dsp text-white text-lg">Рассчитать мой дом →</span>
+    </div>
+  </div>
+</section>
+
+<!-- Подзаголовок-манифест: огромный airy отступ, тонкая типографика -->
+<section class="py-28 px-6 max-w-4xl mx-auto text-center">
+  <p class="dsp text-3xl md:text-4xl font-medium leading-relaxed text-[var(--ink)]">За 15 лет мы построили 156 домов.<br><span class="text-[var(--muted)] italic">И не один не похож на другой.</span></p>
+  <div class="rule w-20 mx-auto mt-12"></div>
+</section>
+
+<!-- Цифры: тонкие, элегантные, с золотыми разделителями -->
+<section class="px-6 max-w-5xl mx-auto pb-24">
+  <div class="grid grid-cols-3 gap-12">
+    <div class="text-center"><span class="dsp text-5xl font-semibold text-[var(--accent)]">156</span><p class="text-sm text-[var(--muted)] mt-3 font-light">построенных домов</p></div>
+    <div class="text-center"><span class="dsp text-5xl font-semibold text-[var(--accent)]">15</span><p class="text-sm text-[var(--muted)] mt-3 font-light">лет практики</p></div>
+    <div class="text-center"><span class="dsp text-5xl font-semibold text-[var(--accent)]">0</span><p class="text-sm text-[var(--muted)] mt-3 font-light">скрытых платежей</p></div>
+  </div>
+</section>
+
+<!-- Проекты: editorial галерея с крупной датой -->
+<section class="px-6 max-w-6xl mx-auto pb-24">
+  <div class="grid grid-cols-12 gap-6">
+    <div class="col-span-12 md:col-span-5 relative">
+      <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1000&q=80" alt="Дом Озёрный" class="w-full h-[480px] object-cover">
+      <p class="dsp absolute -bottom-5 right-4 text-7xl font-semibold text-white/80">01</p>
+    </div>
+    <div class="col-span-12 md:col-span-7 flex flex-col justify-center md:pl-10">
+      <p class="dsp text-sm text-[var(--gold)] tracking-wide mb-3">Проект · 2024</p>
+      <h3 class="dsp text-3xl font-semibold mb-3">Дом «Озёрный»</h3>
+      <p class="text-[var(--muted)] font-light leading-relaxed max-w-md">320 квадратных метров на берегу озера. Просторная гостиная с панорамными окнами, три спальни, терраса. Построен за 8 месяцев.</p>
+    </div>
+  </div>
+</section>
+
+</body></html>

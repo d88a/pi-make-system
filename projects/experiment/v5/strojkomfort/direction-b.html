@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>B — Bold Commercial</title><script src="https://cdn.tailwindcss.com"></script><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"><style>
+:root{--bg:#F4F4F2;--ink:#1A1A18;--muted:#6E6E68;--accent:#3B5F8A;--line:#D8D8D4}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink)}
+.gro{font-family:'Space Grotesk',sans-serif}
+.card{border:1px solid var(--line);transition:transform .25s ease,box-shadow .25s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,0,0,0.06)}
+</style></head><body>
+
+<!-- NAV: строгий solid, верхняя граница -->
+<nav class="flex items-center justify-between max-w-6xl mx-auto px-6 h-20 border-b border-[var(--line)]">
+  <span class="gro text-lg font-bold tracking-tight">СтройКомфорт</span>
+  <div class="flex gap-8 text-sm font-medium text-[var(--muted)]">
+    <a href="#" class="hover:text-[var(--ink)] transition-colors">Проекты</a>
+    <a href="#" class="hover:text-[var(--ink)] transition-colors">Подход</a>
+    <a href="#" class="hover:text-[var(--ink)] transition-colors">Контакты</a>
+  </div>
+  <a href="#" class="text-sm font-semibold text-[var(--accent)]">+7 351 200-40-10</a>
+</nav>
+
+<!-- HERO B: split 60/40, текст слева + фото справа, чёткая сетка -->
+<section class="min-h-[80vh] flex items-center px-6 max-w-6xl mx-auto">
+  <div class="grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
+    <div class="md:col-span-3">
+      <p class="text-xs tracking-[0.2em] text-[var(--accent)] font-semibold uppercase mb-5">Строительство домов · 15 лет</p>
+      <h1 class="gro text-5xl md:text-6xl font-bold leading-[1.02] mb-6">Строим дома<br>под ключ <span class="text-[var(--accent)]">за 8 месяцев</span></h1>
+      <p class="text-[var(--muted)] text-lg max-w-md mb-10">Фиксируем цену до начала работ. Собственная бригада без субподряда. Никаких скрытых платежей.</p>
+      <div class="flex gap-4">
+        <a href="#" class="bg-[var(--accent)] text-white px-8 py-3.5 font-semibold text-sm hover:bg-[#2e4c70] transition-colors">Рассчитать стоимость</a>
+        <a href="#" class="border border-[var(--line)] px-8 py-3.5 font-semibold text-sm hover:border-[var(--ink)] transition-colors">Смотреть дома</a>
+      </div>
+    </div>
+    <div class="md:col-span-2 relative">
+      <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&q=80" alt="Дом" class="w-full h-[440px] object-cover">
+      <div class="absolute -bottom-5 -left-5 bg-[var(--accent)] text-white px-5 py-3">
+        <span class="gro text-2xl font-bold block leading-none">156</span>
+        <span class="text-xs text-white/70">домов построено</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Цифры: плотная горизонтальная полоса с разделителями -->
+<section class="border-y border-[var(--line)] py-10 px-6">
+  <div class="max-w-6xl mx-auto grid grid-cols-4 gap-8">
+    <div class="flex items-baseline gap-3"><span class="gro text-4xl font-bold text-[var(--accent)]">156</span><span class="text-sm text-[var(--muted)] font-medium">домов</span></div>
+    <div class="flex items-baseline gap-3"><span class="gro text-4xl font-bold text-[var(--accent)]">8</span><span class="text-sm text-[var(--muted)] font-medium">месяцев в среднем</span></div>
+    <div class="flex items-baseline gap-3"><span class="gro text-4xl font-bold text-[var(--accent)]">0</span><span class="text-sm text-[var(--muted)] font-medium">скрытых платежей</span></div>
+    <div class="flex items-baseline gap-3"><span class="gro text-4xl font-bold text-[var(--accent)]">5</span><span class="text-sm text-[var(--muted)] font-medium">лет гарантии</span></div>
+  </div>
+</section>
+
+<!-- Услуги: строгие карточки без теней -->
+<section class="py-20 px-6 max-w-6xl mx-auto">
+  <h2 class="gro text-3xl font-bold mb-10">Что мы <span class="text-[var(--accent)]">делаем</span></h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="card p-8"><p class="gro text-xs text-[var(--accent)] font-bold tracking-widest mb-4">01</p><h3 class="gro text-xl font-bold mb-3">Проект и смета</h3><p class="text-[var(--muted)] text-sm leading-relaxed">Фиксируем стоимость до старта. Прозрачная смета по каждой статье.</p></div>
+    <div class="card p-8"><p class="gro text-xs text-[var(--accent)] font-bold tracking-widest mb-4">02</p><h3 class="gro text-xl font-bold mb-3">Строительство</h3><p class="text-[var(--muted)] text-sm leading-relaxed">Собственная бригада. Еженедельный фотоотчёт в мессенджер.</p></div>
+    <div class="card p-8"><p class="gro text-xs text-[var(--accent)] font-bold tracking-widest mb-4">03</p><h3 class="gro text-xl font-bold mb-3">Передача ключей</h3><p class="text-[var(--muted)] text-sm leading-relaxed">Гарантия 5 лет на конструкции. Остаёмся на связи.</p></div>
+  </div>
+</section>
+
+</body></html>
