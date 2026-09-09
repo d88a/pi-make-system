@@ -31,12 +31,60 @@ const path = require('path');
  * Weight = how strongly this signal indicates template-ness.
  */
 const SIGNALS = [
+  // ── STRUCTURAL template signals (high weight) ──
+  {
+    id: 'forbidden-skeleton',
+    weight: 1.5,
+    desc: 'NAV→HERO→FEATURES(griD)→CTA→FOOTER skeleton (forbidden)',
+    detect: (html) => {
+      // Count <section> elements
+      const sectionCount = (html.match(/<section\s/g) || []).length;
+      // Check if the page has exactly 2-3 sections (hero + features + cta)
+      // And check for the classic pattern markers
+      const hasShortStructure = sectionCount <= 3;
+      const hasHero = /(?:min-h-\[?8|min-h-screen|hero)/i.test(html);
+      const hasStandardCTA = /(?:Get Started|Start Free|Ready to|начните|записаться)/i.test(html) && /bg-\[?(?:#[a-f0-9]+|indigo|slate|var\(--color)/i.test(html);
+      // Detect "3 cards in a row" pattern
+      const gridCols3 = /grid-cols-(?:1|2|3)\s+(?:md:grid-cols-3|lg:grid-cols-3)/i.test(html) ||
+                         /grid-cols-3/.test(html);
+      return hasShortStructure && hasHero && gridCols3 && hasStandardCTA;
+    }
+  },
+  {
+    id: 'all-centered-sections',
+    weight: 1.2,
+    desc: 'All sections are centered (text-center + flex-col + items-center)',
+    detect: (html) => {
+      const sections = html.split(/<section\s/g).slice(1);
+      if (sections.length < 2) return false;
+      const centeredSections = sections.filter(s =>
+        /text-center/.test(s) && /items-center/.test(s)
+      );
+      return centeredSections.length >= sections.length * 0.8;
+    }
+  },
+  // ── CONTENT structure signals ──
+  {
+    id: 'only-2-content-types',
+    weight: 1.0,
+    desc: 'Only 2 types of content sections (features + cta) — no variety',
+    detect: (html) => {
+      const sections = html.split(/<section\s/g).slice(1);
+      // Check if sections are very similar (same class patterns)
+      if (sections.length <= 2) return true;
+      const sectionClasses = sections.map(s => {
+        const m = s.match(/class="([^"]{0,80})"/);
+        return m ? m[1] : '';
+      }).filter(Boolean);
+      const unique = [...new Set(sectionClasses.map(c => c.replace(/py-\d+|px-\d+/g, '').trim()))];
+      return unique.length <= 2 && sections.length >= 2;
+    }
+  },
   {
     id: 'inter-display',
     weight: 0.8,
     desc: 'Inter as display font',
     detect: (html) => {
-      // Check if Inter appears as a font-family for headings or display
       const hasInterDisplay = /(?:font-family|fontFamily)[^}]*['"]Inter['"]/i.test(html);
       const hasOtherDisplay = /(?:font-family|fontFamily)[^}]*['"](?!Inter['"])[A-Z][a-z]+(?: [A-Z][a-z]+)*['"]/i.test(html);
       return hasInterDisplay && !hasOtherDisplay;
@@ -44,76 +92,32 @@ const SIGNALS = [
   },
   {
     id: 'centered-hero',
-    weight: 0.7,
-    desc: 'Centered hero (text-center in first section)',
+    weight: 0.8,
+    desc: 'Centered hero (text-center + items-center, no split/asymmetry)',
     detect: (html) => {
-      // Find the first <section> or <main> and check for centered layout
-      const firstSection = html.match(/<(?:section|main)[^>]*>([\s\S]*?)(?=<(?:section|\/main|\/body))/i);
+      const firstSection = html.match(/<section[^>]*>([\s\S]*?)(?=<section|\/body)/i);
       if (!firstSection) return false;
       const section = firstSection[1] || firstSection[0];
       return /text-center/.test(section) &&
              /items-center/.test(section) &&
-             !/md:grid-cols-2|md:flex-row|lg:grid-cols-[3-9]/.test(section);
-    }
-  },
-  {
-    id: 'default-hero-h1',
-    weight: 0.5,
-    desc: 'Hero h1 = text-5xl/6xl/7xl (standard range)',
-    detect: (html) => {
-      const h1Match = html.match(/<h1[^>]*class="([^"]*)"[^>]*>/i);
-      if (!h1Match) return true; // no h1 = worse
-      return /text-(?:5|6|7)xl/.test(h1Match[1]) && !/text-\[/.test(h1Match[1]);
-    }
-  },
-  {
-    id: 'default-section-sequence',
-    weight: 0.9,
-    desc: 'hero→features→grid→cta sequence',
-    detect: (html) => {
-      const sections = (html.match(/<(?:section|div)\s[^>]*?(?:id|class)="([^"]*(?:hero|feature|grid|cta|card|testimonial|footer)[^"]*)"[^>]*>/gi) || [])
-        .map(s => {
-          const m = s.match(/(?:id|class)="([^"]*?(?:hero|feature|grid|cta|card|testimonial|footer)[^"]*)"/i);
-          return m ? m[1] : '';
-        });
-      // Check for the default sequence pattern
-      const hasHero = sections.some(s => /hero/i.test(s));
-      const hasFeatures = sections.some(s => /feature/i.test(s));
-      const hasGrid = sections.some(s => /grid|card/i.test(s));
-      const hasCta = sections.some(s => /cta/i.test(s));
-      return hasHero && hasFeatures && hasGrid && hasCta && sections.length <= 6;
+             !/md:grid-cols-2|md:flex-row|lg:grid-cols-[3-9]|absolute.*inset-0|min-h-screen/.test(section);
     }
   },
   {
     id: 'rounded-md-buttons',
     weight: 0.6,
-    desc: 'All buttons = rounded-md (default)',
+    desc: 'Every button = rounded-md (default AI pattern)',
     detect: (html) => {
-      const buttons = html.match(/class="[^"]*rounded-[^"]*"[^>]*button[^>]*>/gi) ||
-                      html.match(/<button[^>]*class="([^"]*rounded[^"]*)"[^>]*>/gi);
-      if (!buttons || buttons.length === 0) return false;
-      const roundedMd = buttons.filter(b => /rounded-md/.test(b) && !/rounded-lg|rounded-xl|rounded-2xl|rounded-full|rounded-none|rounded-\[/.test(b));
+      const buttons = html.match(/<button[^>]*class="([^"]*rounded[^"]*)"[^>]*>/gi) || [];
+      if (buttons.length === 0) return false;
+      const roundedMd = buttons.filter(b => /rounded-md/.test(b) && !/rounded-lg|rounded-xl|rounded-2xl|rounded-full|rounded-none/.test(b));
       return roundedMd.length > 0 && roundedMd.length === buttons.length;
     }
   },
   {
-    id: 'border-card-default',
-    weight: 0.7,
-    desc: 'Cards = border + subtle shadow (default AI pattern)',
-    detect: (html) => {
-      // Look for card patterns with both border and shadow
-      const cardPatterns = html.match(/class="[^"]*(?:card|product-card|service-card)[^"]*"/gi) || [];
-      if (cardPatterns.length === 0) return false;
-      const withBorderShadow = cardPatterns.filter(c =>
-        /border/.test(c) && /shadow/.test(c)
-      );
-      return withBorderShadow.length > 0 && withBorderShadow.length >= cardPatterns.length * 0.7;
-    }
-  },
-  {
     id: 'same-section-padding',
-    weight: 0.5,
-    desc: 'All sections same vertical padding',
+    weight: 0.6,
+    desc: 'Every section has identical vertical padding',
     detect: (html) => {
       const pyPatterns = html.match(/py-(?:16|20|24|28|32|36)\b/g) || [];
       if (pyPatterns.length < 3) return false;
@@ -123,29 +127,16 @@ const SIGNALS = [
   },
   {
     id: 'no-distinctive-motif',
-    weight: 0.9,
-    desc: 'No visual motif detectable (no signature element)',
+    weight: 1.0,
+    desc: 'Zero visual motifs — no signature element whatsoever',
     detect: (html) => {
-      // Check for common signature elements
       const hasGiantType = /text-(?:7|8|9)xl|text-\[(?:6[4-9]|[7-9]\d|\d{3})px\]/.test(html);
       const hasAsymmetry = /col-span-(?:[2-9]|1[0-9])|md:grid-cols-5/.test(html);
       const hasFullBleed = /h-screen|min-h-screen|absolute inset-0/.test(html);
       const hasAnimation = /animate-|@keyframes|transform transition/.test(html);
       const hasColorAccent = /from-\[|to-\[|via-\[|bg-gradient/.test(html);
-      return !hasGiantType && !hasAsymmetry && !hasFullBleed && !hasAnimation && !hasColorAccent;
-    }
-  },
-  {
-    id: 'inter-body-only',
-    weight: 0.4,
-    desc: 'Inter as the only font on the page',
-    detect: (html) => {
-      const fonts = html.match(/font-family[^}]*['"]([^'"]+)['"]/gi) || [];
-      const uniqueFonts = [...new Set(fonts.map(f => {
-        const m = f.match(/['"]([^'"]+)['"]/);
-        return m ? m[1].split(',')[0].trim() : '';
-      }))];
-      return uniqueFonts.length === 1 && uniqueFonts[0] === 'Inter';
+      const hasNonFeatureSection = (html.match(/<(?:details|form|blockquote|pre|code)\s/g) || []).length > 2;
+      return !hasGiantType && !hasAsymmetry && !hasFullBleed && !hasAnimation && !hasColorAccent && !hasNonFeatureSection;
     }
   },
 ];
@@ -227,7 +218,7 @@ Scores the project on uniqueness (0-100%).
 
 Arguments:
   <project-dir>     Path to project directory (required)
-  --threshold N     Minimum uniqueness score for PASS (default: 50)
+  --threshold N     Minimum uniqueness score for PASS (default: 60)
   --json            Output as JSON
 
 Exit codes:
@@ -239,7 +230,7 @@ Exit codes:
   const projectDir = path.resolve(args[0]);
   const jsonMode = args.includes('--json');
   const thrIdx = args.indexOf('--threshold');
-  const threshold = thrIdx !== -1 && thrIdx + 1 < args.length ? parseFloat(args[thrIdx + 1]) : 50;
+  const threshold = thrIdx !== -1 && thrIdx + 1 < args.length ? parseFloat(args[thrIdx + 1]) : 60;
 
   if (!fs.existsSync(projectDir)) {
     console.error('Error: Project directory not found: ' + projectDir);

@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>DataFlow — Event Processing at Scale</title><script src="https://cdn.tailwindcss.com"></script><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet"><style>:root{--bg:#0D0D12;--surface:#15151E;--text:#E0E0E8;--accent:#F59E0B;--green:#10B981;--muted:#6B6B7B;--mono:'JetBrains Mono',monospace;--body:'Inter',sans-serif}*{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--body);background:var(--bg);color:var(--text)}.mono{font-family:var(--mono)}</style></head><body>
+
+<nav class="sticky top-0 z-50 bg-[var(--surface)]/95 border-b border-white/5"><div class="max-w-6xl mx-auto px-8 h-14 flex items-center justify-between"><a href="#" class="mono text-sm font-bold tracking-tight"><span class="text-[var(--accent)]">$</span> dataflow</a><div class="hidden md:flex gap-6 text-xs mono text-[var(--muted)]"><a href="#" class="hover:text-[var(--accent)]">docs</a><a href="#" class="hover:text-[var(--accent)]">pricing</a><a href="#" class="hover:text-[var(--accent)]">status</a></div><button class="border border-[var(--accent)]/30 text-[var(--accent)] px-4 py-1.5 text-xs mono hover:bg-[var(--accent)]/10" style="border-radius:2px">$ deploy</button></div></nav>
+
+<!-- 1. HERO-STATS: full-bleed цифры (не hero с заголовком!) -->
+<section class="min-h-[85vh] flex items-center justify-center relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10" style="background:radial-gradient(circle at 30% 50%,var(--accent),transparent 70%)"></div>
+  <div class="relative z-10 text-center px-8">
+    <p class="mono text-xs text-[var(--green)] mb-6">● SYSTEM OPERATIONAL <span class="text-[var(--muted)]">UPTIME 99.99%</span></p>
+    <div class="mono text-7xl md:text-8xl font-bold text-[var(--accent)] mb-4">500K<span class="text-3xl text-[var(--muted)]">+</span></div>
+    <p class="mono text-lg text-[var(--muted)] mb-2">events processed per second</p>
+    <div class="flex justify-center gap-12 mt-12">
+      <div class="text-left"><span class="block mono text-3xl text-[var(--green)] font-bold">10ms</span><span class="text-xs mono text-[var(--muted)]">p99 latency</span></div>
+      <div class="text-left"><span class="block mono text-3xl text-[var(--green)] font-bold">99.9<span class="text-sm">%</span></span><span class="text-xs mono text-[var(--muted)]">uptime SLA</span></div>
+      <div class="text-left"><span class="block mono text-3xl text-[var(--green)] font-bold">∞</span><span class="text-xs mono text-[var(--muted)]">auto-scale</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. PROBLEM: боль клиента -->
+<section class="py-20 px-8 max-w-3xl mx-auto">
+  <p class="mono text-xs text-[var(--accent)] tracking-widest mb-4">// THE PROBLEM</p>
+  <h2 class="mono text-3xl font-bold mb-4">Your pipeline <span class="text-[var(--accent)]">drops 12%</span> of events at peak load.</h2>
+  <p class="text-[var(--muted)] text-lg leading-relaxed">Kafka queues overflow. Lambda timeouts. You lose revenue because your infra can't keep up. And you don't know until customers complain.</p>
+</section>
+
+<!-- 3. SOLUTION: что предлагаем -->
+<section class="py-16 px-8 max-w-3xl mx-auto">
+  <p class="mono text-xs text-[var(--green)] tracking-widest mb-4">// THE SOLUTION</p>
+  <h2 class="mono text-3xl font-bold mb-6">DataFlow <span class="text-[var(--accent)]">guarantees</span> zero-loss processing at any scale.</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+    <div class="bg-[var(--surface)] p-5 border border-white/5" style="border-radius:2px"><div class="mono text-2xl text-[var(--accent)] mb-2">write →</div><p class="text-[var(--muted)] text-sm">One-line SDK. No config files. No YAML.</p></div>
+    <div class="bg-[var(--surface)] p-5 border border-white/5" style="border-radius:2px"><div class="mono text-2xl text-[var(--accent)] mb-2">buffer →</div><p class="text-[var(--muted)] text-sm">In-memory + persistent. Survives pod restarts.</p></div>
+    <div class="bg-[var(--surface)] p-5 border border-white/5" style="border-radius:2px"><div class="mono text-2xl text-[var(--accent)] mb-2">deliver →</div><p class="text-[var(--muted)] text-sm">At-least-once. Exactly-once optional.</p></div>
+  </div>
+</section>
+
+<!-- 4. PRICING: 3 transparent tiers -->
+<section class="py-20 px-8 max-w-4xl mx-auto">
+  <p class="mono text-xs text-[var(--accent)] tracking-widest mb-4">// PRICING</p>
+  <h2 class="mono text-3xl font-bold mb-10">Transparent. <span class="text-[var(--muted)]">No sales calls.</span></h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="bg-[var(--surface)] p-6 border border-white/5" style="border-radius:2px"><div class="mono text-xs text-[var(--muted)] mb-2">STARTER</div><div class="mono text-3xl font-bold mb-4">$0<span class="text-sm text-[var(--muted)]">/mo</span></div><ul class="text-xs text-[var(--muted)] space-y-2 mono"><li>100K events/mo</li><li>1-day retention</li><li>Community support</li></ul><button class="w-full mt-6 border border-white/10 text-[var(--text)] py-2 text-xs mono hover:border-[var(--accent)]" style="border-radius:2px">$ start</button></div>
+    <div class="bg-[var(--surface)] p-6 border border-[var(--accent)]/30 relative" style="border-radius:2px"><div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[var(--accent)] text-[var(--bg)] px-3 py-0.5 text-xs mono font-bold" style="border-radius:2px">POPULAR</div><div class="mono text-xs text-[var(--accent)] mb-2">PRO</div><div class="mono text-3xl font-bold mb-4">$299<span class="text-sm text-[var(--muted)]">/mo</span></div><ul class="text-xs text-[var(--muted)] space-y-2 mono"><li>10M events/mo</li><li>30-day retention</li><li>Slack support</li><li>SOC 2 reports</li></ul><button class="w-full mt-6 bg-[var(--accent)] text-[var(--bg)] py-2 text-xs mono font-bold hover:bg-amber-400" style="border-radius:2px">$ deploy pro</button></div>
+    <div class="bg-[var(--surface)] p-6 border border-white/5" style="border-radius:2px"><div class="mono text-xs text-[var(--muted)] mb-2">ENTERPRISE</div><div class="mono text-3xl font-bold mb-4"><span class="text-[var(--muted)]">Custom</span></div><ul class="text-xs text-[var(--muted)] space-y-2 mono"><li>Unlimited events</li><li>365-day retention</li><li>Dedicated support</li><li>On-prem option</li></ul><button class="w-full mt-6 border border-white/10 text-[var(--text)] py-2 text-xs mono hover:border-[var(--accent)]" style="border-radius:2px">$ contact</button></div>
+  </div>
+</section>
+
+<!-- 5. FAQ: аккордеон с техническими ответами -->
+<section class="py-20 px-8 max-w-3xl mx-auto">
+  <p class="mono text-xs text-[var(--accent)] tracking-widest mb-4">// FAQ</p>
+  <div class="space-y-3">
+    <details class="bg-[var(--surface)] p-5 border border-white/5" style="border-radius:2px"><summary class="mono text-sm font-bold cursor-pointer hover:text-[var(--accent)]">How does auto-scaling work?</summary><p class="text-[var(--muted)] text-sm mt-3">DataFlow uses predictive scaling based on your traffic patterns. No cold starts — we pre-warm capacity.</p></details>
+    <details class="bg-[var(--surface)] p-5 border border-white/5" style="border-radius:2px"><summary class="mono text-sm font-bold cursor-pointer hover:text-[var(--accent)]">What's your latency SLA?</summary><p class="text-[var(--muted)] text-sm mt-3">10ms p99 for processing. End-to-end latency depends on your sink configuration.</p></details>
+    <details class="bg-[var(--surface)] p-5 border border-white/5" style="border-radius:2px"><summary class="mono text-sm font-bold cursor-pointer hover:text-[var(--accent)]">Can I self-host?</summary><p class="text-[var(--muted)] text-sm mt-3">Yes. Enterprise plan includes on-prem deployment option with air-gapped support.</p></details>
+  </div>
+</section>
+
+<!-- 6. CTA-SMALL: не баннер, а простая строка -->
+<section class="py-16 px-8 max-w-3xl mx-auto text-center border-t border-white/5"><p class="mono text-sm text-[var(--muted)] mb-3">Ready to stop dropping events?</p><button class="bg-[var(--accent)] text-[var(--bg)] px-8 py-3 text-sm mono font-bold hover:bg-amber-400" style="border-radius:2px">$ deploy --free</button><p class="mono text-xs text-[var(--muted)] mt-3">No credit card. 100K events free.</p></section>
+
+<footer class="border-t border-white/5 py-8 text-center text-xs mono text-[var(--muted)]"><span class="text-[var(--accent)]">$</span> dataflow <span class="ml-4">© 2026</span></footer>
+</body></html>

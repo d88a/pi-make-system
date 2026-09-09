@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>BuildPro — Архитектурное строительство</title><script src="https://cdn.tailwindcss.com"></script><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet"><style>:root{--bg:#F5F0EB;--surface:#FFFFFF;--text:#2C2416;--accent:#B8963E;--muted:#8B7D6B;--display:'Playfair Display',serif;--body:'Inter',sans-serif}*{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--body);background:var(--bg);color:var(--text)}</style></head><body>
+
+<nav class="sticky top-0 z-50 transition-all duration-300" id="nav"><div class="max-w-6xl mx-auto px-8 h-16 flex items-center justify-between"><a href="#" class="font-[var(--display)] text-xl font-bold tracking-tight">Build<span class="text-[var(--accent)]">Pro</span></a><div class="hidden md:flex gap-8 text-sm text-[var(--muted)]"><a href="#" class="hover:text-[var(--text)]">Проекты</a><a href="#" class="hover:text-[var(--text)]">Процесс</a><a href="#" class="hover:text-[var(--text)]">О нас</a></div><button class="border border-[var(--accent)] text-[var(--accent)] px-6 py-2 text-sm hover:bg-[var(--accent)] hover:text-white transition-colors" style="border-radius:4px">Начать проект</button></div></nav>
+
+<!-- 1. HERO-EDITORIAL: философия, цитата, не продукт -->
+<section class="min-h-[90vh] flex flex-col justify-center px-8 max-w-4xl mx-auto">
+  <p class="font-[var(--display)] text-sm tracking-[0.3em] text-[var(--accent)] uppercase mb-8">Архитектурное строительство</p>
+  <h1 class="font-[var(--display)] text-6xl md:text-7xl font-bold leading-[1.05] mb-8">Мы строим не <span class="italic text-[var(--accent)]">коробки</span>.<br>Мы строим пространство для жизни.</h1>
+  <p class="text-lg text-[var(--muted)] max-w-xl leading-relaxed mb-10">Каждый объект — это не просто квадратные метры. Это место где дети вырастут, семьи соберутся за столом, и бизнес обретёт дом.</p>
+  <div class="flex gap-6 text-sm text-[var(--muted)]"><span class="font-[var(--display)] text-3xl text-[var(--accent)]">23</span> года опыта<span class="ml-8 font-[var(--display)] text-3xl text-[var(--accent)]">156</span> объектов<span class="ml-8 font-[var(--display)] text-3xl text-[var(--accent)]">98%</span> клиентов рекомендуют</div>
+</section>
+
+<!-- 2. PROCESS: визуальная "дорога" этапов -->
+<section class="py-24 px-8 max-w-5xl mx-auto">
+  <h2 class="font-[var(--display)] text-4xl font-bold mb-4">Как мы <span class="text-[var(--accent)]">работаем</span></h2>
+  <p class="text-[var(--muted)] mb-16 max-w-xl">Прозрачный процесс от первой встречи до ключей</p>
+  <div class="relative">
+    <div class="absolute top-8 left-0 right-0 h-0.5 bg-[var(--accent)]/20 hidden md:block"></div>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+      <div class="text-center"><div class="w-16 h-16 bg-[var(--bg)] border-2 border-[var(--accent)] flex items-center justify-center mx-auto mb-4 relative z-10" style="border-radius:4px"><span class="font-[var(--display)] text-2xl text-[var(--accent)] font-bold">1</span></div><h3 class="font-[var(--display)] text-lg font-bold mb-2">Проект</h3><p class="text-[var(--muted)] text-sm">Архитектурное проектирование, смета, сроки</p></div>
+      <div class="text-center"><div class="w-16 h-16 bg-[var(--bg)] border-2 border-[var(--accent)] flex items-center justify-center mx-auto mb-4 relative z-10" style="border-radius:4px"><span class="font-[var(--display)] text-2xl text-[var(--accent)] font-bold">2</span></div><h3 class="font-[var(--display)] text-lg font-bold mb-2">Фундамент</h3><p class="text-[var(--muted)] text-sm">Подготовка участка, основание, коммуникации</p></div>
+      <div class="text-center"><div class="w-16 h-16 bg-[var(--bg)] border-2 border-[var(--accent)] flex items-center justify-center mx-auto mb-4 relative z-10" style="border-radius:4px"><span class="font-[var(--display)] text-2xl text-[var(--accent)] font-bold">3</span></div><h3 class="font-[var(--display)] text-lg font-bold mb-2">Стены</h3><p class="text-[var(--muted)] text-sm">Возведение конструкций, кровля, инженерия</p></div>
+      <div class="text-center"><div class="w-16 h-16 bg-[var(--bg)] border-2 border-[var(--accent)] flex items-center justify-center mx-auto mb-4 relative z-10" style="border-radius:4px"><span class="font-[var(--display)] text-2xl text-[var(--accent)] font-bold">4</span></div><h3 class="font-[var(--display)] text-lg font-bold mb-2">Отделка</h3><p class="text-[var(--muted)] text-sm">Чистовая отделка, благоустройство, сдача</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. GALLERY: masonry реальных объектов -->
+<section class="py-20 px-8 bg-[var(--surface)]">
+  <h2 class="font-[var(--display)] text-4xl font-bold mb-4 max-w-5xl mx-auto">Наши <span class="text-[var(--accent)]">проекты</span></h2>
+  <p class="text-[var(--muted)] mb-12 max-w-5xl mx-auto">Реализованные объекты за последние 3 года</p>
+  <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[180px]">
+    <div class="bg-stone-200 row-span-2 col-span-2 flex items-center justify-center text-[var(--muted)] text-sm" style="border-radius:4px">Жилой комплекс «Сосновый»<br>12 000 м²</div>
+    <div class="bg-stone-200 flex items-center justify-center text-[var(--muted)] text-sm" style="border-radius:4px">Коттедж «Лесной»</div>
+    <div class="bg-stone-200 row-span-2 flex items-center justify-center text-[var(--muted)] text-sm" style="border-radius:4px">БЦ «Меридиан»</div>
+    <div class="bg-stone-200 flex items-center justify-center text-[var(--muted)] text-sm" style="border-radius:4px">Таунхаусы «Речной»</div>
+    <div class="bg-stone-200 col-span-2 flex items-center justify-center text-[var(--muted)] text-sm" style="border-radius:4px">Складской комплекс «Северный»<br>8 500 м²</div>
+  </div>
+</section>
+
+<!-- 4. TESTIMONIAL: отзыв клиента -->
+<section class="py-24 px-8 max-w-3xl mx-auto text-center">
+  <p class="font-[var(--display)] text-2xl italic text-[var(--muted)] leading-relaxed mb-8">«BuildPro построили наш дом за 8 месяцев вместо обещанных 10. Ни одной задержки, ни одного скрытого платежа. Через год — ни одной трещины. Рекомендую всем знакомым.»</p>
+  <p class="font-[var(--display)] text-sm font-bold">Алексей М.</p><p class="text-xs text-[var(--muted)]">владелец коттеджа «Лесной»</p>
+</section>
+
+<!-- 5. CTA-BANNER: широкий призыв -->
+<section class="py-24 px-8 text-center" style="background:linear-gradient(135deg,#2C2416,#4A3D2C)">
+  <h2 class="font-[var(--display)] text-4xl font-bold text-white mb-4">Готовы построить <span class="text-[var(--accent)]">ваш</span> проект?</h2>
+  <p class="text-stone-400 mb-10 text-lg">Оставьте заявку — архитектор свяжется сегодня</p>
+  <button class="bg-[var(--accent)] text-[#2C2416] px-10 py-4 font-bold hover:bg-amber-500 transition-colors" style="border-radius:4px">Обсудить проект</button>
+</section>
+
+<footer class="bg-[var(--surface)] py-10 text-center text-sm text-[var(--muted)]"><span class="font-[var(--display)] font-bold text-[var(--text)]">BuildPro</span><span class="ml-4">© 2026. Пространство для жизни.</span></footer>
+</body></html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>МедЦентр — Семейная клиника</title><script src="https://cdn.tailwindcss.com"></script><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet"><style>:root{--bg:#FAF7F2;--surface:#FFFFFF;--text:#2D2418;--accent:#7D9B76;--terra:#C27B5A;--muted:#8B8178;--display:'Lora',serif;--body:'Inter',sans-serif}*{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--body);background:var(--bg);color:var(--text)}</style></head><body>
+
+<nav class="sticky top-0 z-50 bg-[var(--bg)]/90 backdrop-blur-sm"><div class="max-w-6xl mx-auto px-8 h-16 flex items-center justify-between"><a href="#" class="font-[var(--display)] text-xl font-semibold text-[var(--accent)]">МедЦентр</a><div class="hidden md:flex gap-8 text-sm text-[var(--muted)]"><a href="#" class="hover:text-[var(--text)]">О клинике</a><a href="#" class="hover:text-[var(--text)]">Врачи</a><a href="#" class="hover:text-[var(--text)]">Услуги</a></div><button class="bg-[var(--terra)] text-white px-5 py-2 text-sm hover:bg-[#A06245] transition-colors" style="border-radius:16px">Запись</button></div></nav>
+
+<!-- 1. HERO-EDITORIAL: философская цитата, не продукт -->
+<section class="min-h-[85vh] flex flex-col justify-center px-8 max-w-4xl mx-auto">
+  <p class="font-[var(--display)] text-xs tracking-[0.3em] text-[var(--accent)] uppercase mb-8">Семейная клиника с 2009 года</p>
+  <h1 class="font-[var(--display)] text-5xl md:text-6xl font-bold leading-[1.1] mb-8">Мы лечим <span class="italic text-[var(--accent)]">человека</span>,<br>а не болезнь.</h1>
+  <p class="text-lg text-[var(--muted)] max-w-xl leading-relaxed">Потому что за каждым диагнозом — своя история, свои страхи и свои надежды. Мы слушаем прежде чем лечить.</p>
+</section>
+
+<!-- 2. CASE-STUDIES: реальные истории пациентов (НЕ features) -->
+<section class="py-16 px-8 max-w-5xl mx-auto">
+  <h2 class="font-[var(--display)] text-3xl font-bold mb-2">Истории <span class="text-[var(--accent)]">пациентов</span></h2>
+  <p class="text-[var(--muted)] mb-12">Реальные случаи из практики. Имена изменены.</p>
+  <div class="space-y-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <div class="bg-stone-200 h-72 flex items-center justify-center text-[var(--muted)]" style="border-radius:12px">[Фото пациента]</div>
+      <div><p class="font-[var(--display)] text-xl italic text-[var(--muted)] leading-relaxed mb-6">«После трёх лет безуспешного лечения в других клиниках, здесь нашли причину за две недели. Оказалось — редкая аутоиммунная реакция.»</p><p class="font-[var(--display)] text-sm font-bold">Мария, 34 года</p><p class="text-xs text-[var(--muted)]">Пациент с 2023 года</p></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <div class="order-1 md:order-2 bg-stone-200 h-72 flex items-center justify-center text-[var(--muted)]" style="border-radius:12px">[Фото пациента]</div>
+      <div class="order-2 md:order-1"><p class="font-[var(--display)] text-xl italic text-[var(--muted)] leading-relaxed mb-6">«Привёл сына с подозрением на астму. Врач провёл полное обследование, оказалось — аллергия на домашнюю пыль. Через месяц лечения — ни одного приступа.»</p><p class="font-[var(--display)] text-sm font-bold">Дмитрий, отец Артёма (7 лет)</p><p class="text-xs text-[var(--muted)]">Пациент с 2024 года</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. ABOUT-DOCTOR: лица врачей (НЕ абстрактные преимущества) -->
+<section class="py-16 px-8 max-w-5xl mx-auto bg-[var(--surface)]" style="border-radius:16px">
+  <h2 class="font-[var(--display)] text-3xl font-bold mb-2">Кто вас <span class="text-[var(--accent)]">лечит</span></h2>
+  <p class="text-[var(--muted)] mb-12">Врачи с опытом от 10 лет. Никаких «универсальных специалистов».</p>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="text-center"><div class="w-32 h-32 bg-stone-200 mx-auto mb-4" style="border-radius:50%"></div><h3 class="font-[var(--display)] text-lg font-bold">Анна Соколова</h3><p class="text-xs text-[var(--accent)] mb-2">Терапевт, 15 лет</p><p class="text-[var(--muted)] text-sm">Специализация: диагностика сложных случаев</p></div>
+    <div class="text-center"><div class="w-32 h-32 bg-stone-200 mx-auto mb-4" style="border-radius:50%"></div><h3 class="font-[var(--display)] text-lg font-bold">Игорь Ветров</h3><p class="text-xs text-[var(--accent)] mb-2">Педиатр, 12 лет</p><p class="text-[var(--muted)] text-sm">Специализация: аллергология и иммунология</p></div>
+    <div class="text-center"><div class="w-32 h-32 bg-stone-200 mx-auto mb-4" style="border-radius:50%"></div><h3 class="font-[var(--display)] text-lg font-bold">Елена Градова</h3><p class="text-xs text-[var(--accent)] mb-2">Кардиолог, 18 лет</p><p class="text-[var(--muted)] text-sm">Специализация: профилактическая кардиология</p></div>
+  </div>
+</section>
+
+<!-- 4. SERVICES-LIST: список услуг по направлениям (НЕ карточки) -->
+<section class="py-20 px-8 max-w-3xl mx-auto">
+  <h2 class="font-[var(--display)] text-3xl font-bold mb-8">Направления <span class="text-[var(--accent)]">клиники</span></h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12">
+    <div class="border-b border-stone-200 pb-4 pt-4"><span class="font-[var(--display)] font-semibold">Терапия</span><span class="text-[var(--muted)] text-sm ml-3">Диагностика и лечение широкого профиля</span></div>
+    <div class="border-b border-stone-200 pb-4 pt-4"><span class="font-[var(--display)] font-semibold">Педиатрия</span><span class="text-[var(--muted)] text-sm ml-3">От рождения до 18 лет</span></div>
+    <div class="border-b border-stone-200 pb-4 pt-4"><span class="font-[var(--display)] font-semibold">Кардиология</span><span class="text-[var(--muted)] text-sm ml-3">ЭКГ, УЗИ сердца, холтер</span></div>
+    <div class="border-b border-stone-200 pb-4 pt-4"><span class="font-[var(--display)] font-semibold">Аллергология</span><span class="text-[var(--muted)] text-sm ml-3">Кожные пробы, иммунотерапия</span></div>
+    <div class="border-b border-stone-200 pb-4 pt-4"><span class="font-[var(--display)] font-semibold">Гастроэнтерология</span><span class="text-[var(--muted)] text-sm ml-3">Диагностика ЖКТ, диетология</span></div>
+    <div class="border-b border-stone-200 pb-4 pt-4"><span class="font-[var(--display)] font-semibold">Неврология</span><span class="text-[var(--muted)] text-sm ml-3">Мигрени, нарушения сна, ЭЭГ</span></div>
+  </div>
+</section>
+
+<!-- 5. CONTACT-FORM: полноценная форма записи (НЕ centred CTA) -->
+<section class="py-16 px-8 max-w-2xl mx-auto bg-[var(--surface)]" style="border-radius:16px">
+  <h2 class="font-[var(--display)] text-3xl font-bold mb-2">Запишитесь на <span class="text-[var(--accent)]">приём</span></h2>
+  <p class="text-[var(--muted)] mb-8">Перезвоним в течение часа, подберём удобное время</p>
+  <form class="space-y-4">
+    <input class="w-full border border-stone-300 p-4 text-sm" style="border-radius:12px" placeholder="Ваше имя">
+    <input class="w-full border border-stone-300 p-4 text-sm" style="border-radius:12px" placeholder="Телефон">
+    <select class="w-full border border-stone-300 p-4 text-sm text-[var(--muted)]" style="border-radius:12px"><option>Выберите направление</option><option>Терапия</option><option>Педиатрия</option><option>Кардиология</option></select>
+    <button class="w-full bg-[var(--terra)] text-white p-4 font-medium hover:bg-[#A06245] transition-colors" style="border-radius:16px">Записаться</button>
+  </form>
+</section>
+
+<footer class="bg-[var(--surface)] py-10 text-center text-sm text-[var(--muted)]"><span class="font-[var(--display)] font-semibold text-[var(--accent)]">МедЦентр</span><span class="ml-4">© 2026. Лечим человека, а не болезнь.</span></footer>
+</body></html>

@@ -1,0 +1,36 @@
+{
+  "project": "МедЦентр Семейный",
+  "compositional_idea": {
+    "one_liner": "Редакционный журнал о здоровье — персональные истории, а не список услуг",
+    "structure": ["nav", "hero-editorial-quote", "case-studies-2", "about-doctor-team", "services-list-4", "contact-form-full"],
+    "structure_rationale": "Медицина — это доверие. Доверие строится на историях и лицах, а не на 'преимуществах в 3 карточках'. Структура: философия → реальные истории → кто лечит → что лечит → запись.",
+    "unique_section": "case-studies-2 — реальные истории пациентов с фото и цитатами (анонимизированные), оформленные как журнальные статьи"
+  },
+  "content_story": {
+    "narrative": "Философия заботы → «посмотрите, кому мы уже помогли» → «вот кто вас будет лечить (лица!)» → «вот что мы лечим» → «запишитесь, мы рядом»",
+    "information_architecture": "editorial",
+    "key_message_sequence": ["Философия: 'лечим человека, не болезнь'", "Доказательство: 2 истории пациентов", "Доверие: лица врачей", "Информация: список услуг", "Действие: форма записи"]
+  },
+  "project_specific_element": {
+    "element": "Реальные истории пациентов как журнальные статьи — крупное фото, цитата, описание случая, результат лечения. Оформлено как редакционный разворот.",
+    "where": "секция case-studies",
+    "rationale": "Медицинский сайт — люди ищут доказательства что здесь лечат. Истории пациентов = социальное доказательство сильнее чем 'у нас современное оборудование'."
+  },
+  "visual_concept": {
+    "one_liner": "Тёплый семейный журнал о здоровье — человечность, доверие, забота",
+    "mood": "serene",
+    "emotional_target": "Спокойствие, доверие, «здесь позаботятся»",
+    "visual_metaphor": "семейный фотоальбом в хорошей поликлинике"
+  },
+  "typography_strategy": { "display_font": "Lora", "body_font": "Inter", "h1_size": "40-56px", "contrast_ratio": "3x" },
+  "color_strategy": { "concept": "тёплый природный: кремовый фон, шалфейный акцент, терракотовые детали", "primary_role": "atmosphere", "accent_role": "emotional-spike", "accent_coverage": "≤3%", "palette_direction": "green", "background_character": "тёплый кремовый" },
+  "composition_strategy": { "hero_character": "editorial", "hero_rationale": "не hero с продуктом, а редакционная цитата-философия — задаёт тон доверия", "rhythm": "философия → истории → люди → услуги → действие", "density": "воздушный", "asymmetry_level": 5 },
+  "component_character": { "button": { "character": "тёплый", "radius": "16px", "weight": "medium", "hover": "subtle-shift" }, "card": { "character": "журнальный", "border": "none", "shadow": "none", "radius": "12px" }, "navigation": { "character": "строгий верхний", "sticky": true, "transparency": "transparent-to-solid" } },
+  "visual_motifs": [
+    {"motif": "Крупные портретные фотографии врачей — лица на пол-экрана, никаких стоковых фото", "where": "about-doctor", "rationale": "доверие через лица"},
+    {"motif": "Цитаты пациентов крупным шрифтом Lora italic — как в журнале", "where": "case-studies", "rationale": "социальное доказательство через реальные истории"},
+    {"motif": "Вертикальный ритм с чередованием — текст слева/фото справа → фото слева/текст справа", "where": "case-studies, about", "rationale": "редакционный ритм, не монотонный"}
+  ],
+  "forbidden_patterns": ["centered HERO с продуктом", "3-колоночная сетка features", "centered CTA баннер", "синие/indigo акценты (медицинское клише)", "Inter как display", "border+shadow карточки", "hero→features→cta скелет"],
+  "rationale": "Семейная клиника. Аудитория — родители с детьми, пожилые люди. Нужно доверие, а не 'преимущества'. Структура: философия → истории → лица → услуги. Никакого стандартного hero с продуктом. Истории пациентов и лица врачей = главный контент, не украшение."
+}

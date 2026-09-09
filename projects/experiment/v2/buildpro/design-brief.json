@@ -1,0 +1,36 @@
+{
+  "project": "BuildPro Construction",
+  "compositional_idea": {
+    "one_liner": "Нарративная история строительства — от философии до конкретных объектов",
+    "structure": ["nav", "hero-story", "process-4-steps", "gallery-masonry", "testimonial", "cta-banner"],
+    "structure_rationale": "Строительство — это процесс во времени. Логично показать философию → этапы → результат → отзывы → призыв. Никаких 'features in 3 cards'.",
+    "unique_section": "process-4-steps — визуальная «дорога» из 4 этапов строительства с иконками и описанием"
+  },
+  "content_story": {
+    "narrative": "Сначала: «мы строим не коробки, а пространство для жизни» → как мы это делаем (4 этапа) → что уже построили (галерея) → что говорят клиенты → «давайте строить ваше»",
+    "information_architecture": "narrative-flow",
+    "key_message_sequence": ["Философия: пространство для жизни", "Процесс: 4 этапа от проекта до ключей", "Доказательство: галерея объектов", "Социальное: отзывы клиентов", "Призыв: начать проект"]
+  },
+  "project_specific_element": {
+    "element": "Визуальная «дорога» из 4 этапов строительства — горизонтальная полоса с шагами (проект → фундамент → стены → отделка), каждый с иконкой и описанием, соединённые линией",
+    "where": "секция process",
+    "rationale": "Строительство — линейный процесс. Визуальная дорога этапов понятнее чем абстрактные 'преимущества в 3 карточках'."
+  },
+  "visual_concept": {
+    "one_liner": "Тактильная архитектурная история — бетон, дерево, пространство",
+    "mood": "premium",
+    "emotional_target": "Уверенность, основательность, видение",
+    "visual_metaphor": "архитектурная студия с макетами и материалами"
+  },
+  "typography_strategy": { "display_font": "Playfair Display", "body_font": "Inter", "h1_size": "64-80px", "contrast_ratio": "4x" },
+  "color_strategy": { "concept": "природный премиум: тёплый бетон, дерево, золото", "primary_role": "atmosphere", "accent_role": "signal", "accent_coverage": "≤5%", "palette_direction": "gold-amber", "background_character": "тёплый бетонный" },
+  "composition_strategy": { "hero_character": "editorial", "hero_rationale": "редакционный hero с крупной цитатой — философия компании, не продукт", "rhythm": "воздух → плотный процесс → галерея → воздух → отзыв → призыв", "density": "сбалансированный", "asymmetry_level": 6 },
+  "component_character": { "button": { "character": "премиум", "radius": "4px", "weight": "medium", "hover": "subtle-shift" }, "card": { "character": "тактильный", "border": "none", "shadow": "subtle", "radius": "4px" }, "navigation": { "character": "строгий верхний", "sticky": true, "transparency": "transparent-to-solid" } },
+  "visual_motifs": [
+    {"motif": "Крупная контрастная типографика — Playfair Display 80px жирный + 18px светлый — драматический контраст", "where": "hero", "rationale": "архитектурный журнал"},
+    {"motif": "Линия-дорога процесса — горизонтальная полоса с 4 шагами, соединёнными линией", "where": "process", "rationale": "линейность строительства"},
+    {"motif": "Полноэкранная галерея masonry — фото объектов разных размеров", "where": "gallery", "rationale": "портфолио архитектурного бюро"}
+  ],
+  "forbidden_patterns": ["3-колоночная сетка features", "centered HERO", "centered CTA", "стандартные карточки с border", "Inter как display-шрифт", "hero→features→cta скелет"],
+  "rationale": "Строительная компания премиум-сегмента. Аудитория — частные заказчики с высокими требованиями. Вместо 'features в 3 карточках' — нарратив: философия → процесс → результат → отзывы. Structure = история, не каталог функций."
+}

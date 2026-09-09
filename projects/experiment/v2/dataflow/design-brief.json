@@ -1,0 +1,36 @@
+{
+  "project": "DataFlow Analytics",
+  "compositional_idea": {
+    "one_liner": "Продукт-first: сразу показываем мощность, потом объясняем как, потом доказываем ценой",
+    "structure": ["nav", "hero-stats-fullbleed", "problem-statement", "solution-demo", "how-it-works-3", "pricing-3-tiers", "faq-accordion", "cta-small"],
+    "structure_rationale": "Tech B2B покупает не 'преимущества', а доказательства. Структура: цифры → проблема → решение → механика → цена → вопросы → действие. Features в grid — это для B2C.",
+    "unique_section": "hero-stats-fullbleed — гигантские цифры метрик на весь экран (не hero с текстом и кнопкой)"
+  },
+  "content_story": {
+    "narrative": "Шок-цифра (500K events/sec) → «ваш текущий стек не справляется» → «вот как DataFlow решает» → «вот как это работает внутри» → «вот сколько стоит (прозрачно)» → «ответы на вопросы» → «попробуйте»",
+    "information_architecture": "proof-first",
+    "key_message_sequence": ["Мощность в цифрах", "Проблема (боль)", "Решение (как)", "Механика (3 шага)", "Цена (прозрачная)", "FAQ", "CTA"]
+  },
+  "project_specific_element": {
+    "element": "Full-bleed цифровая панель — гигантские цифры метрик (500K+, 10ms, 99.9%) на тёмном фоне с анимированным счётчиком",
+    "where": "hero (первый экран)",
+    "rationale": "Tech B2B покупает цифры, не красивые заголовки. Первое что видит посетитель — не 'Transform Your Business', а '500 000 events per second'."
+  },
+  "visual_concept": {
+    "one_liner": "Тёмная приборная панель — данные, скорость, прозрачность",
+    "mood": "bold",
+    "emotional_target": "Мощность, скорость, доверие к технологии",
+    "visual_metaphor": "дата-центр с реальными мониторами метрик"
+  },
+  "typography_strategy": { "display_font": "JetBrains Mono", "body_font": "Inter", "h1_size": "48-64px mono", "contrast_ratio": "5x" },
+  "color_strategy": { "concept": "dark terminal: чёрный фон, янтарные данные, зелёные статусы", "primary_role": "atmosphere", "accent_role": "data-highlight", "accent_coverage": "≤3%", "palette_direction": "neutral", "background_character": "тёмный терминальный" },
+  "composition_strategy": { "hero_character": "full-bleed", "hero_rationale": "не hero с заголовком, а приборная панель с цифрами", "rhythm": "данные → проблема → решение → как работает → цена → вопросы → cta", "density": "плотный информационный", "asymmetry_level": 4 },
+  "component_character": { "button": { "character": "терминальный", "radius": "2px", "weight": "medium", "hover": "glow" }, "card": { "character": "терминальная панель", "border": "subtle", "shadow": "none", "radius": "2px" }, "navigation": { "character": "минимальный", "sticky": true, "transparency": "solid" } },
+  "visual_motifs": [
+    {"motif": "Моноширинный шрифт для всего — JetBrains Mono даже для заголовков", "where": "вся страница", "rationale": "терминальная эстетика, tech-native"},
+    {"motif": "Зелёные индикаторы статуса (● Online) и янтарные цифры", "where": "hero, pricing", "rationale": "дата-центр мониторинг"},
+    {"motif": "Аккордеон FAQ с техническими диаграммами внутри", "where": "faq", "rationale": "инженеры любят схемы"}
+  ],
+  "forbidden_patterns": ["hero с заголовком и кнопкой", "3-колоночная сетка features", "центрированные секции", "скруглённые углы", "тени на карточках", "градиенты", "Inter как display", "стандартный CTA-баннер"],
+  "rationale": "DataFlow — инфраструктурный B2B продукт для инженеров и CTO. Аудитория ненавидит маркетинговые лендинги. Структура 'proof-first': сначала цифры, потом объяснение. Никаких 'features in 3 cards' — это для B2C. Терминальная эстетика — моноширинные шрифты, тёмный фон, зелёные индикаторы — говорит 'это для инженеров'."
+}
