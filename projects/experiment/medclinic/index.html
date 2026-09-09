@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>МедЦентр — Ваше здоровье в надёжных руках</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-bg: #FAFDF9; --color-surface: #FFFFFF; --color-text: #1C2E1C;
+    --color-primary: #0D9488; --color-accent: #059669; --color-muted: #5C7A5C;
+    --font-display: 'Lora', serif; --font-body: 'Inter', sans-serif;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: var(--font-body); background: var(--color-bg); color: var(--color-text); }
+  .font-display { font-family: var(--font-display); }
+</style>
+</head>
+<body>
+
+<!-- NAV: строгий верхний, solid -->
+<nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-emerald-100">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="#" class="font-display text-xl font-semibold text-[var(--color-primary)]">МедЦентр</a>
+    <div class="hidden md:flex gap-8 text-sm font-medium text-[var(--color-muted)]">
+      <a href="#" class="hover:text-[var(--color-primary)] transition-colors">Услуги</a>
+      <a href="#" class="hover:text-[var(--color-primary)] transition-colors">Врачи</a>
+      <a href="#" class="hover:text-[var(--color-primary)] transition-colors">О клинике</a>
+      <a href="#" class="hover:text-[var(--color-primary)] transition-colors">Контакты</a>
+    </div>
+    <button class="bg-[var(--color-accent)] text-white px-6 py-2 font-medium text-sm hover:bg-emerald-700 transition-colors" style="border-radius:12px">Записаться</button>
+  </div>
+</nav>
+
+<!-- HERO: editorial, centered, воздушный, Lora italic -->
+<section class="min-h-[85vh] flex flex-col items-center justify-center text-center px-6" style="background: linear-gradient(180deg, #FAFDF9 0%, #ECFDF5 50%, #FAFDF9 100%)">
+  <p class="font-display text-sm tracking-[0.2em] text-[var(--color-muted)] uppercase mb-6">Многопрофильный медицинский центр</p>
+  <h1 class="font-display text-6xl font-bold leading-[1.1] mb-6 max-w-3xl">Ваше здоровье —<br>наша <span class="text-[var(--color-primary)] italic">ежедневная</span> забота</h1>
+  <p class="text-lg text-[var(--color-muted)] mb-10 max-w-xl leading-relaxed">Современная диагностика и лечение по 30 направлениям.<br>Более 50 врачей высшей категории.</p>
+  <div class="flex gap-4">
+    <button class="bg-[var(--color-accent)] text-white px-8 py-3 font-medium hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-200" style="border-radius:12px">Записаться на приём</button>
+    <button class="border-2 border-[var(--color-primary)]/20 text-[var(--color-primary)] px-8 py-3 font-medium hover:border-[var(--color-primary)] transition-colors" style="border-radius:12px">Наши услуги</button>
+  </div>
+  <!-- Stats: зелёные акценты -->
+  <div class="flex gap-12 mt-16">
+    <div class="text-center"><span class="block font-display text-4xl font-bold text-[var(--color-primary)]">30+</span><span class="text-sm text-[var(--color-muted)]">направлений</span></div>
+    <div class="text-center"><span class="block font-display text-4xl font-bold text-[var(--color-primary)]">50+</span><span class="text-sm text-[var(--color-muted)]">врачей</span></div>
+    <div class="text-center"><span class="block font-display text-4xl font-bold text-[var(--color-primary)]">15</span><span class="text-sm text-[var(--color-muted)]">лет опыта</span></div>
+  </div>
+</section>
+
+<!-- FEATURES: воздушные карточки, subtle shadow, radius 16px -->
+<section class="py-20 px-6 max-w-6xl mx-auto">
+  <h2 class="font-display text-3xl font-bold text-center mb-4">Почему выбирают <span class="text-[var(--color-primary)]">нас</span></h2>
+  <p class="text-[var(--color-muted)] text-center mb-12 max-w-xl mx-auto">Мы создали пространство, где пациент чувствует себя спокойно и уверенно</p>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="bg-white p-8 text-center border border-emerald-50 shadow-sm hover:shadow-md transition-shadow" style="border-radius:16px">
+      <div class="w-14 h-14 bg-emerald-50 flex items-center justify-center mx-auto mb-5" style="border-radius:14px">
+        <svg class="w-7 h-7 text-[var(--color-accent)]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3 class="font-display text-xl font-semibold mb-3">Безопасность</h3>
+      <p class="text-[var(--color-muted)] text-sm leading-relaxed">Все процедуры соответствуют международным стандартам качества и безопасности.</p>
+    </div>
+    <div class="bg-white p-8 text-center border border-emerald-50 shadow-sm hover:shadow-md transition-shadow" style="border-radius:16px">
+      <div class="w-14 h-14 bg-emerald-50 flex items-center justify-center mx-auto mb-5" style="border-radius:14px">
+        <svg class="w-7 h-7 text-[var(--color-accent)]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      </div>
+      <h3 class="font-display text-xl font-semibold mb-3">Без очередей</h3>
+      <p class="text-[var(--color-muted)] text-sm leading-relaxed">Приём точно в назначенное время. Среднее время ожидания — менее 5 минут.</p>
+    </div>
+    <div class="bg-white p-8 text-center border border-emerald-50 shadow-sm hover:shadow-md transition-shadow" style="border-radius:16px">
+      <div class="w-14 h-14 bg-emerald-50 flex items-center justify-center mx-auto mb-5" style="border-radius:14px">
+        <svg class="w-7 h-7 text-[var(--color-accent)]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <h3 class="font-display text-xl font-semibold mb-3">Индивидуально</h3>
+      <p class="text-[var(--color-muted)] text-sm leading-relaxed">Персональный план лечения для каждого пациента. Никаких шаблонных решений.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA: лёгкий градиент, мягкий -->
+<section class="py-20 px-6" style="background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%)">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="font-display text-3xl font-bold mb-4">Запишитесь на <span class="text-[var(--color-primary)]">консультацию</span></h2>
+    <p class="text-[var(--color-muted)] mb-8 text-lg">Первый приём — бесплатно. Ответим на все вопросы.</p>
+    <button class="bg-[var(--color-accent)] text-white px-10 py-4 font-medium text-lg hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-200" style="border-radius:12px">Записаться</button>
+  </div>
+</section>
+
+<footer class="bg-white border-t border-emerald-50 py-10 px-6">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[var(--color-muted)]">
+    <span class="font-display font-semibold text-[var(--color-primary)] text-lg">МедЦентр</span>
+    <span>© 2026. Ваше здоровье — наша забота.</span>
+  </div>
+</footer>
+
+</body>
+</html>

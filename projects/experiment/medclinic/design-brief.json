@@ -1,0 +1,20 @@
+{
+  "project": "МедЦентр",
+  "visual_concept": {
+    "one_liner": "Спокойная медицинская галерея — доверие через прозрачность и воздух",
+    "mood": "serene",
+    "emotional_target": "Спокойствие, доверие, забота",
+    "visual_metaphor": "светлая просторная приёмная с живыми растениями"
+  },
+  "typography_strategy": { "display_font": "Lora", "body_font": "Inter", "scale": "modular", "h1_size": "48-64px", "contrast_ratio": "3.5x" },
+  "color_strategy": { "concept": "природный, успокаивающий", "primary_role": "atmosphere", "accent_role": "emotional spike", "accent_coverage": "≤3%", "palette_direction": "green", "background_character": "светлый воздушный" },
+  "composition_strategy": { "concept": "центрированный, спокойный поток", "hero_character": "editorial", "hero_rationale": "медицинский сайт — доверие важнее визуального шока", "rhythm": "ровный, спокойный поток без резких переходов", "density": "воздушный с большими паузами", "asymmetry_level": 3 },
+  "component_character": { "button": { "character": "лёгкий", "radius": "12px", "weight": "medium", "hover": "subtle-shift" }, "card": { "character": "воздушная витрина", "border": "subtle", "shadow": "subtle", "radius": "16px" }, "navigation": { "character": "строгий верхний", "sticky": true, "transparency": "solid" } },
+  "visual_motifs": [
+    {"motif": "Зелёные акценты только на CTA и иконках — как сигналы доверия", "where": "buttons, icons", "rationale": "зелёный = медицина, здоровье, природа"},
+    {"motif": "Крупные фотографии врачей и клиники — никаких стоковых фото", "where": "hero, about", "rationale": "прозрачность и доверие через реальные лица"},
+    {"motif": "Мягкий градиентный фон на hero — от белого к светло-зелёному", "where": "hero", "rationale": "создаёт ощущение свежести и чистоты"}
+  ],
+  "forbidden_patterns": ["тёмные цвета", "агрессивные красные акценты", "острые углы", "плотные сетки", "Inter как display-шрифт", "технический жаргон в дизайне"],
+  "rationale": "Медицинская клиника. Аудитория — пациенты всех возрастов. Важен покой и доверие. Редакционный hero без агрессивных визуальных приёмов. Зелёные акценты = здоровье. Воздушный spacing = спокойствие. Lora добавляет человечность и теплоту."
+}

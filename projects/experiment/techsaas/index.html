@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>DataFlow — Real-time Analytics Platform</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-bg: #0A0A0F; --color-surface: #13131A; --color-elevated: #1A1A24;
+    --color-text: #EDEDF5; --color-primary: #7C3AED; --color-accent: #A78BFA;
+    --color-muted: #6B6B7B; --font-display: 'Sora', sans-serif; --font-body: 'Inter', sans-serif;
+    --glow: 0 0 20px rgba(124,58,237,0.3);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: var(--font-body); background: var(--color-bg); color: var(--color-text); }
+  .font-display { font-family: var(--font-display); }
+</style>
+</head>
+<body class="bg-[#0A0A0F]">
+
+<!-- NAV: стеклянный плавающий, backdrop-blur -->
+<nav class="sticky top-4 z-50 mx-auto max-w-5xl px-6 h-16 flex items-center justify-between rounded-xl border border-white/5" style="background:rgba(19,19,26,0.8); backdrop-filter:blur(20px);">
+  <a href="#" class="font-display text-lg font-bold tracking-tight">
+    <span class="text-[var(--color-accent)]">◇</span> DataFlow
+  </a>
+  <div class="hidden md:flex gap-8 text-sm font-medium text-[var(--color-muted)]">
+    <a href="#" class="hover:text-white transition-colors">Product</a>
+    <a href="#" class="hover:text-white transition-colors">Docs</a>
+    <a href="#" class="hover:text-white transition-colors">Pricing</a>
+    <a href="#" class="hover:text-white transition-colors">Blog</a>
+  </div>
+  <button class="bg-[var(--color-primary)] text-white px-5 py-2 font-semibold text-sm hover:shadow-[0_0_20px_rgba(124,58,237,0.4)] transition-all" style="border-radius:8px">Start Free</button>
+</nav>
+
+<!-- HERO: split 60/40, асимметрия 9/10, тёмный -->
+<section class="min-h-screen flex items-center px-8">
+  <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 max-w-6xl mx-auto w-full items-center">
+    <!-- Левая часть: 3/5, текст + гигантские цифры -->
+    <div class="lg:col-span-3 space-y-8">
+      <p class="font-mono text-xs tracking-[0.3em] text-[var(--color-accent)] uppercase">Real-time Analytics</p>
+      <h1 class="font-display text-7xl lg:text-8xl font-extrabold leading-[0.9]">
+        <span class="text-[var(--color-accent)]">99.9%</span><br>uptime<br>guaranteed
+      </h1>
+      <p class="text-lg text-[var(--color-muted)] max-w-md">Process millions of events per second with sub-millisecond latency. Built for scale.</p>
+      <div class="flex gap-4">
+        <button class="bg-[var(--color-primary)] text-white px-8 py-3 font-semibold hover:shadow-[0_0_30px_rgba(124,58,237,0.5)] transition-all" style="border-radius:8px">Start building →</button>
+        <button class="border border-white/10 text-white/80 px-8 py-3 font-medium hover:border-white/30 hover:text-white transition-all" style="border-radius:8px">Read docs</button>
+      </div>
+      <!-- Гигантские цифры метрик -->
+      <div class="flex gap-10 pt-8">
+        <div><span class="block font-display text-5xl font-bold text-[var(--color-accent)]">10<span class="text-2xl">ms</span></span><span class="text-sm text-[var(--color-muted)]">latency</span></div>
+        <div><span class="block font-display text-5xl font-bold text-[var(--color-accent)]">500<span class="text-2xl">K+</span></span><span class="text-sm text-[var(--color-muted)]">events/sec</span></div>
+      </div>
+    </div>
+    <!-- Правая часть: 2/5, код/дашборд визуализация -->
+    <div class="lg:col-span-2 relative">
+      <div class="bg-[var(--color-elevated)] rounded-xl p-6 border border-white/5 shadow-[0_0_40px_rgba(124,58,237,0.1)]">
+        <div class="flex gap-2 mb-4"><div class="w-3 h-3 rounded-full bg-red-400"></div><div class="w-3 h-3 rounded-full bg-yellow-400"></div><div class="w-3 h-3 rounded-full bg-green-400"></div></div>
+        <pre class="font-mono text-xs text-[var(--color-accent)] leading-relaxed">
+<span class="text-purple-300">const</span> pipeline = <span class="text-emerald-300">DataFlow</span>
+  .<span class="text-blue-300">source</span>(<span class="text-yellow-300">"events"</span>)
+  .<span class="text-blue-300">filter</span>(e => e.priority > <span class="text-orange-300">5</span>)
+  .<span class="text-blue-300">aggregate</span>({ window: <span class="text-orange-300">"1s"</span> })
+  .<span class="text-blue-300">sink</span>(<span class="text-yellow-300">"dashboard"</span>);</pre>
+      </div>
+      <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-[var(--color-primary)]/10 rounded-full blur-3xl"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES: стеклянные карточки с glow -->
+<section class="py-24 px-8 max-w-6xl mx-auto">
+  <h2 class="font-display text-4xl font-bold mb-4">Built for <span class="text-[var(--color-accent)]">scale</span></h2>
+  <p class="text-[var(--color-muted)] mb-12 max-w-xl">Everything you need to process data at any volume</p>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="bg-[var(--color-elevated)] p-8 border border-white/5 hover:border-[var(--color-primary)]/30 transition-all hover:shadow-[0_0_30px_rgba(124,58,237,0.15)]" style="border-radius:8px">
+      <div class="w-10 h-10 bg-[var(--color-primary)]/10 flex items-center justify-center mb-5" style="border-radius:6px">
+        <span class="font-mono text-[var(--color-accent)] text-lg">⚡</span>
+      </div>
+      <h3 class="font-display text-lg font-semibold mb-2">Sub-ms Latency</h3>
+      <p class="text-[var(--color-muted)] text-sm leading-relaxed">Process data faster than any competitor. 10ms p99 latency at any scale.</p>
+    </div>
+    <div class="bg-[var(--color-elevated)] p-8 border border-white/5 hover:border-[var(--color-primary)]/30 transition-all hover:shadow-[0_0_30px_rgba(124,58,237,0.15)]" style="border-radius:8px">
+      <div class="w-10 h-10 bg-[var(--color-primary)]/10 flex items-center justify-center mb-5" style="border-radius:6px">
+        <span class="font-mono text-[var(--color-accent)] text-lg">∞</span>
+      </div>
+      <h3 class="font-display text-lg font-semibold mb-2">Auto-scaling</h3>
+      <p class="text-[var(--color-muted)] text-sm leading-relaxed">From 100 to 100M events/sec without changing a line of code.</p>
+    </div>
+    <div class="bg-[var(--color-elevated)] p-8 border border-white/5 hover:border-[var(--color-primary)]/30 transition-all hover:shadow-[0_0_30px_rgba(124,58,237,0.15)]" style="border-radius:8px">
+      <div class="w-10 h-10 bg-[var(--color-primary)]/10 flex items-center justify-center mb-5" style="border-radius:6px">
+        <span class="font-mono text-[var(--color-accent)] text-lg">🔒</span>
+      </div>
+      <h3 class="font-display text-lg font-semibold mb-2">SOC 2 Compliant</h3>
+      <p class="text-[var(--color-muted)] text-sm leading-relaxed">Enterprise-grade security with end-to-end encryption and audit logs.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA: тёмный с glow -->
+<section class="py-24 px-8 text-center relative overflow-hidden">
+  <div class="absolute inset-0 bg-[var(--color-primary)]/5"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[var(--color-primary)]/10 rounded-full blur-3xl"></div>
+  <div class="relative z-10 max-w-2xl mx-auto">
+    <h2 class="font-display text-4xl font-bold mb-4">Ready to <span class="text-[var(--color-accent)]">scale</span>?</h2>
+    <p class="text-[var(--color-muted)] mb-8 text-lg">Start free, scale when you're ready. No credit card required.</p>
+    <button class="bg-[var(--color-primary)] text-white px-10 py-4 font-bold text-lg hover:shadow-[0_0_40px_rgba(124,58,237,0.5)] transition-all" style="border-radius:8px">Deploy in 5 minutes →</button>
+  </div>
+</section>
+
+<footer class="border-t border-white/5 py-10 px-8 text-center text-sm text-[var(--color-muted)]">
+  <span class="font-display font-bold text-white/60">◇ DataFlow</span>
+  <span class="ml-4">© 2026. Process anything, at any scale.</span>
+</footer>
+
+</body>
+</html>

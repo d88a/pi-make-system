@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>СтройИндустрия — Архитектурное строительство</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-bg: #E8E4DE; --color-surface: #F5F2ED; --color-text: #1A1A1A;
+    --color-primary: #2C2C2C; --color-accent: #3B5F8A; --color-muted: #78716C;
+    --font-display: 'Space Grotesk', sans-serif; --font-body: 'Inter', sans-serif;
+    --shadow-accent: 0 0 0 2px rgba(59,95,138,0.3);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: var(--font-body); background: var(--color-bg); color: var(--color-text); }
+  .font-display { font-family: var(--font-display); }
+  .accent-line { position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--color-accent); }
+</style>
+</head>
+<body>
+
+<!-- NAV: строгий верхний, solid, sticky -->
+<nav class="sticky top-0 z-50 bg-[var(--color-surface)] border-b border-stone-300">
+  <div class="max-w-7xl mx-auto px-8 h-16 flex items-center justify-between">
+    <a href="#" class="font-display text-xl font-bold tracking-tight">СТРОЙ<div class="inline text-[var(--color-accent)]">ИНДУСТРИЯ</div></a>
+    <div class="hidden md:flex gap-8 text-sm font-medium text-[var(--color-muted)]">
+      <a href="#" class="hover:text-[var(--color-text)] transition-colors">Проекты</a>
+      <a href="#" class="hover:text-[var(--color-text)] transition-colors">Услуги</a>
+      <a href="#" class="hover:text-[var(--color-text)] transition-colors">О компании</a>
+      <a href="#" class="hover:text-[var(--color-text)] transition-colors">Контакты</a>
+    </div>
+    <button class="bg-[var(--color-accent)] text-white px-6 py-2 font-semibold text-sm tracking-wide hover:bg-[#2c4a6e] transition-colors" style="border-radius:0">Рассчитать проект</button>
+  </div>
+</nav>
+
+<!-- HERO: full-bleed, asymmetric 8/10, фото на весь экран, accent line слева -->
+<section class="relative min-h-screen flex items-center overflow-hidden">
+  <div class="accent-line"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-[var(--color-bg)] via-[var(--color-bg)]/95 to-transparent z-10"></div>
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect fill='%23D6D3CD' width='800' height='600'/%3E%3Crect x='100' y='80' width='600' height='400' fill='%23BFBBB5' rx='0'/%3E%3Crect x='140' y='120' width='250' height='180' fill='%23A8A49E' rx='0'/%3E%3C/svg%3E" class="absolute right-0 top-0 w-[60%] h-full object-cover" alt="Промышленный объект">
+  <div class="relative z-20 max-w-2xl ml-[8%] mt-[10vh]">
+    <p class="font-display text-xs tracking-[0.3em] text-[var(--color-accent)] uppercase mb-6">Архитектурное строительство</p>
+    <h1 class="font-display text-7xl font-bold leading-[0.95] mb-8">Строим<br>на <span class="text-[var(--color-accent)]">века</span></h1>
+    <p class="text-lg text-[var(--color-muted)] mb-10 max-w-lg">Проектируем и возводим промышленные и гражданские объекты с инженерной точностью. 23 года на рынке.</p>
+    <div class="flex gap-4">
+      <button class="bg-[var(--color-accent)] text-white px-8 py-3 font-semibold tracking-wide hover:bg-[#2c4a6e] transition-colors" style="border-radius:0">Смотреть проекты</button>
+      <button class="border-2 border-[var(--color-text)] px-8 py-3 font-semibold tracking-wide hover:bg-[var(--color-text)] hover:text-white transition-colors" style="border-radius:0">О компании</button>
+    </div>
+    <!-- Stats: моноширинные цифры -->
+    <div class="flex gap-12 mt-16 font-mono text-sm">
+      <div><span class="block text-3xl font-bold text-[var(--color-accent)]">156</span><span class="text-[var(--color-muted)]">объектов</span></div>
+      <div><span class="block text-3xl font-bold text-[var(--color-accent)]">23</span><span class="text-[var(--color-muted)]">года</span></div>
+      <div><span class="block text-3xl font-bold text-[var(--color-accent)]">0</span><span class="text-[var(--color-muted)]">просрочек</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES: gallery masonry, острые карточки без теней -->
+<section class="py-24 px-8 max-w-7xl mx-auto">
+  <h2 class="font-display text-4xl font-bold mb-4">Наши <span class="text-[var(--color-accent)]">компетенции</span></h2>
+  <p class="text-[var(--color-muted)] mb-12 max-w-xl">Полный цикл: от изысканий до сдачи объекта</p>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="bg-[var(--color-surface)] p-8 border border-stone-300" style="border-radius:0">
+      <div class="w-12 h-12 bg-[var(--color-accent)]/10 flex items-center justify-center mb-6" style="border-radius:0">
+        <svg class="w-6 h-6 text-[var(--color-accent)]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
+      </div>
+      <h3 class="font-display text-xl font-bold mb-3">Проектирование</h3>
+      <p class="text-[var(--color-muted)] text-sm leading-relaxed">Архитектурное и конструктивное проектирование с применением BIM-технологий.</p>
+    </div>
+    <div class="bg-[var(--color-surface)] p-8 border border-stone-300" style="border-radius:0">
+      <div class="w-12 h-12 bg-[var(--color-accent)]/10 flex items-center justify-center mb-6" style="border-radius:0">
+        <svg class="w-6 h-6 text-[var(--color-accent)]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><polygon points="12 2 22 22 2 22"/></svg>
+      </div>
+      <h3 class="font-display text-xl font-bold mb-3">Строительство</h3>
+      <p class="text-[var(--color-muted)] text-sm leading-relaxed">Генподряд и технический надзор. Собственная техника и квалифицированные бригады.</p>
+    </div>
+    <div class="bg-[var(--color-surface)] p-8 border border-stone-300" style="border-radius:0">
+      <div class="w-12 h-12 bg-[var(--color-accent)]/10 flex items-center justify-center mb-6" style="border-radius:0">
+        <svg class="w-6 h-6 text-[var(--color-accent)]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <h3 class="font-display text-xl font-bold mb-3">Сроки</h3>
+      <p class="text-[var(--color-muted)] text-sm leading-relaxed">Гарантированные сроки сдачи. <span class="font-mono font-bold text-[var(--color-accent)]">0</span> просрочек за 23 года.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA: full-width тёмная полоса с accent -->
+<section class="bg-[var(--color-primary)] py-24 px-8">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="font-display text-4xl font-bold text-white mb-4">Готовы обсудить <span class="text-[var(--color-accent)]">проект</span>?</h2>
+    <p class="text-stone-400 mb-10 text-lg">Оставьте заявку — инженер перезвонит в течение часа</p>
+    <button class="bg-[var(--color-accent)] text-white px-10 py-4 font-semibold text-lg tracking-wide hover:bg-[#4a7db0] transition-colors" style="border-radius:0">Рассчитать стоимость</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[var(--color-surface)] border-t border-stone-300 py-12 px-8">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[var(--color-muted)]">
+    <span class="font-display font-bold text-[var(--color-text)]">СТРОЙИНДУСТРИЯ</span>
+    <span>© 2026. Инженерная точность в каждом проекте.</span>
+  </div>
+</footer>
+
+</body>
+</html>

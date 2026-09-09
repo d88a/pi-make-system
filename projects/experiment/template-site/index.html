@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>GenericSaaS — AI-Powered Platform</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root { --color-bg: #FFFFFF; --color-text: #1E293B; --color-primary: #6366F1; --color-muted: #94A3B8; }
+  body { font-family: 'Inter', sans-serif; background: var(--color-bg); color: var(--color-text); }
+</style>
+</head>
+<body class="font-sans">
+
+<!-- NAV: standard sticky solid -->
+<nav class="sticky top-0 z-50 bg-white border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-8 h-16 flex items-center justify-between">
+    <a href="#" class="text-xl font-bold text-slate-900">GenericSaaS</a>
+    <div class="hidden md:flex gap-8 text-sm font-medium text-slate-500">
+      <a href="#" class="hover:text-slate-900">Features</a><a href="#" class="hover:text-slate-900">Pricing</a><a href="#" class="hover:text-slate-900">About</a><a href="#" class="hover:text-slate-900">Contact</a>
+    </div>
+    <button class="bg-indigo-600 text-white px-5 py-2 font-medium text-sm rounded-md hover:bg-indigo-700">Get Started</button>
+  </div>
+</nav>
+
+<!-- HERO: centered — ВСЕГДА centered -->
+<section class="min-h-[80vh] flex flex-col items-center justify-center text-center px-8 py-28">
+  <p class="text-sm font-medium text-indigo-600 uppercase tracking-wide mb-4">AI-Powered Platform</p>
+  <h1 class="text-6xl font-bold text-slate-900 mb-6 max-w-3xl leading-tight">Transform Your Business With AI Automation</h1>
+  <p class="text-lg text-slate-500 mb-10 max-w-xl">Our platform helps teams automate workflows, reduce costs, and scale faster than ever before.</p>
+  <div class="flex gap-4">
+    <button class="bg-indigo-600 text-white px-8 py-3 font-medium rounded-md hover:bg-indigo-700">Start Free Trial</button>
+    <button class="border border-slate-300 text-slate-700 px-8 py-3 font-medium rounded-md hover:bg-slate-50">Watch Demo</button>
+  </div>
+</section>
+
+<!-- FEATURES: standard 3-col grid, rounded-md cards, border+subtle shadow — hero→features→grid→cta -->
+<section class="py-28 px-8 max-w-7xl mx-auto">
+  <h2 class="text-4xl font-bold text-center mb-4">Everything You Need</h2>
+  <p class="text-slate-500 text-center mb-12 max-w-xl mx-auto">Powerful features to help your team succeed</p>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="border border-slate-200 rounded-md shadow-sm p-8 text-center hover:shadow-md transition-shadow">
+      <div class="w-12 h-12 bg-indigo-100 rounded-md flex items-center justify-center mx-auto mb-5">
+        <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+      </div>
+      <h3 class="text-xl font-semibold mb-3">Automation</h3>
+      <p class="text-slate-500 text-sm leading-relaxed">Automate repetitive tasks and focus on what matters most.</p>
+    </div>
+    <div class="border border-slate-200 rounded-md shadow-sm p-8 text-center hover:shadow-md transition-shadow">
+      <div class="w-12 h-12 bg-indigo-100 rounded-md flex items-center justify-center mx-auto mb-5">
+        <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      </div>
+      <h3 class="text-xl font-semibold mb-3">Analytics</h3>
+      <p class="text-slate-500 text-sm leading-relaxed">Real-time insights and beautiful dashboards for your data.</p>
+    </div>
+    <div class="border border-slate-200 rounded-md shadow-sm p-8 text-center hover:shadow-md transition-shadow">
+      <div class="w-12 h-12 bg-indigo-100 rounded-md flex items-center justify-center mx-auto mb-5">
+        <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+      </div>
+      <h3 class="text-xl font-semibold mb-3">Security</h3>
+      <p class="text-slate-500 text-sm leading-relaxed">Enterprise-grade security with SOC 2 compliance.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA: стандартный centered — все секции py-28 -->
+<section class="py-28 px-8 bg-slate-50 text-center">
+  <h2 class="text-4xl font-bold mb-4">Ready to Get Started?</h2>
+  <p class="text-slate-500 mb-8 text-lg">Join thousands of companies already using GenericSaaS.</p>
+  <button class="bg-indigo-600 text-white px-10 py-4 font-medium rounded-md hover:bg-indigo-700">Start Free Trial</button>
+</section>
+
+<footer class="border-t border-slate-200 py-10 px-8 text-center text-sm text-slate-500">
+  <span class="font-bold text-slate-700">GenericSaaS</span>
+  <span class="ml-4">© 2026. All rights reserved.</span>
+</footer>
+
+</body>
+</html>

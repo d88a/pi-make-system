@@ -1,0 +1,20 @@
+{
+  "project": "DataFlow",
+  "visual_concept": {
+    "one_liner": "Смелый технологический манифест — асимметрия, скорость, фиолетовая энергия",
+    "mood": "bold",
+    "emotional_target": "Энергия, инновация, прорыв",
+    "visual_metaphor": "дата-центр будущего с неоновой подсветкой"
+  },
+  "typography_strategy": { "display_font": "Sora", "body_font": "Inter", "scale": "custom", "h1_size": "80-120px", "contrast_ratio": "6x" },
+  "color_strategy": { "concept": "тёмный технологический с ярким фиолетовым акцентом", "primary_role": "atmosphere", "accent_role": "brand marker + CTA", "accent_coverage": "≤5%", "palette_direction": "violet", "background_character": "тёмный драматичный" },
+  "composition_strategy": { "concept": "максимально асимметричный, с неожиданными разрывами сетки", "hero_character": "split", "hero_rationale": "60/40 split: код/данные слева, визуализация справа — продукт в действии", "rhythm": "агрессивное чередование: плотный блок → воздух → разрыв сетки → плотный блок", "density": "сбалансированный с акцентными разрывами", "asymmetry_level": 9 },
+  "component_character": { "button": { "character": "смелый", "radius": "8px", "weight": "bold", "hover": "glow" }, "card": { "character": "стеклянный технологический", "border": "subtle", "shadow": "pronounced", "radius": "8px" }, "navigation": { "character": "стеклянный плавающий", "sticky": true, "transparency": "glass" } },
+  "visual_motifs": [
+    {"motif": "Гигантские цифры метрик (99.9%, 10ms, 500K+) на пол-экрана", "where": "hero, stats", "rationale": "tech-first: цифры — главный контент, не украшение"},
+    {"motif": "Стеклянные карточки с backdrop-blur на тёмном фоне", "where": "cards, features", "rationale": "tech-эстетика: прозрачность, слои, глубина"},
+    {"motif": "Неоновая подсветка (box-shadow glow) на кнопках и карточках при hover", "where": "buttons, cards", "rationale": "энергия и инновация"}
+  ],
+  "forbidden_patterns": ["светлые фоны", "amber/gold/зелёные акценты", "rounded-full pill-кнопки", "центрированный hero", "тени без свечения", "Inter как display-шрифт", "stock photo людей в офисах"],
+  "rationale": "Tech SaaS для разработчиков и CTO. Аудитория ценит скорость и инновацию. Тёмная тема + фиолетовый акцент = tech-native. 60/40 split hero = продукт в действии. Гигантские цифры = доказательства. Стеклянные карточки = современная tech-эстетика."
+}

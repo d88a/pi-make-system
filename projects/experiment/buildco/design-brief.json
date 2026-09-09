@@ -1,0 +1,20 @@
+{
+  "project": "СтройИндустрия",
+  "visual_concept": {
+    "one_liner": "Индустриальный журнал о современном строительстве — бетон, сталь, инженерная точность",
+    "mood": "industrial",
+    "emotional_target": "Надёжность, компетентность, масштаб",
+    "visual_metaphor": "архитектурный чертёж в 3D"
+  },
+  "typography_strategy": { "display_font": "Space Grotesk", "body_font": "Inter", "scale": "modular", "h1_size": "72-96px", "contrast_ratio": "4.5x" },
+  "color_strategy": { "concept": "индустриальный: бетонные фоны, стальной акцент", "primary_role": "atmosphere", "accent_role": "signal (CTA, key data)", "accent_coverage": "≤5%", "palette_direction": "neutral", "background_character": "бетонный индустриальный" },
+  "composition_strategy": { "concept": "асимметричный, с драматическими паузами", "hero_character": "full-bleed", "hero_rationale": "первое впечатление = портфолио реализованных объектов", "rhythm": "full-bleed → воздух → плотная сетка → воздух → full-bleed", "density": "сбалансированный", "asymmetry_level": 8 },
+  "component_character": { "button": { "character": "солидный", "radius": "sharp", "weight": "semibold", "hover": "color-swap" }, "card": { "character": "строгий информационный", "border": "subtle", "shadow": "none", "radius": "sharp" }, "navigation": { "character": "строгий верхний", "sticky": true, "transparency": "solid" } },
+  "visual_motifs": [
+    {"motif": "Вертикальная стальная линия слева贯穿 hero — архитектурная ось", "where": "hero", "rationale": "отсылка к чертежам и инженерной точности"},
+    {"motif": "Моноширинные цифры для всех технических данных", "where": "stats, характеристики", "rationale": "техническая точность"},
+    {"motif": "Full-bleed фотографии объектов с минимальным overlay", "where": "hero, секции", "rationale": "портфолио first — показываем, а не обещаем"}
+  ],
+  "forbidden_patterns": ["rounded углы", "centered hero", "тени на карточках", "градиенты", "amber/gold акценты", "Inter как display-шрифт"],
+  "rationale": "Строительная компания, позиционирующаяся как архитектурное бюро. Аудитория — девелоперы и премиум-заказчики. Индустриальный стиль + редакционный подход = инженерное искусство. Full-bleed фото = портфолио first. Острые углы = индустриально. Моноширинные цифры = точность."
+}

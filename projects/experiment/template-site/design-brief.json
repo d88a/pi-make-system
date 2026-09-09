@@ -1,0 +1,15 @@
+{
+  "project": "GenericSaaS",
+  "visual_concept": {
+    "one_liner": "Стандартный SaaS-лендинг — без индивидуальности, чистый шаблон",
+    "mood": "friendly",
+    "emotional_target": "Нейтрально"
+  },
+  "typography_strategy": { "display_font": "Inter", "body_font": "Inter", "h1_size": "48px" },
+  "color_strategy": { "concept": "стандартный indigo", "primary_role": "signal", "accent_role": "CTA", "palette_direction": "neutral", "background_character": "светлый" },
+  "composition_strategy": { "hero_character": "centered", "hero_rationale": "дефолт", "rhythm": "монотонный", "density": "сбалансированный", "asymmetry_level": 0 },
+  "component_character": { "button": { "character": "стандартный", "radius": "6px", "weight": "medium", "hover": "subtle-shift" }, "card": { "character": "стандартный", "border": "subtle", "shadow": "subtle", "radius": "8px" }, "navigation": { "character": "строгий верхний", "sticky": true, "transparency": "solid" } },
+  "visual_motifs": [],
+  "forbidden_patterns": [],
+  "rationale": "Дефолтный AI-шаблон: Inter + centered hero + rounded-md + border/shadow cards + hero→features→grid→cta. БЕЗ визуальных мотивов."
+}
