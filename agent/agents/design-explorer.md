@@ -39,55 +39,39 @@ thinking: high
 
 ---
 
-## Что ты создаёшь: 3 Visual Directions
+## Что ты создаёшь: 3 Visual Directions (v2 — с layout_grammar)
 
 Каждое направление — это **design-brief для одного визуального подхода**, НЕ список секций.
+
+**КРИТИЧЕСКИ:** Каждое направление ОБЯЗАТЕЛЬНО содержит `layout_grammar` — структурное описание композиции, которое НЕЛЬЗЯ заменить canonical layout'ом.
 
 ```json
 {
   "direction": "A",
-  "name": "название направления (Editorial Premium / Bold Commercial / Clean Minimal / ...)",
-  "one_liner": "одно предложение — суть визуального подхода",
-  "typography": {
-    "display_font": "шрифт",
-    "body_font": "шрифт",
-    "scale": "modular | dramatic | compact",
-    "character": "контрастный / моноширинный / классический / современный / ...",
-    "h1_target": "диапазон размера (например 64-80px)"
+  "name": "...",
+  "one_liner": "...",
+  "layout_grammar": {
+    "hero_composition": "КАК организован первый экран — не только стиль, а СТРУКТУРА: full-bleed-image-first-then-text-below | split-60-40-text-left-image-right | centered-text-then-image-below | image-only-no-text | editorial-quote-over-image | ...",
+    "content_hierarchy": ["что первое", "что второе", "что третье"],
+    "column_model": "single-column | two-column-asymmetric | three-column-grid | masonry | mixed | alternating",
+    "image_placement": "hero-only | integrated-in-sections | full-bleed-between-sections | overlapping-text | background-of-entire-section | ...",
+    "section_flow": ["как секции следуют — не список названий, а ЛОГИКА: image→text→image→text | all-text-then-gallery | text-dense→visual-break→text-dense", "..."],
+    "section_rhythm": "alternating | waves | building-up | steady | dramatic-pauses",
+    "info_density": "sparse | balanced | dense",
+    "cta_placement": "hero-inline | bottom-of-page | sidebar-persistent | between-sections | end-of-every-section",
+    "card_strategy": "grid-3col | masonry | editorial-list-with-numbers | horizontal-scroll | no-cards-at-all",
+    "overlap_layering": "none | cards-overlap-sections | images-break-grid | text-over-images | layered-backgrounds",
+    "dominant_element": "hero-image | headline-text | statistics-number | product-photo | typography | ...",
+    "full_width_vs_contained": "all-contained | hero-full-bleed-rest-contained | mixed | all-full-bleed",
+    "nav_character": "traditional-top | minimal-logo-only | hidden-until-scroll | sidebar | none-on-hero"
   },
-  "composition": {
-    "hero_approach": "как организован первый экран: full-image + overlay / split 60/40 / editorial centered / typographic-only / ...",
-    "section_rhythm": "плотный → воздух → плотный / монотонный ровный / волнами / ...",
-    "density": "плотный / сбалансированный / воздушный",
-    "asymmetry": "0-10",
-    "grid_character": "строгая 12-колоночная / свободная masonry / смешанная / ..."
-  },
-  "color": {
-    "primary_hue": "blue / green / neutral / warm / cool / earth",
-    "mood": "спокойный / энергичный / строгий / тёплый",
-    "background": "светлый / тёмный / текстурный",
-    "accent_role": "signal / atmosphere / brand-marker",
-    "key_difference": "чем это направление отличается по цвету от других"
-  },
-  "imagery": {
-    "type": "портреты / интерьеры / продукт / архитектура / абстракция",
-    "scale": "крупный план / средний / панорамный",
-    "treatment": "полноцвет / grayscale / duotone / тёплый фильтр / ...",
-    "integration": "full-bleed / в карточках / overlapping / фоном",
-    "key_difference": "чем отличается подход к изображениям"
-  },
-  "components": {
-    "buttons": "характер + форма + hover",
-    "cards": "характер + границы + тени + радиус",
-    "navigation": "характер + sticky + прозрачность",
-    "cta_section": "как выглядит призыв к действию"
-  },
-  "distinctive_details": [
-    "1-2 конкретных визуальных приёма — не искусственных метафор",
-    "должны быть реализуемы через типографику/композицию/цвет"
-  ],
-  "rationale": "почему это направление подходит для брифа",
-  "content_clarity_check": "как направление обеспечивает понятность контента"
+  "typography": { ... },
+  "color": { ... },
+  "imagery": { ... },
+  "components": { ... },
+  "distinctive_details": [ ... ],
+  "rationale": "...",
+  "content_clarity_check": "..."
 }
 ```
 
@@ -106,17 +90,27 @@ thinking: high
 - **Направление B** — сбалансированное. Профессионально, понятно, с характером.
 - **Направление C** — альтернативное. Другой подход к организации контента.
 
-### 3. Проверить различия
-Направления должны различаться минимум в 4 из 7 категорий:
-- typography
-- composition (hero approach)
-- color (primary hue или background)
-- imagery (type или treatment)
-- components (buttons или cards)
-- distinctive details
-- density
+### 3. Проверить РЕАЛЬНЫЕ различия
+Направления должны различаться минимум в 5 из 9 СТРУКТУРНЫХ категорий layout_grammar:
+- hero_composition
+- column_model
+- image_placement
+- section_flow
+- card_strategy
+- cta_placement
+- nav_character
+- overlap_layering
+- dominant_element
 
-Если направления различаются только цветом и шрифтом — ПЕРЕДЕЛАЙ.
+**Style-only различия ЗАПРЕЩЕНЫ.** Следующее НЕ считается разными направлениями:
+- другой шрифт
+- другой цвет
+- другой border-radius
+- другие тени
+- другой размер текста
+- другая фотография при той же структуре
+
+Если направления различаются только стилем — ПЕРЕДЕЛАЙ.
 
 ### 4. Content Clarity Check для каждого
 Для каждого направления спроси:

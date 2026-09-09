@@ -1,64 +1,39 @@
-<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>C — Clean Warm Minimal</title><script src="https://cdn.tailwindcss.com"></script><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet"><style>
-:root{--bg:#FDF8F3;--ink:#2E2A25;--muted:#8B8278;--terra:#C27B5A;--soft:#F5EBE2}
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>C — Image-led Minimal</title><script src="https://cdn.tailwindcss.com"></script><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"><style>
+:root{--bg:#FCFBF8;--ink:#26221D;--muted:#857C70;--terra:#C27B5A}
 *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink)}
 .man{font-family:'Manrope',sans-serif}
-.btn{transition:transform .25s ease,background .25s ease}.btn:hover{transform:translateY(-2px)}
-.rounded-img{border-radius:24px}
 </style></head><body>
 
-<!-- NAV: минимальный, светлый -->
-<nav class="flex items-center justify-between max-w-5xl mx-auto px-6 h-18">
-  <span class="man text-lg font-extrabold tracking-tight">СтройКомфорт</span>
-  <div class="flex gap-8 text-sm font-medium text-[var(--muted)]">
-    <a href="#" class="hover:text-[var(--ink)] transition-colors">Проекты</a>
-    <a href="#" class="hover:text-[var(--ink)] transition-colors">Подход</a>
-    <a href="#" class="hover:text-[var(--ink)] transition-colors">Контакты</a>
-  </div>
-</nav>
+<!-- МИНИМАЛЬНЫЙ NAV: только лого и телефон -->
+<div class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+  <span class="man text-lg font-bold">СтройКомфорт</span>
+  <span class="text-sm text-[var(--muted)]">+7 351 200-40-10</span>
+</div>
 
-<!-- HERO C: centered, тёплый, фото интерьера под заголовком, скруглённые углы -->
-<section class="py-16 px-6 max-w-4xl mx-auto text-center">
-  <p class="man text-sm tracking-[0.2em] text-[var(--terra)] font-bold uppercase mb-5">Строим дома · для вашей семьи</p>
-  <h1 class="man text-5xl md:text-6xl font-extrabold leading-[1.05] mb-6">Дом, в котором<br><span class="text-[var(--terra)]">хочется жить</span></h1>
-  <p class="text-[var(--muted)] text-lg max-w-md mx-auto mb-10">Строим тёплые и уютные дома под ключ. Заботимся о каждой детали, от фундамента до ручки на двери.</p>
-  <div class="flex justify-center gap-4">
-    <a href="#" class="btn bg-[var(--terra)] text-white px-8 py-3.5 font-bold text-sm rounded-full hover:bg-[#A06245]">Рассчитать дом</a>
-    <a href="#" class="btn border border-[var(--muted)]/30 text-[var(--ink)] px-8 py-3.5 font-bold text-sm rounded-full hover:border-[var(--terra)] transition-colors">Наши дома</a>
-  </div>
-  <div class="mt-14 overflow-hidden rounded-img">
-    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1400&q=80" alt="Уютный интерьер" class="w-full h-[420px] object-cover">
-  </div>
-</section>
+<!-- C: HERO = ТОЛЬКО ФОТО, БЕЗ текста на первом экране -->
+<div class="relative h-[88vh] overflow-hidden">
+  <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1800&q=80" alt="Уютный дом" class="absolute inset-0 w-full h-full object-cover">
+  <span class="absolute bottom-6 right-6 text-white/70 text-xs tracking-[0.2em] uppercase">Дом «Лесной» · 480 м² · 2024</span>
+</div>
 
-<!-- Почему мы: скруглённые карточки с тёплой тенью -->
-<section class="py-16 px-6 max-w-5xl mx-auto">
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-    <div class="rounded-img bg-white p-8 text-center shadow-sm hover:shadow-md transition-shadow">
-      <div class="text-4xl mb-4">🏠</div>
-      <h3 class="man text-lg font-bold mb-2">Построено с любовью</h3>
-      <p class="text-[var(--muted)] text-sm leading-relaxed">Каждый дом — как для себя. Внимание к деталям и материалам.</p>
-    </div>
-    <div class="rounded-img bg-white p-8 text-center shadow-sm hover:shadow-md transition-shadow">
-      <div class="text-4xl mb-4">🔒</div>
-      <h3 class="man text-lg font-bold mb-2">Фиксированная цена</h3>
-      <p class="text-[var(--muted)] text-sm leading-relaxed">Никаких доплат по ходу стройки. Смета фиксируется сразу.</p>
-    </div>
-    <div class="rounded-img bg-white p-8 text-center shadow-sm hover:shadow-md transition-shadow">
-      <div class="text-4xl mb-4">🤝</div>
-      <h3 class="man text-lg font-bold mb-2">На связи 24/7</h3>
-      <p class="text-[var(--muted)] text-sm leading-relaxed">Персональный менеджер. Фотоотчёт каждую неделю.</p>
-    </div>
-  </div>
-</section>
+<!-- Текст ПОЯВЛЯЕТСЯ ПОСЛЕ hero, минимальный -->
+<div class="max-w-2xl mx-auto px-6 py-32">
+  <p class="man text-xs tracking-[0.25em] text-[var(--terra)] font-bold uppercase mb-6">Строим дома под ключ</p>
+  <h1 class="man text-4xl md:text-5xl font-bold leading-[1.06] mb-8">Дом, в котором<br>хочется <span class="text-[var(--terra)]">жить</span></h1>
+  <p class="text-[var(--muted)] text-lg font-light leading-relaxed max-w-lg">Пятнадцать лет мы строим дома для семей. Каждый — со своим характером, но с одной общей чертой: в них тепло и уютно.</p>
+</div>
 
-<!-- Проекты: карточки с интерьерами -->
-<section class="py-12 px-6 max-w-5xl mx-auto">
-  <h2 class="man text-3xl font-extrabold mb-8 text-center">Наши <span class="text-[var(--terra)]">дома</span></h2>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-    <div class="rounded-img overflow-hidden"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" alt="Интерьер" class="w-full h-56 object-cover"><div class="p-4 text-left"><p class="man font-bold">Дом «Лесной»</p><p class="text-xs text-[var(--muted)] mt-1">480 м² · 2024</p></div></div>
-    <div class="rounded-img overflow-hidden"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80" alt="Интерьер" class="w-full h-56 object-cover"><div class="p-4 text-left"><p class="man font-bold">Дом «Озёрный»</p><p class="text-xs text-[var(--muted)] mt-1">320 м² · 2024</p></div></div>
-    <div class="rounded-img overflow-hidden"><img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80" alt="Интерьер" class="w-full h-56 object-cover"><div class="p-4 text-left"><p class="man font-bold">Дом «Полевой»</p><p class="text-xs text-[var(--muted)] mt-1">260 м² · 2023</p></div></div>
-  </div>
-</section>
+<!-- Фото-сетка БЕЗ карточек: только фото с крошечной подписью -->
+<div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-3 gap-3">
+  <div class="relative"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" class="w-full h-72 object-cover"><span class="absolute bottom-2 left-2 text-white/80 text-xs">Дом «Лесной»</span></div>
+  <div class="relative"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80" class="w-full h-72 object-cover"><span class="absolute bottom-2 left-2 text-white/80 text-xs">Дом «Озёрный»</span></div>
+  <div class="relative"><img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80" class="w-full h-72 object-cover"><span class="absolute bottom-2 left-2 text-white/80 text-xs">Дом «Полевой»</span></div>
+</div>
+
+<!-- CTA в самом конце, минимальный -->
+<div class="max-w-2xl mx-auto px-6 py-28 text-center">
+  <p class="man text-2xl font-bold mb-6">Хотите такой же дом?</p>
+  <a href="#" class="inline-block bg-[var(--terra)] text-white px-10 py-4 font-bold text-sm rounded-full hover:bg-[#A06245]">Оставить заявку</a>
+</div>
 
 </body></html>
