@@ -43,6 +43,7 @@ argument-hint: "<что построить: лендинг / дашборд / п
 | `{{wow_patterns}}` | Путь к wow-patterns.md | `config/design-system/wow-patterns.md` |
 | `{{style_guide}}` | Путь к сгенерированному Style Guide (опц.) | `projects/site/shared/style.generated.md` |
 | `{{project_model}}` | Путь к project.json (опц.) | `projects/site/project.json` |
+| `{{design_brief}}` | Путь к design-brief.json от Design Director | `projects/site/design-brief.json` |
 
 ## Делегирование
 
@@ -61,6 +62,14 @@ subagent(
 - [ ] Если `{{input_type}}` = references → приложи все скриншоты.
 - [ ] Если `{{input_type}}` = brand → приложи цвета и шрифты брендбука.
 - [ ] `{{reference}}` = prnt.sc URL → используй skill `prntsc-reader` и приложи распознанный текст.
+
+**Design Director (ОБЯЗАТЕЛЬНО перед выбором темы):**
+
+1. ПЕРЕД выбором темы архитектор запускает `design-director` субагента
+2. Design Director получает: нишу, аудиторию, позиционирование, референсы, ограничения, предпочтения
+3. Design Director создаёт `design-brief.json` — SSOT визуальной концепции
+4. Дизайн-система и темы = ИНСТРУМЕНТЫ реализации, НЕ источник дизайна
+5. Только ПОСЛЕ design-brief архитектор выбирает тему, токены, компоненты — сверяясь с концепцией
 
 **Выбор темы (только если Fidelity != free):**
 - Владелец явно назвал тему → используем её
