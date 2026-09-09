@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>BuildLine — Архитектурный чертёж</title><script src="https://cdn.tailwindcss.com"></script><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
+:root{--bg:#F4F7FC;--blueprint:#1E3B6E;--line:#CBD5E1;--text:#1E293B;--muted:#64748B;--mono:'IBM Plex Mono',monospace;--body:'Inter',sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--body);background:var(--bg);color:var(--text)}
+/* Вертикальная линия разреза */
+.cut-line{position:absolute;left:5rem;top:0;bottom:0;width:1px;background:var(--line)}
+/* Координатная метка */
+.coord{font-family:var(--mono);font-size:11px;color:var(--blueprint);letter-spacing:1px}
+/* Боковая схема этажей */
+.floor-plan{position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:40;padding:0 1.25rem}
+.floor-plan a{display:flex;align-items:center;gap:0.5rem;padding:0.5rem 0;font-family:var(--mono);font-size:11px;color:var(--muted);text-decoration:none;transition:color .2s}
+.floor-plan a.active{color:var(--blueprint);font-weight:500}
+.floor-plan a::before{content:'';width:6px;height:6px;border-radius:50%;border:1px solid var(--line);background:transparent}
+.floor-plan a.active::before{background:var(--blueprint);border-color:var(--blueprint)}
+/* Уровень */
+.level{position:relative;padding:6rem 2rem 6rem 8rem;border-bottom:1px dashed var(--line)}
+.level::before{content:attr(data-coord);position:absolute;left:1.5rem;top:6rem;font-family:var(--mono);font-size:11px;color:var(--blueprint)}
+/* Аннотация */
+.callout{font-family:var(--mono);font-size:10px;color:var(--blueprint);padding:4px 8px;border:1px solid var(--blueprint);display:inline-block;margin-top:1rem;letter-spacing:0.5px}
+</style></head><body>
+
+<!-- Боковая схема этажей (координатная навигация) -->
+<nav class="floor-plan">
+  <a href="#l00" class="active">00 ENTRY</a>
+  <a href="#l01">01 FOUNDATION</a>
+  <a href="#l02">02 STRUCTURE</a>
+  <a href="#l03">03 FACADE</a>
+  <a href="#l04">04 ROOFTOP</a>
+</nav>
+
+<!-- Уровень 00: Вход в здание (НЕ hero! Это вход) -->
+<div class="level" id="l00" data-coord="00">
+  <div class="max-w-2xl">
+    <p class="text-xs tracking-[0.25em] text-[var(--blueprint)] uppercase mb-6" style="font-family:var(--mono)">Architectural Bureau · est. 2003</p>
+    <h1 class="text-5xl font-bold leading-[1.05] mb-6" style="font-size:64px">Build<span style="color:var(--blueprint);font-weight:400">Line</span></h1>
+    <p class="text-lg text-[var(--muted)] leading-relaxed max-w-md">Проектируем и строим здания которые останутся на карте города через 100 лет.</p>
+    <div class="callout">COORDINATES: 00 · SCALE 1:200 · SECTION A-A</div>
+  </div>
+</div>
+
+<!-- Вертикальная линия разреза -->
+<div class="cut-line"></div>
+
+<!-- Уровень 01: Фундамент = философия -->
+<div class="level" id="l01" data-coord="01" style="background:#EDF2FA">
+  <div class="max-w-2xl ml-auto">
+    <h2 class="font-bold text-2xl mb-4" style="font-family:var(--mono);font-size:14px;color:var(--blueprint);letter-spacing:2px">01 · FOUNDATION</h2>
+    <p class="text-3xl font-bold leading-tight mb-4">Не строим коробки.<br>Строим <span style="color:var(--blueprint)">пространство</span>.</p>
+    <p class="text-[var(--muted)] leading-relaxed">Каждый объект начинается не с котлована, а с понимания — как люди будут жить, работать и дышать в этом пространстве.</p>
+  </div>
+</div>
+
+<!-- Уровень 02: Структура = процесс -->
+<div class="level" id="l02" data-coord="02">
+  <div class="max-w-2xl">
+    <h2 class="font-bold text-2xl mb-8" style="font-family:var(--mono);font-size:14px;color:var(--blueprint);letter-spacing:2px">02 · STRUCTURE</h2>
+    <div class="space-y-6">
+      <div class="flex gap-4 items-start"><span class="font-bold text-[var(--blueprint)]" style="font-family:var(--mono);min-width:2rem">2.1</span><div><p class="font-semibold mb-1">Проектирование</p><p class="text-[var(--muted)] text-sm">Архитектурный проект, инженерные расчёты, смета — 4-6 недель</p></div></div>
+      <div class="flex gap-4 items-start"><span class="font-bold text-[var(--blueprint)]" style="font-family:var(--mono);min-width:2rem">2.2</span><div><p class="font-semibold mb-1">Фундамент и конструкции</p><p class="text-[var(--muted)] text-sm">Нулевой цикл, монолит, перекрытия — 3-5 месяцев</p></div></div>
+      <div class="flex gap-4 items-start"><span class="font-bold text-[var(--blueprint)]" style="font-family:var(--mono);min-width:2rem">2.3</span><div><p class="font-semibold mb-1">Инженерия и отделка</p><p class="text-[var(--muted)] text-sm">Коммуникации, чистовая отделка, благоустройство — 4-8 месяцев</p></div></div>
+    </div>
+    <div class="callout">TOTAL: 8-14 MONTHS · STAGES: 3 · TEAM: 24 SPECIALISTS</div>
+  </div>
+</div>
+
+<!-- Уровень 03: Фасад = проекты -->
+<div class="level" id="l03" data-coord="03" style="background:#EDF2FA">
+  <div class="max-w-2xl ml-auto">
+    <h2 class="font-bold text-2xl mb-8" style="font-family:var(--mono);font-size:14px;color:var(--blueprint);letter-spacing:2px">03 · FACADE</h2>
+    <div class="grid grid-cols-2 gap-4">
+      <div class="bg-white p-4 border border-[var(--line)]"><p class="text-sm font-semibold mb-2">ЖК «Сосновый»</p><p class="text-[var(--muted)] text-xs">12 000 m² · 2024</p></div>
+      <div class="bg-white p-4 border border-[var(--line)]"><p class="text-sm font-semibold mb-2">БЦ «Меридиан»</p><p class="text-[var(--muted)] text-xs">8 500 m² · 2023</p></div>
+      <div class="bg-white p-4 border border-[var(--line)]"><p class="text-sm font-semibold mb-2">Коттедж «Лесной»</p><p class="text-[var(--muted)] text-xs">480 m² · 2024</p></div>
+      <div class="bg-white p-4 border border-[var(--line)]"><p class="text-sm font-semibold mb-2">Таунхаусы «Речной»</p><p class="text-[var(--muted)] text-xs">2 400 m² · 2023</p></div>
+    </div>
+    <div class="callout">PROJECTS: 156 · ON TIME: 98% · REPEAT CLIENTS: 72%</div>
+  </div>
+</div>
+
+<!-- Уровень 04: Крыша = контакты -->
+<div class="level" id="l04" data-coord="04">
+  <div class="max-w-2xl mx-auto text-center">
+    <h2 class="font-bold text-2xl mb-4" style="font-family:var(--mono);font-size:14px;color:var(--blueprint);letter-spacing:2px">04 · ROOFTOP</h2>
+    <p class="text-3xl font-bold mb-4">Готовы построить <span style="color:var(--blueprint)">ваш</span> этаж?</p>
+    <p class="text-[var(--muted)] mb-6">Архитектор перезвонит сегодня</p>
+    <button class="border-2 border-[var(--blueprint)] text-[var(--blueprint)] px-10 py-3 font-semibold hover:bg-[var(--blueprint)] hover:text-white transition-colors">Начать проект</button>
+    <p class="text-xs text-[var(--muted)] mt-6" style="font-family:var(--mono)">END OF DRAWING · SECTION A-A · SCALE 1:200</p>
+  </div>
+</div>
+
+</body></html>

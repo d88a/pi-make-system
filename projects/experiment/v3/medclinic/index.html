@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>МедЦентр · История пациента</title><script src="https://cdn.tailwindcss.com"></script><link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"><style>
+:root{--bg:#FDFAF5;--card:#FFFBF5;--text:#2D2418;--green:#5B8C5A;--terra:#C27B5A;--muted:#8B8178;--serif:'PT Serif',serif;--body:'Inter',sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--body);background:var(--bg);color:var(--text)}
+/* Линия времени */
+.timeline{position:relative;max-width:720px;margin:0 auto;padding:4rem 1rem}
+.timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--muted);opacity:0.3}
+/* Веха */
+.milestone{position:relative;margin:4rem 0;width:50%;padding:1.5rem 2rem}
+.milestone:nth-child(odd){margin-left:0;padding-right:3rem;text-align:right}
+.milestone:nth-child(even){margin-left:50%;padding-left:3rem}
+.milestone::before{content:'';position:absolute;top:2rem;width:12px;height:12px;border-radius:50%;background:var(--green);border:2px solid var(--bg)}
+.milestone:nth-child(odd)::before{right:-6px}
+.milestone:nth-child(even)::before{left:-6px}
+.milestone:nth-child(1)::before{background:var(--terra);width:16px;height:16px;top:1.9rem}
+.milestone:last-child::before{background:var(--green);box-shadow:0 0 0 6px rgba(91,140,90,0.15)}
+.date{font-family:var(--serif);font-size:14px;color:var(--muted);font-style:italic;margin-bottom:0.5rem}
+.note{font-family:var(--serif);line-height:1.7;color:var(--text)}
+.note strong{font-weight:700}
+.status-badge{display:inline-block;font-size:11px;padding:2px 8px;border-radius:3px;letter-spacing:0.5px;margin-bottom:0.75rem}
+.status-badge.problem{background:#FEF0E8;color:var(--terra)}
+.status-badge.progress{background:#E8F0FE;color:#4A7AB5}
+.status-badge.recovery{background:#E8F5E8;color:var(--green)}
+</style></head><body>
+
+<!-- ШАПКА как титульный лист медкарты -->
+<header class="text-center py-16 px-6 max-w-xl mx-auto">
+  <p class="text-xs tracking-[0.2em] text-[var(--muted)] uppercase mb-2">Медицинская карта № 2847</p>
+  <h1 class="text-3xl font-bold mb-2" style="font-family:var(--serif)">История пациента <span style="color:var(--green);font-weight:400">Марии, 34</span></h1>
+  <p class="text-[var(--muted)] text-sm" style="font-family:var(--serif);font-style:italic">Дата открытия: 12 марта 2023 · Врач: А. Соколова</p>
+</header>
+
+<!-- ВРЕМЕННАЯ ШКАЛА ЛЕЧЕНИЯ -->
+<div class="timeline">
+  
+  <!-- Веха 1: первичный приём -->
+  <div class="milestone">
+    <span class="status-badge problem">ПЕРВИЧНЫЙ</span>
+    <p class="date">12 марта 2023</p>
+    <p class="note">Пациентка обратилась с жалобами на хроническую усталость и боли в суставах. <strong>Три года</strong> безуспешного лечения в других клиниках.</p>
+  </div>
+
+  <!-- Веха 2: обследование -->
+  <div class="milestone">
+    <span class="status-badge progress">ОБСЛЕДОВАНИЕ</span>
+    <p class="date">15–22 марта 2023</p>
+    <p class="note">Расширенный анализ крови, МРТ, иммунологическая панель. Обнаружена <strong>редкая аутоиммунная реакция</strong> — причина трёхлетних симптомов.</p>
+  </div>
+
+  <!-- Веха 3: диагноз -->
+  <div class="milestone">
+    <span class="status-badge problem">ДИАГНОЗ</span>
+    <p class="date">24 марта 2023</p>
+    <p class="note"><strong>Аутоиммунный тиреоидит</strong> с атипичной суставной симптоматикой. Редкая форма — 0.3% случаев. Назначена комбинированная терапия.</p>
+  </div>
+
+  <!-- Веха 4: лечение -->
+  <div class="milestone">
+    <span class="status-badge progress">ЛЕЧЕНИЕ</span>
+    <p class="date">Апрель — сентябрь 2023</p>
+    <p class="note">Гормональная коррекция + иммуномодуляторы + физиотерапия. Ежемесячный мониторинг показателей. <strong>Постепенное снижение симптомов</strong> с 3-го месяца.</p>
+  </div>
+
+  <!-- Веха 5: выздоровление -->
+  <div class="milestone">
+    <span class="status-badge recovery">ВЫЗДОРОВЛЕНИЕ</span>
+    <p class="date">12 октября 2023</p>
+    <p class="note">Заключительный осмотр: анализы в норме, суставной синдром купирован, пациентка вернулась к <strong>полноценной жизни</strong>. Поддерживающая терапия — 1 раз в 6 месяцев.</p>
+  </div>
+
+  <!-- Веха 6: сегодня -->
+  <div class="milestone">
+    <span class="status-badge recovery">НАБЛЮДЕНИЕ</span>
+    <p class="date">Сегодня</p>
+    <p class="note">Профилактический осмотр 1 раз в полгода. <strong>Рецидивов нет.</strong> Пациентка ведёт активный образ жизни, занимается спортом.</p>
+  </div>
+
+</div>
+
+<!-- ИТОГ как врачебное заключение -->
+<div class="max-w-xl mx-auto px-6 py-12 text-center border-t border-[var(--muted)]/10">
+  <p class="text-xs tracking-[0.2em] text-[var(--muted)] uppercase mb-4">Заключение лечащего врача</p>
+  <p class="text-lg leading-relaxed mb-8" style="font-family:var(--serif);font-style:italic">«Каждый пациент — это не набор симптомов, а <span style="color:var(--green)">человек со своей историей</span>. Мы слушаем прежде чем лечить. И лечим причину, а не следствие.»</p>
+  <p class="text-sm font-semibold">Анна Соколова</p>
+  <p class="text-xs text-[var(--muted)]">Терапевт, стаж 15 лет</p>
+  
+  <div class="mt-10 pt-8 border-t border-[var(--muted)]/10">
+    <p class="text-sm text-[var(--muted)] mb-4">Начните свою историю выздоровления</p>
+    <button class="bg-[var(--terra)] text-white px-8 py-3 font-medium hover:bg-[#A06245] transition-colors">Записаться на приём</button>
+  </div>
+</div>
+
+<div class="text-center py-6 text-xs text-[var(--muted)] border-t border-[var(--muted)]/10">
+  <span style="font-family:var(--serif);font-style:italic">МедЦентр</span> · Лечим человека, а не болезнь · © 2026
+</div>
+
+</body></html>

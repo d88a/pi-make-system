@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>DataFlow · Live System Monitor</title><script src="https://cdn.tailwindcss.com"></script><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"><style>
+:root{--bg:#080C14;--panel:#0F1520;--text:#C8D6E5;--green:#00E676;--amber:#FFB300;--red:#FF5252;--accent:#448AFF;--dim:#37474F;--mono:'JetBrains Mono',monospace}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--mono);background:var(--bg);color:var(--text);overflow-x:hidden}
+.status-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}
+.status-dot.green{background:var(--green);box-shadow:0 0 8px var(--green)}
+.status-dot.amber{background:var(--amber);box-shadow:0 0 6px var(--amber)}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.6}}
+.status-dot.green{animation:blink 2s infinite}
+.counter{font-feature-settings:"tnum";font-variant-numeric:tabular-nums}
+.log-line{border-left:2px solid var(--dim);padding:6px 12px;font-size:12px;opacity:0.7}
+.log-line:nth-child(1){opacity:1;border-left-color:var(--accent)}
+</style></head><body>
+
+<!-- Верхняя строка статуса -->
+<div class="bg-[var(--panel)] border-b border-[var(--dim)] px-6 py-2 flex items-center justify-between text-xs">
+  <span><span class="status-dot green"></span> SYSTEM OPERATIONAL</span>
+  <span class="text-[var(--dim)]">UPTIME: 342d 14h 27m · NODE: us-east-1a</span>
+</div>
+
+<!-- ЦЕНТРАЛЬНЫЙ ДИСПЛЕЙ: живой счётчик -->
+<div class="min-h-[70vh] flex flex-col items-center justify-center relative">
+  <div class="text-center">
+    <p class="text-xs tracking-[0.3em] text-[var(--dim)] mb-4">● LIVE · THROUGHPUT</p>
+    <div class="text-8xl font-bold text-[var(--green)] counter mb-2" id="counter">512 047</div>
+    <p class="text-lg text-[var(--dim)]">events processed per second</p>
+  </div>
+  <!-- Боковые индикаторы -->
+  <div class="absolute left-8 top-1/4 space-y-8">
+    <div class="text-right"><span class="text-sm text-[var(--dim)] block">LATENCY</span><span class="text-2xl text-[var(--green)] counter">10<span class="text-sm">ms</span></span></div>
+    <div class="text-right"><span class="text-sm text-[var(--dim)] block">THREADS</span><span class="text-2xl text-[var(--amber)] counter">48</span></div>
+  </div>
+  <div class="absolute right-8 top-1/4 space-y-8">
+    <div><span class="text-sm text-[var(--dim)] block">UPTIME</span><span class="text-2xl text-[var(--green)]">99.99<span class="text-sm">%</span></span></div>
+    <div><span class="text-sm text-[var(--dim)] block">DROPS</span><span class="text-2xl text-[var(--green)]">0</span></div>
+  </div>
+</div>
+
+<!-- ЖУРНАЛ СОБЫТИЙ -->
+<div class="bg-[var(--panel)] border-y border-[var(--dim)] px-6 py-4">
+  <p class="text-xs text-[var(--dim)] mb-3 tracking-[0.2em]">$ tail -f /var/log/dataflow/events.log</p>
+  <div id="log" class="font-mono space-y-1 max-h-48 overflow-hidden">
+    <div class="log-line"><span style="color:var(--dim)">14:32:01.447</span> <span style="color:var(--green)">OK</span> event_id=f8a3b2 source=api-v2 latency=8ms</div>
+    <div class="log-line"><span style="color:var(--dim)">14:32:01.455</span> <span style="color:var(--green)">OK</span> event_id=f8a3b3 source=webhook latency=5ms</div>
+    <div class="log-line"><span style="color:var(--dim)">14:32:01.461</span> <span style="color:var(--green)">OK</span> event_id=f8a3b4 source=sdk-js latency=12ms</div>
+    <div class="log-line"><span style="color:var(--dim)">14:32:01.468</span> <span style="color:var(--amber)">WARN</span> event_id=f8a3b5 source=api-v2 latency=45ms</div>
+    <div class="log-line"><span style="color:var(--dim)">14:32:01.473</span> <span style="color:var(--green)">OK</span> event_id=f8a3b6 source=webhook latency=7ms</div>
+    <div class="log-line"><span style="color:var(--dim)">14:32:01.480</span> <span style="color:var(--green)">OK</span> event_id=f8a3b7 source=api-v2 latency=4ms</div>
+    <div class="log-line"><span style="color:var(--dim)">14:32:01.488</span> <span style="color:var(--green)">OK</span> event_id=f8a3b8 source=sdk-ios latency=9ms</div>
+  </div>
+</div>
+
+<!-- ПРОБЛЕМА/РЕШЕНИЕ (две колонки, как логи) -->
+<div class="grid grid-cols-1 md:grid-cols-2">
+  <div class="bg-[#0F1520] p-10 border-r border-[var(--dim)]">
+    <p class="text-xs text-[var(--red)] tracking-[0.2em] mb-4">[PROBLEM]</p>
+    <p class="text-lg mb-2">Your pipeline <span class="text-[var(--red)]">drops events</span> at peak.</p>
+    <p class="text-sm text-[var(--dim)]">Kafka queues overflow. Lambda timeouts. Revenue leaks through the cracks.</p>
+  </div>
+  <div class="bg-[#0F1520] p-10">
+    <p class="text-xs text-[var(--green)] tracking-[0.2em] mb-4">[SOLUTION]</p>
+    <p class="text-lg mb-2">Zero-loss. <span class="text-[var(--green)]">Any scale.</span></p>
+    <p class="text-sm text-[var(--dim)]">In-memory buffer. Persistent fallback. At-least-once guarantees. No config.</p>
+  </div>
+</div>
+
+<!-- НАСТРОЙКА (командная строка) -->
+<div class="bg-[var(--panel)] border-t border-[var(--dim)] px-10 py-12">
+  <p class="text-xs text-[var(--dim)] tracking-[0.2em] mb-4">$ cat pipeline.config</p>
+  <div class="bg-[var(--bg)] p-6 border border-[var(--dim)]">
+    <pre class="text-sm" style="color:var(--text)"><span style="color:var(--accent)">const</span> pipeline = DataFlow
+  .<span style="color:var(--accent)">source</span>(<span style="color:var(--green)">"events"</span>)
+  .<span style="color:var(--accent)">filter</span>(e => e.priority > <span style="color:var(--amber)">5</span>)
+  .<span style="color:var(--accent)">aggregate</span>({ window: <span style="color:var(--green)">"1s"</span> })
+  .<span style="color:var(--accent)">sink</span>(<span style="color:var(--green)">"dashboard"</span>);</pre>
+  </div>
+  <p class="text-xs text-[var(--dim)] mt-4">5 lines. Zero YAML. Deploys in <span class="text-[var(--green)]">4.2s</span>.</p>
+</div>
+
+<!-- CTA как команда -->
+<div class="text-center py-16">
+  <p class="text-sm text-[var(--dim)] mb-4 tracking-[0.2em]">$ deploy --free</p>
+  <button class="border border-[var(--accent)] text-[var(--accent)] px-8 py-3 font-bold text-sm hover:bg-[var(--accent)] hover:text-[var(--bg)] transition-colors tracking-wide">$ dataflow deploy --free</button>
+  <p class="text-xs text-[var(--dim)] mt-3">No credit card. 100K events free. Cancel anytime.</p>
+</div>
+
+<div class="text-center py-4 border-t border-[var(--dim)] text-xs text-[var(--dim)]">STATUS: ONLINE · NODE: us-east-1a · PID: 2847</div>
+
+<script>// Живой счётчик
+let count=512047;setInterval(()=>{count+=Math.floor(Math.random()*50)+20;document.getElementById('counter').textContent=count.toLocaleString()},200)</script>
+</body></html>
