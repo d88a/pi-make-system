@@ -216,7 +216,19 @@ function stageProjectModel(projectDir) {
   if (fs.existsSync(pagesJson)) {
     const pages = readJson(pagesJson);
     if (pages.ok) {
-      const pageIds = Array.isArray(pages.data) ? pages.data.map((p) => p.id) : [];
+      // Support both formats: array [{id}] OR object {pages: {id: {...}}} OR object {id: {...}}
+      let pageIds = [];
+      let pagesList = [];
+      if (Array.isArray(pages.data)) {
+        pageIds = pages.data.map((p) => p.id);
+        pagesList = pages.data;
+      } else if (pages.data.pages && typeof pages.data.pages === 'object') {
+        pageIds = Object.keys(pages.data.pages);
+        pagesList = pageIds.map((id) => ({ id, ...pages.data.pages[id] }));
+      } else if (typeof pages.data === 'object') {
+        pageIds = Object.keys(pages.data);
+        pagesList = pageIds.map((id) => ({ id }));
+      }
       for (const id of projectPages) {
         if (!pageIds.includes(id)) {
           violations.push({
@@ -228,7 +240,7 @@ function stageProjectModel(projectDir) {
           });
         }
       }
-      for (const page of (Array.isArray(pages.data) ? pages.data : [])) {
+      for (const page of pagesList) {
         if (!projectPages.includes(page.id)) {
           violations.push({
             file: 'pages.json',
@@ -250,7 +262,14 @@ function stageProjectModel(projectDir) {
   if (fs.existsSync(componentsJson)) {
     const comps = readJson(componentsJson);
     if (comps.ok) {
-      const compList = (comps.data.components || []).map((c) => c.name);
+      // Support both formats: array of {name} objects OR map of {name: {file, ...}}
+      const raw = comps.data.components;
+      let compList = [];
+      if (Array.isArray(raw)) {
+        compList = raw.map((c) => c.name);
+      } else if (raw && typeof raw === 'object') {
+        compList = Object.keys(raw);
+      }
       const sharedDir = path.join(projectDir, 'shared', 'components');
       for (const name of projectComponents) {
         if (!compList.includes(name)) {
@@ -275,14 +294,15 @@ function stageProjectModel(projectDir) {
           }
         }
       }
-      for (const comp of (comps.data.components || [])) {
-        if (!projectComponents.includes(comp.name)) {
+      // Check for orphan components (in components.json but not in project.json)
+      for (const compName of compList) {
+        if (!projectComponents.includes(compName)) {
           violations.push({
             file: 'components.json',
             line: 0,
-            selector: comp.name,
-            problem: 'Orphan component in components.json — not in project.json',
-            fix: 'Удалить "' + comp.name + '" из components.json или добавить в project.json',
+            selector: compName,
+            problem: 'Orphan component — not declared in project.json',
+            fix: 'Удалить "' + compName + '" из components.json или добавить в project.json',
           });
         }
       }
