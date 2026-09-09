@@ -1,0 +1,164 @@
+{
+  "project": "СтройКомфорт (строительство)",
+  "directions": [
+    {
+      "direction": "A",
+      "name": "Editorial Premium",
+      "one_liner": "Архитектурный журнал — крупные заголовки, много воздуха, каждая секция как разворот",
+      "typography": {
+        "display_font": "Playfair Display",
+        "body_font": "Inter",
+        "scale": "dramatic",
+        "character": "контрастный: 64px display vs 16px body",
+        "h1_target": "72-96px"
+      },
+      "composition": {
+        "hero_approach": "full-bleed фото дома + тёмный overlay + заголовок 80px",
+        "section_rhythm": "волнами: плотно → воздух → плотно → воздух",
+        "density": "воздушный",
+        "asymmetry": 6,
+        "grid_character": "свободная, чередование 1-колонки и 2-колонки"
+      },
+      "color": {
+        "primary_hue": "warm neutral",
+        "mood": "спокойный премиум",
+        "background": "светлый кремовый",
+        "accent_role": "brand-marker (тёмно-зелёный)",
+        "key_difference": "тёплая премиальная палитра, золотые детали"
+      },
+      "imagery": {
+        "type": "архитектура",
+        "scale": "панорамный + крупный",
+        "treatment": "полноцвет, тёплый фильтр",
+        "integration": "full-bleed hero + overlapping в галерее",
+        "key_difference": "фото интегрированы в композицию, не висят отдельно"
+      },
+      "components": {
+        "buttons": "прямые углы, тонкий border+заливка при hover",
+        "cards": "без рамок, только типографика и фото",
+        "navigation": "прозрачный → белый при скролле",
+        "cta_section": "тёмная секция с крупным заголовком"
+      },
+      "distinctive_details": [
+        "Золотая горизонтальная линия-разделитель между секциями",
+        "Дата постройки крупно на каждом фото проекта"
+      ],
+      "rationale": "Строительная премиум-аудитория ценит сдержанную эстетику. Архитектурный журнал = авторитет + вкус.",
+      "content_clarity_check": "Крупный заголовок + фото дома мгновенно отвечают «кто мы и что делаем»",
+      "scores": {
+        "contentClarity": 8,
+        "visualHierarchy": 8,
+        "aesthetics": 9,
+        "brandFit": 8,
+        "composition": 7,
+        "individuality": 7
+      }
+    },
+    {
+      "direction": "B",
+      "name": "Bold Commercial",
+      "one_liner": "Инженерная уверенность — цифры крупнее заголовков, техно-типографика, прямой призыв",
+      "typography": {
+        "display_font": "Space Grotesk",
+        "body_font": "Inter",
+        "scale": "bold",
+        "character": "техно-геометричный, уверенный",
+        "h1_target": "64-80px"
+      },
+      "composition": {
+        "hero_approach": "split 60/40: текст слева, фото дома справа",
+        "section_rhythm": "плотно → воздух → плотно",
+        "density": "сбалансированный",
+        "asymmetry": 4,
+        "grid_character": "строгая, выровненная"
+      },
+      "color": {
+        "primary_hue": "neutral + slate",
+        "mood": "уверенный инженерный",
+        "background": "светлый бетонный",
+        "accent_role": "signal (steel blue #3B5F8A)",
+        "key_difference": "холодный инженерный тон, стальной акцент"
+      },
+      "imagery": {
+        "type": "архитектура + процесс стройки",
+        "scale": "средний план",
+        "treatment": "полноцвет, чистый",
+        "integration": "в строгой сетке, выровненные",
+        "key_difference": "фото как «доказательства», не как украшение"
+      },
+      "components": {
+        "buttons": "прямые, заполненные, semibold",
+        "cards": "тонкий border, никаких теней",
+        "navigation": "строгий верхний, solid",
+        "cta_section": "компактная, с крупным числом «8 мес»"
+      },
+      "distinctive_details": [
+        "Моноширинные цифры для всех данных (156, 8, 0)",
+        "Тонкие линии-линейки как в чертеже (без метафоры)"
+      ],
+      "rationale": "Заказчик хочет надёжность. Цифры и строгая сетка = инженерное доверие. Понятно и уверенно.",
+      "content_clarity_check": "Заголовок + цифры + разборчивая сетка мгновенно читаются",
+      "scores": {
+        "contentClarity": 9,
+        "visualHierarchy": 8,
+        "aesthetics": 8,
+        "brandFit": 9,
+        "composition": 7,
+        "individuality": 6
+      }
+    },
+    {
+      "direction": "C",
+      "name": "Clean Warm Minimal",
+      "one_liner": "Светлый и дружелюбный — мягкие фотографии, округлые формы, «строим с заботой о людях»",
+      "typography": {
+        "display_font": "Manrope",
+        "body_font": "Inter",
+        "scale": "compact",
+        "character": "мягкий, человечный",
+        "h1_target": "48-64px"
+      },
+      "composition": {
+        "hero_approach": "centered: заголовок по центру + фото дома под ним",
+        "section_rhythm": "ровный, спокойный",
+        "density": "воздушный",
+        "asymmetry": 2,
+        "grid_character": "симметричная, центрированная"
+      },
+      "color": {
+        "primary_hue": "warm (terracotta + cream)",
+        "mood": "тёплый дружелюбный",
+        "background": "светлый крем",
+        "accent_role": "emotional-spike (терракота)",
+        "key_difference": "тёплые человечные тона, никакого холода"
+      },
+      "imagery": {
+        "type": "интерьеры, люди в доме",
+        "scale": "крупный план",
+        "treatment": "тёплый фильтр, светлый",
+        "integration": "в скруглённых карточках",
+        "key_difference": "акцент на жилой интерьер и уют, не на фасады"
+      },
+      "components": {
+        "buttons": "округлые (16px), мягкие",
+        "cards": "скруглённые, лёгкая тень",
+        "navigation": "минимальный, светлый",
+        "cta_section": "тёплая, с фотографией интерьера"
+      },
+      "distinctive_details": [
+        "Фотографии интерьеров вместо фасадов — «дом изнутри»",
+        "Скруглённые углы на карточках в противовес «каменной» теме"
+      ],
+      "rationale": "Аудитория — семьи. Тёплая человечная подача снимает страх стройки. «Мы построим ваш уют», не «мы инженерная компания».",
+      "content_clarity_check": "Центрированный заголовок + фото интерьера сразу понятны",
+      "scores": {
+        "contentClarity": 8,
+        "visualHierarchy": 7,
+        "aesthetics": 8,
+        "brandFit": 7,
+        "composition": 6,
+        "individuality": 5
+      }
+    }
+  ]
+}
