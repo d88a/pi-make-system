@@ -51,8 +51,10 @@ pi/
 
 ## 📊 Актуальная память
 
-**Последнее обновление:** 2026-09-08
+**Последнее обновление:** 2026-09-13
 
+> 🆕 **НОВОЕ УМЕНИЕ (D-198): SEO Research** — полное SEO-исследование: 6 фаз (аудит → семантика → конкуренты → техника → контент → ссылки), 12-раздельный отчёт для заказчика, структура `D:/Anna/seo/`. Инструменты: Я.Вебмастер, Вордстат, Keys.so, Serpstat, Screaming Frog, PageSpeed, Метрика. Приоритет: РФ→Яндекс, мир→Google.
+>
 > ⚡ **АКТУАЛЬНО (D-197): Pi умеет делать сайты в Elementor WordPress.** Skill `elementor-builder` (SKILL.md + rules.md + 10 готовых шаблонов + decorative CSS). Формат: section+column (классический, НЕ container/flex). Pipeline: HTML-прототип → Elementor JSON → импорт Templates → Site Settings (цвета/шрифты вручную) → декор CSS в Custom CSS (Elementor Pro). Проверено на «Барышня-крестьянка» (usadba): HTML одобрен, 6/9 блоков в Elementor, Hero перенесён на сервер заказчика.
 >
 > **3 pipeline Pi:** (1) HTML+Tailwind CDN — быстрый прототип/лендинг без CMS; (2) кастомная WP-тема (PHP+Tailwind build) — полный контроль, SEO, производительность; (3) Elementor JSON (section+column) — заказчик сам правит через визуальный редактор.

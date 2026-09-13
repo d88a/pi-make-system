@@ -10,6 +10,7 @@ AI-powered UI generation system — аналог v0.dev / Figma Make / Lovable, 
 - **9-осный dashboard** для выбора стиля (тема × ниша × акцент × фон × mood × radius × шрифты × layout × card variant)
 - **Верификация:** WCAG AA, screenshot review, grep-аудит
 - **19 AI-агентов** (архитектор, ui-coder, дизайнер, code-auditor, wp-coder...)
+- **SEO-исследования** (аудит, семантика, конкуренты, техника, контент, ссылки)
 
 ## Проекты
 
