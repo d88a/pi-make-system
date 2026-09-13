@@ -1,0 +1,50 @@
+{
+  "version": "1.0",
+  "page": "home",
+  "visual_intent": {
+    "primary_focal_point": "finished house photography",
+    "secondary_focal_point": "8 months proof",
+    "content_entry": "image → headline → proof",
+    "emotional_quality": "quiet confidence"
+  },
+  "hero": {
+    "composition": "full_bleed_bottom_aligned",
+    "content_position": "bottom_left",
+    "image_role": "dominant",
+    "text_width": "560px",
+    "cta": "primary",
+    "nav": "overlay"
+  },
+  "section_sequence": [
+    {"id": "proof", "purpose": "prove experience and reliability", "composition": "compact horizontal proof strip", "content_priority": "numbers", "width": "contained", "alignment": "left", "columns": 3, "overlap": false},
+    {"id": "process", "purpose": "explain how the company works", "composition": "text and image split", "content_priority": "steps", "width": "wide", "alignment": "left", "columns": 12, "overlap": false},
+    {"id": "projects", "purpose": "show finished work", "composition": "large editorial gallery with unequal image sizes", "content_priority": "photography", "width": "wide", "alignment": "left", "columns": 12, "overlap": false},
+    {"id": "testimonial", "purpose": "add human proof", "composition": "quiet single testimonial with generous whitespace", "content_priority": "quote", "width": "contained", "alignment": "left", "columns": 8, "overlap": false},
+    {"id": "contact", "purpose": "convert interested visitor", "composition": "narrow focused form", "content_priority": "form", "width": "contained", "alignment": "left", "columns": 7, "overlap": false}
+  ],
+  "rhythm": ["dramatic", "compressed", "airy", "visual", "quiet", "climactic"],
+  "grid": {
+    "default": "12-column",
+    "break_rules": "preserve reading order; collapse to one column when content becomes cramped"
+  },
+  "image_direction": {
+    "hero": {
+      "subject": "finished private house",
+      "composition": "architecture clearly readable with visual breathing room around the copy",
+      "crop": "wide landscape",
+      "light": "natural daylight",
+      "negative_space": "clear dark or calm area for readable text",
+      "camera": "architectural eye-level or slightly elevated"
+    },
+    "sections": [
+      {"section": "projects", "role": "proof gallery", "subject": "real finished houses", "composition": "varied architectural views", "crop": "mixed landscape and portrait", "light": "natural daylight"}
+    ]
+  },
+  "forbidden": [
+    "centered generic eyebrow → headline → paragraph → buttons hero",
+    "three equal feature cards immediately after hero",
+    "generic stock construction workers",
+    "decorative metaphor that competes with the content",
+    "invented claims or invented project statistics"
+  ]
+}
