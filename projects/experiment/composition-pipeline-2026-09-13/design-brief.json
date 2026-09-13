@@ -1,0 +1,32 @@
+{
+  "version": "4.0",
+  "project": "Северный Дом",
+  "content_strategy": {
+    "primary_message": "Строим дом для жизни, а не для отчёта",
+    "primary_action": "получить расчёт проекта",
+    "proof_points": ["строительство под ключ", "фиксированный срок 8 месяцев", "гарантия 5 лет"]
+  },
+  "visual_hierarchy": {
+    "primary": "finished-house photography + headline",
+    "secondary": "8 months proof",
+    "tertiary": "process and projects"
+  },
+  "aesthetic_direction": {
+    "mood": "quiet confidence",
+    "quality": "premium editorial",
+    "principle": "photography and typography carry the design; decoration stays subordinate"
+  },
+  "brand_character": ["calm", "credible", "architectural", "human"],
+  "visual_principles": [
+    "content clarity before novelty",
+    "strong scale contrast",
+    "intentional whitespace",
+    "images integrated into composition"
+  ],
+  "forbidden": [
+    "generic centered hero",
+    "three equal feature cards immediately after hero",
+    "decorative concept mechanisms without content purpose",
+    "generic stock-construction visual language"
+  ]
+}
