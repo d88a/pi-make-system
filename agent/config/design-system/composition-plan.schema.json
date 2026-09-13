@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pi-make/composition-plan.schema.json",
+  "title": "Pi Make Composition Plan",
+  "description": "Executable page-composition contract between Design Director and UI-Coder. Defines how content is composed; it does not define tokens or reusable component implementation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "page", "visual_intent", "hero", "section_sequence", "rhythm", "grid", "image_direction", "forbidden"],
+  "properties": {
+    "version": {"type": "string", "const": "1.0"},
+    "page": {"type": "string", "minLength": 1},
+    "visual_intent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary_focal_point", "content_entry", "emotional_quality"],
+      "properties": {
+        "primary_focal_point": {"type": "string"},
+        "secondary_focal_point": {"type": "string"},
+        "content_entry": {"type": "string"},
+        "emotional_quality": {"type": "string"}
+      }
+    },
+    "hero": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["composition", "content_position", "image_role", "text_width", "cta", "nav"],
+      "properties": {
+        "composition": {"type": "string", "enum": ["full_bleed", "full_bleed_bottom_aligned", "split", "asymmetric_split", "image_first", "text_first", "editorial", "minimal_image_led", "none"]},
+        "content_position": {"type": "string", "enum": ["top_left", "center_left", "bottom_left", "top_right", "center_right", "bottom_right", "center", "below_image", "none"]},
+        "image_role": {"type": "string", "enum": ["dominant", "supporting", "background", "secondary", "none"]},
+        "text_width": {"type": "string"},
+        "cta": {"type": "string", "enum": ["primary", "inline", "stacked", "floating", "none"]},
+        "nav": {"type": "string", "enum": ["standard", "overlay", "minimal", "transparent", "none"]}
+      }
+    },
+    "section_sequence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "purpose", "composition"],
+        "properties": {
+          "id": {"type": "string"},
+          "purpose": {"type": "string"},
+          "composition": {"type": "string"},
+          "content_priority": {"type": "string"},
+          "width": {"type": "string", "enum": ["contained", "wide", "full_bleed", "mixed"]},
+          "alignment": {"type": "string", "enum": ["left", "center", "right", "mixed"]},
+          "columns": {"type": "integer", "minimum": 1, "maximum": 12},
+          "overlap": {"type": "boolean"}
+        }
+      }
+    },
+    "rhythm": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "enum": ["dramatic", "compressed", "airy", "visual", "dense", "quiet", "climactic", "transition"]}
+    },
+    "grid": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["default", "break_rules"],
+      "properties": {
+        "default": {"type": "string"},
+        "break_rules": {"type": "string"}
+      }
+    },
+    "image_direction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["hero"],
+      "properties": {
+        "hero": {"$ref": "#/$defs/imageArtDirection"},
+        "sections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["section", "role", "subject"],
+            "properties": {
+              "section": {"type": "string"},
+              "role": {"type": "string"},
+              "subject": {"type": "string"},
+              "composition": {"type": "string"},
+              "crop": {"type": "string"},
+              "light": {"type": "string"}
+            }
+          }
+        }
+      }
+    },
+    "forbidden": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string"}
+    }
+  },
+  "$defs": {
+    "imageArtDirection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["subject", "composition", "crop", "light"],
+      "properties": {
+        "subject": {"type": "string"},
+        "composition": {"type": "string"},
+        "crop": {"type": "string"},
+        "light": {"type": "string"},
+        "negative_space": {"type": "string"},
+        "camera": {"type": "string"}
+      }
+    }
+  }
+}
