@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Северный Дом — строительство загородных домов под ключ</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #F6F5F2;
+      --color-surface: #FFFFFF;
+      --color-ink: #1B1A17;
+      --color-muted: #6E6A63;
+      --color-line: #E2DED6;
+      --color-line-strong: #CFC9BE;
+      --color-accent: #2F3A33;
+      --color-accent-hover: #263029;
+      --color-on-dark: #F6F5F2;
+
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+      --space-section: 120px;
+      --radius-sharp: 0px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--color-bg);
+      color: var(--color-ink);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .font-display {
+      font-family: var(--font-display);
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+
+    .wrap {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+    .wrap-wide {
+      max-width: 1520px;
+      margin: 0 auto;
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      color: var(--color-on-dark);
+      overflow: hidden;
+    }
+    .hero__img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 60%;
+    }
+    .hero__scrim {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top, rgba(12, 14, 12, 0.82) 0%, rgba(12, 14, 12, 0.25) 45%, rgba(12, 14, 12, 0.12) 100%);
+    }
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding-bottom: 72px;
+    }
+    .hero__headline {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: clamp(2.4rem, 5.2vw, 4.6rem);
+      line-height: 1.06;
+      letter-spacing: -0.015em;
+      max-width: 11.5em;
+      color: #FBFBF8;
+    }
+    .hero__proof {
+      margin-top: 24px;
+      font-size: 1.05rem;
+      color: rgba(251, 251, 248, 0.82);
+      max-width: 34em;
+    }
+    .hero__cta {
+      margin-top: 36px;
+    }
+
+    /* Nav overlay */
+    .nav-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 40px;
+      color: var(--color-on-dark);
+    }
+    .nav-overlay__logo {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      letter-spacing: 0.01em;
+      color: #FBFBF8;
+    }
+    .nav-overlay__links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+    .nav-overlay__links a {
+      color: rgba(251, 251, 248, 0.88);
+      text-decoration: none;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      transition: color 0.2s ease;
+    }
+    .nav-overlay__links a:hover { color: #FFFFFF; }
+    .nav-overlay__phone {
+      color: #FBFBF8;
+      text-decoration: none;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      font-weight: 500;
+    }
+
+    /* Buttons — sharp corners */
+    .btn {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      padding: 16px 32px;
+      background: var(--color-accent);
+      color: var(--color-on-dark);
+      text-decoration: none;
+      border: none;
+      border-radius: var(--radius-sharp);
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .btn:hover { background: var(--color-accent-hover); }
+    .btn--light {
+      background: transparent;
+      color: #FBFBF8;
+      border: 1px solid rgba(251, 251, 248, 0.5);
+    }
+    .btn--light:hover { border-color: #FBFBF8; background: rgba(251,251,248,0.05); }
+
+    /* ---------- PROOF STRIP ---------- */
+    .proof {
+      border-bottom: 1px solid var(--color-line);
+    }
+    .proof__row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .proof__item {
+      padding: 48px 40px 48px 0;
+    }
+    .proof__item + .proof__item {
+      padding-left: 40px;
+      border-left: 1px solid var(--color-line);
+    }
+    .proof__num {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 4.5vw, 4.2rem);
+      line-height: 1;
+      letter-spacing: -0.01em;
+    }
+    .proof__label {
+      margin-top: 14px;
+      font-size: 0.98rem;
+      color: var(--color-muted);
+    }
+
+    /* ---------- SECTION HEADINGS ---------- */
+    .kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: clamp(1.9rem, 3.4vw, 3rem);
+      line-height: 1.12;
+      letter-spacing: -0.015em;
+      margin-top: 16px;
+    }
+
+    /* ---------- PROCESS ---------- */
+    .process { padding: var(--space-section) 0; }
+    .process__grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .process__img-wrap { position: relative; }
+    .process__img {
+      width: 100%;
+      height: min(78vh, 640px);
+      object-fit: cover;
+      display: block;
+    }
+    .process__steps { list-style: none; }
+    .process__step {
+      display: grid;
+      grid-template-columns: 76px 1fr;
+      gap: 24px;
+      padding: 0;
+      border-top: 1px solid var(--color-line);
+    }
+    .process__step:last-child { border-bottom: 1px solid var(--color-line); }
+    .process__num {
+      font-family: var(--font-display);
+      font-size: 2.1rem;
+      line-height: 1;
+      padding: 26px 0;
+      color: var(--color-ink);
+    }
+    .process__step-body { padding: 26px 0; }
+    .process__step-title {
+      font-size: 1.18rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    .process__step-text {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      color: var(--color-muted);
+      max-width: 34em;
+    }
+
+    /* ---------- PROJECTS (editorial gallery) ---------- */
+    .projects { padding: var(--space-section) 0; }
+    .projects__head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 56px;
+    }
+    .projects__count { color: var(--color-muted); font-size: 0.95rem; }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 40px 32px;
+    }
+    .project { position: relative; }
+    .project__media { position: relative; overflow: hidden; }
+    .project__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .project__year {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: #FFFFFF;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.35);
+      letter-spacing: 0.02em;
+    }
+    .project__meta {
+      margin-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .project__num {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--color-muted);
+      letter-spacing: 0.08em;
+    }
+    .project__name {
+      font-size: 0.98rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+
+    /* varied sizes via col spans */
+    .project--a { grid-column: span 7; }
+    .project--a .project__media { height: 520px; }
+    .project--b { grid-column: span 5; grid-row: span 1; transform: translateY(56px); }
+    .project--b .project__media { height: 400px; }
+    .project--c { grid-column: span 5; }
+    .project--c .project__media { height: 400px; }
+    .project--d { grid-column: span 7; transform: translateY(-40px); }
+    .project--d .project__media { height: 460px; }
+
+    /* ---------- TESTIMONIAL ---------- */
+    .testimonial {
+      padding: calc(var(--space-section) * 1.4) 0;
+      text-align: center;
+    }
+    .testimonial__quote {
+      font-family: var(--font-display);
+      font-size: clamp(1.7rem, 3.2vw, 2.8rem);
+      line-height: 1.32;
+      letter-spacing: -0.015em;
+      max-width: 22em;
+      margin: 0 auto;
+    }
+    .testimonial__attr {
+      margin-top: 40px;
+      font-size: 0.92rem;
+      color: var(--color-muted);
+    }
+    .testimonial__attr strong { color: var(--color-ink); font-weight: 600; }
+
+    /* ---------- FINAL CTA ---------- */
+    .final-cta { padding: var(--space-section) 0; }
+    .final-cta__block {
+      background: var(--color-surface);
+      border: 1px solid var(--color-line);
+      padding: 88px 88px;
+    }
+    .final-cta__title {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: clamp(2rem, 3.6vw, 3.2rem);
+      line-height: 1.1;
+      letter-spacing: -0.015em;
+      max-width: 18em;
+    }
+    .final-cta__text {
+      margin-top: 20px;
+      color: var(--color-muted);
+      max-width: 40em;
+      font-size: 1.02rem;
+    }
+    .form { margin-top: 44px; max-width: 480px; }
+    .form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form input {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      padding: 16px 0;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--color-line-strong);
+      color: var(--color-ink);
+      width: 100%;
+      border-radius: 0;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+    .form input::placeholder { color: var(--color-muted); }
+    .form input:focus { border-bottom-color: var(--color-accent); }
+    .form .btn { margin-top: 32px; width: 100%; }
+    .form__note {
+      margin-top: 16px;
+      font-size: 0.82rem;
+      color: var(--color-muted);
+    }
+
+    /* ---------- FOOTER ---------- */
+    .footer { border-top: 1px solid var(--color-line); padding: 48px 0 56px; }
+    .footer__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer__brand { font-family: var(--font-display); font-size: 1.2rem; }
+    .footer__meta { color: var(--color-muted); font-size: 0.9rem; }
+    .footer__phone { color: var(--color-ink); text-decoration: none; font-size: 0.95rem; }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 900px) {
+      :root { --space-section: 80px; }
+      .nav-overlay__links, .nav-overlay__phone { display: none; }
+      .nav-overlay { padding: 24px; }
+      .hero__headline { max-width: 100%; }
+      .proof__row { grid-template-columns: 1fr; }
+      .proof__item, .proof__item + .proof__item {
+        padding: 28px 0;
+        border-left: none;
+        border-top: 1px solid var(--color-line);
+      }
+      .proof__item:first-child { border-top: none; }
+      .process__grid { grid-template-columns: 1fr; gap: 40px; }
+      .gallery { grid-template-columns: 1fr; gap: 56px; }
+      .project--a, .project--b, .project--c, .project--d {
+        grid-column: span 1;
+        transform: none;
+      }
+      .project--a .project__media, .project--b .project__media,
+      .project--c .project__media, .project--d .project__media { height: 340px; }
+      .final-cta__block { padding: 48px 32px; }
+      .form__row { grid-template-columns: 1fr; }
+      .projects__head { flex-direction: column; align-items: flex-start; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <nav class="nav-overlay" aria-label="Основная навигация">
+      <span class="nav-overlay__logo">Северный Дом</span>
+      <ul class="nav-overlay__links">
+        <li><a href="#process">Как работаем</a></li>
+        <li><a href="#projects">Проекты</a></li>
+        <li><a href="#testimonial">Отзывы</a></li>
+        <li><a href="#contact">Контакты</a></li>
+      </ul>
+      <a class="nav-overlay__phone" href="tel:+78120000000">+7 812 000-00-00</a>
+    </nav>
+
+    <img class="hero__img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2400&auto=format&fit=crop" alt="Современный загородный дом в естественном окружении при дневном свете">
+    <div class="hero__scrim" aria-hidden="true"></div>
+
+    <div class="hero__content">
+      <div class="wrap">
+        <h1 class="hero__headline">Строим дом для жизни,<br>а не для отчёта</h1>
+        <p class="hero__proof">Строительство под ключ за 8 месяцев. Вы получаете готовый дом с гарантией 5 лет — а не набор задач и проблем.</p>
+        <div class="hero__cta">
+          <a class="btn" href="#contact">Получить расчёт проекта</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ PROOF ============ -->
+    <section class="proof" aria-label="Ключевые цифры">
+      <div class="wrap">
+        <div class="proof__row">
+          <div class="proof__item">
+            <div class="proof__num">Под ключ</div>
+            <div class="proof__label">Готовый дом, а не набор проблем</div>
+          </div>
+          <div class="proof__item">
+            <div class="proof__num">8 месяцев</div>
+            <div class="proof__label">Фиксированный срок — без срывов и переносов</div>
+          </div>
+          <div class="proof__item">
+            <div class="proof__num">5 лет</div>
+            <div class="proof__label">Гарантия, закреплённая обязательством</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section class="process" id="process">
+      <div class="wrap">
+        <p class="kicker">Как мы работаем</p>
+        <h2 class="section-title">Три шага до готового дома</h2>
+      </div>
+      <div class="wrap" style="margin-top: 48px;">
+        <div class="process__grid">
+          <div class="process__img-wrap">
+            <img class="process__img" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600&auto=format&fit=crop" alt="Архитектурная деталь фасада загородного дома">
+          </div>
+          <ol class="process__steps">
+            <li class="process__step">
+              <span class="process__num">01</span>
+              <div class="process__step-body">
+                <div class="process__step-title">Проект и смета</div>
+                <p class="process__step-text">Фиксируем цену и сроки до начала работ. Ничего не меняется в процессе.</p>
+              </div>
+            </li>
+            <li class="process__step">
+              <span class="process__num">02</span>
+              <div class="process__step-body">
+                <div class="process__step-title">Строительство под ключ</div>
+                <p class="process__step-text">Восемь месяцев — и дом готов. Вы не участвуете в стройке, мы берём её на себя.</p>
+              </div>
+            </li>
+            <li class="process__step">
+              <span class="process__num">03</span>
+              <div class="process__step-body">
+                <div class="process__step-title">Сдача и гарантия</div>
+                <p class="process__step-text">Принимаете готовый дом. Пять лет гарантии закреплены договором.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="projects" id="projects">
+      <div class="wrap-wide">
+        <div class="projects__head">
+          <div>
+            <p class="kicker">Проекты</p>
+            <h2 class="section-title">Дома, которые мы уже построили</h2>
+          </div>
+          <span class="projects__count">Каталог · 2022–2024</span>
+        </div>
+
+        <div class="gallery">
+          <article class="project project--a">
+            <div class="project__media">
+              <img class="project__img" src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1800&auto=format&fit=crop" alt="Современный дом из клеёного бруса с панорамным остеклением">
+              <span class="project__year">2024</span>
+            </div>
+            <div class="project__meta">
+              <span class="project__num">001</span>
+              <span class="project__name">Дом из клеёного бруса</span>
+            </div>
+          </article>
+
+          <article class="project project--b">
+            <div class="project__media">
+              <img class="project__img" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1600&auto=format&fit=crop" alt="Дом-шале с панорамными окнами">
+              <span class="project__year">2023</span>
+            </div>
+            <div class="project__meta">
+              <span class="project__num">002</span>
+              <span class="project__name">Дом-шале</span>
+            </div>
+          </article>
+
+          <article class="project project--c">
+            <div class="project__media">
+              <img class="project__img" src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1600&auto=format&fit=crop" alt="Одноэтажный дом с террасой в окружении деревьев">
+              <span class="project__year">2023</span>
+            </div>
+            <div class="project__meta">
+              <span class="project__num">003</span>
+              <span class="project__name">Дом с террасой</span>
+            </div>
+          </article>
+
+          <article class="project project--d">
+            <div class="project__media">
+              <img class="project__img" src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=1800&auto=format&fit=crop" alt="Дом в скандинавском стиле с большой светлой гостиной">
+              <span class="project__year">2022</span>
+            </div>
+            <div class="project__meta">
+              <span class="project__num">004</span>
+              <span class="project__name">Дом в скандинавском стиле</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIAL ============ -->
+    <section class="testimonial" id="testimonial">
+      <div class="wrap">
+        <blockquote class="testimonial__quote">
+          «Мы переехали ровно через восемь месяцев, как и обещали. За весь срок стройки нас ни разу не дёргали — просто в какой-то момент дом был готов».
+        </blockquote>
+        <div class="testimonial__attr">
+          <strong>Александр и Мария Т.</strong> — дом 004, Ленинградская область
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="final-cta" id="contact">
+      <div class="wrap">
+        <div class="final-cta__block">
+          <h2 class="final-cta__title">Расскажите о доме — получите расчёт проекта</h2>
+          <p class="final-cta__text">Опишите участок и пожелания. В течение двух дней пришлём предварительную смету и срок — без обязательств и давления.</p>
+
+          <form class="form" action="#" method="post">
+            <div class="form__row">
+              <input type="text" name="name" placeholder="Имя" aria-label="Имя" required>
+              <input type="tel" name="phone" placeholder="Телефон" aria-label="Телефон" required>
+            </div>
+            <button type="submit" class="btn">Получить расчёт проекта</button>
+            <p class="form__note">Отправляя форму, вы соглашаетесь с обработкой персональных данных.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__inner">
+        <span class="footer__brand">Северный Дом</span>
+        <span class="footer__meta">Строительство загородных домов под ключ · Ленинградская область</span>
+        <a class="footer__phone" href="tel:+78120000000">+7 812 000-00-00</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
