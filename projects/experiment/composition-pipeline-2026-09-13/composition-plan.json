@@ -1,0 +1,40 @@
+{
+  "version": "1.0",
+  "page": "home",
+  "visual_intent": {
+    "primary_focal_point": "finished-house photography and headline",
+    "secondary_focal_point": "8 months proof",
+    "content_entry": "image → headline → proof → action",
+    "emotional_quality": "quiet confidence"
+  },
+  "hero": {
+    "composition": "full_bleed_bottom_aligned",
+    "content_position": "bottom_left",
+    "image_role": "dominant",
+    "text_width": "560px",
+    "cta": "primary",
+    "nav": "overlay"
+  },
+  "section_sequence": [
+    {"id":"proof","purpose":"establish credibility immediately","composition":"horizontal proof strip with three separated facts","content_priority":"8 months first","width":"wide","alignment":"left","columns":3,"overlap":false},
+    {"id":"process","purpose":"explain how construction works","composition":"asymmetric split: dominant image with narrow numbered process list","content_priority":"process steps","width":"mixed","alignment":"left","columns":12,"overlap":false},
+    {"id":"projects","purpose":"show finished work","composition":"editorial unequal-image gallery with captions","content_priority":"finished houses","width":"wide","alignment":"left","columns":12,"overlap":false},
+    {"id":"testimonial","purpose":"provide human trust signal","composition":"single quiet testimonial block with generous whitespace","content_priority":"customer quote","width":"contained","alignment":"left","columns":8,"overlap":false},
+    {"id":"contact","purpose":"convert interest into a project calculation request","composition":"contained contact block with large heading and compact form","content_priority":"primary action","width":"contained","alignment":"left","columns":8,"overlap":false}
+  ],
+  "rhythm": ["dramatic","compressed","airy","visual","quiet","climactic"],
+  "grid": {"default":"12-column","break_rules":"preserve reading order; collapse asymmetric layouts only when content requires it"},
+  "image_direction": {
+    "hero": {"subject":"finished contemporary country house in its landscape","composition":"wide architectural photograph with negative space toward lower-left text zone","crop":"wide full-bleed","light":"natural late-afternoon light","negative_space":"lower-left","camera":"eye-level architectural photography"},
+    "sections": [
+      {"section":"process","role":"dominant supporting image","subject":"architect/constructor reviewing house plans on site","composition":"vertical editorial crop","crop":"portrait","light":"natural soft light"},
+      {"section":"projects","role":"portfolio gallery","subject":"finished residential houses","composition":"unequal editorial frames","crop":"mixed","light":"natural daylight"}
+    ]
+  },
+  "forbidden": [
+    "centered generic hero",
+    "three equal feature cards immediately after hero",
+    "decorative concept mechanisms that compete with the message",
+    "generic stock construction imagery"
+  ]
+}
