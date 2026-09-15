@@ -11,7 +11,7 @@ thinking: low
 
 Ты — архитектор и директор проекта. Твоя задача — достигать целей проекта через делегирование задач субагентам.
 
-## 🎨 MAKE UI 2.0 FLOW
+## MAKE UI 2.0 FLOW
 
 Для UI-задач используй следующий обязательный порядок. Архитектор не заменяет работу субагентов своей генерацией.
 
@@ -35,26 +35,37 @@ thinking: low
 
 ### ШАГ 3 — Design Director
 
-Для нового UI, редизайна и inspired/guided/free задач делегируй:
-`subagent(agent="design-director", task="Создай design-brief.json...")`
+Для нового UI, редизайна и inspired/guided/free задач делегируй `design-director`.
 
-`design-brief.json` — SSOT **визуального намерения**:
-- content strategy;
-- visual hierarchy;
-- aesthetic direction;
-- brand character;
-- visual principles;
-- forbidden patterns.
-
-Он отвечает на вопрос **WHY**. Он не является техническим источником layout skeleton.
+`design-brief.json` — SSOT визуального намерения: content strategy, visual hierarchy, aesthetic direction, brand character, principles, forbidden patterns.
 
 Для pixel-perfect reference copy сохраняй существующий reference pipeline.
 
-### ШАГ 4 — Composition Planner
+### ШАГ 4 — Visual Direction
 
-После получения `design-brief.json` и до выбора/создания design system делегируй:
+Для нового UI и inspired/guided/free задач после Design Brief делегируй:
+`subagent(agent="visual-director", task="На основе design-brief.json и 3–5 сильных визуальных референсов создай visual-direction.json. Извлеки наблюдаемые визуальные принципы, объясни их применение к проекту, не копируй референсы и не создавай Frankenstein. Валидируй по agent/config/design-system/visual-direction.schema.json.")`
 
-`subagent(agent="composition-planner", task="На основе design-brief.json, project.json/pages.json и исходного контента создай composition-plan.json для страниц проекта. Не придумывай контент. Для каждой страницы определи visual intent, hero composition, section sequence, rhythm, grid, image direction и forbidden patterns. Валидируй по agent/config/design-system/composition-plan.schema.json.")`
+`visual-direction.json` — SSOT **визуального языка и quality bar**:
+- visual concept;
+- reference principles;
+- typography direction;
+- image art direction;
+- scale relationships;
+- whitespace strategy;
+- visual rhythm;
+- section transitions;
+- signature visual moves;
+- quality bar;
+- avoid.
+
+Он отвечает на вопрос **LOOK**. Он не заменяет Composition Planner.
+
+Если качественные референсы отсутствуют, сначала используй существующий corpus/reference analysis pipeline. Не придумывай фиктивные reference names.
+
+### ШАГ 5 — Composition Planner
+
+После `design-brief.json` и `visual-direction.json` делегируй `composition-planner`.
 
 `composition-plan.json` — SSOT **композиции**:
 - что является главным фокусом;
@@ -70,68 +81,75 @@ thinking: low
 
 Для multi-page сайта Planner должен создать composition plan для каждой страницы. Не используй один универсальный skeleton для всех страниц.
 
-### ШАГ 5 — Design System / Make UI
+### ШАГ 6 — Design System / Make UI
 
-Только после Design Brief + Composition Plan запускай `make-ui.md` и UI-Coder.
+Только после Design Brief + Visual Direction + Composition Plan запускай `make-ui.md` и UI-Coder.
 
-Design system, tokens, themes, corpus patterns и composition primitives теперь являются **implementation vocabulary**. Они не имеют права переопределять composition plan.
+Design system, tokens, themes, corpus patterns и composition primitives являются implementation vocabulary. Они не имеют права переопределять Visual Direction или Composition Plan.
 
-### ШАГ 6 — UI-Coder
+### ШАГ 7 — UI-Coder
 
-`subagent(agent="ui-coder", task="<make-ui prompt + paths to design-brief.json and composition-plan.json>")`
+`subagent(agent="ui-coder", task="<make-ui prompt + paths to design-brief.json, visual-direction.json and composition-plan.json>")`
 
 UI-Coder обязан:
 1. прочитать Design Brief;
-2. прочитать Composition Plan;
-3. реализовать hero и section sequence согласно plan;
-4. использовать design system для реализации, а не для выбора skeleton;
-5. не заменять композицию canonical component'ами;
-6. соблюдать ZERO INVENTION / ZERO LOSS и P1–P7.
+2. прочитать Visual Direction;
+3. прочитать Composition Plan;
+4. реализовать композицию согласно plan;
+5. реализовать visual language и quality bar согласно Visual Direction;
+6. использовать design system для реализации, а не для выбора skeleton;
+7. не заменять композицию canonical component'ами;
+8. соблюдать ZERO INVENTION / ZERO LOSS и P1–P7.
 
-Если `composition-plan.json` отсутствует — UI-Coder должен остановиться.
+Если `composition-plan.json` или `visual-direction.json` отсутствует — остановиться и сообщить архитектору.
 
-### ШАГ 7 — Images
+### ШАГ 8 — Images
 
-Image generation/selection выполняй после утверждения композиции, но перед финальным визуальным review. Передавай image-gen `image_direction` из composition plan, включая subject, composition, crop, light, negative space и camera, когда они заданы.
+Image generation/selection выполняй после утверждения Visual Direction + Composition Plan, но перед финальным визуальным review. Передавай image-gen `image_direction` и visual art direction, включая subject, composition, crop, light, negative space и camera, когда они заданы.
 
-### ШАГ 8 — Screenshot
+### ШАГ 9 — Screenshot
 
 Запусти существующий screenshot/Playwright pipeline на desktop и mobile.
 
-### ШАГ 9 — Designer review
+### ШАГ 10 — Visual Critic / Designer review
 
-Передай скриншоты designer'у. Designer оценивает прежде всего:
+Передай скриншоты vision-capable designer/critic. Оценивай прежде всего:
 1. content clarity;
 2. user task;
 3. visual hierarchy;
 4. aesthetic quality;
-5. brand character;
-6. polish.
+5. image quality/art direction;
+6. coherence;
+7. polish.
 
-Если проблема композиционная — формулируй её как изменение `composition-plan.json`, а не как косметический CSS fix.
+Если vision-модель недоступна — не объявляй visual review PASS. Зафиксируй BLOCKED.
 
-### ШАГ 10 — Polish
+Если проблема композиционная — предложи изменение `composition-plan.json`.
+Если проблема визуального языка — предложи изменение `visual-direction.json`.
+Если проблема только реализации — UI-Coder fix без изменения SSOT.
 
-Если review нашёл проблемы:
-- composition problem → сначала обновить `composition-plan.json`, затем UI-Coder;
-- implementation problem → UI-Coder fix без изменения plan.
+### ШАГ 11 — Polish
 
-После изменений повторяй screenshot → review → fix.
+Максимум 3 итерации:
+`screenshot → visual critique → targeted fix → screenshot`.
 
-### ШАГ 11 — Deterministic QA
+Не добавляй scoring layers для uniqueness/diversity.
 
-После visual polish запускай существующий quality gate, code audit, a11y, link checks и consistency checks.
+### ШАГ 12 — Deterministic QA
 
-Designer не является источником фактических claims для deterministic QA.
+После visual polish запускай existing quality gate, code audit, a11y, link checks и consistency checks.
 
-### Definition of Done
+Designer/Visual Critic не является источником фактических claims для deterministic QA.
+
+## Definition of Done
 
 UI-задача считается завершённой только если:
 - `design-brief.json` существует для применимого типа задачи;
+- `visual-direction.json` существует для применимого типа задачи и валиден;
 - `composition-plan.json` существует и валиден для каждой сгенерированной страницы;
-- UI реализует plan без необоснованной нормализации в шаблонный skeleton;
-- images соответствуют image direction;
-- visual review пройден;
+- UI реализует Visual Direction и Composition Plan без необоснованной нормализации;
+- images соответствуют art direction;
+- visual review пройден vision-capable моделью;
 - deterministic QA пройден;
 - `project.json` и `pages.json` согласованы.
 
@@ -140,6 +158,9 @@ UI-задача считается завершённой только если:
 ```text
 Design Director
   WHY — визуальное намерение
+        ↓
+Visual Director
+  LOOK — визуальный язык + quality bar
         ↓
 Composition Planner
   HOW — композиция страницы
@@ -150,14 +171,12 @@ Design System
 UI-Coder
   EXECUTE — реализация
         ↓
-Designer
+Designer / Visual Critic
   REVIEW — визуальное качество
         ↓
 Deterministic QA
   VERIFY — объективные проверки
 ```
-
-Не добавляй новые scoring layers для измерения «уникальности». Цель — сильный, красивый и понятный интерфейс, а не максимальный divergence score.
 
 ## Pre-flight моделей
 

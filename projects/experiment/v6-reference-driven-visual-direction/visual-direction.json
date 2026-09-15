@@ -1,0 +1,92 @@
+{
+  "version": "1.0",
+  "project": "Северный Дом",
+  "visual_concept": "Архитектурный каталог построенных домов: фотография и масштаб являются главным доказательством качества, интерфейс максимально спокоен и точен, а разные типы информации получают разный визуальный вес.",
+  "reference_principles": [
+    {
+      "reference": "Foster + Partners",
+      "what_works": ["project-first presentation", "deep project archive", "findability"],
+      "principle": "Работа должна быть главным содержанием сайта, а не декоративным фоном для маркетингового текста.",
+      "adaptation": "Показывать реальные завершённые дома как главный proof; метаданные подчинены фотографии.",
+      "do_not_copy": "Не переносить сложную архитектуру большого международного архива на небольшой строительный сайт."
+    },
+    {
+      "reference": "BIG",
+      "what_works": ["image-led project stories", "visual explanation", "clear communication"],
+      "principle": "Изображение должно объяснять и продавать результат вместе с текстом, а не быть случайным background.",
+      "adaptation": "Hero, process image и project gallery получают разные смысловые роли и подбираются как единая photo story.",
+      "do_not_copy": "Не использовать фирменную графику, diagrams или визуальную идентичность BIG."
+    },
+    {
+      "reference": "OMA",
+      "what_works": ["editorial content hierarchy", "different visual weights", "non-card-based presentation"],
+      "principle": "Разные типы информации должны иметь различный масштаб, плотность и ритм.",
+      "adaptation": "Proof компактный; process структурированный; projects визуально доминируют; testimonial является паузой; CTA спокойно завершает страницу.",
+      "do_not_copy": "Не превращать строительный сайт в архитектурное медиа и не добавлять отсутствующий контент."
+    },
+    {
+      "reference": "Meridian Studio portfolio case study",
+      "what_works": ["full-bleed photography", "sequential project navigation", "restrained motion"],
+      "principle": "Фотография, пространство и движение должны работать как одна система; motion должен поддерживать hierarchy.",
+      "adaptation": "Крупные фотографии, спокойные transitions и минимальные interaction states, которые не конкурируют с домами.",
+      "do_not_copy": "Не копировать конкретную страницу, motion choreography или визуальные assets."
+    }
+  ],
+  "typography_direction": {
+    "hierarchy": "Сильный контраст display и body; headline крупный, но не занимает всю страницу; metadata заметно меньше основного контента.",
+    "display_role": "Архитектурный editorial display для ключевых сообщений, названий проектов и больших proof values.",
+    "body_role": "Нейтральный читаемый sans-serif для объяснений, форм и navigation.",
+    "contrast": "Масштабный контраст между hero headline, proof values и metadata; не использовать жирность как единственный способ выделения."
+  },
+  "image_art_direction": {
+    "hero": "Один действительно сильный кадр законченного современного дома; wide landscape, естественный дневной свет, дом читается сразу, нижняя левая зона остаётся пригодной для текста. Не использовать generic stock construction imagery.",
+    "supporting": "Одна архитектурная деталь или фрагмент готового дома, плотный кадр, вертикальный или квадратный crop; никаких кранов, рабочих и строительной грязи.",
+    "gallery": "Четыре разных завершённых объекта с единой световой температурой, разными кадрами и масштабами; фотография первична, год и номер вторичны. Никаких повторяющихся изображений или случайных placeholders."
+  },
+  "scale_relationships": [
+    "Hero image dominates viewport; text is a controlled overlay, not a competing card.",
+    "Proof values are materially larger than labels but visually quieter than hero photography.",
+    "Project photography is larger than project metadata and body copy.",
+    "Testimonial has intentionally lower visual density to create a pause before CTA."
+  ],
+  "whitespace_strategy": "Воздух используется для отделения смысловых актов, а не как универсальный padding. После hero — компактное доказательство; process плотнее; gallery получает больше пространства вокруг фотографий; testimonial почти пустой; CTA снова собирает внимание в одном contained block.",
+  "visual_rhythm": [
+    "dramatic photographic opening",
+    "compressed proof",
+    "structured process",
+    "visual gallery expansion",
+    "quiet testimonial pause",
+    "contained conversion close"
+  ],
+  "section_transitions": [
+    "Hero заканчивается чистым переходом к светлой proof surface без декоративного эффекта.",
+    "Process отделяется большим вертикальным воздухом и тонкими линиями, а не карточками.",
+    "Gallery должна ощущаться как визуальное расширение process, а не новый UI-модуль.",
+    "Testimonial намеренно убирает визуальный шум перед финальной формой."
+  ],
+  "signature_visual_moves": [
+    "Фотография готового дома является главным визуальным доказательством на hero и gallery.",
+    "Нумерация 001–004 и годы на фотографиях создают ощущение настоящего архитектурного каталога.",
+    "Резкие прямые края и тонкие линии создают инженерную точность без декоративного эффекта."
+  ],
+  "quality_bar": [
+    "С первого экрана ясно, что компания строит реальные загородные дома и показывает результат.",
+    "Hero image выглядит как специально выбранная архитектурная фотография, а не stock placeholder.",
+    "Все project images разные и образуют одну фотосистему.",
+    "Typography имеет заметную hierarchy без чрезмерного bold everywhere.",
+    "Whitespace меняется осмысленно между секциями.",
+    "Gallery выглядит как curated portfolio, а не grid карточек.",
+    "CTA завершает страницу спокойно и уверенно.",
+    "Desktop и mobile сохраняют photo-first hierarchy."
+  ],
+  "avoid": [
+    "picsum.photos, одинаковые изображения или случайные placeholders",
+    "centered generic hero",
+    "три одинаковые feature cards сразу после hero",
+    "generic stock photos строителей, касок, кранов и стройплощадки",
+    "градиенты, glow и тяжёлые тени ради визуального эффекта",
+    "одинаковый padding и одинаковый визуальный вес всех секций",
+    "Frankenstein из разных reference layouts",
+    "визуальные gimmicks, которые конкурируют с фотографиями домов"
+  ]
+}

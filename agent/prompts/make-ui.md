@@ -1,11 +1,11 @@
 ---
-description: Сгенерировать UI через Design Director → Composition Planner → UI Coder
+description: Сгенерировать UI через Design Director → Visual Director → Composition Planner → UI Coder
 argument-hint: "<что построить: лендинг / дашборд / приложение>"
 ---
 
 # Make UI: $@
 
-Ты — orchestration prompt для UI generation. НЕ пиши UI сам: делегируй `ui-coder`.
+Ты — orchestration prompt для UI generation. НЕ пиши UI сам: делегируй `design-director`, `visual-director`, `composition-planner` и `ui-coder`.
 
 ## Mandatory design pipeline
 
@@ -16,6 +16,8 @@ Input / source
   ↓
 Design Director → design-brief.json (WHY)
   ↓
+Visual Director → visual-direction.json (LOOK)
+  ↓
 Composition Planner → composition-plan.json (HOW)
   ↓
 Design System / Theme / Tokens (WITH WHAT)
@@ -24,12 +26,12 @@ UI Coder (EXECUTE)
   ↓
 Images / art direction
   ↓
-Screenshot / Designer review / Polish
+Screenshot / Vision Designer review / Polish
   ↓
 Deterministic QA
 ```
 
-Для new / inspired-by / guided / free задач Design Director обязателен. Для existing/reference сохраняй соответствующий fidelity/extraction pipeline, но при новом дизайне также используй Design Brief.
+Для new / inspired-by / guided / free задач Design Director и Visual Director обязательны. Для existing/reference сохраняй соответствующий fidelity/extraction pipeline; при новом дизайне также используй Design Brief и Visual Direction.
 
 ## Inputs
 
@@ -42,28 +44,38 @@ Deterministic QA
 - `project_model` / `pages.json`;
 - `design_system` / theme;
 - `design_brief` — путь к `design-brief.json`;
+- `visual_direction` — путь к `visual-direction.json`;
 - `composition_plan` — путь к `composition-plan.json`;
 - reference/source artifacts, если есть.
 
 Не выбирай `layout_pattern` как замену composition plan.
 
-## Design Director
+## Visual Director — ОБЯЗАТЕЛЬНО
 
-До design system делегируй Design Director. Он создаёт `design-brief.json` с:
-- content strategy;
-- visual hierarchy;
-- aesthetic direction;
-- brand character;
-- visual principles;
-- forbidden patterns.
+После Design Brief и до Composition Planner делегируй Visual Director.
 
-Приоритет: content clarity → user task → visual hierarchy → aesthetics → individuality → experimental details.
+Он читает Design Brief + 3–5 сильных референсов и создаёт `visual-direction.json` по `agent/config/design-system/visual-direction.schema.json`.
+
+Он фиксирует:
+- visual concept;
+- reference-derived principles;
+- typography direction;
+- image art direction;
+- scale relationships;
+- whitespace strategy;
+- visual rhythm;
+- section transitions;
+- signature visual moves;
+- quality bar;
+- avoid.
+
+Не копировать референсы и не собирать Frankenstein. Цель — цельный оригинальный визуальный язык.
 
 ## Composition Planner — ОБЯЗАТЕЛЬНО
 
-После Design Brief и до UI-Coder делегируй Composition Planner.
+После Design Brief + Visual Direction и до UI-Coder делегируй Composition Planner.
 
-Он читает `design-brief.json`, `project.json`, `pages.json` и source content и создаёт `composition-plan.json` по `agent/config/design-system/composition-plan.schema.json`.
+Он читает `design-brief.json`, `visual-direction.json`, `project.json`, `pages.json` и source content и создаёт `composition-plan.json` по `agent/config/design-system/composition-plan.schema.json`.
 
 Для КАЖДОЙ страницы определи:
 - visual intent / focal points;
@@ -79,20 +91,20 @@ Deterministic QA
 
 ## UI Coder
 
-Передай `design-brief.json` и `composition-plan.json` явно. UI-Coder обязан считать composition plan SSOT композиции.
+Передай `design-brief.json`, `visual-direction.json` и `composition-plan.json` явно. UI-Coder обязан считать Visual Direction SSOT визуального языка, а Composition Plan SSOT композиции.
 
-Design system, themes, corpus (`layout-patterns.md`, `palette-patterns.md`, `composition-primitives.md`, `mood-axis.md`) — implementation vocabulary. Они не могут переопределять plan.
+Design system, themes, corpus (`layout-patterns.md`, `palette-patterns.md`, `composition-primitives.md`, `mood-axis.md`) — implementation vocabulary. Они не могут переопределять Visual Direction или plan.
 
 UI-Coder должен:
-1. реализовать plan без нормализации в `hero → features → grid → cta`;
+1. реализовать visual direction и plan без нормализации в `hero → features → grid → cta`;
 2. сохранить content integrity;
 3. использовать design tokens;
 4. переиспользовать canonical components там, где они совместимы с plan;
 5. обеспечить responsive + accessibility;
-6. использовать image direction при подборе/генерации изображений;
+6. использовать image direction + visual art direction при подборе/генерации изображений;
 7. передать claims только как декларацию, не как доказательство.
 
-Если composition plan отсутствует — остановить генерацию.
+Если visual direction или composition plan отсутствует — остановить генерацию.
 
 ## Theme / corpus
 
@@ -121,20 +133,23 @@ UI-Coder должен:
 ## Handoff и review
 
 После UI-Coder:
-1. image selection/generation по `image_direction`;
+1. image selection/generation по `image_direction` + visual art direction;
 2. Playwright desktop + mobile;
-3. Designer review: clarity → hierarchy → aesthetics → polish;
-4. если проблема композиции — изменить `composition-plan.json` и повторить UI-Coder;
-5. если implementation problem — исправить UI без изменения plan;
-6. deterministic quality gate / a11y / links / consistency.
+3. Vision-capable Designer/Visual Critic: clarity → hierarchy → aesthetics → image quality → coherence → polish;
+4. максимум 3 targeted polish iterations;
+5. если проблема композиции — изменить `composition-plan.json`;
+6. если проблема visual language — изменить `visual-direction.json`;
+7. если implementation problem — исправить UI без изменения SSOT;
+8. deterministic quality gate / a11y / links / consistency.
 
 ## Definition of Done
 
 Нельзя считать задачу завершённой, пока:
 - применимый `design-brief.json` существует;
+- `visual-direction.json` валиден для применимого типа задачи;
 - `composition-plan.json` валиден для каждой страницы;
-- UI реализует plan;
-- контент не потерян и ничего не выдумано;
-- screenshot review/polish пройдены;
+- UI реализует Visual Direction + plan;
+- изображения соответствуют art direction;
+- vision screenshot review/polish пройдены;
 - deterministic QA пройден;
 - project/page model согласованы.
