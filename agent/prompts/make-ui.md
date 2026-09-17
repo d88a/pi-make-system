@@ -1,155 +1,125 @@
 ---
-description: Сгенерировать UI через Design Director → Visual Director → Composition Planner → UI Coder
+description: Сгенерировать UI через Design Director → Visual Director → Composition Planner → Image Art Director → UI Coder
 argument-hint: "<что построить: лендинг / дашборд / приложение>"
 ---
 
 # Make UI: $@
 
-Ты — orchestration prompt для UI generation. НЕ пиши UI сам: делегируй `design-director`, `visual-director`, `composition-planner` и `ui-coder`.
+Ты — orchestration prompt для UI generation. НЕ пиши UI сам: делегируй design, visual, composition, image-art и UI coding stages.
 
-## Mandatory design pipeline
+## Mandatory pipeline — V6.1
 
 ```text
 Input / source
   ↓
-3 axes: input_type × fidelity × scope
+3 axes
   ↓
-Design Director → design-brief.json (WHY)
+Design Director → design-brief.json
   ↓
-Visual Director → visual-direction.json (LOOK)
+Visual Director → visual-direction.json
   ↓
-Composition Planner → composition-plan.json (HOW)
+Composition Planner → composition-plan.json
   ↓
-Design System / Theme / Tokens (WITH WHAT)
+Image Art Director → image-art-direction.json
   ↓
-UI Coder (EXECUTE)
+Design System / Theme / Tokens
   ↓
-Images / art direction
+UI Coder
   ↓
-Screenshot / Vision Designer review / Polish
+Image selection / generation
+  ↓
+Visual Reality Gate
+  ↓
+Playwright desktop + mobile
+  ↓
+Vision Critic / Polish
   ↓
 Deterministic QA
 ```
 
-Для new / inspired-by / guided / free задач Design Director и Visual Director обязательны. Для existing/reference сохраняй соответствующий fidelity/extraction pipeline; при новом дизайне также используй Design Brief и Visual Direction.
-
 ## Inputs
 
-Архитектор должен определить:
-- `description` — что строим;
-- `input_type` — reference / references / frankenstein / existing / brand / description / nothing;
-- `fidelity` — pixel-perfect / inspired-by / guided / free;
-- `scope` — single-page / multi-page / app / fix;
-- `output_dir`;
-- `project_model` / `pages.json`;
-- `design_system` / theme;
-- `design_brief` — путь к `design-brief.json`;
-- `visual_direction` — путь к `visual-direction.json`;
-- `composition_plan` — путь к `composition-plan.json`;
-- reference/source artifacts, если есть.
+Определи description, input_type, fidelity, scope, output_dir, project/page model, design system, design brief, visual direction, composition plan и source artifacts.
 
-Не выбирай `layout_pattern` как замену composition plan.
+## Design stages
 
-## Visual Director — ОБЯЗАТЕЛЬНО
+Для new / inspired-by / guided / free задач обязательны Design Director → Visual Director → Composition Planner.
 
-После Design Brief и до Composition Planner делегируй Visual Director.
+Visual Director создаёт `visual-direction.json` по `agent/config/design-system/visual-direction.schema.json`.
 
-Он читает Design Brief + 3–5 сильных референсов и создаёт `visual-direction.json` по `agent/config/design-system/visual-direction.schema.json`.
+Composition Planner создаёт `composition-plan.json` по `agent/config/design-system/composition-plan.schema.json`.
 
-Он фиксирует:
-- visual concept;
-- reference-derived principles;
-- typography direction;
-- image art direction;
-- scale relationships;
-- whitespace strategy;
-- visual rhythm;
-- section transitions;
-- signature visual moves;
-- quality bar;
-- avoid.
+Не выбирай layout pattern как замену composition plan.
 
-Не копировать референсы и не собирать Frankenstein. Цель — цельный оригинальный визуальный язык.
+## Image Art Director — ОБЯЗАТЕЛЬНО
 
-## Composition Planner — ОБЯЗАТЕЛЬНО
+После Visual Direction + Composition Plan делегируй `image-art-director`.
 
-После Design Brief + Visual Direction и до UI-Coder делегируй Composition Planner.
+Он создаёт `image-art-direction.json` по `agent/config/design-system/image-art-direction.schema.json` и фиксирует для каждого значимого asset:
+- section / role;
+- subject;
+- framing;
+- crop;
+- light;
+- negative space;
+- camera;
+- visual temperature;
+- source requirement.
 
-Он читает `design-brief.json`, `visual-direction.json`, `project.json`, `pages.json` и source content и создаёт `composition-plan.json` по `agent/config/design-system/composition-plan.schema.json`.
+Image-first rule:
+- `placehold.co` — запрещён;
+- `picsum.photos` — запрещён;
+- `via.placeholder.com` — запрещён;
+- `dummyimage.com` — запрещён;
+- серый блок с текстом вместо требуемого изображения — запрещён;
+- один generic asset вместо нескольких primary project images — запрещён.
 
-Для КАЖДОЙ страницы определи:
-- visual intent / focal points;
-- hero composition;
-- content position / text width / CTA / nav;
-- section sequence с purpose и composition;
-- rhythm;
-- grid + responsive break rules;
-- image direction: subject, composition, crop, light, negative space, camera;
-- forbidden composition patterns.
-
-Не придумывай контент. Не делай один универсальный skeleton для всех страниц.
+Если требуемого asset нет, generation не считается готовой. Не маскируй отсутствие изображения placeholder-ом.
 
 ## UI Coder
 
-Передай `design-brief.json`, `visual-direction.json` и `composition-plan.json` явно. UI-Coder обязан считать Visual Direction SSOT визуального языка, а Composition Plan SSOT композиции.
+Передай UI-Coder явно:
+`design-brief.json`, `visual-direction.json`, `image-art-direction.json`, `composition-plan.json`.
 
-Design system, themes, corpus (`layout-patterns.md`, `palette-patterns.md`, `composition-primitives.md`, `mood-axis.md`) — implementation vocabulary. Они не могут переопределять Visual Direction или plan.
+UI-Coder должен сохранить content integrity, реализовать composition и visual direction и использовать существующие или generated image assets.
 
-UI-Coder должен:
-1. реализовать visual direction и plan без нормализации в `hero → features → grid → cta`;
-2. сохранить content integrity;
-3. использовать design tokens;
-4. переиспользовать canonical components там, где они совместимы с plan;
-5. обеспечить responsive + accessibility;
-6. использовать image direction + visual art direction при подборе/генерации изображений;
-7. передать claims только как декларацию, не как доказательство.
+## Visual Reality Gate — ОБЯЗАТЕЛЬНО
 
-Если visual direction или composition plan отсутствует — остановить генерацию.
+Перед screenshot запусти:
+`node agent/scripts/visual-reality-gate.js <output>/index.html [output]/image-art-direction.json`
 
-## Theme / corpus
+FAIL блокирует visual review. Исправление идёт через image pipeline/UI-Coder, после чего gate запускается повторно.
 
-Тема — предложение под контекст, а не тупое правило по нише. При наличии brand colors сохраняй brand intent. Corpus используется для анализа и реализации, но не для принудительного выбора skeleton.
+## Vision review
 
-Запрещено оптимизировать «уникальность» за счёт ухудшения понимания. Красота должна помогать контенту.
+После PASS gate:
+1. Playwright desktop + mobile;
+2. vision-capable Visual Critic;
+3. максимум 3 targeted polish iterations.
+
+Visual Critic сначала проверяет Visual Reality, затем clarity → hierarchy → aesthetics → images → coherence → polish.
+
+Если vision-модель недоступна — `BLOCKED`, не PASS.
 
 ## Existing site — ZERO LOSS
 
-Если `input_type=existing`:
-- inventory всего контента ДО генерации;
-- тексты, изображения, ссылки, цены и характеристики — источник истины;
-- не удалять и не сокращать без явного требования;
-- не заменять реальные изображения placeholders;
-- после генерации выполнить content diff;
-- fidelity меняет дизайн, но не разрешает выдумывать/терять контент.
+При `input_type=existing` сначала inventory всего контента. Не удалять/сокращать без требования. Не заменять реальные source images placeholders. После генерации выполнить content diff.
 
-Источник приоритетов: DB/export → scraping fallback → vision только для визуального анализа.
+## Deterministic QA
 
-Для WordPress сохраняй существующий DB preflight и `wp-integration` pipeline.
-
-## Vision
-
-Если задача требует reference/frankenstein vision и vision-модель недоступна — pipeline остановить. Не заменять vision текстовым предположением.
-
-## Handoff и review
-
-После UI-Coder:
-1. image selection/generation по `image_direction` + visual art direction;
-2. Playwright desktop + mobile;
-3. Vision-capable Designer/Visual Critic: clarity → hierarchy → aesthetics → image quality → coherence → polish;
-4. максимум 3 targeted polish iterations;
-5. если проблема композиции — изменить `composition-plan.json`;
-6. если проблема visual language — изменить `visual-direction.json`;
-7. если implementation problem — исправить UI без изменения SSOT;
-8. deterministic quality gate / a11y / links / consistency.
+После visual polish запускай code audit, a11y, links и consistency checks. Deterministic QA не заменяет screenshot review.
 
 ## Definition of Done
 
 Нельзя считать задачу завершённой, пока:
 - применимый `design-brief.json` существует;
-- `visual-direction.json` валиден для применимого типа задачи;
-- `composition-plan.json` валиден для каждой страницы;
-- UI реализует Visual Direction + plan;
-- изображения соответствуют art direction;
-- vision screenshot review/polish пройдены;
-- deterministic QA пройден;
+- `visual-direction.json` валиден;
+- `composition-plan.json` валиден;
+- `image-art-direction.json` валиден;
+- требуемые assets существуют и соответствуют art direction;
+- Visual Reality Gate = PASS;
+- vision screenshot review/polish = PASS;
+- deterministic QA = PASS;
 - project/page model согласованы.
+
+Не оптимизируй uniqueness/diversity в ущерб качеству.
