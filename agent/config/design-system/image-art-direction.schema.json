@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Image Art Direction",
+  "type": "object",
+  "required": ["version", "page", "assets", "global_rules", "forbidden"],
+  "properties": {
+    "version": { "type": "string" },
+    "page": { "type": "string" },
+    "assets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "section", "role", "subject", "framing", "crop", "light", "negative_space", "source_requirement"],
+        "properties": {
+          "id": { "type": "string" },
+          "section": { "type": "string" },
+          "role": { "type": "string", "enum": ["hero", "primary", "supporting", "background"] },
+          "subject": { "type": "string" },
+          "framing": { "type": "string" },
+          "crop": { "type": "string" },
+          "light": { "type": "string" },
+          "negative_space": { "type": "string" },
+          "camera": { "type": "string" },
+          "visual_temperature": { "type": "string" },
+          "source_requirement": { "type": "string", "enum": ["real_or_generated", "provided_source", "existing_source"] },
+          "filename": { "type": "string" },
+          "alt": { "type": "string" }
+        }
+      }
+    },
+    "global_rules": { "type": "array", "items": { "type": "string" } },
+    "forbidden": { "type": "array", "items": { "type": "string" } }
+  }
+}
